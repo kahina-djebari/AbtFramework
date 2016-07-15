@@ -10,7 +10,7 @@ namespace abtTest
         [TestMethod]
         public void Test()
         {
-            AbtDriver.LoginPage.goTo();
+           // AbtDriver.LoginPage.goTo();
         }
     }
 }
