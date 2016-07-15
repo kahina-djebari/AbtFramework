@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbtFramework", "AbtFramework\AbtFramework.csproj", "{A5CBB4D9-38E0-4D92-B7B4-CFC66E61EB21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "abtTest", "abtTest\abtTest.csproj", "{DF992B9E-4FDB-4837-976F-C06D4A405C16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5CBB4D9-38E0-4D92-B7B4-CFC66E61EB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5CBB4D9-38E0-4D92-B7B4-CFC66E61EB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5CBB4D9-38E0-4D92-B7B4-CFC66E61EB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5CBB4D9-38E0-4D92-B7B4-CFC66E61EB21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF992B9E-4FDB-4837-976F-C06D4A405C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF992B9E-4FDB-4837-976F-C06D4A405C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF992B9E-4FDB-4837-976F-C06D4A405C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF992B9E-4FDB-4837-976F-C06D4A405C16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
