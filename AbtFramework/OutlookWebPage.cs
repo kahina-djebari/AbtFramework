@@ -23,8 +23,8 @@ namespace AbtFramework
 
         public bool isAt()
         {
-            IWebElement script = (IWebElement)((IJavaScriptExecutor)Driver.seleniumdriver).ExecuteScript("document.getElementsByClassName('_n_m1 ms-font-xxl')[0];");
-            if (script.Text=="Inbox")
+           
+            if (spans.ElementWithTextExists("Inbox"))
             {
                 return true;
             }

@@ -1,25 +1,27 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AbtFramework;
 using AbtFramework.SSO_Classes;
 
+
 namespace abtTest.SSO_Test_Cases
 {
-    [TestClass]
+   
     public class SSO
     {
-        [TestMethod]
+       
         public void Should_be_LoggedInSkype()
         {
             SkypeConsole.init();
             SkypeConsole.SignIn();
-            Assert.IsTrue(SkypeConsole.userIsloggedin);
+            //Assert.IsTrue(SkypeConsole.userIsloggedin);
         }
 
-        [TestMethod]
-        public void Should_Send_Outlookemail()
+       
+        public void Should_Be_LoggedIn_Outlook()
         {
-            OfficeUtils.OutlookWrapper.SendLog();
+         
+            OfficeUtils.OutlookWrapper.init();
+           // Assert.True(OfficeUtils.OutlookWrapper.isLoggedIn());
         }
     }
 }

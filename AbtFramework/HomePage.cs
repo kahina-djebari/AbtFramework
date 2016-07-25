@@ -12,8 +12,7 @@ namespace AbtFramework
         public void goTo()
         {
             Driver.seleniumdriver.Navigate().GoToUrl("http://agi.abtassociates.com");
-         // IAlert alert=  Driver.seleniumdriver.SwitchTo().Alert();
-           // alert.Accept();
+        
         }
 
        

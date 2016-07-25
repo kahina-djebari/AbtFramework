@@ -6,7 +6,7 @@ namespace AbtFramework
 {
     public class ToolsDropdown : PageModel
     {
-        [FindsBy(How = How.LinkText, Using = "Abt Talent, Learning and Support (ATLAS)")]    
+        [FindsBy(How = How.LinkText, Using = "ATLAS (Abt Talent, Learning, and Support)")]    
         private IWebElement Atlas;
 
        

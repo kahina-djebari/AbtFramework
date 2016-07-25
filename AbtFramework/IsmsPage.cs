@@ -11,11 +11,9 @@ namespace AbtFramework
 
         public void goTo()
         {
-            String currentWindowHandler = Driver.seleniumdriver.CurrentWindowHandle;
+          
             AbtDriver.TopNavigation.ToolsDropdown.IsmsLink();
-            var windowsHandler = Driver.seleniumdriver.WindowHandles;
-            Driver.seleniumdriver.Close();
-            Driver.seleniumdriver.SwitchTo().Window(Driver.GetcurrentWindowHandler(windowsHandler));
+        
         }
 
         public bool isAt()
