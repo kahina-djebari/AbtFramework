@@ -35,9 +35,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
-    <Reference Include="MSBuild.ExtensionPack">
-      <HintPath>C:\MsBuild Extention Pack\mikefourie-MSBuildExtensionPack-June2016-0-gd33978c\mikefourie-MSBuildExtensionPack-d33978c\Releases\4.0.9.0\Main\BuildBinaries\MSBuild.ExtensionPack.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
