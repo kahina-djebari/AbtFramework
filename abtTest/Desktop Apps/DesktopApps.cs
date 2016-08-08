@@ -1,7 +1,7 @@
 ﻿using System;
 using AbtFramework;
 using AbtFramework.SSO_Classes;
-
+using Xunit;
 
 namespace abtTest.SSO_Test_Cases
 {
@@ -9,19 +9,20 @@ namespace abtTest.SSO_Test_Cases
     public class SSO
     {
        
+       // [Fact]
         public void Should_be_LoggedInSkype()
         {
             SkypeConsole.init();
-            SkypeConsole.SignIn();
-            //Assert.IsTrue(SkypeConsole.userIsloggedin);
+           
+            Assert.True(SkypeConsole.isLoggedIn());
         }
 
-       
+       //[Fact]
         public void Should_Be_LoggedIn_Outlook()
         {
          
             OfficeUtils.OutlookWrapper.init();
-           // Assert.True(OfficeUtils.OutlookWrapper.isLoggedIn());
+            Assert.True(OfficeUtils.OutlookWrapper.isLoggedIn());
         }
     }
 }

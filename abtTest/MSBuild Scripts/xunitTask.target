@@ -1,0 +1,29 @@
+ <Project
+    DefaultTargets="Test"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	
+	
+ 
+  <UsingTask
+    AssemblyFile="C:\Users\$(USERNAME)\AbtTestRunner\xunit.runner.msbuild.dll"
+    TaskName="Xunit.Runner.MSBuild.xunit"/>
+	
+	
+	<PropertyGroup>
+	<RootDirectory>C:\Users\$(USERNAME)\AbtTestRunner</RootDirectory>
+	<ResultsDirectory>$(RootDirectory)\TestResults</ResultsDirectory>
+	
+	</PropertyGroup>
+	
+   <Target Name="Test">
+  <MakeDir
+			Directories="$(ResultsDirectory)" />
+			
+  <xunit Assemblies="$(RootDirectory)\abtTest.dll" Xml="$(ResultsDirectory)\results.xml" />
+  
+  </Target>
+  
+  
+  
+  </Project>

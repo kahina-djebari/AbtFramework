@@ -41,12 +41,8 @@ namespace AbtFramework
         public bool isUserLoggedin()
         {
             userCard.Click();
-
-            DirectoryEntry de = new DirectoryEntry("WinNT://" + Environment.UserDomainName + "/" + Environment.UserName);
-            string WindowsUser = de.Properties["fullName"].Value.ToString();
-
-            
-            if (username.Text.Equals(WindowsUser))
+                            
+            if (username.Text.Equals(SSOCrendentials.CurrentUser))
             {
                 return true;
 

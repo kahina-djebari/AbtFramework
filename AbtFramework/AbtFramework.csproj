@@ -72,6 +72,7 @@
     <Compile Include="IsmsPage.cs" />
     <Compile Include="LoginPage.cs" />
     <Compile Include="OraclePage.cs" />
+    <Compile Include="OutlookEmailViewerPage.cs" />
     <Compile Include="OutlookWebPage.cs" />
     <Compile Include="PageGenerator.cs" />
     <Compile Include="PageModel.cs" />
