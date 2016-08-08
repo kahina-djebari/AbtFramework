@@ -22,7 +22,7 @@ namespace AbtFramework
            // options.AddAdditionalCapability("nativeEvents", false);
            seleniumdriver = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits");
           //  seleniumdriver= new InternetExplorerDriver()
-          //  seleniumdriver = new ChromeDriver(@"C:\Selenium\ChromeDriver");
+         //   seleniumdriver = new ChromeDriver(@"C:\Selenium\ChromeDriver");
             seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             seleniumdriver.Manage().Window.Maximize();
         }

@@ -12,20 +12,15 @@ namespace AbtFramework
        
         [FindsBy(How = How.TagName, Using = "h1")]
         private IList<IWebElement> abtKnowledgeText;
+        [FindsBy(How=How.ClassName,Using ="akHeaderGreeting")]
+        private IWebElement divUserInfo;
 
-        public void goTo()
-        {
-            AbtDriver.TopNavigation.ToolsDropdown.AbtKnowledgeLink();
-            wait.PollingInterval = TimeSpan.FromSeconds(1);
-            wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            Driver.seleniumdriver.Close();
-            Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
-            //continueBtn.Click();
-        }
-
+  
         public bool isAt()
         {
-            if(abtKnowledgeText.ElementWithTextExists("What's new in AbtKnowledge:"))
+           string username=divUserInfo.Text.Split('\n')[0].Split(',')[1].Trim();
+            Console.WriteLine("AbtKnowledge Page loaded in :" + LoadTime);
+            if (username.Equals(SSOCrendentials.CurrentUser))
             {
                 return true;
             }

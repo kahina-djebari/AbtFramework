@@ -12,7 +12,7 @@ namespace AbtFramework
         public void goTo()
         {
 
-            AbtDriver.TopNavigation.ToolsDropdown.AtlasLink();
+            
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
             Driver.seleniumdriver.Close();

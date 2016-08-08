@@ -8,8 +8,8 @@ namespace AbtFramework
 {
     public class AbtTravelPage : PageModel
     {
-        [FindsBy(How=How.LinkText,Using = "AbtTravel Home")]
-        private IWebElement travelHomeLink;
+        [FindsBy(How=How.Id,Using = "dnn_dnnUSERNAMEFORMAT_lblUserName")]
+         private IWebElement username;
 
         public void goTo()
         {
@@ -23,8 +23,9 @@ namespace AbtFramework
         public bool isAt()
         {
 
-            if (travelHomeLink.Displayed)
+            if (username.Text.Equals(SSOCrendentials.CurrentUser))
             {
+                Console.WriteLine("Abt Travel Page loaded in : " + LoadTime);
                 return true;
             }
 

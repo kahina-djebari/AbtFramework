@@ -23,7 +23,9 @@ namespace AbtFramework
 
         public bool isAt()
         {
-            if(infoText.ElementWithTextExists("More Information Requested")){
+            Console.WriteLine("Oracle Web Page Loaded in: " + LoadTime);
+            IWebElement header = infoText.SingleOrDefault(e => e.Text.Equals("More Information Requested"));
+            if (header!=null){
 
                 return true;
             }

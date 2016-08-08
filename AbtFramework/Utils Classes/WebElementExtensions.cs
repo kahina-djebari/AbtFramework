@@ -10,7 +10,6 @@ namespace AbtFramework
         {
             foreach(var el in Elements)
             {
-                Console.WriteLine(el.Text);
                 if (el.Text == Text)
                 {
                     return true;
@@ -19,6 +18,24 @@ namespace AbtFramework
            
             return false;
             
+        }
+
+        public static IWebElement ValueForAttributeExists(this IList<IWebElement> Elements,string attribute,string value)
+        {
+            foreach(var el in Elements)
+            {
+                string name = el.GetAttribute(attribute);
+                Console.WriteLine(name);
+                if (el.GetAttribute(attribute).Equals(value))
+                {
+
+
+                    return el;
+                }
+            }
+
+            return null;
+
         }
     }
 }

@@ -1,6 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using AbtFramework.Utils_Classes;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace AbtFramework
 {
@@ -25,12 +29,219 @@ namespace AbtFramework
         [FindsBy(How = How.LinkText, Using = "Outlook Web Access")]
         private IWebElement OutlookWeb;
 
+
+        [FindsBy(How = How.LinkText, Using = "RepCap Planner")]
+        private IWebElement RepCapLink;
+
+        [FindsBy(How = How.LinkText, Using = "Reputational Capital Database")]
+        private IWebElement repCapDBPageLink;
+
+        public void goTo(AbtPages Page)
+        {
+
+            switch (Page)
+            {
+                case AbtPages.Oracle:
+                    AbtDriver.TopNavigation.HoverOverTools();
+                    Oracle.Click();
+                    wait.Until((d) =>
+
+                    {
+                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
+                        {
+                            AbtDriver.TopNavigation.HoverOverTools();
+                            Oracle.Click();
+                        }
+                        else
+                        {
+                            StartTimer();
+                            return true;
+                        }
+
+                      
+                        return false;
+                        
+                        });
+                    Driver.seleniumdriver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    StopTimer();
+                    break;
+
+                case AbtPages.Abt_Talent_Learning_and_Support:
+                    AbtDriver.TopNavigation.HoverOverTools();
+                    Atlas.Click();
+                    wait.Until((d) =>
+
+                    {
+                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
+                        {
+                            AbtDriver.TopNavigation.HoverOverTools();
+                            Atlas.Click();
+                        }
+                        else
+                        {
+                            StartTimer();
+                            return true;
+                        }
+
+
+                        return false;
+
+                    });
+                    Driver.seleniumdriver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    StopTimer(); break;
+
+                case AbtPages.AbtKnowledge:
+
+             
+                    AbtDriver.TopNavigation.HoverOverTools();
+                    AbtKnowledge.Click();
+                    wait.Until((d) =>
+
+                    {
+                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
+                        {
+                            AbtDriver.TopNavigation.HoverOverTools();
+                            AbtKnowledge.Click();
+                        }
+                        else
+                        {
+                            StartTimer();
+                            return true;
+                        }
+
+
+                        return false;
+
+                    });
+                                                                
+                    Driver.seleniumdriver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    Driver.seleniumdriver.FindElement(By.Id("submitbutton")).Click(); //a windows pop up with a btn "continue to abtKnowledge" finding the element withouth page factory 
+                    StopTimer();
+
+                    break;
+
+                case AbtPages.AbtTravel:
+                    AbtDriver.TopNavigation.HoverOverTools();
+                    wait.Until(d => this.AbtTravel.Displayed);
+                    AbtTravel.Click();
+                    wait.Until((d) =>
+
+                    {
+                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
+                        {
+                            AbtDriver.TopNavigation.HoverOverTools();
+                            AbtTravel.Click();
+                        }
+                        else
+                        {
+                            StartTimer();
+                            return true;
+                        }
+
+
+                        return false;
+
+                    });
+                    Driver.seleniumdriver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    StopTimer();
+                    break;
+
+                case AbtPages.ISMS:
+                    AbtDriver.TopNavigation.HoverOverTools();
+                    Isms.Click();
+
+                    break;
+
+                case AbtPages.Outlook:
+                
+                    wait.Until((d) =>
+
+                    {
+                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
+                        {
+                            AbtDriver.TopNavigation.HoverOverTools();
+                            OutlookWeb.Click();
+                        }
+                        else
+                        {
+                            StartTimer();
+                            Driver.Close();
+                            return true;
+                        }
+
+
+                        return false;
+
+                    });
+                    
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    StopTimer();
+                    break;
+
+                case AbtPages.RepCapPlanner:
+                    AbtDriver.TopNavigation.HoverOverTools();
+                    RepCapLink.Click();
+                    wait.Until((d) =>
+
+                    {
+                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
+                        {
+                            AbtDriver.TopNavigation.HoverOverTools();
+                            RepCapLink.Click();
+                        }
+                        else
+                        {
+                            StartTimer();
+                            return true;
+                        }
+
+
+                        return false;
+
+                    });
+                    Driver.seleniumdriver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    StopTimer();
+                    break;
+
+                case AbtPages.ReputationalCapitalDB:
+                    AbtDriver.TopNavigation.HoverOverTools();
+                    repCapDBPageLink.Click();
+                    wait.Until((d) =>
+
+                    {
+                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
+                        {
+                            AbtDriver.TopNavigation.HoverOverTools();
+                            repCapDBPageLink.Click();
+                        }
+                        else
+                        {
+                            StartTimer();
+                            return true;
+                        }
+
+
+                        return false;
+
+                    });
+                    Driver.seleniumdriver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    StopTimer();
+                    break;
+
+            }
+        }
         internal void AbtTravelLink()
         {
             AbtTravel.Click();
 
         }
-
+ 
         internal void AbtKnowledgeLink()
         {
             AbtKnowledge.Click();

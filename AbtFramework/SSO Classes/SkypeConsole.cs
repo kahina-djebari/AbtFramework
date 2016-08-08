@@ -12,17 +12,7 @@ namespace AbtFramework
     {
 
         private static LyncClient lyncClient;
-        public static bool userIsloggedin;
-
-        public static bool UserIsloggedin
-        {
-            get
-            {
-                return userIsloggedin;
-            }
-
-        
-        }
+       
 
         public static void init()
         {
@@ -64,7 +54,7 @@ namespace AbtFramework
 
         }
 
-        public static void SignIn()
+        public static bool isLoggedIn()
         {
             try
             {
@@ -72,7 +62,7 @@ namespace AbtFramework
                 {
                     //Sign out If the current client state is Signed In
 
-                    userIsloggedin = true;
+                    return true;
 
                     //  lyncClient.BeginSignOut(SignOutCallback, null);
 
@@ -80,7 +70,7 @@ namespace AbtFramework
                 else if (lyncClient.State == ClientState.SignedOut)
                 {
                     //Sign in If the current client state is Signed Out
-                    userIsloggedin = false;
+                    return false;
 
                     // lyncClient.BeginSignIn(null, null, null, SignInCallback, null);
 
@@ -103,6 +93,8 @@ namespace AbtFramework
                     throw;
                 }
             }
+
+            return false;
         }
 
         private static void SignInCallback(IAsyncResult result)

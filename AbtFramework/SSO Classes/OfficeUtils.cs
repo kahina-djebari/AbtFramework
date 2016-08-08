@@ -7,6 +7,7 @@ using Microsoft.Office.Interop.Outlook;
 using System.IO;
 using System.DirectoryServices;
 
+
 namespace AbtFramework.SSO_Classes
 {
     public static class OfficeUtils
@@ -21,14 +22,13 @@ namespace AbtFramework.SSO_Classes
             {
                 String OutlookUser = outlook.Application.Session.CurrentUser.Name;
                 DirectoryEntry de = new DirectoryEntry("WinNT://" + Environment.UserDomainName + "/" + Environment.UserName);
-                String WindowsUser= de.Properties["fullName"].Value.ToString();
-                Console.WriteLine(OutlookUser);
-                Console.WriteLine(WindowsUser);
+                string WindowsUser= de.Properties["fullName"].Value.ToString();
+           
                 if (OutlookUser == WindowsUser)
                 {
-                    return true;
+                   return true;
                 }
-               
+              
 
                 return false;
             }

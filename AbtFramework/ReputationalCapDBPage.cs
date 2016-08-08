@@ -9,8 +9,7 @@ namespace AbtFramework
 {
     public class ReputationalCapDBPage : PageModel
     {
-        [FindsBy(How=How.LinkText,Using = "Reputational Capital Database")]
-        private IWebElement repCapDBPageLink;
+       
 
         [FindsBy(How = How.TagName, Using = "h1")]
         private IList<IWebElement> headers;
@@ -22,7 +21,7 @@ namespace AbtFramework
 
         public void goTo()
         {
-            repCapDBPageLink.Click();
+            
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
             Driver.seleniumdriver.Close();

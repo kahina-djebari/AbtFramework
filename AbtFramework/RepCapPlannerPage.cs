@@ -9,15 +9,14 @@ namespace AbtFramework
 {
     public class RepCapPlannerPage : PageModel
     {
-        [FindsBy(How=How.LinkText,Using = "RepCap Planner")]
-        private IWebElement RepCapLink;
+        
 
         [FindsBy(How = How.TagName, Using = "h2")]
         private IList<IWebElement> headers;
 
         public void goTo()
         {
-            RepCapLink.Click();
+           
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
             Driver.seleniumdriver.Close();

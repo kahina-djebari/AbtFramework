@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 
 namespace AbtFramework
@@ -13,13 +14,19 @@ namespace AbtFramework
        
         private ToolsDropdown _toolsDropdown;
 
-        internal ToolsDropdown ToolsDropdown { get { return _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>(); } }
+        public ToolsDropdown ToolsDropdown { get {
+                _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>();
+                _toolsDropdown.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(15));
+                _toolsDropdown.action = new Actions(Driver.seleniumdriver);
+                return _toolsDropdown;
+            } }
 
-        internal void ToolsLink()
+        public void ToolsLink()
         {
             ToolsAndResources.Click();
                        
         }
+
 
         public void HoverOverTools()
         {
