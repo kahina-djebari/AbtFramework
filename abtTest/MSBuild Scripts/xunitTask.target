@@ -6,7 +6,7 @@
 	
  
   <UsingTask
-    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\AbtFramework\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild"
+    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\AbtFramework\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
     TaskName="Xunit.Runner.MSBuild.xunit"/>
 	
 	
