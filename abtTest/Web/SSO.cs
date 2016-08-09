@@ -27,7 +27,7 @@ namespace abtTest.Web
                    
         }              
        
-        [Fact(DisplayName ="Should Go to AGI Home Page")]
+       // [Fact(DisplayName ="Should Go to AGI Home Page")]
         public void Should_Goto_Homepage()
         {
             
@@ -72,7 +72,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName ="Should click on Abt Knowledge (AGI Website)")]
+       // [Fact(DisplayName ="Should click on Abt Knowledge (AGI Website)")]
         public void Should_click_AbtKnowledge()
         {
             AbtDriver.HomePage.Go();
@@ -81,7 +81,7 @@ namespace abtTest.Web
           
         }
 
-         [Fact(DisplayName ="Should click on Abt Travel (AGI Website)")]
+       //  [Fact(DisplayName ="Should click on Abt Travel (AGI Website)")]
         public void Should_click_AbtTravel()
         {
             AbtDriver.HomePage.Go();
@@ -89,7 +89,7 @@ namespace abtTest.Web
            Assert.True(AbtDriver.AbtTravelPage.isAt());
         }
 
-         [Fact(DisplayName ="Should Click on Oracle (AGI Website)")]
+       //  [Fact(DisplayName ="Should Click on Oracle (AGI Website)")]
         public void Should_click_Oracle()
         {
             AbtDriver.HomePage.Go();
@@ -107,7 +107,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName ="Should Click on Outlook Web Access (AGI Website)")]
+       // [Fact(DisplayName ="Should Click on Outlook Web Access (AGI Website)")]
         public void Should_Open_OutlookWebAccess()
         {
             AbtDriver.HomePage.Go();

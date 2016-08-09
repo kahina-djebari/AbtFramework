@@ -44,5 +44,13 @@ namespace AbtFramework
             }
             return null;
         }
+
+        public static void RemoteInit()
+        {
+            seleniumdriver = new RemoteWebDriver(new Uri("http://172.18.58.21:4444/wd/hub"),
+                DesiredCapabilities.InternetExplorer());
+
+
+        }
     }
 }

@@ -9,24 +9,25 @@ namespace abtTest.Web
     {
         public OWA()
         {
-            Driver.init();
+            //Driver.init();
+           // Driver.RemoteInit();
         }
         public void Dispose()
         {
             Driver.Close();
-           
         }
 
         [Fact(DisplayName ="Should Open a received email")]
         public void Should_Open_Received_Email()
         {
+            Driver.RemoteInit();
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Outlook);
             AbtDriver.OutlookWebPage.OpenEmail();
             Assert.True(AbtDriver.OutlookEmailViewerPage.isEmailOpen(), "Could not Open Email");
         }
 
-        [Fact(DisplayName ="Should Send an email")]
+       // [Fact(DisplayName ="Should Send an email")]
         public void Should_Send_An_Email()
         {
             AbtDriver.HomePage.Go();
