@@ -6,12 +6,12 @@
 	
  
   <UsingTask
-    AssemblyFile="$(MSBuildProjectDirectory)\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild"
+    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\AbtFramework\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild"
     TaskName="Xunit.Runner.MSBuild.xunit"/>
 	
 	
 	<PropertyGroup>
-	<RootDirectory>C:\Users\$(USERNAME)\AbtTestRunner</RootDirectory>
+	<RootDirectory>C:\Program Files (x86)\Jenkins\workspace\AbtFramework</RootDirectory>
 	<ResultsDirectory>$(RootDirectory)\TestResults</ResultsDirectory>
 	
 	</PropertyGroup>
@@ -20,7 +20,7 @@
   <MakeDir
 			Directories="$(MSBuildProjectDirectory)\TestResults" />
 			
-  <xunit Assemblies="$(MSBuildProjectDirectory)\abtTest\bin\Debug\abtTest.dll" Xml="$(MSBuildProjectDirectory)\TestResults\results.xml" />
+  <xunit Assemblies="$(RootDirectory)\abtTest\bin\Debug\abtTest.dll" Xml="$(RootDirectory)\TestResults\results.xml" />
   
   </Target>
   
