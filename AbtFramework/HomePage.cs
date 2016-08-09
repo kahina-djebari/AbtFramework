@@ -4,7 +4,6 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
-using System.DirectoryServices.AccountManagement;
 using System.Linq;
 
 namespace AbtFramework
