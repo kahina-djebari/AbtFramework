@@ -6,7 +6,7 @@
 	
  
   <UsingTask
-    AssemblyFile="C:\Users\$(USERNAME)\AbtTestRunner\xunit.runner.msbuild.dll"
+    AssemblyFile="$(MSBuildProjectDirectory)\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild"
     TaskName="Xunit.Runner.MSBuild.xunit"/>
 	
 	
@@ -18,9 +18,9 @@
 	
    <Target Name="Test">
   <MakeDir
-			Directories="$(ResultsDirectory)" />
+			Directories="$(MSBuildProjectDirectory)\TestResults" />
 			
-  <xunit Assemblies="$(RootDirectory)\abtTest.dll" Xml="$(ResultsDirectory)\results.xml" />
+  <xunit Assemblies="$(MSBuildProjectDirectory)\abtTest\bin\Debug\abtTest.dll" Xml="$(MSBuildProjectDirectory)\TestResults\results.xml" />
   
   </Target>
   
