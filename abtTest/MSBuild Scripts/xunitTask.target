@@ -6,12 +6,12 @@
 	
  
   <UsingTask
-    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\AbtFramework\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
+    AssemblyFile="C:\Users\acunad\.jenkins\workspace\AbtAutomation\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
     TaskName="Xunit.Runner.MSBuild.xunit"/>
 	
 	
 	<PropertyGroup>
-	<RootDirectory>C:\Program Files (x86)\Jenkins\workspace\AbtFramework</RootDirectory>
+	<RootDirectory>C:\Users\acunad\.jenkins\workspace\AbtAutomation</RootDirectory>
 	<ResultsDirectory>$(RootDirectory)\TestResults</ResultsDirectory>
 	
 	</PropertyGroup>
