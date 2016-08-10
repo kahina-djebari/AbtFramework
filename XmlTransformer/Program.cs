@@ -15,7 +15,7 @@ namespace XmlTransformer
         static void Main(string[] args)
         {
             if(args.Length==3)
-            convertXmlFile(args[0], args.[1],args[2]);
+            convertXmlFile(args[0], args[1],args[2]);
 
             else
             {
