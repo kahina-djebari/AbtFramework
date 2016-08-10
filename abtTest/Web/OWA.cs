@@ -20,7 +20,7 @@ namespace abtTest.Web
         [Fact(DisplayName ="Should Open a received email")]
         public void Should_Open_Received_Email()
         {
-            Driver.RemoteInit();
+            Driver.init();
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Outlook);
             AbtDriver.OutlookWebPage.OpenEmail();
