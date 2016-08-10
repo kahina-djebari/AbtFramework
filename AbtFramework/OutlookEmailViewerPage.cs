@@ -19,22 +19,8 @@ namespace AbtFramework
             }
             else
             {
-                wait.Until((d) =>
-                {
-                    if (Driver.seleniumdriver.WindowHandles.Count >= 2)
-                    {
-                        Driver.Close();
-
-                    }
-                    else
-                    {
-                        return true;
-                    }
-
-                    return false;
-                });
-             
-                 return true;
+                
+                return true;
             }
         }
 

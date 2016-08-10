@@ -66,8 +66,8 @@ namespace AbtFramework
 
         public void OpenEmail()
         {
-            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("div")));
-
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            wait.Until(e => GetEmailList());
             var emails = GetEmailList();
             var randomMail = emails.First();
 
@@ -91,9 +91,10 @@ namespace AbtFramework
 
             });
 
-            Console.WriteLine("First Window handle: "+Driver.seleniumdriver.WindowHandles.First());
-
-            Console.WriteLine("Last Window handle: " + Driver.seleniumdriver.WindowHandles.Last());
+            Driver.Close();
+            
+            IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
+            alert.Accept();
 
             Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
       
