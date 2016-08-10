@@ -23,7 +23,7 @@ namespace abtTest.Web
         //}
         public AGI()
         {
-            Driver.init();
+           // Driver.init();
                    
         }              
        
@@ -89,9 +89,10 @@ namespace abtTest.Web
            Assert.True(AbtDriver.AbtTravelPage.isAt());
         }
 
-       //  [Fact(DisplayName ="Should Click on Oracle (AGI Website)")]
+        [Fact(DisplayName ="Should Click on Oracle (AGI Website)")]
         public void Should_click_Oracle()
         {
+            Driver.init();
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Oracle);
             Assert.True(AbtDriver.OraclePage.isAt()); //need to check if logged in currently i dont have access

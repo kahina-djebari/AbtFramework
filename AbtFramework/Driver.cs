@@ -47,7 +47,8 @@ namespace AbtFramework
 
         public static void RemoteInit()
         {
-            seleniumdriver = new RemoteWebDriver(new Uri("http://172.18.58.21:4444/wd/hub"),
+            DesiredCapabilities capabilities = DesiredCapabilities.InternetExplorer();
+                seleniumdriver = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"),
                 DesiredCapabilities.InternetExplorer());
 
 

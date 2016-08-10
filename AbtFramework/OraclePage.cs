@@ -9,8 +9,8 @@ namespace AbtFramework
 {
     public class OraclePage : PageModel
     {
-        [FindsBy(How=How.TagName,Using ="h1")]
-        private IList<IWebElement> infoText;
+        [FindsBy(How=How.Id,Using ="PageLayoutRN")]
+        private IWebElement headerInfo;
 
         public void goTo()
         {
@@ -24,13 +24,19 @@ namespace AbtFramework
         public bool isAt()
         {
             Console.WriteLine("Oracle Web Page Loaded in: " + LoadTime);
-            IWebElement header = infoText.SingleOrDefault(e => e.Text.Equals("More Information Requested"));
+            IWebElement header = getHeader();
+                
             if (header!=null){
 
                 return true;
             }
 
             return false;
+        }
+
+        private IWebElement getHeader()
+        {
+           return  headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals("Oracle Applications Home Page"));
         }
     }
 }
