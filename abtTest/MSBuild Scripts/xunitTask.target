@@ -1,29 +1,29 @@
- <Project
-    DefaultTargets="Test"
-    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project
+   DefaultTargets="Test"
+   xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	
-	
- 
+
+
+
   <UsingTask
-    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\AbtAutomation\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
+    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\Sharepoint Word Co-Authoring\AbtFramework\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
     TaskName="Xunit.Runner.MSBuild.xunit"/>
-	
-	
-	<PropertyGroup>
-	<RootDirectory>C:\Program Files (x86)\Jenkins\workspace\AbtAutomation</RootDirectory>
-	<ResultsDirectory>$(RootDirectory)\TestResults</ResultsDirectory>
-	
-	</PropertyGroup>
-	
-   <Target Name="Test">
-  <MakeDir
-			Directories="$(RootDirectory)\TestResults" />
-			
-  <xunit Assemblies="$(RootDirectory)\abtTest\bin\Debug\abtTest.dll" Xml="$(RootDirectory)\TestResults\results.xml" />
-  
+
+
+  <PropertyGroup>
+    <RootDirectory>C:\Program Files (x86)\Jenkins\workspace\Sharepoint Word Co-Authoring</RootDirectory>
+    <ResultsDirectory>$(RootDirectory)\TestResults</ResultsDirectory>
+
+  </PropertyGroup>
+
+  <Target Name="Test">
+    <MakeDir
+        Directories="$(RootDirectory)\TestResults" />
+
+    <xunit Assemblies="$(RootDirectory)\AbtFramework\abtTest\bin\Debug\abtTest.dll" Xml="$(RootDirectory)\TestResults\results.xml" />
+
   </Target>
-  
-  
-  
-  </Project>
+
+
+
+</Project>
