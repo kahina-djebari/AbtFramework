@@ -41,6 +41,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
               <xsl:value-of select="format-number(sum(//assembly/@time), '0.000')"/>s
             </b>
           </div>
+          
           <table class="table table-striped" border="1" >
             <tr bgcolor="#ccccff">
               <th style="text-align:left">Test</th>
@@ -72,7 +73,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="@name"/>
                   </td>
                   <td>
-                    <td><xsl:value-of select="failure/message"/></td>
+                    <td><xsl:value-of select="failure/stack-trace"/></td>
                   </td>
                   <td>
                     <xsl:value-of select="@result"/>
