@@ -32,7 +32,7 @@ namespace AbtFramework
             switch (link)
             {
                 case projectslinks.MS2013upgrade:
-
+                    wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
                     wait.Until(e=>ms2013link.Displayed);
                     ms2013link.Click();
                     break;
