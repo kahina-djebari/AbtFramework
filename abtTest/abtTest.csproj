@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
@@ -57,6 +60,10 @@
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\xunit.runner.console.2.1.0\tools\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.extensions, Version=1.9.2.1705, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensions.1.9.2\lib\net20\xunit.extensions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="xunit.runner.msbuild">
       <HintPath>..\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll</HintPath>
@@ -78,10 +85,12 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Web\AGI.cs" />
     <Compile Include="Web\OWA.cs" />
     <Compile Include="Web\SSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Desktop Apps\DesktopApps.cs" />
+    <Compile Include="Web\ServiceNow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -90,6 +99,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="MSBuild Scripts\xunitTask.target" />
+    <None Include="UserRolesData.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AbtFramework\AbtFramework.csproj">

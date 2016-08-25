@@ -70,7 +70,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="@name"/>
                   </td>
                   <td>
-                    <xsl:value-of select="output"/>
+                    <td><xsl:value-of select="failure/message"/></td>
                   </td>
                   <td>
                     <xsl:value-of select="@result"/>

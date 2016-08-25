@@ -17,7 +17,7 @@ namespace abtTest.Web
             Driver.Close();
         }
 
-        [Fact(DisplayName ="Should Open a received email")]
+      //  [Fact(DisplayName ="Should Open a received email")]
         public void Should_Open_Received_Email()
         {
             Driver.RemoteInit();

@@ -60,6 +60,7 @@ namespace AbtFramework
 
             var LastEmail = GetEmailList().First();
 
+            Console.WriteLine(LastEmail.GetAttribute("aria-label").Split(',')[2]);
             return LastEmail.GetAttribute("aria-label").Split(',')[2].Contains(subjectText);
 
         }
@@ -138,6 +139,11 @@ namespace AbtFramework
            // Console.WriteLine("amount of div elements with aria-label:"+elements.Count());
           //  return elements.Single(e => e.GetAttribute("aria-label").Equals("Message body"));
           return divs.Where(e => e.Text.Equals("Add a message or drag a file here")).First();
+        }
+
+        public void Go()
+        {
+            Driver.seleniumdriver.Navigate().GoToUrl("https://outlook.office.com/owa/?realm=abtassoc.com");
         }
 
         private IWebElement getEmailBtn()

@@ -10,8 +10,9 @@ namespace AbtFramework
         public Actions action;
         public static long timer1;
         public static long timer2;
-        public string LoadTime { get { return ((timer2 - timer1)/1000).ToString()+"s"; } }
-
+        public string LoadTime { get { return ((timer2 - timer1)).ToString()+"ms"; } }
+        public PopupWindowFinder finder;
+        public string popupWindowHandle;
         public void StartTimer()
         {
           timer1=  DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;

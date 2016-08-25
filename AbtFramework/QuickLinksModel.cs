@@ -4,6 +4,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Linq;
 
 namespace AbtFramework
 {
@@ -16,15 +17,70 @@ namespace AbtFramework
         [FindsBy(How=How.Id,Using ="quicklinks")]
         private IWebElement quicklinksBar;
 
-        public void OracleLink()
+        [FindsBy(How=How.LinkText,Using ="Staff Directory")]
+        private IWebElement staffDirectoryLink;
+
+        [FindsBy(How=How.LinkText,Using ="Forms Library")]
+        private IWebElement formsLinks;
+
+        [FindsBy(How=How.LinkText,Using ="Customize")]
+        private IWebElement customizeLink;
+
+        public void GoTo(quickLinks links)
         {
-            Actions action = new Actions(Driver.seleniumdriver);
-            action.MoveToElement(quicklinksBar).Perform();
-            wait.Timeout = TimeSpan.FromSeconds(30);
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-            wait.Until(DriverExtentions.WaitforQuicklinks);
-            
-              oracleLink.Click();
+            switch (links)
+            {
+                case quickLinks.Oracle:
+                    ClickLink(oracleLink,a=>Driver.seleniumdriver.WindowHandles.Count<2);
+                    Driver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    break;
+
+                case quickLinks.Staff_Directory:
+                    ClickLink(staffDirectoryLink,a=>!Driver.seleniumdriver.Title.Equals("Search People"));
+                    break;
+
+                case quickLinks.FormsLibrary:
+                    ClickLink(formsLinks,a=>!Driver.seleniumdriver.Title.Equals("AbtForms - All Documents"));
+                    break;
+
+                case quickLinks.Customize:
+                    ClickLink(customizeLink, a => Driver.seleniumdriver.WindowHandles.Count < 2);
+                    Driver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    break;
+            }
         }
+
+        private void ClickLink(IWebElement element, Func<IWebDriver, bool> func)
+        {
+            wait.Timeout = TimeSpan.FromSeconds(30);
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+
+
+            wait.Until((e) =>
+            {
+                if (func(Driver.seleniumdriver))
+                {
+                    action.MoveToElement(quicklinksBar).Perform();
+                    if (element.Displayed && element.Enabled)
+                    {
+                        element.Click();
+                    }
+                }
+
+                else
+                {
+                    return true;
+                }
+
+                return false;
+
+            });
+        }
+
+       
+
+       
     }
 }

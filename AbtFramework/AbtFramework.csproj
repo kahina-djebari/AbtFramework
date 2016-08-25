@@ -61,33 +61,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutAbtPage.cs" />
     <Compile Include="AbtDriver.cs" />
     <Compile Include="AbtKnowledgePage.cs" />
     <Compile Include="AbtTravelPage.cs" />
     <Compile Include="AtlasPage.cs" />
+    <Compile Include="CustomizeLinksPage.cs" />
+    <Compile Include="DocumentNavigation.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="AbtPages.cs" />
+    <Compile Include="FormsLibraryPage.cs" />
+    <Compile Include="homelinks.cs" />
     <Compile Include="HomePage.cs" />
+    <Compile Include="HRServiceRequestpage.cs" />
     <Compile Include="IsmsPage.cs" />
+    <Compile Include="ITServiceRequestpage.cs" />
+    <Compile Include="LeftNavigation.cs" />
     <Compile Include="LoginPage.cs" />
+    <Compile Include="MS2013UpgradePage.cs" />
+    <Compile Include="NewIncidentPage.cs" />
+    <Compile Include="NewsPage.cs" />
+    <Compile Include="OfficeRequestFormPage.cs" />
+    <Compile Include="OfficeServiceRequestpage.cs" />
     <Compile Include="OraclePage.cs" />
     <Compile Include="OutlookEmailViewerPage.cs" />
     <Compile Include="OutlookWebPage.cs" />
     <Compile Include="PageGenerator.cs" />
     <Compile Include="PageModel.cs" />
+    <Compile Include="ProjectsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quickLinks.cs" />
     <Compile Include="QuickLinksModel.cs" />
     <Compile Include="RepCapPlannerPage.cs" />
     <Compile Include="ReputationalCapDBPage.cs" />
+    <Compile Include="ServiceHubHomepage.cs" />
+    <Compile Include="ServiceNowHomepage.cs" />
+    <Compile Include="Utils Classes\HRIssueCategory.cs" />
+    <Compile Include="Utils Classes\ITServiceRequest.cs" />
+    <Compile Include="Utils Classes\MS2013documents.cs" />
+    <Compile Include="Utils Classes\MS2013Links.cs" />
+    <Compile Include="Utils Classes\projectslinks.cs" />
+    <Compile Include="Utils Classes\ServiceHubRequest.cs" />
+    <Compile Include="Utils Classes\ServicenowLinks.cs" />
     <Compile Include="SSO Classes\OfficeUtils.cs" />
     <Compile Include="SSO Classes\SkypeConsole.cs" />
     <Compile Include="SSOCrendentials.cs" />
+    <Compile Include="StaffDirectoryPage.cs" />
+    <Compile Include="TodayILearnedPage.cs" />
     <Compile Include="ToolsAndResourcesPage.cs" />
     <Compile Include="ToolsDropdown.cs" />
     <Compile Include="TopNavigation.cs" />
+    <Compile Include="Utils Classes\Browser.cs" />
     <Compile Include="Utils Classes\DriverExtentions.cs" />
     <Compile Include="Utils Classes\WebElementExtensions.cs" />
     <Compile Include="WebExPage.cs" />
+    <Compile Include="WordDocumentPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -3,6 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
 
 namespace AbtFramework
 {
@@ -10,8 +11,21 @@ namespace AbtFramework
     {
         [FindsBy(How=How.LinkText,Using ="Tools & Resources")]
         private IWebElement ToolsAndResources;
-        
-       
+
+        [FindsBy(How = How.LinkText, Using = "Home")]
+        private IWebElement HomeLink;
+
+        [FindsBy(How = How.LinkText, Using = "News")]
+        private IWebElement NewsLink;
+
+        [FindsBy(How = How.LinkText, Using = "Projects")]
+        private IWebElement ProjectsLink;
+
+        [FindsBy(How = How.LinkText, Using = "Proposals")]
+        private IWebElement ProposalsLink;
+
+        private List<IWebElement> LinkList;
+
         private ToolsDropdown _toolsDropdown;
 
         public ToolsDropdown ToolsDropdown { get {
@@ -20,6 +34,8 @@ namespace AbtFramework
                 _toolsDropdown.action = new Actions(Driver.seleniumdriver);
                 return _toolsDropdown;
             } }
+
+       
 
         public void ToolsLink()
         {
@@ -30,10 +46,65 @@ namespace AbtFramework
 
         public void HoverOverTools()
         {
-            Actions action = new Actions(Driver.seleniumdriver);
-            action.MoveToElement(ToolsAndResources).Perform();
+           action.MoveToElement(ToolsAndResources).Perform();
         }
 
-     
+        public bool isActive()
+        {
+
+            LinkList = new List<IWebElement>();
+            LinkList.Add(HomeLink);
+            LinkList.Add(NewsLink);
+            LinkList.Add(ProjectsLink);
+            LinkList.Add(ProposalsLink);
+            LinkList.Add(ToolsAndResources);
+            bool areActive = true;
+
+            foreach(var el in LinkList)
+            {
+                if (!el.Displayed)
+                {
+                    Console.WriteLine("Link \"" + el.Text + "\" is not displayed or not working ");
+                    Console.WriteLine("</br>");
+                    areActive = false;
+
+                }
+                else
+                {
+                    Console.WriteLine("Link \"" + el.Text + "\" is Displaying correctly");
+                    Console.WriteLine("</br>");
+                }
+            }
+
+            return areActive;
+        }
+
+       
+
+        public void Goto(homelinks link)
+        {
+
+            switch (link)
+            {
+                case homelinks.Projects:
+                    wait.Timeout = TimeSpan.FromSeconds(40);
+                    wait.Until(e =>
+                    {
+                        if (Driver.seleniumdriver.Title !="Projects")
+                        {
+                            ProjectsLink.Click();
+                        }
+
+                        else
+                        {
+                     
+                            return true;
+                        }
+                        return false;
+                    });
+                
+                    break;
+            }
+        }
     }
 }

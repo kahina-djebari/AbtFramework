@@ -12,26 +12,24 @@ namespace AbtFramework
         [FindsBy(How=How.Id,Using ="PageLayoutRN")]
         private IWebElement headerInfo;
 
-        public void goTo()
-        {
-            AbtDriver.TopNavigation.ToolsDropdown.OracleLink();
-            wait.PollingInterval = TimeSpan.FromSeconds(1);
-            wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            Driver.seleniumdriver.Close();
-            Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
-        }
 
         public bool isAt()
         {
             Console.WriteLine("Oracle Web Page Loaded in: " + LoadTime);
             IWebElement header = getHeader();
                 
-            if (header!=null){
+            if (GetCurrentUser()!="Sofiane"){
 
                 return true;
             }
 
             return false;
+        }
+
+        private string GetCurrentUser()
+        {
+
+            return headerInfo.FindElements(By.TagName("span")).Single(e=>e.Text.Equals("OUMSSALEMS")).Text;
         }
 
         private IWebElement getHeader()
