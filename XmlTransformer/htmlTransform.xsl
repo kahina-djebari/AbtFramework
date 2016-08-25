@@ -88,29 +88,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       </body>
     </html>
   </xsl:template>
-  <xsl:template match="failures">
-    <h4>
-      <xsl:value-of select="../@name"/>
-    </h4>
-    <xsl:for-each select="failure">
-      <div>
-        <xsl:attribute name="class">
-          <xsl:if test="(position() mod 2 = 0)">alt</xsl:if>row
-        </xsl:attribute>
-        <span class="failure">&#x2718;</span>
-        <br clear="all"/>
-        <xsl:if test="child::node()/message">
-          <pre>
-            <xsl:value-of select="child::node()/message"/>
-          </pre>
-        </xsl:if>
-        <xsl:if test="stack-trace">
-          <pre>
-            <xsl:value-of select="stack-trace"/>
-          </pre>
-        </xsl:if>
-      </div>
-    </xsl:for-each>
-  </xsl:template>
+
 </xsl:stylesheet>
 

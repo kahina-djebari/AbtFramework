@@ -160,7 +160,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "A - Should Open Word Document Online for Reading")]
         public void A_Should_Open_Word_Document_For_Reading()
         {
-            Driver.RemoteInitFrometasPC(Browser.IE);
+            Driver.RemoteInitDavidsPc(Browser.IE);
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.Goto(homelinks.Projects);
             AbtDriver.ProjectsPage.Goto(projectslinks.MS2013upgrade);
