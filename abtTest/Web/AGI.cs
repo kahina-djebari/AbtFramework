@@ -157,7 +157,7 @@ namespace abtTest.Web
 
     
 
-        [Fact(DisplayName = "A - Should Open Word Document Online for Reading")]
+        [Fact(DisplayName = "Should Open Word Document Online for Reading")]
         [Trait("Priority","1")]
         public void A_Should_Open_Word_Document_For_Reading()
         {
@@ -172,7 +172,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "B - Should Edit Word Document Online")]
+        [Fact(DisplayName = "Should Edit Word Document Online")]
         [Trait("Priority","2")]
         public void B_Should_Edit_Word_Document()
         {
