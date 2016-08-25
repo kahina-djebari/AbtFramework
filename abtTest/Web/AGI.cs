@@ -184,7 +184,7 @@ namespace abtTest.Web
             AbtDriver.MS2013UpgradePage.DocumentNavigation.Goto(MS2013Links.QA_AuthoringIssueReplication);
             AbtDriver.MS2013UpgradePage.DocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4);
             AbtDriver.WordDocumentPage.Edit();
-            Driver.Close();
+            Driver.Quit();
 
         }
 
