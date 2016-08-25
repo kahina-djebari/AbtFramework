@@ -59,6 +59,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                   <td>
                     <xsl:value-of select="output"/>
                   </td>
+                  <td>No Errors</td>
                   <td>
                     <xsl:value-of select="@result"/>
                   </td>
