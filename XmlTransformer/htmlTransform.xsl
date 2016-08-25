@@ -4,6 +4,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 
   <xsl:template match="/">
+    <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">]]></xsl:text>
+
     <html>
       <body>
         <div class="container">
