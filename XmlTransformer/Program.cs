@@ -17,7 +17,7 @@ namespace XmlTransformer
             string problematicPath = args[1].Substring(1);
             
             if(args.Length==3)
-            convertXmlFile(args[0], args[1],args[2]);
+            convertXmlFile(args[0], problematicPath,args[2]);
 
             else
             {
