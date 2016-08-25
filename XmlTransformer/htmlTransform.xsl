@@ -57,7 +57,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="@name"/>
                   </td>
                   <td>
-                    <xsl:value-of select="output"/>
+                    <xsl:value-of select="output" disable-output-escaping="yes"/>
                   </td>
                   <td>No Errors</td>
                   <td>
