@@ -64,7 +64,7 @@ namespace AbtFramework
                        Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
                        Driver.seleniumdriver.Manage().Window.Maximize();
                     Console.WriteLine("Word Document opened Succesfully");
-                    Console.Write("</br>");
+                    Console.Write("\n");
                     break;
                 default:
                     break;
