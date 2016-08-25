@@ -46,6 +46,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <tr bgcolor="#ccccff">
               <th style="text-align:left">Test</th>
               <th style="text-align:left">Test Output</th>
+              <th style="text-align:left">Errors</th>
               <th style="text-align:left">Results</th>
               <th style="text-align:left">time(s)</th>
             </tr>
@@ -73,7 +74,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="@name"/>
                   </td>
                   <td>
-                    <td><xsl:value-of select="failure/stack-trace"/></td>
+                    <td><xsl:value-of select="failure/message"/></td>
                   </td>
                   <td>
                     <xsl:value-of select="@result"/>
