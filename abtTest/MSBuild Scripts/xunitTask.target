@@ -6,7 +6,7 @@
 
 
   <UsingTask
-    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\Sharepoint Word Co-Authoring\packages\xunit.MSBuild.2.0.0.0\tools\xunit.runner.msbuild.dll"
+    AssemblyFile="C:\Program Files (x86)\Jenkins\workspace\Sharepoint Word Co-Authoring\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
     TaskName="Xunit.Runner.MSBuild.xunit"/>
 
 
@@ -20,7 +20,7 @@
     <MakeDir
         Directories="$(RootDirectory)\TestResults" />
 
-    <xunit Assemblies="$(RootDirectory)\abtTest\bin\Debug\abtTest.dll" IncludeTraits="Priority=1;Priority=2" Xml="$(RootDirectory)\TestResults\results.xml" />
+    <xunit Assemblies="$(RootDirectory)\abtTest\bin\Debug\abtTest.dll" Xml="$(RootDirectory)\TestResults\results.xml" />
 
   </Target>
 

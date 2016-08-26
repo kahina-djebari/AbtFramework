@@ -85,7 +85,7 @@ namespace AbtFramework
             Driver.seleniumdriver.Navigate().GoToUrl("http://agi.abtassociates.com");
             wait.Until(e => Driver.seleniumdriver.Title.Equals("Home"));
             StopTimer();
-            Console.WriteLine("Agi Home Page Loaded in: " + LoadTime);
+           Console.WriteLine("Agi Home Page Loaded in: " + LoadTime);
             Console.WriteLine("</br>");
 
         }

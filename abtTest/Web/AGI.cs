@@ -3,15 +3,21 @@ using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit.Abstractions;
 
 namespace abtTest.Web
 {
    
     public class AGI
     {
-     
 
-       // [Fact]
+        private readonly ITestOutputHelper output;
+
+        public AGI(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+        // [Fact]
         public void Should_Click_Login_WebEx()
         {
             AbtDriver.WebExPage.goTo();
@@ -160,7 +166,6 @@ namespace abtTest.Web
     
 
         [Fact(DisplayName = "Should Open Word Document Online for Reading")]
-        [Trait("Priority","1")]
         public void A_Should_Open_Word_Document_For_Reading()
         {
             Driver.RemoteInitDavidsPc(Browser.IE);
@@ -175,7 +180,6 @@ namespace abtTest.Web
         }
 
         [Fact(DisplayName = "Should Edit Word Document Online")]
-        [Trait("Priority","2")]
         public void B_Should_Edit_Word_Document()
         {
             Driver.RemoteInitDavidsPc(Browser.IE);
