@@ -11,12 +11,7 @@ namespace abtTest.Web
     public class AGI
     {
 
-        private readonly ITestOutputHelper output;
-
-        public AGI(ITestOutputHelper output)
-        {
-            this.output = output;
-        }
+        
         // [Fact]
         public void Should_Click_Login_WebEx()
         {
