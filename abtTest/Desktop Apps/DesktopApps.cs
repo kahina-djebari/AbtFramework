@@ -2,7 +2,6 @@
 using AbtFramework;
 using AbtFramework.SSO_Classes;
 using Xunit;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace abtTest.SSO_Test_Cases
 {
@@ -15,7 +14,7 @@ namespace abtTest.SSO_Test_Cases
         {
             SkypeConsole.init();
            
-            Assert.IsTrue(SkypeConsole.isLoggedIn());
+            Assert.True(SkypeConsole.isLoggedIn());
         }
 
        //[Fact]
@@ -23,7 +22,7 @@ namespace abtTest.SSO_Test_Cases
         {
          
             OfficeUtils.OutlookWrapper.init();
-            Assert.IsTrue(OfficeUtils.OutlookWrapper.isLoggedIn());
+            Assert.True(OfficeUtils.OutlookWrapper.isLoggedIn());
         }
     }
 }

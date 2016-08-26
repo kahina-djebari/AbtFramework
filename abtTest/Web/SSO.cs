@@ -2,7 +2,6 @@
 using AbtFramework;
 using Xunit;
 using Xunit.Abstractions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace abtTest.Web
 {
@@ -24,7 +23,7 @@ namespace abtTest.Web
             
             AbtDriver.HomePage.Go();
              
-            Assert.IsTrue(AbtDriver.HomePage.isUserLoggedin());
+            Assert.True(AbtDriver.HomePage.isUserLoggedin());
           
         }
 
@@ -36,7 +35,7 @@ namespace abtTest.Web
         {
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtKnowledge);
-            Assert.IsTrue(AbtDriver.AbtKnowledgePage.isAt(),"Couldn't get to Abt Knowledge Page");
+            Assert.True(AbtDriver.AbtKnowledgePage.isAt(),"Couldn't get to Abt Knowledge Page");
           
         }
 
@@ -45,7 +44,7 @@ namespace abtTest.Web
         {
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtTravel);
-           Assert.IsTrue(AbtDriver.AbtTravelPage.isAt());
+           Assert.True(AbtDriver.AbtTravelPage.isAt());
         }
 
       //  [Fact(DisplayName ="Should Access Oracle (SSO Check)")]
@@ -54,7 +53,7 @@ namespace abtTest.Web
             Driver.init();
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Oracle);
-            Assert.IsTrue(AbtDriver.OraclePage.isAt()); //need to check if logged in currently i dont have access
+            Assert.True(AbtDriver.OraclePage.isAt()); //need to check if logged in currently i dont have access
 
         }
 
@@ -65,7 +64,7 @@ namespace abtTest.Web
         {
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Outlook);
-           Assert.IsTrue(AbtDriver.OutlookWebPage.isAt());
+           Assert.True(AbtDriver.OutlookWebPage.isAt());
 
         }
 

@@ -2,8 +2,8 @@
 using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xunit.Abstractions;
+
 
 namespace abtTest.Web
 {
@@ -31,7 +31,7 @@ namespace abtTest.Web
             Driver.init(Browser.IE);
             AbtDriver.HomePage.Go();
             AbtDriver.HomePage.QuickLinks.GoTo(quickLinks.Oracle);
-            Assert.IsTrue(AbtDriver.OraclePage.isAt());
+            Assert.True(AbtDriver.OraclePage.isAt());
 
         }
 
@@ -41,7 +41,7 @@ namespace abtTest.Web
             Driver.init(Browser.IE);
             AbtDriver.HomePage.Go();
             AbtDriver.HomePage.QuickLinks.GoTo(quickLinks.Staff_Directory);
-            Assert.IsTrue(AbtDriver.StaffDirectoryPage.isAt());
+            Assert.True(AbtDriver.StaffDirectoryPage.isAt());
 
         }
 
@@ -51,7 +51,7 @@ namespace abtTest.Web
             Driver.init();
             AbtDriver.HomePage.Go();
             AbtDriver.HomePage.QuickLinks.GoTo(quickLinks.FormsLibrary);
-            Assert.IsTrue(AbtDriver.FormsLibraryPage.isAt());
+            Assert.True(AbtDriver.FormsLibraryPage.isAt());
 
         }
 
@@ -61,7 +61,7 @@ namespace abtTest.Web
             Driver.init();
             AbtDriver.HomePage.Go();
             AbtDriver.HomePage.QuickLinks.GoTo(quickLinks.Customize);
-            Assert.IsTrue(AbtDriver.CustomizeLinksPage.isAt());
+            Assert.True(AbtDriver.CustomizeLinksPage.isAt());
         }
         //[Fact(DisplayName ="Should Click on Tools (AGI Website)")]
         public void Should_click_ToolsAndResources()
@@ -88,7 +88,7 @@ namespace abtTest.Web
         {
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.ISMS);
-            Assert.IsTrue(AbtDriver.IsmsPage.isAt());
+            Assert.True(AbtDriver.IsmsPage.isAt());
        
 
         }
