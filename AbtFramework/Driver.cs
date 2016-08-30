@@ -173,10 +173,12 @@ namespace AbtFramework
 
         public static void RemoteInit()
         {
+            IEoptions = new InternetExplorerOptions();
+            IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings=true;
 
-                seleniumdriver = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"),
+            seleniumdriver = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"),IEoptions.ToCapabilities()
 
-                DesiredCapabilities.InternetExplorer());
+               );
             seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
            
 

@@ -9,19 +9,19 @@ namespace abtTest.Web
     public class OktaApps
     {
 
-        [Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
+       // [Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() //no access
         {
-            Driver.RemoteInitDavidsPc(Browser.IE) ;
+            Driver.RemoteInit() ;
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
-          //  Assert.True(AbtDriver.WeSpireHomePage.isAt());
+            Assert.True(AbtDriver.WeSpireHomePage.isAt());
 
         }
 
-        [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
+       // [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
         public void Should_Go_to_WeSpire_Production_HomePage() //Done
         {
-            Driver.RemoteInitDavidsPc(Browser.IE);
+            Driver.RemoteInit();
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.ProductionEnvironment);
           //  Assert.True(AbtDriver.WeSpireHomePage.isAt());
         }

@@ -174,7 +174,7 @@ namespace abtTest.Web
 
         }
 
-     //   [Fact(DisplayName = "Should Edit Word Document Online")]
+        [Fact(DisplayName = "Should Edit Word Document Online")]
         public void B_Should_Edit_Word_Document()
         {
             Driver.RemoteInitDavidsPc(Browser.IE);
