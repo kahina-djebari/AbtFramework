@@ -40,6 +40,13 @@ namespace AbtFramework
         private static ProjectsPage _projectspage;
         private static WordDocumentPage _worddocumentpage;
         private static MS2013UpgradePage _ms2013upgradepage;
+        private static WeSpireHomePage _wespirehomepage;
+        private static WeSpireLoginPage _wespireloginpage;
+        private static EbscoHomePage _ebscohomepage;
+        private static SuccessFactorHomePage _successfactorhomepage;
+        private static ConcurHomePage _concurhomepage;
+        private static WeSpireUpdateInterestsPage _wespireupdateinterestspage;
+        private static WeSpireInvitePage _wespireinvitepage;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
@@ -306,6 +313,80 @@ namespace AbtFramework
                 _ms2013upgradepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
                 _ms2013upgradepage.action = new Actions(Driver.seleniumdriver);
                 return _ms2013upgradepage;
+            }
+        }
+
+        public static WeSpireHomePage WeSpireHomePage
+        {
+            get
+            {
+                _wespirehomepage = PageGenerator.GetPage<WeSpireHomePage>();
+                _wespirehomepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _wespirehomepage.action = new Actions(Driver.seleniumdriver);
+                return _wespirehomepage;
+            }
+        }
+
+        public static WeSpireLoginPage WeSpireLoginPage
+        {
+            get
+            {
+                _wespireloginpage = PageGenerator.GetPage<WeSpireLoginPage>();
+                _wespireloginpage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _wespireloginpage.action = new Actions(Driver.seleniumdriver);
+                return _wespireloginpage;
+            }
+        }
+
+        public static EbscoHomePage EbscoHomePage {
+            get
+            {
+                _ebscohomepage = PageGenerator.GetPage<EbscoHomePage>();
+                _ebscohomepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _ebscohomepage.action = new Actions(Driver.seleniumdriver);
+                return _ebscohomepage;
+            }
+        }
+
+        public static SuccessFactorHomePage SuccessFactorHomePage {
+            get
+            {
+                _successfactorhomepage = PageGenerator.GetPage<SuccessFactorHomePage>();
+                _successfactorhomepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _successfactorhomepage.action = new Actions(Driver.seleniumdriver);
+                return _successfactorhomepage;
+            }
+        }
+
+        public static ConcurHomePage ConcurHomePage
+        {
+            get
+            {
+                _concurhomepage = PageGenerator.GetPage<ConcurHomePage>();
+                _concurhomepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _concurhomepage.action = new Actions(Driver.seleniumdriver);
+                return _concurhomepage;
+            }
+        }
+
+        public static WeSpireUpdateInterestsPage WeSpireUpdateInterestsPage
+        {
+            get
+            {
+                _wespireupdateinterestspage = PageGenerator.GetPage<WeSpireUpdateInterestsPage>();
+                _wespireupdateinterestspage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _wespireupdateinterestspage.action = new Actions(Driver.seleniumdriver);
+                return _wespireupdateinterestspage;
+            }
+        }
+
+        public static WeSpireInvitePage WeSpireInvitePage {
+            get
+            {
+                _wespireinvitepage = PageGenerator.GetPage<WeSpireInvitePage>();
+                _wespireinvitepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _wespireinvitepage.action = new Actions(Driver.seleniumdriver);
+                return _wespireinvitepage;
             }
         }
     }

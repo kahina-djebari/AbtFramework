@@ -66,10 +66,12 @@
     <Compile Include="AbtKnowledgePage.cs" />
     <Compile Include="AbtTravelPage.cs" />
     <Compile Include="AtlasPage.cs" />
+    <Compile Include="ConcurHomePage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
     <Compile Include="DocumentNavigation.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="AbtPages.cs" />
+    <Compile Include="EbscoHomePage.cs" />
     <Compile Include="FormsLibraryPage.cs" />
     <Compile Include="homelinks.cs" />
     <Compile Include="HomePage.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="ReputationalCapDBPage.cs" />
     <Compile Include="ServiceHubHomepage.cs" />
     <Compile Include="ServiceNowHomepage.cs" />
+    <Compile Include="SuccessFactorHomePage.cs" />
     <Compile Include="Utils Classes\HRIssueCategory.cs" />
     <Compile Include="Utils Classes\ITServiceRequest.cs" />
     <Compile Include="Utils Classes\MS2013documents.cs" />
@@ -114,7 +117,14 @@
     <Compile Include="Utils Classes\Browser.cs" />
     <Compile Include="Utils Classes\DriverExtentions.cs" />
     <Compile Include="Utils Classes\WebElementExtensions.cs" />
+    <Compile Include="Utils Classes\WebEnvironment.cs" />
+    <Compile Include="Utils Classes\WeSpireEnvironment.cs" />
+    <Compile Include="Utils Classes\weSpireHomeLinks.cs" />
     <Compile Include="WebExPage.cs" />
+    <Compile Include="WeSpireHomePage.cs" />
+    <Compile Include="WeSpireInvitePage.cs" />
+    <Compile Include="WeSpireLoginPage.cs" />
+    <Compile Include="WeSpireUpdateInterestsPage.cs" />
     <Compile Include="WordDocumentPage.cs" />
   </ItemGroup>
   <ItemGroup>

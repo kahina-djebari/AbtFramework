@@ -21,14 +21,15 @@ namespace TestRunner
             string MsbuildDir = Environment.GetEnvironmentVariable("windir")+"\\"+"Microsoft.NET\\Framework64\\v4.0.30319";
                  
             List<String> commands = new List<string>();
-            Console.WriteLine("Current Directory: " + Currentdir);
-            Console.WriteLine("MSBuild Directory:" + MsbuildDir);
-            commands.Add("cd "+MsbuildDir);
-            commands.Add("call msbuild.exe " + Currentdir+ "\\CopyFiles.target");
-            commands.Add("call msbuild.exe C:\\Users\\"+Environment.UserName+"\\AbtTestRunner\\xunitTask.target");
-            commands.Add("call C:\\Users\\"+ Environment.UserName +"\\AbtTestRunner\\XmlTransformer.exe");
+            //   Console.WriteLine("Current Directory: " + Currentdir);
+            //  Console.WriteLine("MSBuild Directory:" + MsbuildDir);
+            // commands.Add("cd "+MsbuildDir);
+            //  commands.Add("call msbuild.exe " + Currentdir+ "\\CopyFiles.target");
+            //  commands.Add("call msbuild.exe C:\\Users\\"+Environment.UserName+"\\AbtTestRunner\\xunitTask.target");
+            //  commands.Add("call C:\\Users\\"+ Environment.UserName +"\\AbtTestRunner\\XmlTransformer.exe");
+            commands.Add("java -version");
             executeCommand(commands);
-            Console.Read();             
+           Console.Read();             
                                                           
 
 
@@ -61,6 +62,9 @@ namespace TestRunner
 
 
             }
+     
+
+
 
            
         }

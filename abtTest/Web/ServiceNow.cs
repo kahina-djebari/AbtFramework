@@ -14,7 +14,7 @@ namespace abtTest.Web
         public void Should_Impersonate_User()
         {
             Driver.init(Browser.IE);
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("Zanira Khan");
             //Assert.True(AbtDriver.ServiceNowHomepage.isRoleCorrect("Zanira Khan"));
                                   
@@ -32,12 +32,12 @@ namespace abtTest.Web
         public void Should_Place_HR_Request()
         {
             Driver.init(Browser.IE);
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtDriver.ServiceNowHomepage.Goto(ServicenowLinks.ServiceHub);
             AbtDriver.ServiceHubHomepage.NewRequest(ServiceHubRequest.HRServiceRequest);
             AbtDriver.HRServiceRequestpage.NewHRServiceRequest(HRIssueCategory.Benefits,"Subject Goes Here","Description Goes Here");
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("Michael Stinson");
             AbtDriver.ServiceNowHomepage.CloseHRServiceRequest();
         }
@@ -46,7 +46,7 @@ namespace abtTest.Web
         public void Should_Close_HR_Request()
         {
             Driver.init();
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("Michael Stinson");
             AbtDriver.ServiceNowHomepage.CloseHRServiceRequest();
 
@@ -56,12 +56,12 @@ namespace abtTest.Web
         public void Should_Place_IT_Request()
         {
             Driver.init(Browser.IE);    //IE247
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtDriver.ServiceNowHomepage.Goto(ServicenowLinks.ServiceHub);
             AbtDriver.ServiceHubHomepage.NewRequest(ServiceHubRequest.ITServiceRequest);
             AbtDriver.ITServiceRequestpage.NewIncident("Medium", "short description goes here", "Description your issue goes Here");
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
             AbtDriver.ServiceNowHomepage.CloseITServiceRequest();
 
@@ -71,7 +71,7 @@ namespace abtTest.Web
         public void Should_Close_IT_Request()
         {
             Driver.init(Browser.Chrome);
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
             AbtDriver.ServiceNowHomepage.CloseITServiceRequest();
 
@@ -83,12 +83,12 @@ namespace abtTest.Web
         public void Should_Place_Office_Request()
         {
             Driver.init(Browser.IE);
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtDriver.ServiceNowHomepage.Goto(ServicenowLinks.ServiceHub);
             AbtDriver.ServiceHubHomepage.NewRequest(ServiceHubRequest.OfficeServiceRequest);
             AbtDriver.OfficeServiceRequestpage.NewOfficeRequest("Bethesda, MD", "Office Space", "Shelvin", "Short description-3", "Notes/Comments");
-            AbtDriver.ServiceNowHomepage.Go();
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
             AbtDriver.ServiceNowHomepage.CloseOfficeRequest("Short description-3","work notes","Steve Hunt");
             //Assert.True(AbtDriver.ServiceNowHomepage.OfficeRequestIsClosed("Short description-3"));

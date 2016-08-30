@@ -35,7 +35,7 @@ namespace abtTest.Web
         {
             AbtDriver.HomePage.Go();
             AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtKnowledge);
-            Assert.True(AbtDriver.AbtKnowledgePage.isAt(),"Couldn't get to Abt Knowledge Page");
+            Assert.True(AbtDriver.AbtKnowledgePage.IsUserLoggedIn(),"User is not Logged In");
           
         }
 

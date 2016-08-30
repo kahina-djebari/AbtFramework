@@ -13,6 +13,8 @@ namespace AbtFramework
 
         [FindsBy(How = How.TagName, Using = "h2")]
         private IList<IWebElement> headers;
+        [FindsBy(How=How.CssSelector,Using = "body > div > div.navbar.navbar-fixed-top > div > div > div > ul > li:nth-child(4)")]
+        private IWebElement UserFirstName; // this element shows at the top right corner on the page as Hello, FirstName, will have to get a substring
 
         public void goTo()
         {
@@ -27,7 +29,31 @@ namespace AbtFramework
         {
             if(headers.ElementWithTextExists("New to the Rep Cap Planner?"))
             {
+                StopTimer();
+                Console.WriteLine("Reputational Capital Planner Prod Page Toook: " + LoadTime + " to load");
                 return true;
+            }
+
+            return false;
+        }
+
+        public void Go()
+        {
+            StartTimer();
+            Driver.seleniumdriver.Navigate().GoToUrl("http://repcapplanner.corp.abtassoc.com/");
+
+            
+        }
+
+        public bool isUserLoggedIn()
+        {
+            if (isAt())
+            {
+
+                if(UserFirstName.Text.Substring(7).Equals(SSOCrendentials.CurrentUser.Split(' ')[0])){
+                 
+                    return true;
+                }
             }
 
             return false;

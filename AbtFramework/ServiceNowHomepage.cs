@@ -122,6 +122,30 @@ namespace AbtFramework
             
         }
 
+        public void Go(WebEnvironment link)
+        {
+            switch (link)
+            {
+                case WebEnvironment.TestEnvironment:
+                             GotoUrl("https://abtassoctest.service-now.com/navpage.do");
+                    break;
+                case WebEnvironment.ProductionEnvironment:
+                             GotoUrl("https://abtassociates.service-now.com/navpage.do");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void GotoUrl(string url)
+        {
+            StartTimer();
+            Driver.seleniumdriver.Navigate().GoToUrl(url);
+
+        }
+
+  
+
         public void CloseITServiceRequest()
         {
             Driver.seleniumdriver.SwitchTo().Frame(Driver.seleniumdriver.FindElement(By.Id("gsft_nav"))); 
@@ -263,10 +287,7 @@ namespace AbtFramework
 
         }
 
-        public void Go()
-        {
-            Driver.seleniumdriver.Navigate().GoToUrl("https://abtassoctest.service-now.com/navpage.do");
-        }
+      
 
         public bool isCurrentUser(string user)
         {

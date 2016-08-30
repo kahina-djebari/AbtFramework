@@ -10,6 +10,8 @@ namespace AbtFramework
     {
         [FindsBy(How=How.Id,Using = "dnn_dnnUSERNAMEFORMAT_lblUserName")]
          private IWebElement username;
+        [FindsBy(How=How.LinkText,Using = "AbtTravel Home")]
+        private IWebElement AbtTravelLink;
 
         public void goTo()
         {
@@ -22,14 +24,40 @@ namespace AbtFramework
 
         public bool isAt()
         {
-
-            if (username.Text.Equals(SSOCrendentials.CurrentUser))
+            if (AbtTravelLink.Displayed)
             {
-                Console.WriteLine("Abt Travel Page loaded in : " + LoadTime);
+                StopTimer();
+                Console.WriteLine("BCD Travel Portal Took : " + LoadTime + " to load");
                 return true;
+
             }
 
             return false;
+        }
+
+        public bool isUserLoggedIn()
+        {
+            if (isAt())
+            {
+
+
+                if (username.Text.Equals(SSOCrendentials.CurrentUser))
+                {
+                    
+                    return true;
+                }
+                                
+            }
+
+            return false;
+        }
+
+
+        public void Go()
+        {
+            StartTimer();
+            Driver.seleniumdriver.Navigate().GoToUrl("https://daxii.abtassoc.com/openam/idpssoinit?metaAlias=/abt/AbtSaml2Idp&spEntityID=bcdsso.bcdtravel.com&binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&RelayState=https://bcdpingidgateway.bcdtravel.com/SP/TripSourcePortal/tripsourceportal.aspx&iPSP");
+            
         }
     }
 }

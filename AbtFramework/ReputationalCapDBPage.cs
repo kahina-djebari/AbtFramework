@@ -34,10 +34,33 @@ namespace AbtFramework
         {
             if(headers.ElementWithTextExists("Reputational Capital Database (RepCapDB)"))
             {
+                StopTimer();
+                Console.WriteLine("Reputational Capital Database Prod Page Toook: " + LoadTime + " to load");
                 return true;
             }
 
             return false;
+        }
+
+        public bool isUserLoggedIn()
+        {
+            if (isAt())
+            {
+                if (AbtDriver.AbtKnowledgePage.GetUsername().Equals(SSOCrendentials.CurrentUser))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void Go()
+        {
+            StartTimer();
+            Driver.seleniumdriver.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/tldb/main.cfm");
+           // AbtDriver.AbtKnowledgePage.ContinueToAbtKnowledge();
+            
         }
     }
 }
