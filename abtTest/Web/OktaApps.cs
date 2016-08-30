@@ -14,7 +14,7 @@ namespace abtTest.Web
         {
             Driver.RemoteInitDavidsPc(Browser.IE) ;
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
-            Assert.True(AbtDriver.WeSpireHomePage.isAt());
+          //  Assert.True(AbtDriver.WeSpireHomePage.isAt());
 
         }
 
@@ -23,7 +23,7 @@ namespace abtTest.Web
         {
             Driver.RemoteInitDavidsPc(Browser.IE);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.ProductionEnvironment);
-            Assert.True(AbtDriver.WeSpireHomePage.isAt());
+          //  Assert.True(AbtDriver.WeSpireHomePage.isAt());
         }
 
       //  [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
