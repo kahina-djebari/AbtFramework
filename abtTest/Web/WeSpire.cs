@@ -9,7 +9,7 @@ namespace abtTest.Web
     public class WeSpire
     {
       
-        [Fact(DisplayName ="Should Update a Random Interest")]
+        //[Fact(DisplayName ="Should Update a Random Interest")]
         public void Should_Update_your_Interests()
         {
             Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
@@ -20,7 +20,7 @@ namespace abtTest.Web
                
         }
 
-      [Fact(DisplayName ="Should like a Random Post")]
+     // [Fact(DisplayName ="Should like a Random Post")]
         public void Should_Like_a_Random_Comment()
         {
             Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
@@ -29,7 +29,7 @@ namespace abtTest.Web
             //Assert that the post changed to not liked or liked?
         }
 
-        [Fact(DisplayName ="Should Invite a user to WeSpire")]
+       // [Fact(DisplayName ="Should Invite a user to WeSpire")]
         public void Should_Invite_User_To_WeSpire()
         {
             Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
@@ -39,7 +39,7 @@ namespace abtTest.Web
            
         }
 
-        [Fact(DisplayName ="Should Post on a Random Comment")]
+       // [Fact(DisplayName ="Should Post on a Random Comment")]
         public void Should_Post_On_A_Random_Comment()
         {
             Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
