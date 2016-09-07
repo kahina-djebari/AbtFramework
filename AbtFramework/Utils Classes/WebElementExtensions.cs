@@ -1,6 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AbtFramework
 {
@@ -18,6 +19,13 @@ namespace AbtFramework
            
             return false;
             
+        }
+
+        public static IWebElement SelectOption(this IWebElement element,string option)
+        {
+           
+            return element.FindElements(By.TagName("option")).Single(e => e.Text.Equals(option));
+
         }
 
         public static IWebElement ValueForAttributeExists(this IList<IWebElement> Elements,string attribute,string value)

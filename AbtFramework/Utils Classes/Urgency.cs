@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.Utils_Classes
 {
-    public enum MS2013documents
+    public enum Urgency
     {
-        QA_ReadinessChecklist_v4,
-        SampleAVMetrics,
-        ITMetrics
+        Low,
+        Medium,
+        High
     }
 }

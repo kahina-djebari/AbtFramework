@@ -3,7 +3,11 @@ using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
 using Xunit.Abstractions;
-
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using AutoItX3Lib;
+using System.Threading;
+using AbtFramework.AutoIT;
 
 namespace abtTest.Web
 {
@@ -20,10 +24,10 @@ namespace abtTest.Web
 
         }
 
-      //  [Fact(DisplayName ="Should Go to QuickLinks -> Oracle")]
+     //  [Fact(DisplayName ="Should Go to QuickLinks -> Oracle")]
         public void Should_Go_to_Quicklinks_Oracle()
         {
-            Driver.init(Browser.IE);
+            Driver.RemoteInit();
             AbtDriver.HomePage.Go();
             AbtDriver.HomePage.QuickLinks.GoTo(quickLinks.Oracle);
             Assert.True(AbtDriver.OraclePage.isAt());
@@ -169,23 +173,27 @@ namespace abtTest.Web
             AbtDriver.ProjectsPage.Goto(projectslinks.MS2013upgrade);
             AbtDriver.MS2013UpgradePage.DocumentNavigation.Goto(MS2013Links.Testing);
             AbtDriver.MS2013UpgradePage.DocumentNavigation.Goto(MS2013Links.QA_AuthoringIssueReplication);
-            AbtDriver.MS2013UpgradePage.DocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4);
+            AbtDriver.MS2013UpgradePage.DocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4,documentType.Word);
       
 
         }
 
-        [Fact(DisplayName = "Should Edit Word Document Online")]
-        public void B_Should_Edit_Word_Document()
+      
+
+     //   [Fact(DisplayName ="Desktop Apps")]
+        public void Should_Handle_Desktop_Apps()
         {
-            Driver.RemoteInitDavidsPc(Browser.IE);
-            AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.Goto(homelinks.Projects);
-            AbtDriver.ProjectsPage.Goto(projectslinks.MS2013upgrade);
-            AbtDriver.MS2013UpgradePage.DocumentNavigation.Goto(MS2013Links.Testing);
-            AbtDriver.MS2013UpgradePage.DocumentNavigation.Goto(MS2013Links.QA_AuthoringIssueReplication);
-            AbtDriver.MS2013UpgradePage.DocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4);
-            AbtDriver.WordDocumentPage.Edit();
-            Driver.Quit();
+            AutoItX3 autoit = new AutoItX3();
+            autoit.WinActivate("Sample AV metrics - Microsoft PowerPoint");
+            autoit.WinWaitActive("Sample AV metrics - Microsoft PowerPoint", "", 20);
+            Thread.Sleep(2000);
+            autoit.ControlClick("Sample AV metrics - Microsoft PowerPoint", "", "NetUIHWND1", "LEFT", 1, 177, 76);
+            Thread.Sleep(500);
+            autoit.ControlSend("Sample AV metrics - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            Thread.Sleep(2000);
+            autoit.ControlClick("Sample AV metrics - Microsoft PowerPoint", "", "NetUIHWND1", "LEFT", 1, 35, 19); //Click on Save Btn
+            Thread.Sleep(5000);
+            autoit.WinClose("Sample AV metrics - Microsoft PowerPoint", "");                                                                                             //  autoit.ControlSend("Sample AV metrics - Microsoft PowerPoint","",)
 
         }
 

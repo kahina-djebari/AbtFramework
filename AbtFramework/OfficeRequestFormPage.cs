@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace AbtFramework
 {
@@ -18,14 +20,22 @@ namespace AbtFramework
         private IWebElement Comments;
         [FindsBy(How = How.Id, Using = "submit_button")]
         private IWebElement Submitbtn;
+        [FindsBy(How=How.Id,Using = "lookup.IO:fd26201e0a0a0bd800a12b67ffe70eab")]
+        private  IWebElement LookUpLocation;
+        [FindsBy(How=How.Id,Using = "b5e4c4622b6d6200fccbf62219da154d_text")]
+        private IWebElement SearchBar;
 
         internal bool NewOfficeRequest(string location, string category, string subcategory, string shortdescription, string comments)
         {
+           
+            Location.Click();
             Location.SendKeys(location);
-            Category.SendKeys(category);
-            Subcategory.SendKeys(subcategory);
-            Shortdescription.SendKeys(shortdescription);
-            Comments.SendKeys(comments);
+           Category.SelectOption(category).Click();
+ 
+           Thread.Sleep(1000);
+           Subcategory.SelectOption(subcategory).Click();
+           Shortdescription.SendKeys(shortdescription);
+           Comments.SendKeys(comments);
             Submitbtn.Click();
             return true;
 

@@ -80,8 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Desktop Apps\DesktopApps.cs" />
     <Compile Include="Web\ServiceNow.cs" />
-    <Compile Include="Web\Ebsco.cs" />
     <Compile Include="Web\OktaApps.cs" />
+    <Compile Include="Web\ServiceHub.cs" />
+    <Compile Include="Web\Co_Authoring.cs" />
     <Compile Include="Web\WeSpire.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,7 +102,17 @@
       <Name>AbtFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AutoItX3Lib">
+      <Guid>{F8937E53-D444-4E71-9275-35B64210CC3B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

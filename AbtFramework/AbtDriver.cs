@@ -47,6 +47,12 @@ namespace AbtFramework
         private static ConcurHomePage _concurhomepage;
         private static WeSpireUpdateInterestsPage _wespireupdateinterestspage;
         private static WeSpireInvitePage _wespireinvitepage;
+        private static ITServiceRequestFormPage _itserviceaskquestionpage;
+        private static MyOpenIncidentsPage _myopenincidentspage;
+        private static IncidentTablePageObject _incidenttablepageobject;
+        private static ITKnowledgeBasePage _knowledgebase;
+        private static PowerPointOnlinePage _powerpointonlinepage;
+        private static ExcelOnlinePage _excelonlinepage;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
@@ -387,6 +393,71 @@ namespace AbtFramework
                 _wespireinvitepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
                 _wespireinvitepage.action = new Actions(Driver.seleniumdriver);
                 return _wespireinvitepage;
+            }
+        }
+
+        public static ITServiceRequestFormPage ITServiceRequestFormPage
+        {
+            get
+            {
+                _itserviceaskquestionpage = PageGenerator.GetPage<ITServiceRequestFormPage>();
+                _itserviceaskquestionpage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _itserviceaskquestionpage.action = new Actions(Driver.seleniumdriver);
+                return _itserviceaskquestionpage;
+            }
+        }
+
+        public static MyOpenIncidentsPage MyOpenIncidentsPage
+        {
+            get
+            {
+                _myopenincidentspage = PageGenerator.GetPage<MyOpenIncidentsPage>();
+                _myopenincidentspage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _myopenincidentspage.action = new Actions(Driver.seleniumdriver);
+                return _myopenincidentspage;
+            }
+        }
+
+        public static IncidentTablePageObject IncidentTablePageObject {
+            get
+            {
+                _incidenttablepageobject = PageGenerator.GetPage<IncidentTablePageObject>();
+                _incidenttablepageobject.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _incidenttablepageobject.action = new Actions(Driver.seleniumdriver);
+                return _incidenttablepageobject;
+            }
+        }
+
+        public static ITKnowledgeBasePage ITKnowledgeBasePage
+        {
+            get
+            {
+                _knowledgebase = PageGenerator.GetPage<ITKnowledgeBasePage>();
+                _knowledgebase.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _knowledgebase.action = new Actions(Driver.seleniumdriver);
+                return _knowledgebase;
+            }
+        }
+
+        public static PowerPointOnlinePage PowerPointOnlinePage
+        {
+            get
+            {
+                _powerpointonlinepage= PageGenerator.GetPage<PowerPointOnlinePage>();
+                _powerpointonlinepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _powerpointonlinepage.action = new Actions(Driver.seleniumdriver);
+                return _powerpointonlinepage;
+            }
+        }
+
+        public static ExcelOnlinePage ExcelOnlinePage
+        {
+            get
+            {
+                _excelonlinepage = PageGenerator.GetPage<ExcelOnlinePage>();
+                _excelonlinepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _excelonlinepage.action = new Actions(Driver.seleniumdriver);
+                return _excelonlinepage;
             }
         }
     }

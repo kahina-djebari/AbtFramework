@@ -11,7 +11,7 @@ namespace AbtFramework
 {
    public class Driver
     {
-        internal static IWebDriver seleniumdriver;
+        public static IWebDriver seleniumdriver;
         static InternetExplorerOptions IEoptions;
 
         public static void init(Browser browser)
@@ -22,7 +22,7 @@ namespace AbtFramework
                     
                      IEoptions = new InternetExplorerOptions();
                      IEoptions.EnablePersistentHover = true;
-
+                   
                     seleniumdriver = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
                     seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     seleniumdriver.Manage().Window.Maximize();
@@ -175,10 +175,12 @@ namespace AbtFramework
         {
             IEoptions = new InternetExplorerOptions();
             IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings=true;
+            IEoptions.EnableNativeEvents = false;
 
             seleniumdriver = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"),IEoptions.ToCapabilities()
 
                );
+            seleniumdriver.Manage().Window.Maximize();
             seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
            
 

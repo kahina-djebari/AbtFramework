@@ -16,7 +16,7 @@ namespace AbtFramework
         private IWebElement Submitbtn;
 
 
-        internal void NewIncident(string impact,string shortdescription ,string description)
+        public void NewIncident(string impact,string shortdescription ,string description)
         {
            
             ImpactDropdown.SendKeys(impact);

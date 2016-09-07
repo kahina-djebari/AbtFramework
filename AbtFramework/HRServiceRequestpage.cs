@@ -2,6 +2,7 @@
 using AbtFramework.Utils_Classes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Linq;
 
 namespace AbtFramework
 {
@@ -20,10 +21,18 @@ namespace AbtFramework
         public void NewHRServiceRequest(HRIssueCategory issue, string subject, string description)
         {
             Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
-            IssueDropdown.SendKeys(issue.ToString());
+            SelectIssue(issue.ToString());
             SubjectInput.SendKeys(subject);
             DescriptionInput.SendKeys(description);
             SubmitBtn.Click();
+        }
+
+        private void SelectIssue(string issue)
+        {
+            Driver.seleniumdriver.FindElement(By.Id("IO:6ad1d64304db110008e999502af6ecf5"))
+                                 .FindElements(By.TagName("option"))
+                                 .Single(e => e.Text.Equals(issue))
+                                 .Click();
         }
     }
 }

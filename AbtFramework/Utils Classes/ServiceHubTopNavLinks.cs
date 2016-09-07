@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.Utils_Classes
 {
-    public enum MS2013documents
+    public enum ServiceHubTopNavLinks
     {
-        QA_ReadinessChecklist_v4,
-        SampleAVMetrics,
-        ITMetrics
+        Home,
+        HR_Service_Center,
+        IT_Service_Center,
+        Office_Services
     }
 }

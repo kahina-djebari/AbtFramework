@@ -70,11 +70,12 @@ namespace abtTest.Web
         }
 
 
-    //    [Fact(DisplayName = "Should Go to Concur Production Home Page")]
+      // [Fact(DisplayName = "Should Go to Concur Production Home Page")]
         public void Should_Go_to_Concur_Production_HomePage()
         {
-            Driver.init(Browser.IE);
-            AbtDriver.ConcurHomePage.Go();
+            Driver.RemoteInit();
+            //AbtDriver.ConcurHomePage.Go();
+            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtTravel);
             Assert.True(AbtDriver.ConcurHomePage.isUserLoggedIn());
 
         }
