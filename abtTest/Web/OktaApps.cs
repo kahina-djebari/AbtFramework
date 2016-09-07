@@ -9,7 +9,7 @@ namespace abtTest.Web
     public class OktaApps
     {
 
-        [Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
+        //[Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() //no access
         {
             Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents) ;
@@ -18,7 +18,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
+      //  [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
         public void Should_Go_to_WeSpire_Production_HomePage() //Done
         {
             Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
@@ -70,8 +70,8 @@ namespace abtTest.Web
         }
 
 
-      [Fact(DisplayName = "Should Go to Concur Production Home Page using Okta")]
-        public void Should_Go_to_Concur_Production_HomePage()
+      //[Fact(DisplayName = "Should Go to Concur UAT Home Page using Okta")]
+        public void Should_Go_to_Concur_Testing_HomePage()
         {
             Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.ConcurHomePage.Go();
@@ -79,7 +79,17 @@ namespace abtTest.Web
 
         }
 
-     //   [Fact(DisplayName = "Should Go to Right Find UAT Home Page")]
+       // [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
+        public void Should_Go_to_Concur_Production_HomePage()
+        {
+            Driver.RemoteInit();
+            AbtDriver.HomePage.Go();
+            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtTravel);
+            Assert.True(AbtDriver.ConcurHomePage.isUserLoggedIn());
+
+        }
+
+        //   [Fact(DisplayName = "Should Go to Right Find UAT Home Page")]
         public void Should_Go_to_RightFind_Test_HomePage()
         {
             Driver.init(Browser.IE);

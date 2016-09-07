@@ -35,6 +35,10 @@ namespace AbtFramework
 
         [FindsBy(How = How.LinkText, Using = "Reputational Capital Database")]
         private IWebElement repCapDBPageLink;
+        [FindsBy(How = How.CssSelector, Using = "#dnn_dnnWTRADMENU_RadMenu1 > ul > li:nth-child(2) > a")]
+        private IWebElement abttraveldropdown;
+        [FindsBy(How = How.CssSelector, Using = "#dnn_dnnWTRADMENU_RadMenu1 > ul > li:nth-child(2) > div > ul > li:nth-child(2) > a")]
+        private IWebElement concurLink;
 
         public void goTo(AbtPages Page)
         {
@@ -125,29 +129,8 @@ namespace AbtFramework
 
                 case AbtPages.AbtTravel:
                     AbtDriver.TopNavigation.HoverOverTools();
-                    wait.Until(d => this.AbtTravel.Displayed);
-                    AbtTravel.Click();
-                    wait.Until((d) =>
-
-                    {
-                        if (Driver.seleniumdriver.WindowHandles.Count < 2)
-                        {
-                            AbtDriver.TopNavigation.HoverOverTools();
-                            AbtTravel.Click();
-                        }
-                        else
-                        {
-                            StartTimer();
-                            return true;
-                        }
-
-
-                        return false;
-
-                    });
-                    Driver.seleniumdriver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
-                    StopTimer();
+                    action.MoveToElement(abttraveldropdown).Perform();
+                    concurLink.Click();
                     break;
 
                 case AbtPages.ISMS:
