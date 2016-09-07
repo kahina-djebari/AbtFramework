@@ -182,9 +182,7 @@ namespace AbtFramework
                );
             seleniumdriver.Manage().Window.Maximize();
             seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-           
-
-
+        
         }
 
         public static void Quit()

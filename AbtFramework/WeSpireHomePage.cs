@@ -118,6 +118,7 @@ namespace AbtFramework
                 case WebEnvironment.TestEnvironment:
                     GoToUrl("https://abtxchange.staging.wespire.com/");
                     Console.WriteLine("WeSpire Home Page Took: " + LoadTime + " to load Using Okta");
+                    Console.WriteLine("</br>");
                     break;
                 case WebEnvironment.ProductionEnvironment:
                     GoToUrl("https://abtassociates.wespire.com/");

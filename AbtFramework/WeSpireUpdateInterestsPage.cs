@@ -27,9 +27,7 @@ namespace AbtFramework
             Random random = new Random();
             int interestIndex = random.Next(CategoryList.Count-1);
            
-            Console.WriteLine("Category Text Count:"+CategoryList.Count);
-            Console.WriteLine(CategoryList[interestIndex].Text);
-            Console.WriteLine(CategoryList[interestIndex].GetAttribute("picked"));
+        
             //need to implement check if item is selected to display wether the interest was added or removed.
             CategoryList[interestIndex].Click();
          
