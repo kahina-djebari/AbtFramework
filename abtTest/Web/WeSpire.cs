@@ -12,7 +12,7 @@ namespace abtTest.Web
         [Fact(DisplayName ="Should Update a Random Interest")]
         public void Should_Update_your_Interests()
         {
-            Driver.init(Browser.IE);
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.WeSpireHomePage.GoTo(weSpireHomeLinks.UpdateInterest);
             AbtDriver.WeSpireUpdateInterestsPage.RandomInterestUpdate();
@@ -23,7 +23,7 @@ namespace abtTest.Web
       [Fact(DisplayName ="Should like a Random Post")]
         public void Should_Like_a_Random_Comment()
         {
-            Driver.init(Browser.IE);
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.WeSpireHomePage.LikeOrUnlikeRandomComment();
             //Assert that the post changed to not liked or liked?
@@ -32,7 +32,7 @@ namespace abtTest.Web
         [Fact(DisplayName ="Should Invite a user to WeSpire")]
         public void Should_Invite_User_To_WeSpire()
         {
-            Driver.init(Browser.IE);
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.WeSpireHomePage.GoTo(weSpireHomeLinks.Invite);
             Assert.True(AbtDriver.WeSpireInvitePage.InviteUser("jennifer_herreratavares@abtassoc.com"));
@@ -42,7 +42,7 @@ namespace abtTest.Web
         [Fact(DisplayName ="Should Post on a Random Comment")]
         public void Should_Post_On_A_Random_Comment()
         {
-            Driver.init(Browser.IE);
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             AbtDriver.WeSpireHomePage.PostOnRandomComment();
         }
