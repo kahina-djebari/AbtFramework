@@ -15,21 +15,22 @@ namespace AbtFramework
 
         public bool isAt()
         {
-            Console.WriteLine("Oracle Web Page Loaded in: " + LoadTime);
+            
             IWebElement header = getHeader();
-                
-            if (GetCurrentUser()!="Sofiane"){
+            if (header != null)
+            {
+                StopTimer();
+                Console.WriteLine("Oracle Web Page Loaded in: " + LoadTime);
 
-                return true;
             }
-
+            Console.WriteLine(GetCurrentUser());
             return false;
         }
 
         private string GetCurrentUser()
         {
 
-            return headerInfo.FindElements(By.TagName("span")).Single(e=>e.Text.Equals("OUMSSALEMS")).Text;
+            return headerInfo.FindElement(By.TagName("div")).FindElements(By.TagName("table"))[0].FindElements(By.TagName("span"))[1].Text;
         }
 
         private IWebElement getHeader()

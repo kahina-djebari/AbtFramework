@@ -59,7 +59,15 @@ namespace AbtFramework
         {
             StartTimer();
             Driver.seleniumdriver.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/tldb/main.cfm");
-           // AbtDriver.AbtKnowledgePage.ContinueToAbtKnowledge();
+            try
+            {
+                AbtDriver.AbtKnowledgePage.ContinueToAbtKnowledge();
+            }
+            catch(Exception e)
+            {
+                
+            }
+           
             
         }
     }

@@ -11,7 +11,7 @@ namespace AbtFramework
     public class QuickLinksModel : PageModel
     {
 
-        [FindsBy(How=How.LinkText,Using ="Oracle")]
+        [FindsBy(How=How.CssSelector,Using = "#ulQLnk > li:nth-child(1) > a")]
         private IWebElement oracleLink;
 
         [FindsBy(How=How.Id,Using ="quicklinks")]
@@ -31,9 +31,14 @@ namespace AbtFramework
             switch (links)
             {
                 case quickLinks.Oracle:
-                    ClickLink(oracleLink,a=>Driver.seleniumdriver.WindowHandles.Count<2);
+                    action.MoveToElement(quicklinksBar).Perform();
+                    finder = new PopupWindowFinder(Driver.seleniumdriver);
+                    popupWindowHandle = finder.Click(oracleLink);
+                    StartTimer();
                     Driver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                   
+                    Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
+                    Driver.seleniumdriver.Manage().Window.Maximize();
                     break;
 
                 case quickLinks.Staff_Directory:

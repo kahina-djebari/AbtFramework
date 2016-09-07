@@ -27,12 +27,14 @@ namespace AbtFramework
         private string pattern = @".*id=(\d*).*type=(.*)";  //pattern that maches an id and a type contained in the links for a post in WeSpire
         private string Postinfo;
         private Regex regex;
-       
+        private static string SSOProvider;
 
         public bool isAt()
         {
-            if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
+            //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
+            if (userFirstName.Text.Equals("David"))
             {
+                Console.WriteLine("User: David succesfully logged in with "+SSOProvider);
                 return true;
             }
 
@@ -119,10 +121,13 @@ namespace AbtFramework
                     GoToUrl("https://abtxchange.staging.wespire.com/");
                     Console.WriteLine("WeSpire Home Page Took: " + LoadTime + " to load Using Okta");
                     Console.WriteLine("</br>");
+                    SSOProvider = "Okta";
                     break;
                 case WebEnvironment.ProductionEnvironment:
                     GoToUrl("https://abtassociates.wespire.com/");
                     Console.WriteLine("WeSpire Production Home Page Took: " + LoadTime + " to load Using Simieo");
+                    Console.WriteLine("</br>");
+                    SSOProvider = "Simieo";
                     break;
                 default:
                     break;

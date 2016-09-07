@@ -111,6 +111,7 @@ namespace AbtFramework
         private IWebElement impactSelected;
         [FindsBy(How=How.Id,Using = "u_hr_service_tracking.u_status")]
         private IWebElement StatusDropdown;
+
         [FindsBy(How=How.Id,Using = "4161db8730a29a00615eb46830c88978")]
         private IWebElement facilityRequests;
         [FindsBy(How=How.Id,Using = "closeComplete")]
@@ -574,6 +575,16 @@ namespace AbtFramework
         public bool isCurrentUser(string user)
         {
             if (CurrentUser.Text.Equals(user))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool isUserLoggedIn()
+        {
+            if (CurrentUser.Text.Equals(SSOCrendentials.CurrentUser))
             {
                 return true;
             }

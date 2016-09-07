@@ -9,24 +9,24 @@ namespace abtTest.Web
     public class OktaApps
     {
 
-       // [Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
+        [Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() //no access
         {
-            Driver.RemoteInit() ;
+            Driver.init(Browser.IENoNativeEvents) ;
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.WeSpireHomePage.isAt());
 
         }
 
-       // [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
+        [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
         public void Should_Go_to_WeSpire_Production_HomePage() //Done
         {
-            Driver.RemoteInit();
+            Driver.init(Browser.IENoNativeEvents);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.ProductionEnvironment);
-          //  Assert.True(AbtDriver.WeSpireHomePage.isAt());
+            Assert.True(AbtDriver.WeSpireHomePage.isAt());
         }
 
-      //  [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
+        //[Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
         public void Should_Go_to_Ebsco_Test_HomePage()
         {
             Driver.init(Browser.IE);
@@ -36,7 +36,7 @@ namespace abtTest.Web
         }
 
 
-   //     [Fact(DisplayName = "Should Go to Success Factor UAT Home Page")]
+     //   [Fact(DisplayName = "Should Go to Success Factor UAT Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
         {
             Driver.init(Browser.IE);
@@ -44,7 +44,7 @@ namespace abtTest.Web
 
         }
 
-   //     [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
         public void Should_Go_to_SuccessFactor_Production_HomePage()
         {
             Driver.init(Browser.IE);
@@ -52,7 +52,7 @@ namespace abtTest.Web
         }
 
          //Wants to go Trough AGI???
-   //     [Fact(DisplayName = "Should Go to AbtKnowledge Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to AbtKnowledge Production Home Page")]
         public void Should_Go_to_AbtKnowledge_Production_HomePage()
         {
             Driver.init(Browser.IE);
@@ -61,7 +61,7 @@ namespace abtTest.Web
         }
 
 
-       // [Fact(DisplayName = "Should Go to BCD Travel Portal Production Home Page")]
+     //   [Fact(DisplayName = "Should Go to BCD Travel Portal Production Home Page")]
         public void Should_Go_to_BCD_Travel_Production_HomePage()
         {
             Driver.init(Browser.IE);
@@ -73,10 +73,9 @@ namespace abtTest.Web
       // [Fact(DisplayName = "Should Go to Concur Production Home Page")]
         public void Should_Go_to_Concur_Production_HomePage()
         {
-            Driver.RemoteInit();
-            //AbtDriver.ConcurHomePage.Go();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtTravel);
-            Assert.True(AbtDriver.ConcurHomePage.isUserLoggedIn());
+            Driver.init(Browser.IENoNativeEvents);
+            AbtDriver.ConcurHomePage.Go();
+             Assert.True(AbtDriver.ConcurHomePage.isUserLoggedIn());
 
         }
 
@@ -84,11 +83,11 @@ namespace abtTest.Web
         public void Should_Go_to_RightFind_Test_HomePage()
         {
             Driver.init(Browser.IE);
-        //   AbtDriver.RightFindHomePage.Go(WebEnvironment.TestEnvironment);
+         // AbtDriver.RightFindHomePage.Go(WebEnvironment.TestEnvironment);
 
         }
 
-   //     [Fact(DisplayName = "Should Go to Right Find Production Home Page")]
+     //   [Fact(DisplayName = "Should Go to Right Find Production Home Page")]
         public void Should_Go_to_RightFind_Production_HomePage()
         {
             Driver.init(Browser.IE);
@@ -98,11 +97,14 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Should Go to Oracle Production Home Page")]
         public void Should_Go_to_Oracle_Production_HomePage()
         {
-            Driver.init(Browser.IE);
-          //  AbtDriver.OraclePage.Go(WebEnvironment.ProductionEnvironment);
+            Driver.init(Browser.IENoNativeEvents);
+            AbtDriver.HomePage.Go();
+            AbtDriver.HomePage.QuickLinks.GoTo(quickLinks.Oracle);
+            Assert.True(AbtDriver.OraclePage.isAt());
+
         }
 
-     //   [Fact(DisplayName = "Should Go to Rep Cap Database Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to Rep Cap Database Production Home Page")]
         public void Should_Go_to_RepCapDatabase_Production_HomePage()
         {
             Driver.init(Browser.IE);
@@ -110,7 +112,7 @@ namespace abtTest.Web
             Assert.True(AbtDriver.ReputationalCapDBPage.isUserLoggedIn());
         }
 
-    //    [Fact(DisplayName = "Should Go to Rep Cap Planner Production Home Page")]
+     //   [Fact(DisplayName = "Should Go to Rep Cap Planner Production Home Page")]
         public void Should_Go_to_RepCapPlanner_Production_HomePage()
         {
             Driver.init(Browser.IE);
@@ -123,13 +125,15 @@ namespace abtTest.Web
         {
             Driver.init(Browser.IE);
             AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            Assert.True(AbtDriver.ServiceNowHomepage.isUserLoggedIn());
         }
 
-     //   [Fact(DisplayName = "Should Go to Service Now Production Home Page")]
+     //  [Fact(DisplayName = "Should Go to Service Now Production Home Page")]
         public void Should_Go_to_ServiceNow_Production_HomePage()
         {
             Driver.init(Browser.IE);
             AbtDriver.ServiceNowHomepage.Go(WebEnvironment.ProductionEnvironment);
+            Assert.True(AbtDriver.ServiceNowHomepage.isUserLoggedIn());
         }
 
      //   [Fact(DisplayName = "Should Go to WebEx UAT Home Page")]
@@ -141,7 +145,7 @@ namespace abtTest.Web
 
         }
 
-    //    [Fact(DisplayName = "Should Go to WebEx Production Home Page")]
+     //   [Fact(DisplayName = "Should Go to WebEx Production Home Page")]
         public void Should_Go_to_WebEx_Production_HomePage()
         {
             Driver.init(Browser.IE);
