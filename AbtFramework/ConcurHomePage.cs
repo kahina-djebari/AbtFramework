@@ -32,9 +32,10 @@ namespace AbtFramework
             if (isAt())
             {
                 userProfile.Click();
-             if (username.Text.Equals(SSOCrendentials.CurrentUser))
+                // if (username.Text.Equals(SSOCrendentials.CurrentUser))
+                if (username.Text.Equals("David Acuna"))
                 {
-                    
+                    Console.WriteLine("User: David succesfully logged in with Okta");
                     return true;
                 }
 
@@ -50,7 +51,8 @@ namespace AbtFramework
             if (Logo.Displayed)
             {
                 StopTimer();
-                Console.WriteLine("Concur Prod Home Page Took: " + LoadTime + " to load");
+                Console.WriteLine("Concur Prod Home Page Took: " + LoadTime + " to load with Okta");
+                Console.WriteLine("</br>");
                 return true;
             }
 

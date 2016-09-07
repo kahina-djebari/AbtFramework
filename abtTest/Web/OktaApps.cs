@@ -70,7 +70,7 @@ namespace abtTest.Web
         }
 
 
-      // [Fact(DisplayName = "Should Go to Concur Production Home Page")]
+      [Fact(DisplayName = "Should Go to Concur Production Home Page using Okta")]
         public void Should_Go_to_Concur_Production_HomePage()
         {
             Driver.init(Browser.IENoNativeEvents);
