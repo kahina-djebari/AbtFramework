@@ -159,6 +159,10 @@ namespace AbtFramework
         private IWebElement KB_ShortDescription;
         [FindsBy(How=How.Id,Using ="tinymce")]
         private IWebElement KBArticleBody;
+        private static string SSOProvider;
+        private static string portalEnvironment;
+        [FindsBy(How=How.Id,Using = "nav_header_text")]
+        private IWebElement header;
 
         public IWebElement SelfServiceContact { get { return contactType.FindElements(By.TagName("option"))
                                                                  .Single(e => e.Text.Equals("Self-service")); } }
@@ -411,9 +415,17 @@ namespace AbtFramework
             {
                 case WebEnvironment.TestEnvironment:
                              GotoUrl("https://abtassoctest.service-now.com/navpage.do");
+                    Console.WriteLine("Service Now (Test) Home Page Took: " + LoadTime + " to load Using Okta");
+                    Console.WriteLine("</br>");
+                    SSOProvider = "Okta";
+                    portalEnvironment = "Test";
                     break;
                 case WebEnvironment.ProductionEnvironment:
                              GotoUrl("https://abtassociates.service-now.com/navpage.do");
+                    Console.WriteLine("Service Now (Production) Home Page Took: " + LoadTime + " to load Using Simieo");
+                    Console.WriteLine("</br>");
+                    SSOProvider = "Simieo";
+                    portalEnvironment = "Production";
                     break;
                 default:
                     break;
@@ -424,6 +436,8 @@ namespace AbtFramework
         {
             StartTimer();
             Driver.seleniumdriver.Navigate().GoToUrl(url);
+            wait.Until(e => header.Displayed);
+            StopTimer();
 
         }
 
@@ -586,6 +600,9 @@ namespace AbtFramework
         {
             if (CurrentUser.Text.Equals(SSOCrendentials.CurrentUser))
             {
+               
+                Console.WriteLine("User: "+SSOCrendentials.CurrentUser+" succesfully logged in using "+SSOProvider);
+
                 return true;
             }
 

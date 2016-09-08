@@ -9,27 +9,27 @@ namespace abtTest.Web
     public class OktaApps
     {
 
-        //[Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
+        [Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() //no access
         {
-            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents) ;
+            Driver.RemoteInit() ;
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.WeSpireHomePage.isAt());
 
         }
 
-      //  [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
+        [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
         public void Should_Go_to_WeSpire_Production_HomePage() //Done
         {
-            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
+            Driver.RemoteInit();
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtDriver.WeSpireHomePage.isAt());
         }
 
-        //[Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
+       // [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
         public void Should_Go_to_Ebsco_Test_HomePage()
         {
-            Driver.init(Browser.IE);
+            Driver.init(Browser.IENoNativeEvents);
             AbtDriver.EbscoHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.EbscoHomePage.isAt());
 
@@ -73,13 +73,13 @@ namespace abtTest.Web
       [Fact(DisplayName = "Should Go to Concur UAT Home Page using Okta")]
         public void Should_Go_to_Concur_Testing_HomePage()
         {
-            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
+            Driver.RemoteInit();
             AbtDriver.ConcurHomePage.Go();
              Assert.True(AbtDriver.ConcurHomePage.isUserLoggedIn());
 
         }
 
-      //  [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
+        [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
         public void Should_Go_to_Concur_Production_HomePage()
         {
             Driver.RemoteInit();
@@ -134,10 +134,10 @@ namespace abtTest.Web
             Assert.True(AbtDriver.RepCapPlannerPage.isUserLoggedIn());
         }
 
-    //    [Fact(DisplayName = "Should Go to Service Now UAT Home Page")]
+      //  [Fact(DisplayName = "Should Go to Service Now UAT Home Page")]
         public void Should_Go_to_ServiceNow_UAT_HomePage()
         {
-            Driver.init(Browser.IE);
+            Driver.RemoteInit();
             AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.ServiceNowHomepage.isUserLoggedIn());
         }

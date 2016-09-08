@@ -126,9 +126,10 @@ namespace AbtFramework
                     break;
 
                 case AbtPages.AbtTravel:
-
+                    
                     finder = new PopupWindowFinder(Driver.seleniumdriver);
                     popupWindowHandle = finder.Click(AbtTravel);
+                    wait.Until(e => Driver.seleniumdriver.WindowHandles.Count >= 2);
                     Driver.Close();
                     string falsewindow = "";
                    // foreach(var handle in Driver.seleniumdriver.WindowHandles)

@@ -32,9 +32,9 @@ namespace AbtFramework
         public bool isAt()
         {
             //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
-            if (userFirstName.Text.Equals("David"))
+            if (userFirstName.Text.Equals("Sofiane"))
             {
-                Console.WriteLine("User: David succesfully logged in with "+SSOProvider);
+                Console.WriteLine("User: Sofiane succesfully logged in using "+SSOProvider);
                 return true;
             }
 
@@ -119,13 +119,13 @@ namespace AbtFramework
             {
                 case WebEnvironment.TestEnvironment:
                     GoToUrl("https://abtxchange.staging.wespire.com/");
-                    Console.WriteLine("WeSpire Home Page Took: " + LoadTime + " to load Using Okta");
+                    Console.WriteLine("WeSpire (Test) Home Page Took: " + LoadTime + " to load Using Okta");
                     Console.WriteLine("</br>");
                     SSOProvider = "Okta";
                     break;
                 case WebEnvironment.ProductionEnvironment:
                     GoToUrl("https://abtassociates.wespire.com/");
-                    Console.WriteLine("WeSpire Production Home Page Took: " + LoadTime + " to load Using Simieo");
+                    Console.WriteLine("WeSpire (Production) Home Page Took: " + LoadTime + " to load Using Simieo");
                     Console.WriteLine("</br>");
                     SSOProvider = "Simieo";
                     break;

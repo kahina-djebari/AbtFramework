@@ -36,7 +36,8 @@ namespace AbtFramework
         {
             wait.Until(e => EDSLink.Displayed);
             StopTimer();
-            Console.WriteLine("Ebsco UAT Home Page Took: " + LoadTime + " to load");
+            Console.WriteLine("Ebsco (Test) Home Page Took: " + LoadTime + " to load using Okta");
+            Console.WriteLine("</br>");
             return true;
         }
     }

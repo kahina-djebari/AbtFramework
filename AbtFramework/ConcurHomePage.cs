@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using AbtFramework.Utils_Classes;
 
 namespace AbtFramework
 {
@@ -15,14 +16,16 @@ namespace AbtFramework
         private IWebElement userProfile;
         [FindsBy(How=How.Id,Using = "popupdialogBtn_0")]
         private IWebElement warning;
+        private static string SSOProvider = "Simieo";
 
+       
         public void Go()
         {
             StartTimer();
             Driver.seleniumdriver.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
             wait.Until(e => warning.Displayed);
             warning.Click();
-          
+            SSOProvider = "Okta";
 
         }
 
@@ -32,10 +35,10 @@ namespace AbtFramework
             if (isAt())
             {
                 userProfile.Click();
-                Console.WriteLine(SSOCrendentials.CurrentUser);
-                if (username.Text.Equals("David Acuna"))
+
+                if (username.Text.Equals("Sofiane Oumsalem"))
                 {
-                    Console.WriteLine("User: David succesfully logged in with Okta");
+                    Console.WriteLine("User: Sofiane Oumsalem succesfully logged in with "+SSOProvider);
                     return true;
                 }
 
@@ -51,12 +54,14 @@ namespace AbtFramework
             if (Logo.Displayed)
             {
                 StopTimer();
-                Console.WriteLine("Concur Prod Home Page Took: " + LoadTime + " to load with Okta");
+                Console.WriteLine("Concur (Prod) Home Page Took: " + LoadTime + " to load using "+SSOProvider);
                 Console.WriteLine("</br>");
                 return true;
             }
 
             return false;
         }
+
+    
     }
 }
