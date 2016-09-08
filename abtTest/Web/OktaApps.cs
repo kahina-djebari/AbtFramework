@@ -12,7 +12,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Should Go to WeSpire Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() //no access
         {
-            Driver.RemoteInit() ;
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.WeSpireHomePage.isAt());
             Driver.Close();
@@ -22,7 +22,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Should Go to WeSpire Home Page using Simieo")]
         public void Should_Go_to_WeSpire_Production_HomePage() //Done
         {
-            Driver.RemoteInit();
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtDriver.WeSpireHomePage.isAt());
             Driver.Close();
@@ -72,7 +72,7 @@ namespace abtTest.Web
         }
 
 
-      [Fact(DisplayName = "Should Go to Concur UAT Home Page using Okta")]
+     // [Fact(DisplayName = "Should Go to Concur UAT Home Page using Okta")]
         public void Should_Go_to_Concur_Testing_HomePage()
         {
             Driver.RemoteInit();
@@ -82,7 +82,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
+      //  [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
         public void Should_Go_to_Concur_Production_HomePage()
         {
             Driver.RemoteInit();
