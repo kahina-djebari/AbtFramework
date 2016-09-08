@@ -57,17 +57,27 @@ namespace AbtFramework
                 else
                 {
                     action.MoveToElement(ToolsAndResources).Perform();
-                    ToolsDropdown.AbtTravel.Click();
+
+                    try
+                    {
+                        finder = new PopupWindowFinder(Driver.seleniumdriver);
+                        popupWindowHandle = finder.Click(ToolsDropdown.AbtTravel);
+
+                    }
+                    catch(Exception ex) { }
+
                     return false;
                 }
 
 
 
             });
+            Driver.Close();
+                  Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
+            Driver.seleniumdriver.Manage().Window.Maximize();
 
-            
-            
-            
+
+
         }
 
         public bool isActive()
