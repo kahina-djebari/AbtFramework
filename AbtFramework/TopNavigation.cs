@@ -46,7 +46,25 @@ namespace AbtFramework
 
         public void HoverOverTools()
         {
-            action.MoveToElement(ToolsAndResources).Perform();
+            wait.Until(e =>
+            {
+
+                if (Driver.seleniumdriver.WindowHandles.Count >= 2)
+                {
+                    return true;
+                }
+
+                else
+                {
+                    action.MoveToElement(ToolsAndResources).Perform();
+                    action.Click(ToolsDropdown.AbtTravel);
+                    return false;
+                }
+
+
+
+            });
+            
             
         }
 

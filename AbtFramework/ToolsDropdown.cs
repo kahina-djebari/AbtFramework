@@ -19,7 +19,7 @@ namespace AbtFramework
         private IWebElement AbtKnowledge;
 
         [FindsBy(How = How.LinkText, Using = "AbtTravel Portal")]
-        private IWebElement AbtTravel;
+        public IWebElement AbtTravel;
 
         [FindsBy(How = How.LinkText, Using = "Oracle")]
         private IWebElement Oracle;

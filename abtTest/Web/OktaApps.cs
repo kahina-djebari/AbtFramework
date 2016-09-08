@@ -15,6 +15,7 @@ namespace abtTest.Web
             Driver.RemoteInit() ;
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.WeSpireHomePage.isAt());
+            Driver.Close();
 
         }
 
@@ -24,6 +25,7 @@ namespace abtTest.Web
             Driver.RemoteInit();
             AbtDriver.WeSpireHomePage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtDriver.WeSpireHomePage.isAt());
+            Driver.Close();
         }
 
        // [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
@@ -76,6 +78,7 @@ namespace abtTest.Web
             Driver.RemoteInit();
             AbtDriver.ConcurHomePage.Go();
              Assert.True(AbtDriver.ConcurHomePage.isUserLoggedIn());
+            Driver.Close();
 
         }
 
@@ -84,8 +87,7 @@ namespace abtTest.Web
         {
             Driver.RemoteInit();
             AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.ToolsLink();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtTravel);
+            AbtDriver.TopNavigation.HoverOverTools();
             AbtDriver.AbtTravelPage.HoverOverAbtTravelOnline();
             AbtDriver.AbtTravelPage.AbtTravelOnlineDropdown.BookOrSearchUsTravel();
             
