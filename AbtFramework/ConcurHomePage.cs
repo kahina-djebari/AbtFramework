@@ -17,8 +17,8 @@ namespace AbtFramework
         [FindsBy(How=How.Id,Using = "popupdialogBtn_0")]
         private IWebElement warning;
         private static string SSOProvider = "Simieo";
+        private static string portalenvironment="Production";
 
-       
         public void Go()
         {
             StartTimer();
@@ -26,6 +26,7 @@ namespace AbtFramework
             wait.Until(e => warning.Displayed);
             warning.Click();
             SSOProvider = "Okta";
+            portalenvironment = "Test";
 
         }
 
@@ -54,7 +55,7 @@ namespace AbtFramework
             if (Logo.Displayed)
             {
                 StopTimer();
-                Console.WriteLine("Concur (Prod) Home Page Took: " + LoadTime + " to load using "+SSOProvider);
+                Console.WriteLine("Concur ("+portalenvironment+") Home Page Took: " + LoadTime + " to load using "+SSOProvider);
                 Console.WriteLine("</br>");
                 return true;
             }
