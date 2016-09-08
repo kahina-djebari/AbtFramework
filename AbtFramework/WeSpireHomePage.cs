@@ -32,9 +32,9 @@ namespace AbtFramework
         public bool isAt()
         {
             //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
-            if (userFirstName.Text.Equals("David"))
+            if (userFirstName.Text.Equals("Sofiane"))
             {
-                Console.WriteLine("User: David succesfully logged in using "+SSOProvider);
+                Console.WriteLine("User: Sofiane succesfully logged in using "+SSOProvider);
                 return true;
             }
 

@@ -131,16 +131,7 @@ namespace AbtFramework
                     popupWindowHandle = finder.Click(AbtTravel);
                     wait.Until(e => Driver.seleniumdriver.WindowHandles.Count >= 2);
                     Driver.Close();
-                    string falsewindow = "";
-                   // foreach(var handle in Driver.seleniumdriver.WindowHandles)
-                  //  {
-                  //      if (!handle.Equals(popupWindowHandle))
-                   //     {
-                     //       falsewindow = handle;
-                   //     }
-                    //}
-                  //  Driver.seleniumdriver.SwitchTo().Window(falsewindow);
-                  //  Driver.Close();
+                
                     Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
                     Driver.seleniumdriver.Manage().Window.Maximize();
                     break;
