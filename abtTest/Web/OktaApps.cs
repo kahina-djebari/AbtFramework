@@ -29,7 +29,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
         public void Should_Go_to_Ebsco_Test_HomePage()
         {
-            Driver.init(Browser.IENoNativeEvents);
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.EbscoHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.EbscoHomePage.isAt());
 
@@ -137,7 +137,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Should Go to Service Now UAT Home Page")]
         public void Should_Go_to_ServiceNow_UAT_HomePage()
         {
-            Driver.init(Browser.IENoNativeEvents);
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtDriver.ServiceNowHomepage.isUserLoggedIn());
         }
@@ -145,7 +145,7 @@ namespace abtTest.Web
        [Fact(DisplayName = "Should Go to Service Now Production Home Page")]
         public void Should_Go_to_ServiceNow_Production_HomePage()
         {
-            Driver.init(Browser.IENoNativeEvents);
+            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
             AbtDriver.ServiceNowHomepage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtDriver.ServiceNowHomepage.isUserLoggedIn());
         }
