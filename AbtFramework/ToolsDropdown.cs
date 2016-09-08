@@ -1,6 +1,7 @@
 ﻿using AbtFramework.Utils_Classes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,10 +36,7 @@ namespace AbtFramework
 
         [FindsBy(How = How.LinkText, Using = "Reputational Capital Database")]
         private IWebElement repCapDBPageLink;
-        [FindsBy(How = How.CssSelector, Using = "#dnn_dnnWTRADMENU_RadMenu1 > ul > li:nth-child(2) > a")]
-        private IWebElement abttraveldropdown;
-        [FindsBy(How = How.CssSelector, Using = "#dnn_dnnWTRADMENU_RadMenu1 > ul > li:nth-child(2) > div > ul > li:nth-child(2) > a")]
-        private IWebElement concurLink;
+  
 
         public void goTo(AbtPages Page)
         {
@@ -128,9 +126,22 @@ namespace AbtFramework
                     break;
 
                 case AbtPages.AbtTravel:
-                    AbtDriver.TopNavigation.HoverOverTools();
-                    action.MoveToElement(abttraveldropdown).Perform();
-                    concurLink.Click();
+
+                    finder = new PopupWindowFinder(Driver.seleniumdriver);
+                    popupWindowHandle = finder.Click(AbtTravel);
+                    Driver.Close();
+                    string falsewindow = "";
+                   // foreach(var handle in Driver.seleniumdriver.WindowHandles)
+                  //  {
+                  //      if (!handle.Equals(popupWindowHandle))
+                   //     {
+                     //       falsewindow = handle;
+                   //     }
+                    //}
+                  //  Driver.seleniumdriver.SwitchTo().Window(falsewindow);
+                  //  Driver.Close();
+                    Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
+                    Driver.seleniumdriver.Manage().Window.Maximize();
                     break;
 
                 case AbtPages.ISMS:

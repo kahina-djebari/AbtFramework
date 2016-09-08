@@ -68,6 +68,7 @@
     <Compile Include="AboutAbtPage.cs" />
     <Compile Include="AbtDriver.cs" />
     <Compile Include="AbtKnowledgePage.cs" />
+    <Compile Include="AbtTravelOnlineDropdown.cs" />
     <Compile Include="AbtTravelPage.cs" />
     <Compile Include="AtlasPage.cs" />
     <Compile Include="AutoIT\AutoITDriver.cs" />

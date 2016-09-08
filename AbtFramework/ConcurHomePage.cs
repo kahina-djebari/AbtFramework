@@ -32,7 +32,7 @@ namespace AbtFramework
             if (isAt())
             {
                 userProfile.Click();
-                // if (username.Text.Equals(SSOCrendentials.CurrentUser))
+                Console.WriteLine(SSOCrendentials.CurrentUser);
                 if (username.Text.Equals("David Acuna"))
                 {
                     Console.WriteLine("User: David succesfully logged in with Okta");

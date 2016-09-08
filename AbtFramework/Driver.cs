@@ -175,7 +175,7 @@ namespace AbtFramework
         {
             IEoptions = new InternetExplorerOptions();
             IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings=true;
-            IEoptions.EnableNativeEvents = false;
+           // IEoptions.EnableNativeEvents = false;
             IEoptions.IgnoreZoomLevel = true;
 
             seleniumdriver = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"),IEoptions.ToCapabilities()

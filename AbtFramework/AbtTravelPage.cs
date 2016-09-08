@@ -1,6 +1,8 @@
 ﻿using AbtFramework.Utils_Classes;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
 
@@ -12,6 +14,21 @@ namespace AbtFramework
          private IWebElement username;
         [FindsBy(How=How.LinkText,Using = "AbtTravel Home")]
         private IWebElement AbtTravelLink;
+        [FindsBy(How = How.CssSelector, Using = "#dnn_dnnWTRADMENU_RadMenu1 > ul > li:nth-child(2) > a")]
+        private IWebElement abttraveldropdown;
+
+        private AbtTravelOnlineDropdown _abttraveldropdown;
+
+        public  AbtTravelOnlineDropdown AbtTravelOnlineDropdown
+        {
+            get
+            {
+                _abttraveldropdown = PageGenerator.GetPage<AbtTravelOnlineDropdown>();
+                _abttraveldropdown.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _abttraveldropdown.action = new Actions(Driver.seleniumdriver);
+                return _abttraveldropdown;
+            }
+        }
 
         public void goTo()
         {
@@ -58,6 +75,12 @@ namespace AbtFramework
             StartTimer();
             Driver.seleniumdriver.Navigate().GoToUrl("https://daxii.abtassoc.com/openam/idpssoinit?metaAlias=/abt/AbtSaml2Idp&spEntityID=bcdsso.bcdtravel.com&binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&RelayState=https://bcdpingidgateway.bcdtravel.com/SP/TripSourcePortal/tripsourceportal.aspx&iPSP");
             
+        }
+
+        public void HoverOverAbtTravelOnline()
+        {
+            
+            abttraveldropdown.Click();
         }
     }
 }
