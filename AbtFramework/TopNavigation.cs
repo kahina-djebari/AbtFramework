@@ -51,6 +51,7 @@ namespace AbtFramework
 
                 if (Driver.seleniumdriver.WindowHandles.Count >= 2)
                 {
+                   
                     return true;
                 }
 

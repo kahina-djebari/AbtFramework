@@ -17,6 +17,7 @@ namespace AbtFramework
             // action.MoveToElement()
             finder = new PopupWindowFinder(Driver.seleniumdriver);
             popupWindowHandle = finder.Click(concurLink);
+            StartTimer();
             Driver.Close();
             Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
             Driver.seleniumdriver.Manage().Window.Maximize();
