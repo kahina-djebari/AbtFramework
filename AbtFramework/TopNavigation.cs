@@ -57,13 +57,15 @@ namespace AbtFramework
                 else
                 {
                     action.MoveToElement(ToolsAndResources).Perform();
-                    action.Click(ToolsDropdown.AbtTravel);
+                    ToolsDropdown.AbtTravel.Click();
                     return false;
                 }
 
 
 
             });
+
+            
             
             
         }
