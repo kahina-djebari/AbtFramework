@@ -72,7 +72,7 @@ namespace abtTest.Web
         }
 
 
-      [Fact(DisplayName = "Should Go to Concur UAT Home Page using Okta")]
+     // [Fact(DisplayName = "Should Go to Concur UAT Home Page using Okta")]
         public void Should_Go_to_Concur_Testing_HomePage()
         {
             Driver.RemoteInit();
@@ -82,7 +82,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
+     //   [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
         public void Should_Go_to_Concur_Production_HomePage()
         {
             Driver.RemoteInit();
