@@ -11,8 +11,9 @@ namespace AbtFramework
         private IWebElement Incident;
         [FindsBy(How=How.LinkText,Using ="Ask a Question")]
         private IWebElement AskQuestion;
+        [FindsBy(How=How.LinkText,Using = "Conferencing Setup")]
+        private IWebElement conferencingSetupLink;
 
-    
         public void NewIncident(IncidentType incident)
         {
             Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
@@ -30,6 +31,10 @@ namespace AbtFramework
                    // AbtDriver.NewIncidentPage.NewIncident(priority, shortdescription, description);
                     break;
                 case IncidentType.ConferencingSetup:
+                    wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+                    wait.Until(e => conferencingSetupLink.Displayed);
+                    conferencingSetupLink.Click();
+
                     break;
                 case IncidentType.DistributionListRequest:
                     break;

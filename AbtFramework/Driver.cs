@@ -28,6 +28,56 @@ namespace AbtFramework
                     seleniumdriver.Manage().Window.Maximize();
                     break;
 
+                case Browser.RemoteDavidIENoNativeEvents:
+
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+                    IEoptions.EnableNativeEvents = false;
+
+                    seleniumdriver = new RemoteWebDriver(new Uri("http://172.18.58.24:4444/wd/hub"), IEoptions.ToCapabilities());
+                    seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    seleniumdriver.Manage().Window.Maximize();
+                    break;
+
+                case Browser.RemoteDavidIE:
+
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+               
+
+                    seleniumdriver = new RemoteWebDriver(new Uri("http://172.18.58.24:4444/wd/hub"), IEoptions.ToCapabilities());
+                    seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    seleniumdriver.Manage().Window.Maximize();
+                    break;
+
+                case Browser.RemoteSofianesIE:
+
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+                    IEoptions.IgnoreZoomLevel = true;
+
+                    seleniumdriver = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"), IEoptions.ToCapabilities()
+
+                       );
+                    seleniumdriver.Manage().Window.Maximize();
+                    seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+
+                    break;
+
+                case Browser.RemoteSofianesIENoNativeEvents:
+
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+                    IEoptions.IgnoreZoomLevel = true;
+                    IEoptions.EnableNativeEvents = false;
+                    seleniumdriver = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"), IEoptions.ToCapabilities()
+
+                       );
+                    seleniumdriver.Manage().Window.Maximize();
+                    seleniumdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+
+                    break;
+
                 case Browser.IENoNativeEvents:
                     IEoptions = new InternetExplorerOptions();
                     IEoptions.EnableNativeEvents = false;

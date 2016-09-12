@@ -162,5 +162,21 @@ namespace abtTest.Web
             AbtDriver.ITKnowledgeBasePage.EditArticle("Random edition");
         }
 
+      //  [Fact(DisplayName ="Should Create New Conferencing Setup Request")]
+        public void Should_Create_New_Conferencing_Setup_Request()
+        {
+            Driver.init(Browser.IENoNativeEvents);
+            AbtDriver.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtDriver.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
+            AbtDriver.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
+            AbtDriver.ServiceHubHomepage.GoTo(ServiceHubLinks.New_IT_Request);
+            AbtDriver.ITServiceRequestpage.NewIncident(IncidentType.ConferencingSetup);
+            AbtDriver.ConferencingSetupPage.NewRequest("Bethesda, MD",DateMaker.GetStartDate(),DateMaker.GetEndDate(),
+                                                       "Bethesda - Annapolis (4th fl / rm 4096)","meeting info","5");
+            Assert.True(AbtDriver.ConfSetupConfirmationPage.isAt());
+
+
+        }
+
     }
 }

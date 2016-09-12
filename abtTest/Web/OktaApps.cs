@@ -38,19 +38,23 @@ namespace abtTest.Web
         }
 
 
-     //   [Fact(DisplayName = "Should Go to Success Factor UAT Home Page")]
+        [Fact(DisplayName = "Should Go to Success Factor UAT Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
         {
-            Driver.init(Browser.IE);
+            Driver.init(Browser.RemoteSofianesIE);
             AbtDriver.SuccessFactorHomePage.Go(WebEnvironment.TestEnvironment);
-
+            Assert.True(AbtDriver.SuccessFactorHomePage.isUserLoggedIn());
+            Driver.Close();
+            
         }
 
-      //  [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
+        [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
         public void Should_Go_to_SuccessFactor_Production_HomePage()
         {
-            Driver.init(Browser.IE);
+            Driver.init(Browser.RemoteSofianesIE);
             AbtDriver.SuccessFactorHomePage.Go(WebEnvironment.ProductionEnvironment);
+            Assert.True(AbtDriver.SuccessFactorHomePage.isUserLoggedIn());
+            Driver.Close();
         }
 
          //Wants to go Trough AGI???

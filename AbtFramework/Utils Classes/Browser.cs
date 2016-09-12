@@ -24,6 +24,10 @@ namespace AbtFramework.Utils_Classes
         IE25064,
         IE25164,
         IE25264,
-        IENoNativeEvents
+        IENoNativeEvents,
+        RemoteDavidIENoNativeEvents,
+        RemoteDavidIE,
+        RemoteSofianesIE,
+        RemoteSofianesIENoNativeEvents
     }
 }

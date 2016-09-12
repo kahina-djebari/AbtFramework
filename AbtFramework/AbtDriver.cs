@@ -53,6 +53,8 @@ namespace AbtFramework
         private static ITKnowledgeBasePage _knowledgebase;
         private static PowerPointOnlinePage _powerpointonlinepage;
         private static ExcelOnlinePage _excelonlinepage;
+        private static ConferencingSetupPage _conferencingsetup;
+        private static ConfSetupConfirmationPage _confsetupconfirmation;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
@@ -458,6 +460,26 @@ namespace AbtFramework
                 _excelonlinepage.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
                 _excelonlinepage.action = new Actions(Driver.seleniumdriver);
                 return _excelonlinepage;
+            }
+        }
+
+        public static ConferencingSetupPage ConferencingSetupPage {
+            get
+            {
+                _conferencingsetup= PageGenerator.GetPage<ConferencingSetupPage>();
+                _conferencingsetup.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _conferencingsetup.action = new Actions(Driver.seleniumdriver);
+                return _conferencingsetup;
+            }
+        }
+
+        public static ConfSetupConfirmationPage ConfSetupConfirmationPage {
+            get
+            {
+                _confsetupconfirmation = PageGenerator.GetPage<ConfSetupConfirmationPage>();
+                _confsetupconfirmation.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
+                _confsetupconfirmation.action = new Actions(Driver.seleniumdriver);
+                return _confsetupconfirmation;
             }
         }
     }

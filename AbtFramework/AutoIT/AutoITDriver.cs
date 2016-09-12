@@ -16,27 +16,36 @@ namespace AbtFramework.AutoIT
 
         public static void EditExcelFile()
         {
-            HandleWindowPopUp();
-            autoit.WinActivate("Microsoft Excel - " + currentWorkingDocTitle.ToString());
-            autoit.WinWaitActive("Microsoft Excel - " + currentWorkingDocTitle.ToString(), "", 20);
+            OpenDocument(true);
+            autoit.WinActivate("Microsoft Excel - " + currentWorkingDocTitle);
+            autoit.WinWaitActive("Microsoft Excel - " + currentWorkingDocTitle, "", 20);
             Thread.Sleep(2000);
-            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle.ToString(), currentWorkingDocTitle.ToString(), "EXCEL71", "{DOWN}");
+            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "{DOWN}");
             Thread.Sleep(1000);
-            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle.ToString(), currentWorkingDocTitle.ToString(), "EXCEL71", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Word Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
-            autoit.ControlClick("Microsoft Excel - " + currentWorkingDocTitle.ToString(), "", "NetUIHWND2", "LEFT", 1, 36, 20);
-            Thread.Sleep(7000);
-            autoit.WinClose("Microsoft Excel - " + currentWorkingDocTitle.ToString(), "");
-
+            
 
         }
 
-        private static void HandleWindowPopUp()
+        public static void CloseExcelFile()
         {
-            autoit = new AutoItX3();
+            autoit.WinClose("Microsoft Excel - " + currentWorkingDocTitle, "");
+        }
+
+        public static void SaveExcelFile()
+        {
+            autoit.ControlClick("Microsoft Excel - " + currentWorkingDocTitle, "", "NetUIHWND2", "LEFT", 1, 36, 20);
+            Thread.Sleep(5000);
+        }
+
+        private static void OpenDocument(bool openForEdit)
+        {
+       
             autoit.WinActivate("Open Document");
             autoit.WinWaitActive("Open Document", "", 3);
             Thread.Sleep(2000);
+            if(openForEdit)
             autoit.ControlClick("Open Document", "&Edit", "1202", "LEFT", 1);
             Thread.Sleep(1000);
             autoit.ControlClick("Open Document", "OK", "1", "LEFT", 1);
@@ -49,40 +58,141 @@ namespace AbtFramework.AutoIT
 
         public static void EditWordFile()
         {
-            HandleWindowPopUp();
-            autoit = new AutoItX3();
-            autoit.WinActivate(currentWorkingDocTitle.ToString() + " - Microsoft Word");
-            autoit.WinWaitActive(currentWorkingDocTitle.ToString() + " - Microsoft Word", "", 20);
+            OpenDocument(true);
+            autoit.WinActivate(currentWorkingDocTitle + " - Microsoft Word");
+            autoit.WinWaitActive(currentWorkingDocTitle + " - Microsoft Word", "", 20);
             Thread.Sleep(2000);
-            autoit.ControlSend(currentWorkingDocTitle.ToString() + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "{ENTER}");
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "{ENTER}");
             Thread.Sleep(1000);
-            autoit.ControlSend(currentWorkingDocTitle.ToString() + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "{UP}");
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "{UP}");
             Thread.Sleep(1000);
-            autoit.ControlSend(currentWorkingDocTitle.ToString() + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            autoit.ControlSend(currentWorkingDocTitle+ " - Microsoft Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
-            autoit.ControlClick(currentWorkingDocTitle.ToString() + " - Microsoft Word", "", "NetUIHWND2", "LEFT", 1, 35, 20);
-            Thread.Sleep(5000);
-            autoit.WinClose(currentWorkingDocTitle.ToString() + " - Microsoft Word", "");
+        
 
         }
 
 
         public static void EditPowerPointFile()
         {
-            HandleWindowPopUp();
-            autoit = new AutoItX3();
-            autoit.WinActivate(currentWorkingDocTitle.ToString() + " - Microsoft PowerPoint");
-            autoit.WinWaitActive(currentWorkingDocTitle.ToString() + " - Microsoft PowerPoint", "", 20);
+            OpenDocument(true);
+            autoit.WinActivate(currentWorkingDocTitle+ " - Microsoft PowerPoint");
+            autoit.WinWaitActive(currentWorkingDocTitle + " - Microsoft PowerPoint", "", 20);
             Thread.Sleep(2000);
-            autoit.ControlClick(currentWorkingDocTitle.ToString(), "", "NetUIHWND1", "LEFT", 1, 177, 76);
+            autoit.ControlClick(currentWorkingDocTitle, "", "NetUIHWND1", "LEFT", 1, 177, 76);
             Thread.Sleep(500);
-            autoit.ControlSend(currentWorkingDocTitle.ToString() + " - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
-            autoit.ControlClick(currentWorkingDocTitle.ToString(),"", "NetUIHWND1","LEFT",1,35,19); //Click on Save Btn
+
+        }
+
+        public static void ClosePPTFile()
+        {
+            autoit.WinClose("Sample AV metrics - Microsoft PowerPoint", "");
+        }
+
+        public static void SavePPTFile()
+        {
+            autoit.ControlClick(currentWorkingDocTitle, "", "NetUIHWND1", "LEFT", 1, 35, 19); //Click on Save Btn
             Thread.Sleep(5000);
-            autoit.WinClose("Sample AV metrics - Microsoft PowerPoint", "");                                                                                             //  autoit.ControlSend("Sample AV metrics - Microsoft PowerPoint","",)
+
+        }
+
+        public static void OpenDocumentForReading()
+        {
+            OpenDocument(false);
+
+        }
+
+        public static void init()
+        {
+            autoit = new AutoItX3();
+        }
+
+        public static void EditWordFileFromInsideApp()
+        {
+           
+            autoit.WinActivate(currentWorkingDocTitle + " [Read-Only] - Microsoft Word");
+            autoit.WinWaitActive(currentWorkingDocTitle + " [Read-Only] - Microsoft Word","",20);
+            Thread.Sleep(2000);
+            autoit.ControlClick(currentWorkingDocTitle, "", "NetUIHWND2", "LEFT", 1, 511, 17); //click on edit document on word
+            Thread.Sleep(1000);
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "{ENTER}");
+            Thread.Sleep(1000);
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "{UP}");
+            Thread.Sleep(1000);
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            Thread.Sleep(2000);
+
+     
+
+           
+        }
 
 
+
+        public static void CloseWordFile()
+        {
+            autoit.WinClose(currentWorkingDocTitle + " - Microsoft Word", "");
+        }
+
+        public static void SaveWordFile()
+        {
+           
+            autoit.ControlClick(currentWorkingDocTitle + " - Microsoft Word", "", "NetUIHWND2", "LEFT", 1, 35, 20);
+            Thread.Sleep(5000);
+        }
+
+        public static void EditExcelFileFromInsideApp()
+        {    //Microsoft Excel -IT Metrics[Read - Only]
+            // Microsoft Excel -IT Metrics[Read - Only]
+     
+          //  Console.WriteLine("Microsoft Excel - IT Metrics[Read - Only]");
+            autoit.WinActivate("Microsoft Excel - "+currentWorkingDocTitle+"  [Read-Only]");
+           if(autoit.WinWaitActive("Microsoft Excel - " + currentWorkingDocTitle + "  [Read-Only]", "", 10) == 1)
+            {
+                Thread.Sleep(3000);
+                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle + "  [Read-Only]", currentWorkingDocTitle + "  [Read-Only]", "EXCEL71", "{DOWN}");
+                Thread.Sleep(3000);
+                autoit.ControlClick("Microsoft Excel - " + currentWorkingDocTitle + "  [Read-Only]", "", "NetUIHWND2", "LEFT", 1, 523, 16);
+                Thread.Sleep(1000);
+                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+                Thread.Sleep(2000);
+     
+            }
+            else
+            {
+                Console.WriteLine("Couldn't Open Excel Document, Can't locate Excel Window");
+            }
+          
+        }
+      //  Microsoft Excel - IT Metrics[Read - Only]
+
+
+        public static void EditPPTFileFromInsideApp()
+        {
+            //Sample AV metrics [Read-Only] - Microsoft PowerPoint
+            //Sample AV metrics [Read-Only] - Microsoft PowerPoint
+            //Sample AV metrics [Read-Only] - Microsoft PowerPoint
+            //Sample AV metrics [Read-Only] - Microsoft PowerPoint
+            //Sample AV metrics.pptx - Microsoft PowerPoint
+          
+            autoit.WinActivate(currentWorkingDocTitle + " [Read-Only] - Microsoft PowerPoint");
+            if(autoit.WinWaitActive(currentWorkingDocTitle + " [Read-Only] - Microsoft PowerPoint", "", 20) == 1)
+            {
+                Thread.Sleep(2000);
+                autoit.ControlClick(currentWorkingDocTitle, "", "NetUIHWND1", "LEFT", 1, 511, 17);
+                Thread.Sleep(2000);
+                autoit.ControlClick(currentWorkingDocTitle, "", "NetUIHWND1", "LEFT", 1, 177, 76);
+                Thread.Sleep(2000);
+                autoit.ControlSend(currentWorkingDocTitle + ".pptx - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+                Thread.Sleep(2000);
+            }
+            else
+            {
+                Console.WriteLine("Couldn't Open PowerPoint Document, Can't locate PowerPoint Window");
+            }
+          
         }
     }
 }
