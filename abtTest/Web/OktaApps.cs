@@ -38,7 +38,7 @@ namespace abtTest.Web
         }
 
 
-        [Fact(DisplayName = "Should Go to Success Factor UAT Home Page")]
+        //[Fact(DisplayName = "Should Go to Success Factor UAT Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
         {
             Driver.init(Browser.RemoteSofianesIE);
@@ -48,7 +48,7 @@ namespace abtTest.Web
             
         }
 
-        [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
         public void Should_Go_to_SuccessFactor_Production_HomePage()
         {
             Driver.init(Browser.RemoteSofianesIE);

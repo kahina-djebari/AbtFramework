@@ -57,7 +57,7 @@ namespace abtTest.Web
 
         }
 
-      //  [Fact(DisplayName = "Co-Authoring Should open Word Document for reading On Word Desktop Client App")]
+       [Fact(DisplayName = "Co-Authoring Should open Word Document for reading On Word Desktop Client App")]
         public void Should_Open_WordDoc_For_Reading_On_ClientApp()
         {
             Driver.init(Browser.IENoNativeEvents);
