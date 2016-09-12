@@ -41,8 +41,9 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            Driver.seleniumdriver.Navigate().GoToUrl(url);
             StartTimer();
+            Driver.seleniumdriver.Navigate().GoToUrl(url);
+            
             wait.Until(e => dropdowns.Single(a=>a.Text.Equals("Home")).Displayed);
 
             StopTimer();
