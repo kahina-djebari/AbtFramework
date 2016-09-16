@@ -11,7 +11,7 @@ namespace AbtFramework
 {
     public class ToolsDropdown : PageModel
     {
-        [FindsBy(How = How.LinkText, Using = "ATLAS (Abt Talent, Learning, and Support)")]    
+        [FindsBy(How = How.LinkText, Using = "Abt Talent, Learning and Support (ATLAS)")]    
         private IWebElement Atlas;
 
        
@@ -70,19 +70,23 @@ namespace AbtFramework
                     break;
 
                 case Abtlinks.Abt_Talent_Learning_and_Support:
-                    AbtPages.AgiTopNavigation.HoverOverTools();
-                    Atlas.Click();
+
+                    finder = new PopupWindowFinder(SeleniumDriver.Instance);
+                    wait.IgnoreExceptionTypes(typeof(ElementNotVisibleException));
+                    wait.Timeout = TimeSpan.FromSeconds(30);
                     wait.Until((d) =>
 
                     {
                         if (SeleniumDriver.Instance.WindowHandles.Count < 2)
                         {
-                            AbtPages.AgiTopNavigation.HoverOverTools();
-                            Atlas.Click();
+                            action.MoveToElement(AbtPages.AgiTopNavigation.ToolsLink).Perform();
+                            popupWindowHandle = finder.Click(Atlas);
                         }
                         else
                         {
                             StartTimer();
+                            SingleSignOnProvider = "Simieo";
+                            Environment="Production";
                             return true;
                         }
 
@@ -91,7 +95,8 @@ namespace AbtFramework
 
                     });
                     SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+                    SeleniumDriver.Instance.Manage().Window.Maximize();
                     StopTimer(); break;
 
                 case Abtlinks.AbtKnowledge:
@@ -222,6 +227,12 @@ namespace AbtFramework
 
             }
         }
+
+        public void GoToAtlas()
+        {
+            goTo(Abtlinks.Abt_Talent_Learning_and_Support);
+        }
+
         internal void AbtTravelLink()
         {
             AbtTravel.Click();

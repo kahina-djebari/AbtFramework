@@ -54,7 +54,11 @@ namespace AbtFramework
 
                     StartTimer();
                     OpenWindowFor(Atlas);
-                    StopTimer();
+                    SingleSignOnProvider = "Simieo";
+                    Environment = "Production";
+                   
+                  
+
                     break;
 
                 case Abtlinks.AbtKnowledge: 

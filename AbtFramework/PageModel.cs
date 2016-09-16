@@ -13,8 +13,8 @@ namespace AbtFramework
         internal string LoadTime { get { return ((timer2 - timer1)).ToString()+"ms"; } }
         internal PopupWindowFinder finder;
         internal string popupWindowHandle;
-        internal string SingleSignOnProvider;
-        internal string Environment;
+        internal static string SingleSignOnProvider;
+        internal static string Environment;
 
         /*
         public PageModel()
@@ -42,11 +42,12 @@ namespace AbtFramework
             if (String.IsNullOrEmpty(Environment) || String.IsNullOrEmpty(SingleSignOnProvider))
             {
                 Console.WriteLine(pageName + " Home Page Took: " + LoadTime + " to Load");
+               
             }
             else
             {
                 Console.WriteLine(pageName + " (" + Environment + ")  Home Page Took: " + LoadTime + " to load Using " + SingleSignOnProvider);
-                    
+                Console.WriteLine("</br>");
             }
             
             
