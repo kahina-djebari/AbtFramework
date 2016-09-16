@@ -30,10 +30,12 @@ namespace AbtFramework
         private IList<IWebElement> Toplinks;
 
         private ToolsDropdown _toolsDropdown;
+        [FindsBy(How =How.LinkText,Using ="Abt Values")]
+        private IWebElement abtvalueLink;
 
         public ToolsDropdown ToolsDropdown { get {
                 _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>();
-                _toolsDropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(15));
+                _toolsDropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _toolsDropdown.action = new Actions(SeleniumDriver.Instance);
                 return _toolsDropdown;
             } }
@@ -167,6 +169,12 @@ namespace AbtFramework
                 
                     break;
             }
+        }
+
+        public void AbtValues()
+        {
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder.Click(abtvalueLink);
         }
     }
 }

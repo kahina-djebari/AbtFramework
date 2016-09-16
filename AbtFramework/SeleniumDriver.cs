@@ -65,7 +65,8 @@ namespace AbtFramework
 
                     IEoptions = new InternetExplorerOptions();
                     IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
-                    IEoptions.IgnoreZoomLevel = true;
+                    IEoptions.EnablePersistentHover = true;
+
 
                     Instance = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"), IEoptions.ToCapabilities()
 
@@ -189,6 +190,14 @@ namespace AbtFramework
                     break;
             }
          
+        }
+
+        public static void CloseAll()
+        {
+           
+
+                Instance.Quit();
+            
         }
 
         private static void TakeScreenShotOnException(object sender, WebDriverExceptionEventArgs e)

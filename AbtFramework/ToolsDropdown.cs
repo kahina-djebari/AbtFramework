@@ -71,31 +71,40 @@ namespace AbtFramework
 
                 case Abtlinks.Abt_Talent_Learning_and_Support:
 
-                    finder = new PopupWindowFinder(SeleniumDriver.Instance);
-                    wait.IgnoreExceptionTypes(typeof(ElementNotVisibleException));
+                
+                 
                     wait.Timeout = TimeSpan.FromSeconds(30);
-                    wait.Until((d) =>
+                    wait.IgnoreExceptionTypes(typeof(ElementNotVisibleException));
+                    wait.Until((e) =>
 
                     {
-                        if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                        try
                         {
-                            action.MoveToElement(AbtPages.AgiTopNavigation.ToolsLink).Perform();
-                            popupWindowHandle = finder.Click(Atlas);
-                        }
-                        else
-                        {
-                            StartTimer();
-                            SingleSignOnProvider = "Simieo";
-                            Environment="Production";
-                            return true;
+                            if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                            {
+                                action.MoveToElement(AbtPages.AgiTopNavigation.ToolsLink).Perform();
+                                Atlas.Click();
+                            }
+                            else
+                            {
+                                StartTimer();
+                                SingleSignOnProvider = "Simieo";
+                                Environment = "Production";
+                                return true;
+                            }
                         }
 
+                        catch (Exception ex)
+                        {
 
+                        }
                         return false;
 
+
                     });
+                   
                     SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
                     SeleniumDriver.Instance.Manage().Window.Maximize();
                     StopTimer(); break;
 

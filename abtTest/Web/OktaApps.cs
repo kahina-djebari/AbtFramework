@@ -188,19 +188,13 @@ namespace abtTest.Web
         [Fact(DisplayName ="Should Go to Success Factor (Production) Through Agi")]
         public void Should_Go_SuccessFactor_Through_Agi()
         {
-            SeleniumDriver.init(Browser.RemoteSofianesIE);
+            SeleniumDriver.init(Browser.RemoteSofianesIENoNativeEvents);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.ToolsDropdown.GoToAtlas();
-         //   AbtPages.ToolsAndResourcesPage.GoToAtlas();
+            AbtPages.AgiTopNavigation.ToolsAndResources();
+           AbtPages.ToolsAndResourcesPage.GoToAtlas();
             AbtPages.SuccessFactorHomePage.isUserLoggedIn();
-            SeleniumDriver.Close();
+            SeleniumDriver.CloseAll();
         }
-
-   
-
-
-
-
 
     }
 }

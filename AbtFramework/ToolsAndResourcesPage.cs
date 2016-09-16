@@ -52,7 +52,7 @@ namespace AbtFramework
 
                 case Abtlinks.Abt_Talent_Learning_and_Support:
 
-                    StartTimer();
+                   // StartTimer();
                     OpenWindowFor(Atlas);
                     SingleSignOnProvider = "Simieo";
                     Environment = "Production";
@@ -138,16 +138,11 @@ namespace AbtFramework
         {
             finder = new PopupWindowFinder(SeleniumDriver.Instance);
             popupWindowHandle = finder.Click(link);
+         //   var currentHandler = SeleniumDriver.Instance.CurrentWindowHandle;
+         //   Console.WriteLine("This is the first popwindowHandle:");
+          //  Console.WriteLine(currentHandler);
             wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
-            foreach(var window in SeleniumDriver.Instance.WindowHandles)
-            {
-                if (!window.Equals(popupWindowHandle))
-                {
-                    SeleniumDriver.Instance.SwitchTo().Window(window);
-                    SeleniumDriver.Close();
-                }
-            }
-  
+            StartTimer();
             SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
             SeleniumDriver.Instance.Manage().Window.Maximize();
         }

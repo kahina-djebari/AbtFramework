@@ -42,9 +42,7 @@ namespace AbtFramework
         {
             StartTimer();
             SeleniumDriver.Instance.Navigate().GoToUrl(url);
-            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("body")));
-            wait.Until(e => dropdowns.Single(a=>a.Text.Equals("Home")).Displayed);
-            
+      
 
         
 
