@@ -15,12 +15,12 @@ namespace AbtFramework
         public void BookOrSearchUsTravel()
         {
             // action.MoveToElement()
-            finder = new PopupWindowFinder(Driver.seleniumdriver);
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
             popupWindowHandle = finder.Click(concurLink);
             StartTimer();
-            Driver.Close();
-            Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
-            Driver.seleniumdriver.Manage().Window.Maximize();
+            SeleniumDriver.Close();
+            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.Instance.Manage().Window.Maximize();
             wait.Until(e => warning.Displayed);
             warning.Click();
 

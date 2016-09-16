@@ -21,9 +21,9 @@ namespace abtTest.Web
         public void Should_Be_Loggedin_on_AGI_Homepage()
         {
             
-            AbtDriver.HomePage.Go();
+            AbtPages.AgiHomePage.Go();
              
-            Assert.True(AbtDriver.HomePage.isUserLoggedin());
+            Assert.True(AbtPages.AgiHomePage.isUserLoggedin());
           
         }
 
@@ -33,27 +33,27 @@ namespace abtTest.Web
        // [Fact(DisplayName ="Should go to Abt Knowledge (SSO Check)")]
         public void Should_click_AbtKnowledge()
         {
-            AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtKnowledge);
-            Assert.True(AbtDriver.AbtKnowledgePage.IsUserLoggedIn(),"User is not Logged In");
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.AbtKnowledge);
+            Assert.True(AbtPages.AbtKnowledgePage.IsUserLoggedIn(),"User is not Logged In");
           
         }
 
        //  [Fact(DisplayName ="Should go to  Abt Travel (SSO Check)")]
         public void Should_click_AbtTravel()
         {
-            AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.AbtTravel);
-           Assert.True(AbtDriver.AbtTravelPage.isAt());
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.AbtTravel);
+           Assert.True(AbtPages.AbtTravelPage.isAt());
         }
 
       //  [Fact(DisplayName ="Should Access Oracle (SSO Check)")]
         public void Should_click_Oracle()
         {
-            Driver.init();
-            AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Oracle);
-            Assert.True(AbtDriver.OraclePage.isAt()); //need to check if logged in currently i dont have access
+            SeleniumDriver.init();
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Oracle);
+            Assert.True(AbtPages.OraclePage.isAt()); //need to check if logged in currently i dont have access
 
         }
 
@@ -62,9 +62,9 @@ namespace abtTest.Web
        // [Fact(DisplayName ="Should Go to Outlook Web Access (SSO Check)")]
         public void Should_Open_OutlookWebAccess()
         {
-            AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Outlook);
-           Assert.True(AbtDriver.OutlookWebPage.isAt());
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Outlook);
+           Assert.True(AbtPages.OutlookWebPage.isAt());
 
         }
 

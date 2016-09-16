@@ -4,7 +4,7 @@ using System;
 
 namespace AbtFramework
 {
-    public class ConfSetupConfirmationPage : PageModel
+    public class SubmittedOrderPage : PageModel
     {
         [FindsBy(How=How.ClassName,Using = "outputmsg_text")]
         private IWebElement OutputMsg;

@@ -189,14 +189,14 @@ namespace AbtFramework
 
         public void OpenHRIssues()
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
 
             HR_Issues_Open.Click();
 
         }
         public void OpenKnowledgeBase()
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             NewArticle.Click();
 
 
@@ -204,8 +204,8 @@ namespace AbtFramework
 
         public void CreateNewHRTicket(string EmpName, string IssueCategory, string Subject, string Description, string ContactMethod)
         {
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             NewTicket.Click();
             EmployeeName.SendKeys(EmpName);
             HR_IssueCategoryDropdown.SelectOption(IssueCategory).Click();
@@ -218,8 +218,8 @@ namespace AbtFramework
 
         public void CreateNewIncident(string callerfield, string Category, string subCategory, string Type, string ITSCResponder, string assigmentGroup)
         {
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
 
             NewTicket.Click();
             caller.SendKeys(callerfield);
@@ -246,8 +246,8 @@ namespace AbtFramework
 
         public void CreateNewFacilityRequest(string caller, string category, string subcategory, string shortdescription, string assigmentgroup)
         {
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             NewTicket.Click();
             Facility_Caller.SendKeys(caller);
             Facility_Category.SelectOption(category).Click();
@@ -263,8 +263,8 @@ namespace AbtFramework
 
         public void CreateNewKBArticle(string shortdescription)
         {
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             KB_ShortDescription.SendKeys(shortdescription);
             action.SendKeys(Keys.Tab).Perform();
             action.SendKeys(Keys.Tab).Perform();
@@ -275,7 +275,7 @@ namespace AbtFramework
 
         public bool isRoleCorrect(string user)
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             FillRoles();
             string[] RoleForUser;
             var rolesContainer = GetRoleList();
@@ -320,9 +320,9 @@ namespace AbtFramework
         public bool IncidentExist(IncidentType incidentType,Urgency urgency, string shortDescription, string MoreInformation)
         {
                       
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
-            AbtDriver.IncidentTablePageObject.FirstIncident.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            AbtPages.IncidentTablePageObject.FirstIncident.Click();
        
 
             if (!SelfServiceContact.Selected)
@@ -396,7 +396,7 @@ namespace AbtFramework
 
         public void FacilityRequests()
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             facilityRequests.Click();
         }
 
@@ -404,7 +404,7 @@ namespace AbtFramework
         {
             
 
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
            // IncidentSection.Click();
             IncidentOpen.Click();
         }
@@ -435,7 +435,7 @@ namespace AbtFramework
         private void GotoUrl(string url)
         {
             StartTimer();
-            Driver.seleniumdriver.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
             wait.Until(e => header.Displayed);
             StopTimer();
 
@@ -445,9 +445,9 @@ namespace AbtFramework
 
         public void CloseITServiceRequest()
         {
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
-            AbtDriver.IncidentTablePageObject.FirstIncident.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            AbtPages.IncidentTablePageObject.FirstIncident.Click();
             ITSCResponder.SendKeys("Valeria Rozenbaum");
             TimeworkedOnIncident.Click();
             ITCategory.SelectOption("Software").Click();
@@ -466,9 +466,9 @@ namespace AbtFramework
         public void CloseHRServiceRequest()
         {
 
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
-            AbtDriver.IncidentTablePageObject.FirstIncident.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            AbtPages.IncidentTablePageObject.FirstIncident.Click();
              AssignToHRPerson.Clear();
             AssignToHRPerson.SendKeys("Michael Stinson");
             AdditionalComments.SendKeys("Additional Comments");
@@ -503,9 +503,9 @@ namespace AbtFramework
             switch (link)
             {
                 case ServicenowLinks.ServiceHub:
-                    Driver.seleniumdriver.SwitchTo().Frame("gsft_nav");
+                    SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
 
-                    Driver.seleniumdriver.FindElement(By.LinkText("Home")).Click();
+                    SeleniumDriver.Instance.FindElement(By.LinkText("Home")).Click();
                     break;
 
                 default:break;
@@ -528,18 +528,18 @@ namespace AbtFramework
 
         public void CloseOfficeRequest(string shortdescription,string worknotes,string assignedto)
         {
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
 
 
 
-                AbtDriver.IncidentTablePageObject.FirstIncident.Click();
+                AbtPages.IncidentTablePageObject.FirstIncident.Click();
                 ReadyForWork.Click();
                 Facility_AssigntoPerson.SendKeys(assignedto);
                 timeworked.Click();
                 FacilityWorknotes.SendKeys(worknotes);
                 Update.Click();
-            AbtDriver.IncidentTablePageObject.FirstIncident.Click();
+            AbtPages.IncidentTablePageObject.FirstIncident.Click();
             StartWork.Click();
             FacilityWorknotes.SendKeys("Work completed");
             closeComplete.Click();

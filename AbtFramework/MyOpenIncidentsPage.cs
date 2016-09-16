@@ -11,9 +11,9 @@ namespace AbtFramework
 
         public bool IncidentExists(string IncidentDescription)
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
 
-            if (AbtDriver.IncidentTablePageObject.FirstIncidentDescription.Equals(IncidentDescription))
+            if (AbtPages.IncidentTablePageObject.FirstIncidentDescription.Equals(IncidentDescription))
             {
                 return true;
             }

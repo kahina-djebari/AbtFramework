@@ -12,10 +12,10 @@ namespace abtTest.Web
         //[Fact(DisplayName ="Should Update a Random Interest")]
         public void Should_Update_your_Interests()
         {
-            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
-            AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
-            AbtDriver.WeSpireHomePage.GoTo(weSpireHomeLinks.UpdateInterest);
-            AbtDriver.WeSpireUpdateInterestsPage.RandomInterestUpdate();
+            SeleniumDriver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
+            AbtPages.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.WeSpireHomePage.GoTo(weSpireHomeLinks.UpdateInterest);
+            AbtPages.WeSpireUpdateInterestsPage.RandomInterestUpdate();
             //Assert.True(AbtDriver.WeSpireHomePage.isAt());
                
         }
@@ -23,28 +23,28 @@ namespace abtTest.Web
      // [Fact(DisplayName ="Should like a Random Post")]
         public void Should_Like_a_Random_Comment()
         {
-            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
-            AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
-            AbtDriver.WeSpireHomePage.LikeOrUnlikeRandomComment();
+            SeleniumDriver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
+            AbtPages.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.WeSpireHomePage.LikeOrUnlikeRandomComment();
             //Assert that the post changed to not liked or liked?
         }
 
        // [Fact(DisplayName ="Should Invite a user to WeSpire")]
         public void Should_Invite_User_To_WeSpire()
         {
-            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
-            AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
-            AbtDriver.WeSpireHomePage.GoTo(weSpireHomeLinks.Invite);
-            Assert.True(AbtDriver.WeSpireInvitePage.InviteUser("cristian_paulino@abtassoc.com"));
+            SeleniumDriver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
+            AbtPages.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.WeSpireHomePage.GoTo(weSpireHomeLinks.Invite);
+            Assert.True(AbtPages.WeSpireInvitePage.InviteUser("cristian_paulino@abtassoc.com"));
            
         }
 
        // [Fact(DisplayName ="Should Post on a Random Comment")]
         public void Should_Post_On_A_Random_Comment()
         {
-            Driver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
-            AbtDriver.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
-            AbtDriver.WeSpireHomePage.PostOnRandomComment();
+            SeleniumDriver.RemoteInitDavidsPc(Browser.IENoNativeEvents);
+            AbtPages.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.WeSpireHomePage.PostOnRandomComment();
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 
@@ -22,14 +23,27 @@ namespace AbtFramework
 
         public void Edit()
         {
-            Driver.seleniumdriver.SwitchTo().Frame("WebApplicationFrame");
-            Thread.Sleep(3000);
-            NewPPTSlide.Click();
-            AddSlide.Click();
-            Thread.Sleep(2000);
-            SlideWrapper.Click();
-            action.SendKeys(Keys.Enter).SendKeys("Adding new Slide at: "+DateTime.Now).Perform();
 
+
+            SeleniumDriver.Instance.SwitchTo().Frame("WebApplicationFrame");
+            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("PptRibbon.Home.Slides-LargeMedium-0-0")));
+            try
+            {
+                NewPPTSlide.Click();
+            }
+
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           // NewPPTSlide.Click();
+           // AddSlide.Click();
+           // Thread.Sleep(2000);
+           // SlideWrapper.Click();
+           // action.SendKeys(Keys.Enter).SendKeys("Adding new Slide at: "+DateTime.Now).Perform();
+            
+
+           
         }
     }
 }

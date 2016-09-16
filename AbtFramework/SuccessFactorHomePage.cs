@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium.Support.UI;
 
 namespace AbtFramework
 {
@@ -42,22 +43,36 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            Driver.seleniumdriver.Navigate().GoToUrl(url);
-            
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("body")));
             wait.Until(e => dropdowns.Single(a=>a.Text.Equals("Home")).Displayed);
-
             StopTimer();
+
+        
+
+        
         }
 
         public bool isUserLoggedIn()
         {
-            if(Username.Text.Equals("Sofiane Oumsalem"))
-            {
-                Console.WriteLine("User: Sofiane Oumsalem successfully logged in using " + SSOProvider);
-                return true;
-            }
+           
 
-            else { return false; }
+                if (Username.Text.Equals("Sofiane Oumsalem"))
+                {
+                    Console.WriteLine("User: Sofiane Oumsalem successfully logged in using " + SSOProvider);
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
+
+
+            
+          
         }
+
+      
     }
 }

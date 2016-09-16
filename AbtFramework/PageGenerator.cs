@@ -8,7 +8,7 @@ namespace AbtFramework
         public static T GetPage<T>() where T : PageModel, new()
         {
             T page = new T();
-            PageFactory.InitElements(Driver.seleniumdriver, page);
+            PageFactory.InitElements(SeleniumDriver.Instance, page);
             return page;
 
         }

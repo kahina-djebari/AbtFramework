@@ -13,10 +13,12 @@ namespace AbtFramework
         private IWebElement AskQuestion;
         [FindsBy(How=How.LinkText,Using = "Conferencing Setup")]
         private IWebElement conferencingSetupLink;
+        [FindsBy(How = How.LinkText, Using = "Distribution List Request")]
+        private IWebElement DistributionListLink;
 
         public void NewIncident(IncidentType incident)
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             switch (incident)
             {
                 case IncidentType.Ask_A_Question:
@@ -37,6 +39,10 @@ namespace AbtFramework
 
                     break;
                 case IncidentType.DistributionListRequest:
+
+                    wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+                    wait.Until(e => DistributionListLink.Displayed);
+                    DistributionListLink.Click();
                     break;
                 case IncidentType.HardwarePeripheralRequest:
                     break;

@@ -11,7 +11,7 @@ using AbtFramework.AutoIT;
 
 namespace AbtFramework
 {
-    public class DocumentNavigation : PageModel
+    public class SharePointDocumentNavigation : PageModel
     {
         [FindsBy(How=How.LinkText,Using = "QA Authoring Issue Replication")]
         private IWebElement QA_Folder;
@@ -26,6 +26,14 @@ namespace AbtFramework
         [FindsBy(How = How.LinkText, Using = "IT Metrics")]
         private IWebElement ExcelDoc;
         public static string currentdocTitle;
+        [FindsBy(How=How.LinkText,Using = "Topic")]
+        private IWebElement TopicExpand;
+        [FindsBy(How=How.Id,Using = "QCB1_Button5")]
+        private IWebElement MoreOptions;
+        [FindsBy(How=How.ClassName,Using = "s4-itm-cbx")]
+        private IList<IWebElement> ChkBoxList;
+        [FindsBy(How=How.Id,Using = "QCB1_Button1")]
+        private IWebElement NewBtn;
 
         public IWebElement OpenWordOnline
         {
@@ -35,6 +43,9 @@ namespace AbtFramework
                                    .Equals("Open in Word Online"));
             }
         }
+
+        public IWebElement DocumentCheckbox { get { return ChkBoxList.Single(e => e.GetAttribute("aria-label").Split(',')[0].Equals(currentdocTitle)); } }
+
         public void Goto(MS2013Links link)
         {
             switch (link)
@@ -62,12 +73,43 @@ namespace AbtFramework
             switch (document)
             {
                 case MS2013documents.QA_ReadinessChecklist_v4:
-                    OpenDoc(WordDoc, doctype);
+                    try
+                    {
+                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("onetidDoclibViewTbl0")));
+                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                             // if you're not in the km workspace program wil continue.
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                    OpenDoc(WordDoc, documentType.Word);
+
                     break;
                case MS2013documents.SampleAVMetrics:
+                    try
+                    {
+                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
+                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                             // if you're not in the km workspace program wil continue.
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
                     OpenDoc(PowerPointDoc, doctype);
                     break;
                 case MS2013documents.ITMetrics:
+                    try
+                    {
+                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
+                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                             // if you're not in the km workspace program wil continue.
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
                     OpenDoc(ExcelDoc, doctype);
                     break;
                 default:
@@ -78,16 +120,24 @@ namespace AbtFramework
 
         private void OpenDoc(IWebElement Doc, documentType doctype) //open documents online
         {
+            currentdocTitle = Doc.Text;
             wait.Until(e => Doc.Displayed);
-            action.ContextClick(Doc).Perform();
-            finder = new PopupWindowFinder(Driver.seleniumdriver);
+            DocumentCheckbox.Click();
+            MoreOptions.Click();
+           // action.ContextClick(Doc).Perform();
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
             popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
-            Driver.Close();
-            Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
-            Driver.seleniumdriver.Manage().Window.Maximize();
+            wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+            SeleniumDriver.Close();
+            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.Instance.Manage().Window.Maximize();
             Console.WriteLine(doctype.ToString() + " Document opened Succesfully");
-            Console.Write("</br>");
+            Console.Write("</br>");       
         }
+
+                
+            
+        
 
         private IWebElement OpenDocumentIn(documentType doctype)
         {
@@ -100,6 +150,17 @@ namespace AbtFramework
             switch (doc)
             {
                 case MS2013documents.QA_ReadinessChecklist_v4:
+                    try
+                    {
+                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
+                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                             // if you're not in the km workspace program wil continue.
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                    wait.Timeout = TimeSpan.FromSeconds(5);
                     wait.Until(e => WordDoc.Displayed);
                     AutoITDriver.currentWorkingDocTitle = WordDoc.Text;
 
@@ -107,12 +168,34 @@ namespace AbtFramework
 
                     break;
                 case MS2013documents.SampleAVMetrics:
+                    try
+                    {
+                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
+                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                             // if you're not in the km workspace program wil continue.
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                    wait.Timeout = TimeSpan.FromSeconds(5);
                     wait.Until(e => PowerPointDoc.Displayed);
                     AutoITDriver.currentWorkingDocTitle = PowerPointDoc.Text;
 
                     PowerPointDoc.Click();
                     break;
                 case MS2013documents.ITMetrics:
+                    try
+                    {
+                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
+                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                             // if you're not in the km workspace program wil continue.
+                    }
+                    catch (Exception e)
+                    {
+                        
+                    }
+                    wait.Timeout = TimeSpan.FromSeconds(5);
                     wait.Until(e => ExcelDoc.Displayed);
                     AutoITDriver.currentWorkingDocTitle = ExcelDoc.Text;
 
@@ -177,6 +260,11 @@ namespace AbtFramework
         {
             return DocOptions.Single(e => e.GetAttribute("title")
                                    .Equals("Open in " + doctype.ToString()));
+        }
+
+        public void CreateDocument(documentType doctype)
+        {
+            NewBtn.Click();
         }
     }
 }

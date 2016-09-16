@@ -11,18 +11,14 @@ namespace AbtFramework
         private IWebElement loginbtn;
         [FindsBy(How=How.CssSelector,Using = "#screen2_h1")]
         private IWebElement userFirstName;
-        [FindsBy(How=How.LinkText,Using = "Start Meeting")]
+        [FindsBy(How=How.Id,Using = "btn_join_room")]
         private IWebElement StartMeeting;
 
-        public void goTo()
-        {
-            Driver.seleniumdriver.Navigate().GoToUrl("https://abtassociates.webex.com/mw3100/mywebex/default.do?siteurl=abtassociates");
-
-        }
+      
 
         public void Login()
         {
-            Driver.seleniumdriver.SwitchTo().Frame("header");
+           // SeleniumDriver.seleniumdriver.SwitchTo().Frame("header");
             loginbtn.Click();
         }
 
@@ -47,7 +43,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            Driver.seleniumdriver.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
             wait.Until(e =>StartMeeting.Displayed);
             StopTimer();
 

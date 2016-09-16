@@ -22,7 +22,7 @@ namespace AbtFramework.AutoIT
             Thread.Sleep(2000);
             autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "{DOWN}");
             Thread.Sleep(1000);
-            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
             
 
@@ -81,7 +81,7 @@ namespace AbtFramework.AutoIT
             Thread.Sleep(2000);
             autoit.ControlClick(currentWorkingDocTitle, "", "NetUIHWND1", "LEFT", 1, 177, 76);
             Thread.Sleep(500);
-            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from PPT Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
 
         }

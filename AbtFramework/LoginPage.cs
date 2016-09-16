@@ -15,12 +15,12 @@ namespace AbtFramework
 
         public void goTo()
         {
-            Driver.seleniumdriver.Navigate().GoToUrl("https://gmail.com");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://gmail.com");
         }
 
         public void login()
         {
-            var wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(10));
+            var wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementIsVisible(By.Id("Email")));
             search.SendKeys("Testing Selenium");
         }

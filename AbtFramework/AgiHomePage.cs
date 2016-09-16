@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace AbtFramework
 {
-    public class HomePage : PageModel
+    public class AgiHomePage : PageModel
     {
         [FindsBy(How = How.LinkText, Using = "Home")]
         private IWebElement HomeLink;
@@ -73,8 +73,8 @@ namespace AbtFramework
                 {
                     _quicklinks = PageGenerator.GetPage<QuickLinksModel>();
 
-                    _quicklinks.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(10));
-                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(Driver.seleniumdriver);
+                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
+                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.Instance);
                     return _quicklinks;
                 }
             }
@@ -82,8 +82,8 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            Driver.seleniumdriver.Navigate().GoToUrl("http://agi.abtassociates.com");
-            wait.Until(e => Driver.seleniumdriver.Title.Equals("Home"));
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://agi.abtassociates.com");
+            wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
             StopTimer();
            Console.WriteLine("Agi Home Page Loaded in: " + LoadTime);
             Console.WriteLine("</br>");
@@ -118,7 +118,7 @@ namespace AbtFramework
         {
             wait.Until((e) =>
             {
-                if (Driver.seleniumdriver.Title != title)
+                if (SeleniumDriver.Instance.Title != title)
                 {
                     element.Click();
                 }

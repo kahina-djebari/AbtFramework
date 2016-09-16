@@ -24,19 +24,19 @@ namespace AbtFramework
             get
             {
                 _abttraveldropdown = PageGenerator.GetPage<AbtTravelOnlineDropdown>();
-                _abttraveldropdown.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(30));
-                _abttraveldropdown.action = new Actions(Driver.seleniumdriver);
+                _abttraveldropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _abttraveldropdown.action = new Actions(SeleniumDriver.Instance);
                 return _abttraveldropdown;
             }
         }
 
         public void goTo()
         {
-            AbtDriver.TopNavigation.ToolsDropdown.AbtTravelLink();
+            AbtPages.AgiTopNavigation.ToolsDropdown.AbtTravelLink();
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            Driver.seleniumdriver.Close();
-            Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+            SeleniumDriver.Instance.Close();
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
         }
 
         public bool isAt()
@@ -73,7 +73,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            Driver.seleniumdriver.Navigate().GoToUrl("https://daxii.abtassoc.com/openam/idpssoinit?metaAlias=/abt/AbtSaml2Idp&spEntityID=bcdsso.bcdtravel.com&binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&RelayState=https://bcdpingidgateway.bcdtravel.com/SP/TripSourcePortal/tripsourceportal.aspx&iPSP");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://daxii.abtassoc.com/openam/idpssoinit?metaAlias=/abt/AbtSaml2Idp&spEntityID=bcdsso.bcdtravel.com&binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&RelayState=https://bcdpingidgateway.bcdtravel.com/SP/TripSourcePortal/tripsourceportal.aspx&iPSP");
             
         }
 

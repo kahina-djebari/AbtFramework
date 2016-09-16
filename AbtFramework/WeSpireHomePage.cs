@@ -34,7 +34,7 @@ namespace AbtFramework
             //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
             if (userFirstName.Text.Equals("Sofiane"))
             {
-                Console.WriteLine("User: Sofiane succesfully logged in using "+SSOProvider);
+                PrintResponseTime("WeSpire");
                 return true;
             }
 
@@ -72,6 +72,11 @@ namespace AbtFramework
             }
 
 
+        }
+
+        public void GoWithNoOutputResult()
+        {
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
         }
 
         private Post PostMatcher(string input, string pattern)
@@ -137,7 +142,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            Driver.seleniumdriver.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
             wait.Until(e => Dashboard.Displayed);
             StopTimer();
            

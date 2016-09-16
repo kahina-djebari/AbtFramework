@@ -4,13 +4,13 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AbtFramework
 {
-    public class TopNavigation : PageModel
+    public class AgiTopNavigation : PageModel
     {
-        [FindsBy(How=How.LinkText,Using ="Tools & Resources")]
-        private IWebElement ToolsAndResources;
+        
 
         [FindsBy(How = How.LinkText, Using = "Home")]
         private IWebElement HomeLink;
@@ -26,30 +26,40 @@ namespace AbtFramework
 
         private List<IWebElement> LinkList;
 
+        [FindsBy(How = How.ClassName, Using = "main")]
+        private IList<IWebElement> Toplinks;
+
         private ToolsDropdown _toolsDropdown;
 
         public ToolsDropdown ToolsDropdown { get {
                 _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>();
-                _toolsDropdown.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(15));
-                _toolsDropdown.action = new Actions(Driver.seleniumdriver);
+                _toolsDropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(15));
+                _toolsDropdown.action = new Actions(SeleniumDriver.Instance);
                 return _toolsDropdown;
             } }
 
-       
 
-        public void ToolsLink()
-        {
-            ToolsAndResources.Click();
-                       
-        }
-
+        public IWebElement ToolsLink
+        { get {  foreach(var link in Toplinks)
+                {
+                   
+                    var el = link.FindElement(By.TagName("a"));
+                    if (el.GetAttribute("href").Equals("http://abtassoc.sharepoint.com/ToolsResources"))
+                    {
+                        return el;
+                    }
+                     
+                            
+                }
+          return null;       
+       } }
 
         public void HoverOverTools()
         {
             wait.Until(e =>
             {
 
-                if (Driver.seleniumdriver.WindowHandles.Count >= 2)
+                if (SeleniumDriver.Instance.WindowHandles.Count >= 2)
                 {
                    
                     return true;
@@ -57,11 +67,11 @@ namespace AbtFramework
 
                 else
                 {
-                    action.MoveToElement(ToolsAndResources).Perform();
+                    action.MoveToElement(ToolsLink).Perform();
 
                     try
                     {
-                        finder = new PopupWindowFinder(Driver.seleniumdriver);
+                        finder = new PopupWindowFinder(SeleniumDriver.Instance);
                         popupWindowHandle = finder.Click(ToolsDropdown.AbtTravel);
 
                     }
@@ -73,9 +83,9 @@ namespace AbtFramework
 
 
             });
-            Driver.Close();
-                  Driver.seleniumdriver.SwitchTo().Window(popupWindowHandle);
-            Driver.seleniumdriver.Manage().Window.Maximize();
+            SeleniumDriver.Close();
+                  SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.Instance.Manage().Window.Maximize();
 
 
 
@@ -89,7 +99,7 @@ namespace AbtFramework
             LinkList.Add(NewsLink);
             LinkList.Add(ProjectsLink);
             LinkList.Add(ProposalsLink);
-            LinkList.Add(ToolsAndResources);
+            LinkList.Add(ToolsLink);
             bool areActive = true;
 
             foreach(var el in LinkList)
@@ -111,7 +121,27 @@ namespace AbtFramework
             return areActive;
         }
 
-       
+        public void ToolsAndResources()
+        {
+            ToolsLink.Click();
+        }
+
+        public void Projects()
+        {
+            ProjectsLink.Click();
+        }
+
+        public void News()
+        {
+            NewsLink.Click();
+        }
+
+        public void Home()
+        {
+            HomeLink.Click();
+        }
+
+ 
 
         public void Goto(homelinks link)
         {
@@ -122,7 +152,7 @@ namespace AbtFramework
                     wait.Timeout = TimeSpan.FromSeconds(40);
                     wait.Until(e =>
                     {
-                        if (Driver.seleniumdriver.Title !="Projects")
+                        if (SeleniumDriver.Instance.Title !="Projects")
                         {
                             ProjectsLink.Click();
                         }

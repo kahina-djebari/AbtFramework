@@ -14,24 +14,24 @@ namespace abtTest.Web
         }
         public void Dispose()
         {
-            Driver.Close();
+            SeleniumDriver.Close();
         }
 
       //  [Fact(DisplayName ="Should Open a received email")]
         public void Should_Open_Received_Email()
         {
-            Driver.RemoteInit();
-            AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Outlook);
-            AbtDriver.OutlookWebPage.OpenEmail();
+            SeleniumDriver.RemoteInit();
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Outlook);
+            AbtPages.OutlookWebPage.OpenEmail();
            // Assert.True(AbtDriver.OutlookEmailViewerPage.isEmailOpen(), "Could not Open Email");
         }
 
        // [Fact(DisplayName ="Should Send an email")]
         public void Should_Send_An_Email()
         {
-            AbtDriver.HomePage.Go();
-            AbtDriver.TopNavigation.ToolsDropdown.goTo(AbtPages.Outlook);
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Outlook);
           //  Assert.True(AbtDriver.OutlookWebPage.SendEmail("david_acuna@abtassoc.com", "subject goes here", "Body goes here"));
         }
     }

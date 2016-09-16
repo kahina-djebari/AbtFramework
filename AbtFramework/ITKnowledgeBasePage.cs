@@ -22,7 +22,7 @@ namespace AbtFramework
 
         public void OpenRandomArticle()
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             RandomArticle.Click();
           
             
@@ -31,10 +31,10 @@ namespace AbtFramework
 
         public void EditArticle(string EditionText)
         {
-            Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
     
             EditBtn.Click();
-           Driver.seleniumdriver.SwitchTo().Frame("kb_knowledge.text_ifr");
+           SeleniumDriver.Instance.SwitchTo().Frame("kb_knowledge.text_ifr");
            wordSection.Click();
            action.SendKeys(Keys.Enter).SendKeys(Keys.ArrowUp).Perform();
             wordSection.FindElements(By.TagName("p")).First().SendKeys("*********");

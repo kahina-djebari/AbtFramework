@@ -19,8 +19,8 @@ namespace AbtFramework
             get
             {
                 _leftNavigation = PageGenerator.GetPage<LeftNavigation>();
-                _leftNavigation.wait = new WebDriverWait(Driver.seleniumdriver, TimeSpan.FromSeconds(15));
-                _leftNavigation.action = new Actions(Driver.seleniumdriver);
+                _leftNavigation.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(15));
+                _leftNavigation.action = new Actions(SeleniumDriver.Instance);
                 return _leftNavigation;
             }
         }

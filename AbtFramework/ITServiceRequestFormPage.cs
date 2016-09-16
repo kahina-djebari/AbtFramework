@@ -49,7 +49,7 @@ namespace AbtFramework
             MoreInfoTxtBox.SendKeys(moreInformation);
             submitBtn.Click();
             wait.Until(e=>OpenMyIncidentsLink.Displayed);
-            Driver.seleniumdriver.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
             action.MoveToElement(dropzone).Perform();
           //  action.SendKeys(Keys.ArrowUp).SendKeys(Keys.ArrowUp).SendKeys(Keys.ArrowUp).Perform();
           

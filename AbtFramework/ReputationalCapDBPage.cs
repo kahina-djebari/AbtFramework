@@ -19,23 +19,14 @@ namespace AbtFramework
 
         
 
-        public void goTo()
-        {
-            
-            wait.PollingInterval = TimeSpan.FromSeconds(1);
-            wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            Driver.seleniumdriver.Close();
-            Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
-            continueBtn.Click();
-
-        }
+    
 
         public bool isAt()
         {
             if(headers.ElementWithTextExists("Reputational Capital Database (RepCapDB)"))
             {
                 StopTimer();
-                Console.WriteLine("Reputational Capital Database Prod Page Toook: " + LoadTime + " to load");
+                PrintResponseTime("Reputational Capital Database");
                 return true;
             }
 
@@ -46,7 +37,7 @@ namespace AbtFramework
         {
             if (isAt())
             {
-                if (AbtDriver.AbtKnowledgePage.GetUsername().Equals(SSOCrendentials.CurrentUser))
+                if (AbtPages.AbtKnowledgePage.GetUsername().Equals(SSOCrendentials.CurrentUser))
                 {
                     return true;
                 }
@@ -58,10 +49,10 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            Driver.seleniumdriver.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/tldb/main.cfm");
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/tldb/main.cfm");
             try
             {
-                AbtDriver.AbtKnowledgePage.ContinueToAbtKnowledge();
+                AbtPages.AbtKnowledgePage.ContinueToAbtKnowledge();
             }
             catch(Exception e)
             {

@@ -9,19 +9,38 @@ namespace AbtFramework
         [FindsBy(How=How.Id,Using = "pageTitle")]
         private IWebElement ismsHeader;
 
-        public void goTo()
+        /*
+        public IsmsPage()
         {
-          
-            AbtDriver.TopNavigation.ToolsDropdown.IsmsLink();
-        
-        }
+            Environment = "Production";
+            SingleSignOnProvider = "Simieo";
+        }*/
 
         public bool isAt()
         {
             if (ismsHeader.Displayed)
             {
+                StopTimer();
+                PrintResponseTime("ISMS");
                 return true;
 
+            }
+
+            return false;
+        }
+
+        public bool IsUserLoggedIn()
+        {
+            if (isAt())
+            {
+              
+              string User= AbtPages.SharePointTopNavigation.GetCurrentUser();
+
+                if (User.Equals(SSOCrendentials.CurrentUser))
+                {
+                    return true;
+                }
+                            
             }
 
             return false;

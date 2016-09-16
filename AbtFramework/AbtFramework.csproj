@@ -66,7 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutAbtPage.cs" />
-    <Compile Include="AbtDriver.cs" />
+    <Compile Include="AbtPages.cs" />
     <Compile Include="AbtKnowledgePage.cs" />
     <Compile Include="AbtTravelOnlineDropdown.cs" />
     <Compile Include="AbtTravelPage.cs" />
@@ -74,16 +74,21 @@
     <Compile Include="AutoIT\AutoITDriver.cs" />
     <Compile Include="ConcurHomePage.cs" />
     <Compile Include="ConferencingSetupPage.cs" />
-    <Compile Include="ConfSetupConfirmationPage.cs" />
+    <Compile Include="KmWorkSpacePage.cs" />
+    <Compile Include="RightFindHomePage.cs" />
+    <Compile Include="SharePointTopNavigation.cs" />
+    <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
+    <Compile Include="DistListReqFormPage.cs" />
     <Compile Include="DocumentNavigation.cs" />
-    <Compile Include="Driver.cs" />
-    <Compile Include="AbtPages.cs" />
+    <Compile Include="Enums\TypeOfRequest.cs" />
+    <Compile Include="SeleniumDriver.cs" />
+    <Compile Include="Abtlinks.cs" />
     <Compile Include="EbscoHomePage.cs" />
     <Compile Include="ExcelOnlinePage.cs" />
     <Compile Include="FormsLibraryPage.cs" />
     <Compile Include="homelinks.cs" />
-    <Compile Include="HomePage.cs" />
+    <Compile Include="AgiHomePage.cs" />
     <Compile Include="HRServiceRequestpage.cs" />
     <Compile Include="IncidentTablePageObject.cs" />
     <Compile Include="IsmsPage.cs" />
@@ -92,7 +97,6 @@
     <Compile Include="ITServiceRequestpage.cs" />
     <Compile Include="LeftNavigation.cs" />
     <Compile Include="LoginPage.cs" />
-    <Compile Include="MS2013UpgradePage.cs" />
     <Compile Include="MyOpenIncidentsPage.cs" />
     <Compile Include="NewIncidentPage.cs" />
     <Compile Include="NewsPage.cs" />
@@ -134,7 +138,7 @@
     <Compile Include="TodayILearnedPage.cs" />
     <Compile Include="ToolsAndResourcesPage.cs" />
     <Compile Include="ToolsDropdown.cs" />
-    <Compile Include="TopNavigation.cs" />
+    <Compile Include="AgiTopNavigation.cs" />
     <Compile Include="Utils Classes\Browser.cs" />
     <Compile Include="Utils Classes\DriverExtentions.cs" />
     <Compile Include="Utils Classes\Urgency.cs" />
@@ -147,7 +151,7 @@
     <Compile Include="WeSpireInvitePage.cs" />
     <Compile Include="WeSpireLoginPage.cs" />
     <Compile Include="WeSpireUpdateInterestsPage.cs" />
-    <Compile Include="WordDocumentPage.cs" />
+    <Compile Include="WordOnlinePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

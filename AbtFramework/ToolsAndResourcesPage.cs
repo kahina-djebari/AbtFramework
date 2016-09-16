@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,86 +37,120 @@ namespace AbtFramework
         [FindsBy(How = How.LinkText, Using = "Reputational Capital Database")]
         private IWebElement repCapDBPageLink;
 
-        public void Go()
-        {
-            
-            AbtDriver.TopNavigation.ToolsLink();
-        }
-        
-        public void goTo(AbtPages Page)
+        private void goTo(Abtlinks Page)
         {
             switch (Page)
             {
-                case AbtPages.Oracle: 
+                case Abtlinks.Oracle: 
                     StartTimer();
                     Oracle.Click();
-                    wait.Until(d => Driver.seleniumdriver.WindowHandles.Count >= 2);
-                    Driver.seleniumdriver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+                    SeleniumDriver.Instance.Close();
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
                     StopTimer();
                     break;
 
-                case AbtPages.Abt_Talent_Learning_and_Support: 
-                                                StartTimer();
-                                                Atlas.Click();
-                                                wait.Until(d => Driver.seleniumdriver.WindowHandles.Count >= 2);
-                                                Driver.seleniumdriver.Close();
-                                                Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
-                                                StopTimer(); break;
+                case Abtlinks.Abt_Talent_Learning_and_Support:
 
-                case AbtPages.AbtKnowledge: 
+                    StartTimer();
+                    OpenWindowFor(Atlas);
+                    StopTimer();
+                    break;
+
+                case Abtlinks.AbtKnowledge: 
                     StartTimer();
                     wait.Until(d => this.AbtKnowledge.Displayed);
                     AbtKnowledge.Click();
-                    wait.Until(d => Driver.seleniumdriver.WindowHandles.Count >= 2);
-                    Driver.seleniumdriver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
-                    Driver.seleniumdriver.FindElement(By.Id("submitbutton")).Click(); //a windows pop up with a btn "continue to abtKnowledge" finding the element withouth page factory 
+                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+                    SeleniumDriver.Instance.Close();
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    SeleniumDriver.Instance.FindElement(By.Id("submitbutton")).Click(); //a windows pop up with a btn "continue to abtKnowledge" finding the element withouth page factory 
                     StopTimer(); 
 
                     break;
 
-                case AbtPages.AbtTravel:  
+                case Abtlinks.AbtTravel:  
                     StartTimer();
                     wait.Until(d => this.AbtTravel.Displayed);
                     AbtTravel.Click();
-                    wait.Until(d => Driver.seleniumdriver.WindowHandles.Count >= 2);
-                    Driver.seleniumdriver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+                    SeleniumDriver.Instance.Close();
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
                     StopTimer();
                     break;
 
-                case AbtPages.ISMS: Isms.Click(); break;
+                case Abtlinks.ISMS:
 
-                case AbtPages.Outlook: 
+                    Isms.Click();
+                    StartTimer();
+                    break;
+
+                case Abtlinks.Outlook: 
                     StartTimer();
                     OutlookWeb.Click();
-                    wait.Until(d => Driver.seleniumdriver.WindowHandles.Count >= 2);
-                    Driver.seleniumdriver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+                    SeleniumDriver.Instance.Close();
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
                     StopTimer();
                     break;
 
-                case AbtPages.RepCapPlanner: 
+                case Abtlinks.RepCapPlanner: 
                     StartTimer();
                     RepCapLink.Click();
-                    wait.Until(d => Driver.seleniumdriver.WindowHandles.Count >= 2);
-                    Driver.seleniumdriver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+                    SeleniumDriver.Instance.Close();
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
                     StopTimer();
                     break;
 
-                case AbtPages.ReputationalCapitalDB: 
+                case Abtlinks.ReputationalCapitalDB: 
                     StartTimer();
-                    repCapDBPageLink.Click();
-                    wait.Until(d => Driver.seleniumdriver.WindowHandles.Count >= 2);
-                    Driver.seleniumdriver.Close();
-                    Driver.seleniumdriver.SwitchTo().Window(Driver.seleniumdriver.WindowHandles.Last());
-                    StopTimer();
+                    OpenWindowFor(repCapDBPageLink);
+                    try
+                    {
+                        AbtPages.AbtKnowledgePage.ContinueToAbtKnowledge();
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
                     break;
 
             }
 
+        }
+
+        public void GoToRepCapDB()
+        {
+            goTo(Abtlinks.ReputationalCapitalDB);
+        }
+
+        public void GoToIsms()
+        {
+            goTo(Abtlinks.ISMS);
+        }
+
+        private void OpenWindowFor(IWebElement link)
+        {
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            popupWindowHandle = finder.Click(link);
+            wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+            foreach(var window in SeleniumDriver.Instance.WindowHandles)
+            {
+                if (!window.Equals(popupWindowHandle))
+                {
+                    SeleniumDriver.Instance.SwitchTo().Window(window);
+                    SeleniumDriver.Close();
+                }
+            }
+  
+            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.Instance.Manage().Window.Maximize();
+        }
+
+        public void GoToAtlas()
+        {
+            goTo(Abtlinks.Abt_Talent_Learning_and_Support);
         }
 
         public bool isAt()
@@ -129,5 +164,7 @@ namespace AbtFramework
                         
             return false;
         }
+
+       
     }
 }
