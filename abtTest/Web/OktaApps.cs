@@ -185,7 +185,7 @@ namespace abtTest.Web
             Assert.True(AbtPages.WebExPage.isUserLoggedIn());
         }
 
-        [Fact(DisplayName ="Should Go to Success Factor (Production) Through Agi")]
+        [Fact(DisplayName ="Should Go to Success Factor (Production) Through AGI")]
         public void Should_Go_SuccessFactor_Through_Agi()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIENoNativeEvents);
