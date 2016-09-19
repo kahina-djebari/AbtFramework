@@ -94,6 +94,20 @@ namespace AbtFramework
 
                     break;
 
+                case Browser.RemoteFrometaIE:
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+                    IEoptions.IgnoreZoomLevel = true;
+                    IEoptions.EnableNativeEvents = false;
+                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.24:4444/wd/hub"), IEoptions.ToCapabilities()
+
+                       );
+                    firingDriver = new EventFiringWebDriver(Instance);
+                    firingDriver.ExceptionThrown += TakeScreenShotOnException;
+                    Instance.Manage().Window.Maximize();
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    break;
+
                 case Browser.IENoNativeEvents:
                     IEoptions = new InternetExplorerOptions();
                     IEoptions.EnableNativeEvents = false;

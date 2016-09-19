@@ -41,9 +41,10 @@ namespace AbtFramework
         {
             if (IsAt())
             {
-                if (User.Text.Equals(SSOCrendentials.CurrentUser))
+                //  if (User.Text.Equals(SSOCrendentials.CurrentUser))
+                if (User.Text.Equals("Sofiane Oumsalem"))
                 {
-                    PrintSuccesfullLogin(User.Text);
+                    //PrintSuccesfullLogin(User.Text);
                     return true;
                 }
                                

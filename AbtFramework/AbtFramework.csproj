@@ -74,6 +74,7 @@
     <Compile Include="AutoIT\AutoITDriver.cs" />
     <Compile Include="ConcurHomePage.cs" />
     <Compile Include="ConferencingSetupPage.cs" />
+    <Compile Include="EbscoMyAccountPage.cs" />
     <Compile Include="KmWorkSpacePage.cs" />
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="SharePointTopNavigation.cs" />

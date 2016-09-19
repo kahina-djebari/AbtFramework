@@ -28,26 +28,28 @@ namespace abtTest.Web
             SeleniumDriver.Close();
         }
 
-      //  [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
+        [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
         public void Should_Go_to_Ebsco_Test_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteSofianesIE);
             AbtPages.EbscoHomePage.Go(WebEnvironment.TestEnvironment);
-            Assert.True(AbtPages.EbscoHomePage.isAt());
+            AbtPages.EbscoHomePage.GoToMyAccount();
+            Assert.True(AbtPages.EbscoMyAccountPage.IsUserLoggedIn());
 
         }
 
-       // [Fact(DisplayName = "Should Go to Ebsco Production Home Page")]
+        [Fact(DisplayName = "Should Go to Ebsco Production Home Page")]
         public void Should_Go_to_Ebsco_Production_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteSofianesIE);
             AbtPages.EbscoHomePage.Go(WebEnvironment.ProductionEnvironment);
-            Assert.True(AbtPages.EbscoHomePage.isAt());
+            AbtPages.EbscoHomePage.GoToMyAccount();
+            Assert.True(AbtPages.EbscoMyAccountPage.IsUserLoggedIn());
 
         }
 
 
-        [Fact(DisplayName = "Should Go to Success Factor (Test) Home Page")]
+       // [Fact(DisplayName = "Should Go to Success Factor (Test) Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
@@ -58,7 +60,7 @@ namespace abtTest.Web
             
         }
 
-        [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to Success Factor Production Home Page")]
         public void Should_Go_to_SuccessFactor_Production_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
@@ -110,20 +112,21 @@ namespace abtTest.Web
 
         }
 
-      //    [Fact(DisplayName = "Should Go to Right Find UAT Home Page")]
+          [Fact(DisplayName = "Should Go to Right Find UAT Home Page")]
         public void Should_Go_to_RightFind_Test_HomePage()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.init(Browser.RemoteSofianesIE);
             AbtPages.RightFindHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.RightFindHomePage.IsUserLoggedIn());
 
         }
 
-     //   [Fact(DisplayName = "Should Go to Right Find Production Home Page")]
+        [Fact(DisplayName = "Should Go to Right Find Production Home Page")]
         public void Should_Go_to_RightFind_Production_HomePage()
         {
-            SeleniumDriver.init(Browser.IE);
-          //  AbtDriver.RightFindHomePage.Go(WebEnvironment.ProductionEnvironment);
+            SeleniumDriver.init(Browser.RemoteSofianesIE);
+           AbtPages.RightFindHomePage.Go(WebEnvironment.ProductionEnvironment);
+            Assert.True(AbtPages.RightFindHomePage.IsUserLoggedIn());
         }
 
       //  [Fact(DisplayName = "Should Go to Oracle Production Home Page")]
@@ -185,7 +188,7 @@ namespace abtTest.Web
             Assert.True(AbtPages.WebExPage.isUserLoggedIn());
         }
 
-        [Fact(DisplayName ="Should Go to Success Factor (Production) Through AGI")]
+       // [Fact(DisplayName ="Should Go to Success Factor (Production) Through AGI")]
         public void Should_Go_SuccessFactor_Through_Agi()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIENoNativeEvents);

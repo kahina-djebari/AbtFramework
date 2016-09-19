@@ -59,6 +59,7 @@ namespace AbtFramework
         private static SharePointTopNavigation _sharepointtopnavigation;
         private static KmWorkSpacePage _kmworspace;
         private static SharePointDocumentNavigation _documentnavigation;
+        private static EbscoMyAccountPage _ebscomyaccountpage;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
@@ -527,6 +528,17 @@ namespace AbtFramework
                 _kmworspace.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _kmworspace.action = new Actions(SeleniumDriver.Instance);
                 return _kmworspace;
+            }
+        }
+
+        public static EbscoMyAccountPage EbscoMyAccountPage
+        {
+            get
+            {
+                _ebscomyaccountpage = PageGenerator.GetPage<EbscoMyAccountPage>();
+                _ebscomyaccountpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _ebscomyaccountpage.action = new Actions(SeleniumDriver.Instance);
+                return _ebscomyaccountpage;
             }
         }
     }

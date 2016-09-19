@@ -28,6 +28,7 @@ namespace AbtFramework.Utils_Classes
         RemoteDavidIENoNativeEvents,
         RemoteDavidIE,
         RemoteSofianesIE,
-        RemoteSofianesIENoNativeEvents
+        RemoteSofianesIENoNativeEvents,
+        RemoteFrometaIE
     }
 }
