@@ -28,7 +28,7 @@ namespace abtTest.Web
             SeleniumDriver.Close();
         }
 
-        [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
+     //   [Fact(DisplayName = "Should Go to Ebsco UAT Home Page")]
         public void Should_Go_to_Ebsco_Test_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
@@ -38,7 +38,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go to Ebsco Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to Ebsco Production Home Page")]
         public void Should_Go_to_Ebsco_Production_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
@@ -112,7 +112,7 @@ namespace abtTest.Web
 
         }
 
-          [Fact(DisplayName = "Should Go to Right Find UAT Home Page")]
+       //   [Fact(DisplayName = "Should Go to Right Find UAT Home Page")]
         public void Should_Go_to_RightFind_Test_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
@@ -121,7 +121,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go to Right Find Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to Right Find Production Home Page")]
         public void Should_Go_to_RightFind_Production_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
