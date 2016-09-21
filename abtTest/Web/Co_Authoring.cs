@@ -300,7 +300,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Edit Word Document Online on KM Workspace")]
         public void Should_Open_Word_Doc_Online_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4,documentType.Word);
             AbtPages.WordOnlinePage.Edit();
@@ -310,7 +310,7 @@ namespace abtTest.Web
        [Fact(DisplayName =  "Edit Excel Document Online on KM Workspace")]
         public void Should_Open_Excel_Doc_Online_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocumentOnline(MS2013documents.ITMetrics, documentType.Excel);
             AbtPages.ExcelOnlinePage.Edit();
@@ -318,7 +318,7 @@ namespace abtTest.Web
         }
 
 
-        [Fact(DisplayName = "Edit PPT Document Online on KM Workspace")]
+       // [Fact(DisplayName = "Edit PPT Document Online on KM Workspace")]
         public void Should_Open_PPT_Doc_Online_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.IE);
