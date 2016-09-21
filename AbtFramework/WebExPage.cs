@@ -29,6 +29,7 @@ namespace AbtFramework
                 case WebEnvironment.TestEnvironment:
                    GoToUrl("https://abtassoc-test.webex.com");
                     Console.WriteLine("WebEx Test HomePage Loaded in: "+LoadTime);
+                   
                     break;
                 case WebEnvironment.ProductionEnvironment:
                     GoToUrl("https://abtassociates.webex.com");
@@ -44,7 +45,8 @@ namespace AbtFramework
         {
             StartTimer();
             SeleniumDriver.Instance.Navigate().GoToUrl(url);
-        ;
+            wait.Until(e => StartMeeting.Displayed);
+            StopTimer();
 
         }
 
