@@ -124,6 +124,15 @@ namespace AbtFramework
         {
             currentdocTitle = Doc.Text;
             wait.Until(e => Doc.Displayed);
+            foreach(var el in ChkBoxList)
+            {
+                Console.WriteLine("Aria label is:"+el.GetAttribute("aria-label"));
+                Console.WriteLine(el.GetCssValue("aria-label"));
+                Console.WriteLine("Role is:"+el.GetAttribute("role"));
+                Console.WriteLine("aria checked is:"+el.GetAttribute("aria-checked"));
+                Console.WriteLine("Text is:"+el.Text);
+                Console.WriteLine("Tag name is:"+el.TagName);
+            }
             DocumentCheckbox.Click();
             MoreOptions.Click();
            // action.ContextClick(Doc).Perform();
