@@ -44,8 +44,7 @@ namespace AbtFramework
         {
             StartTimer();
             SeleniumDriver.Instance.Navigate().GoToUrl(url);
-            wait.Until(e =>StartMeeting.Displayed);
-            StopTimer();
+        ;
 
         }
 
@@ -63,9 +62,10 @@ namespace AbtFramework
             return false;
         }
 
-        private bool isAt()
+        public bool isAt()
         {
             wait.Until(e => StartMeeting.Displayed);
+            StopTimer();
             return true;
 
         }

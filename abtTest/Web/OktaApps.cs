@@ -163,7 +163,7 @@ namespace abtTest.Web
             Assert.True(AbtPages.ServiceNowHomepage.isUserLoggedIn());
         }
 
-       [Fact(DisplayName = "Should Go to Service Now Production Home Page")]
+      // [Fact(DisplayName = "Should Go to Service Now Production Home Page")]
         public void Should_Go_to_ServiceNow_Production_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -176,16 +176,16 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.WebExPage.Go(WebEnvironment.TestEnvironment);
-            Assert.True(AbtPages.WebExPage.isUserLoggedIn());
+            Assert.True(AbtPages.WebExPage.isAt());
 
         }
 
-     //   [Fact(DisplayName = "Should Go to WebEx Production Home Page")]
+        [Fact(DisplayName = "Should Go to WebEx Production Home Page")]
         public void Should_Go_to_WebEx_Production_HomePage()
         {
             SeleniumDriver.init(Browser.IE);
             AbtPages.WebExPage.Go(WebEnvironment.ProductionEnvironment);
-            Assert.True(AbtPages.WebExPage.isUserLoggedIn());
+            Assert.True(AbtPages.WebExPage.isAt());
         }
 
        // [Fact(DisplayName ="Should Go to Success Factor (Production) Through AGI")]
