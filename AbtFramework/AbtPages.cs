@@ -63,78 +63,78 @@ namespace AbtFramework
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
-                _abtKnowledgePage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _abtKnowledgePage.action = new Actions(SeleniumDriver.Instance);
+                _abtKnowledgePage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _abtKnowledgePage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _abtKnowledgePage;
             } }
 
  
 
         public static AbtTravelPage AbtTravelPage { get {  _abtTravelPage = PageGenerator.GetPage<AbtTravelPage>();
-                _abtTravelPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _abtTravelPage.action = new Actions(SeleniumDriver.Instance);
+                _abtTravelPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _abtTravelPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _abtTravelPage;
             } }
 
         public static AtlasPage AtlasPage { get {  _atlasPage = PageGenerator.GetPage<AtlasPage>();
 
-                _atlasPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _atlasPage.action = new Actions(SeleniumDriver.Instance);
+                _atlasPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _atlasPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _atlasPage;
             } }
 
         public static AgiHomePage AgiHomePage { get {  _homePage = PageGenerator.GetPage<AgiHomePage>();
-               _homePage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-               _homePage.action = new Actions(SeleniumDriver.Instance);
+               _homePage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+               _homePage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _homePage;
 
             } }
 
         public static IsmsPage IsmsPage { get {  _ismsPage = PageGenerator.GetPage<IsmsPage>();
 
-                _ismsPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _ismsPage.action = new Actions(SeleniumDriver.Instance);
+                _ismsPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _ismsPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _ismsPage;
             } }
 
         public static OraclePage OraclePage { get {  _oraclePage = PageGenerator.GetPage<OraclePage>();
 
-                _oraclePage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _oraclePage.action = new Actions(SeleniumDriver.Instance);
+                _oraclePage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _oraclePage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _oraclePage;
             } }
 
         public static OutlookWebPage OutlookWebPage { get {  _outlookWebPage = PageGenerator.GetPage<OutlookWebPage>();
 
-                _outlookWebPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _outlookWebPage.action = new Actions(SeleniumDriver.Instance);
+                _outlookWebPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _outlookWebPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _outlookWebPage;
 
             } }
 
         public static RepCapPlannerPage RepCapPlannerPage { get {  _repCapPlannerPage = PageGenerator.GetPage<RepCapPlannerPage>();
-                _repCapPlannerPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _repCapPlannerPage.action = new Actions(SeleniumDriver.Instance);
+                _repCapPlannerPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _repCapPlannerPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _repCapPlannerPage;
             } }
 
         public static ReputationalCapDBPage ReputationalCapDBPage { get {  _reputationalCapDBPage = PageGenerator.GetPage<ReputationalCapDBPage>();
 
-                _reputationalCapDBPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _reputationalCapDBPage.action = new Actions(SeleniumDriver.Instance);
+                _reputationalCapDBPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _reputationalCapDBPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _reputationalCapDBPage;
             } }
 
         public static ToolsAndResourcesPage ToolsAndResourcesPage { get { _toolsAndResourcesPage = PageGenerator.GetPage<ToolsAndResourcesPage>();
 
-                _toolsAndResourcesPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-               _toolsAndResourcesPage.action = new Actions(SeleniumDriver.Instance);
+                _toolsAndResourcesPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+               _toolsAndResourcesPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _toolsAndResourcesPage;
             } }
 
         public static AgiTopNavigation AgiTopNavigation { get { _topNavigation = PageGenerator.GetPage<AgiTopNavigation>();
-                                                    _topNavigation.wait = new WebDriverWait(SeleniumDriver.Instance,TimeSpan.FromSeconds(30));
-                _topNavigation.action = new Actions(SeleniumDriver.Instance);
+                                                    _topNavigation.wait = new WebDriverWait(SeleniumDriver.FiringDriver,TimeSpan.FromSeconds(30));
+                _topNavigation.action = new Actions(SeleniumDriver.FiringDriver);
                 return _topNavigation;
                                                         } }
 
@@ -142,8 +142,8 @@ namespace AbtFramework
             get
             {
                 _webExPage = PageGenerator.GetPage<WebExPage>();
-                _webExPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-               _webExPage.action = new Actions(SeleniumDriver.Instance);
+                _webExPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+               _webExPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _webExPage;
             }
         }
@@ -153,8 +153,8 @@ namespace AbtFramework
             get
             {
                 _outolooEmailViewerPage = PageGenerator.GetPage<OutlookEmailViewerPage>();
-                _outolooEmailViewerPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _outolooEmailViewerPage.action = new Actions(SeleniumDriver.Instance);
+                _outolooEmailViewerPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _outolooEmailViewerPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _outolooEmailViewerPage;
             }
         }
@@ -163,8 +163,8 @@ namespace AbtFramework
             get
             {
                 _staffDirectoryPage = PageGenerator.GetPage<StaffDirectoryPage>();
-                _staffDirectoryPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _staffDirectoryPage.action = new Actions(SeleniumDriver.Instance);
+                _staffDirectoryPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _staffDirectoryPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _staffDirectoryPage;
             }
         }
@@ -173,8 +173,8 @@ namespace AbtFramework
             get
             {
                 _formsLibraryPage = PageGenerator.GetPage<FormsLibraryPage>();
-                _formsLibraryPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _formsLibraryPage.action = new Actions(SeleniumDriver.Instance);
+                _formsLibraryPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _formsLibraryPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _formsLibraryPage;
             }
         }
@@ -184,8 +184,8 @@ namespace AbtFramework
             get
             {
                 _customizeLinksPage = PageGenerator.GetPage<CustomizeLinksPage>();
-                _customizeLinksPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _customizeLinksPage.action = new Actions(SeleniumDriver.Instance);
+                _customizeLinksPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _customizeLinksPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _customizeLinksPage;
             }
         }
@@ -194,8 +194,8 @@ namespace AbtFramework
             get
             {
                 _todayILearnedPage = PageGenerator.GetPage<TodayILearnedPage>();
-                _todayILearnedPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _todayILearnedPage.action = new Actions(SeleniumDriver.Instance);
+                _todayILearnedPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _todayILearnedPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _todayILearnedPage;
             }
         }
@@ -205,8 +205,8 @@ namespace AbtFramework
             get
             {
                 _newsPage = PageGenerator.GetPage<NewsPage>();
-                _newsPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _newsPage.action = new Actions(SeleniumDriver.Instance);
+                _newsPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _newsPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _newsPage;
             }
         }
@@ -216,8 +216,8 @@ namespace AbtFramework
             get
             {
                 _aboutAbtPage = PageGenerator.GetPage<AboutAbtPage>();
-                _aboutAbtPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _aboutAbtPage.action = new Actions(SeleniumDriver.Instance);
+                _aboutAbtPage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _aboutAbtPage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _aboutAbtPage;
             }
         }
@@ -227,8 +227,8 @@ namespace AbtFramework
             get
             {
                 _servicenowhomepage = PageGenerator.GetPage<ServiceNowHomepage>();
-                _servicenowhomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _servicenowhomepage.action = new Actions(SeleniumDriver.Instance);
+                _servicenowhomepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _servicenowhomepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _servicenowhomepage;
             }
         }
@@ -237,8 +237,8 @@ namespace AbtFramework
             get
             {
                 _servicehubhomepage = PageGenerator.GetPage<ServiceHubHomepage>();
-                _servicehubhomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _servicehubhomepage.action = new Actions(SeleniumDriver.Instance);
+                _servicehubhomepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _servicehubhomepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _servicehubhomepage;
             }
         }
@@ -248,8 +248,8 @@ namespace AbtFramework
             get
             {
                 _hrservicerequestpage = PageGenerator.GetPage<HRServiceRequestpage>();
-                _hrservicerequestpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _hrservicerequestpage.action = new Actions(SeleniumDriver.Instance);
+                _hrservicerequestpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _hrservicerequestpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _hrservicerequestpage;
             }
         }
@@ -258,8 +258,8 @@ namespace AbtFramework
             get
             {
                 _itservicerequestpage = PageGenerator.GetPage<ITServiceRequestpage>();
-                _itservicerequestpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _itservicerequestpage.action = new Actions(SeleniumDriver.Instance);
+                _itservicerequestpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _itservicerequestpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _itservicerequestpage;
             }
         }
@@ -268,8 +268,8 @@ namespace AbtFramework
             get
             {
                 _officeservicerequestpage = PageGenerator.GetPage<OfficeServiceRequestpage>();
-                _officeservicerequestpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _officeservicerequestpage.action = new Actions(SeleniumDriver.Instance);
+                _officeservicerequestpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _officeservicerequestpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _officeservicerequestpage;
             }
         }
@@ -279,8 +279,8 @@ namespace AbtFramework
             get
             {
                 _newincidentpage = PageGenerator.GetPage<NewIncidentPage>();
-                _newincidentpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _newincidentpage.action = new Actions(SeleniumDriver.Instance);
+                _newincidentpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _newincidentpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _newincidentpage;
             }
         }
@@ -290,8 +290,8 @@ namespace AbtFramework
             get
             {
                 _officerequestformpage = PageGenerator.GetPage<OfficeRequestFormPage>();
-                _officerequestformpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _officerequestformpage.action = new Actions(SeleniumDriver.Instance);
+                _officerequestformpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _officerequestformpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _officerequestformpage;
             }
         }
@@ -301,8 +301,8 @@ namespace AbtFramework
             get
             {
                 _projectspage = PageGenerator.GetPage<ProjectsPage>();
-                _projectspage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _projectspage.action = new Actions(SeleniumDriver.Instance);
+                _projectspage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _projectspage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _projectspage;
             }
         }
@@ -312,8 +312,8 @@ namespace AbtFramework
             get
             {
                 _worddocumentpage = PageGenerator.GetPage<WordOnlinePage>();
-                _worddocumentpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _worddocumentpage.action = new Actions(SeleniumDriver.Instance);
+                _worddocumentpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _worddocumentpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _worddocumentpage;
             }
         }
@@ -324,8 +324,8 @@ namespace AbtFramework
             get
             {
                 _documentnavigation = PageGenerator.GetPage<SharePointDocumentNavigation>();
-                _documentnavigation.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _documentnavigation.action = new Actions(SeleniumDriver.Instance);
+                _documentnavigation.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _documentnavigation.action = new Actions(SeleniumDriver.FiringDriver);
                 return _documentnavigation;
             }
         }
@@ -335,8 +335,8 @@ namespace AbtFramework
             get
             {
                 _wespirehomepage = PageGenerator.GetPage<WeSpireHomePage>();
-                _wespirehomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _wespirehomepage.action = new Actions(SeleniumDriver.Instance);
+                _wespirehomepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _wespirehomepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _wespirehomepage;
             }
         }
@@ -346,8 +346,8 @@ namespace AbtFramework
             get
             {
                 _wespireloginpage = PageGenerator.GetPage<WeSpireLoginPage>();
-                _wespireloginpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _wespireloginpage.action = new Actions(SeleniumDriver.Instance);
+                _wespireloginpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _wespireloginpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _wespireloginpage;
             }
         }
@@ -356,8 +356,8 @@ namespace AbtFramework
             get
             {
                 _ebscohomepage = PageGenerator.GetPage<EbscoHomePage>();
-                _ebscohomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _ebscohomepage.action = new Actions(SeleniumDriver.Instance);
+                _ebscohomepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _ebscohomepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _ebscohomepage;
             }
         }
@@ -366,8 +366,8 @@ namespace AbtFramework
             get
             {
                 _successfactorhomepage = PageGenerator.GetPage<SuccessFactorHomePage>();
-                _successfactorhomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _successfactorhomepage.action = new Actions(SeleniumDriver.Instance);
+                _successfactorhomepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _successfactorhomepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _successfactorhomepage;
             }
         }
@@ -377,8 +377,8 @@ namespace AbtFramework
             get
             {
                 _concurhomepage = PageGenerator.GetPage<ConcurHomePage>();
-                _concurhomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _concurhomepage.action = new Actions(SeleniumDriver.Instance);
+                _concurhomepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _concurhomepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _concurhomepage;
             }
         }
@@ -388,8 +388,8 @@ namespace AbtFramework
             get
             {
                 _wespireupdateinterestspage = PageGenerator.GetPage<WeSpireUpdateInterestsPage>();
-                _wespireupdateinterestspage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _wespireupdateinterestspage.action = new Actions(SeleniumDriver.Instance);
+                _wespireupdateinterestspage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _wespireupdateinterestspage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _wespireupdateinterestspage;
             }
         }
@@ -398,8 +398,8 @@ namespace AbtFramework
             get
             {
                 _wespireinvitepage = PageGenerator.GetPage<WeSpireInvitePage>();
-                _wespireinvitepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _wespireinvitepage.action = new Actions(SeleniumDriver.Instance);
+                _wespireinvitepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _wespireinvitepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _wespireinvitepage;
             }
         }
@@ -409,8 +409,8 @@ namespace AbtFramework
             get
             {
                 _itserviceaskquestionpage = PageGenerator.GetPage<ITServiceRequestFormPage>();
-                _itserviceaskquestionpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _itserviceaskquestionpage.action = new Actions(SeleniumDriver.Instance);
+                _itserviceaskquestionpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _itserviceaskquestionpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _itserviceaskquestionpage;
             }
         }
@@ -420,8 +420,8 @@ namespace AbtFramework
             get
             {
                 _myopenincidentspage = PageGenerator.GetPage<MyOpenIncidentsPage>();
-                _myopenincidentspage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _myopenincidentspage.action = new Actions(SeleniumDriver.Instance);
+                _myopenincidentspage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _myopenincidentspage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _myopenincidentspage;
             }
         }
@@ -430,8 +430,8 @@ namespace AbtFramework
             get
             {
                 _incidenttablepageobject = PageGenerator.GetPage<IncidentTablePageObject>();
-                _incidenttablepageobject.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _incidenttablepageobject.action = new Actions(SeleniumDriver.Instance);
+                _incidenttablepageobject.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _incidenttablepageobject.action = new Actions(SeleniumDriver.FiringDriver);
                 return _incidenttablepageobject;
             }
         }
@@ -441,8 +441,8 @@ namespace AbtFramework
             get
             {
                 _knowledgebase = PageGenerator.GetPage<ITKnowledgeBasePage>();
-                _knowledgebase.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _knowledgebase.action = new Actions(SeleniumDriver.Instance);
+                _knowledgebase.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _knowledgebase.action = new Actions(SeleniumDriver.FiringDriver);
                 return _knowledgebase;
             }
         }
@@ -452,8 +452,8 @@ namespace AbtFramework
             get
             {
                 _powerpointonlinepage= PageGenerator.GetPage<PowerPointOnlinePage>();
-                _powerpointonlinepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _powerpointonlinepage.action = new Actions(SeleniumDriver.Instance);
+                _powerpointonlinepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _powerpointonlinepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _powerpointonlinepage;
             }
         }
@@ -463,8 +463,8 @@ namespace AbtFramework
             get
             {
                 _excelonlinepage = PageGenerator.GetPage<ExcelOnlinePage>();
-                _excelonlinepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _excelonlinepage.action = new Actions(SeleniumDriver.Instance);
+                _excelonlinepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _excelonlinepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _excelonlinepage;
             }
         }
@@ -473,8 +473,8 @@ namespace AbtFramework
             get
             {
                 _conferencingsetup= PageGenerator.GetPage<ConferencingSetupPage>();
-                _conferencingsetup.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _conferencingsetup.action = new Actions(SeleniumDriver.Instance);
+                _conferencingsetup.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _conferencingsetup.action = new Actions(SeleniumDriver.FiringDriver);
                 return _conferencingsetup;
             }
         }
@@ -483,8 +483,8 @@ namespace AbtFramework
             get
             {
                 _confsetupconfirmation = PageGenerator.GetPage<SubmittedOrderPage>();
-                _confsetupconfirmation.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _confsetupconfirmation.action = new Actions(SeleniumDriver.Instance);
+                _confsetupconfirmation.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _confsetupconfirmation.action = new Actions(SeleniumDriver.FiringDriver);
                 return _confsetupconfirmation;
             }
         }
@@ -494,8 +494,8 @@ namespace AbtFramework
             get
             {
                 _distlistreqpage = PageGenerator.GetPage<DistListReqFormPage>();
-                _distlistreqpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _distlistreqpage.action = new Actions(SeleniumDriver.Instance);
+                _distlistreqpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _distlistreqpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _distlistreqpage;
             }
         }
@@ -504,8 +504,8 @@ namespace AbtFramework
             get
             {
                 _rightfindhomepage = PageGenerator.GetPage<RightFindHomePage>();
-                _rightfindhomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _rightfindhomepage.action = new Actions(SeleniumDriver.Instance);
+                _rightfindhomepage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _rightfindhomepage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _rightfindhomepage;
             }
         }
@@ -515,8 +515,8 @@ namespace AbtFramework
             get
             {
                 _sharepointtopnavigation = PageGenerator.GetPage<SharePointTopNavigation>();
-                _sharepointtopnavigation.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _sharepointtopnavigation.action = new Actions(SeleniumDriver.Instance);
+                _sharepointtopnavigation.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _sharepointtopnavigation.action = new Actions(SeleniumDriver.FiringDriver);
                 return _sharepointtopnavigation;
             }
         }
@@ -525,8 +525,8 @@ namespace AbtFramework
             get
             {
                 _kmworspace = PageGenerator.GetPage<KmWorkSpacePage>();
-                _kmworspace.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _kmworspace.action = new Actions(SeleniumDriver.Instance);
+                _kmworspace.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _kmworspace.action = new Actions(SeleniumDriver.FiringDriver);
                 return _kmworspace;
             }
         }
@@ -536,8 +536,8 @@ namespace AbtFramework
             get
             {
                 _ebscomyaccountpage = PageGenerator.GetPage<EbscoMyAccountPage>();
-                _ebscomyaccountpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _ebscomyaccountpage.action = new Actions(SeleniumDriver.Instance);
+                _ebscomyaccountpage.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _ebscomyaccountpage.action = new Actions(SeleniumDriver.FiringDriver);
                 return _ebscomyaccountpage;
             }
         }

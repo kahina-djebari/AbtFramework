@@ -49,7 +49,7 @@ namespace AbtFramework
                     wait.Until((d) =>
 
                     {
-                        if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                        if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
                         {
                             AbtPages.AgiTopNavigation.HoverOverTools();
                             Oracle.Click();
@@ -64,8 +64,8 @@ namespace AbtFramework
                         return false;
                         
                         });
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 
@@ -80,7 +80,7 @@ namespace AbtFramework
                     {
                         try
                         {
-                            if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                            if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
                             {
                                 action.MoveToElement(AbtPages.AgiTopNavigation.ToolsLink).Perform();
                                 Atlas.Click();
@@ -103,9 +103,9 @@ namespace AbtFramework
 
                     });
                    
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-                    SeleniumDriver.Instance.Manage().Window.Maximize();
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
+                    SeleniumDriver.FiringDriver.Manage().Window.Maximize();
                     StopTimer(); break;
 
                 case Abtlinks.AbtKnowledge:
@@ -116,7 +116,7 @@ namespace AbtFramework
                     wait.Until((d) =>
 
                     {
-                        if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                        if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
                         {
                             AbtPages.AgiTopNavigation.HoverOverTools();
                             AbtKnowledge.Click();
@@ -132,22 +132,22 @@ namespace AbtFramework
 
                     });
                                                                 
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-                    SeleniumDriver.Instance.FindElement(By.Id("submitbutton")).Click(); //a windows pop up with a btn "continue to abtKnowledge" finding the element withouth page factory 
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
+                    SeleniumDriver.FiringDriver.FindElement(By.Id("submitbutton")).Click(); //a windows pop up with a btn "continue to abtKnowledge" finding the element withouth page factory 
                     StopTimer();
 
                     break;
 
                 case Abtlinks.AbtTravel:
                     
-                    finder = new PopupWindowFinder(SeleniumDriver.Instance);
+                    finder = new PopupWindowFinder(SeleniumDriver.FiringDriver);
                     popupWindowHandle = finder.Click(AbtTravel);
-                    wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+                    wait.Until(e => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
                     SeleniumDriver.Close();
                 
-                    SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-                    SeleniumDriver.Instance.Manage().Window.Maximize();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(popupWindowHandle);
+                    SeleniumDriver.FiringDriver.Manage().Window.Maximize();
                     break;
 
                 case Abtlinks.ISMS:
@@ -161,7 +161,7 @@ namespace AbtFramework
                     wait.Until((d) =>
 
                     {
-                        if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                        if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
                         {
                             AbtPages.AgiTopNavigation.HoverOverTools();
                             OutlookWeb.Click();
@@ -178,7 +178,7 @@ namespace AbtFramework
 
                     });
                     
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 
@@ -188,7 +188,7 @@ namespace AbtFramework
                     wait.Until((d) =>
 
                     {
-                        if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                        if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
                         {
                             AbtPages.AgiTopNavigation.HoverOverTools();
                             RepCapLink.Click();
@@ -203,8 +203,8 @@ namespace AbtFramework
                         return false;
 
                     });
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 
@@ -214,7 +214,7 @@ namespace AbtFramework
                     wait.Until((d) =>
 
                     {
-                        if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                        if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
                         {
                             AbtPages.AgiTopNavigation.HoverOverTools();
                             repCapDBPageLink.Click();
@@ -229,8 +229,8 @@ namespace AbtFramework
                         return false;
 
                     });
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 

@@ -25,7 +25,7 @@ namespace AbtFramework
         {
 
 
-            SeleniumDriver.Instance.SwitchTo().Frame("WebApplicationFrame");
+            SeleniumDriver.FiringDriver.SwitchTo().Frame("WebApplicationFrame");
             wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("PptRibbon.Home.Slides-LargeMedium-0-0")));
             try
             {

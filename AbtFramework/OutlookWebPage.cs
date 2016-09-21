@@ -50,10 +50,10 @@ namespace AbtFramework
             getRecipientElement().SendKeys(Keys.Enter);
             getSubjectInput().SendKeys(subjectText);
             getSubjectInput().SendKeys(Keys.Tab);
-            IWebElement body = SeleniumDriver.Instance.SwitchTo().ActiveElement();
+            IWebElement body = SeleniumDriver.FiringDriver.SwitchTo().ActiveElement();
             body.SendKeys(bodyText);
             body.SendKeys(Keys.Tab);
-            IWebElement sendBtn = SeleniumDriver.Instance.SwitchTo().ActiveElement();
+            IWebElement sendBtn = SeleniumDriver.FiringDriver.SwitchTo().ActiveElement();
             action.Click(sendBtn).Perform();
             // now check if it was sent
             action.Click(GetSentItemsFolder()).Perform();
@@ -77,7 +77,7 @@ namespace AbtFramework
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until((e) =>
             {
-                if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
                 {
                     action.DoubleClick(randomMail).Perform();
 
@@ -97,7 +97,7 @@ namespace AbtFramework
             IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
             alert.Accept();
 
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
       
       
            
@@ -143,7 +143,7 @@ namespace AbtFramework
 
         public void Go()
         {
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://outlook.office.com/owa/?realm=abtassoc.com");
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl("https://outlook.office.com/owa/?realm=abtassoc.com");
         }
 
         private IWebElement getEmailBtn()

@@ -44,9 +44,9 @@ namespace AbtFramework
                 case Abtlinks.Oracle: 
                     StartTimer();
                     Oracle.Click();
-                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 
@@ -65,10 +65,10 @@ namespace AbtFramework
                     StartTimer();
                     wait.Until(d => this.AbtKnowledge.Displayed);
                     AbtKnowledge.Click();
-                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-                    SeleniumDriver.Instance.FindElement(By.Id("submitbutton")).Click(); //a windows pop up with a btn "continue to abtKnowledge" finding the element withouth page factory 
+                    wait.Until(d => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
+                    SeleniumDriver.FiringDriver.FindElement(By.Id("submitbutton")).Click(); //a windows pop up with a btn "continue to abtKnowledge" finding the element withouth page factory 
                     StopTimer(); 
 
                     break;
@@ -77,9 +77,9 @@ namespace AbtFramework
                     StartTimer();
                     wait.Until(d => this.AbtTravel.Displayed);
                     AbtTravel.Click();
-                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 
@@ -92,18 +92,18 @@ namespace AbtFramework
                 case Abtlinks.Outlook: 
                     StartTimer();
                     OutlookWeb.Click();
-                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 
                 case Abtlinks.RepCapPlanner: 
                     StartTimer();
                     RepCapLink.Click();
-                    wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
-                    SeleniumDriver.Instance.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+                    wait.Until(d => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
+                    SeleniumDriver.FiringDriver.Close();
+                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
                     StopTimer();
                     break;
 
@@ -136,15 +136,15 @@ namespace AbtFramework
 
         private void OpenWindowFor(IWebElement link)
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.FiringDriver);
             popupWindowHandle = finder.Click(link);
          //   var currentHandler = SeleniumDriver.Instance.CurrentWindowHandle;
          //   Console.WriteLine("This is the first popwindowHandle:");
           //  Console.WriteLine(currentHandler);
-            wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+            wait.Until(d => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
             StartTimer();
-            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-            SeleniumDriver.Instance.Manage().Window.Maximize();
+            SeleniumDriver.FiringDriver.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.FiringDriver.Manage().Window.Maximize();
         }
 
         public void GoToAtlas()

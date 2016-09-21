@@ -27,7 +27,7 @@ namespace AbtFramework
         private IWebElement ExcelDoc;
         public static string currentdocTitle;
         [FindsBy(How=How.LinkText,Using = "Topic")]
-        private IWebElement TopicExpand;
+        private IList<IWebElement> Topics;
         [FindsBy(How=How.Id,Using = "QCB1_Button5")]
         private IWebElement MoreOptions;
         [FindsBy(How=How.ClassName,Using = "s4-itm-cbx")]
@@ -45,6 +45,8 @@ namespace AbtFramework
         }
 
         public IWebElement DocumentCheckbox { get { return ChkBoxList.Single(e => e.GetAttribute("aria-label").Split(',')[0].Equals(currentdocTitle)); } }
+
+        public IWebElement SecondTopic { get { return Topics[1]; } }
 
         public void Goto(MS2013Links link)
         {
@@ -76,7 +78,7 @@ namespace AbtFramework
                     try
                     {
                         wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("onetidDoclibViewTbl0")));
-                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
                     catch (Exception e)
@@ -90,7 +92,7 @@ namespace AbtFramework
                     try
                     {
                         wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
-                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
                     catch (Exception e)
@@ -103,7 +105,7 @@ namespace AbtFramework
                     try
                     {
                         wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
-                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
                     catch (Exception e)
@@ -125,12 +127,12 @@ namespace AbtFramework
             DocumentCheckbox.Click();
             MoreOptions.Click();
            // action.ContextClick(Doc).Perform();
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.FiringDriver);
             popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
-            wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+            wait.Until(e => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
             SeleniumDriver.Close();
-            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-            SeleniumDriver.Instance.Manage().Window.Maximize();
+            SeleniumDriver.FiringDriver.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.FiringDriver.Manage().Window.Maximize();
             Console.WriteLine(doctype.ToString() + " Document opened Succesfully");
             Console.Write("</br>");       
         }
@@ -153,7 +155,7 @@ namespace AbtFramework
                     try
                     {
                         wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
-                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
                     catch (Exception e)
@@ -171,7 +173,7 @@ namespace AbtFramework
                     try
                     {
                         wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
-                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
                     catch (Exception e)
@@ -188,7 +190,7 @@ namespace AbtFramework
                     try
                     {
                         wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
-                        TopicExpand.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
                     catch (Exception e)

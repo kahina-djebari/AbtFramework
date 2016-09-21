@@ -49,7 +49,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/tldb/main.cfm");
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/tldb/main.cfm");
             try
             {
                 AbtPages.AbtKnowledgePage.ContinueToAbtKnowledge();

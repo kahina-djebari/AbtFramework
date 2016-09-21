@@ -35,8 +35,8 @@ namespace AbtFramework
 
         public ToolsDropdown ToolsDropdown { get {
                 _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>();
-                _toolsDropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _toolsDropdown.action = new Actions(SeleniumDriver.Instance);
+                _toolsDropdown.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(30));
+                _toolsDropdown.action = new Actions(SeleniumDriver.FiringDriver);
                 return _toolsDropdown;
             } }
 
@@ -61,7 +61,7 @@ namespace AbtFramework
             wait.Until(e =>
             {
 
-                if (SeleniumDriver.Instance.WindowHandles.Count >= 2)
+                if (SeleniumDriver.FiringDriver.WindowHandles.Count >= 2)
                 {
                    
                     return true;
@@ -73,7 +73,7 @@ namespace AbtFramework
 
                     try
                     {
-                        finder = new PopupWindowFinder(SeleniumDriver.Instance);
+                        finder = new PopupWindowFinder(SeleniumDriver.FiringDriver);
                         popupWindowHandle = finder.Click(ToolsDropdown.AbtTravel);
 
                     }
@@ -86,8 +86,8 @@ namespace AbtFramework
 
             });
             SeleniumDriver.Close();
-                  SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-            SeleniumDriver.Instance.Manage().Window.Maximize();
+                  SeleniumDriver.FiringDriver.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.FiringDriver.Manage().Window.Maximize();
 
 
 
@@ -154,7 +154,7 @@ namespace AbtFramework
                     wait.Timeout = TimeSpan.FromSeconds(40);
                     wait.Until(e =>
                     {
-                        if (SeleniumDriver.Instance.Title !="Projects")
+                        if (SeleniumDriver.FiringDriver.Title !="Projects")
                         {
                             ProjectsLink.Click();
                         }
@@ -173,7 +173,7 @@ namespace AbtFramework
 
         public void AbtValues()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.FiringDriver);
             finder.Click(abtvalueLink);
         }
     }

@@ -11,7 +11,7 @@ namespace AbtFramework
 
         public void NewOfficeRequest(string location, string category,string subcategory, string shortdescription, string comments)
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.FiringDriver.SwitchTo().Frame("gsft_main");
             OfficeRequest.Click();
            
             AbtPages.OfficeRequestFormPage.NewOfficeRequest(location, category,subcategory,shortdescription, comments);

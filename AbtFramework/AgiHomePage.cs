@@ -73,8 +73,8 @@ namespace AbtFramework
                 {
                     _quicklinks = PageGenerator.GetPage<QuickLinksModel>();
 
-                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
-                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.Instance);
+                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(10));
+                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.FiringDriver);
                     return _quicklinks;
                 }
             }
@@ -82,8 +82,8 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://agi.abtassociates.com");
-            wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl("http://agi.abtassociates.com");
+            wait.Until(e => SeleniumDriver.FiringDriver.Title.Equals("Home"));
             StopTimer();
            Console.WriteLine("AGI Home Page Loaded in: " + LoadTime);
             Console.WriteLine("</br>");
@@ -118,7 +118,7 @@ namespace AbtFramework
         {
             wait.Until((e) =>
             {
-                if (SeleniumDriver.Instance.Title != title)
+                if (SeleniumDriver.FiringDriver.Title != title)
                 {
                     element.Click();
                 }

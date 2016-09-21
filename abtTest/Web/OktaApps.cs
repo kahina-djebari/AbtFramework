@@ -171,7 +171,7 @@ namespace abtTest.Web
             Assert.True(AbtPages.ServiceNowHomepage.isUserLoggedIn());
         }
 
-       [Fact(DisplayName = "Should Go to WebEx UAT Home Page")]
+     //  [Fact(DisplayName = "Should Go to WebEx UAT Home Page")]
         public void Should_Go_to_WebEx_Test_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -180,7 +180,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go to WebEx Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to WebEx Production Home Page")]
         public void Should_Go_to_WebEx_Production_HomePage()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);

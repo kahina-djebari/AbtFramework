@@ -18,7 +18,7 @@ namespace AbtFramework
 
         public void NewIncident(IncidentType incident)
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.FiringDriver.SwitchTo().Frame("gsft_main");
             switch (incident)
             {
                 case IncidentType.Ask_A_Question:

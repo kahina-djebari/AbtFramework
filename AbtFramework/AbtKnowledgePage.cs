@@ -60,7 +60,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/");
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/");
             ContinueToAbtKnowledge();
             
 

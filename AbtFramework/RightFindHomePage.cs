@@ -34,7 +34,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl(url);
         }
 
         public bool IsUserLoggedIn()

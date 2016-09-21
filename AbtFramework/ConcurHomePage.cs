@@ -22,7 +22,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
             wait.Until(e => warning.Displayed);
             warning.Click();
             SSOProvider = "Okta";

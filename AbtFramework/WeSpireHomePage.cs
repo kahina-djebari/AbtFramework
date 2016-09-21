@@ -76,7 +76,7 @@ namespace AbtFramework
 
         public void GoWithNoOutputResult()
         {
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
         }
 
         private Post PostMatcher(string input, string pattern)
@@ -142,7 +142,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl(url);
             wait.Until(e => Dashboard.Displayed);
             StopTimer();
            

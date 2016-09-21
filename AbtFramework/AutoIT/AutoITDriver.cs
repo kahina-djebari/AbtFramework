@@ -14,32 +14,60 @@ namespace AbtFramework.AutoIT
         public static AutoItX3 autoit;
         public static string currentWorkingDocTitle;
 
-        public static void EditExcelFile()
+        public static bool EditExcelFile()
         {
             OpenDocument(true);
             autoit.WinActivate("Microsoft Excel - " + currentWorkingDocTitle);
-            autoit.WinWaitActive("Microsoft Excel - " + currentWorkingDocTitle, "", 20);
-            Thread.Sleep(2000);
-            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "{DOWN}");
-            Thread.Sleep(1000);
-            autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel Desktop Client At: " + DateTime.Now);
-            Thread.Sleep(2000);
+            if((autoit.WinWaitActive("Microsoft Excel - " + currentWorkingDocTitle, "", 20)) == 1)
+            {
+                Thread.Sleep(2000);
+                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "{DOWN}");
+                Thread.Sleep(1000);
+                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel Desktop Client At: " + DateTime.Now);
+                Thread.Sleep(2000);
+                return true;
+            }
+
+            else
+            {
+                Console.WriteLine("AutoIT was unable to find the Excel document Window for editing");
+                return false;
+            }
+
+
+        }
+
+        public static bool CloseExcelFile()
+        {
+            if(autoit.WinClose("Microsoft Excel - " + currentWorkingDocTitle, "") == 1)
+            {
+                return true;
+            }
+
+            else
+            {
+                Console.WriteLine("AutoIT was unable to close the Excel document");
+                return false;
+            }
+        }
+
+        public static bool SaveExcelFile()
+        {
+            if(autoit.ControlClick("Microsoft Excel - " + currentWorkingDocTitle, "", "NetUIHWND2", "LEFT", 1, 36, 20) == 1)
+            {
+                Thread.Sleep(5000);
+                return true;
+
+            }
+            else
+            {
+                Console.WriteLine("AutoIt was unable to Save the Excel Document");
+                return false;
+            }
             
-
         }
 
-        public static void CloseExcelFile()
-        {
-            autoit.WinClose("Microsoft Excel - " + currentWorkingDocTitle, "");
-        }
-
-        public static void SaveExcelFile()
-        {
-            autoit.ControlClick("Microsoft Excel - " + currentWorkingDocTitle, "", "NetUIHWND2", "LEFT", 1, 36, 20);
-            Thread.Sleep(5000);
-        }
-
-        private static void OpenDocument(bool openForEdit)
+        private static bool OpenDocument(bool openForEdit)
         {
        
             autoit.WinActivate("Open Document");
@@ -48,12 +76,23 @@ namespace AbtFramework.AutoIT
             if(openForEdit)
             autoit.ControlClick("Open Document", "&Edit", "1202", "LEFT", 1);
             Thread.Sleep(1000);
-            autoit.ControlClick("Open Document", "OK", "1", "LEFT", 1);
-            Thread.Sleep(1000);
-            autoit.WinActivate("Internet Explorer Security");
-            Thread.Sleep(2000);
-            autoit.ControlClick("Internet Explorer Security", "&Allow", "1", "LEFT", 1);
-            Thread.Sleep(1000);
+           if(autoit.ControlClick("Open Document", "OK", "1", "LEFT", 1) == 1)
+            {
+                Thread.Sleep(1000);
+                autoit.WinActivate("Internet Explorer Security");
+                Thread.Sleep(2000);
+                autoit.ControlClick("Internet Explorer Security", "&Allow", "1", "LEFT", 1);
+                Thread.Sleep(1000);
+
+                return true;
+            }
+
+           else
+            {
+                Console.WriteLine("AutoIT Was unable to open the document");
+                return false;
+            }
+            
         }
 
         public static void EditWordFile()

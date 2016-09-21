@@ -21,8 +21,8 @@ namespace AbtFramework
            
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            SeleniumDriver.Instance.Close();
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.FiringDriver.Close();
+            SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
         }
 
         public bool isAt()
@@ -40,7 +40,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://repcapplanner.corp.abtassoc.com/");
+            SeleniumDriver.FiringDriver.Navigate().GoToUrl("http://repcapplanner.corp.abtassoc.com/");
 
             
         }
