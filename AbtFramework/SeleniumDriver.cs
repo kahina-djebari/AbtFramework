@@ -54,7 +54,7 @@ namespace AbtFramework
                     IEoptions.EnablePersistentHover = true;
                
 
-                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.24:4444/wd/hub"), IEoptions.ToCapabilities());
+                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.20:4444/wd/hub"), IEoptions.ToCapabilities());
                     firingDriver = new EventFiringWebDriver(Instance);
                     firingDriver.ExceptionThrown += TakeScreenShotOnException;
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
