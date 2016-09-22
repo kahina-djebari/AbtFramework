@@ -17,11 +17,26 @@ namespace AbtFramework
         public static EventFiringWebDriver FiringDriver;
         static InternetExplorerOptions IEoptions;
         private static IWebDriver Instance;
+        private static IWebDriver Instance2;
+       public static EventFiringWebDriver FiringDriver2;
 
         public static void init(Browser browser)
         {
             switch (browser)
             {
+                case Browser.RemoteDavidIEDriver2:
+
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+           
+
+                    Instance2 = new RemoteWebDriver(new Uri("http://172.18.58.20:4444/wd/hub"), IEoptions.ToCapabilities());
+                    FiringDriver2 = new EventFiringWebDriver(Instance2);
+                    FiringDriver2.ExceptionThrown += TakeScreenShotOnException;
+                    Instance2 = FiringDriver2;
+                    FiringDriver2.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    FiringDriver2.Manage().Window.Maximize();
+                    break;
                 case Browser.IE:
                     
                      IEoptions = new InternetExplorerOptions();

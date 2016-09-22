@@ -29,6 +29,7 @@ namespace AbtFramework.Utils_Classes
         RemoteDavidIE,
         RemoteSofianesIE,
         RemoteSofianesIENoNativeEvents,
-        RemoteFrometaIE
+        RemoteFrometaIE,
+        RemoteDavidIEDriver2
     }
 }
