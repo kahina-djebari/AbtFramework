@@ -20,7 +20,7 @@ namespace AbtFramework
     
         public void NewHRServiceRequest(HRIssueCategory issue, string subject, string description)
         {
-            SeleniumDriver.FiringDriver.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             SelectIssue(issue.ToString());
             SubjectInput.SendKeys(subject);
             DescriptionInput.SendKeys(description);
@@ -29,7 +29,7 @@ namespace AbtFramework
 
         private void SelectIssue(string issue)
         {
-            SeleniumDriver.FiringDriver.FindElement(By.Id("IO:6ad1d64304db110008e999502af6ecf5"))
+            SeleniumDriver.Instance.FindElement(By.Id("IO:6ad1d64304db110008e999502af6ecf5"))
                                  .FindElements(By.TagName("option"))
                                  .Single(e => e.Text.Equals(issue))
                                  .Click();

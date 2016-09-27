@@ -22,11 +22,11 @@ namespace AbtFramework
 
         public bool isAt()
         {
-            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("body")));
+            wait.Until(e => e.Title.Equals("AbtKnowledge: AbtKnowledge"));
+            StopTimer();
+            PrintResponseTime("AbtKnowledge");
             if (RepCapLink.Displayed)
-            {
-                StopTimer();
-                Console.WriteLine("AbtKnowledge Page loaded in :" + LoadTime);
+            {                             
                 return true;
             }
 
@@ -60,7 +60,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/");
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/");
             ContinueToAbtKnowledge();
             
 
@@ -71,6 +71,22 @@ namespace AbtFramework
             wait.Until(e => continuebtn.Displayed);
             continuebtn.Click();
 
+        }
+
+        public bool isAtRepCapDB()
+        {
+            wait.Until(e => e.Title.Equals("Reputational Capital Database: Reputational Capital Database"));
+            StopTimer();
+            PrintResponseTime("Reputational Capital Database");
+            if (RepCapLink.Displayed)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
     }
 }

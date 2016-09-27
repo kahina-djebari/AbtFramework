@@ -20,7 +20,8 @@ namespace AbtFramework
             switch (link)
             {
                 case WebEnvironment.TestEnvironment:
-                    GoToUrl("https://search.ebscohost.com/login.aspx?authtype=sso&custid=aspengreg&profile=eds");
+                     GoToUrl("https://search.ebscohost.com/login.aspx?authtype=sso&custid=aspengreg&profile=eds");
+                   // GoToUrl("https://abtassociates.okta.com/home/abtassociatesinc_ebsco_1/0oa6yt0cwiVmFJzGB0x7/aln6yt83icACOfcNZ0x7");
                     SingleSignOnProvider = "Okta";
                     Environment = "Test";
                     isAt();
@@ -39,7 +40,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
            
         }
 

@@ -2,7 +2,7 @@
 using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
-using Xunit.Abstractions;
+//using Xunit.Abstractions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using AutoItX3Lib;
@@ -12,7 +12,7 @@ using AbtFramework.AutoIT;
 namespace abtTest.Web
 {
    
-    public class AGI
+    public class AGI:IDisposable
     {
 
         
@@ -171,6 +171,7 @@ namespace abtTest.Web
 
         }
 
+
       
 
      //   [Fact(DisplayName ="Desktop Apps")]
@@ -190,10 +191,10 @@ namespace abtTest.Web
 
         }
 
-
-
-
-
-
+        public void Dispose()
+        {
+            if(SeleniumDriver.Instance!=null)
+            SeleniumDriver.Quit();
+        }
     }
 }

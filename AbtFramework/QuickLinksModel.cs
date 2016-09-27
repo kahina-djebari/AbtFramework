@@ -36,37 +36,37 @@ namespace AbtFramework
             {
                 case quickLinks.Oracle:
                     action.MoveToElement(quicklinksBar).Perform();
-                    finder = new PopupWindowFinder(SeleniumDriver.FiringDriver);
+                    finder = new PopupWindowFinder(SeleniumDriver.Instance);
                     popupWindowHandle = finder.Click(oracleLink);
                     StartTimer();
 
                     
-                        foreach(var window in SeleniumDriver.FiringDriver.WindowHandles)
+                        foreach(var window in SeleniumDriver.Instance.WindowHandles)
                         {
                             if (!window.Equals(popupWindowHandle))
                             {
-                            SeleniumDriver.FiringDriver.SwitchTo().Window(window);
+                            SeleniumDriver.Instance.SwitchTo().Window(window);
                             SeleniumDriver.Close();
                             }
                         }
                     
                     
-                    SeleniumDriver.FiringDriver.SwitchTo().Window(popupWindowHandle);
-                    SeleniumDriver.FiringDriver.Manage().Window.Maximize();
+                    SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+                    SeleniumDriver.Instance.Manage().Window.Maximize();
                     break;
 
                 case quickLinks.Staff_Directory:
-                    ClickLink(staffDirectoryLink,a=>!SeleniumDriver.FiringDriver.Title.Equals("Search People"));
+                    ClickLink(staffDirectoryLink,a=>!SeleniumDriver.Instance.Title.Equals("Search People"));
                     break;
 
                 case quickLinks.FormsLibrary:
-                    ClickLink(formsLinks,a=>!SeleniumDriver.FiringDriver.Title.Equals("AbtForms - All Documents"));
+                    ClickLink(formsLinks,a=>!SeleniumDriver.Instance.Title.Equals("AbtForms - All Documents"));
                     break;
 
                 case quickLinks.Customize:
-                    ClickLink(customizeLink, a => SeleniumDriver.FiringDriver.WindowHandles.Count < 2);
+                    ClickLink(customizeLink, a => SeleniumDriver.Instance.WindowHandles.Count < 2);
                     SeleniumDriver.Close();
-                    SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
                     break;
             }
         }
@@ -77,9 +77,9 @@ namespace AbtFramework
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
 
 
-            wait.Until((e) =>
+            wait.Until((Func<IWebDriver, bool>)((e) =>
             {
-                if (func(SeleniumDriver.FiringDriver))
+                if (func((IWebDriver)SeleniumDriver.Instance))
                 {
                     action.MoveToElement(quicklinksBar).Perform();
                     if (element.Displayed && element.Enabled)
@@ -95,7 +95,7 @@ namespace AbtFramework
 
                 return false;
 
-            });
+            }));
         }
 
        

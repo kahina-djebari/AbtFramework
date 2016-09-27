@@ -8,7 +8,7 @@ namespace AbtFramework
     {
         public void Edit()
         {
-            SeleniumDriver.FiringDriver.SwitchTo().Frame("WebApplicationFrame");
+            SeleniumDriver.Instance.SwitchTo().Frame("WebApplicationFrame");
             Thread.Sleep(3000);
             action.SendKeys(Keys.ArrowDown).SendKeys(Keys.ArrowLeft).SendKeys(Keys.ArrowLeft)
                                            .SendKeys(Keys.ArrowLeft)

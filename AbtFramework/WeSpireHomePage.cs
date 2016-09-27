@@ -32,7 +32,7 @@ namespace AbtFramework
         public bool isAt()
         {
             //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
-            if (userFirstName.Text.Equals("Sofiane"))
+            if (userFirstName.Text.Equals("David"))
             {
                 PrintResponseTime("WeSpire");
                 return true;
@@ -76,7 +76,7 @@ namespace AbtFramework
 
         public void GoWithNoOutputResult()
         {
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
         }
 
         private Post PostMatcher(string input, string pattern)
@@ -123,7 +123,8 @@ namespace AbtFramework
             switch (links)
             {
                 case WebEnvironment.TestEnvironment:
-                    GoToUrl("https://abtxchange.staging.wespire.com/");
+                    // GoToUrl("https://abtxchange.staging.wespire.com/");
+                    GoToUrl("https://abtassociates.okta.com/home/abtassociatesinc_wespiretest_1/0oa74oid9ekb7tcYS0x7/aln74op8m0ZOi56TI0x7");
                     Console.WriteLine("WeSpire (Test) Home Page Took: " + LoadTime + " to load Using Okta");
                     Console.WriteLine("</br>");
                     SSOProvider = "Okta";
@@ -142,7 +143,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
             wait.Until(e => Dashboard.Displayed);
             StopTimer();
            

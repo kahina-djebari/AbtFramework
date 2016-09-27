@@ -19,7 +19,8 @@ namespace AbtFramework
                 case WebEnvironment.TestEnvironment:
                     Environment = "Test";
                     SingleSignOnProvider = "Okta";
-                    GoToUrl("https://rfetest.infotrieve.com/vlib/logon.aspx?clientid=11397");
+                  //  GoToUrl("https://rfetest.infotrieve.com/vlib/logon.aspx?clientid=11397");
+                    GoToUrl("https://abtassociates.okta.com/home/abtassociatesinc_rightfindtest_1/0oa7irrou8UflAXZJ0x7/aln7irw3gcNMEvNG60x7");
                     break;
                 case WebEnvironment.ProductionEnvironment:
                     Environment = "Production";
@@ -34,7 +35,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
         }
 
         public bool IsUserLoggedIn()
@@ -42,7 +43,7 @@ namespace AbtFramework
             if (IsAt())
             {
                 //  if (User.Text.Equals(SSOCrendentials.CurrentUser))
-                if (User.Text.Equals("Sofiane Oumsalem"))
+                if (User.Text.Equals("David Acuna"))
                 {
                     //PrintSuccesfullLogin(User.Text);
                     return true;

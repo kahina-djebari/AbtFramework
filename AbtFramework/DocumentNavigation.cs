@@ -77,7 +77,7 @@ namespace AbtFramework
                 case MS2013documents.QA_ReadinessChecklist_v4:
                     try
                     {
-                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("onetidDoclibViewTbl0")));
+                        wait.Until(e=>Topics.Count>=2);
                         SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
@@ -91,7 +91,7 @@ namespace AbtFramework
                case MS2013documents.SampleAVMetrics:
                     try
                     {
-                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
+                        wait.Until(e => Topics.Count >= 2);
                         SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
@@ -104,7 +104,7 @@ namespace AbtFramework
                 case MS2013documents.ITMetrics:
                     try
                     {
-                        wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("a")));
+                        wait.Until(e => Topics.Count >= 2);
                         SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
                                              // if you're not in the km workspace program wil continue.
                     }
@@ -127,12 +127,12 @@ namespace AbtFramework
             DocumentCheckbox.Click();
             MoreOptions.Click();
            // action.ContextClick(Doc).Perform();
-            finder = new PopupWindowFinder(SeleniumDriver.FiringDriver);
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
             popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
-            wait.Until(e => SeleniumDriver.FiringDriver.WindowHandles.Count >= 2);
+            wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);
             SeleniumDriver.Close();
-            SeleniumDriver.FiringDriver.SwitchTo().Window(popupWindowHandle);
-            SeleniumDriver.FiringDriver.Manage().Window.Maximize();
+            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.Instance.Manage().Window.Maximize();
             Console.WriteLine(doctype.ToString() + " Document opened Succesfully");
             Console.Write("</br>");       
         }

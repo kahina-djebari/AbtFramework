@@ -12,7 +12,7 @@ namespace AbtFramework
         public bool IsUserLoggedIn()
         {
             
-            if (FirstName.GetAttribute("value").Equals("Sofiane"))
+            if (FirstName.GetAttribute("value").Equals("David"))
             {
                 return true;
             }

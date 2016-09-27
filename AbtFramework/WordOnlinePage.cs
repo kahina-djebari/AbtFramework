@@ -31,7 +31,7 @@ namespace AbtFramework
 
         public void Edit()
         {
-            SeleniumDriver.FiringDriver.SwitchTo().Frame("WebApplicationFrame");
+            SeleniumDriver.Instance.SwitchTo().Frame("WebApplicationFrame");
             Thread.Sleep(5000);
             action.SendKeys(Keys.Enter).SendKeys(Keys.Up).SendKeys("Adding line at: " + DateTime.Now).Perform();
             Console.WriteLine("Edited Word Document Sucesfully");

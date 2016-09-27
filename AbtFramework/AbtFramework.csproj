@@ -76,7 +76,9 @@
     <Compile Include="ConferencingSetupPage.cs" />
     <Compile Include="EbscoMyAccountPage.cs" />
     <Compile Include="KmWorkSpacePage.cs" />
+    <Compile Include="MailOffice365Page.cs" />
     <Compile Include="RightFindHomePage.cs" />
+    <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SharePointTopNavigation.cs" />
     <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />

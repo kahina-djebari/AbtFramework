@@ -15,32 +15,38 @@ namespace AbtFramework
         private IList<IWebElement> headers;
         [FindsBy(How=How.CssSelector,Using = "body > div > div.navbar.navbar-fixed-top > div > div > div > ul > li:nth-child(4)")]
         private IWebElement UserFirstName; // this element shows at the top right corner on the page as Hello, FirstName, will have to get a substring
+        [FindsBy(How=How.LinkText,Using ="Create New Plan")]
+        private IWebElement CreateNewPlanLink;
 
         public void goTo()
         {
            
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            SeleniumDriver.FiringDriver.Close();
-            SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
+            SeleniumDriver.Instance.Close();
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
         }
 
         public bool isAt()
         {
-            if(headers.ElementWithTextExists("New to the Rep Cap Planner?"))
+            wait.Until(e => e.Title.Equals("Reputational Capital Planner"));
+            StopTimer();
+            PrintResponseTime("Reputational Capital Planner");
+            if (CreateNewPlanLink.Displayed)
             {
-                StopTimer();
-                Console.WriteLine("Reputational Capital Planner Prod Page Toook: " + LoadTime + " to load");
                 return true;
             }
 
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl("http://repcapplanner.corp.abtassoc.com/");
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://repcapplanner.corp.abtassoc.com/");
 
             
         }

@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace abtTest.Web
 {
@@ -298,17 +299,17 @@ namespace abtTest.Web
             SeleniumDriver.Close();
         }
 
-       // [Fact(DisplayName = "Edit Word Document Online on KM Workspace")]
-        public void Should_Open_Word_Doc_Online_KM_WorkSpace(Browser browser=Browser.IE)
+        [Fact(DisplayName = "Edit Word Document Online on KM Workspace")]
+        public void Should_Open_Word_Doc_Online_KM_WorkSpace()
         {
-            SeleniumDriver.init(browser);
+            SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4,documentType.Word);
             AbtPages.WordOnlinePage.Edit();
             SeleniumDriver.Close();
         }
 
-     //  [Fact(DisplayName =  "Edit Excel Document Online on KM Workspace")]
+      [Fact(DisplayName =  "Edit Excel Document Online on KM Workspace")]
         public void Should_Open_Excel_Doc_Online_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -337,11 +338,19 @@ namespace abtTest.Web
             AbtPages.SharePointDocumentNavigation.CreateDocument(documentType.Word);
         }
 
-        /*
-        [Fact]
+    
+       // [Fact]
+        public void test2()
+        {
+            Thread.Sleep(5000);
+        }
+       // [Fact]
         public  void TestingParallelTest()
         {
 
+            Thread.Sleep(5000);
+
+            /*
           Task.Run(()=> {
 
               SeleniumDriver.init(Browser.IE);
@@ -353,9 +362,10 @@ namespace abtTest.Web
               });
             SeleniumDriver.init(Browser.RemoteDavidIEDriver2);
             SeleniumDriver.FiringDriver2.Navigate().GoToUrl("www.google.com.do");
-            SeleniumDriver.FiringDriver2.FindElement(By.Id("lst-ib")).SendKeys("Testing driver 2");
+            SeleniumDriver.FiringDriver2.FindElement(By.Id("lst-ib")).SendKeys("Testing driver 2");*/
 
-        }*/
+
+        }
 
 
     }

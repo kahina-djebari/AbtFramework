@@ -9,6 +9,7 @@
         ISMS,
         Outlook,
         RepCapPlanner,
-        ReputationalCapitalDB
+        ReputationalCapitalDB,
+        AbtExchange
     }
 }

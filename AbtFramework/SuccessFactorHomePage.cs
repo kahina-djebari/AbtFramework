@@ -17,7 +17,7 @@ namespace AbtFramework
         private IList<IWebElement> dropdowns;
 
 
-        public IWebElement Username { get { return dropdowns.Single(e => e.Text.Equals("Sofiane Oumsalem")); } }
+        public IWebElement Username { get { return dropdowns.Single(e => e.Text.Equals("David Acuna")); } }
 
         public void Go(WebEnvironment link)
         {
@@ -41,7 +41,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
       
 
         
@@ -55,9 +55,9 @@ namespace AbtFramework
             if (isAt())
             {
 
-                if (Username.Text.Equals("Sofiane Oumsalem"))
+                if (Username.Text.Equals("David Acuna"))
                 {
-                    Console.WriteLine("User: Sofiane Oumsalem successfully logged in using " + SingleSignOnProvider);
+                    Console.WriteLine("User: David Acuna successfully logged in using " + SingleSignOnProvider);
                     return true;
                 }
 
@@ -77,13 +77,14 @@ namespace AbtFramework
           
         }
 
-        private bool isAt()
+      public bool isAt()
         {
-            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("body")));
-           if(dropdowns.Single(a => a.Text.Equals("Home")).Displayed)
+            wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Home"));
+            StopTimer();
+            if (dropdowns.Single(a => a.Text.Equals("Home")).Displayed)
             {
-                StopTimer();
-                PrintResponseTime("SuccessFactor");
+                
+                PrintResponseTime("SuccessFactors");
                 return true;
             }
            else

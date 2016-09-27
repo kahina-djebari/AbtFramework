@@ -14,9 +14,9 @@ namespace AbtFramework
 {
    public class SeleniumDriver
     {
-        public static EventFiringWebDriver FiringDriver;
+    
         static InternetExplorerOptions IEoptions;
-        private static IWebDriver Instance;
+        public static IWebDriver Instance;
         private static IWebDriver Instance2;
        public static EventFiringWebDriver FiringDriver2;
 
@@ -24,6 +24,57 @@ namespace AbtFramework
         {
             switch (browser)
             {
+
+                case Browser.RemoteSofianesIECleanSession:
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+                    IEoptions.EnablePersistentHover = true;
+                   // IEoptions.EnsureCleanSession = true;
+                   IEoptions.EnableNativeEvents = false;
+
+                    Instance = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"), IEoptions.ToCapabilities());
+              
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
+                    break;
+
+                case Browser.IECleanSessionNoNativeEvents:
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+                    IEoptions.EnsureCleanSession = true;
+                    IEoptions.EnableNativeEvents = false;
+
+                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
+          
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
+                    break;
+
+                case Browser.IECleanSession:
+
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+                    IEoptions.EnsureCleanSession = true;
+
+                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
+       
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
+                    break;
+
+
+                case Browser.ServerRemote:
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+                    IEoptions.EnableNativeEvents = false;
+                   
+
+                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.20:4444/wd/hub"), IEoptions.ToCapabilities());
+          
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
+
+                    break;
                 case Browser.RemoteDavidIEDriver2:
 
                     IEoptions = new InternetExplorerOptions();
@@ -41,13 +92,12 @@ namespace AbtFramework
                     
                      IEoptions = new InternetExplorerOptions();
                      IEoptions.EnablePersistentHover = true;
-                    
+                   // IEoptions.EnsureCleanSession = true;
+
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+        
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
 
                 case Browser.RemoteDavidIENoNativeEvents:
@@ -57,11 +107,9 @@ namespace AbtFramework
                     IEoptions.EnableNativeEvents = false;
 
                     Instance = new RemoteWebDriver(new Uri("http://172.18.58.20:4444/wd/hub"), IEoptions.ToCapabilities());
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance= FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+     
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
 
                 case Browser.RemoteDavidIE:
@@ -71,11 +119,9 @@ namespace AbtFramework
 
 
                     Instance = new RemoteWebDriver(new Uri("http://172.18.58.20:4444/wd/hub"), IEoptions.ToCapabilities());
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+        
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
 
                 case Browser.RemoteSofianesIE:
@@ -86,11 +132,9 @@ namespace AbtFramework
 
 
                     Instance = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"), IEoptions.ToCapabilities());
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+   
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
 
                     break;
 
@@ -103,11 +147,9 @@ namespace AbtFramework
                     Instance = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"), IEoptions.ToCapabilities()
 
                        );
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+   
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
 
                     break;
 
@@ -119,11 +161,9 @@ namespace AbtFramework
                     Instance = new RemoteWebDriver(new Uri("http://172.18.58.24:4444/wd/hub"), IEoptions.ToCapabilities()
 
                        );
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
 
                 case Browser.IENoNativeEvents:
@@ -133,133 +173,101 @@ namespace AbtFramework
               //Clean Cache on Every Session ->  // IEoptions.EnsureCleanSession = true;
 
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+ 
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.Chrome:
                     Instance = new ChromeDriver(@"C:\Selenium\ChromeDriver");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE246:
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.46\32bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+     
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE247:
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.47\32bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+              
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE248:
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.48\32bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE249:
 
                     Instance= new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.49\32bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+    
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE250:
                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.50\32bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE251:
                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.51\32bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE252:
 
                     Instance= new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.52\32bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE24664:
                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.46\64bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+   
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE24764:
                   Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.47\64bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE24864:
                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.48\64bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+ 
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE24964:
                     Instance= new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.49\64bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+  
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE25064:
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.50\64bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE25164:
                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.51\64bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE25264:
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.52\64bits");
-                    FiringDriver = new EventFiringWebDriver(Instance);
-                    FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-                    Instance = FiringDriver;
-                    FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                    FiringDriver.Manage().Window.Maximize();
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
                     break;
                 default:
                     break;
@@ -267,11 +275,18 @@ namespace AbtFramework
          
         }
 
+        public static void GoTo(string url )
+        {
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+        }
+
+    
+
         public static void CloseAll()
         {
            
 
-                FiringDriver.Quit();
+                Instance.Quit();
             
         }
 
@@ -279,7 +294,7 @@ namespace AbtFramework
         {
 
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd-hhmm-ss");
-            FiringDriver.TakeScreenshot().SaveAsFile("failedTest-" + timestamp + ".png", ImageFormat.Png);
+            Instance.TakeScreenshot().SaveAsFile("failedTest-" + timestamp + ".png", ImageFormat.Png);
         }
 
         public static void RemoteInitDavidsPc(Browser browser)
@@ -289,11 +304,9 @@ namespace AbtFramework
 
 
             Instance = new RemoteWebDriver(new Uri("http://172.18.58.24:4444/wd/hub"), IEoptions.ToCapabilities());
-            FiringDriver = new EventFiringWebDriver(Instance);
-            FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-            Instance = FiringDriver;
-            FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            FiringDriver.Manage().Window.Maximize();
+
+            Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Instance.Manage().Window.Maximize();
         }
 
         public static void RemoteInitFrometasPC(Browser browser)
@@ -303,11 +316,9 @@ namespace AbtFramework
 
         
            Instance = new RemoteWebDriver(new Uri("http://172.18.58.29:4444/wd/hub"), IEoptions.ToCapabilities());
-            FiringDriver = new EventFiringWebDriver(Instance);
-            FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-            Instance = FiringDriver;
-            FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            FiringDriver.Manage().Window.Maximize();
+
+            Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Instance.Manage().Window.Maximize();
         }
      
         public static void init()
@@ -317,16 +328,14 @@ namespace AbtFramework
             
 
           Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits");
-            FiringDriver = new EventFiringWebDriver(Instance);
-            FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-            Instance = FiringDriver;
-            FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            FiringDriver.Manage().Window.Maximize();
+   
+            Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Instance.Manage().Window.Maximize();
         }
 
         public static void Close()
         {
-            FiringDriver.Close();
+            Instance.Close();
         }
 
         internal static string GetcurrentWindowHandler(ReadOnlyCollection<string> windowsHandler)
@@ -334,7 +343,7 @@ namespace AbtFramework
            foreach(var window in windowsHandler)
             {
                 Console.WriteLine(window);
-                if (window != FiringDriver.CurrentWindowHandle)
+                if (window != Instance.CurrentWindowHandle)
                 {
                     return window;
                 }
@@ -352,17 +361,15 @@ namespace AbtFramework
             Instance = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"),IEoptions.ToCapabilities()
 
                );
-            FiringDriver = new EventFiringWebDriver(Instance);
-            FiringDriver.ExceptionThrown += TakeScreenShotOnException;
-            Instance = FiringDriver;
-            FiringDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            FiringDriver.Manage().Window.Maximize();
+
+            Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Instance.Manage().Window.Maximize();
 
         }
 
         public static void Quit()
         {
-            FiringDriver.Quit();
+            Instance.Quit();
         }
     }
 }

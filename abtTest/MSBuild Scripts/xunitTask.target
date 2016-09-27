@@ -20,7 +20,7 @@
     <MakeDir
         Directories="$(RootDirectory)\TestResults" />
 
-    <xunit Assemblies="$(RootDirectory)\abtTest\bin\Debug\abtTest.dll" Xml="$(RootDirectory)\TestResults\results.xml" />
+    <xunit Assemblies="$(RootDirectory)\abtTest\bin\Debug\abtTest.dll" Xml="$(RootDirectory)\TestResults\results.xml"/>
 
   </Target>
 

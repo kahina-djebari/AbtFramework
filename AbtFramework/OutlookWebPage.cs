@@ -18,8 +18,8 @@ namespace AbtFramework
         [FindsBy(How=How.ClassName,Using = "_ho2_0")]
         private IWebElement userCard;
 
-        [FindsBy(How = How.ClassName,Using ="_pe_01")]
-        private IWebElement divInfo;
+        [FindsBy(How = How.ClassName,Using = "PersonaPaneLauncher")]
+        private IWebElement ProfileInfo;
         [FindsBy(How=How.LinkText,Using ="Outlook Web Access")]
         private IWebElement outlookLink;
         [FindsBy(How = How.TagName, Using = "div")]
@@ -35,10 +35,33 @@ namespace AbtFramework
 
         [FindsBy(How = How.ClassName, Using = "findControlWrapper")]
         private IWebElement recipientWrapper;
-
         [FindsBy(How = How.ClassName, Using = "conductorContent")]
         private IWebElement EmailList;
 
+        [FindsBy(How=How.CssSelector,Using = "#O365_TopMenu > div > div > div:nth-child(1) > div:nth-child(14) > button")]
+        private IWebElement profilePic;
+        [FindsBy(How=How.CssSelector,Using = "#_ariaId_147 > div > div._abs_b.ms-bg-color-white > span > div > div > span._pe_l._pe_N > div > span:nth-child(1)")]
+        private IWebElement UserName;
+        [FindsBy(How = How.Id, Using = "MailFolderPane.FavoritesFolders")]
+        private IWebElement FolderPane;
+           public IWebElement InboxFolder { get { return FolderPane.FindElements(By.TagName("span")).Single(e => e.Text.Equals("Inbox")); } }
+
+
+        public bool IsAt() {
+
+
+             wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Mail - "+SSOCrendentials.CurrentUser+" - Outlook"));
+         //  wait.Until(e => SeleniumDriver.Instance.Title.Equals("Mail - " +"Sofiane Oumsalem"+ " - Outlook"));
+            StopTimer();
+            PrintResponseTime("Outlook Web");
+            return true;
+           
+          
+            
+            
+        }
+
+    
 
 
         public bool SendEmail(string receipient, string subjectText, string bodyText)
@@ -50,10 +73,10 @@ namespace AbtFramework
             getRecipientElement().SendKeys(Keys.Enter);
             getSubjectInput().SendKeys(subjectText);
             getSubjectInput().SendKeys(Keys.Tab);
-            IWebElement body = SeleniumDriver.FiringDriver.SwitchTo().ActiveElement();
+            IWebElement body = SeleniumDriver.Instance.SwitchTo().ActiveElement();
             body.SendKeys(bodyText);
             body.SendKeys(Keys.Tab);
-            IWebElement sendBtn = SeleniumDriver.FiringDriver.SwitchTo().ActiveElement();
+            IWebElement sendBtn = SeleniumDriver.Instance.SwitchTo().ActiveElement();
             action.Click(sendBtn).Perform();
             // now check if it was sent
             action.Click(GetSentItemsFolder()).Perform();
@@ -75,9 +98,9 @@ namespace AbtFramework
 
             wait.Timeout = TimeSpan.FromSeconds(20);
             wait.PollingInterval = TimeSpan.FromSeconds(1);
-            wait.Until((e) =>
+            wait.Until((Func<IWebDriver, bool>)((e) =>
             {
-                if (SeleniumDriver.FiringDriver.WindowHandles.Count < 2)
+                if (SeleniumDriver.Instance.WindowHandles.Count < 2)
                 {
                     action.DoubleClick(randomMail).Perform();
 
@@ -90,14 +113,14 @@ namespace AbtFramework
 
                 return false;
 
-            });
+            }));
 
             SeleniumDriver.Close();
             
             IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
             alert.Accept();
 
-            SeleniumDriver.FiringDriver.SwitchTo().Window(SeleniumDriver.FiringDriver.WindowHandles.Last());
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
       
       
            
@@ -143,7 +166,8 @@ namespace AbtFramework
 
         public void Go()
         {
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl("https://outlook.office.com/owa/?realm=abtassoc.com");
+            StartTimer();
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://outlook.com/abtassoc.com");
         }
 
         private IWebElement getEmailBtn()
@@ -166,7 +190,7 @@ namespace AbtFramework
 
      
     
-        public bool isAt()
+        public bool IsUserLoggedIn()
         {
 
             var btns = buttons.Where(b => b.GetAttribute("autoid")!=null); //eliminate btns withouth autoid attribute
@@ -175,7 +199,7 @@ namespace AbtFramework
             btn.Click();
          
           
-            IWebElement username =divInfo.FindElements(By.TagName("span"))[0];  //this div element contains to spans nested and the first one is the one that contains the username
+            IWebElement username =ProfileInfo.FindElements(By.TagName("span")).Single(e=>e.Text.Equals(SSOCrendentials.CurrentUser));  //this element contains spans nested and contains username info
             if (username.Text.Equals(SSOCrendentials.CurrentUser))
             {
                 return true;

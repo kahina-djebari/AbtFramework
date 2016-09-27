@@ -9,22 +9,26 @@ namespace AbtFramework
 {
     public class OraclePage : PageModel
     {
+
         [FindsBy(How=How.Id,Using ="PageLayoutRN")]
         private IWebElement headerInfo;
 
 
         public bool isAt()
         {
-            
-            IWebElement header = getHeader();
-            if (header != null)
+            wait.Until(e => e.Title.Equals("Oracle Applications Home Page"));
+            StopTimer();
+            PrintResponseTime("Oracle");
+       
+            if (GetCurrentUser().Equals("OUMSALEMS"))
             {
-                StopTimer();
-                Console.WriteLine("Oracle Web Page Loaded in: " + LoadTime);
-
+                return true;
             }
-            Console.WriteLine(GetCurrentUser());
-            return false;
+
+            else
+            {
+                return false;
+            }
         }
 
         private string GetCurrentUser()

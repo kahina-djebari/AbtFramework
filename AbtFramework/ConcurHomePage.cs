@@ -22,7 +22,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
             wait.Until(e => warning.Displayed);
             warning.Click();
             SSOProvider = "Okta";
@@ -37,9 +37,9 @@ namespace AbtFramework
             {
                 userProfile.Click();
 
-                if (username.Text.Equals("Sofiane Oumsalem"))
+                if (username.Text.Equals("David Acuna"))
                 {
-                    Console.WriteLine("User: Sofiane Oumsalem succesfully logged in with "+SSOProvider);
+                    Console.WriteLine("User: David Acuna succesfully logged in with "+SSOProvider);
                     return true;
                 }
 

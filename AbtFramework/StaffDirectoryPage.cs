@@ -6,7 +6,7 @@ namespace AbtFramework
     {
         public bool isAt()
         {
-            wait.Until(e=>SeleniumDriver.FiringDriver.Title.Equals("Search People"));
+            wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Search People"));
 
             return true;
         }

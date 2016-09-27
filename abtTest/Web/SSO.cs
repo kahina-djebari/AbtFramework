@@ -1,7 +1,7 @@
 ﻿using System;
 using AbtFramework;
 using Xunit;
-using Xunit.Abstractions;
+//using Xunit.Abstractions;
 
 namespace abtTest.Web
 {
@@ -64,7 +64,7 @@ namespace abtTest.Web
         {
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Outlook);
-           Assert.True(AbtPages.OutlookWebPage.isAt());
+           Assert.True(AbtPages.OutlookWebPage.IsAt());
 
         }
 

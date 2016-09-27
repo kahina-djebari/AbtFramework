@@ -73,8 +73,8 @@ namespace AbtFramework
                 {
                     _quicklinks = PageGenerator.GetPage<QuickLinksModel>();
 
-                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.FiringDriver, TimeSpan.FromSeconds(10));
-                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.FiringDriver);
+                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
+                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.Instance);
                     return _quicklinks;
                 }
             }
@@ -82,8 +82,10 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.FiringDriver.Navigate().GoToUrl("http://agi.abtassociates.com");
-            wait.Until(e => SeleniumDriver.FiringDriver.Title.Equals("Home"));
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://agi.abtassociates.com");
+            Console.WriteLine("Going to AGI Home Page...");
+            Console.WriteLine("</br>");
+            wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
             StopTimer();
            Console.WriteLine("AGI Home Page Loaded in: " + LoadTime);
             Console.WriteLine("</br>");
@@ -92,10 +94,14 @@ namespace AbtFramework
 
         public bool isUserLoggedin()
         {
+            wait.Until(e => userCard.Displayed);
+            StopTimer();
+            PrintResponseTime("AGI Home Page");
             userCard.Click();
-                            
-            if (username.Text.Equals(SSOCrendentials.CurrentUser))
+            string User = username.Text;           
+            if (User.Equals(SSOCrendentials.CurrentUser))
             {
+                Console.WriteLine("User: " + User + " has logged in.");
                 return true;
 
             }
@@ -116,9 +122,9 @@ namespace AbtFramework
 
         public void ClickUntilTitleIs(string title, IWebElement element)
         {
-            wait.Until((e) =>
+            wait.Until((Func<IWebDriver, bool>)((e) =>
             {
-                if (SeleniumDriver.FiringDriver.Title != title)
+                if (SeleniumDriver.Instance.Title != title)
                 {
                     element.Click();
                 }
@@ -130,7 +136,7 @@ namespace AbtFramework
                 }
 
                 return false;
-            });
+            }));
         }
 
         public void Goto(homelinks link)
