@@ -98,10 +98,10 @@ namespace abtTest.Web
 
         }
 
-     //   [Fact(DisplayName = "Should Go to Concur Production Home Page using Simieo")]
+      // [Fact(DisplayName = "Should Go to Concur Production Home Page ")]
         public void Should_Go_to_Concur_Production_HomePage()
         {
-            SeleniumDriver.RemoteInit();
+            SeleniumDriver.init(Browser.IE);
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.HoverOverTools();
             AbtPages.AbtTravelPage.HoverOverAbtTravelOnline();

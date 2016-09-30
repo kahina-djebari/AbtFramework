@@ -16,6 +16,9 @@ namespace AbtFramework
         {
             // action.MoveToElement()
             finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            Console.WriteLine("Clicking on Book or Search US Travel");
+            Console.WriteLine("</br>");
+            
             popupWindowHandle = finder.Click(concurLink);
             StartTimer();
             SeleniumDriver.Close();
@@ -23,6 +26,8 @@ namespace AbtFramework
             SeleniumDriver.Instance.Manage().Window.Maximize();
             wait.Until(e => warning.Displayed);
             warning.Click();
+            StopTimer();
+            PrintResponseTime("Concur");
 
         }
     }

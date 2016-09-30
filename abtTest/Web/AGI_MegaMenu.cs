@@ -15,7 +15,7 @@ namespace abtTest.Web
         /// Checks Top Navigation Links on AGI
         /// </summary>
 
-        [Fact(DisplayName ="Should Go To AGI Top Navigation -> Projects")]
+      //  [Fact(DisplayName ="Should Go To AGI Top Navigation -> Projects")]
         public void Should_Go_To_Projects()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -25,7 +25,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home")]
+      //  [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home")]
         public void Should_Go_To_Home()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -35,7 +35,7 @@ namespace abtTest.Web
             Console.WriteLine("Home Link Opened Succesfully");
         }
 
-        [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home->About Abt")]
+      //  [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home->About Abt")]
         public void Should_Go_To_AboutAbt()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -45,7 +45,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home-> Departments")]
+       // [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home-> Departments")]
         public void Should_Go_To_Departments()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -54,7 +54,7 @@ namespace abtTest.Web
             Assert.True(AbtPages.AgiDepartments.IsAt());
         }
 
-        [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home->Initiatives")]
+      //  [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home->Initiatives")]
         public void Should_Go_To_Initiatives()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -63,7 +63,7 @@ namespace abtTest.Web
             Assert.True(AbtPages.AgiInitiatives.IsAt());
         }
 
-        [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home->Divisions")]
+       // [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home->Divisions")]
         public void Should_Go_To_Divisions()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -176,7 +176,7 @@ namespace abtTest.Web
         /// <summary>
         /// Checks the Tools & Resources Section; Tools Subsection
         /// </summary>
-        [Fact(DisplayName = "Should Get Outlook Home Page Response Time")]
+       // [Fact(DisplayName = "Should Get Outlook Home Page Response Time")]
         public void Should_Go_To_OWA_Through_AGI()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -221,10 +221,10 @@ namespace abtTest.Web
 
         }
 
-        //[Fact(DisplayName = "Should Get Concur Home Page Response Time")] //i dont have access to concur through abttravel
+        [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //i dont have access to concur through abttravel
         public void Should_Get_Concur_HomePage_Response_Time()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIE);
+            SeleniumDriver.init(Browser.RemoteSofianesIE);
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_Concur();
             AbtPages.AbtTravelPage.HoverOverAbtTravelOnline();
@@ -272,7 +272,7 @@ namespace abtTest.Web
         /// Checks the Tools & Resources Section; Service Centers Subsection
         /// </summary>
 
-        [Fact(DisplayName ="Should Go To Tools&Resources -> Service Centers-> AbtLearn")]
+      //  [Fact(DisplayName ="Should Go To Tools&Resources -> Service Centers-> AbtLearn")]
         public void Should_Go_To_AbtLearn()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -390,7 +390,7 @@ namespace abtTest.Web
         /// <summary>
         /// Checks the Tools & Resources Section; Libraries Subsection
         /// </summary>
-        [Fact(DisplayName = "Should Go to Tools&Resources -> Libraries-> Abt Research Library")]
+    //    [Fact(DisplayName = "Should Go to Tools&Resources -> Libraries-> Abt Research Library")]
         public void Should_Go_To_AbtResearchLibrary()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
