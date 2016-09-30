@@ -42,7 +42,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </b>
           </div>
           
-          <table style="table-layout:fixed" class="table table-striped" border="1" >
+          <table class="table table-striped" border="1" >
             <tr bgcolor="#ccccff">
               <th style="text-align:left">Test</th>
               <th style="text-align:left">Test Output</th>
@@ -53,17 +53,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:for-each select="assemblies/assembly/class/test">
               <xsl:if test="@result = 'Pass'">
                 <tr class="success">
-                  <td style="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <xsl:value-of select="@name"/>
                   </td>
-                  <td tyle="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <xsl:value-of select="output" disable-output-escaping="yes"/>
                   </td>
                   <td>No Errors</td>
-                  <td tyle="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <xsl:value-of select="@result"/>
                   </td>
-                  <td tyle="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <xsl:value-of select="@time"/>
                   </td>
 
@@ -71,16 +71,16 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
               </xsl:if>
               <xsl:if test="@result = 'Fail'">
                 <tr class="danger">
-                  <td tyle="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <xsl:value-of select="@name"/>
                   </td>
-                  <td tyle="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <td><xsl:value-of select="failure/message"/></td>
                   </td>
-                  <td style="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <xsl:value-of select="@result"/>
                   </td>
-                  <td tyle="word-wrap:break-word">
+                  <td style="white-space:nowrap">
                     <xsl:value-of select="@time"/>
                   </td>
                 </tr>
