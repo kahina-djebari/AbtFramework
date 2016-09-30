@@ -203,6 +203,7 @@ namespace AbtFramework
 
         private void OpenServiceCenterLink(string linkText)
         {
+            var StartDebugTimer = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             while (SeleniumDriver.Instance.Title.Equals("Home"))
             {
                 try
