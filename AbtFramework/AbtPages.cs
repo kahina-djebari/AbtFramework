@@ -28,7 +28,7 @@ namespace AbtFramework
         private static FormsLibraryPage _formsLibraryPage;
         private static CustomizeLinksPage _customizeLinksPage;
         private static TodayILearnedPage _todayILearnedPage;
-        private static NewsPage _newsPage;
+        private static AgiNews _newsPage;
         private static AboutAbtPage _aboutAbtPage;
         private static ServiceNowHomepage _servicenowhomepage;
         private static ServiceHubHomepage _servicehubhomepage;
@@ -62,6 +62,38 @@ namespace AbtFramework
         private static EbscoMyAccountPage _ebscomyaccountpage;
         private static Office365LoginPage _sharepointhomepage;
         private static MailOffice365Page _mailoffice365;
+        private static AgiAbtLearnPage _agiabtlearn;
+        private static AgiBusinessDevelopmentPage _agibusinessdevelopment;
+        private static AgiCTCPage _agictcpage;
+        private static AgiContractOperationsPage _agicontractoperationspage;
+        private static AgiCreativeServices _agicreativeservices;
+        private static AgiFinance _agifinance;
+        private static AgiHRServiceCenter _agihrservicecenter;
+        private static AgiITServiceCenter _agiItservicecenter;
+        private static AgiOfficeServices _agiofficeservices;
+        private static AgiReputationalCapital _agireputationalcapital;
+        private static AgiTravelPage _agitravelpage;
+        private static AgiAbtResearch _agiabtresearch;
+        private static AgiFormLibrary _agiformlibrary;
+        private static Agi_ImageLibraries _agi_imageLibraries;
+        private static Agi_PolicyLibraryPage _agipolicylibrary;
+        private static Agi_ProposalLibrary _agiproposallibrary;
+        private static Agi_ExpertiseCenter _agiexpertisecenters;
+        private static AgiEmergencyCommunications _agiemergency;
+        private static AgiAboutAbt _agiAboutabt;
+        private static AgiDepartments _agidepartments;
+        private static AgiInitiatives _agi_initiatives;
+        private static AgiSubsidaries _agisubsidaries;
+        private static AgiDivisions _agidivisions;
+        private static AgiAbtStrategy _agiabtstrategy;
+        private static AgiAbtValues _agiabtvalues;
+        private static AgiHelpPage _agihelp;
+        private static AgiCommunities _agicommunities;
+        private static AgiEAC _agieac;
+        private static AgiAnnouncements _agiannouncements;
+        private static AgiEvents _agievents;
+        private static AgiNewsArchive _aginewsarchive;
+        private static AgiProposals _agiproposals;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
@@ -202,11 +234,11 @@ namespace AbtFramework
             }
         }
 
-        public static NewsPage NewsPage {
+        public static AgiNews AgiNews {
 
             get
             {
-                _newsPage = PageGenerator.GetPage<NewsPage>();
+                _newsPage = PageGenerator.GetPage<AgiNews>();
                 _newsPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _newsPage.action = new Actions(SeleniumDriver.Instance);
                 return _newsPage;
@@ -561,6 +593,343 @@ namespace AbtFramework
                 _mailoffice365.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _mailoffice365.action = new Actions(SeleniumDriver.Instance);
                 return _mailoffice365;
+            }
+        }
+
+        public static AgiAbtLearnPage AgiAbtLearnPage {
+            get
+            {
+                _agiabtlearn = PageGenerator.GetPage<AgiAbtLearnPage>();
+                _agiabtlearn.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiabtlearn.action = new Actions(SeleniumDriver.Instance);
+                return _agiabtlearn;
+            }
+        }
+
+        public static AgiBusinessDevelopmentPage AgiBusinessDevelopmentPage {
+            get
+            {
+                _agibusinessdevelopment = PageGenerator.GetPage<AgiBusinessDevelopmentPage>();
+                _agibusinessdevelopment.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agibusinessdevelopment.action = new Actions(SeleniumDriver.Instance);
+                return _agibusinessdevelopment;
+            }
+        }
+
+        public static AgiCTCPage AgiCTCPage {
+            get
+            {
+                _agictcpage = PageGenerator.GetPage<AgiCTCPage>();
+                _agictcpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agictcpage.action = new Actions(SeleniumDriver.Instance);
+                return _agictcpage;
+            }
+        }
+
+        public static AgiContractOperationsPage AgiContractOperationsPage
+        {
+            get
+            {
+                _agicontractoperationspage = PageGenerator.GetPage<AgiContractOperationsPage>();
+                _agicontractoperationspage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agicontractoperationspage.action = new Actions(SeleniumDriver.Instance);
+                return _agicontractoperationspage;
+            }
+        }
+
+        public static AgiCreativeServices AgiCreativeServices
+        {
+            get
+            {
+                _agicreativeservices = PageGenerator.GetPage<AgiCreativeServices>();
+                _agicreativeservices.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agicreativeservices.action = new Actions(SeleniumDriver.Instance);
+                return _agicreativeservices;
+            }
+        }
+
+        public static AgiFinance AgiFinance
+        {
+            get
+            {
+                _agifinance = PageGenerator.GetPage<AgiFinance>();
+                _agifinance.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agifinance.action = new Actions(SeleniumDriver.Instance);
+                return _agifinance;
+            }
+        }
+
+        public static AgiHRServiceCenter AgiHRServiceCenter {
+            get
+            {
+                _agihrservicecenter = PageGenerator.GetPage<AgiHRServiceCenter>();
+                _agihrservicecenter.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agihrservicecenter.action = new Actions(SeleniumDriver.Instance);
+                return _agihrservicecenter;
+            }
+        }
+
+        public static AgiITServiceCenter AgiITServiceCenter
+        {
+            get
+            {
+                _agiItservicecenter = PageGenerator.GetPage<AgiITServiceCenter>();
+                _agiItservicecenter.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiItservicecenter.action = new Actions(SeleniumDriver.Instance);
+                return _agiItservicecenter;
+            }
+        }
+
+        public static AgiOfficeServices AgiOfficeServices
+        {
+            get
+            {
+                _agiofficeservices = PageGenerator.GetPage<AgiOfficeServices>();
+                _agiofficeservices.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiofficeservices.action = new Actions(SeleniumDriver.Instance);
+                return _agiofficeservices;
+            }
+        }
+
+        public static AgiReputationalCapital AgiReputationalCapital
+        {
+            get
+            {
+                _agireputationalcapital = PageGenerator.GetPage<AgiReputationalCapital>();
+                _agireputationalcapital.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agireputationalcapital.action = new Actions(SeleniumDriver.Instance);
+                return _agireputationalcapital;
+            }
+        }
+
+        public static AgiTravelPage AgiTravelPage {
+            get
+            {
+                _agitravelpage = PageGenerator.GetPage<AgiTravelPage>();
+                _agitravelpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agitravelpage.action = new Actions(SeleniumDriver.Instance);
+                return _agitravelpage;
+            }
+        }
+
+        public static AgiAbtResearch AgiAbtResearch {
+            get
+            {
+                _agiabtresearch = PageGenerator.GetPage<AgiAbtResearch>();
+                _agiabtresearch.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiabtresearch.action = new Actions(SeleniumDriver.Instance);
+                return _agiabtresearch;
+            }
+        }
+
+        public static AgiFormLibrary AgiFormLibrary {
+            get
+            {
+                _agiformlibrary= PageGenerator.GetPage<AgiFormLibrary>();
+                _agiformlibrary.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiformlibrary.action = new Actions(SeleniumDriver.Instance);
+                return _agiformlibrary;
+            }
+        }
+
+        public static Agi_ImageLibraries Agi_ImageLibraries {
+            get
+            {
+                _agi_imageLibraries = PageGenerator.GetPage<Agi_ImageLibraries>();
+                _agi_imageLibraries.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agi_imageLibraries.action = new Actions(SeleniumDriver.Instance);
+                return _agi_imageLibraries;
+            }
+        }
+
+        public static Agi_PolicyLibraryPage Agi_PolicyLibraryPage
+        {
+            get
+            {
+                _agipolicylibrary = PageGenerator.GetPage<Agi_PolicyLibraryPage>();
+                _agipolicylibrary.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agipolicylibrary.action = new Actions(SeleniumDriver.Instance);
+                return _agipolicylibrary;
+            }
+        }
+
+        public static Agi_ProposalLibrary Agi_ProposalLibrary {
+            get
+            {
+                _agiproposallibrary = PageGenerator.GetPage<Agi_ProposalLibrary>();
+                _agiproposallibrary.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiproposallibrary.action = new Actions(SeleniumDriver.Instance);
+                return _agiproposallibrary;
+            }
+        }
+
+        public static Agi_ExpertiseCenter Agi_ExpertiseCenter
+        {
+            get
+            {
+                _agiexpertisecenters = PageGenerator.GetPage<Agi_ExpertiseCenter>();
+                _agiexpertisecenters.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiexpertisecenters.action = new Actions(SeleniumDriver.Instance);
+                return _agiexpertisecenters;
+            }
+        }
+
+        public static AgiEmergencyCommunications AgiEmergencyCommunications {
+            get
+            {
+                _agiemergency = PageGenerator.GetPage<AgiEmergencyCommunications>();
+                _agiemergency.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiemergency.action = new Actions(SeleniumDriver.Instance);
+                return _agiemergency;
+            }
+        }
+
+        public static AgiAboutAbt AgiAboutAbt
+        {
+            get
+            {
+                _agiAboutabt = PageGenerator.GetPage<AgiAboutAbt>();
+                _agiAboutabt.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiAboutabt.action = new Actions(SeleniumDriver.Instance);
+                return _agiAboutabt;
+            }
+        }
+
+        public static AgiDepartments AgiDepartments {
+            get
+            {
+                _agidepartments = PageGenerator.GetPage<AgiDepartments>();
+                _agidepartments.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agidepartments.action = new Actions(SeleniumDriver.Instance);
+                return _agidepartments;
+            }
+        }
+
+        public static AgiInitiatives AgiInitiatives
+        {
+            get
+            {
+                _agi_initiatives= PageGenerator.GetPage<AgiInitiatives>();
+                _agi_initiatives.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agi_initiatives.action = new Actions(SeleniumDriver.Instance);
+                return _agi_initiatives;
+            }
+        }
+
+        public static AgiSubsidaries AgiSubsidaries
+        {
+            get
+            {
+                _agisubsidaries = PageGenerator.GetPage<AgiSubsidaries>();
+                _agisubsidaries.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agisubsidaries.action = new Actions(SeleniumDriver.Instance);
+                return _agisubsidaries;
+            }
+        }
+
+        public static AgiDivisions AgiDivisions
+        {
+            get
+            {
+                _agidivisions = PageGenerator.GetPage<AgiDivisions>();
+                _agidivisions.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agidivisions.action = new Actions(SeleniumDriver.Instance);
+                return _agidivisions;
+            }
+        }
+
+        public static AgiAbtStrategy AgiAbtStrategy
+        {
+            get
+            {
+                _agiabtstrategy = PageGenerator.GetPage<AgiAbtStrategy>();
+                _agiabtstrategy.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiabtstrategy.action = new Actions(SeleniumDriver.Instance);
+                return _agiabtstrategy;
+            }
+        }
+
+        public static AgiAbtValues AgiAbtValues {
+            get
+            {
+                _agiabtvalues = PageGenerator.GetPage<AgiAbtValues>();
+                _agiabtvalues.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiabtvalues.action = new Actions(SeleniumDriver.Instance);
+                return _agiabtvalues;
+            }
+        }
+
+        public static AgiHelpPage AgiHelpPage
+        {
+            get
+            {
+                _agihelp = PageGenerator.GetPage<AgiHelpPage>();
+                _agihelp.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agihelp.action = new Actions(SeleniumDriver.Instance);
+                return _agihelp;
+            }
+        }
+
+        public static AgiCommunities AgiCommunities
+        {
+            get
+            {
+                _agicommunities = PageGenerator.GetPage<AgiCommunities>();
+                _agicommunities.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agicommunities.action = new Actions(SeleniumDriver.Instance);
+                return _agicommunities;
+            }
+        }
+
+        public static AgiEAC AgiEAC {
+            get
+            {
+                _agieac = PageGenerator.GetPage<AgiEAC>();
+                _agieac.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agieac.action = new Actions(SeleniumDriver.Instance);
+                return _agieac;
+            }
+        }
+
+        public static AgiAnnouncements AgiAnnouncements
+        {
+            get
+            {
+                _agiannouncements = PageGenerator.GetPage<AgiAnnouncements>();
+                _agiannouncements.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiannouncements.action = new Actions(SeleniumDriver.Instance);
+                return _agiannouncements;
+            }
+        }
+
+        public static AgiEvents AgiEvents {
+            get
+            {
+                _agievents = PageGenerator.GetPage<AgiEvents>();
+                _agievents.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agievents.action = new Actions(SeleniumDriver.Instance);
+                return _agievents;
+            }
+        }
+
+        public static AgiNewsArchive AgiNewsArchive {
+            get
+            {
+                _aginewsarchive = PageGenerator.GetPage<AgiNewsArchive>();
+                _aginewsarchive.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _aginewsarchive.action = new Actions(SeleniumDriver.Instance);
+                return _aginewsarchive;
+            }
+        }
+
+        public static AgiProposals AgiProposals
+        {
+            get
+            {
+                _agiproposals = PageGenerator.GetPage<AgiProposals>();
+                _agiproposals.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _agiproposals.action = new Actions(SeleniumDriver.Instance);
+                return _agiproposals;
             }
         }
     }

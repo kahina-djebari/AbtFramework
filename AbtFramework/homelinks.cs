@@ -6,6 +6,8 @@
         News,
         AbtEvents,
         aboutAbt,
-        Projects
+        Projects,
+        Home,
+        Proposals
     }
 }

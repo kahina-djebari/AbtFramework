@@ -17,6 +17,7 @@ namespace AbtFramework
         private IWebElement ms2013link;
         [FindsBy(How=How.ClassName,Using = "js-callout-footerArea")]
         private IWebElement OptionWindows;
+
         [FindsBy(How=How.LinkText,Using = "QA Authoring Issue Replication")]
         private IWebElement QA;
         [FindsBy(How=How.LinkText,Using ="Testing")]
@@ -26,6 +27,8 @@ namespace AbtFramework
 
         [FindsBy(How = How.Id, Using = "onetidDoclibViewTbl0")]
         private IWebElement WrapperTable;
+        [FindsBy(How=How.Id,Using = "WebPartTitleWPQ7")]
+        private IWebElement ProjectFinancials;
 
         public void Goto(projectslinks link)
         {
@@ -41,6 +44,18 @@ namespace AbtFramework
             }
         }
 
-  
+        public bool IsAt()
+        {
+            wait.Until(e => e.Title.Equals("Projects"));
+            if (ProjectFinancials.Displayed)
+            {
+                Console.WriteLine("Projects Link Opened Succesfully");
+                return true;
+            }
+
+            return false;
+        }
+
+
     }
 }

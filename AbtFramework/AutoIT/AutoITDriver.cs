@@ -111,6 +111,15 @@ namespace AbtFramework.AutoIT
 
         }
 
+        public static void HoverOverAgiHomeDropdown()
+        {
+            autoit.WinActivate("Home - Windows Internet Explorer");
+            autoit.WinWaitActive("Home - Windows Internet Explorer", "", 30);
+            Thread.Sleep(3000);
+            //autoit.ControlClick("Home - Windows Internet Explorer", "", "Internet Explorer_Server1", "LEFT", 1, 344, 101);
+            autoit.MouseMove(350, 156);
+          
+        }
 
         public static void EditPowerPointFile()
         {

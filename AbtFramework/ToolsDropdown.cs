@@ -37,7 +37,8 @@ namespace AbtFramework
 
         [FindsBy(How = How.LinkText, Using = "Reputational Capital Database")]
         private IWebElement repCapDBPageLink;
-  
+
+        public IWebElement ToolsAndResources { get { return SeleniumDriver.Instance.FindElement(By.LinkText("Tools & Resources")); } }
 
         public void goTo(Abtlinks Page)
         {
@@ -45,6 +46,94 @@ namespace AbtFramework
             switch (Page)
             {
 
+
+                case Abtlinks.EmergencyCommunications:
+
+                    OpenServiceCenterLink("Emergency Communications");
+                    break;
+
+                case Abtlinks.Resources:
+
+                    OpenServiceCenterLink("Resources");
+                    
+
+                    break;
+
+                case Abtlinks.ExpertiseCenters:
+                    OpenServiceCenterLink("Expertise Centers");
+                    break;
+                case Abtlinks.ProposalLibrary:
+                    OpenServiceCenterLink("Proposal Resume Library");
+                    break;
+                case Abtlinks.PolicyLibrary:
+
+                    OpenServiceCenterLink("Policy Library");
+                    break;
+                case Abtlinks.ImageLibraries:
+
+                    OpenServiceCenterLink("Image Libraries");
+                    break;
+
+                case Abtlinks.FormLibrary:
+                    OpenServiceCenterLink("Form Library");
+                    break;
+
+                case Abtlinks.AbtResearchLibrary:
+
+                    OpenServiceCenterLink("Abt Research Library");
+
+                    break;
+
+                case Abtlinks.Travel:
+                    OpenServiceCenterLink("Travel");
+
+                    break;
+                case Abtlinks.ReputationalCapital:
+
+                    OpenServiceCenterLink("Reputational Capital");
+                    break;
+
+                case Abtlinks.OfficeServices:
+
+                    OpenServiceCenterLink("Office Services");
+                    break;
+
+                case Abtlinks.ITServiceCenter:
+                    OpenServiceCenterLink("IT Service Center");
+
+                    break;
+
+                case Abtlinks.HRServiceCenter:
+                    OpenServiceCenterLink("HR Service Center");
+
+                    break;
+
+                case Abtlinks.Finance:
+                    OpenServiceCenterLink("Finance");
+                    break;
+
+                case Abtlinks.CreativeServices:
+
+                    OpenServiceCenterLink("Creative Services");
+                    break;
+
+                case Abtlinks.ContractOperations:
+                    OpenServiceCenterLink("Contract Operations");
+
+                    break;
+
+                case Abtlinks.CTC:
+                    OpenServiceCenterLink("Client Technology Center (CTC)");
+
+                    break;
+                case Abtlinks.BusinessDevelopment:
+                    OpenServiceCenterLink("Business Development");
+                    break;
+
+                case Abtlinks.AbtLearn:
+
+                    OpenServiceCenterLink("AbtLearn");
+                    break;
                                 
                     case Abtlinks.AbtExchange:
 
@@ -112,13 +201,38 @@ namespace AbtFramework
             }
         }
 
+        private void OpenServiceCenterLink(string linkText)
+        {
+            while (SeleniumDriver.Instance.Title.Equals("Home"))
+            {
+                try
+                {
+                    action.MoveToElement(ToolsAndResources).Perform();
+                    Thread.Sleep(500);
+                    SeleniumDriver.Instance.FindElement(By.LinkText(linkText)).Click();
+                    Thread.Sleep(1000);
+                }
+
+                catch
+                {
+
+                }
+
+            }
+
+
+            Console.WriteLine("Clicking on dropdown Tools & Resources ->" + linkText);
+            Console.WriteLine("</br>");
+            
+        }
+
         private void OpenMegaMenuLink(string linkText)
         {
             while (SeleniumDriver.Instance.WindowHandles.Count < 2)
             {
                 try
                 {
-                    action.MoveToElement(SeleniumDriver.Instance.FindElement(By.LinkText("Tools & Resources"))).Perform();
+                    action.MoveToElement(ToolsAndResources).Perform();
                     Thread.Sleep(500);
                     SeleniumDriver.Instance.FindElement(By.LinkText(linkText)).Click();
                     Thread.Sleep(1000);
@@ -138,9 +252,49 @@ namespace AbtFramework
             SeleniumDriver.Instance.Manage().Window.Maximize();
         }
 
+        public void GoTo_CreativeServices()
+        {
+            goTo(Abtlinks.CreativeServices);
+        }
+
+        public void GoTo_ContractOperations()
+        {
+            goTo(Abtlinks.ContractOperations);
+        }
+
+        public void GoTo_CTC()
+        {
+            goTo(Abtlinks.CTC);
+        }
+
+        public void GoTo_Finance()
+        {
+            goTo(Abtlinks.Finance);
+        }
+
+        public void GoToBusinessDevelopment()
+        {
+            goTo(Abtlinks.BusinessDevelopment);
+        }
+
+        public void GoTo_HRServiceCenter()
+        {
+            goTo(Abtlinks.HRServiceCenter);
+        }
+
+        public void GoToAbtLearn()
+        {
+            goTo(Abtlinks.AbtLearn);
+        }
+
         public void GoToRepCap_Planner()
         {
             goTo(Abtlinks.RepCapPlanner);
+        }
+
+        public void GoTo_ITServiceCenter()
+        {
+            goTo(Abtlinks.ITServiceCenter);
         }
 
         public void GoToRepCapDB()
@@ -148,9 +302,19 @@ namespace AbtFramework
             goTo(Abtlinks.ReputationalCapitalDB);
         }
 
+        public void GoTo_OfficeServices()
+        {
+            goTo(Abtlinks.OfficeServices);
+        }
+
         public void GoToAbtExchange()
         {
             goTo(Abtlinks.AbtExchange);
+        }
+
+        public void GoTo_ReputationalCapital()
+        {
+            goTo(Abtlinks.ReputationalCapital);
         }
 
         public void GoToISMS()
@@ -161,6 +325,11 @@ namespace AbtFramework
         public void GoTo_Concur()
         {
             goTo(Abtlinks.AbtTravel);
+        }
+
+        public void GoTo_Travel()
+        {
+            goTo(Abtlinks.Travel);
         }
 
         public void GoToAbtKnowledge()
@@ -178,9 +347,19 @@ namespace AbtFramework
             goTo(Abtlinks.Oracle);
         }
 
+        public void GoTo_AbtResearchLibrary()
+        {
+            goTo(Abtlinks.AbtResearchLibrary);
+        }
+
         public void GoToAtlas()
         {
             goTo(Abtlinks.Abt_Talent_Learning_and_Support);
+        }
+
+        public void GoTo_FormLibrary()
+        {
+            goTo(Abtlinks.FormLibrary);
         }
 
         internal void AbtTravelLink()
@@ -188,7 +367,12 @@ namespace AbtFramework
             AbtTravel.Click();
 
         }
- 
+
+        public void GoTo_ImageLibraries()
+        {
+            goTo(Abtlinks.ImageLibraries);
+        }
+
         internal void AbtKnowledgeLink()
         {
             AbtKnowledge.Click();
@@ -200,9 +384,19 @@ namespace AbtFramework
             Atlas.Click();
         }
 
+        public void GoTo_PolicyLibrary()
+        {
+            goTo(Abtlinks.PolicyLibrary);
+        }
+
         internal void OracleLink()
         {
             Oracle.Click();
+        }
+
+        public void GoTo_ProposalLibrary()
+        {
+            goTo(Abtlinks.ProposalLibrary);
         }
 
         internal void IsmsLink()
@@ -215,5 +409,19 @@ namespace AbtFramework
             OutlookWeb.Click();
         }
 
+        public void GoTo_ExpertiseCenters()
+        {
+            goTo(Abtlinks.ExpertiseCenters);
+        }
+
+        public void GoTo_Resources()
+        {
+            goTo(Abtlinks.Resources);
+        }
+
+        public void GoTo_EmergencyCommunications()
+        {
+            goTo(Abtlinks.EmergencyCommunications);
+        }
     }
 }

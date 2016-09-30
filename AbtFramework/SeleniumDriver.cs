@@ -169,7 +169,8 @@ namespace AbtFramework
                 case Browser.IENoNativeEvents:
                     IEoptions = new InternetExplorerOptions();
                     IEoptions.EnableNativeEvents = false;
-                  //  IEoptions.EnablePersistentHover = true;
+                    IEoptions.EnablePersistentHover = true;
+                
               //Clean Cache on Every Session ->  // IEoptions.EnsureCleanSession = true;
 
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);

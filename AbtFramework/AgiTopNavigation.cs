@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace AbtFramework
 {
@@ -29,9 +30,13 @@ namespace AbtFramework
         [FindsBy(How = How.ClassName, Using = "main")]
         private IList<IWebElement> Toplinks;
 
+       
+
         private ToolsDropdown _toolsDropdown;
         [FindsBy(How =How.LinkText,Using ="Abt Values")]
         private IWebElement abtvalueLink;
+        private HomeDropdown _homedropdown;
+        private NewsDropdown _newsdropdown;
 
         public ToolsDropdown ToolsDropdown { get {
                 _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>();
@@ -55,6 +60,26 @@ namespace AbtFramework
                 }
           return null;       
        } }
+
+        public HomeDropdown HomeDropdown {
+            get
+            {
+                _homedropdown= PageGenerator.GetPage<HomeDropdown>();
+                _homedropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _homedropdown.action = new Actions(SeleniumDriver.Instance);
+                return _homedropdown;
+            }
+        }
+
+        public NewsDropdown NewsDropdown {
+            get
+            {
+                _newsdropdown = PageGenerator.GetPage<NewsDropdown>();
+                _newsdropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _newsdropdown.action = new Actions(SeleniumDriver.Instance);
+                return _newsdropdown;
+            }
+        }
 
         public void HoverOverTools()
         {
@@ -100,14 +125,20 @@ namespace AbtFramework
             ToolsLink.Click();
         }
 
-        public void Projects()
+        public void GoToProjects()
         {
-            ProjectsLink.Click();
+            Goto(homelinks.Projects);
         }
 
-        public void News()
+        public void GoTo_News()
         {
-            NewsLink.Click();
+           Goto(homelinks.News);
+        }
+
+        public void GoHome()
+        {
+            Console.WriteLine("Clicking on AGI Top Navigation -> Home");
+            HomeLink.Click();
         }
 
         public void Home()
@@ -122,31 +153,53 @@ namespace AbtFramework
 
             switch (link)
             {
-                case homelinks.Projects:
-                    wait.Timeout = TimeSpan.FromSeconds(40);
-                    wait.Until((Func<IWebDriver, bool>)(e =>
-                    {
-                        if (SeleniumDriver.Instance.Title !="Projects")
-                        {
-                            ProjectsLink.Click();
-                        }
 
-                        else
-                        {
-                     
-                            return true;
-                        }
-                        return false;
-                    }));
-                
+                case homelinks.Proposals:
+                    OpenLink("Proposals");
+                    break;
+                case homelinks.News:
+                    OpenLink("News");
+                    break;
+                case homelinks.Home:
+                    OpenLink("Home");
+                    break;
+                case homelinks.Projects:
+                    OpenLink("Projects");
                     break;
             }
+        }
+
+        private void OpenLink(string linkText)
+        {
+            while (SeleniumDriver.Instance.Title.Equals("Home"))
+            {
+                try
+                {
+
+                    SeleniumDriver.Instance.FindElement(By.LinkText(linkText)).Click();
+                    Thread.Sleep(1000);
+                }
+
+                catch
+                {
+
+                }
+
+            }
+
+            Console.WriteLine("Clicking on AGI Top Navigation ->" + linkText);
+            Console.WriteLine("</br>");
         }
 
         public void AbtValues()
         {
             finder = new PopupWindowFinder(SeleniumDriver.Instance);
             finder.Click(abtvalueLink);
+        }
+
+        public void GoToProporsals()
+        {
+            Goto(homelinks.Proposals);
         }
     }
 }
