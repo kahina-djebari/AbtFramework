@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace AbtFramework
 {
@@ -79,7 +80,8 @@ namespace AbtFramework
 
       public bool isAt()
         {
-            wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Home"));
+           
+            wait.Until(e=>SeleniumDriver.Instance.Title.Equals("SuccessFactors: Home"));
             StopTimer();
             if (dropdowns.Single(a => a.Text.Equals("Home")).Displayed)
             {

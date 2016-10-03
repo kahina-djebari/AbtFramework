@@ -11,10 +11,10 @@ namespace abtTest.Web
     {
 
 
-     //   [Fact(DisplayName = "Should Place Office Request ")]
+        //[Fact(DisplayName = "Should Place Office Request ")]
         public void Should_Place_Office_Request()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);

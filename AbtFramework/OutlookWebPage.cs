@@ -50,8 +50,8 @@ namespace AbtFramework
         public bool IsAt() {
 
 
-             wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Mail - "+SSOCrendentials.CurrentUser+" - Outlook"));
-         //  wait.Until(e => SeleniumDriver.Instance.Title.Equals("Mail - " +"Sofiane Oumsalem"+ " - Outlook"));
+          //   wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Mail - "+SSOCrendentials.CurrentUser+" - Outlook"));
+           wait.Until(e => SeleniumDriver.Instance.Title.Equals("Mail - " +"Sofiane Oumsalem"+ " - Outlook"));
             StopTimer();
             PrintResponseTime("Outlook Web");
             return true;
