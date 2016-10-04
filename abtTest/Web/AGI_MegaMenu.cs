@@ -221,7 +221,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //i dont have access to concur through abttravel
+       // [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //i dont have access to concur through abttravel
         public void Should_Get_Concur_HomePage_Response_Time()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
@@ -231,7 +231,7 @@ namespace abtTest.Web
             AbtPages.AbtTravelPage.AbtTravelOnlineDropdown.BookOrSearchUsTravel();
         }
 
-        [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
+      //  [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
         public void Should_Get_Concur_HomePage_Response_Time_2()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);

@@ -14,6 +14,7 @@ namespace AbtFramework
                                            .SendKeys(Keys.ArrowLeft)
                                            .SendKeys("Added this line at: " + DateTime.Now).Perform();
             Console.WriteLine("Edited Excel Document Succesfully");
+            Thread.Sleep(5000);
 
         }
     }

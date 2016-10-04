@@ -299,7 +299,7 @@ namespace abtTest.Web
             SeleniumDriver.Close();
         }
 
-        [Fact(DisplayName = "Edit Word Document Online on KM Workspace")]
+       // [Fact(DisplayName = "Edit Word Document Online on KM Workspace")]
         public void Should_Open_Word_Doc_Online_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
@@ -309,7 +309,7 @@ namespace abtTest.Web
             SeleniumDriver.Close();
         }
 
-      [Fact(DisplayName =  "Edit Excel Document Online on KM Workspace")]
+    //  [Fact(DisplayName =  "Edit Excel Document Online on KM Workspace")]
         public void Should_Open_Excel_Doc_Online_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);

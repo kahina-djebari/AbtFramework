@@ -44,8 +44,8 @@ namespace AbtFramework
             }
         }
 
-        public IWebElement DocumentCheckbox { get { return ChkBoxList.Single(e => e.GetAttribute("aria-label").Split(',')[0].Equals(currentdocTitle)); } }
-
+         public IWebElement DocumentCheckbox { get { return ChkBoxList.Single(e => e.GetAttribute("aria-label").Split(',')[0].Equals(currentdocTitle)); } }
+   
         public IWebElement SecondTopic { get { return Topics[1]; } }
 
         public void Goto(MS2013Links link)
@@ -75,41 +75,72 @@ namespace AbtFramework
             switch (document)
             {
                 case MS2013documents.QA_ReadinessChecklist_v4:
-                    try
+
+                    while (true)
                     {
-                        wait.Until(e=>Topics.Count>=2);
-                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
-                                             // if you're not in the km workspace program wil continue.
-                    }
-                    catch (Exception e)
-                    {
+                        try
+                        {
+                            wait.Until(e => Topics.Count >= 2);
+                            SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                                 // if you're not in the km workspace program wil continue.
+                            if (WordDoc.Displayed)
+                            {
+                                break;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
 
                     }
+
+
                     OpenDoc(WordDoc, documentType.Word);
 
                     break;
                case MS2013documents.SampleAVMetrics:
-                    try
-                    {
-                        wait.Until(e => Topics.Count >= 2);
-                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
-                                             // if you're not in the km workspace program wil continue.
-                    }
-                    catch (Exception e)
-                    {
 
+                    while (true)
+                    {
+                        try
+                        {
+                            wait.Until(e => Topics.Count >= 2);
+                            SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                                 // if you're not in the km workspace program wil continue.
+
+                            if (PowerPointDoc.Displayed)
+                            {
+                                break;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
                     }
+                  
                     OpenDoc(PowerPointDoc, doctype);
                     break;
                 case MS2013documents.ITMetrics:
-                    try
+
+                    while (true)
                     {
-                        wait.Until(e => Topics.Count >= 2);
-                        SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
-                                             // if you're not in the km workspace program wil continue.
-                    }
-                    catch (Exception e)
-                    {
+                        try
+                        {
+                            wait.Until(e => Topics.Count >= 2);
+                            SecondTopic.Click(); // this try catch is to expand the topic dropdown if you are on the km workspace 
+                                                 // if you're not in the km workspace program wil continue.
+
+                            if (ExcelDoc.Displayed)
+                            {
+                                break;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
 
                     }
                     OpenDoc(ExcelDoc, doctype);
@@ -122,13 +153,20 @@ namespace AbtFramework
 
         private void OpenDoc(IWebElement Doc, documentType doctype) //open documents online
         {
+           
+           
+           
+           // wait.Until(e => Doc.Displayed);
             currentdocTitle = Doc.Text;
-            wait.Until(e => Doc.Displayed);
             DocumentCheckbox.Click();
             MoreOptions.Click();
-           // action.ContextClick(Doc).Perform();
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
-            popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
+            // action.ContextClick(Doc).Perform();
+             finder = new PopupWindowFinder(SeleniumDriver.Instance);
+              popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
+            //  OpenDocumentIn(doctype).Click();
+            // action.Click(OpenDocumentIn(doctype)).Perform();
+            //            SeleniumDriver.Instance.FindElements(By.TagName("li")).Single(e => e.Text.Equals("Open in " + doctype.ToString() + " Online")).Click();
+        
             wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);
             SeleniumDriver.Close();
             SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
