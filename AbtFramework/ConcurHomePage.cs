@@ -39,7 +39,7 @@ namespace AbtFramework
 
                 if (username.Text.Equals("David Acuna"))
                 {
-                    Console.WriteLine("User: David Acuna succesfully logged in with "+SSOProvider);
+                  //  Console.WriteLine("User: David Acuna succesfully logged in with "+SSOProvider);
                     return true;
                 }
 

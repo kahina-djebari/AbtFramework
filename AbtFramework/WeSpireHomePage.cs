@@ -34,7 +34,7 @@ namespace AbtFramework
             //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
             if (userFirstName.Text.Equals("David"))
             {
-                PrintResponseTime("WeSpire");
+               
                 return true;
             }
 

@@ -602,7 +602,7 @@ namespace AbtFramework
             if (CurrentUser.Text.Equals("David Acuna"))
             {
                
-                Console.WriteLine("User: David succesfully logged in using "+SSOProvider);
+             //   Console.WriteLine("User: David succesfully logged in using "+SSOProvider);
 
                 return true;
             }

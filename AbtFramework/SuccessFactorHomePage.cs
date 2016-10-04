@@ -58,7 +58,7 @@ namespace AbtFramework
 
                 if (Username.Text.Equals("David Acuna"))
                 {
-                    Console.WriteLine("User: David Acuna successfully logged in using " + SingleSignOnProvider);
+                   // Console.WriteLine("User: David Acuna successfully logged in using " + SingleSignOnProvider);
                     return true;
                 }
 
