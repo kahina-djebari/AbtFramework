@@ -53,7 +53,7 @@ namespace abtTest.Web
        [Fact(DisplayName = "Should Go to Success Factor (Test) Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents;
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.SuccessFactorHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.SuccessFactorHomePage.isUserLoggedIn());
             SeleniumDriver.Close();
