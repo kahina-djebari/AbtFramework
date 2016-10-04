@@ -42,6 +42,7 @@
         EAC,
         Announcements,
         Events,
-        NewsArchive
+        NewsArchive,
+        TravelOnline
     }
 }

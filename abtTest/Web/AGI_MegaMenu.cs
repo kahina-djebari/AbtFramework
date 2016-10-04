@@ -231,14 +231,18 @@ namespace abtTest.Web
             AbtPages.AbtTravelPage.AbtTravelOnlineDropdown.BookOrSearchUsTravel();
         }
 
-      //  [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
+        [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
         public void Should_Get_Concur_HomePage_Response_Time_2()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_Concur();
+            AbtPages.ConcurHomePage.IsAt();
          
         }
+
+
+      
 
         //[Fact(DisplayName = "Should Get ISMS Home Page Response Time")]
         public void Should_Get_ISMS_HomePage_Response_Time()

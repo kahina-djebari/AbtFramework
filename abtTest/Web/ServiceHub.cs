@@ -11,8 +11,8 @@ namespace abtTest.Web
     {
 
 
-     //   [Fact(DisplayName = "Should Place Office Request ")]
-        public void Should_Place_Office_Request()
+      //  [Fact(DisplayName = "Should Place Office Request as ESS ")]
+        public void Should_Place_Office_Request_ESS()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
@@ -20,17 +20,25 @@ namespace abtTest.Web
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
             AbtPages.ServiceHubHomepage.GoTo(ServiceHubLinks.New_OS_Request);
             AbtPages.OfficeServiceRequestpage.NewOfficeRequest("Bethesda, MD", "Office Space", "Shelving", "Short description-3", "Notes/Comments");
+          //  AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+         //   AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
+         //   AbtPages.ServiceNowHomepage.FacilityRequests();
+          //  AbtPages.ServiceNowHomepage.CloseOfficeRequest("Short description-3", "work notes", "Steve Hunt");
+    
+        }
+
+       // [Fact(DisplayName ="Should Close Office Request ")]
+        public void SHould_Close_Office_Request()
+        {
+
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
             AbtPages.ServiceNowHomepage.FacilityRequests();
             AbtPages.ServiceNowHomepage.CloseOfficeRequest("Short description-3", "work notes", "Steve Hunt");
-            //Assert.True(AbtDriver.ServiceNowHomepage.OfficeRequestIsClosed("Short description-3"));
-            // Driver.Quit();
-            // AbtDriver.OfficeServiceRequestpage.FillRequestWith(HRIssueCategory.Benefits, "Subject Goes Here", "Description Goes Here");
-
         }
 
-       // [Fact(DisplayName = "Should Check Service Hub Home Page Links")]
+      //  [Fact(DisplayName = "Should Check Service Hub Home Page Links")]
         public void Should_Check_Home_Page_ServiceHub_Links()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -81,7 +89,7 @@ namespace abtTest.Web
         }
 
 
-     //   [Fact(DisplayName = "Should Place HR Request ")]
+       // [Fact(DisplayName = "Should Place HR Request ")]
         public void Should_Place_HR_Request()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -97,7 +105,7 @@ namespace abtTest.Web
         }
 
 
-       // [Fact(DisplayName = ("Should Place IT Request (Ask a Question) - ESS"))]
+      //  [Fact(DisplayName = ("Should Place IT Request (Ask a Question) - ESS"))]
         public void Should_Ask_Question_ESS()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -120,7 +128,7 @@ namespace abtTest.Web
 
 
 
-     //   [Fact(DisplayName = "Should Place IT Incident")]
+       // [Fact(DisplayName = "Should Place IT Incident")]
         public void Should_Place_IT_Incident()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);    //IE247
@@ -141,7 +149,7 @@ namespace abtTest.Web
         }
 
 
-     //   [Fact(DisplayName = "Should Search on Service Hub")]
+      //  [Fact(DisplayName = "Should Search on Service Hub")]
         public void Should_Search_On_Service_Hub()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -151,7 +159,7 @@ namespace abtTest.Web
 
         }
 
-      //  [Fact(DisplayName = "Should Update a Knowledge Base Article")]
+       // [Fact(DisplayName = "Should Update a Knowledge Base Article")]
         public void Should_Update_Knowledge_Base_Article()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -163,7 +171,7 @@ namespace abtTest.Web
             AbtPages.ITKnowledgeBasePage.EditArticle("Random edition");
         }
 
-      //  [Fact(DisplayName ="Should Create New IT Conferencing Setup Request")]
+     //  [Fact(DisplayName ="Should Create New IT Conferencing Setup Request")]
         public void Should_Create_New_Conferencing_Setup_Request()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -178,7 +186,7 @@ namespace abtTest.Web
 
 
         }
-       // [Fact(DisplayName ="Should Create a New IT Distribution List")]
+    //    [Fact(DisplayName ="Should Create a New IT Distribution List")]
         public void Should_Create_New_Distribution_List_Request()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);

@@ -63,6 +63,20 @@ namespace AbtFramework
             return false;
         }
 
-    
+        public bool IsAt()
+        {
+            wait.Until(e => warning.Displayed);
+            warning.Click();
+            StopTimer();
+            if (Logo.Displayed)
+            {
+               
+                PrintResponseTime("Concur");
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }

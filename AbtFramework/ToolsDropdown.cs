@@ -46,7 +46,11 @@ namespace AbtFramework
             switch (Page)
             {
 
+                case Abtlinks.TravelOnline:
 
+                    OpenMegaMenuLink("AbtTravel Online Booking");
+
+                    break;
                 case Abtlinks.EmergencyCommunications:
 
                     OpenServiceCenterLink("Emergency Communications");
@@ -325,12 +329,12 @@ namespace AbtFramework
 
         public void GoTo_Concur()
         {
-            goTo(Abtlinks.AbtTravel);
+            goTo(Abtlinks.TravelOnline);
         }
 
         public void GoTo_Travel()
         {
-            goTo(Abtlinks.Travel);
+            goTo(Abtlinks.TravelOnline);
         }
 
         public void GoToAbtKnowledge()
