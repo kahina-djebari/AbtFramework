@@ -13,7 +13,7 @@ namespace abtTest.Web
        [Fact(DisplayName = "Should Go to WeSpire (Test) Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() //no access
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.WeSpireHomePage.isAt());
             SeleniumDriver.Close();
@@ -32,7 +32,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Should Go to Ebsco (Test) Home Page")]
         public void Should_Go_to_Ebsco_Test_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.EbscoHomePage.Go(WebEnvironment.TestEnvironment);
             AbtPages.EbscoHomePage.GoToMyAccount();
             Assert.True(AbtPages.EbscoMyAccountPage.IsUserLoggedIn());
@@ -53,7 +53,7 @@ namespace abtTest.Web
        [Fact(DisplayName = "Should Go to Success Factor (Test) Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents;
             AbtPages.SuccessFactorHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.SuccessFactorHomePage.isUserLoggedIn());
             SeleniumDriver.Close();
@@ -91,7 +91,7 @@ namespace abtTest.Web
      [Fact(DisplayName = "Should Go to Concur (prod) Home Page using Okta")]
         public void Should_Go_to_Concur_Testing_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ConcurHomePage.Go();
             Assert.True(AbtPages.ConcurHomePage.isUserLoggedIn());
             SeleniumDriver.Close();
@@ -115,7 +115,7 @@ namespace abtTest.Web
          [Fact(DisplayName = "Should Go to Right Find (Test) Home Page")]
         public void Should_Go_to_RightFind_Test_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.RightFindHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.RightFindHomePage.IsUserLoggedIn());
 
@@ -158,7 +158,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Should Go to Service Now (Test) Home Page")]
         public void Should_Go_to_ServiceNow_UAT_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.ServiceNowHomepage.isUserLoggedIn());
         }
@@ -174,7 +174,7 @@ namespace abtTest.Web
        [Fact(DisplayName = "Should Go to WebEx (Test) Home Page")]
         public void Should_Go_to_WebEx_Test_HomePage()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.WebExPage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.WebExPage.isAt());
 
