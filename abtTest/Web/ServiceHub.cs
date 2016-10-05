@@ -11,7 +11,7 @@ namespace abtTest.Web
     {
 
 
-        [Fact(DisplayName = "ESS User Should Place an Office Request - Then Manager Closes The Request ")]
+        //[Fact(DisplayName = "ESS User Should Place an Office Request - Then Manager Closes The Request ")]
         public void Should_Place_Office_Request_ESS()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -29,7 +29,7 @@ namespace abtTest.Web
 
   
 
-        [Fact(DisplayName = "Should Check Service Hub Home Page Links")]
+      //  [Fact(DisplayName = "Should Check Service Hub Home Page Links")]
         public void Should_Check_Home_Page_ServiceHub_Links()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -62,7 +62,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Check Service Hub Top Navigation Links")]
+      //  [Fact(DisplayName = "Should Check Service Hub Top Navigation Links")]
         public void Should_Check_Top_Navigation_ServiceHub_Links()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -80,7 +80,7 @@ namespace abtTest.Web
         }
 
 
-        [Fact(DisplayName = "ESS User Should Place an HR Request - Then Manager Closes The Request ")]
+       // [Fact(DisplayName = "ESS User Should Place an HR Request - Then Manager Closes The Request ")]
         public void Should_Place_HR_Request()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -96,7 +96,7 @@ namespace abtTest.Web
         }
 
 
-        [Fact(DisplayName = ("Should Place IT Request (Ask a Question) - ESS"))]
+      //  [Fact(DisplayName = ("Should Place IT Request (Ask a Question) - ESS"))]
         public void Should_Ask_Question_ESS()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -119,7 +119,7 @@ namespace abtTest.Web
 
 
 
-        [Fact(DisplayName = "ESS user Should Places IT Incident - Then Manager Closes The Request ")]
+      //  [Fact(DisplayName = "ESS user Should Places IT Incident - Then Manager Closes The Request ")]
         public void Should_Place_IT_Incident()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);   //IE247
@@ -140,7 +140,7 @@ namespace abtTest.Web
         }
 
 
-        [Fact(DisplayName = "Should Search on Service Hub")]
+       // [Fact(DisplayName = "Should Search on Service Hub")]
         public void Should_Search_On_Service_Hub()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -150,7 +150,7 @@ namespace abtTest.Web
 
         }
 
-        [Fact(DisplayName = "Should Update a Knowledge Base Article")]
+      //  [Fact(DisplayName = "Should Update a Knowledge Base Article")]
         public void Should_Update_Knowledge_Base_Article()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -162,7 +162,7 @@ namespace abtTest.Web
           //  AbtPages.ITKnowledgeBasePage.EditArticle("Random edition");
         }
 
-       [Fact(DisplayName ="Should Create New IT Conferencing Setup Request")]
+     //  [Fact(DisplayName ="Should Create New IT Conferencing Setup Request")]
         public void Should_Create_New_Conferencing_Setup_Request()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -177,7 +177,7 @@ namespace abtTest.Web
 
 
         }
-        [Fact(DisplayName ="Should Create a New IT Distribution List")]
+      //  [Fact(DisplayName ="Should Create a New IT Distribution List")]
         public void Should_Create_New_Distribution_List_Request()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -190,7 +190,7 @@ namespace abtTest.Web
             Assert.True(AbtPages.SubmittedOrderPage.isAt());
         }
 
-         [Fact(DisplayName =("Should Open Incident on Service Now as Admin"))]
+     //    [Fact(DisplayName =("Should Open Incident on Service Now as Admin"))]
         public void Should_Open_Incident()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -202,7 +202,7 @@ namespace abtTest.Web
 
         }
 
-          [Fact(DisplayName = ("Should Open New HR Ticket on Service Now as Admin"))]
+       //   [Fact(DisplayName = ("Should Open New HR Ticket on Service Now as Admin"))]
         public void Should_Open_New_HR_Ticket_on_Service_Now()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -213,7 +213,7 @@ namespace abtTest.Web
 
         }
 
-          [Fact(DisplayName = ("Should Open a Facility Request on Service Now as Admin"))]
+    //      [Fact(DisplayName = ("Should Open a Facility Request on Service Now as Admin"))]
         public void Should_Open_New_Facility_Request_on_Service_Now()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -226,7 +226,7 @@ namespace abtTest.Web
 
         }
 
-          [Fact(DisplayName ="Should Create a New Knowledge Base Article")]
+      //    [Fact(DisplayName ="Should Create a New Knowledge Base Article")]
         public void Should_Create_New_KB_Article()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
