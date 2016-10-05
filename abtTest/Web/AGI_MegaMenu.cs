@@ -231,7 +231,7 @@ namespace abtTest.Web
             AbtPages.AbtTravelPage.AbtTravelOnlineDropdown.BookOrSearchUsTravel();
         }
 
-        [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
+       // [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
         public void Should_Get_Concur_HomePage_Response_Time_2()
         {
             SeleniumDriver.init(Browser.RemoteSofianesIE);
@@ -478,6 +478,22 @@ namespace abtTest.Web
             AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_EmergencyCommunications();
             Assert.True(AbtPages.AgiEmergencyCommunications.isAt());
          
+        }
+
+       // [Fact(DisplayName = "Test Generator")]
+        public void Should_Test_Generator()
+        {
+            //TestCase test;
+            // TestCase.SetTestCase(abtCases.GoToConcur);
+            // if(TestCase.CurrentTestCase.StepExist("GotoAgi") 
+            // TestCase.CurrentTestCase.Step("GotoAGI").MarkAsDone(); //if statement is completed 
+            // TestCase.CurrentTestCase.Step("GOToAGI").MarkasFailed(); // if i can handle the exeption
+            // 
+            SeleniumDriver.init(Browser.RemoteDavidIE);
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_EmergencyCommunications();
+            Assert.True(AbtPages.AgiEmergencyCommunications.isAt());
+
         }
 
         public void Dispose()

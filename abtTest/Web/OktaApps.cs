@@ -183,7 +183,7 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Should Go to WebEx Production Home Page")]
         public void Should_Go_to_WebEx_Production_HomePage()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIE);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.WebExPage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtPages.WebExPage.isAt());
         }

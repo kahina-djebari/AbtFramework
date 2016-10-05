@@ -11,37 +11,28 @@ namespace abtTest.Web
     {
 
 
-      //  [Fact(DisplayName = "Should Place Office Request as ESS ")]
+        [Fact(DisplayName = "ESS User Should Place an Office Request - Then Manager Closes The Request ")]
         public void Should_Place_Office_Request_ESS()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
             AbtPages.ServiceHubHomepage.GoTo(ServiceHubLinks.New_OS_Request);
             AbtPages.OfficeServiceRequestpage.NewOfficeRequest("Bethesda, MD", "Office Space", "Shelving", "Short description-3", "Notes/Comments");
-          //  AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
-         //   AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
-         //   AbtPages.ServiceNowHomepage.FacilityRequests();
-          //  AbtPages.ServiceNowHomepage.CloseOfficeRequest("Short description-3", "work notes", "Steve Hunt");
+           AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
+          AbtPages.ServiceNowHomepage.FacilityRequests();
+           AbtPages.ServiceNowHomepage.CloseOfficeRequest("Short description-3", "work notes", "Steve Hunt");
     
         }
 
-       // [Fact(DisplayName ="Should Close Office Request ")]
-        public void SHould_Close_Office_Request()
-        {
+  
 
-            SeleniumDriver.init(Browser.IENoNativeEvents);
-            AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
-            AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
-            AbtPages.ServiceNowHomepage.FacilityRequests();
-            AbtPages.ServiceNowHomepage.CloseOfficeRequest("Short description-3", "work notes", "Steve Hunt");
-        }
-
-      //  [Fact(DisplayName = "Should Check Service Hub Home Page Links")]
+        [Fact(DisplayName = "Should Check Service Hub Home Page Links")]
         public void Should_Check_Home_Page_ServiceHub_Links()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
             AbtPages.ServiceHubHomepage.GoTo(ServiceHubLinks.New_HR_Request);
@@ -71,10 +62,10 @@ namespace abtTest.Web
 
         }
 
-      //  [Fact(DisplayName = "Should Check Service Hub Top Navigation Links")]
+        [Fact(DisplayName = "Should Check Service Hub Top Navigation Links")]
         public void Should_Check_Top_Navigation_ServiceHub_Links()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
             AbtPages.ServiceHubHomepage.GoTo(ServiceHubLinks.New_HR_Request);
@@ -89,10 +80,10 @@ namespace abtTest.Web
         }
 
 
-       // [Fact(DisplayName = "Should Place HR Request ")]
+        [Fact(DisplayName = "ESS User Should Place an HR Request - Then Manager Closes The Request ")]
         public void Should_Place_HR_Request()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
@@ -105,10 +96,10 @@ namespace abtTest.Web
         }
 
 
-      //  [Fact(DisplayName = ("Should Place IT Request (Ask a Question) - ESS"))]
+        [Fact(DisplayName = ("Should Place IT Request (Ask a Question) - ESS"))]
         public void Should_Ask_Question_ESS()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
@@ -128,10 +119,10 @@ namespace abtTest.Web
 
 
 
-       // [Fact(DisplayName = "Should Place IT Incident")]
+        [Fact(DisplayName = "ESS user Should Places IT Incident - Then Manager Closes The Request ")]
         public void Should_Place_IT_Incident()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);    //IE247
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);   //IE247
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("David Acuna");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
@@ -149,32 +140,32 @@ namespace abtTest.Web
         }
 
 
-      //  [Fact(DisplayName = "Should Search on Service Hub")]
+        [Fact(DisplayName = "Should Search on Service Hub")]
         public void Should_Search_On_Service_Hub()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
             AbtPages.ServiceHubHomepage.Search("Office 2013");
 
         }
 
-       // [Fact(DisplayName = "Should Update a Knowledge Base Article")]
+        [Fact(DisplayName = "Should Update a Knowledge Base Article")]
         public void Should_Update_Knowledge_Base_Article()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
             AbtPages.ServiceHubHomepage.GoTo(ServiceHubLinks.IT_Knowledge_Base);
             AbtPages.ITKnowledgeBasePage.OpenRandomArticle();
-            AbtPages.ITKnowledgeBasePage.EditArticle("Random edition");
+          //  AbtPages.ITKnowledgeBasePage.EditArticle("Random edition");
         }
 
-     //  [Fact(DisplayName ="Should Create New IT Conferencing Setup Request")]
+       [Fact(DisplayName ="Should Create New IT Conferencing Setup Request")]
         public void Should_Create_New_Conferencing_Setup_Request()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
@@ -186,10 +177,10 @@ namespace abtTest.Web
 
 
         }
-    //    [Fact(DisplayName ="Should Create a New IT Distribution List")]
+        [Fact(DisplayName ="Should Create a New IT Distribution List")]
         public void Should_Create_New_Distribution_List_Request()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
             AbtPages.ServiceNowHomepage.GoTo(ServicenowLinks.ServiceHub);
@@ -199,7 +190,53 @@ namespace abtTest.Web
             Assert.True(AbtPages.SubmittedOrderPage.isAt());
         }
 
-        //[Fact(DisplayName ="Should Create New IT Hardware Peripheral Request")]
+         [Fact(DisplayName =("Should Open Incident on Service Now as Admin"))]
+        public void Should_Open_Incident()
+        {
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
+            AbtPages.ServiceNowHomepage.OpenIncidentSection();
+            AbtPages.ServiceNowHomepage.CreateNewIncident("David Acuna", "Software", "Application", "Upgrade"
+                                                           , "Valeria Rozenbaum", "SD_General_IT");
+
+        }
+
+          [Fact(DisplayName = ("Should Open New HR Ticket on Service Now as Admin"))]
+        public void Should_Open_New_HR_Ticket_on_Service_Now()
+        {
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.ServiceNowHomepage.ImpersonateUser("Michael Stinson");
+            AbtPages.ServiceNowHomepage.OpenHRIssues();
+            AbtPages.ServiceNowHomepage.CreateNewHRTicket("David Acuna", "Payroll", "Subject", "Description", "Email");
+
+        }
+
+          [Fact(DisplayName = ("Should Open a Facility Request on Service Now as Admin"))]
+        public void Should_Open_New_Facility_Request_on_Service_Now()
+        {
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
+            AbtPages.ServiceNowHomepage.FacilityRequests();
+            AbtPages.ServiceNowHomepage.CreateNewFacilityRequest("David Acuna", "Office Furniture"
+                                                                 , "Furniture Requests", "Short Description"
+                                                                 , "Assignment group");
+
+        }
+
+          [Fact(DisplayName ="Should Create a New Knowledge Base Article")]
+        public void Should_Create_New_KB_Article()
+        {
+            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.ServiceNowHomepage.ImpersonateUser("Valeria Rozenbaum");
+            AbtPages.ServiceNowHomepage.OpenKnowledgeBase();
+            AbtPages.ServiceNowHomepage.CreateNewKBArticle("Short article description");
+        }
+
+
 
     }
 }

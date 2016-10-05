@@ -43,8 +43,11 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            StartTimer();
+            
             SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.SwitchTo().Frame("header");
+            SeleniumDriver.Instance.FindElement(By.Id("wcc-lnk-loginLink")).Click();
+            StartTimer();
             wait.Until(e => StartMeeting.Displayed);
             StopTimer();
 
