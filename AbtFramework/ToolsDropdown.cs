@@ -142,6 +142,26 @@ namespace AbtFramework
                     case Abtlinks.AbtExchange:
 
                     OpenMegaMenuLink("AbtXchange");
+                    try
+                    {
+                        SeleniumDriver.Instance.FindElement(By.LinkText("Log In")).Click();
+                        if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
+                        {
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on Log In");
+                        }
+                    }
+
+                    catch(Exception ex)
+                    {
+                        if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
+                        {
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on Log In",ex.Message);
+                        }
+                        break;
+                        throw (ex);
+                    }
+                   
+                   
                     break;
 
                     case Abtlinks.Oracle:
@@ -246,22 +266,34 @@ namespace AbtFramework
 
                 catch (Exception ex)
                 {
+                    var temTimer2 = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+                    Console.WriteLine("Timer 2:" + temTimer2);
+                    Console.WriteLine("Timer 1:" + tempTimer);
+                    var timediff = temTimer2 - tempTimer;
+                    Console.WriteLine(timediff + "ms");
+                    if ((timediff > 50000))
+                    {
+                        // Console.WriteLine("timer diff is longer than 5segs: " + timediff + " ms");
+                        if (TestCaseGenerator.CurrentTestCase.StepExist("Click on "+linkText))
+                        {
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on "+linkText,ex.Message);
+                            
+                        }
+                        if (TestCaseGenerator.CurrentTestCase.StepExist("Hover over Tools & Resources"))
+                        {
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Hover over Tools & Resources",ex.Message);
+                           
+                        }
 
+
+                        throw ex;
+
+
+                    }
                 }
 
-                var temTimer2 = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-                Console.WriteLine("Timer 2:" + temTimer2);
-                Console.WriteLine("Timer 1:" + tempTimer);
-                var timediff = temTimer2 - tempTimer;
-                Console.WriteLine(timediff + "ms");
-                if ((timediff > 50000))
-                {
-                   // Console.WriteLine("timer diff is longer than 5segs: " + timediff + " ms");
-                    if (TestCaseGenerator.CurrentTestCase.StepExist("Click on AbtTravel Online Booking"))
-                        TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on AbtTravel Online Booking");
-                    Environment.FailFast("Timeout waiting for WebDriver to click on Agi Dropdown Link") ;
-
-                }
+              
+               
 
             }
 
@@ -269,10 +301,11 @@ namespace AbtFramework
             Console.WriteLine("</br>");
             if (TestCaseGenerator.CurrentTestCase.StepExist("Hover over Tools & Resources"))
                 TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Hover over Tools & Resources");
-            if (TestCaseGenerator.CurrentTestCase.StepExist("Click on AbtTravel Online Booking"))
-                TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on AbtTravel Online Booking");
+            if (TestCaseGenerator.CurrentTestCase.StepExist("Click on "+linkText))
+                TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on "+linkText);
             StartTimer();
             SeleniumDriver.Close();
+
             SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             SeleniumDriver.Instance.Manage().Window.Maximize();
         }

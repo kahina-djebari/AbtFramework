@@ -24,8 +24,14 @@ namespace AbtFramework.Utils_Classes
         {
             switch (testCase)
             {
+
+                case AbtTestCases.Get_WeSpireHomePageResponseTime:
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get WeSpire Response Time");
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\WeSpireProdResponseTime.txt");
+                    break;
                 case AbtTestCases.Get_Concur_Prod_ResponseTime:
-                    string RootSolutionPath= MyUtils.GetRootSolutionPath();
+                    RootSolutionPath= MyUtils.GetRootSolutionPath();
                     CurrentTestCase = new TestCase("Get Concur Production Response Time");
                     LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\ConcurProdResponseTime.txt");
                     break;
@@ -117,19 +123,19 @@ namespace AbtFramework.Utils_Classes
             //Update Step Data
             if (CurrentTestCase.GetSteps()[stepPosition].status.Equals("Passed"))
             {
-                var step = "<tr class=\"success\"><td style=\"white - space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].description + "</td><td style=\"white - space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].status +
+                var step = "<tr class=\"success\"><td style=\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].description + "</td><td style=\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].status +
              "</td><td style =\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].RunTime + "</td><td style =\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].details + "</td></tr>";
                 HtmlReport[HtmlHeader.Count + 3 + stepPosition] = step;
             }
             if (CurrentTestCase.GetSteps()[stepPosition].status.Equals("Failed"))
             {
-                var step = "<tr class=\"danger\"><td style=\"white - space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].description + "</td><td style=\"white - space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].status +
+                var step = "<tr class=\"danger\"><td style=\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].description + "</td><td style=\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].status +
              "</td><td style =\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].RunTime + "</td><td style =\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].details + "</td></tr>";
                 HtmlReport[HtmlHeader.Count + 3 + stepPosition] = step;
             }
             if (CurrentTestCase.GetSteps()[stepPosition].status.Equals("Not Run"))
             {
-                var step = "<tr><td style=\"white - space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].description + "</td><td style=\"white - space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].status +
+                var step = "<tr><td style=\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].description + "</td><td style=\"white - space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].status +
            "</td><td style =\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].RunTime + "</td><td style =\"white-space:nowrap\">" + CurrentTestCase.GetSteps()[stepPosition].details + "</td></tr>";
                 HtmlReport[HtmlHeader.Count + 3 + stepPosition] = step;
             }
@@ -162,11 +168,7 @@ namespace AbtFramework.Utils_Classes
             HtmlTestName ="<h1>"+CurrentTestCase.GetName()+"</h1>";
             HtmlReport[HtmlHeader.Count() ] = HtmlTestName;
                             
-                       
-            //set steps run
-
          
-           //set ending tags
             
 
 

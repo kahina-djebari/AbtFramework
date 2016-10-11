@@ -8,6 +8,7 @@ namespace AbtFramework.Utils_Classes
 {
     public enum AbtTestCases
     {
-        Get_Concur_Prod_ResponseTime
+        Get_Concur_Prod_ResponseTime,
+        Get_WeSpireHomePageResponseTime
     }
 }

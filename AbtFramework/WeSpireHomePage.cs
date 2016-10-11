@@ -32,11 +32,23 @@ namespace AbtFramework
         public bool isAt()
         {
             //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
-            if (userFirstName.Text.Equals("David"))
+            try
             {
-               
-                return true;
+                if (userFirstName.Text.Equals("David"))
+                {
+
+                    return true;
+                }
             }
+            catch(Exception ex)
+            {
+                if(TestCaseGenerator.CurrentTestCase.StepExist("Check if Dashboard is Displayed"))
+                {
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Check if Dashboard is Displayed",ex.Message);
+                }
+
+                throw ex;
+            }            
 
             return false;
         }

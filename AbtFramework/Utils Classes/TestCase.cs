@@ -90,11 +90,13 @@ namespace AbtFramework.Utils_Classes
             TestCaseGenerator.MergeHtmlReport();
         }
 
-        internal void MarkStepAsFailed(string stepDescription)
+        internal void MarkStepAsFailed(string stepDescription,string exception)
         {
             Steps.Single(e => e.description.Equals(stepDescription)).status = "Failed";
             Steps.Single(e => e.description.Equals(stepDescription)).RunTime = DateTime.Now.ToString();
+            Steps.Single(e => e.description.Equals(stepDescription)).details = exception;
             StepsCompleted++;
+            StepsFailures++;
             TestCaseGenerator.UpdateHtmlStep(Steps.IndexOf(Steps.Single(e => e.description.Equals(stepDescription))));
             TestCaseGenerator.UpdateDetailedSummary();
             TestCaseGenerator.MergeHtmlReport();

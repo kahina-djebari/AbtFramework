@@ -1,0 +1,5 @@
+﻿Navigate to Agi Home Page
+Hover over Tools & Resources
+Click on AbtXchange
+Click on Log In
+Check if Dashboard is Displayed

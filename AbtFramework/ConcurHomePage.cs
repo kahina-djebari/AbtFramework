@@ -74,7 +74,11 @@ namespace AbtFramework
             catch(Exception ex)
             {
                 if (TestCaseGenerator.CurrentTestCase.StepExist("Click Ok on Warning Pop Up"))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click Ok on Warning Pop Up");
+                {
+
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click Ok on Warning Pop Up",ex.Message);
+                    throw ex;
+                }
 
             }
                    

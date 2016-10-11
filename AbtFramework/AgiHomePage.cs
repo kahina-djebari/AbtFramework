@@ -100,7 +100,7 @@ namespace AbtFramework
             {
                 if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
                 {
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Agi Home Page");
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Agi Home Page",ex.Message);
                 }
 
                 throw ex;
