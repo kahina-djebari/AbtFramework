@@ -10,7 +10,7 @@ namespace abtTest.Web
     public class OktaApps
     {
 
-       [Fact(DisplayName = "Should Go to WeSpire (Test) Home Page using Okta")]
+    //   [Fact(DisplayName = "Should Go to WeSpire (Test) Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() 
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_WeSpireHomePageResponseTime);
@@ -23,7 +23,7 @@ namespace abtTest.Web
         }
 
 
-        [Fact(DisplayName = "Should Go to WeSpire (Prod) Home Page using Okta")] //Goes through AGI
+       // [Fact(DisplayName = "Should Go to WeSpire (Prod) Home Page using Okta")] //Goes through AGI
         public void Should_Go_to_WeSpire_Prod_HomePage()
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_WeSpireHomePageResponseTime);

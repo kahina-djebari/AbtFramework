@@ -232,7 +232,7 @@ namespace abtTest.Web
         }
 
         [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
-        public void Should_Get_Concur_HomePage_Response_Time_2()
+  //      public void Should_Get_Concur_HomePage_Response_Time_2()
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
