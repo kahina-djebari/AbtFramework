@@ -345,7 +345,7 @@ namespace abtTest.Web
         {
             Thread.Sleep(5000);
         }
-        [Fact]
+     //   [Fact]
         public  void TestingParallelTest()
         {
 

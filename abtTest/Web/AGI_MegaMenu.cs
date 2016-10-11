@@ -231,7 +231,7 @@ namespace abtTest.Web
             AbtPages.AbtTravelPage.AbtTravelOnlineDropdown.BookOrSearchUsTravel();
         }
 
-        [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
+  //      [Fact(DisplayName = "Should Get Concur Home Page Response Time")] //new link
         public void Should_Get_Concur_HomePage_Response_Time_2()
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
@@ -482,7 +482,7 @@ namespace abtTest.Web
          
         }
 
-       [Fact(DisplayName = "Test Generator")]
+      // [Fact(DisplayName = "Test Generator")]
         public void Should_Test_Generator()
         {
             //TestCase test;
