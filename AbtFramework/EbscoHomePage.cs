@@ -23,13 +23,13 @@ namespace AbtFramework
                      GoToUrl("https://search.ebscohost.com/login.aspx?authtype=sso&custid=aspengreg&profile=eds");
                    // GoToUrl("https://abtassociates.okta.com/home/abtassociatesinc_ebsco_1/0oa6yt0cwiVmFJzGB0x7/aln6yt83icACOfcNZ0x7");
                     SingleSignOnProvider = "Okta";
-                    Environment = "Test";
+                    _Environment = "Test";
                     isAt();
                     break;
                 case WebEnvironment.ProductionEnvironment:
                     GoToUrl("http://search.ebscohost.com/login.aspx?authtype=sso&custid=s1139472&profile=eds");
                     SingleSignOnProvider = "Simieo";
-                    Environment = "Production";
+                    _Environment = "Production";
                     isAt();
                     break;
                 default:
@@ -53,7 +53,7 @@ namespace AbtFramework
         {
             wait.Until(e => HomeSearchBar.Displayed);
             StopTimer();
-            Console.WriteLine("Ebsco ("+Environment+") Home Page Took: " + LoadTime + " to load using "+SingleSignOnProvider);
+            Console.WriteLine("Ebsco ("+_Environment+") Home Page Took: " + LoadTime + " to load using "+SingleSignOnProvider);
             Console.WriteLine("</br>");
             return true;
         }

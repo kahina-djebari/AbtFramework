@@ -8,6 +8,7 @@ using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace abtTest.Web
 {
@@ -344,29 +345,41 @@ namespace abtTest.Web
         {
             Thread.Sleep(5000);
         }
-       // [Fact]
+        [Fact]
         public  void TestingParallelTest()
         {
 
-            Thread.Sleep(5000);
+           
 
-            /*
-          Task.Run(()=> {
 
-              SeleniumDriver.init(Browser.IE);
-            
-              SeleniumDriver.FiringDriver.Navigate().GoToUrl("www.google.com.do");
-       
-            SeleniumDriver.FiringDriver.FindElement(By.Id("lst-ib")).SendKeys("Testing driver 1");
+            Task.Run(()=> {
 
-              });
-            SeleniumDriver.init(Browser.RemoteDavidIEDriver2);
-            SeleniumDriver.FiringDriver2.Navigate().GoToUrl("www.google.com.do");
-            SeleniumDriver.FiringDriver2.FindElement(By.Id("lst-ib")).SendKeys("Testing driver 2");*/
+                SeleniumDriver.InitDriver1();
+                SeleniumDriver.driver1.Navigate().GoToUrl("https://abtassoc-test.webex.com");
+                SeleniumDriver.driver1.SwitchTo().Frame("header");
+                SeleniumDriver.driver1.FindElement(By.Id("wcc-lnk-loginLink")).Click();
+                new WebDriverWait(SeleniumDriver.driver1, TimeSpan.FromSeconds(10)).Until(e => SeleniumDriver.driver1.FindElement(By.Id("btn_join_room")).Displayed);
+                Console.WriteLine("webex response1:" + (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond - DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond));
 
+          });
+
+            SeleniumDriver.InitDriver2();
+            SeleniumDriver.driver2.Navigate().GoToUrl("https://abtassoc-test.webex.com");
+            SeleniumDriver.driver2.SwitchTo().Frame("header");
+            SeleniumDriver.driver2.FindElement(By.Id("wcc-lnk-loginLink")).Click();
+            new WebDriverWait(SeleniumDriver.driver2, TimeSpan.FromSeconds(10)).Until(e => SeleniumDriver.driver2.FindElement(By.Id("btn_join_room")).Displayed);
+            Console.WriteLine("webex response1:" + (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond - DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond));
 
         }
 
+        private void StopTimer()
+        {
+            throw new NotImplementedException();
+        }
 
+        private void StartTimer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

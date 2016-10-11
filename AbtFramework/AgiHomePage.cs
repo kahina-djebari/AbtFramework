@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AbtFramework.Utils_Classes;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -81,14 +82,31 @@ namespace AbtFramework
 
         public void Go()
         {
-            StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://agi.abtassociates.com");
-            Console.WriteLine("Going to AGI Home Page...");
-            Console.WriteLine("</br>");
-            wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
-            StopTimer();
-           Console.WriteLine("AGI Home Page Loaded in: " + LoadTime);
-            Console.WriteLine("</br>");
+            try
+            {
+                StartTimer();
+
+                SeleniumDriver.Instance.Navigate().GoToUrl("http://agi.abtassociates.com");
+                Console.WriteLine("Going to AGI Home Page...");
+                Console.WriteLine("</br>");
+                wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
+                StopTimer();
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Agi Home Page");
+                Console.WriteLine("AGI Home Page Loaded in: " + LoadTime);
+                Console.WriteLine("</br>");
+            }
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
+                {
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Agi Home Page");
+                }
+
+                throw ex;
+                    
+            }
+      
 
         }
 

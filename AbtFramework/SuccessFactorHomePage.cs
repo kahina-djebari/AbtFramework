@@ -26,12 +26,12 @@ namespace AbtFramework
             {
                 case WebEnvironment.TestEnvironment:
                     GoToUrl("https://abtassociates.okta.com/home/successfactors/0oa7asr5nxwVWgWVw0x7/38");
-                    Environment = "Test";
+                    _Environment = "Test";
                     SingleSignOnProvider = "Okta";
                     break;
                 case WebEnvironment.ProductionEnvironment:
                     GoToUrl("https://daxii.abtassoc.com/openam/idpssoinit?metaAlias=/abt/AbtSaml2Idp&spEntityID=https://www.successfactors.com&binding=HTTP-POST&NameIDFormat=urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&RelayState=/sf/home/&iPSPCookie=Yes");
-                    Environment = "Production";
+                    _Environment = "Production";
                     SingleSignOnProvider = "Simieo";
                     break;
                 default:

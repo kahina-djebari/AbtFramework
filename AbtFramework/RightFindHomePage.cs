@@ -17,13 +17,13 @@ namespace AbtFramework
             switch (environment)
             {
                 case WebEnvironment.TestEnvironment:
-                    Environment = "Test";
+                    _Environment = "Test";
                     SingleSignOnProvider = "Okta";
                   //  GoToUrl("https://rfetest.infotrieve.com/vlib/logon.aspx?clientid=11397");
                     GoToUrl("https://abtassociates.okta.com/home/abtassociatesinc_rightfindtest_1/0oa7irrou8UflAXZJ0x7/aln7irw3gcNMEvNG60x7");
                     break;
                 case WebEnvironment.ProductionEnvironment:
-                    Environment = "Production";
+                    _Environment = "Production";
                     SingleSignOnProvider = "Simieo";
                     GoToUrl("https://www.rightfind.com/vlib/logon.aspx?clientid=11397");
                     break;

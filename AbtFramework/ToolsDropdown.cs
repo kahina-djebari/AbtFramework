@@ -233,6 +233,7 @@ namespace AbtFramework
 
         private void OpenMegaMenuLink(string linkText)
         {
+            var tempTimer = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             while (SeleniumDriver.Instance.WindowHandles.Count < 2)
             {
                 try
@@ -248,9 +249,28 @@ namespace AbtFramework
 
                 }
 
+                var temTimer2 = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+                Console.WriteLine("Timer 2:" + temTimer2);
+                Console.WriteLine("Timer 1:" + tempTimer);
+                var timediff = temTimer2 - tempTimer;
+                Console.WriteLine(timediff + "ms");
+                if ((timediff > 50000))
+                {
+                   // Console.WriteLine("timer diff is longer than 5segs: " + timediff + " ms");
+                    if (TestCaseGenerator.CurrentTestCase.StepExist("Click on AbtTravel Online Booking"))
+                        TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on AbtTravel Online Booking");
+                    Environment.FailFast("Timeout waiting for WebDriver to click on Agi Dropdown Link") ;
+
+                }
+
             }
+
             Console.WriteLine("Clicking on dropdown Tools & Resources -> "+linkText);
             Console.WriteLine("</br>");
+            if (TestCaseGenerator.CurrentTestCase.StepExist("Hover over Tools & Resources"))
+                TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Hover over Tools & Resources");
+            if (TestCaseGenerator.CurrentTestCase.StepExist("Click on AbtTravel Online Booking"))
+                TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on AbtTravel Online Booking");
             StartTimer();
             SeleniumDriver.Close();
             SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());

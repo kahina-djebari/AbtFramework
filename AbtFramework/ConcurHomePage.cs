@@ -65,14 +65,29 @@ namespace AbtFramework
 
         public bool IsAt()
         {
-            wait.Until(e => warning.Displayed);
-            warning.Click();
+            wait.Timeout = TimeSpan.FromSeconds(20);
+            try
+            {
+                wait.Until(e => warning.Displayed);
+                warning.Click();
+            }
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Click Ok on Warning Pop Up"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click Ok on Warning Pop Up");
+
+            }
+                   
+          
+            if (TestCaseGenerator.CurrentTestCase.StepExist("Click Ok on Warning Pop Up"))
+                TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click Ok on Warning Pop Up");
             StopTimer();
             if (Logo.Displayed)
             {
                
                 PrintResponseTime("Concur");
-
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Verify Trip Search is Displayed on Home Page"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Verify Trip Search is Displayed on Home Page");
                 return true;
             }
 

@@ -1,0 +1,5 @@
+﻿Navigate to Agi Home Page
+Hover over Tools & Resources
+Click on AbtTravel Online Booking
+Click Ok on Warning Pop Up
+Verify Trip Search is Displayed on Home Page

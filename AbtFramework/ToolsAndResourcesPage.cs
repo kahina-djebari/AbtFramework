@@ -52,7 +52,7 @@ namespace AbtFramework
                    // StartTimer();
                     OpenWindowFor(Atlas);
                     SingleSignOnProvider = "Simieo";
-                    Environment = "Production";
+                    _Environment = "Production";
                    
                   
 

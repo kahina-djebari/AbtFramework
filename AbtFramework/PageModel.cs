@@ -14,7 +14,7 @@ namespace AbtFramework
         internal PopupWindowFinder finder;
         internal string popupWindowHandle;
         internal static string SingleSignOnProvider;
-        internal static string Environment;
+        internal static string _Environment;
 
         /*
         public PageModel()
@@ -39,14 +39,14 @@ namespace AbtFramework
 
         internal void PrintResponseTime(String pageName)
         {
-            if (String.IsNullOrEmpty(Environment) || String.IsNullOrEmpty(SingleSignOnProvider))
+            if (String.IsNullOrEmpty(_Environment) || String.IsNullOrEmpty(SingleSignOnProvider))
             {
                 Console.WriteLine(pageName + " Home Page Took: " + LoadTime + " to Load");
                
             }
             else
             {
-                Console.WriteLine(pageName + " (" + Environment + ")  Home Page Took: " + LoadTime + " to load Using " + SingleSignOnProvider);
+                Console.WriteLine(pageName + " (" + _Environment + ")  Home Page Took: " + LoadTime + " to load Using " + SingleSignOnProvider);
                 Console.WriteLine("</br>");
             }
             

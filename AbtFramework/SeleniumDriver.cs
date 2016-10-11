@@ -17,6 +17,16 @@ namespace AbtFramework
     
         static InternetExplorerOptions IEoptions;
         public static IWebDriver Instance;
+        public static IWebDriver driver1;
+        public static IWebDriver driver2;
+        public static IWebDriver driver3;
+        public static IWebDriver driver4;
+        public static IWebDriver driver5;
+        public static IWebDriver driver6;
+        public static IWebDriver driver7;
+        public static IWebDriver driver8;
+        public static IWebDriver driver9;
+        public static IWebDriver driver10;
         private static IWebDriver Instance2;
        public static EventFiringWebDriver FiringDriver2;
 
@@ -371,6 +381,20 @@ namespace AbtFramework
         public static void Quit()
         {
             Instance.Quit();
+        }
+
+        public static void InitDriver1()
+        {
+            driver1 = new InternetExplorerDriver();
+            driver1.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            driver1.Manage().Window.Maximize();
+        }
+
+        public static void InitDriver2()
+        {
+            driver2 = new InternetExplorerDriver();
+            driver2.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            driver2.Manage().Window.Maximize();
         }
     }
 }
