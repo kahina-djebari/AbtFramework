@@ -10,7 +10,11 @@ namespace AbtFramework.Utils_Classes
         private List<TestStep> Steps;
         private int StepsCompleted;
         private int StepsFailures;
-        private int RunTime;
+        private long RunTime;
+        private long ResponseTime;
+        private static long timer1;
+        private static long timer2;
+        public bool IsResponseTimeRequired { get; set; }
 
         public TestCase(string testName)
         {
@@ -18,14 +22,22 @@ namespace AbtFramework.Utils_Classes
             Name = testName;
             StepsCompleted = 0;
             StepsFailures = 0;
+            IsResponseTimeRequired = false;
             RunTime = 0;
+            ResponseTime = 0;
+            timer1 = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+
+
         }
 
         public bool StepExist(string stepDescription)
         {
             if (Steps != null)
+            {
                 if (Steps.Single(e => e.description.Equals(stepDescription)) != null)
                     return true;
+            }
+               
             return false;
         }
 
@@ -43,7 +55,7 @@ namespace AbtFramework.Utils_Classes
         {
             foreach(var step in Steps)
             {
-                Console.WriteLine(step.description);
+             //   Console.WriteLine(step.description);
             }
         }
 
@@ -56,7 +68,7 @@ namespace AbtFramework.Utils_Classes
 
         internal string GetRunTime()
         {
-            return RunTime.ToString();
+            return RunTime.ToString()+"ms";
         }
 
         internal string StepsCompletedCount()
@@ -74,6 +86,13 @@ namespace AbtFramework.Utils_Classes
             return Steps.Count();
         }
 
+        internal void SetResponseTime(long responseTime)
+        {
+            ResponseTime = responseTime;
+        }
+
+      
+
         internal List<TestStep> GetSteps()
         {
 
@@ -85,6 +104,7 @@ namespace AbtFramework.Utils_Classes
             Steps.Single(e => e.description.Equals(stepDescription)).status="Passed";
             Steps.Single(e => e.description.Equals(stepDescription)).RunTime = DateTime.Now.ToString();
             StepsCompleted++;
+            RunTime = ((DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond)-timer1);
             TestCaseGenerator.UpdateHtmlStep(Steps.IndexOf(Steps.Single(e => e.description.Equals(stepDescription))));
             TestCaseGenerator.UpdateDetailedSummary();
             TestCaseGenerator.MergeHtmlReport();
@@ -97,9 +117,15 @@ namespace AbtFramework.Utils_Classes
             Steps.Single(e => e.description.Equals(stepDescription)).details = exception;
             StepsCompleted++;
             StepsFailures++;
+            RunTime = ((DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond) - timer1);
             TestCaseGenerator.UpdateHtmlStep(Steps.IndexOf(Steps.Single(e => e.description.Equals(stepDescription))));
             TestCaseGenerator.UpdateDetailedSummary();
             TestCaseGenerator.MergeHtmlReport();
+        }
+
+        internal string GetResponseTime()
+        {
+            return ResponseTime.ToString()+"ms";
         }
     }
 }

@@ -43,13 +43,47 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
-            SeleniumDriver.Instance.SwitchTo().Frame("header");
-            SeleniumDriver.Instance.FindElement(By.Id("wcc-lnk-loginLink")).Click();
-            StartTimer();
-            wait.Until(e => StartMeeting.Displayed);
-            StopTimer();
+            try
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
+                
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
+              
+            }
+           
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Url " + url,ex.Message);
+
+                throw (ex);
+            }
+
+
+            try
+            {
+                SeleniumDriver.Instance.SwitchTo().Frame("header");
+                SeleniumDriver.Instance.FindElement(By.Id("wcc-lnk-loginLink")).Click();
+                StartTimer();
+                Console.WriteLine("StartTimer="+timer1);
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on Log In");
+
+
+            }
+
+            catch(Exception ex)
+            {
+
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on Log In",ex.Message);
+
+                throw (ex);
+
+            }
+
+           
 
         }
 
@@ -69,8 +103,33 @@ namespace AbtFramework
 
         public bool isAt()
         {
-            wait.Until(e => StartMeeting.Displayed);
-            StopTimer();
+            try
+            {
+                wait.Until(e => StartMeeting.Displayed);
+                StopTimer();
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Check if Start Meeting is Displayed"))
+                {
+                    if (TestCaseGenerator.CurrentTestCase.IsResponseTimeRequired)
+                    {
+                        Console.WriteLine("is at startmeeting:" + (timer2 - timer1));
+                        TestCaseGenerator.CurrentTestCase.SetResponseTime(timer2 - timer1);
+                        TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Check if Start Meeting is Displayed");
+                    }
+                }
+                 
+
+               
+                   
+
+            }
+
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Check if Start Meeting is Displayed"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Check if Start Meeting is Displayed",ex.Message);
+
+                throw (ex);
+            }
             return true;
 
         }

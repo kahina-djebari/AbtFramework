@@ -34,8 +34,29 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+
+
+            try
+            {
+                StartTimer();
+
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
+
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
+
+            }
+
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Url " + url, ex.Message);
+
+
+                throw (ex);
+            }
+          
+           
         }
 
         public bool IsUserLoggedIn()
@@ -55,15 +76,38 @@ namespace AbtFramework
             return false;
         }
 
-        private bool IsAt()
+        public bool IsAt()
         {
-            if (RightHeaderToolbar.Displayed)
+
+            try
             {
-                StopTimer();
-                PrintResponseTime("RightFind");
-                
-                return true;
+                if (RightHeaderToolbar.Displayed)
+                {
+                    StopTimer();
+
+                    if (TestCaseGenerator.CurrentTestCase.StepExist("Right Find Header is Displayed"))
+                    {
+                        if (TestCaseGenerator.CurrentTestCase.IsResponseTimeRequired)
+                        {
+                            TestCaseGenerator.CurrentTestCase.SetResponseTime(timer2 - timer1);
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Right Find Header is Displayed");
+                        }
+                    }
+                    PrintResponseTime("RightFind");
+
+                    return true;
+                }
+
             }
+
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Right Find Header is Displayed"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Right Find Header is Displayed",ex.Message);
+
+                throw (ex);
+            }
+
 
 
             return false;

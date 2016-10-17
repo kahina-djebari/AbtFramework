@@ -34,9 +34,17 @@ namespace AbtFramework
             //if(userFirstName.Text.Equals(SSOCrendentials.CurrentUser.Split(' ')[0]))
             try
             {
+                wait.Until(e => userFirstName.Displayed);
                 if (userFirstName.Text.Equals("David"))
                 {
+                    if (TestCaseGenerator.CurrentTestCase.StepExist("Check if Dashboard is Displayed"))
+                    {
+                        StopTimer();
+                        if(TestCaseGenerator.CurrentTestCase.IsResponseTimeRequired)
+                        TestCaseGenerator.CurrentTestCase.SetResponseTime(timer2-timer1);
+                        TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Check if Dashboard is Displayed");
 
+                    }
                     return true;
                 }
             }
@@ -154,10 +162,32 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
-            wait.Until(e => Dashboard.Displayed);
-            StopTimer();
+           
+            try
+            {
+                StartTimer();
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to WeSpire(Test Environment):" + url))
+                {
+                    
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to WeSpire(Test Environment):" + url);
+
+                }
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
+                wait.Until(e => Dashboard.Displayed);
+                           
+
+            }
+            catch(Exception Ex)
+            {
+                if(TestCaseGenerator.CurrentTestCase.StepExist("Navigate to WeSpire(Test Environment):" + url))
+                {
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to WeSpire(Test Environment):" + url,Ex.Message);
+
+                }
+
+                throw (Ex);
+            }
+            
            
         }
 

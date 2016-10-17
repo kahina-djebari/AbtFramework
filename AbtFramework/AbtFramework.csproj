@@ -202,7 +202,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestPlans\ConcurProdResponseTime.txt" />
+    <Content Include="TestPlans\ConcurTestResponseTime.txt" />
+    <Content Include="TestPlans\EbscoTestResponseTime.txt" />
+    <Content Include="TestPlans\RightFindTestResponseTime.txt" />
+    <Content Include="TestPlans\ServiceNowTestResponseTime.txt" />
+    <Content Include="TestPlans\SuccessFactorsTestResponseTime.txt" />
+    <Content Include="TestPlans\WebExTestResponseTime.txt" />
     <Content Include="TestPlans\WeSpireProdResponseTime.txt" />
+    <Content Include="TestPlans\WeSpireTestResponseTime.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

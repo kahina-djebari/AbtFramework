@@ -10,12 +10,12 @@ namespace abtTest.Web
     public class OktaApps
     {
 
-    //   [Fact(DisplayName = "Should Go to WeSpire (Test) Home Page using Okta")]
+      // [Fact(DisplayName = "Should Go to WeSpire (Test) Home Page using Okta")]
         public void Should_Go_to_WeSpire_Test_HomePage() 
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_WeSpireHomePageResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_WeSpireTestResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.WeSpireHomePage.isAt());
             SeleniumDriver.Close();
@@ -23,7 +23,7 @@ namespace abtTest.Web
         }
 
 
-       // [Fact(DisplayName = "Should Go to WeSpire (Prod) Home Page using Okta")] //Goes through AGI
+    //    [Fact(DisplayName = "Should Go to WeSpire (Prod) Home Page using Okta")] //Goes through AGI
         public void Should_Go_to_WeSpire_Prod_HomePage()
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_WeSpireHomePageResponseTime);
@@ -35,7 +35,7 @@ namespace abtTest.Web
             SeleniumDriver.Close();
 
         }
-
+        //
         // [Fact(DisplayName = "Should Go to WeSpire (Production) Home Page using Simieo")]
         public void Should_Go_to_WeSpire_Production_HomePage() //Done
         {
@@ -49,15 +49,16 @@ namespace abtTest.Web
 
 
 
-     //   [Fact(DisplayName = "Should Go to Ebsco (Test) Home Page")]
+       // [Fact(DisplayName = "Should Go to Ebsco (Test) Home Page")]
         public void Should_Go_to_Ebsco_Test_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Ebsco_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.EbscoHomePage.Go(WebEnvironment.TestEnvironment);
-            AbtPages.EbscoHomePage.GoToMyAccount();
-            Assert.True(AbtPages.EbscoMyAccountPage.IsUserLoggedIn());
+            Assert.True(AbtPages.EbscoHomePage.isAt());
+            //AbtPages.EbscoHomePage.GoToMyAccount();
+           // Assert.True(AbtPages.EbscoMyAccountPage.IsUserLoggedIn());
 
         }
 
@@ -77,11 +78,11 @@ namespace abtTest.Web
       // [Fact(DisplayName = "Should Go to Success Factor (Test) Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_SuccessFactors_test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.SuccessFactorHomePage.Go(WebEnvironment.TestEnvironment);
-            Assert.True(AbtPages.SuccessFactorHomePage.isUserLoggedIn());
+            Assert.True(AbtPages.SuccessFactorHomePage.isAt());
             SeleniumDriver.Close();
             
         }
@@ -93,7 +94,7 @@ namespace abtTest.Web
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
             SeleniumDriver.init(Browser.RemoteSofianesIE);
             AbtPages.SuccessFactorHomePage.Go(WebEnvironment.ProductionEnvironment);
-            Assert.True(AbtPages.SuccessFactorHomePage.isUserLoggedIn());
+            Assert.True(AbtPages.SuccessFactorHomePage.isAt());
             SeleniumDriver.Close();
         }
 
@@ -120,14 +121,14 @@ namespace abtTest.Web
         }
 
 
-    // [Fact(DisplayName = "Should Go to Concur (prod) Home Page using Okta")]
+   //  [Fact(DisplayName = "Should Go to Concur (prod) Home Page using Okta")]
         public void Should_Go_to_Concur_Testing_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.ConcurHomePage.Go();
-            Assert.True(AbtPages.ConcurHomePage.isUserLoggedIn());
+            Assert.True(AbtPages.ConcurHomePage.IsAt());
             SeleniumDriver.Close();
 
         }
@@ -148,14 +149,14 @@ namespace abtTest.Web
 
         }
 
-       //  [Fact(DisplayName = "Should Go to Right Find (Test) Home Page")]
+   //      [Fact(DisplayName = "Should Go to Right Find (Test) Home Page")]
         public void Should_Go_to_RightFind_Test_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_RightFind_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.RightFindHomePage.Go(WebEnvironment.TestEnvironment);
-            Assert.True(AbtPages.RightFindHomePage.IsUserLoggedIn());
+            Assert.True(AbtPages.RightFindHomePage.IsAt());
 
         }
 
@@ -201,14 +202,14 @@ namespace abtTest.Web
             Assert.True(AbtPages.RepCapPlannerPage.isUserLoggedIn());
         }
 
-      //  [Fact(DisplayName = "Should Go to Service Now (Test) Home Page")]
+     //  [Fact(DisplayName = "Should Go to Service Now (Test) Home Page")]
         public void Should_Go_to_ServiceNow_UAT_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_ServiceNow_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
-            Assert.True(AbtPages.ServiceNowHomepage.isUserLoggedIn());
+            Assert.True(AbtPages.ServiceNowHomepage.IsAt());
         }
 
       // [Fact(DisplayName = "Should Go to Service Now Production Home Page")]
@@ -221,12 +222,12 @@ namespace abtTest.Web
             Assert.True(AbtPages.ServiceNowHomepage.isUserLoggedIn());
         }
 
-      // [Fact(DisplayName = "Should Go to WebEx (Test) Home Page")]
+    //   [Fact(DisplayName = "Should Go to WebEx (Test) Home Page")]
         public void Should_Go_to_WebEx_Test_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_WebEx_TestEnv_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.WebExPage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.WebExPage.isAt());
 

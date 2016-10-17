@@ -1,0 +1,2 @@
+﻿Navigate to WeSpire(Test Environment):https://abtassociates.okta.com/home/abtassociatesinc_wespiretest_1/0oa74oid9ekb7tcYS0x7/aln74op8m0ZOi56TI0x7
+Check if Dashboard is Displayed

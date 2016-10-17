@@ -145,6 +145,7 @@ namespace AbtFramework
                     try
                     {
                         SeleniumDriver.Instance.FindElement(By.LinkText("Log In")).Click();
+                        StartTimer();
                         if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
                         {
                             TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on Log In");

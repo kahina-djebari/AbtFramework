@@ -1,0 +1,2 @@
+﻿Navigate to Url https://abtassociates.okta.com/home/abtassociatesinc_rightfindtest_1/0oa7irrou8UflAXZJ0x7/aln7irw3gcNMEvNG60x7
+Right Find Header is Displayed

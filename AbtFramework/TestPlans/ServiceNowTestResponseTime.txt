@@ -1,0 +1,2 @@
+﻿Navigate to Url https://abtassociates.okta.com/home/servicenow_app2/0oa80tx9crDmIcRfk0x7/14155
+Check if Welcome Message is Displayed

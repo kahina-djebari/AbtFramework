@@ -8,6 +8,7 @@ namespace AbtFramework.Utils_Classes
 {
     public enum AbtTemplates
     {
-        DetailedReport
+        DetailedReport,
+        OktaPageResponse
     }
 }

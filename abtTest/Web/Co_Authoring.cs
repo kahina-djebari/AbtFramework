@@ -159,10 +159,10 @@ namespace abtTest.Web
         }
    
 
-     //     [Fact(DisplayName = "Co-Authoring Should Edit Word Document On Desktop Client App")]
-        public void Should_Edit_WordDoc_On_ClientApp(Browser browser=Browser.IENoNativeEvents)
+         // [Fact(DisplayName = "Co-Authoring Should Edit Word Document On Desktop Client App")]
+        public void Should_Edit_WordDoc_On_ClientApp()
         {
-            SeleniumDriver.init(browser);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -177,7 +177,7 @@ namespace abtTest.Web
 
         }
 
-        //[Fact(DisplayName = "Co-Authoring Should Edit Excel Document On Desktop Client App")]
+     //   [Fact(DisplayName = "Co-Authoring Should Edit Excel Document On Desktop Client App")]
         public void Should_Edit_ExcelDoc_On_ClientApp()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -195,7 +195,7 @@ namespace abtTest.Web
 
         }
 
-      //  [Fact(DisplayName = "Co-Authoring Should Edit PowerPoint Document On Desktop Client App")]
+       // [Fact(DisplayName = "Co-Authoring Should Edit PowerPoint Document On Desktop Client App")]
         public void Should_Edit_PowerPointDoc_On_ClientApp()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -217,15 +217,15 @@ namespace abtTest.Web
        // [Fact(DisplayName ="Co-Authoring - 2 people trying to edit document simultaneously using Word Desktop")]
         public void Should_Edit_Word_Document_By_2_People_Simultaneously_From_Word_ClientApp()
         {
-            Should_Edit_WordDoc_On_ClientApp();
-            Should_Edit_WordDoc_On_ClientApp(Browser.RemoteDavidIENoNativeEvents);
+            //Should_Edit_WordDoc_On_ClientApp();
+           // Should_Edit_WordDoc_On_ClientApp(Browser.RemoteDavidIENoNativeEvents);
             
         }
 
-      //  [Fact(DisplayName = "Edit Word Document on KM Workspace")]
+        [Fact(DisplayName = "Edit Word Document on KM Workspace")]
         public void Should_Edit_Word_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.QA_ReadinessChecklist_v4);
             AutoITDriver.init();
@@ -235,10 +235,10 @@ namespace abtTest.Web
             SeleniumDriver.Close();
         }
 
-       // [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace")]
+        [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace")]
         public void Should_Edit_PPT_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.SampleAVMetrics);
             AutoITDriver.init();
@@ -251,10 +251,10 @@ namespace abtTest.Web
 
 
 
-       // [Fact(DisplayName = "Edit Excel Document on KM Workspace")]
+        [Fact(DisplayName = "Edit Excel Document on KM Workspace")]
         public void Should_Edit_Excel_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.ITMetrics);
             AutoITDriver.init();

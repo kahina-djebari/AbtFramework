@@ -237,12 +237,39 @@ namespace AbtFramework
             TimeworkedOnIncident.Click();
             submitbtn.Click();
 
-
-
-
+            
         }
 
-    
+        public bool IsAt()
+        {
+            try
+            {
+                wait.Until(e => header.Displayed);
+                StopTimer();
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Check if Welcome Message is Displayed"))
+                {
+                    if (TestCaseGenerator.CurrentTestCase.IsResponseTimeRequired)
+                    {
+                        TestCaseGenerator.CurrentTestCase.SetResponseTime(timer2 - timer1);
+                        TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Check if Welcome Message is Displayed");
+                    }
+                }
+
+
+                return true;
+            }
+
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Check if Welcome Message is Displayed"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Check if Welcome Message is Displayed", ex.Message);
+
+                throw (ex);
+            }
+
+            
+          
+        }
 
         public void CreateNewFacilityRequest(string caller, string category, string subcategory, string shortdescription, string assigmentgroup)
         {
@@ -435,10 +462,28 @@ namespace AbtFramework
 
         private void GotoUrl(string url)
         {
-            StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
-            wait.Until(e => header.Displayed);
-            StopTimer();
+
+
+            try
+            {
+                StartTimer();
+
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
+
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
+
+            }
+
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Url " + url, ex.Message);
+
+
+                throw (ex);
+            }
+            
 
         }
 

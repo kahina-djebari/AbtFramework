@@ -1,0 +1,3 @@
+﻿Navigate to Url https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615
+Click Ok on Warning Pop Up
+Verify Trip Search is Displayed on Home Page

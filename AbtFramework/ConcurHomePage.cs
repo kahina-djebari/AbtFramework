@@ -21,10 +21,28 @@ namespace AbtFramework
 
         public void Go()
         {
-            StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
-            wait.Until(e => warning.Displayed);
-            warning.Click();
+
+            try
+            {
+                StartTimer();
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
+
+                SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
+            }
+
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Url https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615",ex.Message);
+
+
+                throw (ex);
+            }
+
+          
+
+
             SSOProvider = "Okta";
             portalenvironment = "Test";
 
@@ -50,15 +68,36 @@ namespace AbtFramework
 
         private bool isAt()
         {
-
-            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("body")));
-            if (Logo.Displayed)
+            try
             {
-                StopTimer();
-                Console.WriteLine("Concur ("+portalenvironment+") Home Page Took: " + LoadTime + " to load using "+SSOProvider);
-                Console.WriteLine("</br>");
-                return true;
+                wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("body")));
+                if (Logo.Displayed)
+                {
+                    StopTimer();
+                    if (TestCaseGenerator.CurrentTestCase.StepExist("Verify Trip Search is Displayed on Home Page"))
+                    {
+                        if (TestCaseGenerator.CurrentTestCase.IsResponseTimeRequired)
+                        {
+                            TestCaseGenerator.CurrentTestCase.SetResponseTime(timer2 - timer1);
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Verify Trip Search is Displayed on Home Page");
+                        }
+                    }
+                    Console.WriteLine("Concur (" + portalenvironment + ") Home Page Took: " + LoadTime + " to load using " + SSOProvider);
+                    Console.WriteLine("</br>");
+                    return true;
+                }
+
+                
             }
+
+            catch(Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Verify Trip Search is Displayed on Home Page"))
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Verify Trip Search is Displayed on Home Page", ex.Message);
+
+                throw (ex);
+            }
+          
 
             return false;
         }
@@ -85,13 +124,22 @@ namespace AbtFramework
           
             if (TestCaseGenerator.CurrentTestCase.StepExist("Click Ok on Warning Pop Up"))
                 TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click Ok on Warning Pop Up");
-            StopTimer();
+
+
+           
             if (Logo.Displayed)
             {
                
                 PrintResponseTime("Concur");
+                StopTimer();
                 if (TestCaseGenerator.CurrentTestCase.StepExist("Verify Trip Search is Displayed on Home Page"))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Verify Trip Search is Displayed on Home Page");
+                {
+                    if (TestCaseGenerator.CurrentTestCase.IsResponseTimeRequired)
+                    {
+                        TestCaseGenerator.CurrentTestCase.SetResponseTime(timer2 - timer1);
+                        TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Verify Trip Search is Displayed on Home Page");
+                    }
+                }
                 return true;
             }
 

@@ -15,6 +15,7 @@ namespace AbtFramework.Utils_Classes
         private static string HtmlBody;
         private static List<string> HtmlHeader;
         private static string RootSolutionPath;
+        private static AbtTemplates currentTemplate;
 
         public static TestCase CurrentTestCase { get; set; }
         public static string HtmlTestName { get; private set; }
@@ -25,14 +26,74 @@ namespace AbtFramework.Utils_Classes
             switch (testCase)
             {
 
+                case AbtTestCases.Get_Concur_Test_ResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get Concur(Test Environment) Response Time ");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\ConcurTestResponseTime.txt");
+
+                    break;
+
+                case AbtTestCases.Get_ServiceNow_Prod_ResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get ServiceNow(Test Environment) Response Time ");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\ServiceNowTestResponseTime.txt");
+
+                    break;
+                case AbtTestCases.Get_RightFind_Test_ResponseTime:
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get RightFind(Test Environment) Response Time ");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\RightFindTestResponseTime.txt");
+
+
+
+                    break;
+
+                case AbtTestCases.Get_SuccessFactors_test_ResponseTime:
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get SuccessFactors(Test Environment) Response Time ");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\SuccessFactorsTestResponseTime.txt");
+
+
+                    break;
+                case AbtTestCases.Get_WebEx_TestEnv_ResponseTime:
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get WebEx (Test Environment) Response Time");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\WebExTestResponseTime.txt");
+
+                    break;
+
+                case AbtTestCases.Get_Ebsco_Test_ResponseTime:
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get Ebsco (Test Environment) Response Time");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\EbscoTestResponseTime.txt");
+
+                    break;
+                case AbtTestCases.Get_WeSpireTestResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Get WeSpire (Test Environment) Response Time");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\WeSpireTestResponseTime.txt");
+                    break;
+
                 case AbtTestCases.Get_WeSpireHomePageResponseTime:
                     RootSolutionPath = MyUtils.GetRootSolutionPath();
                     CurrentTestCase = new TestCase("Should Get WeSpire Response Time");
+                    CurrentTestCase.IsResponseTimeRequired = true;
                     LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\WeSpireProdResponseTime.txt");
                     break;
                 case AbtTestCases.Get_Concur_Prod_ResponseTime:
                     RootSolutionPath= MyUtils.GetRootSolutionPath();
                     CurrentTestCase = new TestCase("Get Concur Production Response Time");
+                    CurrentTestCase.IsResponseTimeRequired = true;
                     LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\ConcurProdResponseTime.txt");
                     break;
                 default:
@@ -61,7 +122,9 @@ namespace AbtFramework.Utils_Classes
             {
                 case AbtTemplates.DetailedReport:
                      RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    currentTemplate = template;
                     CreateDetailedTemplate(RootSolutionPath);
+                    
                     break;
                 default:
                     break;
@@ -89,11 +152,7 @@ namespace AbtFramework.Utils_Classes
                 }
 
             }
-            foreach (var line in HtmlReport)
-            {
-                Console.WriteLine(line);
-
-            }
+         
         }
 
         private static void CreateInitialHtmlSteps()
@@ -111,10 +170,28 @@ namespace AbtFramework.Utils_Classes
         public static void UpdateDetailedSummary()
         {
             //set test summary
-            HtmlSummary = "<div>Steps Run:<a href=\"#\"><b>" + CurrentTestCase.StepsCompletedCount() +
-                       "</b></a>;</br>Steps Failures:<a href=\"#\"><b>" + CurrentTestCase.StepFailuresCount() + "</b></a></br>" +
-                       "Run Time:<b>" + CurrentTestCase.GetRunTime() + "</b></div>";
-            HtmlReport[HtmlHeader.Count + 1] = HtmlSummary;
+            switch (currentTemplate)
+            {
+                case AbtTemplates.DetailedReport:
+                    HtmlSummary = "<div>Steps Run:<a href=\"#\"><b>" + CurrentTestCase.StepsCompletedCount() +
+                      "</b></a>;</br>Steps Failures:<a href=\"#\"><b>" + CurrentTestCase.StepFailuresCount() + "</b></a></br>" +
+                      "Run Time:<b>" + CurrentTestCase.GetRunTime() + "</b></br>" +
+                      "Response Time:<b>" + CurrentTestCase.GetResponseTime() + "</b></div>";
+                    HtmlReport[HtmlHeader.Count + 1] = HtmlSummary;
+                    break;
+
+                case AbtTemplates.OktaPageResponse:
+                    HtmlSummary = "<div>Steps Run:<a href=\"#\"><b>" + CurrentTestCase.StepsCompletedCount() +
+                      "</b></a>;</br>Steps Failures:<a href=\"#\"><b>" + CurrentTestCase.StepFailuresCount() + "</b></a></br>" +
+                      "Run Time:<b>" + CurrentTestCase.GetRunTime() + "</b></br>" +
+                      "Response Time:<b>" + CurrentTestCase.GetResponseTime() + "</b></div>";
+                    HtmlReport[HtmlHeader.Count + 1] = HtmlSummary;
+                    break;
+                default:
+
+                    break;
+            }
+           
         }
 
 

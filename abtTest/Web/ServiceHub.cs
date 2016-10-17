@@ -14,6 +14,8 @@ namespace abtTest.Web
         //[Fact(DisplayName = "ESS User Should Place an Office Request - Then Manager Closes The Request ")]
         public void Should_Place_Office_Request_ESS()
         {
+            TestCaseGenerator.SetTestCase(AbtTestCases.SN_PlaceOfficeRequest);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("David Acuna");

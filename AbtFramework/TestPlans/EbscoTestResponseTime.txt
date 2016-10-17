@@ -1,0 +1,2 @@
+﻿Navigate to Url https://search.ebscohost.com/login.aspx?authtype=sso&custid=aspengreg&profile=eds
+Check if Home Page Search Bar is Displayed
