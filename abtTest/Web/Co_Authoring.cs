@@ -225,7 +225,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Edit Word Document on KM Workspace")]
         public void Should_Edit_Word_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.QA_ReadinessChecklist_v4);
             AutoITDriver.init();
@@ -238,7 +238,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace")]
         public void Should_Edit_PPT_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.SampleAVMetrics);
             AutoITDriver.init();
@@ -254,7 +254,7 @@ namespace abtTest.Web
         [Fact(DisplayName = "Edit Excel Document on KM Workspace")]
         public void Should_Edit_Excel_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
+            SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.ITMetrics);
             AutoITDriver.init();
