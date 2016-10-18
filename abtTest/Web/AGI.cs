@@ -5,7 +5,6 @@ using AbtFramework.Utils_Classes;
 //using Xunit.Abstractions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using AutoItX3Lib;
 using System.Threading;
 using AbtFramework.AutoIT;
 
@@ -174,22 +173,7 @@ namespace abtTest.Web
 
       
 
-     //   [Fact(DisplayName ="Desktop Apps")]
-        public void Should_Handle_Desktop_Apps()
-        {
-            AutoItX3 autoit = new AutoItX3();
-            autoit.WinActivate("Sample AV metrics - Microsoft PowerPoint");
-            autoit.WinWaitActive("Sample AV metrics - Microsoft PowerPoint", "", 20);
-            Thread.Sleep(2000);
-            autoit.ControlClick("Sample AV metrics - Microsoft PowerPoint", "", "NetUIHWND1", "LEFT", 1, 177, 76);
-            Thread.Sleep(500);
-            autoit.ControlSend("Sample AV metrics - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
-            Thread.Sleep(2000);
-            autoit.ControlClick("Sample AV metrics - Microsoft PowerPoint", "", "NetUIHWND1", "LEFT", 1, 35, 19); //Click on Save Btn
-            Thread.Sleep(5000);
-            autoit.WinClose("Sample AV metrics - Microsoft PowerPoint", "");                                                                                             //  autoit.ControlSend("Sample AV metrics - Microsoft PowerPoint","",)
 
-        }
 
         public void Dispose()
         {

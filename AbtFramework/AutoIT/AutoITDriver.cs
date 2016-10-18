@@ -121,6 +121,11 @@ namespace AbtFramework.AutoIT
           
         }
 
+        public static void init()
+        {
+            autoit = new AutoItX3();
+        }
+
         public static void EditPowerPointFile()
         {
             OpenDocument(true);
@@ -152,10 +157,7 @@ namespace AbtFramework.AutoIT
 
         }
 
-        public static void init()
-        {
-            autoit = new AutoItX3();
-        }
+
 
         public static void EditWordFileFromInsideApp()
         {
