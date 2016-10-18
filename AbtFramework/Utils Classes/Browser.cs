@@ -34,6 +34,7 @@ namespace AbtFramework.Utils_Classes
         ServerRemote,
         IECleanSession,
         IECleanSessionNoNativeEvents,
-        RemoteSofianesIECleanSession
+        RemoteSofianesIECleanSession,
+        RemoteQALaptop
     }
 }

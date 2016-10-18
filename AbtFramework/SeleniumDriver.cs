@@ -35,6 +35,17 @@ namespace AbtFramework
             switch (browser)
             {
 
+                case Browser.RemoteQALaptop:
+
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+                    IEoptions.EnableNativeEvents = false;
+
+                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.23:4444/wd/hub"), IEoptions.ToCapabilities());
+
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
+                    break;
                 case Browser.RemoteSofianesIECleanSession:
                     IEoptions = new InternetExplorerOptions();
                     IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
