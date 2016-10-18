@@ -70,7 +70,7 @@ namespace AbtFramework.AutoIT
         private static bool OpenDocument(bool openForEdit)
         {
        
-            autoit.WinActivate("Open Document");
+            autoit.WinActivate("Open Document"); 
             autoit.WinWaitActive("Open Document", "", 3);
             Thread.Sleep(2000);
             if(openForEdit)

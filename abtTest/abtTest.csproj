@@ -105,6 +105,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="MSBuild Scripts\CopyFiles.target" />
+    <None Include="MSBuild Scripts\xunitTask2.target">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
