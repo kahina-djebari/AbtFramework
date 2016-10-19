@@ -23,7 +23,7 @@ namespace AbtFramework.AutoIT
                 Thread.Sleep(2000);
                 autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "{DOWN}");
                 Thread.Sleep(1000);
-                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel Desktop Client At: " + DateTime.Now);
+                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel 2010 Desktop Client At: " + DateTime.Now);
                 Thread.Sleep(2000);
                 return true;
             }
@@ -35,6 +35,104 @@ namespace AbtFramework.AutoIT
             }
 
 
+        }
+
+        public static void EditPowerPoint2013File()
+        {
+            OpenDocument(true);
+            autoit.WinActivate("Sample AV metrics - PowerPoint");
+            autoit.WinWaitActive("Sample AV metrics - PowerPoint", "", 20);
+            Thread.Sleep(2000);
+            autoit.ControlClick("Sample AV metrics - PowerPoint", "", "NetUIHWND1", "LEFT", 1, 182, 71);
+            Thread.Sleep(500);
+            autoit.ControlSend("Sample AV metrics - PowerPoint", "", "mdiClass1", "Adding this line from PPT 2013 Desktop Client At: " + DateTime.Now);
+            Thread.Sleep(2000);
+        }
+
+        public static void ClosePPT2013File()
+        {
+            autoit.WinClose("Sample AV metrics - PowerPoint", "");
+        }
+
+        public static void SavePPT2013File()
+        {
+            autoit.ControlClick("Sample AV metrics - PowerPoint", "", "NetUIHWND1", "LEFT", 1, 46, 14); //Click on Save Btn
+            Thread.Sleep(5000);
+        }
+
+        public static void CloseWord2013File()
+        {
+            autoit.WinClose("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "");
+        }
+
+        public static void SaveWord2013File()
+        {
+            autoit.ControlClick("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", "NetUIHWND1", "LEFT", 1, 47, 15);
+            Thread.Sleep(5000);
+        }
+
+        public static bool EditExcel2013File()
+        {
+            OpenDocument(true);
+            autoit.WinActivate("IT Metrics - Excel");
+            if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
+            {
+                Thread.Sleep(2000);
+                autoit.ControlSend("IT Metrics - Excel", currentWorkingDocTitle, "EXCEL71", "{DOWN}");
+                Thread.Sleep(1000);
+                autoit.ControlSend("IT Metrics - Excel", currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel 2013 Desktop Client At: " + DateTime.Now);
+                Thread.Sleep(2000);
+                return true;
+            }
+
+            else
+            {
+                Console.WriteLine("AutoIT was unable to find the Excel document Window for editing");
+                return false;
+            }
+        }
+
+        public static bool SaveExcel2013File()
+        {
+            if (autoit.ControlClick("IT Metrics - Excel", "", "NetUIHWND2", "LEFT", 1, 47, 13) == 1)
+            {
+                Thread.Sleep(5000);
+                return true;
+
+            }
+            else
+            {
+                Console.WriteLine("AutoIt was unable to Save the Excel Document");
+                return false;
+            }
+        }
+
+        public static bool CloseExcel2013File()
+        {
+            if (autoit.WinClose("IT Metrics - Excel", "") == 1)
+            {
+                return true;
+            }
+
+            else
+            {
+                Console.WriteLine("AutoIT was unable to close the Excel document");
+                return false;
+            }
+        }
+
+        public static void EditWord2013File()
+        {
+            OpenDocument(true);
+            autoit.WinActivate("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word");
+            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", 20);
+            Thread.Sleep(2000);
+            autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{ENTER}");
+            Thread.Sleep(1000);
+            autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{UP}");
+            Thread.Sleep(1000);
+            autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word 2013 Desktop Client At: " + DateTime.Now);
+            Thread.Sleep(2000);
         }
 
         public static bool CloseExcelFile()
@@ -76,22 +174,16 @@ namespace AbtFramework.AutoIT
             if(openForEdit)
             autoit.ControlClick("Open Document", "&Edit", "1202", "LEFT", 1);
             Thread.Sleep(1000);
-           if(autoit.ControlClick("Open Document", "OK", "1", "LEFT", 1) == 1)
+            if(autoit.ControlClick("Open Document", "OK", "1", "LEFT", 1) == 1)
             {
-                Thread.Sleep(1000);
-                autoit.WinActivate("Internet Explorer Security");
-                Thread.Sleep(2000);
-                autoit.ControlClick("Internet Explorer Security", "&Allow", "1", "LEFT", 1);
-                Thread.Sleep(1000);
-
                 return true;
             }
-
-           else
+            else
             {
-                Console.WriteLine("AutoIT Was unable to open the document");
                 return false;
             }
+        
+
             
         }
 
@@ -105,7 +197,7 @@ namespace AbtFramework.AutoIT
             Thread.Sleep(1000);
             autoit.ControlSend(currentWorkingDocTitle + " - Microsoft Word", "Microsoft Word Document", "_WwG1", "{UP}");
             Thread.Sleep(1000);
-            autoit.ControlSend(currentWorkingDocTitle+ " - Microsoft Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word Desktop Client At: " + DateTime.Now);
+            autoit.ControlSend(currentWorkingDocTitle+ " - Microsoft Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word 2010 Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
         
 
@@ -134,7 +226,7 @@ namespace AbtFramework.AutoIT
             Thread.Sleep(2000);
             autoit.ControlClick(currentWorkingDocTitle, "", "NetUIHWND1", "LEFT", 1, 177, 76);
             Thread.Sleep(500);
-            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from PPT Desktop Client At: " + DateTime.Now);
+            autoit.ControlSend(currentWorkingDocTitle + " - Microsoft PowerPoint", "Slide", "paneClassDC1", "Adding this line from PPT 2010 Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
 
         }
@@ -189,7 +281,7 @@ namespace AbtFramework.AutoIT
         public static void SaveWordFile()
         {
            
-            autoit.ControlClick(currentWorkingDocTitle + " - Microsoft Word", "", "NetUIHWND2", "LEFT", 1, 35, 20);
+            autoit.ControlClick(currentWorkingDocTitle + " - Microsoft Word", "", "NetUIHWND1", "LEFT", 1, 35, 19);
             Thread.Sleep(5000);
         }
 

@@ -16,9 +16,9 @@ namespace Office2013
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.QA_ReadinessChecklist_v4);
             AutoITDriver.init();
-            AutoITDriver.EditWordFile(); //If have problem running AUtoIT remember that you need to register the dll with cmd
-            AutoITDriver.SaveWordFile();
-            AutoITDriver.CloseWordFile();
+            AutoITDriver.EditWord2013File(); //If have problem running AUtoIT remember that you need to register the dll with cmd
+            AutoITDriver.SaveWord2013File();
+            AutoITDriver.CloseWord2013File();
             SeleniumDriver.Close();
         }
 
@@ -29,9 +29,9 @@ namespace Office2013
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.SampleAVMetrics);
             AutoITDriver.init();
-            AutoITDriver.EditPowerPointFile(); //If have problem running AUtoIT remember that you need to register the dll with cmd
-            AutoITDriver.SavePPTFile();
-            AutoITDriver.ClosePPTFile();
+            AutoITDriver.EditPowerPoint2013File(); //If have problem running AUtoIT remember that you need to register the dll with cmd
+            AutoITDriver.SavePPT2013File();
+            AutoITDriver.ClosePPT2013File();
             SeleniumDriver.Close();
 
         }
@@ -45,9 +45,9 @@ namespace Office2013
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.ITMetrics);
             AutoITDriver.init();
-            Assert.True(AutoITDriver.EditExcelFile()); //If have problem running AUtoIT remember that you need to register the dll with cmd
-            Assert.True(AutoITDriver.SaveExcelFile());
-            Assert.True(AutoITDriver.CloseExcelFile());
+            Assert.True(AutoITDriver.EditExcel2013File()); //If have problem running AUtoIT remember that you need to register the dll with cmd
+            Assert.True(AutoITDriver.SaveExcel2013File());
+            Assert.True(AutoITDriver.CloseExcel2013File());
             SeleniumDriver.Close();
         }
     }
