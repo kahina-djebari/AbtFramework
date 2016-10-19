@@ -222,7 +222,7 @@ namespace abtTest.Web
             
         }
 
-        [Fact(DisplayName = "Edit Word Document on KM Workspace")]
+      //  [Fact(DisplayName = "Edit Word Document on KM Workspace")]
         public void Should_Edit_Word_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteQALaptop);
@@ -235,7 +235,7 @@ namespace abtTest.Web
             SeleniumDriver.Close();
         }
 
-        [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace")]
+     //   [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace")]
         public void Should_Edit_PPT_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteQALaptop);
@@ -251,7 +251,7 @@ namespace abtTest.Web
 
 
 
-        [Fact(DisplayName = "Edit Excel Document on KM Workspace")]
+      //  [Fact(DisplayName = "Edit Excel Document on KM Workspace")]
         public void Should_Edit_Excel_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteQALaptop);
