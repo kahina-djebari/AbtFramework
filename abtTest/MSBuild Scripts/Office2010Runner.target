@@ -6,12 +6,12 @@
 
 
   <UsingTask
-    AssemblyFile="C:\Users\acunad\.jenkins\workspace\Co-Authoring-Testing\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
+    AssemblyFile="C:\Users\acunad\.jenkins\workspace\Co-Authoring\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
     TaskName="Xunit.Runner.MSBuild.xunit"/>
 
 
   <PropertyGroup>
-    <RootDirectory>C:\Users\acunad\.jenkins\workspace\Co-Authoring-Testing</RootDirectory>
+    <RootDirectory>C:\Users\acunad\.jenkins\workspace\Co-Authoring</RootDirectory>
     <ResultsDirectory>$(RootDirectory)\TestResults</ResultsDirectory>
 
   </PropertyGroup>
