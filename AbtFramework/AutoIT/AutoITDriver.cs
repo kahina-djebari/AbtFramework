@@ -174,7 +174,7 @@ namespace AbtFramework.AutoIT
             if(openForEdit)
             autoit.ControlClick("Open Document", "&Edit", "1202", "LEFT", 1);
             Thread.Sleep(1000);
-            if(autoit.ControlClick("Open Document", "OK", "1", "LEFT", 1) == 1)
+              if(autoit.ControlClick("Open Document", "OK", "1", "LEFT", 1) == 1)
             {
                 return true;
             }
