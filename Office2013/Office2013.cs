@@ -9,7 +9,7 @@ namespace Office2013
     
     public class Office2013
     {
-        [Fact(DisplayName = "Edit Word Document on KM Workspace")]
+        [Fact(DisplayName = "Edit Word Document on KM Workspace with Word 2013")]
         public void Should_Edit_Word_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteQALaptop);
@@ -22,7 +22,7 @@ namespace Office2013
             SeleniumDriver.Close();
         }
 
-        [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace")]
+        [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace with PowerPoint 2013")]
         public void Should_Edit_PPT_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteQALaptop);
@@ -38,7 +38,7 @@ namespace Office2013
 
 
 
-        [Fact(DisplayName = "Edit Excel Document on KM Workspace")]
+        [Fact(DisplayName = "Edit Excel Document on KM Workspace with Excel 2013")]
         public void Should_Edit_Excel_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteQALaptop);
