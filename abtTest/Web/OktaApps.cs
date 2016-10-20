@@ -3,6 +3,8 @@ using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium;
 
 namespace abtTest.Web
 {
@@ -256,10 +258,18 @@ namespace abtTest.Web
             SeleniumDriver.CloseAll();
         }
 
-     //   [Fact]
+       // [Fact(DisplayName ="AGI short okta link response time")]
         public void test3()
         {
-            Thread.Sleep(5000);
+           // string url = "http://agitest.corp.abtassoc.com/";
+            string url = "https://abtassociates.okta.com/home/bookmark/0oa80vg271UBRAgM00x7/2557";
+            SeleniumDriver.init(Browser.IENoNativeEvents);
+            var timer1 = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            WebDriverWait wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
+            wait.Until(e=>SeleniumDriver.Instance.FindElement(By.LinkText("Home")).Displayed);
+            var timer2= DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+            Console.WriteLine("Response Time for link " + url + ":" + (timer2 - timer1));
         }
 
     }

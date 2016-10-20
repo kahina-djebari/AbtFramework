@@ -98,6 +98,7 @@ namespace AbtFramework.AutoIT
         public static bool EditExcel2013File()
         {
             OpenDocument(true);
+            Thread.Sleep(3000);
             autoit.WinActivate("IT Metrics - Excel");
             if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
             {
