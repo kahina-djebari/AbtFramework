@@ -98,7 +98,7 @@ namespace AbtFramework.AutoIT
         public static bool EditExcel2013File()
         {
             OpenDocument(true);
-            Thread.Sleep(3000);
+         
             autoit.WinActivate("IT Metrics - Excel");
             if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
             {
@@ -172,6 +172,7 @@ namespace AbtFramework.AutoIT
         public static void EditWord2013File()
         {
             OpenDocument(true);
+            CloseReadOnlyWordDocs();//bug i dont know why it opens moren than one doc on office 2013
             autoit.WinActivate("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word");
             autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", 20);
             Thread.Sleep(2000);
@@ -181,6 +182,21 @@ namespace AbtFramework.AutoIT
             Thread.Sleep(1000);
             autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word 2013 Desktop Client At: " + DateTime.Now);
             Thread.Sleep(2000);
+        }
+
+        private static void CloseReadOnlyWordDocs()
+        {
+            autoit.WinActivate("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word");
+            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 20);
+            Thread.Sleep(1000);
+            autoit.WinClose("QA_ReadinessChecklist_v4[Read - Only][Compatibility Mode] - Word", "");
+            Thread.Sleep(1000);
+            autoit.WinActivate("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word");
+            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 20);
+            Thread.Sleep(1000);
+            autoit.WinClose("QA_ReadinessChecklist_v4[Read - Only][Compatibility Mode] - Word", "");
+            Thread.Sleep(1000);
+
         }
 
         public static bool CloseExcelFile()
