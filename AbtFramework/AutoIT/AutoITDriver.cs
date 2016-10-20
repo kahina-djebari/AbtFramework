@@ -194,10 +194,10 @@ namespace AbtFramework.AutoIT
         private static void CloseReadOnlyWordDocs()
         {
           
-            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 20);
-            autoit.WinClose("QA_ReadinessChecklist_v4[Read - Only][Compatibility Mode] - Word", "");
-            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 20);
-            autoit.WinClose("QA_ReadinessChecklist_v4[Read - Only][Compatibility Mode] - Word", "");
+            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 5);
+            autoit.WinClose("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "");
+            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 5);
+            autoit.WinClose("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "");
             Thread.Sleep(1000);
 
         }
