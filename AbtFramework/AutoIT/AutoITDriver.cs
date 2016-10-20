@@ -98,8 +98,8 @@ namespace AbtFramework.AutoIT
         public static bool EditExcel2013File()
         {
             OpenDocument(true);
-         
-            autoit.WinActivate("IT Metrics - Excel");
+            CloseReadOnlyExcelDocs();
+
             if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
             {
                 Thread.Sleep(2000);
@@ -115,6 +115,15 @@ namespace AbtFramework.AutoIT
                 Console.WriteLine("AutoIT was unable to find the Excel document Window for editing");
                 return false;
             }
+        }
+
+        private static void CloseReadOnlyExcelDocs()
+        {
+            autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 20);
+            autoit.WinClose("IT Metrics  [Read-Only] - Excel", "");
+            autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 20);
+            autoit.WinClose("IT Metrics  [Read-Only] - Excel", "");
+            Thread.Sleep(1000);
         }
 
         public static bool SaveExcel2013File()
@@ -173,9 +182,7 @@ namespace AbtFramework.AutoIT
         {
             OpenDocument(true);
             CloseReadOnlyWordDocs();//bug i dont know why it opens moren than one doc on office 2013
-            autoit.WinActivate("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word");
             autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", 20);
-            Thread.Sleep(2000);
             autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{ENTER}");
             Thread.Sleep(1000);
             autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{UP}");
@@ -186,14 +193,10 @@ namespace AbtFramework.AutoIT
 
         private static void CloseReadOnlyWordDocs()
         {
-            autoit.WinActivate("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word");
+          
             autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 20);
-            Thread.Sleep(1000);
             autoit.WinClose("QA_ReadinessChecklist_v4[Read - Only][Compatibility Mode] - Word", "");
-            Thread.Sleep(1000);
-            autoit.WinActivate("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word");
             autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Read-Only] [Compatibility Mode] - Word", "", 20);
-            Thread.Sleep(1000);
             autoit.WinClose("QA_ReadinessChecklist_v4[Read - Only][Compatibility Mode] - Word", "");
             Thread.Sleep(1000);
 
