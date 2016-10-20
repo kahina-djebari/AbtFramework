@@ -23,9 +23,9 @@ namespace AbtFramework.AutoIT
             if((autoit.WinWaitActive("Microsoft Excel - " + currentWorkingDocTitle, "", 20)) == 1)
             {
                 Thread.Sleep(2000);
-                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "{DOWN}");
+                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, "IT Metrics", "EXCEL71", "{DOWN}");
                 Thread.Sleep(1000);
-                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel 2010 Desktop Client At: " + DateTime.Now);
+                autoit.ControlSend("Microsoft Excel - " + currentWorkingDocTitle, "IT Metrics", "EXCEL71", "Adding this line from Excel 2010 Desktop Client At: " + DateTime.Now);
                 Thread.Sleep(2000);
                 return true;
             }
@@ -102,9 +102,9 @@ namespace AbtFramework.AutoIT
             if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
             {
                 Thread.Sleep(2000);
-                autoit.ControlSend("IT Metrics - Excel", currentWorkingDocTitle, "EXCEL71", "{DOWN}");
+                autoit.ControlSend("IT Metrics - Excel", "IT Metrics", "EXCEL71", "{DOWN}");
                 Thread.Sleep(1000);
-                autoit.ControlSend("IT Metrics - Excel", currentWorkingDocTitle, "EXCEL71", "Adding this line from Excel 2013 Desktop Client At: " + DateTime.Now);
+                autoit.ControlSend("IT Metrics - Excel", "IT Metrics", "EXCEL71", "Adding this line from Excel 2013 Desktop Client At: " + DateTime.Now);
                 Thread.Sleep(2000);
                 return true;
             }
