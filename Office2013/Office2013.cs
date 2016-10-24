@@ -16,9 +16,9 @@ namespace Office2013
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.QA_ReadinessChecklist_v4);
             AutoITDriver.init();
-            AutoITDriver.EditWord2013File(); //If have problem running AUtoIT remember that you need to register the dll with cmd
-            AutoITDriver.SaveWord2013File();
-            AutoITDriver.CloseWord2013File();
+           Assert.True(AutoITDriver.EditWord2013File()); //If have problem running AUtoIT remember that you need to register the dll with cmd
+           Assert.True(AutoITDriver.SaveWord2013File());
+           Assert.True(AutoITDriver.CloseWord2013File());
             SeleniumDriver.Close();
         }
 

@@ -39,34 +39,74 @@ namespace AbtFramework.AutoIT
 
         }
 
-        public static void EditPowerPoint2013File()
+        public static bool EditPowerPoint2013File()
         {
             OpenDocument(true);
-            autoit.WinActivate("Sample AV metrics - PowerPoint");
-            autoit.WinWaitActive("Sample AV metrics - PowerPoint", "", 20);
-            Thread.Sleep(2000);
-            autoit.ControlClick("Sample AV metrics - PowerPoint", "", "NetUIHWND1", "LEFT", 1, 182, 71);
-            Thread.Sleep(500);
-            autoit.ControlSend("Sample AV metrics - PowerPoint", "", "mdiClass1", "Adding this line from PPT 2013 Desktop Client At: " + DateTime.Now);
-            Thread.Sleep(2000);
+          
+            if(autoit.WinWaitActive("Sample AV metrics - PowerPoint", "", 20) == 1)
+            {
+                Thread.Sleep(2000);
+                autoit.ControlClick("Sample AV metrics - PowerPoint", "", "NetUIHWND1", "LEFT", 1, 182, 71);
+                Thread.Sleep(500);
+                autoit.ControlSend("Sample AV metrics - PowerPoint", "", "mdiClass1", "Adding this line from PPT 2013 Desktop Client At: " + DateTime.Now);
+                Thread.Sleep(2000);
+                return true;
+            }
+
+            else
+            {
+                Console.WriteLine("Unable to Find PPT doc to edit");
+                return false;
+            }
+           
         }
 
-        public static void ClosePPT2013File()
+        public static bool ClosePPT2013File()
         {
-            autoit.WinClose("Sample AV metrics - PowerPoint", "");
+
+           if(autoit.WinClose("Sample AV metrics - PowerPoint", "") == 1)
+            {
+                Thread.Sleep(1000);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("AutoIT was unable to close the PPT file");
+                return false;
+            }
         }
 
-        public static void SavePPT2013File()
+        public static bool SavePPT2013File()
         {
-            autoit.ControlClick("Sample AV metrics - PowerPoint", "", "NetUIHWND1", "LEFT", 1, 46, 14); //Click on Save Btn
-            Thread.Sleep(5000);
+            if(autoit.ControlClick("Sample AV metrics - PowerPoint", "", "NetUIHWND1", "LEFT", 1, 46, 14)==1) //Click on Save Btn
+            {
+                Thread.Sleep(5000);
+                return true;
+            }
+
+            else
+            {
+                Console.WriteLine("AutoIT was Unable To save PPT File");
+                return false;
+            }
+                
         }
 
-        public static void CloseWord2013File()
+        public static bool CloseWord2013File()
         {
-            autoit.WinClose("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "");
-            Thread.Sleep(1000);
-            KillWordProcess();
+            if(autoit.WinClose("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "") == 1)
+            {
+                Thread.Sleep(1000);
+                CloseReadOnlyWordDocs();
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("AutoIT was unable to Close the Word Doc");
+                return false;
+            }
+            
+            
         }
 
         private static void KillWordProcess()
@@ -89,10 +129,19 @@ namespace AbtFramework.AutoIT
             }
         }
 
-        public static void SaveWord2013File()
+        public static bool SaveWord2013File()
         {
-            autoit.ControlClick("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", "NetUIHWND1", "LEFT", 1, 47, 15);
-            Thread.Sleep(5000);
+            if(autoit.ControlClick("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", "NetUIHWND1", "LEFT", 1, 47, 15) == 1)
+            {
+                Thread.Sleep(5000);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("AutoIT was unable to save the Word Doc");
+                return false;
+            }
+            
         }
 
         public static bool EditExcel2013File()
@@ -146,13 +195,13 @@ namespace AbtFramework.AutoIT
             if (autoit.WinClose("IT Metrics - Excel", "") == 1)
             {
                 Thread.Sleep(1000);
-                KillExcelProcess();
+                CloseReadOnlyExcelDocs();
                 return true;
             }
 
             else
             {
-                KillExcelProcess();
+               
                 Console.WriteLine("AutoIT was unable to close the Excel document");
                 return false;
             }
@@ -178,17 +227,27 @@ namespace AbtFramework.AutoIT
             }
         }
 
-        public static void EditWord2013File()
+        public static bool EditWord2013File()
         {
             OpenDocument(true);
             CloseReadOnlyWordDocs();//bug i dont know why it opens moren than one doc on office 2013
-            autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", 20);
-            autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{ENTER}");
-            Thread.Sleep(1000);
-            autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{UP}");
-            Thread.Sleep(1000);
-            autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word 2013 Desktop Client At: " + DateTime.Now);
-            Thread.Sleep(2000);
+            if(autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", 20) == 1)
+            {
+                autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{ENTER}");
+                Thread.Sleep(1000);
+                autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "{UP}");
+                Thread.Sleep(1000);
+                autoit.ControlSend("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "Microsoft Word Document", "_WwG1", "Adding this line from Word 2013 Desktop Client At: " + DateTime.Now);
+                Thread.Sleep(2000);
+                return true;
+            }
+
+            else
+            {
+                Console.WriteLine("AutoIT was Unable to find Microsoft Word Window to Edit Word File");
+                return false;
+            }
+           
         }
 
         private static void CloseReadOnlyWordDocs()
