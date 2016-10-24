@@ -168,9 +168,9 @@ namespace AbtFramework.AutoIT
 
         private static void CloseReadOnlyExcelDocs()
         {
-            autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 20);
+            autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 5);
             autoit.WinClose("IT Metrics  [Read-Only] - Excel", "");
-            autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 20);
+            autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 5);
             autoit.WinClose("IT Metrics  [Read-Only] - Excel", "");
             Thread.Sleep(1000);
         }
