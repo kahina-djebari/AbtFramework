@@ -84,7 +84,26 @@ namespace AbtFramework
 
                 case Abtlinks.AbtResearchLibrary:
 
+                    if (TestCaseGenerator.CurrentTestCase.StepExist("Hover over Tools & Resources"))
+                        TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Hover over Tools & Resources");
                     OpenServiceCenterLink("Abt Research Library");
+
+                    try
+                    {
+                        if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Abt Research Library"))
+                        {
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on Abt Research Library");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Abt Research Library"))
+                        {
+                            TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on Abt Research Library", ex.Message);
+                        }
+                       
+                        throw (ex);
+                    }
 
                     break;
 

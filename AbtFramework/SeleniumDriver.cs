@@ -40,8 +40,9 @@ namespace AbtFramework
                     IEoptions = new InternetExplorerOptions();
                     IEoptions.EnablePersistentHover = true;
                     IEoptions.EnableNativeEvents = false;
+                  //  string localIp = MyUtils.GetLocalIpAddress();
 
-                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.23:4444/wd/hub"), IEoptions.ToCapabilities());
+                    Instance = new RemoteWebDriver(new Uri("http://"+MyUtils.GetLocalIpAddress()+":4444/wd/hub"), IEoptions.ToCapabilities());
 
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     Instance.Manage().Window.Maximize();
@@ -128,7 +129,7 @@ namespace AbtFramework
                     IEoptions.EnablePersistentHover = true;
                     IEoptions.EnableNativeEvents = false;
 
-                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.40:4444/wd/hub"), IEoptions.ToCapabilities());
+                    Instance = new RemoteWebDriver(new Uri("http://" + MyUtils.GetLocalIpAddress() + ":4444/wd/hub"), IEoptions.ToCapabilities());
      
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     Instance.Manage().Window.Maximize();
@@ -140,7 +141,7 @@ namespace AbtFramework
                     IEoptions.EnablePersistentHover = true;
 
 
-                    Instance = new RemoteWebDriver(new Uri("http://172.18.58.40:4444/wd/hub"), IEoptions.ToCapabilities());
+                    Instance = new RemoteWebDriver(new Uri("http://" + MyUtils.GetLocalIpAddress() + ":4444/wd/hub"), IEoptions.ToCapabilities());
         
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     Instance.Manage().Window.Maximize();

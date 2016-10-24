@@ -26,6 +26,15 @@ namespace AbtFramework.Utils_Classes
             switch (testCase)
             {
 
+                case AbtTestCases.Get_RightFindProd_Throug_AGI:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Go To RightFind");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\RightFindProdResponseThrouhAGI.txt");
+
+                    break;
+
                 case AbtTestCases.Get_Concur_Test_ResponseTime:
 
                     RootSolutionPath = MyUtils.GetRootSolutionPath();

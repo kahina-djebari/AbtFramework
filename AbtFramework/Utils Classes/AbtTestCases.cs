@@ -17,6 +17,7 @@ namespace AbtFramework.Utils_Classes
         Get_SuccessFactors_test_ResponseTime,
         Get_RightFind_Test_ResponseTime,
         Get_ServiceNow_Prod_ResponseTime,
-        Get_Concur_Test_ResponseTime
+        Get_Concur_Test_ResponseTime,
+        Get_RightFindProd_Throug_AGI
     }
 }

@@ -272,5 +272,24 @@ namespace abtTest.Web
             Console.WriteLine("Response Time for link " + url + ":" + (timer2 - timer1));
         }
 
+    //   [Fact(DisplayName ="Should Go to Right Find Production Through AGI")]
+        public void Should_Go_RightFind_Prod_AGI()
+        {
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_RightFindProd_Throug_AGI);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.IE);
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_AbtResearchLibrary();
+            AbtPages.AgiAbtResearch.GoToRightFind();
+            Assert.True(AbtPages.RightFindHomePage.IsAt());
+        }
+
+
+       // [Fact(DisplayName ="TestIp")]
+        public void getIp()
+        {
+            Console.WriteLine(MyUtils.GetLocalIpAddress());
+        }
+
     }
 }

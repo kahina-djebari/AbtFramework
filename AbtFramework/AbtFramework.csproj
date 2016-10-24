@@ -209,6 +209,7 @@
     <Content Include="TestPlans\ConcurProdResponseTime.txt" />
     <Content Include="TestPlans\ConcurTestResponseTime.txt" />
     <Content Include="TestPlans\EbscoTestResponseTime.txt" />
+    <Content Include="TestPlans\RightFindProdResponseThrouhAGI.txt" />
     <Content Include="TestPlans\RightFindTestResponseTime.txt" />
     <Content Include="TestPlans\ServiceNowTestResponseTime.txt" />
     <Content Include="TestPlans\SuccessFactorsTestResponseTime.txt" />

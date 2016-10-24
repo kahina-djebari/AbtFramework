@@ -85,8 +85,8 @@ namespace AbtFramework
             try
             {
                 StartTimer();
-              //  if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
-              //      TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Agi Home Page");
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
+                   TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Agi Home Page");
                 SeleniumDriver.Instance.Navigate().GoToUrl("http://agi.abtassociates.com");
                 Console.WriteLine("Going to AGI Home Page...");
                 Console.WriteLine("</br>");
@@ -98,12 +98,12 @@ namespace AbtFramework
             }
             catch(Exception ex)
             {
-             //   if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
-              //  {
-             //       TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Agi Home Page",ex.Message);
-               // }
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
+                {
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Agi Home Page",ex.Message);
+                }
 
-             //   throw ex;
+                throw ex;
                     
             }
       
