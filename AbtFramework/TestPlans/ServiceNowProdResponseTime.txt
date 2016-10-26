@@ -1,0 +1,2 @@
+﻿Navigate to Url https://abtassociates.service-now.com/navpage.do
+Check if Welcome Message is Displayed

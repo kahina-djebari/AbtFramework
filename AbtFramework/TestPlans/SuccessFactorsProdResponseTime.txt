@@ -1,0 +1,4 @@
+﻿Navigate to Agi Home Page
+Hover over Tools & Resources
+Click on Abt Talent, Learning and Support (ATLAS)
+Check if Home Dropdown is Displayed

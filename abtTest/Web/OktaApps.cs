@@ -207,7 +207,7 @@ namespace abtTest.Web
      //  [Fact(DisplayName = "Should Go to Service Now (Test) Home Page")]
         public void Should_Go_to_ServiceNow_UAT_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_ServiceNow_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_ServiceNow_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
             SeleniumDriver.init(Browser.IE);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
@@ -217,11 +217,11 @@ namespace abtTest.Web
       // [Fact(DisplayName = "Should Go to Service Now Production Home Page")]
         public void Should_Go_to_ServiceNow_Production_HomePage()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_ServiceNow_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteDavidIE);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.ProductionEnvironment);
-            Assert.True(AbtPages.ServiceNowHomepage.isUserLoggedIn());
+            Assert.True(AbtPages.ServiceNowHomepage.IsAt());
         }
 
     //   [Fact(DisplayName = "Should Go to WebEx (Test) Home Page")]
@@ -245,16 +245,15 @@ namespace abtTest.Web
             Assert.True(AbtPages.WebExPage.isAt());
         }
 
-       // [Fact(DisplayName ="Should Go to Success Factor (Production) Through AGI")]
+      //  [Fact(DisplayName ="Should Go to Success Factor (Production) Through AGI")]
         public void Should_Go_SuccessFactor_Through_Agi()
         {
-            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_SuccessFactors_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteSofianesIENoNativeEvents);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.ToolsAndResources();
-           AbtPages.ToolsAndResourcesPage.GoToAtlas();
-            AbtPages.SuccessFactorHomePage.isUserLoggedIn();
+            AbtPages.AgiTopNavigation.ToolsDropdown.GoToAtlas();
+            Assert.True(AbtPages.SuccessFactorHomePage.isAt());
             SeleniumDriver.CloseAll();
         }
 

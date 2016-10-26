@@ -26,6 +26,25 @@ namespace AbtFramework.Utils_Classes
             switch (testCase)
             {
 
+                case AbtTestCases.Get_SuccessFactors_Prod_ResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Go To SuccessFactors Production");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\SuccessFactorsProdResponseTime.txt");
+
+
+                    break;
+
+                case AbtTestCases.Get_ServiceNow_Prod_ResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Go To ServiceNow(Production)");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\ServiceNowProdResponseTime.txt");
+
+                    break;
+
                 case AbtTestCases.Get_RightFindProd_Throug_AGI:
 
                     RootSolutionPath = MyUtils.GetRootSolutionPath();
@@ -44,7 +63,7 @@ namespace AbtFramework.Utils_Classes
 
                     break;
 
-                case AbtTestCases.Get_ServiceNow_Prod_ResponseTime:
+                case AbtTestCases.Get_ServiceNow_Test_ResponseTime:
 
                     RootSolutionPath = MyUtils.GetRootSolutionPath();
                     CurrentTestCase = new TestCase("Should Get ServiceNow(Test Environment) Response Time ");
