@@ -148,7 +148,7 @@ namespace AbtFramework.AutoIT
         {
             OpenDocument(true);
             Thread.Sleep(5000);
-            CloseReadOnlyExcelDocs();
+           // CloseReadOnlyExcelDocs();
 
             if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
             {
