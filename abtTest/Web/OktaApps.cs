@@ -76,6 +76,19 @@ namespace abtTest.Web
 
         }
 
+        [Fact(DisplayName="Should Go To Ebsco Production Through AGI")]
+        public void Should_Go_To_Ebsco_Production_Through_AGI()
+        {
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Ebsco_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.IE);
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_AbtResearchLibrary();
+            AbtPages.AgiAbtResearch.GoToEbscoDS();
+            Assert.True(AbtPages.EbscoHomePage.isAt());
+
+        }
+
 
       // [Fact(DisplayName = "Should Go to Success Factor (Test) Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()

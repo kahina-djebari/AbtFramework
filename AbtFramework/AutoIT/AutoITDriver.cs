@@ -147,6 +147,7 @@ namespace AbtFramework.AutoIT
         public static bool EditExcel2013File()
         {
             OpenDocument(true);
+            Thread.Sleep(5000);
             CloseReadOnlyExcelDocs();
 
             if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
@@ -168,6 +169,7 @@ namespace AbtFramework.AutoIT
 
         private static void CloseReadOnlyExcelDocs()
         {
+            
             autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 5);
             autoit.WinClose("IT Metrics  [Read-Only] - Excel", "");
             autoit.WinWaitActive("IT Metrics  [Read-Only] - Excel", "", 5);
@@ -230,6 +232,7 @@ namespace AbtFramework.AutoIT
         public static bool EditWord2013File()
         {
             OpenDocument(true);
+            Thread.Sleep(5000);
             CloseReadOnlyWordDocs();//bug i dont know why it opens moren than one doc on office 2013
             if(autoit.WinWaitActive("QA_ReadinessChecklist_v4 [Compatibility Mode] - Word", "", 20) == 1)
             {

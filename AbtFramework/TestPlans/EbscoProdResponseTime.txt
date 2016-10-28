@@ -1,0 +1,5 @@
+﻿Navigate to Agi Home Page
+Hover over Tools & Resources
+Click on Abt Research Library
+Click on EBSCO Discovery Service
+Check if Home Page Search Bar is Displayed

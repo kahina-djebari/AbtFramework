@@ -21,11 +21,19 @@ namespace AbtFramework.Utils_Classes
         public static string HtmlTestName { get; private set; }
         public static string HtmlSummary { get; private set; }
 
+
         public static void SetTestCase(AbtTestCases testCase)
         {
             switch (testCase)
             {
+                case AbtTestCases.Get_Ebsco_Prod_ResponseTime:
 
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Go To Ebsco Production");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\EbscoProdResponseTime.txt");
+
+                    break;
                 case AbtTestCases.Get_SuccessFactors_Prod_ResponseTime:
 
                     RootSolutionPath = MyUtils.GetRootSolutionPath();

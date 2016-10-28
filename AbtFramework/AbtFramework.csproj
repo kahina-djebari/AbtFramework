@@ -211,6 +211,7 @@
     <Content Include="Abt Dependencies\Microsoft.Lync.Model.dll" />
     <Content Include="TestPlans\ConcurProdResponseTime.txt" />
     <Content Include="TestPlans\ConcurTestResponseTime.txt" />
+    <Content Include="TestPlans\EbscoProdResponseTime.txt" />
     <Content Include="TestPlans\EbscoTestResponseTime.txt" />
     <Content Include="TestPlans\RightFindProdResponseThrouhAGI.txt" />
     <Content Include="TestPlans\RightFindTestResponseTime.txt" />

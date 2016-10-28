@@ -1,6 +1,7 @@
 ﻿using AbtFramework.Utils_Classes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
 
@@ -12,6 +13,9 @@ namespace AbtFramework
         private IWebElement AbtResearchLink;
         [FindsBy(How=How.LinkText,Using = "Document Delivery via Copyright Clearance Center | RightFind")]
         private IWebElement RightFindLink;
+
+        [FindsBy(How=How.LinkText,Using ="EBSCO Discovery Service")]
+        private IWebElement EbscoDS;
 
         public bool IsAt()
         {
@@ -61,6 +65,39 @@ namespace AbtFramework
             }
             SeleniumDriver.Instance.SwitchTo().Window(switchtohandle);
            
+        }
+
+        public void GoToEbscoDS()
+        {
+             try
+             {
+             finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            popupWindowHandle = finder.Click(SeleniumDriver.Instance.FindElement(By.LinkText("EBSCO Discovery Service")));
+            
+                StartTimer();
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on EBSCO Discovery Service"))
+                {
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on EBSCO Discovery Service");
+
+                }
+
+                SeleniumDriver.Close();
+                SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+                
+                    
+            }
+
+           catch(Exception ex)
+           {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on EBSCO Discovery Service"))
+               {
+                  TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on EBSCO Discovery Service",ex.Message);
+               }
+
+              throw (ex);
+           }
+
+
         }
     }
 }
