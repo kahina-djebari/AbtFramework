@@ -209,6 +209,7 @@
     <Content Include="Abt Dependencies\AutoItX3.dll" />
     <Content Include="Abt Dependencies\Interop.AutoItX3Lib.dll" />
     <Content Include="Abt Dependencies\Microsoft.Lync.Model.dll" />
+    <Content Include="TestPlans\AGIPRODResponseTime.txt" />
     <Content Include="TestPlans\ConcurProdResponseTime.txt" />
     <Content Include="TestPlans\ConcurTestResponseTime.txt" />
     <Content Include="TestPlans\EbscoProdResponseTime.txt" />

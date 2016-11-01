@@ -22,5 +22,6 @@ namespace AbtFramework.Utils_Classes
         Get_RightFindProd_Throug_AGI,
         Get_SuccessFactors_Prod_ResponseTime,
         Get_Ebsco_Prod_ResponseTime,
+        Get_AGI_ResponseTime,
     }
 }

@@ -296,8 +296,19 @@ namespace abtTest.Web
             Assert.True(AbtPages.RightFindHomePage.IsAt());
         }
 
+       //   [Fact(DisplayName ="Should Go to  AGI")]
+        public void Should_Go_To_AGI()
+        {
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_AGI_ResponseTime);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.IE);
+            AbtPages.AgiHomePage.Go();
+            Assert.True(AbtPages.AgiHomePage.isAt());
+        }
 
-       // [Fact(DisplayName ="TestIp")]
+
+
+        // [Fact(DisplayName ="TestIp")]
         public void getIp()
         {
             Console.WriteLine(MyUtils.GetLocalIpAddress());

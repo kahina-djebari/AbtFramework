@@ -26,6 +26,14 @@ namespace AbtFramework.Utils_Classes
         {
             switch (testCase)
             {
+                case AbtTestCases.Get_AGI_ResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should go to AGI Production");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\AGIPRODResponseTime.txt");
+
+                    break;
                 case AbtTestCases.Get_Ebsco_Prod_ResponseTime:
 
                     RootSolutionPath = MyUtils.GetRootSolutionPath();
