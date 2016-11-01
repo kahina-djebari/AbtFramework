@@ -146,25 +146,33 @@ namespace AbtFramework.AutoIT
 
         public static bool EditExcel2013File()
         {
-            OpenDocument(true);
-            Thread.Sleep(5000);
-           // CloseReadOnlyExcelDocs();
-
-            if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
+            if (OpenDocument(true))
             {
-                Thread.Sleep(2000);
-                autoit.ControlSend("IT Metrics - Excel", "IT Metrics", "EXCEL71", "{DOWN}");
-                Thread.Sleep(1000);
-                autoit.ControlSend("IT Metrics - Excel", "IT Metrics", "EXCEL71", "Adding this line from Excel 2013 Desktop Client At: " + DateTime.Now);
-                Thread.Sleep(2000);
+                Thread.Sleep(5000);
                 return true;
             }
 
-            else
-            {
-                Console.WriteLine("AutoIT was unable to find the Excel document Window for editing");
-                return false;
-            }
+                       
+            else return false;
+            
+            // CloseReadOnlyExcelDocs();
+
+            /*     if ((autoit.WinWaitActive("IT Metrics - Excel", "", 20)) == 1)
+                 {
+                     Thread.Sleep(2000);
+                     autoit.ControlSend("IT Metrics - Excel", "IT Metrics", "EXCEL71", "{DOWN}");
+                     Thread.Sleep(1000);
+                     autoit.ControlSend("IT Metrics - Excel", "IT Metrics", "EXCEL71", "Adding this line from Excel 2013 Desktop Client At: " + DateTime.Now);
+                     Thread.Sleep(2000);
+                     return true;
+                 }
+
+                 else
+                 {
+                     Console.WriteLine("AutoIT was unable to find the Excel document Window for editing");
+                     return false;
+                 }*/
+            
         }
 
         private static void CloseReadOnlyExcelDocs()
