@@ -9,7 +9,7 @@ namespace Office2010
    
     public class Office2010
     {
-        [Fact(DisplayName = "Edit Word Document on KM Workspace with Word 2010")]
+      //  [Fact(DisplayName = "Edit Word Document on KM Workspace with Word 2010")]
         public void Should_Edit_Word_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -22,7 +22,7 @@ namespace Office2010
             SeleniumDriver.Close();
         }
 
-        [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace with PowerPoint 2010")]
+      //  [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace with PowerPoint 2010")]
         public void Should_Edit_PPT_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);
@@ -38,7 +38,7 @@ namespace Office2010
 
 
 
-        [Fact(DisplayName = "Edit Excel Document on KM Workspace with Excel 2010")]
+       // [Fact(DisplayName = "Edit Excel Document on KM Workspace with Excel 2010")]
         public void Should_Edit_Excel_Doc_KM_WorkSpace()
         {
             SeleniumDriver.init(Browser.RemoteDavidIENoNativeEvents);

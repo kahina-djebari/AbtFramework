@@ -94,15 +94,20 @@ namespace AbtFramework
         private static AgiEvents _agievents;
         private static AgiNewsArchive _aginewsarchive;
         private static AgiProposals _agiproposals;
-
-        public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
-
+        private static KnowledgeHubLandingPage _knowledgehublandingpage;
+        public static AbtKnowledgePage AbtKnowledgePage { get {
+                _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
                 _abtKnowledgePage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _abtKnowledgePage.action = new Actions(SeleniumDriver.Instance);
                 return _abtKnowledgePage;
             } }
 
- 
+        public static KnowledgeHubLandingPage KnowledgeHubLandingPage { get {
+                _knowledgehublandingpage = PageGenerator.GetPage<KnowledgeHubLandingPage>();
+                _knowledgehublandingpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _knowledgehublandingpage.action = new Actions(SeleniumDriver.Instance);
+                return _knowledgehublandingpage;
+            } }
 
         public static AbtTravelPage AbtTravelPage { get {  _abtTravelPage = PageGenerator.GetPage<AbtTravelPage>();
                 _abtTravelPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
@@ -186,7 +191,8 @@ namespace AbtFramework
         {
             get
             {
-                _outolooEmailViewerPage = PageGenerator.GetPage<OutlookEmailViewerPage>();
+                
+                   _outolooEmailViewerPage = PageGenerator.GetPage<OutlookEmailViewerPage>();
                 _outolooEmailViewerPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _outolooEmailViewerPage.action = new Actions(SeleniumDriver.Instance);
                 return _outolooEmailViewerPage;

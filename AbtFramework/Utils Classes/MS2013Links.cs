@@ -11,6 +11,7 @@ namespace AbtFramework.Utils_Classes
         QA_AuthoringIssueReplication,
         IE11,
         Office2013,
-        Testing
+        Testing,
+        TestDocHub
     }
 }

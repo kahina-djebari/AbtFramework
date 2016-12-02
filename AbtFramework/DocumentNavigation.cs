@@ -34,6 +34,12 @@ namespace AbtFramework
         private IList<IWebElement> ChkBoxList;
         [FindsBy(How=How.Id,Using = "QCB1_Button1")]
         private IWebElement NewBtn;
+        
+        // Knowledge Hub Element.
+        [FindsBy(How = How.LinkText, Using = "Test Document")]
+        private IWebElement WordDocHub;
+
+
 
         public IWebElement OpenWordOnline
         {
@@ -44,10 +50,16 @@ namespace AbtFramework
             }
         }
 
-         public IWebElement DocumentCheckbox { get { return ChkBoxList.Single(e => e.GetAttribute("aria-label").Split(',')[0].Equals(currentdocTitle)); } }
+         public IWebElement DocumentCheckbox { get
+            { return ChkBoxList.Single(e => e.GetAttribute("aria-label").
+            Split(',')[0].Equals(currentdocTitle)); } }
    
         public IWebElement SecondTopic { get { return Topics[1]; } }
 
+        /// <summary>
+        /// opens the desired folder in sharepoint
+        /// </summary>
+        /// <param name="link"></param>
         public void Goto(MS2013Links link)
         {
             switch (link)
@@ -139,12 +151,20 @@ namespace AbtFramework
                         }
                         catch (Exception e)
                         {
-
+                            Console.WriteLine(e.Message);
                         }
 
                     }
                     OpenDoc(ExcelDoc, doctype);
                     break;
+
+                case MS2013documents.KnowledgeHub:
+
+                
+                  OpenDoc(WordDocHub, documentType.Word);
+
+                    break;
+
                 default:
                     break;
             }
@@ -153,18 +173,16 @@ namespace AbtFramework
 
         private void OpenDoc(IWebElement Doc, documentType doctype) //open documents online
         {
-           
-           
-           
+                                 
            // wait.Until(e => Doc.Displayed);
             currentdocTitle = Doc.Text;
-            DocumentCheckbox.Click();
-            MoreOptions.Click();
-            // action.ContextClick(Doc).Perform();
+            //DocumentCheckbox.Click();
+          //  MoreOptions.Click();
+             action.ContextClick(Doc).Perform();
              finder = new PopupWindowFinder(SeleniumDriver.Instance);
               popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
-            //  OpenDocumentIn(doctype).Click();
-            // action.Click(OpenDocumentIn(doctype)).Perform();
+           //   OpenDocumentIn(doctype).Click();
+          //  action.Click(OpenDocumentIn(doctype)).Perform();
             //            SeleniumDriver.Instance.FindElements(By.TagName("li")).Single(e => e.Text.Equals("Open in " + doctype.ToString() + " Online")).Click();
         
             wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);

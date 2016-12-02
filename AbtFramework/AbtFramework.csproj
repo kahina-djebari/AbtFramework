@@ -42,6 +42,11 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.AutoItX3Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Abt Dependencies\Interop.AutoItX3Lib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Lync.Model, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lyncdev\C#\bin\Debug\Microsoft.Lync.Model.dll</HintPath>
@@ -114,6 +119,7 @@
     <Compile Include="EbscoMyAccountPage.cs" />
     <Compile Include="HomeDropdown.cs" />
     <Compile Include="KmWorkSpacePage.cs" />
+    <Compile Include="KnowledgeHubLandingPage.cs" />
     <Compile Include="MailOffice365Page.cs" />
     <Compile Include="NewsDropdown.cs" />
     <Compile Include="RightFindHomePage.cs" />
@@ -232,6 +238,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="AutoItX3, Version=3.0.0.0, ProcessorArchitecture=%2a, Type=win32">
+      <Name>AutoItX3.dll</Name>
+      <HintPath>Abt Dependencies\AutoItX3.dll</HintPath>
+    </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
