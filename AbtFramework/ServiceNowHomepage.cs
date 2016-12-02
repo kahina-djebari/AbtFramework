@@ -88,6 +88,9 @@ namespace AbtFramework
         private IWebElement TimeworkedOnIncident;
         [FindsBy(How=How.Id,Using = "b55fbec4c0a800090088e83d7ff500de")]
         private IWebElement IncidentOpen;
+
+      
+
         [FindsBy(How = How.Id, Using = "54f3f8b704df110008e999502af6ec9f")]
         private IWebElement HR_Issues_Open;
         [FindsBy(How = How.Id, Using = "incident.contact_type")]
@@ -163,6 +166,8 @@ namespace AbtFramework
         private static string portalEnvironment;
         [FindsBy(How=How.Id,Using = "nav_header_text")]
         private IWebElement header;
+        [FindsBy(How=How.LinkText,Using ="Incident Response Report")]
+        private IWebElement IRR;
 
         public IWebElement SelfServiceContact { get { return contactType.FindElements(By.TagName("option"))
                                                                  .Single(e => e.Text.Equals("Self-service")); } }
@@ -184,6 +189,22 @@ namespace AbtFramework
                 return impactSelected.FindElements(By.TagName("option"))
                                 .Single(e => e.GetAttribute("selected") != null &&
                                 e.GetAttribute("selected").Equals("true"));
+            }
+        }
+
+
+        public void OpenIRRSection()
+        {
+            try
+            {
+
+                SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+                IRR.Click();
+            }
+
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -441,8 +462,8 @@ namespace AbtFramework
             switch (link)
             {
                 case WebEnvironment.TestEnvironment:
-                    //GotoUrl("https://abtassoctest.service-now.com/navpage.do");
-                    GotoUrl("https://abtassociates.okta.com/home/servicenow_app2/0oa80tx9crDmIcRfk0x7/14155");
+                    GotoUrl("https://abtassoctest.service-now.com/navpage.do");
+                   // GotoUrl("https://abtassociates.okta.com/home/servicenow_app2/0oa80tx9crDmIcRfk0x7/14155");
                     Console.WriteLine("Service Now (Test) Home Page Took: " + LoadTime + " to load Using Okta");
                     Console.WriteLine("</br>");
                     SSOProvider = "Okta";
@@ -462,28 +483,12 @@ namespace AbtFramework
 
         private void GotoUrl(string url)
         {
-
-
-            try
-            {
+                        
                 StartTimer();
-
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
-
+            
                 SeleniumDriver.Instance.Navigate().GoToUrl(url);
 
-            }
-
-            catch(Exception ex)
-            {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Url " + url, ex.Message);
-
-
-                throw (ex);
-            }
-            
+                      
 
         }
 

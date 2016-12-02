@@ -23,5 +23,7 @@ namespace AbtFramework.Utils_Classes
         Get_SuccessFactors_Prod_ResponseTime,
         Get_Ebsco_Prod_ResponseTime,
         Get_AGI_ResponseTime,
+        Get_SANS_Response_Time,
+        ServiceNowCreateIRR,
     }
 }

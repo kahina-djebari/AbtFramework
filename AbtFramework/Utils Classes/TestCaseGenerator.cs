@@ -26,6 +26,24 @@ namespace AbtFramework.Utils_Classes
         {
             switch (testCase)
             {
+                case AbtTestCases.ServiceNowCreateIRR:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Create Incident Response Report");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\ServiceNow_Create_IRR_Test_Script.txt");
+
+                    break;
+
+                case AbtTestCases.Get_SANS_Response_Time:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should go to SANS (Abt Training)");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\SansResponseTime.txt");
+
+
+                    break;
                 case AbtTestCases.Get_AGI_ResponseTime:
 
                     RootSolutionPath = MyUtils.GetRootSolutionPath();

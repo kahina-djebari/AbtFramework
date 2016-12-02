@@ -308,10 +308,14 @@ namespace abtTest.Web
 
 
 
-        // [Fact(DisplayName ="TestIp")]
-        public void getIp()
+        [Fact(DisplayName ="Should Go To SANS Prod")]
+        public void Should_Go_To_SANS_Prod()
         {
-            Console.WriteLine(MyUtils.GetLocalIpAddress());
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_SANS_Response_Time);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.IE);
+            AbtPages.SANSHomepage.Go();
+            Assert.True(AbtPages.SANSHomepage.IsAt());
         }
 
     }

@@ -115,9 +115,14 @@
     <Compile Include="HomeDropdown.cs" />
     <Compile Include="KmWorkSpacePage.cs" />
     <Compile Include="MailOffice365Page.cs" />
+    <Compile Include="MyIRRSubmition.cs" />
     <Compile Include="NewsDropdown.cs" />
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="Office365LoginPage.cs" />
+    <Compile Include="SANSHomepage.cs" />
+    <Compile Include="ServiceNowIRRForm.cs" />
+    <Compile Include="ServiceNowIRRTable.cs" />
+    <Compile Include="ServiceNowTaskBar.cs" />
     <Compile Include="SharePointTopNavigation.cs" />
     <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
@@ -216,8 +221,10 @@
     <Content Include="TestPlans\EbscoTestResponseTime.txt" />
     <Content Include="TestPlans\RightFindProdResponseThrouhAGI.txt" />
     <Content Include="TestPlans\RightFindTestResponseTime.txt" />
+    <Content Include="TestPlans\SansResponseTime.txt" />
     <Content Include="TestPlans\ServiceNowProdResponseTime.txt" />
     <Content Include="TestPlans\ServiceNowTestResponseTime.txt" />
+    <Content Include="TestPlans\ServiceNow_Create_IRR_Test_Script.txt" />
     <Content Include="TestPlans\SuccessFactorsProdResponseTime.txt" />
     <Content Include="TestPlans\SuccessFactorsTestResponseTime.txt" />
     <Content Include="TestPlans\WebExTestResponseTime.txt" />

@@ -9,6 +9,7 @@ using AbtFramework.Utils_Classes;
 using OpenQA.Selenium.Support.Events;
 using OpenQA.Selenium.Support.Extensions;
 using System.Drawing.Imaging;
+using OpenQA.Selenium.Support.UI;
 
 namespace AbtFramework
 {
@@ -16,6 +17,12 @@ namespace AbtFramework
     {
     
         static InternetExplorerOptions IEoptions;
+
+        public static WebDriverWait GenerateDriverWait()
+        {
+            throw new NotImplementedException();
+        }
+
         public static IWebDriver Instance;
         public static IWebDriver driver1;
         public static IWebDriver driver2;

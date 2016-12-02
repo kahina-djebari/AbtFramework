@@ -64,5 +64,22 @@ namespace abtTest.Web
             AbtPages.OutlookWebPage.SendEmail("abtassoctest@abtassoc.com", "subject goes here", "Body goes here");
         }
 
+        [Fact(DisplayName ="Should Create IRR")]
+        public void Should_create_IRR()
+        {
+            TestCaseGenerator.SetTestCase(AbtTestCases.ServiceNowCreateIRR);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.Chrome);
+            AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.ServiceNowHomepage.ImpersonateUser("Stella Laidoson");
+            AbtPages.ServiceNowHomepage.OpenIRRSection();
+            AbtPages.ServiceNowTaskBar.New();
+            AbtPages.ServiceNowIRRForm.FillWithDefaultValues();
+            AbtPages.ServiceNowTaskBar.Submit();
+            Assert.True(AbtPages.ServiceNowIRRTable.NewIRRExists());
+           
+        }
+        
+
     }
 }
