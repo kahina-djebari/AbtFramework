@@ -6,7 +6,7 @@ namespace AbtFramework
 {
     public class PageModel
     {
-        internal WebDriverWait wait;
+        public WebDriverWait wait;
         internal Actions action;
         internal static long timer1;
         internal static long timer2;

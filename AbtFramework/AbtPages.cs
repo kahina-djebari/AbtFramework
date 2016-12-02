@@ -94,9 +94,13 @@ namespace AbtFramework
         private static AgiEvents _agievents;
         private static AgiNewsArchive _aginewsarchive;
         private static AgiProposals _agiproposals;
-        private static KnowledgeHubLandingPage _knowledgehublandingpage;
-        public static AbtKnowledgePage AbtKnowledgePage { get {
-                _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
+        private static SANSHomepage _sanshomepage;
+        private static ServiceNowTaskBar _sntaskbar;
+        private static ServiceNowIRRForm _servicenowIRRform;
+        private static ServiceNowIRRTable _servicenowIRRTable;
+
+        public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
+
                 _abtKnowledgePage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _abtKnowledgePage.action = new Actions(SeleniumDriver.Instance);
                 return _abtKnowledgePage;
@@ -936,6 +940,49 @@ namespace AbtFramework
                 _agiproposals.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _agiproposals.action = new Actions(SeleniumDriver.Instance);
                 return _agiproposals;
+            }
+        }
+
+        public static SANSHomepage SANSHomepage {
+            get
+            {
+                _sanshomepage = PageGenerator.GetPage<SANSHomepage>();
+                _sanshomepage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _sanshomepage.action = new Actions(SeleniumDriver.Instance);
+                return _sanshomepage;
+            }
+        }
+
+        public static ServiceNowTaskBar ServiceNowTaskBar
+        {
+            get
+            {
+                _sntaskbar = PageGenerator.GetPage<ServiceNowTaskBar>();
+                _sntaskbar.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _sntaskbar.action = new Actions(SeleniumDriver.Instance);
+                return _sntaskbar;
+            }
+        }
+
+        public static ServiceNowIRRForm ServiceNowIRRForm
+        {
+            get
+            {
+                _servicenowIRRform = PageGenerator.GetPage<ServiceNowIRRForm>();
+                _servicenowIRRform.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _servicenowIRRform.action = new Actions(SeleniumDriver.Instance);
+                return _servicenowIRRform;
+            }
+        }
+
+        public static ServiceNowIRRTable ServiceNowIRRTable
+        {
+            get
+            {
+                _servicenowIRRTable = PageGenerator.GetPage<ServiceNowIRRTable>();
+                _servicenowIRRTable.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _servicenowIRRTable.action = new Actions(SeleniumDriver.Instance);
+                return _servicenowIRRTable;
             }
         }
     }

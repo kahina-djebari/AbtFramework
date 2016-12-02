@@ -76,6 +76,19 @@ namespace abtTest.Web
 
         }
 
+     //   [Fact(DisplayName="Should Go To Ebsco Production Through AGI")]
+        public void Should_Go_To_Ebsco_Production_Through_AGI()
+        {
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_Ebsco_Prod_ResponseTime);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.IE);
+            AbtPages.AgiHomePage.Go();
+            AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_AbtResearchLibrary();
+            AbtPages.AgiAbtResearch.GoToEbscoDS();
+            Assert.True(AbtPages.EbscoHomePage.isAt());
+
+        }
+
 
       // [Fact(DisplayName = "Should Go to Success Factor (Test) Home Page")]
         public void Should_Go_to_SuccessFactor_Test_HomePage()
@@ -283,11 +296,26 @@ namespace abtTest.Web
             Assert.True(AbtPages.RightFindHomePage.IsAt());
         }
 
-
-       // [Fact(DisplayName ="TestIp")]
-        public void getIp()
+       //   [Fact(DisplayName ="Should Go to  AGI")]
+        public void Should_Go_To_AGI()
         {
-            Console.WriteLine(MyUtils.GetLocalIpAddress());
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_AGI_ResponseTime);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.IE);
+            AbtPages.AgiHomePage.Go();
+            Assert.True(AbtPages.AgiHomePage.isAt());
+        }
+
+
+
+        [Fact(DisplayName ="Should Go To SANS Prod")]
+        public void Should_Go_To_SANS_Prod()
+        {
+            TestCaseGenerator.SetTestCase(AbtTestCases.Get_SANS_Response_Time);
+            TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
+            SeleniumDriver.init(Browser.IE);
+            AbtPages.SANSHomepage.Go();
+            Assert.True(AbtPages.SANSHomepage.IsAt());
         }
 
     }

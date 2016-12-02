@@ -21,11 +21,45 @@ namespace AbtFramework.Utils_Classes
         public static string HtmlTestName { get; private set; }
         public static string HtmlSummary { get; private set; }
 
+
         public static void SetTestCase(AbtTestCases testCase)
         {
             switch (testCase)
             {
+                case AbtTestCases.ServiceNowCreateIRR:
 
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Create Incident Response Report");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\ServiceNow_Create_IRR_Test_Script.txt");
+
+                    break;
+
+                case AbtTestCases.Get_SANS_Response_Time:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should go to SANS (Abt Training)");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\SansResponseTime.txt");
+
+
+                    break;
+                case AbtTestCases.Get_AGI_ResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should go to AGI Production");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\AGIPRODResponseTime.txt");
+
+                    break;
+                case AbtTestCases.Get_Ebsco_Prod_ResponseTime:
+
+                    RootSolutionPath = MyUtils.GetRootSolutionPath();
+                    CurrentTestCase = new TestCase("Should Go To Ebsco Production");
+                    CurrentTestCase.IsResponseTimeRequired = true;
+                    LoadTestCase(RootSolutionPath + @"AbtFramework\TestPlans\EbscoProdResponseTime.txt");
+
+                    break;
                 case AbtTestCases.Get_SuccessFactors_Prod_ResponseTime:
 
                     RootSolutionPath = MyUtils.GetRootSolutionPath();

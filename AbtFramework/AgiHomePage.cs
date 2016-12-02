@@ -85,22 +85,22 @@ namespace AbtFramework
             try
             {
                 StartTimer();
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
-                   TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Agi Home Page");
-                SeleniumDriver.Instance.Navigate().GoToUrl("http://agi.abtassociates.com");
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to AGI Home Page https://agiokta.abtassociates.com"))
+                   TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to AGI Home Page https://agiokta.abtassociates.com");
+                SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
                 Console.WriteLine("Going to AGI Home Page...");
                 Console.WriteLine("</br>");
-                wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
-                StopTimer();
+                //wait.Until(e => SeleniumDriver.Instance.Title.Equals("abtassoc.sharepoint.com"));
+              //  StopTimer();
                
                 Console.WriteLine("AGI Home Page Loaded in: " + LoadTime);
                 Console.WriteLine("</br>");
             }
             catch(Exception ex)
             {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Agi Home Page"))
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to AGI Home Page https://agiokta.abtassociates.com"))
                 {
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Agi Home Page",ex.Message);
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to AGI Home Page https://agiokta.abtassociates.com", ex.Message);
                 }
 
                 throw ex;
@@ -128,14 +128,46 @@ namespace AbtFramework
 
         public bool isAt()
         {
-            
-                if (HomeLink.Enabled)
+            try
+            {
+                //  StartTimer();
+                wait.Until(e => HomeLink.Displayed);
+                StopTimer();
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Check if Home TopNavigation Bar is Displayed"))
                 {
-                    return true;
+                    if (TestCaseGenerator.CurrentTestCase.IsResponseTimeRequired)
+                    {
+                        TestCaseGenerator.CurrentTestCase.SetResponseTime(timer2 - timer1);
+                        TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Check if Home TopNavigation Bar is Displayed");
+                    }
+                   
+
+
                 }
-           
-         
-            return false;
+                 
+            //    SeleniumDriver.Instance.Navigate().GoToUrl("https:/agiokta.abtassociates.com");
+              //  Console.WriteLine("Going to AGI Home Page...");
+               // Console.WriteLine("</br>");
+              //  wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
+
+                
+
+             //   Console.WriteLine("AGI Home Page Loaded in: " + LoadTime);
+               // Console.WriteLine("</br>");
+            }
+            catch (Exception ex)
+            {
+                if (TestCaseGenerator.CurrentTestCase.StepExist("Check if Home TopNavigation Bar is Displayed"))
+                {
+                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Check if Home TopNavigation Bar is Displayed", ex.Message);
+                }
+
+                throw ex;
+
+            }
+
+
+            return true;
         }
 
         public void ClickUntilTitleIs(string title, IWebElement element)
