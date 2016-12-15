@@ -98,6 +98,7 @@ namespace AbtFramework
         private static ServiceNowTaskBar _sntaskbar;
         private static ServiceNowIRRForm _servicenowIRRform;
         private static ServiceNowIRRTable _servicenowIRRTable;
+        private static KnowledgeHubLandingPage _knowledgehublandingpage;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
