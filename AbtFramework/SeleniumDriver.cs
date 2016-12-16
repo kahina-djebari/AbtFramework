@@ -57,7 +57,6 @@ namespace AbtFramework
                     break;
                 case Browser.RemoteSofianesIECleanSession:
                     IEoptions = new InternetExplorerOptions();
-                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
                     IEoptions.EnablePersistentHover = true;
                    // IEoptions.EnsureCleanSession = true;
                    IEoptions.EnableNativeEvents = false;
@@ -122,8 +121,8 @@ namespace AbtFramework
                     
                      IEoptions = new InternetExplorerOptions();
                      IEoptions.EnablePersistentHover = true;
-                   // IEoptions.EnsureCleanSession = true;
-
+                    // IEoptions.EnsureCleanSession = true;
+                    IEoptions.IgnoreZoomLevel = true;
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
         
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -157,7 +156,6 @@ namespace AbtFramework
                 case Browser.RemoteSofianesIE:
 
                     IEoptions = new InternetExplorerOptions();
-                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
                     IEoptions.EnablePersistentHover = true;
 
 
@@ -171,7 +169,6 @@ namespace AbtFramework
                 case Browser.RemoteSofianesIENoNativeEvents:
 
                     IEoptions = new InternetExplorerOptions();
-                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
                     IEoptions.IgnoreZoomLevel = true;
                     IEoptions.EnableNativeEvents = false;
                     Instance = new RemoteWebDriver(new Uri("http://10.220.68.64:4444/wd/hub"), IEoptions.ToCapabilities()
@@ -185,7 +182,6 @@ namespace AbtFramework
 
                 case Browser.RemoteFrometaIE:
                     IEoptions = new InternetExplorerOptions();
-                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
                     IEoptions.IgnoreZoomLevel = true;
                     IEoptions.EnableNativeEvents = false;
                     Instance = new RemoteWebDriver(new Uri("http://172.18.58.24:4444/wd/hub"), IEoptions.ToCapabilities()

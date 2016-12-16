@@ -10,6 +10,7 @@ namespace AbtFramework.Utils_Classes
     {
         QA_ReadinessChecklist_v4,
         SampleAVMetrics,
-        ITMetrics
+        ITMetrics,
+        KnowledgeHub
     }
 }

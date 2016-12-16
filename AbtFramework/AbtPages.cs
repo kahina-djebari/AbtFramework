@@ -99,6 +99,7 @@ namespace AbtFramework
         private static ServiceNowIRRForm _servicenowIRRform;
         private static ServiceNowIRRTable _servicenowIRRTable;
         private static AgiAbtLibrarySearch _AgiAbtLibrary;
+        private static KnowledgeHubLandingPage _knowledgehublandingpage;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
@@ -107,7 +108,12 @@ namespace AbtFramework
                 return _abtKnowledgePage;
             } }
 
- 
+        public static KnowledgeHubLandingPage KnowledgeHubLandingPage { get {
+                _knowledgehublandingpage = PageGenerator.GetPage<KnowledgeHubLandingPage>();
+                _knowledgehublandingpage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _knowledgehublandingpage.action = new Actions(SeleniumDriver.Instance);
+                return _knowledgehublandingpage;
+            } }
 
         public static AbtTravelPage AbtTravelPage { get {  _abtTravelPage = PageGenerator.GetPage<AbtTravelPage>();
                 _abtTravelPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
@@ -191,7 +197,8 @@ namespace AbtFramework
         {
             get
             {
-                _outolooEmailViewerPage = PageGenerator.GetPage<OutlookEmailViewerPage>();
+                
+                   _outolooEmailViewerPage = PageGenerator.GetPage<OutlookEmailViewerPage>();
                 _outolooEmailViewerPage.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _outolooEmailViewerPage.action = new Actions(SeleniumDriver.Instance);
                 return _outolooEmailViewerPage;
