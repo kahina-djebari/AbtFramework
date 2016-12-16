@@ -37,6 +37,8 @@ namespace AbtFramework
         private IWebElement abtvalueLink;
         private HomeDropdown _homedropdown;
         private NewsDropdown _newsdropdown;
+        [FindsBy(How=How.LinkText,Using = "Tools & Resources")]
+        private IWebElement ToolsAndResourscesLink;
 
         public ToolsDropdown ToolsDropdown { get {
                 _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>();
@@ -84,7 +86,8 @@ namespace AbtFramework
         public void HoverOverTools()
         {
 
-            action.MoveToElement(ToolsLink).Perform();
+            action.MoveToElement(ToolsAndResourscesLink).Perform();
+            Thread.Sleep(1000);
 
 
         }

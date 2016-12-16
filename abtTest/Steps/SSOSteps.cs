@@ -13,6 +13,7 @@ namespace abtTest.Steps
         private string AbtXchangeHandle;
         private string EbscoWinHandle;
         private string RightFindWinHandle;
+        private string AtlasWinHandle;
 
         [AfterScenario]
         public void CleanUp()
@@ -190,13 +191,13 @@ namespace abtTest.Steps
         [When(@"I Click on Abt Talent, Learning and Support \(ATLAS\)")]
         public void WhenIClickOnAbtTalentLearningAndSupportATLAS()
         {
-            AbtPages.AgiTopNavigation.ToolsDropdown.OpenSuccessFactors();
+          AtlasWinHandle= AbtPages.AgiTopNavigation.ToolsDropdown.OpenSuccessFactors();
         }
 
         [When(@"I wait for the SuccessFactor Home Page to load")]
         public void WhenIWaitForTheSuccessFactorHomePageToLoad()
         {
-            AbtPages.SuccessFactorHomePage.WaitForHomePageToLoad();
+            AbtPages.SuccessFactorHomePage.WaitForHomePageToLoad(AtlasWinHandle);
         }
 
         [Then(@"I Should be able to calculate what the SuccessFactor Home Page response time is")]

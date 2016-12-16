@@ -74,7 +74,7 @@ namespace abtTest.Features.SSO
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
@@ -92,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 14
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
@@ -114,7 +114,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 21
 this.ScenarioSetup(scenarioInfo);
 #line 22
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 23
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
@@ -136,7 +136,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 29
 this.ScenarioSetup(scenarioInfo);
 #line 31
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
@@ -158,7 +158,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 38
 this.ScenarioSetup(scenarioInfo);
 #line 40
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 41
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
@@ -182,7 +182,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 48
 this.ScenarioSetup(scenarioInfo);
 #line 50
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 51
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
@@ -207,7 +207,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 58
 this.ScenarioSetup(scenarioInfo);
 #line 60
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 61
  testRunner.When("I navigate to ServiceNow Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
@@ -225,7 +225,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 65
 this.ScenarioSetup(scenarioInfo);
 #line 67
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 68
  testRunner.When("I navigate to WebEx Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69

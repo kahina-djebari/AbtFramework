@@ -41,7 +41,16 @@ namespace AbtFramework
         {
             switch (browser)
             {
+                case Browser.IECleanSessionIgnoreProtectedMode:
+                    IEoptions = new InternetExplorerOptions();
+                    IEoptions.EnablePersistentHover = true;
+                    IEoptions.EnsureCleanSession = true;
+                    IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+                    Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
 
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Window.Maximize();
+                    break;
                 case Browser.RemoteQALaptop:
 
                     IEoptions = new InternetExplorerOptions();
@@ -300,6 +309,11 @@ namespace AbtFramework
                     break;
             }
          
+        }
+
+        public static void init(object iECleanSessionIgnoreProtectedMode)
+        {
+            throw new NotImplementedException();
         }
 
         public static string GetAlertText()
