@@ -19,7 +19,7 @@ namespace AbtFramework
         [FindsBy(How = How.LinkText, Using = "AbtKnowledge")]
         private IWebElement AbtKnowledge;
 
-        [FindsBy(How = How.LinkText, Using = "AbtTravel Portal")]
+        [FindsBy(How = How.LinkText, Using = "AbtTravel Online Booking")]
         public IWebElement AbtTravel;
 
         [FindsBy(How = How.LinkText, Using = "Oracle")]
@@ -37,6 +37,20 @@ namespace AbtFramework
 
         [FindsBy(How = How.LinkText, Using = "Reputational Capital Database")]
         private IWebElement repCapDBPageLink;
+
+        [FindsBy(How=How.LinkText,Using ="AbtXchange")]
+        private IWebElement AbtXchange;
+        [FindsBy(How=How.LinkText,Using ="Abt Research Library")]
+        private IWebElement AbtResearchLibrary;
+
+        public string OpenAbtXchange()
+        {
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+          string AbtXchangeHandle= finder.Click(AbtXchange);
+            StartTimer();
+            return AbtXchangeHandle;
+
+        }
 
         public IWebElement ToolsAndResources { get { return SeleniumDriver.Instance.FindElement(By.LinkText("Tools & Resources")); } }
 
@@ -244,6 +258,28 @@ namespace AbtFramework
 
             }
         }
+
+        public void OpenAbtResearchLibrary()
+        {
+            AbtResearchLibrary.Click();
+            
+        }
+
+        public string OpenAbtTravel()
+        {
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+           string handle=finder.Click(AbtTravel);
+            StartTimer();
+            return handle;
+        }
+
+        public void OpenSuccessFactors()
+        {
+            Atlas.Click();
+            StartTimer();
+
+        }
+
 
         private void OpenServiceCenterLink(string linkText)
         {

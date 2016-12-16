@@ -25,7 +25,7 @@ namespace AbtFramework
                 case WebEnvironment.ProductionEnvironment:
                     _Environment = "Production";
                     SingleSignOnProvider = "Simieo";
-                    GoToUrl("https://www.rightfind.com/vlib/logon.aspx?clientid=11397");
+                    GoToUrl("https://www.rightfind.com/vlib/rfe.aspx");
                     break;
                 default:
                     break;
@@ -34,28 +34,10 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-
-
-            try
-            {
-                StartTimer();
-
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
-
-                SeleniumDriver.Instance.Navigate().GoToUrl(url);
-
-            }
-
-            catch(Exception ex)
-            {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Url " + url, ex.Message);
-
-
-                throw (ex);
-            }
-          
+                              
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            StartTimer();
+                              
            
         }
 
@@ -111,6 +93,18 @@ namespace AbtFramework
 
 
             return false;
+        }
+
+        public void WaitForHomePageToLoad(string RightFindWinHandle)
+        {
+           SeleniumDriver.Instance.SwitchTo().Window(RightFindWinHandle);
+            wait.Until(e => RightHeaderToolbar.Displayed);
+            StopTimer();
+        }
+
+        public string GetResponseTime()
+        {
+            return LoadTime;
         }
     }
 }

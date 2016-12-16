@@ -66,6 +66,21 @@ namespace AbtFramework
             return false;
         }
 
+        public void WaitForHomePageToLoad(string abtTravelHandle)
+        {
+            SeleniumDriver.Instance.SwitchTo().Window(abtTravelHandle);
+            wait.Until(e => warning.Displayed);
+            warning.Click();
+            wait.Until(e => Logo.Displayed);
+            StopTimer();
+
+        }
+
+        public string GetResponseTime()
+        {
+            return LoadTime;
+        }
+
         private bool isAt()
         {
             try

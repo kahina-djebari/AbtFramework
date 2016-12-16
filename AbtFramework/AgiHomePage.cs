@@ -18,8 +18,15 @@ namespace AbtFramework
         [FindsBy(How=How.ClassName,Using = "o365cs-me-tileview-container")]
         private IWebElement userCard;
 
+      
+
         [FindsBy(How = How.ClassName, Using = "o365cs-me-userDisplayName")]
         private IWebElement username;
+
+        public string GetResponseTime()
+        {
+            return LoadTime;
+        }
 
         [FindsBy(How=How.Id,Using ="rotator519")]
         private IWebElement todayILearnedLink;
@@ -82,32 +89,19 @@ namespace AbtFramework
 
         public void Go()
         {
-            try
-            {
+            
+            
                 StartTimer();
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to AGI Home Page https://agiokta.abtassociates.com"))
-                   TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to AGI Home Page https://agiokta.abtassociates.com");
                 SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
-                Console.WriteLine("Going to AGI Home Page...");
-                Console.WriteLine("</br>");
-                //wait.Until(e => SeleniumDriver.Instance.Title.Equals("abtassoc.sharepoint.com"));
-              //  StopTimer();
-               
-                Console.WriteLine("AGI Home Page Loaded in: " + LoadTime);
-                Console.WriteLine("</br>");
-            }
-            catch(Exception ex)
-            {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to AGI Home Page https://agiokta.abtassociates.com"))
-                {
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to AGI Home Page https://agiokta.abtassociates.com", ex.Message);
-                }
+              
+                           
+         
+        }
 
-                throw ex;
-                    
-            }
-      
-
+        public void WaitForHomeToLoad()
+        {
+            wait.Until(e => HomeLink.Displayed);
+            StopTimer();
         }
 
         public bool isUserLoggedin()

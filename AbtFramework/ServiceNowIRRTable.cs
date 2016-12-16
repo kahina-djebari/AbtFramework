@@ -5,12 +5,12 @@ namespace AbtFramework
 {
     public class ServiceNowIRRTable : PageModel
     {
-        public bool NewIRRExists()
+        public bool IRRExists(string IncidentReportId)
         {
             try
             {
-                Console.WriteLine(MyIRRSubmition.GetNumber());
-                IWebElement IRR = SeleniumDriver.Instance.FindElement(By.LinkText(MyIRRSubmition.GetNumber()));
+                
+                IWebElement IRR = SeleniumDriver.Instance.FindElement(By.LinkText(IncidentReportId));
                 IRR.Click();
                 return true;   
               

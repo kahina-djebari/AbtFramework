@@ -30,73 +30,27 @@ namespace AbtFramework
             return false;
         }
 
-        public void GoToRightFind()
+        public string GoToRightFind()
         {
-            try
-            {
-                popupWindowHandle = SeleniumDriver.Instance.CurrentWindowHandle;
-                RightFindLink.Click();
-                StartTimer();
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Document Delivery via Copyright Clearance Center | RightFind"))
-                {
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on Document Delivery via Copyright Clearance Center | RightFind");
-                }
 
-            }
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            string  RightFindWinHandle= finder.Click(RightFindLink);
+            StartTimer();
+            return RightFindWinHandle;
 
-            catch(Exception ex)
-            {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Document Delivery via Copyright Clearance Center | RightFind"))
-                {
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on Document Delivery via Copyright Clearance Center | RightFind",ex.Message);
-                }
-
-                throw (ex);
-            }
-            var handles = SeleniumDriver.Instance.WindowHandles;
-            SeleniumDriver.Close();
-            var switchtohandle = "";
-            foreach(var handle in handles)
-            {
-                if (popupWindowHandle != handle)
-                {
-                     switchtohandle = handle;
-                }
-            }
-            SeleniumDriver.Instance.SwitchTo().Window(switchtohandle);
-           
+         
+            
         }
 
-        public void GoToEbscoDS()
+        public string GoToEbscoDS()
         {
-             try
-             {
+             
              finder = new PopupWindowFinder(SeleniumDriver.Instance);
-            popupWindowHandle = finder.Click(SeleniumDriver.Instance.FindElement(By.LinkText("EBSCO Discovery Service")));
-            
-                StartTimer();
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on EBSCO Discovery Service"))
-                {
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on EBSCO Discovery Service");
+            string EbscoWinHandle= finder.Click(EbscoDS);
+             StartTimer();
+            return EbscoWinHandle;
 
-                }
-
-                SeleniumDriver.Close();
-                SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-                
-                    
-            }
-
-           catch(Exception ex)
-           {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on EBSCO Discovery Service"))
-               {
-                  TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on EBSCO Discovery Service",ex.Message);
-               }
-
-              throw (ex);
-           }
-
+           
 
         }
     }

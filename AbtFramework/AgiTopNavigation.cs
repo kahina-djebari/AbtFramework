@@ -83,9 +83,8 @@ namespace AbtFramework
 
         public void HoverOverTools()
         {
-            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.TagName("body")));
-            ToolsLink.Click();
 
+            action.MoveToElement(ToolsLink).Perform();
 
 
         }

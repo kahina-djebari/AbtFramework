@@ -13,8 +13,8 @@ namespace AbtFramework
         {
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
-            wait.Until(e => AbtPages.IncidentTablePageObject.FirstIncident.Enabled);
-            if (AbtPages.IncidentTablePageObject.FirstIncidentDescription.Equals(IncidentDescription))
+            wait.Until(e => AbtPages.TablePageObject.FirstRowItem.Enabled);
+            if (AbtPages.TablePageObject.FirstIncidentDescription.Equals(IncidentDescription))
             {
                 return true;
             }

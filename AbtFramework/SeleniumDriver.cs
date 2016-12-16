@@ -210,7 +210,7 @@ namespace AbtFramework
                     break;
                 case Browser.Chrome:
                     Instance = new ChromeDriver(@"C:\Selenium\ChromeDriver");
-
+                   
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     Instance.Manage().Window.Maximize();
                     break;
@@ -304,6 +304,14 @@ namespace AbtFramework
                     break;
             }
          
+        }
+
+        public static string GetAlertText()
+        {
+            WebDriverWait wait = new WebDriverWait(Instance, TimeSpan.FromSeconds(5));
+            var alert = wait.Until(ExpectedConditions.AlertIsPresent());
+            
+            return alert.Text;
         }
 
         public static void GoTo(string url )

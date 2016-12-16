@@ -77,6 +77,7 @@
     <Compile Include="AbtTravelPage.cs" />
     <Compile Include="AgiAboutAbt.cs" />
     <Compile Include="AgiAbtLearnPage.cs" />
+    <Compile Include="AgiAbtLibrarySearch.cs" />
     <Compile Include="AgiAbtResearch.cs" />
     <Compile Include="AgiAbtStrategy.cs" />
     <Compile Include="AgiAbtValues.cs" />

@@ -48,7 +48,7 @@ namespace AbtFramework
         private static WeSpireInvitePage _wespireinvitepage;
         private static ITServiceRequestFormPage _itserviceaskquestionpage;
         private static MyOpenIncidentsPage _myopenincidentspage;
-        private static IncidentTablePageObject _incidenttablepageobject;
+        private static TablePageObject _incidenttablepageobject;
         private static ITKnowledgeBasePage _knowledgebase;
         private static PowerPointOnlinePage _powerpointonlinepage;
         private static ExcelOnlinePage _excelonlinepage;
@@ -98,6 +98,7 @@ namespace AbtFramework
         private static ServiceNowTaskBar _sntaskbar;
         private static ServiceNowIRRForm _servicenowIRRform;
         private static ServiceNowIRRTable _servicenowIRRTable;
+        private static AgiAbtLibrarySearch _AgiAbtLibrary;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
@@ -464,10 +465,10 @@ namespace AbtFramework
             }
         }
 
-        public static IncidentTablePageObject IncidentTablePageObject {
+        public static TablePageObject TablePageObject {
             get
             {
-                _incidenttablepageobject = PageGenerator.GetPage<IncidentTablePageObject>();
+                _incidenttablepageobject = PageGenerator.GetPage<TablePageObject>();
                 _incidenttablepageobject.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _incidenttablepageobject.action = new Actions(SeleniumDriver.Instance);
                 return _incidenttablepageobject;
@@ -977,6 +978,17 @@ namespace AbtFramework
                 _servicenowIRRTable.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
                 _servicenowIRRTable.action = new Actions(SeleniumDriver.Instance);
                 return _servicenowIRRTable;
+            }
+        }
+
+        public static AgiAbtLibrarySearch AgiAbtLibrarySearch
+        {
+            get
+            {
+                _AgiAbtLibrary = PageGenerator.GetPage<AgiAbtLibrarySearch>();
+                _AgiAbtLibrary.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _AgiAbtLibrary.action = new Actions(SeleniumDriver.Instance);
+                return _AgiAbtLibrary;
             }
         }
     }

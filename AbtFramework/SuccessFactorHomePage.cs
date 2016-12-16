@@ -39,6 +39,17 @@ namespace AbtFramework
             }
         }
 
+        public void WaitForHomePageToLoad()
+        {
+            wait.Until(e => HomeDropdown.Displayed);
+            StopTimer();
+        }
+
+        public string GetResponseTime()
+        {
+            return LoadTime;
+        }
+
         private void GoToUrl(string url)
         {
 

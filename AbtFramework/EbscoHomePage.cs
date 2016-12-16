@@ -72,6 +72,18 @@ namespace AbtFramework
            
         }
 
+        public string GetResponseTime()
+        {
+            return LoadTime;
+        }
+
+        public void WaitForHomePageToLoad(string EbscoWinHandle)
+        {
+            SeleniumDriver.Instance.SwitchTo().Window(EbscoWinHandle);
+            wait.Until(e => HomeSearchBar.Displayed);
+            StopTimer();
+        }
+
         private void TakeScreenshot()
         {
             Screenshot ss = ((ITakesScreenshot)SeleniumDriver.Instance).GetScreenshot();

@@ -84,7 +84,7 @@ namespace AbtFramework
         private IWebElement IncidentComments;
         [FindsBy(How = How.Id, Using = "resolve_incident")]
         private IWebElement ResolveIncident;
-        [FindsBy(How=How.Id,Using = "tmr_e0068fd52b5e2a00fccbf62219da1547_img")]
+        [FindsBy(How=How.Id,Using = "link.incident.time_worked")]
         private IWebElement TimeworkedOnIncident;
         [FindsBy(How=How.Id,Using = "b55fbec4c0a800090088e83d7ff500de")]
         private IWebElement IncidentOpen;
@@ -110,13 +110,31 @@ namespace AbtFramework
         private IWebElement IncidentNumber;
         [FindsBy(How = How.ClassName, Using = "menu")]
         private IList<IWebElement> menuLinks;
+
+        public string GetErrorMsg()
+        {
+            return OutputMsg;
+        }
+
         [FindsBy(How=How.Id,Using = "incident.impact")]
         private IWebElement impactSelected;
         [FindsBy(How=How.Id,Using = "u_hr_service_tracking.u_status")]
         private IWebElement StatusDropdown;
 
+        public void WaitForHomePageToLoad()
+        {
+            wait.Until(e => CurrentUser.Displayed);
+            StopTimer();
+        }
+
         [FindsBy(How=How.Id,Using = "4161db8730a29a00615eb46830c88978")]
         private IWebElement facilityRequests;
+
+        public string GetResponseTime()
+        {
+            return LoadTime;
+        }
+
         [FindsBy(How=How.Id,Using = "closeComplete")]
         private IWebElement closeComplete;
         [FindsBy(How=How.Id,Using = "startWork")]
@@ -168,6 +186,10 @@ namespace AbtFramework
         private IWebElement header;
         [FindsBy(How=How.LinkText,Using ="Incident Response Report")]
         private IWebElement IRR;
+        [FindsBy(How=How.Id,Using = "div.a0c997b64f03e200ff2d85c98310c799")]
+        private IWebElement IRRSection;
+        [FindsBy(How=How.ClassName,Using ="outputmsg_text")]
+        private IWebElement _outputMsg;
 
         public IWebElement SelfServiceContact { get { return contactType.FindElements(By.TagName("option"))
                                                                  .Single(e => e.Text.Equals("Self-service")); } }
@@ -192,20 +214,44 @@ namespace AbtFramework
             }
         }
 
+        public string OutputMsg { get { return _outputMsg.Text; } }
 
         public void OpenIRRSection()
         {
-            try
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+
+            wait.Timeout = TimeSpan.FromSeconds(5);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
+            wait.Until(e =>
             {
 
-                SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
-                IRR.Click();
-            }
+                try
+                {
+                    IRR.Click();
+                    return true;
+                }
 
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+                catch(Exception ex)
+                {
+                    
+                    ExpandIRRSection();
+                    return false;
+                }
+              
+        
+               
+            });
+            SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+
+            
+           
+        }
+
+        private void ExpandIRRSection()
+        {
+            IRRSection.Click();
         }
 
         public void OpenHRIssues()
@@ -237,12 +283,11 @@ namespace AbtFramework
             submitbtn.Click();
         }
 
-        public void CreateNewIncident(string callerfield, string Category, string subCategory, string Type, string ITSCResponder, string assigmentGroup)
+        public string CreateNewIncident(string callerfield, string Category, string subCategory, string Type, string ITSCResponder, string assigmentGroup)
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
-
+           
             NewTicket.Click();
+            string IncidentID = IncidentNumber.GetAttribute("value");
             caller.SendKeys(callerfield);
             TimeworkedOnIncident.Click();
            
@@ -252,12 +297,15 @@ namespace AbtFramework
             Thread.Sleep(1000);
             ITType.SelectOption(Type).Click();
             ITFirstResponder.SendKeys(ITSCResponder);
+            action.SendKeys(Keys.Tab).Perform();
             AssignmentGroup.SendKeys(assigmentGroup);
-           
-            ITworkNotes.SendKeys("Test Incident Request from service now");
-            TimeworkedOnIncident.Click();
+            action.SendKeys(Keys.Tab).Perform();
+            Thread.Sleep(1500);
+            //            ITworkNotes.SendKeys("Test Incident Request from service now");
+            //TimeworkedOnIncident.Click();
+         //   action.SendKeys(Keys.Tab).Perform();
             submitbtn.Click();
-
+            return IncidentID;
             
         }
 
@@ -370,7 +418,7 @@ namespace AbtFramework
                       
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
-            AbtPages.IncidentTablePageObject.FirstIncident.Click();
+            AbtPages.TablePageObject.FirstRowItem.Click();
        
 
             if (!SelfServiceContact.Selected)
@@ -455,6 +503,8 @@ namespace AbtFramework
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
            // IncidentSection.Click();
             IncidentOpen.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
 
         public void Go(WebEnvironment link)
@@ -464,15 +514,15 @@ namespace AbtFramework
                 case WebEnvironment.TestEnvironment:
                     GotoUrl("https://abtassoctest.service-now.com/navpage.do");
                    // GotoUrl("https://abtassociates.okta.com/home/servicenow_app2/0oa80tx9crDmIcRfk0x7/14155");
-                    Console.WriteLine("Service Now (Test) Home Page Took: " + LoadTime + " to load Using Okta");
-                    Console.WriteLine("</br>");
+                  //  Console.WriteLine("Service Now (Test) Home Page Took: " + LoadTime + " to load Using Okta");
+                 //   Console.WriteLine("</br>");
                     SSOProvider = "Okta";
                     portalEnvironment = "Test";
                     break;
                 case WebEnvironment.ProductionEnvironment:
                              GotoUrl("https://abtassociates.service-now.com/navpage.do");
-                    Console.WriteLine("Service Now (Production) Home Page Took: " + LoadTime + " to load Using Simieo");
-                    Console.WriteLine("</br>");
+              //      Console.WriteLine("Service Now (Production) Home Page Took: " + LoadTime + " to load Using Simieo");
+                //    Console.WriteLine("</br>");
                     SSOProvider = "Simieo";
                     portalEnvironment = "Production";
                     break;
@@ -484,11 +534,11 @@ namespace AbtFramework
         private void GotoUrl(string url)
         {
                         
-                StartTimer();
+                
             
                 SeleniumDriver.Instance.Navigate().GoToUrl(url);
+                StartTimer();
 
-                      
 
         }
 
@@ -498,7 +548,7 @@ namespace AbtFramework
         {
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
-            AbtPages.IncidentTablePageObject.FirstIncident.Click();
+            AbtPages.TablePageObject.FirstRowItem.Click();
             ITSCResponder.SendKeys("Valeria Rozenbaum");
             TimeworkedOnIncident.Click();
             ITCategory.SelectOption("Software").Click();
@@ -519,7 +569,7 @@ namespace AbtFramework
 
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
-            AbtPages.IncidentTablePageObject.FirstIncident.Click();
+            AbtPages.TablePageObject.FirstRowItem.Click();
              AssignToHRPerson.Clear();
             AssignToHRPerson.SendKeys("Michael Stinson");
             AdditionalComments.SendKeys("Additional Comments");
@@ -584,13 +634,13 @@ namespace AbtFramework
 
 
 
-                AbtPages.IncidentTablePageObject.FirstIncident.Click();
+                AbtPages.TablePageObject.FirstRowItem.Click();
                 ReadyForWork.Click();
                 Facility_AssigntoPerson.SendKeys(assignedto);
                 timeworked.Click();
                 FacilityWorknotes.SendKeys(worknotes);
                 Update.Click();
-            AbtPages.IncidentTablePageObject.FirstIncident.Click();
+            AbtPages.TablePageObject.FirstRowItem.Click();
             StartWork.Click();
             FacilityWorknotes.SendKeys("Work completed");
             closeComplete.Click();

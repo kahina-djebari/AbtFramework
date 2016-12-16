@@ -18,8 +18,13 @@ namespace AbtFramework
 
         public void Login()
         {
-           // SeleniumDriver.seleniumdriver.SwitchTo().Frame("header");
-            loginbtn.Click();
+            SeleniumDriver.Instance.SwitchTo().Frame("header");
+           while(SeleniumDriver.Instance.Title.Equals("Abt Associates Inc. WebEx Enterprise Site"))
+            {
+                loginbtn.Click();
+            }
+           
+            StartTimer();
         }
 
         public void Go(WebEnvironment link)
@@ -43,45 +48,12 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            try
-            {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
-                
-                SeleniumDriver.Instance.Navigate().GoToUrl(url);
-              
-            }
-           
-            catch(Exception ex)
-            {
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Navigate to Url " + url,ex.Message);
-
-                throw (ex);
-            }
-
-
-            try
-            {
-                SeleniumDriver.Instance.SwitchTo().Frame("header");
-                SeleniumDriver.Instance.FindElement(By.Id("wcc-lnk-loginLink")).Click();
-                StartTimer();
-                Console.WriteLine("StartTimer="+timer1);
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Click on Log In");
-
-
-            }
-
-            catch(Exception ex)
-            {
-
-                if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
-                    TestCaseGenerator.CurrentTestCase.MarkStepAsFailed("Click on Log In",ex.Message);
-
-                throw (ex);
-
-            }
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            StartTimer();
+                            
+                    
+         
+         
 
            
 
@@ -132,6 +104,17 @@ namespace AbtFramework
             }
             return true;
 
+        }
+
+        public void WaitForHomePageToLoad()
+        {
+            wait.Until(e => StartMeeting.Displayed);
+            StopTimer();
+        }
+
+        public string GetResponseTime()
+        {
+            return LoadTime;
         }
     }
 }

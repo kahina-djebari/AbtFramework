@@ -61,6 +61,27 @@ namespace AbtFramework
             return false;
         }
 
+        public string GetResponseTime()
+        {
+            return LoadTime;
+        }
+
+        public void WaitForHomePageToLoad(string AbtXchangeHandle)
+        {
+            SeleniumDriver.Instance.SwitchTo().Window(AbtXchangeHandle);
+            try
+            {
+                LoginBtn.Click();
+                StartTimer();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            wait.Until(e => Dashboard.Displayed);
+            StopTimer();
+        }
+
         public void LikeOrUnlikeRandomComment()
         {
             random = new Random();

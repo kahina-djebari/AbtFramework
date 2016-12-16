@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace AbtFramework
 {
-    public class IncidentTablePageObject : PageModel
+    public class TablePageObject : PageModel
     {
         [FindsBy(How = How.ClassName, Using = "list_row")]
-        private IList<IWebElement> IncidentRows;
+        private IList<IWebElement> Rows;
 
-        internal IWebElement FirstIncident
+        public IWebElement FirstRowItem
         {
             get
             {
-                return IncidentRows[0].FindElements(By.TagName("td"))[2].FindElement(By.TagName("a"));
+                return Rows[0].FindElements(By.TagName("td"))[2].FindElement(By.TagName("a"));
             }
         }
         internal string FirstIncidentDescription
@@ -22,9 +22,19 @@ namespace AbtFramework
             get
             {
 
-                return IncidentRows[0].FindElements(By.TagName("td"))[3].Text;
+                return Rows[0].FindElements(By.TagName("td"))[3].Text;
 
             }
+        }
+
+        public void OpenIncident(string IncidentId)
+        {
+            SeleniumDriver.Instance.FindElement(By.LinkText(IncidentId)).Click();
+        }
+
+        public void OpenFirstRowItem()
+        {
+            FirstRowItem.Click();
         }
     }
 }
