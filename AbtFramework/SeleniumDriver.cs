@@ -53,7 +53,7 @@ namespace AbtFramework
 
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     Instance.Manage().Window.Maximize();
-
+                   
                     break;
                 case Browser.RemoteSofianesIECleanSession:
                     IEoptions = new InternetExplorerOptions();

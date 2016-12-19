@@ -99,7 +99,6 @@ namespace AbtFramework
         private static ServiceNowIRRForm _servicenowIRRform;
         private static ServiceNowIRRTable _servicenowIRRTable;
         private static AgiAbtLibrarySearch _AgiAbtLibrary;
-        private static KnowledgeHubLandingPage _knowledgehublandingpage;
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
