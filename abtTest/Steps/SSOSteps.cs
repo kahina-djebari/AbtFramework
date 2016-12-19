@@ -50,7 +50,7 @@ namespace abtTest.Steps
            AbtXchangeHandle= AbtPages.AgiTopNavigation.ToolsDropdown.OpenAbtXchange();
         }
 
-        [When(@"I wait for the AbtXchange Online Booking Home Page to load")]
+        [When(@"I wait for the AbtXchange Home Page to load")]
         public void WhenIWaitForTheAbtXchangeOnlineBookingHomePageToLoad()
         {
             AbtPages.WeSpireHomePage.WaitForHomePageToLoad(AbtXchangeHandle);
@@ -141,6 +141,7 @@ namespace abtTest.Steps
         public void GivenIHaveOpenIE()
         {
             SeleniumDriver.init(Browser.IECleanSession);
+
         }
 
 
