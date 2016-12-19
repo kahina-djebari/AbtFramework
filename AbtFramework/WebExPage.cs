@@ -19,11 +19,9 @@ namespace AbtFramework
         public void Login()
         {
             SeleniumDriver.Instance.SwitchTo().Frame("header");
-           while(SeleniumDriver.Instance.Title.Equals("Abt Associates Inc. WebEx Enterprise Site"))
-            {
-                loginbtn.Click();
-            }
-           
+          
+            loginbtn.Click();
+                      
             StartTimer();
         }
 

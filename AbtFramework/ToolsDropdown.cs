@@ -267,17 +267,19 @@ namespace AbtFramework
 
         public string OpenAbtTravel()
         {
+            
             finder = new PopupWindowFinder(SeleniumDriver.Instance);
            string handle=finder.Click(AbtTravel);
             StartTimer();
             return handle;
         }
 
-        public void OpenSuccessFactors()
+        public string OpenSuccessFactors()
         {
-            Atlas.Click();
-            StartTimer();
-
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+          string WinHandle=finder.Click(Atlas);
+           StartTimer();
+            return WinHandle;
         }
 
 

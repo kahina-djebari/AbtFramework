@@ -16,9 +16,10 @@ namespace AbtFramework
         private IWebElement HomeDropdown;
         [FindsBy(How = How.ClassName, Using = "dropDownButtonText")]
         private IList<IWebElement> dropdowns;
+        [FindsBy(How=How.Id,Using = "headerUtilitiesContainer")]
+        private IWebElement TopHeaderContainer;
 
-
-        public IWebElement Username { get { return dropdowns.Single(e => e.Text.Equals("David Acuna")); } }
+        public IWebElement Username { get { return dropdowns.Single(e => e.Text.Equals(SSOCrendentials.CurrentUser)); } }
 
         public void Go(WebEnvironment link)
         {
@@ -39,9 +40,10 @@ namespace AbtFramework
             }
         }
 
-        public void WaitForHomePageToLoad()
+        public void WaitForHomePageToLoad(string winHandle)
         {
-            wait.Until(e => HomeDropdown.Displayed);
+            SeleniumDriver.Instance.SwitchTo().Window(winHandle);
+            wait.Until(e =>Username);
             StopTimer();
         }
 
