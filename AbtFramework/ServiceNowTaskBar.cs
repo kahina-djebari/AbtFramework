@@ -79,5 +79,13 @@ namespace AbtFramework
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             UpdateBtn.Click();
         }
+
+        public void PullIRRWithNumber(string incidentReportId)
+        {
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            IRRFilterDropdwn.SelectOption("Number").Click();
+            IRRFilterSearch(incidentReportId);
+        }
     }
 }

@@ -164,7 +164,7 @@ namespace abtTest.Steps
         [When(@"I navigate to ServiceNow Home Page")]
         public void WhenINavigateToServiceNowHomePage()
         {
-            AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
+            AbtPages.ServiceNowHomepage.Go(WebEnvironment.ProductionEnvironment);
 
         }
 

@@ -84,6 +84,7 @@ namespace abtTest.Steps
         [Then(@"Incident Response Report should have been created")]
         public void ThenIncidentResponseReportShouldHaveBeenCreated()
         {
+            AbtPages.ServiceNowTaskBar.PullIRRWithNumber(IncidentReportId);
             Assert.True(AbtPages.ServiceNowIRRTable.IRRExists(IncidentReportId));
             Console.WriteLine("Incident Response Report " + IncidentReportId + " has been created");
         }
@@ -129,7 +130,8 @@ namespace abtTest.Steps
         [When(@"I Try to pull an IRR with state ""(.*)""")]
         public void WhenITryToPullIRRWithState(string state)
         {
-            AbtPages.ServiceNowTaskBar.PullIRRWithState(state);
+           // AbtPages.ServiceNowTaskBar.PullIRRWithState(state);
+            AbtPages.ServiceNowTaskBar.PullIRRWithNumber(IncidentReportId);
             AbtPages.ServiceNowIRRTable.IRRExists(IncidentReportId);
             Console.WriteLine("Opening Incident Response Report " + IncidentReportId);
 

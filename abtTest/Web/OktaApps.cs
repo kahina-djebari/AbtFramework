@@ -192,7 +192,7 @@ namespace abtTest.Web
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
             SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Oracle);
+         //   AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Oracle);
             Assert.True(AbtPages.OraclePage.isAt());
 
         }

@@ -292,7 +292,7 @@ namespace AbtFramework
             TimeworkedOnIncident.Click();
            
             ITCategory.SelectOption(Category).Click();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             ITSubCategory.SelectOption(subCategory).Click();
             Thread.Sleep(1000);
             ITType.SelectOption(Type).Click();

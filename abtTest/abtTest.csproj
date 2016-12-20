@@ -105,6 +105,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Features\AGI\AGI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AGI.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\ServiceNow\IRR1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +120,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SSO.feature</DependentUpon>
     </Compile>
+    <Compile Include="Steps\AGISteps.cs" />
     <Compile Include="Steps\IRRSteps.cs" />
     <Compile Include="Steps\SSOSteps.cs" />
     <Compile Include="Web\AGI.cs" />
@@ -136,6 +142,10 @@
     </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Features\AGI\AGI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AGI.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ServiceNow\IRR.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

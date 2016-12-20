@@ -18,7 +18,8 @@ namespace AbtFramework
         [FindsBy(How=How.ClassName,Using = "o365cs-me-tileview-container")]
         private IWebElement userCard;
 
-      
+        [FindsBy(How = How.Id, Using = "quicklinks")]
+        private IWebElement quicklinks;
 
         [FindsBy(How = How.ClassName, Using = "o365cs-me-userDisplayName")]
         private IWebElement username;
@@ -208,6 +209,9 @@ namespace AbtFramework
             }
         }
 
-      
+        public void HoverOverQuickLinks()
+        {
+            action.MoveToElement(quicklinks).Perform();
+        }
     }
 }

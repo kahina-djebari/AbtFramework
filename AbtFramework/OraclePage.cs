@@ -18,7 +18,7 @@ namespace AbtFramework
         {
             wait.Until(e => e.Title.Equals("Oracle Applications Home Page"));
             StopTimer();
-            PrintResponseTime("Oracle");
+           // PrintResponseTime("Oracle");
        
             if (GetCurrentUser().Equals("OUMSALEMS"))
             {

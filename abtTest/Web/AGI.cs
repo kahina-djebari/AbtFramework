@@ -29,7 +29,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Oracle);
+          //  AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Oracle);
             Assert.True(AbtPages.OraclePage.isAt());
 
         }
@@ -39,7 +39,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.IE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Staff_Directory);
+          //  AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Staff_Directory);
             Assert.True(AbtPages.StaffDirectoryPage.isAt());
 
         }
@@ -49,7 +49,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init();
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.FormsLibrary);
+          //  AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.FormsLibrary);
             Assert.True(AbtPages.FormsLibraryPage.isAt());
 
         }
@@ -59,7 +59,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init();
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Customize);
+           // AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Customize);
             Assert.True(AbtPages.CustomizeLinksPage.isAt());
         }
 

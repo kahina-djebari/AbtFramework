@@ -19,6 +19,8 @@ namespace AbtFramework
         [FindsBy(How=How.LinkText,Using ="Staff Directory")]
         private IWebElement staffDirectoryLink;
 
+       
+
         [FindsBy(How=How.LinkText,Using ="Forms Library")]
         private IWebElement formsLinks;
 
@@ -30,45 +32,9 @@ namespace AbtFramework
 
         public IWebElement oracleLink { get { return QuickLinks.FindElements(By.TagName("a")).Single(e => e.Text.Equals("Oracle")); } }
 
-        public void GoTo(quickLinks links)
+        public void OpenStaffDirectory()
         {
-            switch (links)
-            {
-                case quickLinks.Oracle:
-                    action.MoveToElement(quicklinksBar).Perform();
-                    finder = new PopupWindowFinder(SeleniumDriver.Instance);
-                    popupWindowHandle = finder.Click(oracleLink);
-                    StartTimer();
-
-                    
-                        foreach(var window in SeleniumDriver.Instance.WindowHandles)
-                        {
-                            if (!window.Equals(popupWindowHandle))
-                            {
-                            SeleniumDriver.Instance.SwitchTo().Window(window);
-                            SeleniumDriver.Close();
-                            }
-                        }
-                    
-                    
-                    SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-                    SeleniumDriver.Instance.Manage().Window.Maximize();
-                    break;
-
-                case quickLinks.Staff_Directory:
-                    ClickLink(staffDirectoryLink,a=>!SeleniumDriver.Instance.Title.Equals("Search People"));
-                    break;
-
-                case quickLinks.FormsLibrary:
-                    ClickLink(formsLinks,a=>!SeleniumDriver.Instance.Title.Equals("AbtForms - All Documents"));
-                    break;
-
-                case quickLinks.Customize:
-                    ClickLink(customizeLink, a => SeleniumDriver.Instance.WindowHandles.Count < 2);
-                    SeleniumDriver.Close();
-                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-                    break;
-            }
+            staffDirectoryLink.Click();
         }
 
         private void ClickLink(IWebElement element, Func<IWebDriver, bool> func)
@@ -98,8 +64,17 @@ namespace AbtFramework
             }));
         }
 
-       
+        public string OpenOracle()
+        {
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            string WinHandle= finder.Click(oracleLink);
+            StartTimer();
 
-       
+            return WinHandle;
+        }
+
+
+
+
     }
 }
