@@ -11,7 +11,7 @@ Scenario: Should get AGI Response Time
 	Then I Should be able to calculate what the response time is
 
 Scenario: Should get SuccessFactors Response Time
-	Given I have Open Chrome
+	Given I have Open IE
 	And I have navigated to AGI Home Page
 	When I Hover Over Tools & Resources
 	And I Click on Abt Talent, Learning and Support (ATLAS)
@@ -32,7 +32,7 @@ Scenario: Should get AbtXchange response time
 	And I have navigated to AGI Home Page
 	When I Hover Over Tools & Resources
 	And I Click on AbtXchange
-	And I wait for the AbtXchange Online Booking Home Page to load
+	And I wait for the AbtXchange Home Page to load
 	Then I Should be able to calculate what the AbtXchange Home Page response time is
 
 Scenario: Should get Ebsco Response time

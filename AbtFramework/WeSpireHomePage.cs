@@ -78,7 +78,8 @@ namespace AbtFramework
             {
 
             }
-            wait.Until(e => Dashboard.Displayed);
+            wait.Until(e => userFirstName);
+          //  Console.WriteLine(userFirstName.Text);
             StopTimer();
         }
 

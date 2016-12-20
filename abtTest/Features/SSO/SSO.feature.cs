@@ -92,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 14
- testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
@@ -144,7 +144,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 34
  testRunner.And("I Click on AbtXchange", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And("I wait for the AbtXchange Online Booking Home Page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait for the AbtXchange Home Page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
  testRunner.Then("I Should be able to calculate what the AbtXchange Home Page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
