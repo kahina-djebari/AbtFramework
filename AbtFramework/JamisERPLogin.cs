@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -48,8 +44,14 @@ namespace AbtFramework
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edVendorID_text")]
         private IWebElement vendor;
 
-        [FindsBy(How = How.CssSelector, Using = ".stack-h.stack-pout-h div.cell-ph2 #ctl00_phF_form_s0_s1_s0_s0")]
-        private IWebElement vendorout;
+        [FindsBy(How = How.CssSelector, Using = "#_ctl00_phG_tab_t0_grid_lv0_edUsrJobCostRecID_text")]
+        private IWebElement jobCode;
+
+        [FindsBy(How = How.CssSelector, Using = "#_ctl00_phG_tab_t0_grid_lv0_PXSelector2_text")]
+        private IWebElement costElement;
+
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phG_tab_t0_grid_scrollDiv > table.RowNavigator > tbody > tr > td:nth-child(10)")]
+        private IWebElement laborCategory;
 
         public void Go()
         {
@@ -66,7 +68,6 @@ namespace AbtFramework
                 {
                     email.SendKeys("jfrometaguerra");
                     password.SendKeys("321654jJ.");
-                    //company.Click();
                     SelectElement se = new SelectElement(company); //Locating select list
                     se.SelectByText("Business Process Overview"); //Select item from list having option text as "Item1"
                     
@@ -80,16 +81,17 @@ namespace AbtFramework
             }
         }
 
-        public bool isAt()
+        public bool isAt(string window)
         {
-            if (TNFinance!=null)
+            switch (window)
             {
-                TNFinance.Click();
-                SNAccountsPayable.Click();
-                LNBillsAndAdjustsments.Click();
+                case "BillsAndAdjustsments":
+                //    Assert.True(LNBillsAndAdjustsments.Displayed);
+                    return true;
 
-                int iFrames = SeleniumDriver.Instance.FindElements(By.TagName("iframe")).Count;
-                SeleniumDriver.Instance.SwitchTo().Frame("main");
+                case "ChecksAndPayments":
+                    // LNBillsAndAdjustsments.Click();
+                    return true;
             }
             return false;
         }
@@ -180,8 +182,23 @@ namespace AbtFramework
         {
             //SeleniumDriver.Instance.SwitchTo().DefaultContent();
             //SeleniumDriver.Instance.SwitchTo().Frame("main");
+            Thread.Sleep(1000);
             wait.Until(e => addDocumentRecord.Displayed);
             action.MoveToElement(addDocumentRecord).Click().Perform();
+           // action.Release().Perform();
+
+        }
+
+        public void FillDocumentDetails(string type)
+        {
+            //Thread.Sleep(1000);
+            jobCode.SendKeys("10001-0001-004-00001\n");
+            wait.Until(e => addDocumentRecord.Displayed);
+            Thread.Sleep(500);
+            costElement.SendKeys("1000\n");
+            Thread.Sleep(500);
+            laborCategory.SendKeys("PM01\n");
+            Thread.Sleep(5000);
         }
 
         public void ClickTopFrameAddNewRecord()

@@ -12,17 +12,23 @@ namespace abtTest.Steps
         [Given(@"i Login to Jamis with a valid URL and User credentials")]
         public void GivenILoginToJamisWithAValidURLAndUserCredentials()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.init(Browser.IE);
             AbtPages.JamisERPLogin.Go();
             AbtPages.JamisERPLogin.AttemptToLogin();
-            AbtPages.JamisERPLogin.isAt();
-            AbtPages.JamisERPLogin.InputVendor();
+            AbtPages.JamisERPLogin.isAt("BillsAndAdjustsments");
+            AbtPages.JamisERPLogin.AccountsPayableSideMenu("BillsAndAdjustsments");
+            AbtPages.JamisERPLogin.SwitchToFrame("main");
+            AbtPages.JamisERPLogin.InputVendor("uganda");
+            AbtPages.JamisERPLogin.ClickAddDocumentRecord();
+            AbtPages.JamisERPLogin.FillDocumentDetails("bill");
+
+
         }
         
         [When(@"the Checks and Payment menu appears click Add New Record")]
         public void WhenTheChecksAndPaymentMenuAppearsClickAddNewRecord()
         {
-            AbtPages.JamisERPLogin.InputVendor();
+          
         }
         
         [When(@"i click save the status its updated to Open")]
