@@ -17,3 +17,4 @@ Scenario: Check Staff Directory on QuickLinks
 	When I Hover over Quick Links
 	And I Click on Staff Directory
 	Then I should be redirected to a page where you can Search the Staff people
+

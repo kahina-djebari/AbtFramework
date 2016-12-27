@@ -100,6 +100,16 @@ namespace AbtFramework
         private static ServiceNowIRRTable _servicenowIRRTable;
         private static AgiAbtLibrarySearch _AgiAbtLibrary;
         private static KnowledgeHubLandingPage _knowledgehublandingpage;
+        private static JamisERPLogin _jamiserplogin;
+
+         public static JamisERPLogin JamisERPLogin
+        { get {
+                _jamiserplogin = PageGenerator.GetPage<JamisERPLogin>();
+
+                _jamiserplogin.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _jamiserplogin.action = new Actions(SeleniumDriver.Instance);
+                return _jamiserplogin;
+            } }
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
