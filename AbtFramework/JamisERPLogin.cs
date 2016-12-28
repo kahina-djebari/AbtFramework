@@ -32,17 +32,36 @@ namespace AbtFramework
         private IWebElement LNBillsAndAdjustsments;
 
         //bills And Adjustsments
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phDS_ds_ToolBar_ul>li:nth-of-type(1)>div")]
+        private IWebElement topSaveRecord;
+
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phDS_ds_ToolBar_ul>li:nth-of-type(3)>div")]
         private IWebElement topAddNewRecord;
-        
+
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_chkHold")]
+        private IWebElement holdCheckBox;
+
+
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phG_tab_t0_grid_at_tlb_ul > li:nth-child(2) > div > div")]
         private IWebElement addDocumentRecord;
 
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edDocType > div.editorCont > div")]
         private IWebElement billType;
 
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edRefNbr_text")]
+        private IWebElement referenceNbr;
+
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edVendorID_text")]
         private IWebElement vendor;
+
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edInvoiceNbr")]
+        private IWebElement vendorRef;
+
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edDocDesc")]
+        private IWebElement description;
+
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edCuryOrigDocAmt")]
+        private IWebElement amount;
 
         [FindsBy(How = How.CssSelector, Using = "#_ctl00_phG_tab_t0_grid_lv0_edUsrJobCostRecID_text")]
         private IWebElement jobCode;
@@ -50,8 +69,27 @@ namespace AbtFramework
         [FindsBy(How = How.CssSelector, Using = "#_ctl00_phG_tab_t0_grid_lv0_PXSelector2_text")]
         private IWebElement costElement;
 
-        [FindsBy(How = How.CssSelector, Using = "#ctl00_phG_tab_t0_grid_scrollDiv > table.RowNavigator > tbody > tr > td:nth-child(10)")]
+        [FindsBy(How = How.CssSelector, Using = "#_ctl00_phG_tab_t0_grid_lv0_PXSelector4")]
         private IWebElement laborCategory;
+
+        [FindsBy(How = How.XPath, Using = ".//*[@id='_ctl00_phG_tab_t0_grid_lv0_PXSelector4']/div/div[2]")]
+        private IWebElement laborCategoryHoover;
+
+        [FindsBy(How = How.XPath, Using = ".//*[@id='ctl00_phG_tab_t0_grid_lv0_PXSelector4_pnl_tlb_fb_text']")]
+        private IWebElement laborCategorySelect;
+
+        [FindsBy(How = How.CssSelector, Using = "#_ctl00_phG_tab_t0_grid_lv0_PXDateTimeEdit1_text")]
+        private IWebElement incurDate;
+
+        [FindsBy(How = How.XPath, Using = ".//*[@id='ctl00_phG_tab_t0_grid_scrollDiv']/table[2]/tbody/tr/td[16]")]
+        private IWebElement incurDateHoover;
+
+        [FindsBy(How = How.XPath, Using = ".//*[@id='ctl00_phG_tab_t0_grid_scrollDiv']/table[2]/tbody/tr/td[28]")]
+        private IWebElement extCostHoover;
+
+        [FindsBy(How = How.XPath, Using = ".//*[@id='_ctl00_phG_tab_t0_grid_lv0_edCuryLineAmt']")]
+        private IWebElement extCost;
+
 
         public void Go()
         {
@@ -164,10 +202,23 @@ namespace AbtFramework
 
         public bool InputVendor(string country)
         {
+            //generate random venderoRef Number
+            Random rnd = new Random();
+            int num = rnd.Next(0000000, 9999999);
+            string vendorref = num.ToString("0000000");
+
             switch (country)
             {
                 case "uganda":
+                    vendor.Click();
                     vendor.SendKeys("V000007\n");
+                    Thread.Sleep(500);
+                    vendorRef.Click();
+                    vendorRef.SendKeys(vendorref+"\n");
+                    description.Click();
+                    description.SendKeys("ERP Automation : International Bills");
+                    amount.Click();
+                    amount.SendKeys("4000\n");
                     return true;
 
                 case "us":
@@ -180,25 +231,60 @@ namespace AbtFramework
 
         public void ClickAddDocumentRecord()
         {
-            //SeleniumDriver.Instance.SwitchTo().DefaultContent();
-            //SeleniumDriver.Instance.SwitchTo().Frame("main");
             Thread.Sleep(1000);
             wait.Until(e => addDocumentRecord.Displayed);
             action.MoveToElement(addDocumentRecord).Click().Perform();
-           // action.Release().Perform();
+            action.Release().Perform();
 
         }
 
         public void FillDocumentDetails(string type)
         {
-            //Thread.Sleep(1000);
+            Thread.Sleep(1000);
             jobCode.SendKeys("10001-0001-004-00001\n");
-            wait.Until(e => addDocumentRecord.Displayed);
-            Thread.Sleep(500);
-            costElement.SendKeys("1000\n");
-            Thread.Sleep(500);
-            laborCategory.SendKeys("PM01\n");
-            Thread.Sleep(5000);
+         
+            costElement.SendKeys("1000");
+          //  Thread.Sleep(500);
+            costElement.SendKeys("\n");
+            wait.Until(e => laborCategoryHoover.Displayed);
+            laborCategory.SendKeys("\r");
+      
+            wait.Until(e => laborCategoryHoover.Displayed);
+            laborCategoryHoover.Click();
+          
+            wait.Until(e => laborCategorySelect.Displayed);
+            laborCategorySelect.SendKeys("PM01\n");
+
+            Thread.Sleep(1000);
+            DateTime now = DateTime.Now.AddDays(-7);
+            string format = "MM/dd/yyyy";// Use this format.
+
+            incurDateHoover.Click();
+            wait.Until(e => incurDate.Displayed);
+
+            format = now.ToString(format);
+            //delete current text
+            incurDate.SendKeys("\b\b\b\b\b\b\b\b");
+            incurDate.SendKeys(format);
+            incurDate.SendKeys("\n");
+
+            //scrool to element
+            action.MoveToElement(extCostHoover).Click();
+            action.Perform();
+           
+
+            //delete current text
+            extCostHoover.Click();
+            extCost.SendKeys("\b\b\b\b\b\b\b\b");
+            extCost.SendKeys("4000.00\n");
+
+            action.MoveToElement(topSaveRecord).Click();
+            action.Perform();
+
+            Thread.Sleep(1000);
+            var text1 = referenceNbr.GetAttribute("value");
+            Console.WriteLine(text1);
+            Thread.Sleep(3000);
         }
 
         public void ClickTopFrameAddNewRecord()
