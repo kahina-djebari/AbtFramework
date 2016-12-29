@@ -15,92 +15,46 @@ namespace abtTest.Steps
             SeleniumDriver.init(Browser.IE);
             AbtPages.JamisERPLogin.Go();
             AbtPages.JamisERPLogin.AttemptToLogin();
+         }
+
+        [Then(@"i click save the status its updated to Open")]
+        public void ThenIClickSaveTheStatusItsUpdatedToOpen()
+        {
+            AbtPages.JamisERPLogin.SaveBill();
+        }
+
+
+        [Then(@"click on Finance, Click Account Payable Then under Enter Bills And Adjustments")]
+        public void ThenClickOnFinanceClickAccountPayableThenUnderEnterBillsAndAdjustments()
+        {
             AbtPages.JamisERPLogin.isAt("BillsAndAdjustsments");
             AbtPages.JamisERPLogin.AccountsPayableSideMenu("BillsAndAdjustsments");
+     
+        }
+        [Then(@"Fill the international Vendor information")]
+        public void ThenFillTheInternationalVendorInformation()
+        {
             AbtPages.JamisERPLogin.SwitchToFrame("main");
             AbtPages.JamisERPLogin.InputVendor("uganda");
+        }
+
+        [Then(@"Add New Record")]
+        public void ThenAddNewRecord()
+        {
             AbtPages.JamisERPLogin.ClickAddDocumentRecord();
+        }
+        
+        [Then(@"fill the Document information")]
+        public void ThenFillTheDocumentInformation()
+        {
             AbtPages.JamisERPLogin.FillDocumentDetails("bill");
+        }
+        [When(@"a reference nbr is generated i release the bill")]
+        public void WhenAReferenceNbrIsGeneratedIReleaseTheBill()
+        {
+            AbtPages.JamisERPLogin.CheckBillinHoldButton();
+            AbtPages.JamisERPLogin.ReleaseTheBill();
+        }
 
-
-        }
-        
-        [When(@"the Checks and Payment menu appears click Add New Record")]
-        public void WhenTheChecksAndPaymentMenuAppearsClickAddNewRecord()
-        {
-          
-        }
-        
-        [When(@"i click save the status its updated to Open")]
-        public void WhenIClickSaveTheStatusItsUpdatedToOpen()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"click on Finance")]
-        public void ThenClickOnFinance()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"then  Click Account Payable")]
-        public void ThenThenClickAccountPayable()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"under Enter click Bills And Adjustments")]
-        public void ThenUnderEnterClickBillsAndAdjustments()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"select Bill as type")]
-        public void ThenSelectBillAsType()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"the status should be on hold with the check box checked")]
-        public void ThenTheStatusShouldBeOnHoldWithTheCheckBoxChecked()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"Enter the bill date and check the post period text box")]
-        public void ThenEnterTheBillDateAndCheckThePostPeriodTextBox()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"Select the Vendor the invoice is from")]
-        public void ThenSelectTheVendorTheInvoiceIsFrom()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"Enter the ref \# in Vendor Ref text box")]
-        public void ThenEnterTheRefInVendorRefTextBox()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"Enter the description in the description text box")]
-        public void ThenEnterTheDescriptionInTheDescriptionTextBox()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"hit the plus icon under document details")]
-        public void ThenHitThePlusIconUnderDocumentDetails()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"i choose an incurDate_JobID_LaborCat_CostElem_Organization_CostElem_Loc")]
-        public void ThenIChooseAnIncurDate_JobID_LaborCat_CostElem_Organization_CostElem_Loc()
-        {
-            ScenarioContext.Current.Pending();
-        }
     }
 }

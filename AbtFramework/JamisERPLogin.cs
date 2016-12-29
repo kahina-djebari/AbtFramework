@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
+
 namespace AbtFramework
 {
    public class JamisERPLogin : PageModel
@@ -38,9 +39,11 @@ namespace AbtFramework
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phDS_ds_ToolBar_ul>li:nth-of-type(3)>div")]
         private IWebElement topAddNewRecord;
 
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phDS_ds_ToolBar_ul>li:nth-of-type(13)>div")]
+        private IWebElement topReleaseRecord;
+
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_chkHold")]
         private IWebElement holdCheckBox;
-
 
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phG_tab_t0_grid_at_tlb_ul > li:nth-child(2) > div > div")]
         private IWebElement addDocumentRecord;
@@ -89,6 +92,14 @@ namespace AbtFramework
 
         [FindsBy(How = How.XPath, Using = ".//*[@id='_ctl00_phG_tab_t0_grid_lv0_edCuryLineAmt']")]
         private IWebElement extCost;
+
+
+        private string referencenbr = "string";
+        public string ReferenceNbr
+        {
+            get { return referencenbr; }
+            set { referencenbr = value; }
+        }
 
 
         public void Go()
@@ -206,6 +217,8 @@ namespace AbtFramework
             Random rnd = new Random();
             int num = rnd.Next(0000000, 9999999);
             string vendorref = num.ToString("0000000");
+            //log Vref
+            Console.WriteLine("Vendor Ref: "+vendorref);
 
             switch (country)
             {
@@ -226,7 +239,6 @@ namespace AbtFramework
                     return true;
             }
             return false;
-         //   Thread.Sleep(10000);
         }
 
         public void ClickAddDocumentRecord()
@@ -261,8 +273,8 @@ namespace AbtFramework
 
             incurDateHoover.Click();
             wait.Until(e => incurDate.Displayed);
-
             format = now.ToString(format);
+
             //delete current text
             incurDate.SendKeys("\b\b\b\b\b\b\b\b");
             incurDate.SendKeys(format);
@@ -271,29 +283,72 @@ namespace AbtFramework
             //scrool to element
             action.MoveToElement(extCostHoover).Click();
             action.Perform();
-           
 
             //delete current text
             extCostHoover.Click();
             extCost.SendKeys("\b\b\b\b\b\b\b\b");
             extCost.SendKeys("4000.00\n");
 
+        }
+
+        public bool SaveBill()
+        {
             action.MoveToElement(topSaveRecord).Click();
             action.Perform();
 
             Thread.Sleep(1000);
-            var text1 = referenceNbr.GetAttribute("value");
-            Console.WriteLine(text1);
-            Thread.Sleep(3000);
+
+          //  wait.Until(e => referenceNbr.Displayed);
+            ReferenceNbr = referenceNbr.GetAttribute("value");
+
+            if (!ReferenceNbr.Equals("<NEW>"))
+            {
+                Console.WriteLine("References number: " + ReferenceNbr);
+                return true;
+            }
+            return false;
+        }
+
+        public bool CheckBillinHoldButton()
+        {
+            Thread.Sleep(500);
+            holdCheckBox.Click();
+            //add confirmation the status is now Open.
+            //if ()
+            //{
+            //    return true;
+            //}
+        
+            return false;
+        }
+
+        public bool ReleaseTheBill()
+        {
+            Thread.Sleep(1000);
+
+            action.MoveToElement(topReleaseRecord).Click();
+            action.Perform();
+            topReleaseRecord.Click();
+
+            
+
+            return false;
         }
 
         public void ClickTopFrameAddNewRecord()
         {
-            //SeleniumDriver.Instance.SwitchTo().DefaultContent();
-            //SeleniumDriver.Instance.SwitchTo().Frame("main");
-
             wait.Until(e => topAddNewRecord.Displayed);
             action.MoveToElement(topAddNewRecord).Click().Perform();
+        }
+
+        public bool CheckReferenceNBR()
+        {
+            if(!ReferenceNbr.Equals("<NEW>"))
+            {
+                Console.WriteLine("References number: "+ReferenceNbr);
+                return true;
+            }
+            return false;
         }
 
     }
