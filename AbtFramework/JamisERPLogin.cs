@@ -57,6 +57,9 @@ namespace AbtFramework
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edVendorID_text")]
         private IWebElement vendor;
 
+        [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edFinPeriodID_text")]
+        private IWebElement postPeriod;
+
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edInvoiceNbr")]
         private IWebElement vendorRef;
 
@@ -220,18 +223,26 @@ namespace AbtFramework
             //log Vref
             Console.WriteLine("Vendor Ref: "+vendorref);
 
+            DateTime now = DateTime.Now;
+            string format = "MM-yyyy";// Use this format.
+            format = now.ToString(format);
+
             switch (country)
             {
                 case "uganda":
                     vendor.Click();
-                    vendor.SendKeys("V000007\n");
-                    Thread.Sleep(500);
+                    vendor.SendKeys("V000007\r\n");
+                    Thread.Sleep(1000);
+                    postPeriod.Click();
+                    postPeriod.SendKeys(format+ "\r\n");
+                    Thread.Sleep(1000);
                     vendorRef.Click();
-                    vendorRef.SendKeys(vendorref+"\n");
+                    vendorRef.SendKeys(vendorref+ "\r\n");
+                    Thread.Sleep(1000);
                     description.Click();
-                    description.SendKeys("ERP Automation : International Bills");
+                    description.SendKeys("ERP Automation : International Bills\r\n");
                     amount.Click();
-                    amount.SendKeys("4000\n");
+                    amount.SendKeys("4000\r\n");
                     return true;
 
                 case "us":
@@ -253,19 +264,21 @@ namespace AbtFramework
         public void FillDocumentDetails(string type)
         {
             Thread.Sleep(1000);
-            jobCode.SendKeys("10001-0001-004-00001\n");
+            jobCode.SendKeys("10001-0001-004-00001\r\n");
          
             costElement.SendKeys("1000");
           //  Thread.Sleep(500);
-            costElement.SendKeys("\n");
+            costElement.SendKeys("\r\n");
             wait.Until(e => laborCategoryHoover.Displayed);
-            laborCategory.SendKeys("\r");
+            laborCategory.SendKeys("\r\n");
       
             wait.Until(e => laborCategoryHoover.Displayed);
             laborCategoryHoover.Click();
           
             wait.Until(e => laborCategorySelect.Displayed);
-            laborCategorySelect.SendKeys("PM01\n");
+            laborCategorySelect.SendKeys("PM01");
+            Thread.Sleep(3000);
+            laborCategorySelect.SendKeys("\r\n");
 
             Thread.Sleep(1000);
             DateTime now = DateTime.Now.AddDays(-7);
@@ -278,16 +291,17 @@ namespace AbtFramework
             //delete current text
             incurDate.SendKeys("\b\b\b\b\b\b\b\b");
             incurDate.SendKeys(format);
-            incurDate.SendKeys("\n");
+            incurDate.SendKeys("\r\n");
 
             //scrool to element
             action.MoveToElement(extCostHoover).Click();
             action.Perform();
+            extCostHoover.Click();
 
             //delete current text
             extCostHoover.Click();
             extCost.SendKeys("\b\b\b\b\b\b\b\b");
-            extCost.SendKeys("4000.00\n");
+            extCost.SendKeys("4000.00\r\n");
 
         }
 
