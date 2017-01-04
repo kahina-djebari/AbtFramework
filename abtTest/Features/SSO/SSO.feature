@@ -13,7 +13,7 @@ Scenario: Should get AGI Response Time
 Scenario: Should get SuccessFactors Response Time
 	Given I have Open IE
 	And I have navigated to AGI Home Page
-	When I Hover Over Tools & Resources
+	When I Hover over "Tools & Resources" on the Mega Menu
 	And I Click on Abt Talent, Learning and Support (ATLAS)
 	And I wait for the SuccessFactor Home Page to load
 	Then I Should be able to calculate what the SuccessFactor Home Page response time is
@@ -21,7 +21,7 @@ Scenario: Should get SuccessFactors Response Time
 Scenario: Should get Abt Travel Booking Response Time
 	Given I have Open IE
 	And I have navigated to AGI Home Page
-	When I Hover Over Tools & Resources
+	When I Hover over "Tools & Resources" on the Mega Menu
 	And I Click on AbtTravel Online Booking
 	And I wait for the AbtTravel Online Booking Home Page to load
 	Then I Should be able to calculate what the AbtTravel Home Page response time is
@@ -30,7 +30,7 @@ Scenario: Should get AbtXchange response time
 
 	Given I have Open IE
 	And I have navigated to AGI Home Page
-	When I Hover Over Tools & Resources
+	When I Hover over "Tools & Resources" on the Mega Menu
 	And I Click on AbtXchange
 	And I wait for the AbtXchange Home Page to load
 	Then I Should be able to calculate what the AbtXchange Home Page response time is
@@ -39,7 +39,7 @@ Scenario: Should get Ebsco Response time
 
 	Given I have Open IE
 	And I have navigated to AGI Home Page
-	When I Hover Over Tools & Resources
+	When I Hover over "Tools & Resources" on the Mega Menu
 	And I Click on Abt Research Library
 	And I Click on Ebsco Discovery Service
 	And I wait for the Ebsco Home Page to load
@@ -49,7 +49,7 @@ Scenario: Should get RightFind Response time
 
 	Given I have Open IE
 	And I have navigated to AGI Home Page
-	When I Hover Over Tools & Resources
+	When I Hover over "Tools & Resources" on the Mega Menu
 	And I Click on Abt Research Library
 	And I Click on the RightFind Link Named Document Delivery via Copyright Clearance Center | RightFind
 	And I wait for the RightFind Home Page to load
