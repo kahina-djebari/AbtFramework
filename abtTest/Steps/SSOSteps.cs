@@ -39,11 +39,7 @@ namespace abtTest.Steps
             Console.WriteLine(AbtPages.AgiHomePage.GetResponseTime());
         }
 
-        [When(@"I Hover Over Tools & Resources")]
-        public void WhenIHoverOverToolsResources()
-        {
-            AbtPages.AgiTopNavigation.HoverOverTools();
-        }
+      
         [When(@"I Click on AbtXchange")]
         public void WhenIClickOnAbtXchange()
         {

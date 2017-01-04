@@ -118,7 +118,9 @@
     <Compile Include="ConcurHomePage.cs" />
     <Compile Include="ConferencingSetupPage.cs" />
     <Compile Include="EbscoMyAccountPage.cs" />
+    <Compile Include="Enums\aboutAbtFiles.cs" />
     <Compile Include="HomeDropdown.cs" />
+    <Compile Include="Insight.cs" />
     <Compile Include="KmWorkSpacePage.cs" />
     <Compile Include="KnowledgeHubLandingPage.cs" />
     <Compile Include="MailOffice365Page.cs" />
@@ -248,12 +250,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <NativeReference Include="AutoItX3, Version=3.0.0.0, ProcessorArchitecture=%2a, Type=win32">
-      <Name>AutoItX3.dll</Name>
-      <HintPath>Abt Dependencies\AutoItX3.dll</HintPath>
-    </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

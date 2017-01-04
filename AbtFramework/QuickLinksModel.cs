@@ -64,6 +64,19 @@ namespace AbtFramework
             }));
         }
 
+        public void OpenCustomizeLink()
+        {
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            string WinHandle= finder.Click(customizeLink);
+            SeleniumDriver.Instance.SwitchTo().Window(WinHandle);
+            
+        }
+
+        public void OpenFormsLibrary()
+        {
+            formsLinks.Click();
+        }
+
         public string OpenOracle()
         {
             finder = new PopupWindowFinder(SeleniumDriver.Instance);

@@ -8,6 +8,10 @@ namespace AbtFramework
     {
         [FindsBy(How=How.LinkText,Using = "AbtEvents")]
         private IWebElement abtEventsLink;
+        [FindsBy(How=How.Id,Using = "WPQ2_nav_header")]
+        private IWebElement _CalendarCurrentMonth;
+
+        public string EventCalendarCurrentMonth { get { return _CalendarCurrentMonth.Text; } }
 
         public bool IsAt()
         {
