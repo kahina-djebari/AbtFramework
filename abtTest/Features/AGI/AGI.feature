@@ -17,7 +17,7 @@ Scenario: Check Staff Directory on QuickLinks
 	When I Hover over Quick Links
 	And I Click on Staff Directory
 	Then I should be redirected to a page where you can Search the Staff people
-
+  
 Scenario: Check Forms Library on QuickLinks
 	Given I have Open IE
 	And I have navigated to AGI Home Page
@@ -87,6 +87,4 @@ Scenario: Check Left Navigation on About Abt Page
 	And If I Click on "History" on the Left panel
 	Then The "History" section should display
 	And The breadcrumbs on the page should display the path to "History"
-
-
 
