@@ -69,8 +69,10 @@ namespace AbtFramework
         public void WaitForHomePageToLoad(string AbtXchangeHandle)
         {
             SeleniumDriver.Instance.SwitchTo().Window(AbtXchangeHandle);
+            SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             try
             {
+                
                 LoginBtn.Click();
                 StartTimer();
             }

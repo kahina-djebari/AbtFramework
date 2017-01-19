@@ -96,7 +96,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 15
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.When("I Hover Over Tools & Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
  testRunner.And("I Click on Abt Talent, Learning and Support (ATLAS)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
@@ -118,7 +118,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.When("I Hover Over Tools & Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
  testRunner.And("I Click on AbtTravel Online Booking", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
@@ -140,7 +140,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 32
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.When("I Hover Over Tools & Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
  testRunner.And("I Click on AbtXchange", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
@@ -162,7 +162,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 41
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.When("I Hover Over Tools & Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
  testRunner.And("I Click on Abt Research Library", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
@@ -186,7 +186,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 51
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.When("I Hover Over Tools & Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
  testRunner.And("I Click on Abt Research Library", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54

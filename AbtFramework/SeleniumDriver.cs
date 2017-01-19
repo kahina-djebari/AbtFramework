@@ -93,7 +93,7 @@ namespace AbtFramework
                     IEoptions = new InternetExplorerOptions();
                     // IEoptions.EnablePersistentHover = false;
                    // IEoptions.EnableNativeEvents = false;
-                    IEoptions.EnsureCleanSession = true;
+                   // IEoptions.EnsureCleanSession = true;
                     IEoptions.RequireWindowFocus = true;
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
        

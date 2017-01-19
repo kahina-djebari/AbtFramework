@@ -40,7 +40,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AboutABt();
+          //  AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AboutABt();
             Assert.True(AbtPages.AgiAboutAbt.IsAt());
 
         }
@@ -50,7 +50,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Departments();
+          //  AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Departments();
             Assert.True(AbtPages.AgiDepartments.IsAt());
         }
 
@@ -59,7 +59,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Initiatives();
+          //  AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Initiatives();
             Assert.True(AbtPages.AgiInitiatives.IsAt());
         }
 
@@ -68,7 +68,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Divisions();
+         //   AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Divisions();
             Assert.True(AbtPages.AgiDivisions.IsAt());
         }
 
@@ -77,7 +77,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Subsidaries();
+         //   AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Subsidaries();
             Assert.True(AbtPages.AgiSubsidaries.IsAt());
         }
 
@@ -86,7 +86,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AbtStrategy();
+          //  AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AbtStrategy();
             Assert.True(AbtPages.AgiAbtStrategy.IsAt());
         }
       //  [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home -> Abt Values")]
@@ -94,7 +94,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AbtValues();
+        //    AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AbtValues();
             Assert.True(AbtPages.AgiAbtValues.IsAt());
         }
       //  [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home -> Agi Help")]
@@ -102,7 +102,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AgiHelp();
+         //   AbtPages.AgiTopNavigation.HomeDropdown.GoTo_AgiHelp();
             Assert.True(AbtPages.AgiHelpPage.IsAt());
 
         }
@@ -111,7 +111,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Communities();
+          //  AbtPages.AgiTopNavigation.HomeDropdown.GoTo_Communities();
             Assert.True(AbtPages.AgiCommunities.IsAt());
         }
      //   [Fact(DisplayName = "Should Go To AGI Top Navigation -> Home -> Employee Advisory Council")]
@@ -119,7 +119,7 @@ namespace abtTest.Web
         {
             SeleniumDriver.init(Browser.RemoteDavidIE);
             AbtPages.AgiHomePage.Go();
-            AbtPages.AgiTopNavigation.HomeDropdown.GoTo_EAC();
+          //  AbtPages.AgiTopNavigation.HomeDropdown.GoTo_EAC();
             Assert.True(AbtPages.AgiEAC.IsAt());
         }
 
