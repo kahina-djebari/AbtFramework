@@ -118,6 +118,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BillAndAdjusts.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ERP\ExpenseReports\ExpeseReports.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpeseReports.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\ServiceNow\IRR1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,6 +135,7 @@
     </Compile>
     <Compile Include="Steps\AGISteps.cs" />
     <Compile Include="Steps\BillAndAdjustsSteps.cs" />
+    <Compile Include="Steps\ExpeseReportsSteps.cs" />
     <Compile Include="Steps\IRRSteps.cs" />
     <Compile Include="Steps\SSOSteps.cs" />
     <Compile Include="Web\AGI.cs" />
@@ -159,6 +165,10 @@
     <None Include="Features\ERP\BillsAndAdjustsments\BillAndAdjusts.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BillAndAdjusts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ERP\ExpenseReports\ExpeseReports.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ExpeseReports.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ServiceNow\IRR.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

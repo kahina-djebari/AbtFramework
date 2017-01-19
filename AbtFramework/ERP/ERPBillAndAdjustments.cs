@@ -5,32 +5,10 @@ using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
 
-namespace AbtFramework
+namespace AbtFramework.ERP
 {
-   public class JamisERPLogin : PageModel
+   public class ERPBillAndAdjustments : ERPNavigation
     {
-        //JAMIS login 
-        [FindsBy(How = How.ClassName, Using = "login_user")]
-        private IWebElement email;
-
-        [FindsBy(How = How.ClassName, Using = "login_pass")]
-        private IWebElement password;
-
-        [FindsBy(How = How.Id, Using = "cmbCompany")]
-        private IWebElement company;
-
-        [FindsBy(How = How.Id, Using = "btnLogin")]
-        private IWebElement submit;
-
-        //General Navigation
-        [FindsBy(How = How.CssSelector, Using = "#panelT_systemsBar_ul > li:nth-child(3) > div > div")]
-        private IWebElement TNFinance;
-
-        [FindsBy(How = How.CssSelector, Using = "#panelT_modulesBar_ul > li:nth-child(23) > div > div")]
-        private IWebElement SNAccountsPayable;
-
-        [FindsBy(How = How.CssSelector, Using = "#panelL_menuPanel_sp2_tree2_node_0_0 > span")]
-        private IWebElement LNBillsAndAdjustsments;
 
         //bills And Adjustsments
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phDS_ds_ToolBar_ul>li:nth-of-type(1)>div")]
@@ -59,7 +37,7 @@ namespace AbtFramework
 
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edFinPeriodID_text")]
         private IWebElement postPeriod;
-
+       
         [FindsBy(How = How.CssSelector, Using = "#ctl00_phF_form_edInvoiceNbr")]
         private IWebElement vendorRef;
 
@@ -103,37 +81,7 @@ namespace AbtFramework
             get { return referencenbr; }
             set { referencenbr = value; }
         }
-
-
-        public void Go()
-        {
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abt.jamisprime.com/");
-           // SeleniumDriver.Instance.Navigate().GoToUrl("https://abt.jamisprime.com/?CompanyID=Business+Process+Overview&ScreenId=AP301000");
-        }
-
-        public void AttemptToLogin()
-        {
-            //in case the user is prompted with username and password
-            try
-            {
-                if (email != null)
-                {
-                    email.SendKeys("jfrometaguerra");
-                    password.SendKeys("321654jJ.");
-                    SelectElement se = new SelectElement(company); //Locating select list
-                    se.SelectByText("Business Process Overview"); //Select item from list having option text as "Item1"
-                    
-                   submit.Click();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("User and Password field not found");
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        public bool isAt(string window)
+         public bool isAt(string window)
         {
             switch (window)
             {
@@ -148,28 +96,6 @@ namespace AbtFramework
             return false;
         }
 
-        public bool AccountsPayableSideMenu(string section)
-        {
-            if (TNFinance != null)
-            {
-                //makes Accounts Payable Side Menu options available
-                TNFinance.Click();
-                SNAccountsPayable.Click();
-
-                switch (section)
-                {
-                    case "BillsAndAdjustsments":
-                        LNBillsAndAdjustsments.Click();
-                        return true;
-
-                    case "ChecksAndPayments":
-                       // LNBillsAndAdjustsments.Click();
-                        return true;
-                }
-
-            }
-            return false;
-        }
 
         public bool SwitchToFrame(string frame)
         {
@@ -232,13 +158,13 @@ namespace AbtFramework
                 case "uganda":
                     vendor.Click();
                     vendor.SendKeys("V000007\r\n");
-                    Thread.Sleep(1000);
+                   // Thread.Sleep(1000);
                     postPeriod.Click();
                     postPeriod.SendKeys(format+ "\r\n");
                     Thread.Sleep(1000);
                     vendorRef.Click();
                     vendorRef.SendKeys(vendorref+ "\r\n");
-                    Thread.Sleep(1000);
+                   // Thread.Sleep(1000);
                     description.Click();
                     description.SendKeys("ERP Automation : International Bills\r\n");
                     amount.Click();
@@ -246,7 +172,20 @@ namespace AbtFramework
                     return true;
 
                 case "us":
+                   
+                    vendor.Click();
                     vendor.SendKeys("V000014\n");
+                 //   Thread.Sleep(1000);
+                    postPeriod.Click();
+                    postPeriod.SendKeys(format + "\r\n");
+                    Thread.Sleep(500);
+                    vendorRef.Click();
+                    vendorRef.SendKeys(vendorref + "\r\n");
+                  //  Thread.Sleep(1000);
+                    description.Click();
+                    description.SendKeys("ERP Automation : Domestic Bills\r");
+                    amount.Click();
+                    amount.SendKeys("1.00\r\n");
                     return true;
             }
             return false;
@@ -254,38 +193,45 @@ namespace AbtFramework
 
         public void ClickAddDocumentRecord()
         {
-            Thread.Sleep(1000);
-            wait.Until(e => addDocumentRecord.Displayed);
-            action.MoveToElement(addDocumentRecord).Click().Perform();
-            action.Release().Perform();
+            Thread.Sleep(1500);
+      
+            action.MoveToElement(addDocumentRecord).Click();
+            action.Perform();
 
+            Thread.Sleep(2000);
         }
 
-        public void FillDocumentDetails(string type)
+
+        public void FillDocumentDetails(string type, string country)
         {
-            Thread.Sleep(1000);
+           // Thread.Sleep(3000);
+           // jobCode.Click();
             jobCode.SendKeys("10001-0001-004-00001\r\n");
-         
+            //wait.Until(e =>costElement.Displayed);
+            costElement.Click();
             costElement.SendKeys("1000");
-          //  Thread.Sleep(500);
+            Thread.Sleep(500);
             costElement.SendKeys("\r\n");
-            wait.Until(e => laborCategoryHoover.Displayed);
+
+           // wait.Until(e => laborCategory.Displayed);
+           
             laborCategory.SendKeys("\r\n");
       
-            wait.Until(e => laborCategoryHoover.Displayed);
-            laborCategoryHoover.Click();
-          
+           // wait.Until(e => laborCategoryHoover.Displayed);
+           // laborCategoryHoover.Click();
+            laborCategorySelect.Click();
             wait.Until(e => laborCategorySelect.Displayed);
             laborCategorySelect.SendKeys("PM01");
             Thread.Sleep(3000);
             laborCategorySelect.SendKeys("\r\n");
 
-            Thread.Sleep(1000);
+           // Thread.Sleep(1000);
             DateTime now = DateTime.Now.AddDays(-7);
             string format = "MM/dd/yyyy";// Use this format.
-
             incurDateHoover.Click();
             wait.Until(e => incurDate.Displayed);
+            
+            incurDateHoover.Click();
             format = now.ToString(format);
 
             //delete current text
@@ -299,10 +245,21 @@ namespace AbtFramework
             extCostHoover.Click();
 
             //delete current text
-            extCostHoover.Click();
-            extCost.SendKeys("\b\b\b\b\b\b\b\b");
-            extCost.SendKeys("4000.00\r\n");
+            switch (country)
+            {
+                case "uganda":
+                    extCostHoover.Click();
+                    extCost.SendKeys("\b\b\b\b\b\b\b\b");
+                    extCost.SendKeys("4000.00\r\n");
+                    break;
 
+                case "us":
+                    extCostHoover.Click();
+                    extCost.SendKeys("\b\b\b\b\b\b\b\b");
+                    extCost.SendKeys("1.00\r\n");
+                    break;
+            }
+          
         }
 
         public bool SaveBill()
@@ -338,10 +295,10 @@ namespace AbtFramework
 
         public bool ReleaseTheBill()
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
 
-            action.MoveToElement(topReleaseRecord).Click();
-            action.Perform();
+            //action.MoveToElement(topReleaseRecord).Click();
+            //action.Perform();
             topReleaseRecord.Click();
 
             

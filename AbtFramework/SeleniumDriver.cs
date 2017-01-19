@@ -130,9 +130,10 @@ namespace AbtFramework
                 case Browser.IE:
                     
                      IEoptions = new InternetExplorerOptions();
-                     IEoptions.EnablePersistentHover = true;
+                    // IEoptions.EnablePersistentHover = true;
                     // IEoptions.EnsureCleanSession = true;
-                    IEoptions.IgnoreZoomLevel = true;
+                   // IEoptions.IgnoreZoomLevel = true;
+                    IEoptions.RequireWindowFocus = true;
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
         
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
