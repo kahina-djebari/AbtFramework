@@ -29,7 +29,7 @@ namespace AbtFramework
             return LoadTime;
         }
 
-        [FindsBy(How=How.Id,Using ="rotator519")]
+        [FindsBy(How=How.ClassName,Using ="intro")]
         private IWebElement todayILearnedLink;
 
         [FindsBy(How=How.Id,Using = "MSOZoneCell_WebPartWPQ3")]
@@ -40,6 +40,12 @@ namespace AbtFramework
 
         [FindsBy(How=How.Id,Using = "zz7_RootAspMenu")]
         private IWebElement navlist;
+        [FindsBy(How=How.ClassName,Using ="author")]
+        private IWebElement _insightAuthor;
+        [FindsBy(How=How.ClassName,Using ="title")]
+        private IWebElement _insightTitle;
+        [FindsBy(How=How.ClassName,Using ="headerlink")]
+        private IList<IWebElement> _seeMoreLinks;
 
         private IWebElement AboutLink
         {
@@ -78,6 +84,18 @@ namespace AbtFramework
             }
         }
 
+        public IWebElement SeeMoreEvents { get { return _seeMoreLinks.Single(e => e.GetAttribute("href").Equals("https://abtassoc.sharepoint.com/Happenings/Lists/AbtEvents")); } }
+
+        public Insight OpenTodaysInsight()
+        {
+            Insight insight = new Insight();
+            insight.Author = InsightAuthor;
+            insight.Title = InsightTitle;
+            todayILearnedLink.Click();
+            return insight;
+
+        }
+
         public QuickLinksModel QuickLinks { get 
                 {
                     _quicklinks = PageGenerator.GetPage<QuickLinksModel>();
@@ -87,6 +105,18 @@ namespace AbtFramework
                     return _quicklinks;
                 }
             }
+
+        public void OpenAbtEvents()
+        {
+            SeeMoreEvents.Click();
+          
+        }
+
+        public string InsightAuthor { get { return _insightAuthor.Text; } }
+
+        public string InsightTitle { get { return _insightTitle.Text; } }
+
+      
 
         public void Go()
         {

@@ -11,10 +11,9 @@ namespace AbtFramework
 {
     public class AgiTopNavigation : PageModel
     {
-        
 
-        [FindsBy(How = How.LinkText, Using = "Home")]
-        private IWebElement HomeLink;
+        [FindsBy(How=How.CssSelector,Using = "#menuContainer > li:nth-child(1) > div > a")]
+        public IWebElement HomeLink;
 
         [FindsBy(How = How.LinkText, Using = "News")]
         private IWebElement NewsLink;
@@ -83,6 +82,8 @@ namespace AbtFramework
             }
         }
 
+
+
         public void HoverOverTools()
         {
 
@@ -120,6 +121,11 @@ namespace AbtFramework
             }
 
             return areActive;
+        }
+
+        public void HoverOverHome()
+        {
+            action.MoveToElement(HomeLink).Perform();
         }
 
         public void ToolsAndResources()
