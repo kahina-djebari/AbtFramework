@@ -156,128 +156,128 @@ this.ScenarioSetup(scenarioInfo);
 #line 37
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.When("I Click on \"Today I Learned\" to Open an insight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+ testRunner.When("I Click on \"Today I Learned\" to Open an", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
  testRunner.Then("The detailed page about the insight should load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Check Abt Events Calendar", SourceLine=40)]
+        [TechTalk.SpecRun.ScenarioAttribute("Check Abt Events Calendar", SourceLine=41)]
         public virtual void CheckAbtEventsCalendar()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Abt Events Calendar", ((string[])(null)));
-#line 41
-this.ScenarioSetup(scenarioInfo);
 #line 42
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 43
- testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 44
- testRunner.When("I Click on \"See More\" under the Abt Events Section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
+ testRunner.When("I Click on \"See More\" under the Abt Events Section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
  testRunner.Then("The Abt Events Calendar should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Check \"About Abt\" Page", SourceLine=46)]
+        [TechTalk.SpecRun.ScenarioAttribute("Check \"About Abt\" Page", SourceLine=47)]
         public virtual void CheckAboutAbtPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check \"About Abt\" Page", ((string[])(null)));
-#line 47
-this.ScenarioSetup(scenarioInfo);
 #line 48
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 49
- testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 50
- testRunner.When("I Hover over \"Home\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
- testRunner.And("I click on About Abt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I Hover over \"Home\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
+ testRunner.And("I click on About Abt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
  testRunner.Then("The About Abt page Should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Check Left Navigation on About Abt Page", SourceLine=53)]
+        [TechTalk.SpecRun.ScenarioAttribute("Check Left Navigation on About Abt Page", SourceLine=54)]
         public virtual void CheckLeftNavigationOnAboutAbtPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Left Navigation on About Abt Page", ((string[])(null)));
-#line 54
-this.ScenarioSetup(scenarioInfo);
 #line 55
- testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 56
- testRunner.And("I have navigated to the \"About Abt\" page on AGI", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 57
- testRunner.When("I Click on \"We Are Abt\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have navigated to the \"About Abt\" page on AGI", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
- testRunner.Then("The \"We Are Abt\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I Click on \"We Are Abt\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
- testRunner.And("The breadcrumbs on the page should display the path to \"We Are Abt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"We Are Abt\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 60
- testRunner.And("If I Click on \"Elevator Speech\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"We Are Abt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.Then("The \"Elevator Speech\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Elevator Speech\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
- testRunner.And("The breadcrumbs on the page should display the path to \"Elevator Speech\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"Elevator Speech\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
- testRunner.And("If I Click on \"Management Advisory Group\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"Elevator Speech\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.Then("The \"Management Advisory Group\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Management Advisory Group\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
+ testRunner.Then("The \"Management Advisory Group\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
  testRunner.And("The breadcrumbs on the page should display the path to \"Management Advisory Group" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("If I Click on \"Office Locations\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
- testRunner.Then("The \"Office Locations\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Office Locations\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.And("The breadcrumbs on the page should display the path to \"Office Locations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"Office Locations\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
- testRunner.And("If I Click on \"Bethesda\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"Office Locations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
- testRunner.Then("The \"Bethesda\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Bethesda\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And("The breadcrumbs on the page should display the path to \"Bethesda\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"Bethesda\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
- testRunner.And("If I Click on \"Cambridge\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"Bethesda\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
- testRunner.Then("The \"Cambridge\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Cambridge\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And("The breadcrumbs on the page should display the path to \"Cambridge\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"Cambridge\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 75
- testRunner.And("If I Click on \"Abt Cafe at Cambridge\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"Cambridge\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
- testRunner.Then("The \"Abt Cafe at Cambridge\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Abt Cafe at Cambridge\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
- testRunner.And("The breadcrumbs on the page should display the path to \"Abt Cafe at Cambridge\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"Abt Cafe at Cambridge\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
- testRunner.And("If I Click on \"Abt Cambridge Softball\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"Abt Cafe at Cambridge\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
- testRunner.Then("The \"Abt Cambridge Softball\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Abt Cambridge Softball\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
- testRunner.And("The breadcrumbs on the page should display the path to \"Abt Cambridge Softball\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"Abt Cambridge Softball\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 81
- testRunner.And("If I Click on \"Cambridge Shuttle Schedule\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"Abt Cambridge Softball\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
- testRunner.Then("The \"Cambridge Shuttle Schedule\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Cambridge Shuttle Schedule\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
+ testRunner.Then("The \"Cambridge Shuttle Schedule\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 84
  testRunner.And("The breadcrumbs on the page should display the path to \"Cambridge Shuttle Schedul" +
                     "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
- testRunner.And("If I Click on \"Durham\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
- testRunner.Then("The \"Durham\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"Durham\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 86
- testRunner.And("The breadcrumbs on the page should display the path to \"Durham\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The \"Durham\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 87
- testRunner.And("If I Click on \"History\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The breadcrumbs on the page should display the path to \"Durham\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
- testRunner.Then("The \"History\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("If I Click on \"History\" on the Left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 89
+ testRunner.Then("The \"History\" section should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 90
  testRunner.And("The breadcrumbs on the page should display the path to \"History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

@@ -123,6 +123,7 @@
     <Compile Include="Enums\aboutAbtFiles.cs" />
     <Compile Include="HomeDropdown.cs" />
     <Compile Include="ERP\ERPBillAndAdjustments.cs" />
+    <Compile Include="Insight.cs" />
     <Compile Include="KmWorkSpacePage.cs" />
     <Compile Include="KnowledgeHubLandingPage.cs" />
     <Compile Include="MailOffice365Page.cs" />

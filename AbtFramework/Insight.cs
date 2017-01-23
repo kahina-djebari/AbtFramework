@@ -1,38 +1,45 @@
-﻿namespace AbtFramework
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AbtFramework
 {
-    public class Insight
-    {
-        string _author;
-        string _title;
-        public Insight()
+           public class Insight
         {
-
-        }
-
-        public string Author
-        {
-            get
+            string _author;
+            string _title;
+            public Insight()
             {
-                return _author;
+
             }
 
-            set
+            public string Author
             {
-                _author = value;
-            }
-        }
+                get
+                {
+                    return _author;
+                }
 
-        public string Title
-        {
-            get
-            {
-                return _title;
+                set
+                {
+                    _author = value;
+                }
             }
 
-            set
+            public string Title
             {
-                _title = value;
+                get
+                {
+                    return _title;
+                }
+
+                set
+                {
+                    _title = value;
+                }
             }
         }
     }
-}
+
