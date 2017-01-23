@@ -118,9 +118,12 @@
     <Compile Include="ConcurHomePage.cs" />
     <Compile Include="ConferencingSetupPage.cs" />
     <Compile Include="EbscoMyAccountPage.cs" />
+    <Compile Include="ERP\ERPExpenseReports.cs" />
+    <Compile Include="ERP\ERPNavigation.cs" />
     <Compile Include="Enums\aboutAbtFiles.cs" />
     <Compile Include="HomeDropdown.cs" />
-    <Compile Include="JamisERPLogin.cs" />
+    <Compile Include="ERP\ERPBillAndAdjustments.cs" />
+    <Compile Include="Insight.cs" />
     <Compile Include="KmWorkSpacePage.cs" />
     <Compile Include="KnowledgeHubLandingPage.cs" />
     <Compile Include="MailOffice365Page.cs" />

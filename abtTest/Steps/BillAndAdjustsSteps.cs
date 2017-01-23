@@ -13,47 +13,47 @@ namespace abtTest.Steps
         public void GivenILoginToJamisWithAValidURLAndUserCredentials()
         {
             SeleniumDriver.init(Browser.IE);
-            AbtPages.JamisERPLogin.Go();
-            AbtPages.JamisERPLogin.AttemptToLogin();
+            AbtPages.ERPBillAndAdjustsments.Go();
+            AbtPages.ERPBillAndAdjustsments.AttemptToLogin();
          }
 
         [Then(@"i click save the status its updated to Open")]
         public void ThenIClickSaveTheStatusItsUpdatedToOpen()
         {
-            AbtPages.JamisERPLogin.SaveBill();
+            AbtPages.ERPBillAndAdjustsments.SaveBill();
         }
 
 
         [Then(@"click on Finance, Click Account Payable Then under Enter Bills And Adjustments")]
         public void ThenClickOnFinanceClickAccountPayableThenUnderEnterBillsAndAdjustments()
         {
-            AbtPages.JamisERPLogin.isAt("BillsAndAdjustsments");
-            AbtPages.JamisERPLogin.AccountsPayableSideMenu("BillsAndAdjustsments");
+            AbtPages.ERPBillAndAdjustsments.isAt("BillsAndAdjustsments");
+            AbtPages.ERPBillAndAdjustsments.AccountsPayableSideMenu("BillsAndAdjustsments");
      
         }
         [Then(@"Fill the international Vendor information")]
         public void ThenFillTheInternationalVendorInformation()
         {
-            AbtPages.JamisERPLogin.SwitchToFrame("main");
-            AbtPages.JamisERPLogin.InputVendor("uganda");
+            AbtPages.ERPBillAndAdjustsments.SwitchToFrame("main");
+            AbtPages.ERPBillAndAdjustsments.InputVendor("us");
         }
 
         [Then(@"Add New Record")]
         public void ThenAddNewRecord()
         {
-            AbtPages.JamisERPLogin.ClickAddDocumentRecord();
+            AbtPages.ERPBillAndAdjustsments.ClickAddDocumentRecord();
         }
         
         [Then(@"fill the Document information")]
         public void ThenFillTheDocumentInformation()
         {
-            AbtPages.JamisERPLogin.FillDocumentDetails("bill");
+            AbtPages.ERPBillAndAdjustsments.FillDocumentDetails("bill","us");
         }
         [When(@"a reference nbr is generated i release the bill")]
         public void WhenAReferenceNbrIsGeneratedIReleaseTheBill()
         {
-            AbtPages.JamisERPLogin.CheckBillinHoldButton();
-            AbtPages.JamisERPLogin.ReleaseTheBill();
+            AbtPages.ERPBillAndAdjustsments.CheckBillinHoldButton();
+            AbtPages.ERPBillAndAdjustsments.ReleaseTheBill();
         }
 
     }

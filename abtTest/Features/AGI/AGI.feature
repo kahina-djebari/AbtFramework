@@ -35,7 +35,8 @@ Scenario: Check Customize Link on QuickLinks
 Scenario: Check "Today I Learned" Link
 	Given I have Open IE
 	And I have navigated to AGI Home Page
-	When I Click on "Today I Learned" to Open an insight
+	When I Click on "Today I Learned" to Open an 
+
 	Then The detailed page about the insight should load
 
 Scenario: Check Abt Events Calendar

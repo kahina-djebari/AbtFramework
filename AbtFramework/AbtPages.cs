@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Interactions;
+﻿using AbtFramework.ERP;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -100,16 +101,27 @@ namespace AbtFramework
         private static ServiceNowIRRTable _servicenowIRRTable;
         private static AgiAbtLibrarySearch _AgiAbtLibrary;
         private static KnowledgeHubLandingPage _knowledgehublandingpage;
-        private static JamisERPLogin _jamiserplogin;
-
-         public static JamisERPLogin JamisERPLogin
+        private static ERPBillAndAdjustments _ERPBillAndAdjustsments;
+        private static ERPExpenseReports _ERPExpenseReports;
+         public static ERPBillAndAdjustments ERPBillAndAdjustsments
         { get {
-                _jamiserplogin = PageGenerator.GetPage<JamisERPLogin>();
+                _ERPBillAndAdjustsments = PageGenerator.GetPage<ERPBillAndAdjustments>();
 
-                _jamiserplogin.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _jamiserplogin.action = new Actions(SeleniumDriver.Instance);
-                return _jamiserplogin;
+                _ERPBillAndAdjustsments.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _ERPBillAndAdjustsments.action = new Actions(SeleniumDriver.Instance);
+                return _ERPBillAndAdjustsments;
             } }
+        public static ERPExpenseReports ERPExpenseReports
+        {
+            get
+            {
+                _ERPExpenseReports = PageGenerator.GetPage<ERPExpenseReports>();
+
+                _ERPExpenseReports.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _ERPExpenseReports.action = new Actions(SeleniumDriver.Instance);
+                return _ERPExpenseReports;
+            }
+        }
 
         public static AbtKnowledgePage AbtKnowledgePage { get {  _abtKnowledgePage = PageGenerator.GetPage<AbtKnowledgePage>();
 
