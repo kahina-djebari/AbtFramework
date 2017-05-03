@@ -54,6 +54,7 @@ namespace abtTest.Steps
         public void WhenIFillTheIRRForm()
         {
           IncidentReportId= AbtPages.ServiceNowIRRForm.GetId();
+            AbtPages.ServiceNowIRRForm.EventSummary = "Some Text";
             //not filling anything on the form for now
             //since there's not mandatory fields when opening an IRR
             //fill the form in this method in case there's a mandatory field in the future

@@ -4,7 +4,6 @@
 	I want to be able to create the IR report from scratch or from a previously reported Incident.
 
 @IRR
-
 Scenario: Create Incident Response Report from Scratch
 	Given I have Open Chrome
 	And I have navigated to ServiceNow Home Page

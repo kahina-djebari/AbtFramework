@@ -10,6 +10,8 @@ namespace AbtFramework
     {
         [FindsBy(How=How.Id,Using = "sys_readonly.u_incident_response.number")]
         public IWebElement IRNumber;
+        [FindsBy(How = How.Id, Using = "u_incident_response.u_event_summary")]
+        public IWebElement _eventSummary;
         [FindsBy(How=How.Id,Using = "sys_display.u_incident_response.parent")]
         private IWebElement ParentIncident;
         [FindsBy(How=How.Id,Using = "u_incident_response.state")]
@@ -67,6 +69,8 @@ namespace AbtFramework
 
         public string ProjectDirector { set { PD.SendKeys(value); } }
 
+        public string EventSummary { set { _eventSummary.SendKeys(value); } }
+
         public string Supervisor { set { Sup.SendKeys(value); } }
 
         public string EventStartTime { set { _eventStartTime.SendKeys(value); } }
@@ -101,11 +105,8 @@ namespace AbtFramework
 
 
         public void FillWithDefaultValues()
-        {
-           
+        { 
             MyIRRSubmition.SetNumber(IRNumber.GetAttribute("value"));
-
-           
         }
 
         public string GetId()
@@ -152,6 +153,7 @@ namespace AbtFramework
             DateOfMitigation= DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
             Mitigation = "test mitigation";
             OpenIRRTab("Event Details");
+            EventSummary="Some Summary Text";
         }
 
         public void CheckRequiredBoxes()
@@ -233,10 +235,7 @@ namespace AbtFramework
                 return false;
             }
         }
-
-       
-    
-
+        
         private void OpenSenderRecipientTab()
         {
             SenderRecipientTab.Click();
