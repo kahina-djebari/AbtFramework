@@ -501,7 +501,8 @@ namespace AbtFramework
             
 
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
-           // IncidentSection.Click();
+            // IncidentSection.Click();
+            Thread.Sleep(1000);
             IncidentOpen.Click();
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");

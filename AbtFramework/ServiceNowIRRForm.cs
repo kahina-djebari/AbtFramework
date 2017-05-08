@@ -12,12 +12,15 @@ namespace AbtFramework
         public IWebElement IRNumber;
         [FindsBy(How = How.Id, Using = "u_incident_response.u_event_summary")]
         public IWebElement _eventSummary;
+
         [FindsBy(How=How.Id,Using = "sys_display.u_incident_response.parent")]
         private IWebElement ParentIncident;
         [FindsBy(How=How.Id,Using = "u_incident_response.state")]
         private IWebElement State;
         [FindsBy(How=How.Id,Using = "sys_display.u_incident_response.u_project_dir")]
         private IWebElement PD;
+        [FindsBy(How = How.Id, Using = "sys_display.u_incident_response.u_reporter")]
+        private IWebElement _incidentReporter;
         [FindsBy(How=How.Id,Using = "sys_display.u_incident_response.u_supervisor")]
         private IWebElement Sup;
         [FindsBy(How=How.Id,Using = "u_incident_response.u_event_start")]
@@ -38,6 +41,10 @@ namespace AbtFramework
         private IWebElement _description;
         [FindsBy(How = How.Id, Using = "u_incident_response.u_num_rec_affected")]
         private IWebElement ReccordAffected;
+        [FindsBy(How = How.Id, Using = "u_incident_response.u_incident_data_ownership")]
+        private IWebElement DataOwnership;
+        [FindsBy(How = How.Id, Using = "u_incident_response.u_disclosing_party")]
+        private IWebElement DisclosingParty;
         [FindsBy(How = How.ClassName, Using = "tab_caption_text")]
         private IList<IWebElement> Tabs;
         [FindsBy(How = How.Id, Using = "label.ni.u_incident_response.u_recipients_authorized")]
@@ -69,6 +76,8 @@ namespace AbtFramework
 
         public string ProjectDirector { set { PD.SendKeys(value); } }
 
+        public string IncidentReporter { set { _incidentReporter.SendKeys(value); } }
+
         public string EventSummary { set { _eventSummary.SendKeys(value); } }
 
         public string Supervisor { set { Sup.SendKeys(value); } }
@@ -90,6 +99,8 @@ namespace AbtFramework
         public string Description { set { _description.SendKeys(value); } }
 
         public IWebElement SenderRecipientTab { get { return Tabs.Single(e => e.Text.Equals("Sender / Recipient")); } }
+
+        public IWebElement EventDetails { get { return Tabs.Single(e => e.Text.Equals("Event Details")); } }
 
         public string ActualStartTime { set { _actualStartTime.SendKeys(value); } }
 
@@ -129,23 +140,35 @@ namespace AbtFramework
            Tabs.Single(e => e.Text.Equals(tab)).Click();
         }
 
+      // public IWebElement SenderRecipientTab { get { return Tabs.Single(e => e.Text.Equals("Sender / Recipient")); } }
+
         public void FillMandatoryFields()
-        {
+        {   //ProjectDirector or Supervisor (for the QA) change, they must be updated here too.
             ProjectDirector = "Michael Wasielewski";
             Supervisor = "Sofiane Oumsalem";
+            //due the execution order the ticked will be taken from a parent and therfore 
+            //this field is already populated. 
+            //IncidentReporter="Jose Frometa Guerra";
             EventStartTime = DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
             EventDiscovered = DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
-           // ITSCNotified = DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
+            ITSCNotified = DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
             AssignedTo = "Stella Laidoson";
             Departments = "IT";
             ClientName = "NA";
+            //select drop down option
+            DisclosingParty.SelectOption("Abt Employee").Click();
             ShortDescription = "test short description";
             Description = "test description";
+            EventSummary = "Some Test Text";
+            OpenEventDetails();
             ReccordAffected.SelectOption("Unknown").Click();
+            //generic function to switch between tabs
             OpenIRRTab("Sender / Recipient");
             AllRecipientsAuthorized.Click();
             OpenIRRTab("Incident Response Team");
-            ActualStartTime= DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
+            //Select drop down property
+            DataOwnership.SelectOption("Client").Click();
+            ActualStartTime = DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
             ActualDiscovered= DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss"); 
             ResponsePlanActivated= DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
             IncidentContained= DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
@@ -153,7 +176,7 @@ namespace AbtFramework
             DateOfMitigation= DateTime.Now.ToString("yyyy-mm-dd hh:mm:ss");
             Mitigation = "test mitigation";
             OpenIRRTab("Event Details");
-            EventSummary="Some Summary Text";
+            
         }
 
         public void CheckRequiredBoxes()
@@ -161,6 +184,7 @@ namespace AbtFramework
             SetTypesOfInformation("PII");
             SetTypesOfDataInvolved("SSN");
             SetDeviceInvolved("Email");
+            //generic switches the tab to String param
             OpenIRRTab("Incident Response Team");
             SetIncidentType("Information Disclosure");
 
@@ -239,6 +263,11 @@ namespace AbtFramework
         private void OpenSenderRecipientTab()
         {
             SenderRecipientTab.Click();
+        }
+
+        private void OpenEventDetails()
+        {
+            EventDetails.Click();
         }
     }
 }

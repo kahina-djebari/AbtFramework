@@ -75,6 +75,6 @@ Scenario: Should Close an Open IRR
 	And  I Change the IRR state to Closed Complete
 	And  I Fill the IRR mandatory fields
 	And  I Check all the required boxes on the IRR form
-	And  I Click Update
+	And  I Click Update 
 	Then Incident Response Report should have been closed
 

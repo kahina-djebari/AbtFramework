@@ -69,6 +69,8 @@ namespace AbtFramework
 
         private void IRRFilterSearch(string ToSearch)
         {
+            //Hardcode a open ticket number for testing purposes
+            //IRRSearchBar.SendKeys("INCRES0001227");
             IRRSearchBar.SendKeys(ToSearch);
             action.SendKeys(Keys.Enter).Perform();
         }
@@ -77,6 +79,7 @@ namespace AbtFramework
         {
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            
             UpdateBtn.Click();
         }
 
