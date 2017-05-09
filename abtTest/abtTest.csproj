@@ -128,6 +128,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IRR.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ServiceNow\ITSC.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITSC.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\SSO\SSO.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +142,7 @@
     <Compile Include="Steps\BillAndAdjustsSteps.cs" />
     <Compile Include="Steps\ExpeseReportsSteps.cs" />
     <Compile Include="Steps\IRRSteps.cs" />
+    <Compile Include="Steps\ITSCSteps.cs" />
     <Compile Include="Steps\SSOSteps.cs" />
     <Compile Include="Web\AGI.cs" />
     <Compile Include="Web\OWA.cs" />
@@ -173,6 +179,10 @@
     <None Include="Features\ServiceNow\IRR.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>IRR1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ServiceNow\ITSC.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ITSC.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\SSO\SSO.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

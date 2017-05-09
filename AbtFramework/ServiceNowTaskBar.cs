@@ -36,10 +36,7 @@ namespace AbtFramework
 
         public void Submit()
         {
-         
             SubmitBtn.Click();
-
-
         }
 
         public bool CreateIncReport()

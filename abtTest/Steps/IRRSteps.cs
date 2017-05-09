@@ -74,10 +74,12 @@ namespace abtTest.Steps
             {
                 CompatibleIncidentID = AbtPages.ServiceNowHomepage.CreateNewIncident("Jose Frometa", Category, SubCategory, Type, "Stella Laidoson", "Client_Data_Security");
             }
-            else
+            else 
             {
                 IncompatibleIncidentID= AbtPages.ServiceNowHomepage.CreateNewIncident("Jose Frometa", Category, SubCategory, Type, "Stella Laidoson", "Client_Data_Security");
             }
+
+
          
             Console.WriteLine("Incident "+CompatibleIncidentID+" has been created");
             

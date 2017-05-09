@@ -147,8 +147,6 @@ namespace AbtFramework
         private IWebElement ITFirstResponder;
         [FindsBy(How=How.Id,Using = "sysverb_insert")]
         private IWebElement submitbtn;
-        [FindsBy(How=How.Id,Using = "div.dead1309c611228701e2bda7b4252474")]
-        private IWebElement IncidentSection;
 
         [FindsBy(How = How.Name, Using = "incident.work_notes")]
         private IWebElement ITworkNotes;
@@ -190,6 +188,19 @@ namespace AbtFramework
         private IWebElement IRRSection;
         [FindsBy(How=How.ClassName,Using ="outputmsg_text")]
         private IWebElement _outputMsg;
+
+        ////////////////////////////////////////////////////////////////////////
+        
+        //  ITSC WEBELEMNS
+
+        [FindsBy(How = How.LinkText, Using = "Incident")]
+        private IWebElement ITSCIncidentDropDownTitle;
+        [FindsBy(How = How.Id, Using = "div.dead1309c611228701e2bda7b4252474")]
+        private IWebElement IncidentSectionDropDownTitle;
+        [FindsBy(How = How.Id, Using = "14641d70c611228501114133b3cc88a1")]
+        private IWebElement CreateNewIncidentButton;
+
+        ////////////////////////////////////////////////////////////////////////
 
         public IWebElement SelfServiceContact { get { return contactType.FindElements(By.TagName("option"))
                                                                  .Single(e => e.Text.Equals("Self-service")); } }
@@ -307,6 +318,31 @@ namespace AbtFramework
             submitbtn.Click();
             return IncidentID;
             
+        }
+
+        public string CreateNewIncidentITSC(string callerfield, string Category, string subCategory, string Type, string ITSCResponder, string assigmentGroup)
+        {
+            
+            string IncidentID = IncidentNumber.GetAttribute("value");
+            caller.SendKeys(callerfield);
+            TimeworkedOnIncident.Click();
+
+            ITCategory.SelectOption(Category).Click();
+            Thread.Sleep(1000);
+            ITSubCategory.SelectOption(subCategory).Click();
+            Thread.Sleep(1000);
+            ITType.SelectOption(Type).Click();
+            ITFirstResponder.SendKeys(ITSCResponder);
+            action.SendKeys(Keys.Tab).Perform();
+            AssignmentGroup.SendKeys(assigmentGroup);
+            action.SendKeys(Keys.Tab).Perform();
+            Thread.Sleep(1500);
+            //            ITworkNotes.SendKeys("Test Incident Request from service now");
+            //TimeworkedOnIncident.Click();
+            //   action.SendKeys(Keys.Tab).Perform();
+            submitbtn.Click();
+            return IncidentID;
+
         }
 
         public bool IsAt()
@@ -504,6 +540,18 @@ namespace AbtFramework
             // IncidentSection.Click();
             Thread.Sleep(1000);
             IncidentOpen.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+        }
+
+        public void CreateNewIncidentSection()
+        {
+
+
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            // IncidentSection.Click();
+            Thread.Sleep(1000);
+            CreateNewIncidentButton.Click();
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
