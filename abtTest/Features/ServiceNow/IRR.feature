@@ -4,7 +4,6 @@
 	I want to be able to create the IR report from scratch or from a previously reported Incident.
 
 @IRR
-
 Scenario: Create Incident Response Report from Scratch
 	Given I have Open Chrome
 	And I have navigated to ServiceNow Home Page
@@ -76,6 +75,6 @@ Scenario: Should Close an Open IRR
 	And  I Change the IRR state to Closed Complete
 	And  I Fill the IRR mandatory fields
 	And  I Check all the required boxes on the IRR form
-	And  I Click Update
+	And  I Click Update 
 	Then Incident Response Report should have been closed
 

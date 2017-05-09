@@ -11,6 +11,7 @@ namespace abtTest.Steps
     {
         private static string CompatibleIncidentID;
         private static string IncompatibleIncidentID;
+        // all the test cases which call an open ticket 
         private static string IncidentReportId;
 
         [Given(@"I have Open Chrome")]
@@ -54,6 +55,7 @@ namespace abtTest.Steps
         public void WhenIFillTheIRRForm()
         {
           IncidentReportId= AbtPages.ServiceNowIRRForm.GetId();
+            AbtPages.ServiceNowIRRForm.EventSummary = "Some Text";
             //not filling anything on the form for now
             //since there's not mandatory fields when opening an IRR
             //fill the form in this method in case there's a mandatory field in the future
@@ -70,11 +72,11 @@ namespace abtTest.Steps
         {
             if (Category.Equals("Security") && SubCategory.Equals("Event"))
             {
-                CompatibleIncidentID = AbtPages.ServiceNowHomepage.CreateNewIncident("David Acuna", Category, SubCategory, Type, "Stella Laidoson", "Client_Data_Security");
+                CompatibleIncidentID = AbtPages.ServiceNowHomepage.CreateNewIncident("Jose Frometa", Category, SubCategory, Type, "Stella Laidoson", "Client_Data_Security");
             }
             else
             {
-                IncompatibleIncidentID= AbtPages.ServiceNowHomepage.CreateNewIncident("David Acuna", Category, SubCategory, Type, "Stella Laidoson", "Client_Data_Security");
+                IncompatibleIncidentID= AbtPages.ServiceNowHomepage.CreateNewIncident("Jose Frometa", Category, SubCategory, Type, "Stella Laidoson", "Client_Data_Security");
             }
          
             Console.WriteLine("Incident "+CompatibleIncidentID+" has been created");
@@ -169,6 +171,7 @@ namespace abtTest.Steps
         [Then(@"I should receive an error indicating what boxes need to be checked before closing")]
         public void ThenIShouldReceiveAnErrorIndicatingWhatBoxesNeedToBeCheckedBeforeClosing()
         {
+            System.Threading.Thread.Sleep(5000);
             Assert.True(AbtPages.ServiceNowIRRForm.InvalidUpdateFired());
             Console.WriteLine(AbtPages.ServiceNowIRRForm.GetInvalidUpdateErrorMsg());
         }
