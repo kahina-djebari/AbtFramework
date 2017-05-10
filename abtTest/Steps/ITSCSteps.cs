@@ -30,10 +30,19 @@ namespace abtTest.Steps
         [Then(@"The ITSC Incident Report should have been created")]
         public void ThenTheITSCIncidentReportShouldHaveBeenCreated()
         {
-            ITSCIncidentReportId = AbtPages.ServiceNowIRRForm.GetId();
-            Assert.NotNull(ITSCIncidentReportId);
-            Assert.Equal(ITSCCompatibleIncidentID, AbtPages.ServiceNowIRRForm.GetParentIncident());
+           // AbtPages.ServiceNowTaskBar.PullIRRWithNumber(ITSCIncidentReportId);
+            Assert.True(AbtPages.ServiceNowIRRTable.IRRExists(ITSCIncidentReportId));
+            Console.WriteLine("Incident " + ITSCIncidentReportId + " has been created");
         }
+
+        [Then(@"ITSC Opens and Process the Incident")]
+        public void ThenITSCOpensAndProcessTheIncident()
+        {
+            AbtPages.ServiceNowHomepage.OpenIncidentSection();
+            AbtPages.TablePageObject.OpenIncident(ITSCIncidentReportId);
+            Console.WriteLine("Incident " + ITSCIncidentReportId + " has been Processed");
+        }
+
 
     }
 }

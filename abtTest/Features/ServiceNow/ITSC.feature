@@ -10,5 +10,10 @@ Scenario: Create ITSC Incident from Scratch
 	And I have impersonated user "Irving Anglon"
 	And As an ITSC i open Incident Section
     When As an ITSC I Create an Incident With Category "Software" and Subcategory "Application" and Type "Failure"
-	And I click submit
 	Then The ITSC Incident Report should have been created
+
+Scenario: Process an ITSC incident from Scratch
+	Given I have Open Chrome
+	And I have navigated to ServiceNow Home Page
+	And I have impersonated user "Irving Anglon"
+	Then ITSC Opens and Process the Incident
