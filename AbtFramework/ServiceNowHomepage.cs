@@ -199,6 +199,10 @@ namespace AbtFramework
         private IWebElement IncidentSectionDropDownTitle;
         [FindsBy(How = How.Id, Using = "14641d70c611228501114133b3cc88a1")]
         private IWebElement CreateNewIncidentButton;
+        [FindsBy(How = How.Id, Using = "incident.comments")]
+        private IWebElement AdditionalCommentsInputField;
+        [FindsBy(How = How.Id, Using = "tmr_157c71e64f26b2001b0bee6d0210c7fd_min")]
+        private IWebElement MinutesWorkedInputField;
 
         ////////////////////////////////////////////////////////////////////////
 
@@ -260,9 +264,26 @@ namespace AbtFramework
            
         }
 
+        private void FillAdditionalComments()
+        {
+            AdditionalCommentsInputField.SendKeys(" ITSC Input Test Text: Update");
+        }
+
+        private void FillWorkedMinutes()
+        {
+            MinutesWorkedInputField.SendKeys("05");
+        }
+
         private void ExpandIRRSection()
         {
             IRRSection.Click();
+        }
+
+        public void UpdateITSCIncident()
+        {
+            FillAdditionalComments();
+            FillWorkedMinutes();
+            Update.Click();
         }
 
         public void OpenHRIssues()
@@ -727,7 +748,7 @@ namespace AbtFramework
         {
             rolesDictionary = new Dictionary<string, string[]>();
             rolesDictionary.Add("Valeria Rozenbaum", new string[] { "Abt Service Hub", "Self-Service", "Service Desk", "Incident", "Problem", "Change", "Time Card", "Configuration", "Service Catalog", "Knowledge", "Reports", "BSM Map" });
-            rolesDictionary.Add("David Acuna", new string[] { "Abt Service Hub", "Self-Service" });
+            rolesDictionary.Add("Jose Frometa", new string[] { "Abt Service Hub", "Self-Service" });
             rolesDictionary.Add("Michael Stinson", new string[] { "Abt Service Hub", "Self-Service","HR Service Center","Reports" });
             rolesDictionary.Add("Zanira Khan", new string[] { "Abt Service Hub", "Self-Service", "Service Desk","Incident","Problem","Change","Time Card","Configuration","Service Catalog","Reports","BSM Map","IT GRC"});
             rolesDictionary.Add("Steve Hunt", new string[] { "Abt Service Hub", "Self-Service", "Product Catalog", "Inventory","Facilities","Skills","Territories","Reports" });
@@ -748,7 +769,7 @@ namespace AbtFramework
 
         public bool isUserLoggedIn()
         {
-            if (CurrentUser.Text.Equals("David Acuna"))
+            if (CurrentUser.Text.Equals("Jose Frometa"))
             {
                
              //   Console.WriteLine("User: David succesfully logged in using "+SSOProvider);

@@ -43,6 +43,14 @@ namespace abtTest.Steps
             Console.WriteLine("Incident " + ITSCIncidentReportId + " has been Processed");
         }
 
+        [Then(@"ITSC Opens and Updates the Incident")]
+        public void ThenITSCOpensAndUpdatesTheIncident()
+        {
+            AbtPages.ServiceNowHomepage.OpenIncidentSection();
+            AbtPages.TablePageObject.OpenIncident(ITSCIncidentReportId);
+            AbtPages.ServiceNowHomepage.UpdateITSCIncident();
+            Console.WriteLine("Incident " + ITSCIncidentReportId + " has been Processed");
+        }
 
     }
 }
