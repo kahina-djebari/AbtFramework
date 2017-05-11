@@ -258,9 +258,6 @@ namespace AbtFramework
                
             });
             SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-
-
-            
            
         }
 
@@ -281,7 +278,17 @@ namespace AbtFramework
 
         public void UpdateITSCIncident()
         {
+            TimeworkedOnIncident.Click();
+            Thread.Sleep(1000);
             FillAdditionalComments();
+            FillWorkedMinutes();
+            Update.Click();
+        }
+
+        public void ResolveITSCIncident()
+        {
+            FillAdditionalComments();
+            TimeworkedOnIncident.Click();
             FillWorkedMinutes();
             Update.Click();
         }
@@ -555,8 +562,6 @@ namespace AbtFramework
 
         public void OpenIncidentSection()
         {
-            
-
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             // IncidentSection.Click();
             Thread.Sleep(1000);
@@ -603,16 +608,9 @@ namespace AbtFramework
 
         private void GotoUrl(string url)
         {
-                        
-                
-            
                 SeleniumDriver.Instance.Navigate().GoToUrl(url);
                 StartTimer();
-
-
         }
-
-  
 
         public void CloseITServiceRequest()
         {
@@ -629,10 +627,7 @@ namespace AbtFramework
        
             IncidentComments.SendKeys("Incident Comments");
             ResolveIncident.Click();
-
         }
-
-    
 
         public void CloseHRServiceRequest()
         {

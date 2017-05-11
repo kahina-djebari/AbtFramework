@@ -106,10 +106,10 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Update an Opened ITSC Incident", SourceLine=20)]
-        public virtual void UpdateAnOpenedITSCIncident()
+        [TechTalk.SpecRun.ScenarioAttribute("Update an Open ITSC Incident", SourceLine=20)]
+        public virtual void UpdateAnOpenITSCIncident()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update an Opened ITSC Incident", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update an Open ITSC Incident", ((string[])(null)));
 #line 21
 this.ScenarioSetup(scenarioInfo);
 #line 22
@@ -120,6 +120,28 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I have impersonated user \"Irving Anglon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
  testRunner.Then("ITSC Opens and Updates the Incident", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Should Close an Open Incident", SourceLine=26)]
+        public virtual void ShouldCloseAnOpenIncident()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should Close an Open Incident", ((string[])(null)));
+#line 27
+this.ScenarioSetup(scenarioInfo);
+#line 28
+ testRunner.Given("I have Open Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 29
+ testRunner.And("I have navigated to ServiceNow Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("I have impersonated user \"Irving Anglon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("I have opened the open incidents Section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.When("I Try to pull an Incident with state \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+ testRunner.Then("the Incident should have been closed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

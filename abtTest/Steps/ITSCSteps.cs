@@ -52,5 +52,32 @@ namespace abtTest.Steps
             Console.WriteLine("Incident " + ITSCIncidentReportId + " has been Processed");
         }
 
+        [Given(@"I have opened the open incidents Section")]
+        public void GivenIHaveOpenedTheOpenIncidentsSection()
+        {
+            AbtPages.ServiceNowHomepage.OpenIncidentSection();
+        }
+
+
+        [When(@"I Try to pull an Incident with state ""(.*)""")]
+        public void WhenITryToPullAnIncidentWithState(string state)
+        {
+           
+            AbtPages.TablePageObject.OpenIncident(ITSCIncidentReportId);
+            AbtPages.ServiceNowHomepage.UpdateITSCIncident();
+            Console.WriteLine("Opening Incident Response Report " + ITSCIncidentReportId);
+            
+        }
+
+        [Then(@"the Incident should have been closed")]
+        public void ThenTheIncidentShouldHaveBeenClosed()
+        {
+            //TODO!!! complete the validation of this Scenario
+
+            //AbtPages.ServiceNowHomepage.OpenIncidentSection();
+            Console.WriteLine("Incident " + ITSCIncidentReportId + " Has been closed.");
+        }
+
+
     }
 }
