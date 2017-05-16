@@ -36,6 +36,9 @@ namespace AbtFramework
         [FindsBy(How=How.ClassName,Using = "list2_body")]
         private IWebElement UnassignedFacilitiesTable;
 
+        [FindsBy(How = How.ClassName, Using = "breadcrumb_link")]
+        private IWebElement filterLink;
+
         private IWebElement LatestRequest;
         [FindsBy(How=How.Id,Using = "link.facilities_request.time_worked")]
         private IWebElement timeworked;
@@ -88,8 +91,10 @@ namespace AbtFramework
         private IWebElement TimeworkedOnIncident;
         [FindsBy(How=How.Id,Using = "b55fbec4c0a800090088e83d7ff500de")]
         private IWebElement IncidentOpen;
+        [FindsBy(How = How.Id, Using = "cf30af240a0a0b3000ab68fbb64877c9")]
+        private IWebElement IncidentResolved;
 
-      
+
 
         [FindsBy(How = How.Id, Using = "54f3f8b704df110008e999502af6ec9f")]
         private IWebElement HR_Issues_Open;
@@ -281,16 +286,17 @@ namespace AbtFramework
             TimeworkedOnIncident.Click();
             Thread.Sleep(1000);
             FillAdditionalComments();
-            FillWorkedMinutes();
+            //FillWorkedMinutes();
             Update.Click();
         }
 
         public void ResolveITSCIncident()
         {
-            FillAdditionalComments();
             TimeworkedOnIncident.Click();
-            FillWorkedMinutes();
-            Update.Click();
+            Thread.Sleep(1000);
+            FillAdditionalComments();
+            //FillWorkedMinutes();
+            ResolveIncident.Click();
         }
 
         public void OpenHRIssues()
@@ -570,6 +576,21 @@ namespace AbtFramework
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
 
+        public void ResolvedIncidentSection()
+        {
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            // IncidentSection.Click();
+            Thread.Sleep(1000);
+            IncidentResolved.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+        }
+
+        public bool IsAtResolved()
+        {
+            return filterLink.Displayed;
+        }
         public void CreateNewIncidentSection()
         {
 

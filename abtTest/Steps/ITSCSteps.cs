@@ -49,7 +49,7 @@ namespace abtTest.Steps
             AbtPages.ServiceNowHomepage.OpenIncidentSection();
             AbtPages.TablePageObject.OpenIncident(ITSCIncidentReportId);
             AbtPages.ServiceNowHomepage.UpdateITSCIncident();
-            Console.WriteLine("Incident " + ITSCIncidentReportId + " has been Processed");
+            Console.WriteLine("Incident " + ITSCIncidentReportId + " has been Updated");
         }
 
         [Given(@"I have opened the open incidents Section")]
@@ -64,7 +64,7 @@ namespace abtTest.Steps
         {
            
             AbtPages.TablePageObject.OpenIncident(ITSCIncidentReportId);
-            AbtPages.ServiceNowHomepage.UpdateITSCIncident();
+            AbtPages.ServiceNowHomepage.ResolveITSCIncident();
             Console.WriteLine("Opening Incident Response Report " + ITSCIncidentReportId);
             
         }
@@ -73,9 +73,10 @@ namespace abtTest.Steps
         public void ThenTheIncidentShouldHaveBeenClosed()
         {
             //TODO!!! complete the validation of this Scenario
-
-            //AbtPages.ServiceNowHomepage.OpenIncidentSection();
-            Console.WriteLine("Incident " + ITSCIncidentReportId + " Has been closed.");
+            AbtPages.ServiceNowHomepage.ResolvedIncidentSection();
+            AbtPages.TablePageObject.OpenIncident(ITSCIncidentReportId);
+            Assert.True(AbtPages.ServiceNowHomepage.IsAtResolved());
+            Console.WriteLine("Incident " + ITSCIncidentReportId + " Has been Resolved.");
         }
 
 
