@@ -20,8 +20,6 @@ namespace AbtFramework
         [FindsBy(How = How.Id, Using = "imp_recent")]
         private IWebElement Users;
 
-           
-
         [FindsBy(How=How.Id,Using = "gsft_full_name")]
         private IWebElement CurrentUser;
 
@@ -43,21 +41,20 @@ namespace AbtFramework
         [FindsBy(How=How.Id,Using = "link.facilities_request.time_worked")]
         private IWebElement timeworked;
 
-        
-
         [FindsBy(How=How.Id,Using = "readyForWork")]
         private IWebElement ReadyForWork;
 
         [FindsBy(How=How.Id,Using = "facilities_request.work_notes")]
         private IWebElement FacilityWorknotes;
+
         [FindsBy(How=How.Id,Using = "sysverb_update")]
         private IWebElement Update;
+
         [FindsBy(How=How.Id,Using = "sys_display.facilities_request.assigned_to")]
         private IWebElement Facility_AssigntoPerson;
 
         [FindsBy(How = How.Id, Using = "sys_display.u_hr_service_tracking.u_assigned_to")]
         private IWebElement AssignToHRPerson;
-
 
         [FindsBy(How=How.LinkText,Using ="Created")]
         private IWebElement OrderByCreated;
@@ -72,9 +69,6 @@ namespace AbtFramework
         [FindsBy(How=How.LinkText,Using ="Service Desk")]
         private IWebElement ServiceDeskLink;
 
-      
-
-      
         [FindsBy(How=How.Id,Using = "incident.category")]
         private IWebElement ITCategory;
         [FindsBy(How = How.Id, Using = "sys_display.incident.u_itsc_first_responder")]
@@ -94,8 +88,6 @@ namespace AbtFramework
         [FindsBy(How = How.Id, Using = "cf30af240a0a0b3000ab68fbb64877c9")]
         private IWebElement IncidentResolved;
 
-
-
         [FindsBy(How = How.Id, Using = "54f3f8b704df110008e999502af6ec9f")]
         private IWebElement HR_Issues_Open;
         [FindsBy(How = How.Id, Using = "incident.contact_type")]
@@ -113,6 +105,7 @@ namespace AbtFramework
         private IWebElement AssignmentGroup;
         [FindsBy(How = How.Id, Using = "sys_readonly.incident.number")]
         private IWebElement IncidentNumber;
+
         [FindsBy(How = How.ClassName, Using = "menu")]
         private IList<IWebElement> menuLinks;
 
@@ -211,6 +204,26 @@ namespace AbtFramework
 
         ////////////////////////////////////////////////////////////////////////
 
+
+        ////////////////////////////////////////////////////////////////////////
+
+        //  Facilities WEBELEMNS
+
+        //  [FindsBy(How = How.LinkText, Using = "Incident")]
+        //   private IWebElement ITSCIncidentDropDownTitle;
+        //  [FindsBy(How = How.Id, Using = "div.dead1309c611228701e2bda7b4252474")]
+        //  private IWebElement IncidentSectionDropDownTitle;
+        [FindsBy(How = How.Id, Using = "0037333447232100158b949b6c9a7150")]
+        private IWebElement FacilitiesAssignedToMeButton;
+        [FindsBy(How = How.Id, Using = "524d13411b011100e90d928f3d071346")]
+         private IWebElement CreateNewFacilititiesButton;
+        [FindsBy(How = How.Id, Using = "sys_readonly.facilities_request.number")]
+        private IWebElement FacilitiesIncidentNumber;
+        //  [FindsBy(How = How.Id, Using = "incident.comments")]
+        //  private IWebElement AdditionalCommentsInputField;
+
+
+        ////////////////////////////////////////////////////////////////////////
         public IWebElement SelfServiceContact { get { return contactType.FindElements(By.TagName("option"))
                                                                  .Single(e => e.Text.Equals("Self-service")); } }
 
@@ -379,6 +392,18 @@ namespace AbtFramework
 
         }
 
+        /// <summary>
+        /// ////////////////////////
+        /// </summary>
+        /// <param name="callerfield"></param>
+        /// <param name="Category"></param>
+        /// <param name="subCategory"></param>
+        /// <param name="Type"></param>
+        /// <param name="ITSCResponder"></param>
+        /// <param name="assigmentGroup"></param>
+        /// <returns></returns>
+
+
         public bool IsAt()
         {
             try
@@ -410,22 +435,54 @@ namespace AbtFramework
           
         }
 
-        public void CreateNewFacilityRequest(string caller, string category, string subcategory, string shortdescription, string assigmentgroup)
+        public bool isFacilitiesIncidentNumberCreated(String tickeIWantToFind)
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
-            NewTicket.Click();
+            string FacilitiesIncidentID = FacilitiesIncidentNumber.GetAttribute("value");
+            return FacilitiesIncidentID.Equals(tickeIWantToFind);
+        }
+
+        public string CreateNewFacilityRequestAndReadyToWork(string caller, string category, string subcategory, string shortdescription, string assigmentgroup)
+        {
+            
             Facility_Caller.SendKeys(caller);
             Facility_Category.SelectOption(category).Click();
             Thread.Sleep(1000);
             Facility_SubCategory.SelectOption(subcategory).Click();
             Facility_ShortDescription.SendKeys(shortdescription);
-            Facility_AssignmentGroup.SendKeys(assigmentgroup);
-            Facilitytimeworked.Click();
+            // Facility_AssignmentGroup.SendKeys(assigmentgroup);
+            // Facilitytimeworked.Click();
+            //ReadyForWork.Click();
+            
+            Facility_AssigntoPerson.SendKeys("Steve Hu");
+            string IncidentID = FacilitiesIncidentNumber.GetAttribute("value");
+            Thread.Sleep(2000);
             FacilityWorknotes.SendKeys("Facility Request Created at:" + DateTime.Now);
-            submitbtn.Click();
-
+            // ReadyForWork.Click();
+            // AbtPages.TablePageObject.FirstRowItem.Click();
+            // StartWork.Click();
+            // FacilityWorknotes.SendKeys("Work completed");
+            //closeComplete.Click();
+            // Thread.Sleep(10000);
+           
+            return  IncidentID;
         }
+
+        public void ClickFacilitiesReadyForWork()
+        {
+            ReadyForWork.Click();
+        }
+        public void ClickFacilitiesAssignedToMe()
+        {
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            // IncidentSection.Click();
+            Thread.Sleep(1000);
+            FacilitiesAssignedToMeButton.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            
+        }
+
 
         public void CreateNewKBArticle(string shortdescription)
         {
@@ -593,12 +650,20 @@ namespace AbtFramework
         }
         public void CreateNewIncidentSection()
         {
-
-
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             // IncidentSection.Click();
             Thread.Sleep(1000);
             CreateNewIncidentButton.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+        }
+
+        public void ButtonCreateNewFacilityRequest()
+        {
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            // IncidentSection.Click();
+            Thread.Sleep(1000);
+            CreateNewFacilititiesButton.Click();
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
@@ -664,9 +729,7 @@ namespace AbtFramework
             Update.Click();
 
         }
-
-      
-
+        
         public bool OfficeRequestIsClosed(string shortdescription)
         {
           //  Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
@@ -718,8 +781,6 @@ namespace AbtFramework
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
 
-
-
                 AbtPages.TablePageObject.FirstRowItem.Click();
                 ReadyForWork.Click();
                 Facility_AssigntoPerson.SendKeys(assignedto);
@@ -730,9 +791,6 @@ namespace AbtFramework
             StartWork.Click();
             FacilityWorknotes.SendKeys("Work completed");
             closeComplete.Click();
-
-
-
 
         }
 

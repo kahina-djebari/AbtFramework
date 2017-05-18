@@ -72,7 +72,6 @@ namespace abtTest.Steps
         [Then(@"the Incident should have been closed")]
         public void ThenTheIncidentShouldHaveBeenClosed()
         {
-            //TODO!!! complete the validation of this Scenario
             AbtPages.ServiceNowHomepage.ResolvedIncidentSection();
             AbtPages.TablePageObject.OpenIncident(ITSCIncidentReportId);
             Assert.True(AbtPages.ServiceNowHomepage.IsAtResolved());
