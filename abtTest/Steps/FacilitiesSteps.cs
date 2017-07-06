@@ -37,7 +37,7 @@ namespace abtTest.Steps
         [Then(@"facilities request should have been created")]
         public void ThenFacilitiesRequestShouldHaveBeenCreated()
         {
-            AbtPages.ServiceNowHomepage.ClickFacilitiesAssignedToMe();
+            AbtPages.ServiceNowHomepage.ClickFacilitiesCreatedByMe();
             AbtPages.TablePageObject.OpenIncident(FAIncidentReportId);
             Assert.True(AbtPages.ServiceNowHomepage.isFacilitiesIncidentNumberCreated(FAIncidentReportId));
             Console.WriteLine("Facilities Ticket " + FAIncidentReportId + " has been Processed");  
@@ -47,27 +47,27 @@ namespace abtTest.Steps
         [Given(@"Under the facilites section i click on Assigned to me and click a ticket")]
         public void GivenUnderTheFacilitesSectionIClickOnAssignedToMeAndClickATicket()
         {
-            ScenarioContext.Current.Pending();
+            AbtPages.ServiceNowHomepage.ClickFacilitiesAssignedToMe();
+            AbtPages.TablePageObject.OpenFirstRowItem();
         }
 
         [Given(@"I click start work to start procesing the ticket")]
         public void GivenIClickStartWorkToStartProcesingTheTicket()
         {
-            ScenarioContext.Current.Pending();
+            AbtPages.ServiceNowHomepage.ClickFacilitiesStartWork();
         }
 
         [When(@"im done with the ticket i click Close Complete")]
         public void WhenImDoneWithTheTicketIClickCloseComplete()
         {
-            ScenarioContext.Current.Pending();
+            AbtPages.ServiceNowHomepage.CloseCompleteFacilitiesIncident();
         }
 
         [Then(@"facilities request should have been closed")]
         public void ThenFacilitiesRequestShouldHaveBeenClosed()
         {
-            ScenarioContext.Current.Pending();
+            AbtPages.ServiceNowHomepage.AllRequestFacilityRequest();
+            AbtPages.ServiceNowHomepage.isFacilitiesIncidentNumberCreated(FAIncidentReportId);
         }
-
-
     }
 }

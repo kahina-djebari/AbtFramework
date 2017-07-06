@@ -36,5 +36,10 @@ namespace AbtFramework
         {
             FirstRowItem.Click();
         }
+
+        public string GetIncidentNumberFirstRowItem()
+        {
+           return   FirstRowItem.GetAttribute("value");
+        }
     }
 }

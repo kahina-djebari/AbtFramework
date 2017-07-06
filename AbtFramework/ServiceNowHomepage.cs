@@ -14,8 +14,21 @@ namespace AbtFramework
         [FindsBy(How=How.Id,Using = "ok_button")]
         private IWebElement OkBtn;
 
-        [FindsBy(How=How.CssSelector,Using = "#impersonate_span > span")]
+        [FindsBy(How = How.Id, Using = "select2-chosen-2")]
+        private IWebElement SearchForUserModal;
+
+        [FindsBy(How = How.Id, Using = "s2id_autogen2_search")]
+        private IWebElement InputUserToImpersonateModal;
+
+        [FindsBy(How=How.Id,Using = "user_info_dropdown")]
         private IWebElement UserIcon;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div/header/div[1]/div/div[2]/div/div[2]/div/ul/li[2]/a")]
+        private IWebElement UserIconOptions;
+
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[4]/ul/li/div")]
+        private IWebElement UserToSelect;
 
         [FindsBy(How = How.Id, Using = "imp_recent")]
         private IWebElement Users;
@@ -214,9 +227,13 @@ namespace AbtFramework
         //  [FindsBy(How = How.Id, Using = "div.dead1309c611228701e2bda7b4252474")]
         //  private IWebElement IncidentSectionDropDownTitle;
         [FindsBy(How = How.Id, Using = "0037333447232100158b949b6c9a7150")]
+        private IWebElement FacilitiesCreatedByMeButton;
+        [FindsBy(How = How.Id, Using = "17dc9b011b011100e90d928f3d071300")]
         private IWebElement FacilitiesAssignedToMeButton;
         [FindsBy(How = How.Id, Using = "524d13411b011100e90d928f3d071346")]
          private IWebElement CreateNewFacilititiesButton;
+        [FindsBy(How = How.Id, Using = "b36d93411b011100e90d928f3d071394")]
+        private IWebElement AllRequestButton;
         [FindsBy(How = How.Id, Using = "sys_readonly.facilities_request.number")]
         private IWebElement FacilitiesIncidentNumber;
         //  [FindsBy(How = How.Id, Using = "incident.comments")]
@@ -251,7 +268,7 @@ namespace AbtFramework
 
         public void OpenIRRSection()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
 
             wait.Timeout = TimeSpan.FromSeconds(5);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
@@ -467,22 +484,47 @@ namespace AbtFramework
             return  IncidentID;
         }
 
+        public void CloseCompleteFacilitiesIncident()
+        {
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            FacilityWorknotes.SendKeys("Work completed");
+            Thread.Sleep(1000);
+            closeComplete.Click();
+        }
+
         public void ClickFacilitiesReadyForWork()
         {
+
             ReadyForWork.Click();
         }
-        public void ClickFacilitiesAssignedToMe()
+
+        public void ClickFacilitiesStartWork()
+        {
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            StartWork.Click();
+        }
+        public void ClickFacilitiesCreatedByMe()
         {
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
-            // IncidentSection.Click();
             Thread.Sleep(1000);
-            FacilitiesAssignedToMeButton.Click();
+            FacilitiesCreatedByMeButton.Click();
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             
         }
 
+        public void ClickFacilitiesAssignedToMe()
+        {
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            Thread.Sleep(1000);
+            FacilitiesAssignedToMeButton.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+        }
 
         public void CreateNewKBArticle(string shortdescription)
         {
@@ -491,8 +533,6 @@ namespace AbtFramework
             KB_ShortDescription.SendKeys(shortdescription);
             action.SendKeys(Keys.Tab).Perform();
             action.SendKeys(Keys.Tab).Perform();
-      
-
         }
 
 
@@ -507,10 +547,8 @@ namespace AbtFramework
             {
                 if (rolesDictionary.TryGetValue(user, out RoleForUser))
                 {
-
                     foreach (var roleContainer in rolesContainer)
                     {
-
                         Console.WriteLine(roleContainer.GetAttribute("id"));
                         string role = GetRoleText(roleContainer);
                         Console.WriteLine(role);
@@ -521,7 +559,6 @@ namespace AbtFramework
                         }
                     }
                 }
-
                 else
                 {
                     Console.WriteLine("Couldn't Find User \"" + user + "\" in the Dictonary");
@@ -534,10 +571,6 @@ namespace AbtFramework
             }
 
             return true;
-
-          
-           
-            
         }
 
         public bool IncidentExist(IncidentType incidentType,Urgency urgency, string shortDescription, string MoreInformation)
@@ -625,7 +658,7 @@ namespace AbtFramework
 
         public void OpenIncidentSection()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            //SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             // IncidentSection.Click();
             Thread.Sleep(1000);
             IncidentOpen.Click();
@@ -635,8 +668,8 @@ namespace AbtFramework
 
         public void ResolvedIncidentSection()
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+           // SeleniumDriver.Instance.SwitchTo().ParentFrame();
+           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             // IncidentSection.Click();
             Thread.Sleep(1000);
             IncidentResolved.Click();
@@ -650,8 +683,7 @@ namespace AbtFramework
         }
         public void CreateNewIncidentSection()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
-            // IncidentSection.Click();
+           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             CreateNewIncidentButton.Click();
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
@@ -660,10 +692,18 @@ namespace AbtFramework
 
         public void ButtonCreateNewFacilityRequest()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
-            // IncidentSection.Click();
+           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             CreateNewFacilititiesButton.Click();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+        }
+
+        public void AllRequestFacilityRequest()
+        {
+           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            Thread.Sleep(1000);
+            AllRequestButton.Click();
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
@@ -674,9 +714,10 @@ namespace AbtFramework
             {
                 case WebEnvironment.TestEnvironment:
                     GotoUrl("https://abtassoctest.service-now.com/navpage.do");
-                   // GotoUrl("https://abtassociates.okta.com/home/servicenow_app2/0oa80tx9crDmIcRfk0x7/14155");
-                  //  Console.WriteLine("Service Now (Test) Home Page Took: " + LoadTime + " to load Using Okta");
-                 //   Console.WriteLine("</br>");
+                    //GotoUrl("https://abtassocdev.service-now.com/nav_to.do?uri=%2Fhome.do");
+                    // GotoUrl("https://abtassociates.okta.com/home/servicenow_app2/0oa80tx9crDmIcRfk0x7/14155");
+                    //  Console.WriteLine("Service Now (Test) Home Page Took: " + LoadTime + " to load Using Okta");
+                    //   Console.WriteLine("</br>");
                     SSOProvider = "Okta";
                     portalEnvironment = "Test";
                     break;
@@ -700,8 +741,8 @@ namespace AbtFramework
 
         public void CloseITServiceRequest()
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+           // SeleniumDriver.Instance.SwitchTo().ParentFrame();
+          //  SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             AbtPages.TablePageObject.FirstRowItem.Click();
             ITSCResponder.SendKeys("Valeria Rozenbaum");
             TimeworkedOnIncident.Click();
@@ -717,47 +758,35 @@ namespace AbtFramework
 
         public void CloseHRServiceRequest()
         {
-
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+           // SeleniumDriver.Instance.SwitchTo().ParentFrame();
+           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             AbtPages.TablePageObject.FirstRowItem.Click();
-             AssignToHRPerson.Clear();
+            AssignToHRPerson.Clear();
             AssignToHRPerson.SendKeys("Michael Stinson");
             AdditionalComments.SendKeys("Additional Comments");
             HRworkNotes.SendKeys("Work notes");
             StatusDropdown.SelectOption("Resolved");
             Update.Click();
-
         }
         
         public bool OfficeRequestIsClosed(string shortdescription)
         {
-          //  Driver.seleniumdriver.SwitchTo().Frame("gsft_main");
             LatestRequest = GetLatestRequest();
             IWebElement latestShortdescription = GetLatestShortdescription();
-
             if (!latestShortdescription.Text.Equals(shortdescription))
             {
                 return true; 
-
             }
-
-
-            return false;
-            
+            return false;     
         }
-
-
         public void GoTo(ServicenowLinks link)
         {
             switch (link)
             {
                 case ServicenowLinks.ServiceHub:
                     SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
-
                     SeleniumDriver.Instance.FindElement(By.LinkText("Home")).Click();
                     break;
-
                 default:break;
             }
             
@@ -770,8 +799,6 @@ namespace AbtFramework
             {       
                 return roleContainer.FindElements(By.TagName("label")).Where(e=>e.Text!=null).First().Text;
             }
-
-
             catch { Console.WriteLine("Could Not find Any Label element on List for Left Nav Panel"); return null; }
 
         }
@@ -803,6 +830,11 @@ namespace AbtFramework
         private IWebElement GetLatestShortdescription()
         {
             return LatestRequest.FindElements(By.TagName("td"))[4];
+        }
+
+        private IWebElement GetLatestTicketState()
+        {
+            return LatestRequest.FindElements(By.TagName("td"))[7];
         }
 
         private IWebElement GetLatestRequest()
@@ -857,14 +889,20 @@ namespace AbtFramework
         public void ImpersonateUser(string User)
         {
              UserIcon.Click();
-             GetUser(User).Click();
-             OkBtn.Click();
+             UserIconOptions.Click();
+             Thread.Sleep(1000);
+             SearchForUserModal.Click();
+             InputUserToImpersonateModal.SendKeys(User);
+             Thread.Sleep(1000);
+             UserToSelect.Click();
+            //GetUser(User).Click();
+            // OkBtn.Click();
 
         }
 
         private IWebElement GetUser(string user)
         {
-            try { return Users.FindElements(By.TagName("option")).Single(e => e.Text.Equals(user)); }
+            try { return Users.FindElements(By.TagName("ng-click")).Single(e => e.Text.Equals(user)); }
 
             catch(Exception e) { Console.WriteLine("Could not Find User " + user + " to Impersonate");
                 return null;
