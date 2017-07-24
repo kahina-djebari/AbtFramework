@@ -133,11 +133,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SSO.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Windows\WinPrograms.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinPrograms.feature</DependentUpon>
+    </Compile>
     <Compile Include="Steps\AGISteps.cs" />
     <Compile Include="Steps\FacilitiesSteps.cs" />
     <Compile Include="Steps\IRRSteps.cs" />
     <Compile Include="Steps\ITSCSteps.cs" />
     <Compile Include="Steps\SSOSteps.cs" />
+    <Compile Include="Steps\WinPrograms.cs" />
     <Compile Include="Web\AGI.cs" />
     <Compile Include="Web\OWA.cs" />
     <Compile Include="Web\SSO.cs" />
@@ -177,6 +183,10 @@
     <None Include="Features\SSO\SSO.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SSO.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Windows\WinPrograms.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WinPrograms.feature.cs</LastGenOutput>
     </None>
     <None Include="MSBuild Scripts\CopyFiles.target" />
     <None Include="MSBuild Scripts\Office2013Runner.target">

@@ -70,9 +70,10 @@ namespace AbtFramework
                 else if (lyncClient.State == ClientState.SignedOut)
                 {
                     //Sign in If the current client state is Signed Out
+                    lyncClient.BeginSignIn(null, null, null, SignInCallback, null);
                     return false;
 
-                    // lyncClient.BeginSignIn(null, null, null, SignInCallback, null);
+                    
 
                 }
             }

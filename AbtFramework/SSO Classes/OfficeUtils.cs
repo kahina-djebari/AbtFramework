@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Office.Interop.Outlook;
-using System.IO;
 using System.DirectoryServices;
 
 
@@ -17,7 +12,6 @@ namespace AbtFramework.SSO_Classes
         {
             private static Application outlook;
 
-        
             public static bool isLoggedIn()
             {
                 String OutlookUser = outlook.Application.Session.CurrentUser.Name;
@@ -36,10 +30,7 @@ namespace AbtFramework.SSO_Classes
             public static void init()
             {
                 outlook = new Microsoft.Office.Interop.Outlook.Application();
-
             }
-
-          
         }
         }
 }
