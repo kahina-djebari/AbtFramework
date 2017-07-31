@@ -4,6 +4,7 @@ using System;
 using AbtFramework.Utils_Classes;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace AbtFramework
 {
@@ -68,17 +69,27 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad(string AbtXchangeHandle)
         {
-            SeleniumDriver.Instance.SwitchTo().Window(AbtXchangeHandle);
+            //SeleniumDriver.Instance.SwitchTo().Window(AbtXchangeHandle);
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             try
             {
-                
                 LoginBtn.Click();
                 StartTimer();
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
+            }
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            try
+            {
+                LoginBtn.Click();
+                StartTimer();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             wait.Until(e => userFirstName.Displayed);
           //  Console.WriteLine(userFirstName.Text);

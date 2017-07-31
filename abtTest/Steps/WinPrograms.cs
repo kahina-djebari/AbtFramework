@@ -33,7 +33,7 @@ namespace abtTest.Steps
         [Then(@"Skype for Business opened with my user")]
         public void ThenSkypeForBusinessOpenedWithMyUser()
         {
-            Assert.True(SkypeConsole.isLoggedIn());
+            Assert.True(SkypeConsole.BeginSkypeSignIn());
         }
 
     }

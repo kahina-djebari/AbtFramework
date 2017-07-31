@@ -29,6 +29,8 @@ namespace AbtFramework
 
         public void OpenIncident(string IncidentId)
         {
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             SeleniumDriver.Instance.FindElement(By.LinkText(IncidentId)).Click();
         }
 

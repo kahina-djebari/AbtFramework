@@ -94,145 +94,135 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
  testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to AGI-Tools&Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
  testRunner.And("I Click on Abt Talent, Learning and Support (ATLAS)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
+#line 17
  testRunner.And("I wait for the SuccessFactor Home Page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 18
  testRunner.Then("I Should be able to calculate what the SuccessFactor Home Page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should get Abt Travel Booking Response Time", SourceLine=20)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should get Abt Travel Booking Response Time", SourceLine=19)]
         public virtual void ShouldGetAbtTravelBookingResponseTime()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get Abt Travel Booking Response Time", ((string[])(null)));
-#line 21
+#line 20
 this.ScenarioSetup(scenarioInfo);
-#line 22
+#line 21
  testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+ testRunner.And("I have navigated to AGI-Tools&Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
- testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
  testRunner.And("I Click on AbtTravel Online Booking", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 26
+#line 24
  testRunner.And("I wait for the AbtTravel Online Booking Home Page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
+#line 25
  testRunner.Then("I Should be able to calculate what the AbtTravel Home Page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should get AbtXchange response time", SourceLine=28)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should get AbtXchange response time", SourceLine=26)]
         public virtual void ShouldGetAbtXchangeResponseTime()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get AbtXchange response time", ((string[])(null)));
-#line 29
+#line 27
 this.ScenarioSetup(scenarioInfo);
-#line 31
+#line 29
  testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 32
+#line 30
  testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
+#line 31
  testRunner.And("I Click on AbtXchange", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 32
  testRunner.And("I wait for the AbtXchange Home Page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 33
  testRunner.Then("I Should be able to calculate what the AbtXchange Home Page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should get Ebsco Response time", SourceLine=37)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should get Ebsco Response time", SourceLine=34)]
         public virtual void ShouldGetEbscoResponseTime()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get Ebsco Response time", ((string[])(null)));
-#line 38
+#line 35
 this.ScenarioSetup(scenarioInfo);
-#line 40
+#line 37
  testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
- testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
- testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 38
+ testRunner.And("I have navigated to AGI-Tools&Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
  testRunner.And("I Click on Abt Research Library", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 40
  testRunner.And("I Click on Ebsco Discovery Service", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
+#line 41
  testRunner.And("I wait for the Ebsco Home Page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 42
  testRunner.Then("I should be able to calculate what the Ebsco Home Page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should get RightFind Response time", SourceLine=47)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should get RightFind Response time", SourceLine=43)]
         public virtual void ShouldGetRightFindResponseTime()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get RightFind Response time", ((string[])(null)));
-#line 48
+#line 44
 this.ScenarioSetup(scenarioInfo);
-#line 50
+#line 46
  testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 51
- testRunner.And("I have navigated to AGI Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.When("I Hover over \"Tools & Resources\" on the Mega Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 53
+#line 47
+ testRunner.And("I have navigated to AGI-Tools&Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
  testRunner.And("I Click on Abt Research Library", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 49
  testRunner.And("I Click on the RightFind Link Named Document Delivery via Copyright Clearance Cen" +
                     "ter | RightFind", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 50
  testRunner.And("I wait for the RightFind Home Page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 51
  testRunner.Then("I should be able to calculate what the RightFind Home Page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should get ServiceNow Response time", SourceLine=57)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should get ServiceNow Response time", SourceLine=52)]
         public virtual void ShouldGetServiceNowResponseTime()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get ServiceNow Response time", ((string[])(null)));
-#line 58
+#line 53
 this.ScenarioSetup(scenarioInfo);
-#line 60
+#line 55
  testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 61
+#line 56
  testRunner.When("I navigate to ServiceNow Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
+#line 57
  testRunner.And("I wait for the ServiceNow Home page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 58
  testRunner.Then("I Should be able to calculate what the ServiceNow Home Page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should get WebEx Response Time", SourceLine=64)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should get WebEx Response Time", SourceLine=59)]
         public virtual void ShouldGetWebExResponseTime()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get WebEx Response Time", ((string[])(null)));
-#line 65
+#line 60
 this.ScenarioSetup(scenarioInfo);
-#line 67
+#line 62
  testRunner.Given("I have Open IE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 68
+#line 63
  testRunner.When("I navigate to WebEx Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
+#line 64
  testRunner.And("I Click Log In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 65
  testRunner.And("I wait For the WebEx Home page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 66
  testRunner.Then("I Should be able to calculate what the WebEx home page response time is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

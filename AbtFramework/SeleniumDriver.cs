@@ -97,7 +97,7 @@ namespace AbtFramework
                     IEoptions.RequireWindowFocus = true;
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.45\32bits", IEoptions);
        
-                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(35));
                     Instance.Manage().Window.Maximize();
                     break;
 
@@ -218,7 +218,7 @@ namespace AbtFramework
                 case Browser.Chrome:
                     Instance = new ChromeDriver(@"C:\Selenium\ChromeDriver");
                    
-                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(0));
                     Instance.Manage().Window.Maximize();
                     break;
                 case Browser.IE246:

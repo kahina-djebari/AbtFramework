@@ -16,8 +16,6 @@ namespace AbtFramework
 
         public static void init()
         {
-
-
             try
             {
                 lyncClient = LyncClient.GetClient();
@@ -61,7 +59,7 @@ namespace AbtFramework
                 if (lyncClient.State == ClientState.SignedIn)
                 {
                     //Sign out If the current client state is Signed In
-
+                    Console.WriteLine(lyncClient.Self);
                     return true;
 
                     //  lyncClient.BeginSignOut(SignOutCallback, null);
@@ -69,8 +67,9 @@ namespace AbtFramework
                 }
                 else if (lyncClient.State == ClientState.SignedOut)
                 {
+                    Console.WriteLine(lyncClient.Self);
                     //Sign in If the current client state is Signed Out
-                    lyncClient.BeginSignIn(null, null, null, SignInCallback, null);
+                    //lyncClient.BeginSignIn(null, null, null, SignInCallback, null);
                     return false;
 
                     
@@ -95,6 +94,22 @@ namespace AbtFramework
                 }
             }
 
+            return false;
+        }
+
+        public static bool BeginSkypeSignIn() {
+            try
+            {
+                lyncClient.BeginSignIn(null, null, null, SignInCallback, null);
+                if (!isLoggedIn())
+                {
+                    return true;
+                }
+            }
+            catch ( Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             return false;
         }
 

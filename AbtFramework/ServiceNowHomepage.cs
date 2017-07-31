@@ -33,7 +33,7 @@ namespace AbtFramework
         [FindsBy(How = How.Id, Using = "imp_recent")]
         private IWebElement Users;
 
-        [FindsBy(How=How.Id,Using = "gsft_full_name")]
+        [FindsBy(How=How.CssSelector,Using = ".user-name")]
         private IWebElement CurrentUser;
 
         [FindsBy(How = How.ClassName, Using = "nav-wrapper")]
@@ -54,11 +54,14 @@ namespace AbtFramework
         [FindsBy(How=How.Id,Using = "link.facilities_request.time_worked")]
         private IWebElement timeworked;
 
-        [FindsBy(How=How.Id,Using = "readyForWork")]
+        [FindsBy(How=How.Id,Using = "submit1")]
         private IWebElement ReadyForWork;
 
-        [FindsBy(How=How.Id,Using = "facilities_request.work_notes")]
+        [FindsBy(How = How.Id, Using = "facilities_request.work_notes")] 
         private IWebElement FacilityWorknotes;
+
+        [FindsBy(How = How.Id, Using = "activity-stream-work_notes-textarea")]
+        private IWebElement FacilityWorkClosenotes;
 
         [FindsBy(How=How.Id,Using = "sysverb_update")]
         private IWebElement Update;
@@ -486,9 +489,9 @@ namespace AbtFramework
 
         public void CloseCompleteFacilitiesIncident()
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+           SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
-            FacilityWorknotes.SendKeys("Work completed");
+            FacilityWorkClosenotes.SendKeys("Close Complete");
             Thread.Sleep(1000);
             closeComplete.Click();
         }
@@ -502,24 +505,23 @@ namespace AbtFramework
         public void ClickFacilitiesStartWork()
         {
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
             SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             StartWork.Click();
         }
         public void ClickFacilitiesCreatedByMe()
         {
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            //SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             FacilitiesCreatedByMeButton.Click();
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            //SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            //SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             
         }
 
         public void ClickFacilitiesAssignedToMe()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            //SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             FacilitiesAssignedToMeButton.Click();
             SeleniumDriver.Instance.SwitchTo().ParentFrame();
@@ -701,11 +703,10 @@ namespace AbtFramework
 
         public void AllRequestFacilityRequest()
         {
-           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+           // SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             Thread.Sleep(1000);
             AllRequestButton.Click();
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
 
         public void Go(WebEnvironment link)
@@ -875,7 +876,7 @@ namespace AbtFramework
 
         public bool isUserLoggedIn()
         {
-            if (CurrentUser.Text.Equals("Jose Frometa"))
+            if (CurrentUser.Text.Equals("Jose Frometa Guerra"))
             {
                
              //   Console.WriteLine("User: David succesfully logged in using "+SSOProvider);
@@ -888,7 +889,8 @@ namespace AbtFramework
 
         public void ImpersonateUser(string User)
         {
-             UserIcon.Click();
+            wait.Until(e => UserIcon.Displayed);
+            UserIcon.Click();
              UserIconOptions.Click();
              Thread.Sleep(1000);
              SearchForUserModal.Click();

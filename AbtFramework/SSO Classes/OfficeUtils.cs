@@ -20,6 +20,7 @@ namespace AbtFramework.SSO_Classes
            
                 if (OutlookUser == WindowsUser)
                 {
+                   Console.WriteLine(OutlookUser);
                    return true;
                 }
               
