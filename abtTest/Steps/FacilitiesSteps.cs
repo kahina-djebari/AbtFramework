@@ -69,7 +69,6 @@ namespace abtTest.Steps
             AbtPages.ServiceNowHomepage.AllRequestFacilityRequest();
             AbtPages.TablePageObject.OpenIncident(FAIncidentReportId);
             Assert.True(AbtPages.ServiceNowHomepage.isFacilitiesIncidentNumberCreated(FAIncidentReportId));
-           // AbtPages.ServiceNowHomepage.isFacilitiesIncidentNumberCreated(FAIncidentReportId);
         }
     }
 }
