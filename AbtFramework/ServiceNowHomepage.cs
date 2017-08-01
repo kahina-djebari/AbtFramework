@@ -457,6 +457,8 @@ namespace AbtFramework
 
         public bool isFacilitiesIncidentNumberCreated(String tickeIWantToFind)
         {
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             string FacilitiesIncidentID = FacilitiesIncidentNumber.GetAttribute("value");
             return FacilitiesIncidentID.Equals(tickeIWantToFind);
         }

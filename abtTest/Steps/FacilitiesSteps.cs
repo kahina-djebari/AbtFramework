@@ -67,7 +67,8 @@ namespace abtTest.Steps
         public void ThenFacilitiesRequestShouldHaveBeenClosed()
         {
             AbtPages.ServiceNowHomepage.AllRequestFacilityRequest();
-            AbtPages.ServiceNowHomepage.isFacilitiesIncidentNumberCreated(FAIncidentReportId);
+            AbtPages.TablePageObject.OpenIncident(FAIncidentReportId);
+            Assert.True(AbtPages.ServiceNowHomepage.isFacilitiesIncidentNumberCreated(FAIncidentReportId));
         }
     }
 }
