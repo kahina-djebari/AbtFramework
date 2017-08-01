@@ -14,6 +14,8 @@ namespace AbtFramework
     {
         [FindsBy(How=How.Id,Using = "6__moduleLinksDropDown")]
         private IWebElement HomeDropdown;
+        [FindsBy(How = How.Id, Using = "copyright")]
+        private IWebElement CopyRight;
         [FindsBy(How = How.ClassName, Using = "dropDownButtonText")]
         private IList<IWebElement> dropdowns;
         [FindsBy(How=How.Id,Using = "headerUtilitiesContainer")]
@@ -42,8 +44,10 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad(string winHandle)
         {
-            SeleniumDriver.Instance.SwitchTo().Window(winHandle);
-            wait.Until(e =>Username);
+
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+
+            wait.Until(e =>CopyRight);
             StopTimer();
         }
 
