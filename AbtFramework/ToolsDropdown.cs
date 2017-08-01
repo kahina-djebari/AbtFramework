@@ -505,7 +505,7 @@ namespace AbtFramework
             goTo(Abtlinks.PolicyLibrary);
         }
 
-        internal void OracleLink()
+        public void OracleLink()
         {
             Oracle.Click();
         }

@@ -31,7 +31,7 @@ namespace abtTest.Steps
         [Then(@"The Oracle Home Page Should Load Succesfully")]
         public void ThenTheOracleHomePageShouldLoadSuccesfully()
         {
-           // Assert.True(AbtPages.OraclePage.isAt());
+            Assert.True(AbtPages.OraclePage.isAt());
         }
 
         [When(@"I Click on Staff Directory")]

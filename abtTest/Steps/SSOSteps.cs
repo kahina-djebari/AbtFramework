@@ -73,6 +73,13 @@ namespace abtTest.Steps
             AbtPages.AgiTopNavigation.ToolsDropdown.OpenAbtResearchLibrary();
         }
 
+        [Given(@"I Click on Oracle")]
+        public void GivenIClickOnOracle()
+        {
+            AbtPages.AgiTopNavigation.ToolsDropdown.OracleLink();
+        }
+
+
         [Given(@"I Click on Ebsco Discovery Service")]
         public void WhenIClickOnEbscoDiscoveryService()
         {
