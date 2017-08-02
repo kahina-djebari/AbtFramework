@@ -16,6 +16,7 @@ namespace AbtFramework
 
         public bool isAt()
         {
+
             wait.Until(e => e.Title.Equals("Oracle Applications Home Page"));
             StopTimer();
            // PrintResponseTime("Oracle");
