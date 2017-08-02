@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace AbtFramework
 {
@@ -16,6 +17,19 @@ namespace AbtFramework
 
         public bool isAt()
         {
+            //Thread.Sleep(2000);
+            try
+            {
+
+                AbtFramework.AutoIT.AutoITDriver.init();
+                AbtFramework.AutoIT.AutoITDriver.AceptCertificate();
+
+            }
+            catch (NoAlertPresentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             wait.Until(e => e.Title.Equals("Oracle Applications Home Page"));
             StopTimer();
            // PrintResponseTime("Oracle");
