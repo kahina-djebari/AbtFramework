@@ -64,10 +64,3 @@ Scenario: Should get WebEx Response Time
 	And I Click Log In
 	And I wait For the WebEx Home page to load
 	Then I Should be able to calculate what the WebEx home page response time is
-
-Scenario: Should get Oracle Response Time
-	Given I have Open IE
-	And I have navigated to AGI-Tools&Resources
-	And I Click on Oracle
-	Then The Oracle Home Page Should Load Succesfully
-	

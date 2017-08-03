@@ -1,13 +1,8 @@
-﻿using AbtFramework.Utils_Classes;
-using AutoItX3Lib;
+﻿using AutoItX3Lib;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace AbtFramework.AutoIT
 {
@@ -20,7 +15,7 @@ namespace AbtFramework.AutoIT
         {
             Thread.Sleep(1000);
             autoit.WinActivate("Untitled - Google Chrome");
-            autoit.MouseClick("LEFT", 1125, 460, 1, -1);
+            autoit.MouseClick("LEFT", 814, 327, 1, -1);
            // autoit.ControlClick("Sample AV metrics - PowerPoint", "", "NetUIHWND1", "LEFT", 1, 46, 14) == 1)
         }
         public static bool EditExcelFile()

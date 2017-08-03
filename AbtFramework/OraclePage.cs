@@ -13,11 +13,13 @@ namespace AbtFramework
 
         [FindsBy(How=How.Id,Using ="PageLayoutRN")]
         private IWebElement headerInfo;
-
+        [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
+        private IWebElement OracleWelcome;
 
         public bool isAt()
         {
             //Thread.Sleep(2000);
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             try
             {
 
@@ -29,13 +31,12 @@ namespace AbtFramework
             {
                 Console.WriteLine(ex.Message);
             }
+            
+            // PrintResponseTime("Oracle");
 
-            wait.Until(e => e.Title.Equals("Oracle Applications Home Page"));
-            StopTimer();
-           // PrintResponseTime("Oracle");
-       
-            if (GetCurrentUser().Equals("OUMSALEMS"))
+            if (wait.Until(e => OracleWelcome.Displayed))
             {
+                StopTimer();
                 return true;
             }
 
