@@ -17,8 +17,7 @@ namespace abtTest.Features.Windows
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("WinPrograms", Description="\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-        "f two numbers", SourceFile="Features\\Windows\\WinPrograms.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("WinPrograms", Description="\tTest the network response time for windows apps ", SourceFile="Features\\Windows\\WinPrograms.feature", SourceLine=0)]
     public partial class WinProgramsFeature
     {
         
@@ -31,8 +30,7 @@ namespace abtTest.Features.Windows
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WinPrograms", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WinPrograms", "\tTest the network response time for windows apps ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,32 +62,32 @@ namespace abtTest.Features.Windows
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Microsoft Outlook Test", new string[] {
-                "Outlook"}, SourceLine=7)]
+                "Outlook"}, SourceLine=4)]
         public virtual void MicrosoftOutlookTest()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Microsoft Outlook Test", new string[] {
                         "Outlook"});
-#line 8
+#line 5
 this.ScenarioSetup(scenarioInfo);
-#line 9
+#line 6
  testRunner.Given("i opened Outlook", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
+#line 7
  testRunner.Then("Outlook is logged with my Windows credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Skype For Business Test", new string[] {
-                "SkypeForBusiness"}, SourceLine=12)]
+                "SkypeForBusiness"}, SourceLine=9)]
         public virtual void SkypeForBusinessTest()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Skype For Business Test", new string[] {
                         "SkypeForBusiness"});
-#line 13
+#line 10
 this.ScenarioSetup(scenarioInfo);
-#line 14
+#line 11
  testRunner.Given("i have logged to Windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
+#line 12
  testRunner.Then("Skype for Business opened with my user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

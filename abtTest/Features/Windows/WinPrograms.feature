@@ -1,8 +1,5 @@
 ﻿Feature: WinPrograms
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
-
+	Test the network response time for windows apps 
 
 @Outlook
 Scenario: Microsoft Outlook Test
