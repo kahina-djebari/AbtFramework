@@ -15,11 +15,11 @@ namespace abtTest.Steps
         private string RightFindWinHandle;
         private string AtlasWinHandle;
 
-        //[AfterScenario]
-        //public void CleanUp()
-        //{
-        //    SeleniumDriver.Quit();
-        //}
+        [AfterScenario]
+        public void CleanUp()
+        {
+            SeleniumDriver.Quit();
+        }
         [Given(@"I have navigated to AGI Home Page")]
         public void GivenIHaveNavigatedToAGIHomePage()
         {
