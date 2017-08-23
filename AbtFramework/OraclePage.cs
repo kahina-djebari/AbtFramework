@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace AbtFramework
 {
@@ -12,16 +13,30 @@ namespace AbtFramework
 
         [FindsBy(How=How.Id,Using ="PageLayoutRN")]
         private IWebElement headerInfo;
-
+        [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
+        private IWebElement OracleWelcome;
 
         public bool isAt()
         {
-            wait.Until(e => e.Title.Equals("Oracle Applications Home Page"));
-            StopTimer();
-           // PrintResponseTime("Oracle");
-       
-            if (GetCurrentUser().Equals("OUMSALEMS"))
+            //Thread.Sleep(2000);
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            try
             {
+
+                AbtFramework.AutoIT.AutoITDriver.init();
+                AbtFramework.AutoIT.AutoITDriver.AceptCertificate();
+
+            }
+            catch (NoAlertPresentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            // PrintResponseTime("Oracle");
+
+            if (wait.Until(e => OracleWelcome.Displayed))
+            {
+                StopTimer();
                 return true;
             }
 

@@ -15,17 +15,22 @@ namespace abtTest.Steps
         private string RightFindWinHandle;
         private string AtlasWinHandle;
 
-        [AfterScenario]
-        public void CleanUp()
-        {
-            SeleniumDriver.Quit();
-        }
+        //[AfterScenario]
+        //public void CleanUp()
+        //{
+        //    SeleniumDriver.Quit();
+        //}
         [Given(@"I have navigated to AGI Home Page")]
         public void GivenIHaveNavigatedToAGIHomePage()
         {
             AbtPages.AgiHomePage.Go();
         }
-        
+        [Given(@"I have navigated to AGI-Tools&Resources")]
+        public void GivenIHaveNavigatedToAGI_ToolsResources()
+        {
+            AbtPages.AgiHomePage.GoToToolsNResources();
+        }
+
         [When(@"The Home page completes loading")]
         public void WhenTheHomePageCompletesLoading()
         {
@@ -39,14 +44,17 @@ namespace abtTest.Steps
             Console.WriteLine(AbtPages.AgiHomePage.GetResponseTime());
         }
 
+
+
       
-        [When(@"I Click on AbtXchange")]
+        [Given(@"I Click on AbtXchange")]
         public void WhenIClickOnAbtXchange()
         {
-           AbtXchangeHandle= AbtPages.AgiTopNavigation.ToolsDropdown.OpenAbtXchange();
+            AbtPages.AgiHomePage.goToAbtXchange();
+            AbtPages.WeSpireHomePage.WaitForHomePageToLoad(AbtXchangeHandle);
         }
 
-        [When(@"I wait for the AbtXchange Home Page to load")]
+        [Given(@"I wait for the AbtXchange Home Page to load")]
         public void WhenIWaitForTheAbtXchangeOnlineBookingHomePageToLoad()
         {
             AbtPages.WeSpireHomePage.WaitForHomePageToLoad(AbtXchangeHandle);
@@ -59,19 +67,26 @@ namespace abtTest.Steps
             Console.WriteLine(AbtPages.WeSpireHomePage.GetResponseTime());
         }
 
-        [When(@"I Click on Abt Research Library")]
+        [Given(@"I Click on Abt Research Library")]
         public void WhenIClickOnAbtResearchLibrary()
         {
             AbtPages.AgiTopNavigation.ToolsDropdown.OpenAbtResearchLibrary();
         }
 
-        [When(@"I Click on Ebsco Discovery Service")]
+        [Given(@"I Click on Oracle")]
+        public void GivenIClickOnOracle()
+        {
+            AbtPages.AgiTopNavigation.ToolsDropdown.OracleLink();
+        }
+
+
+        [Given(@"I Click on Ebsco Discovery Service")]
         public void WhenIClickOnEbscoDiscoveryService()
         {
             EbscoWinHandle = AbtPages.AgiAbtResearch.GoToEbscoDS();
         }
 
-        [When(@"I wait for the Ebsco Home Page to load")]
+        [Given(@"I wait for the Ebsco Home Page to load")]
         public void WhenIWaitForTheEbscoHomePageToLoad()
         {
             AbtPages.EbscoHomePage.WaitForHomePageToLoad(EbscoWinHandle);
@@ -85,7 +100,7 @@ namespace abtTest.Steps
             Console.WriteLine(ResponseTime);
         }
 
-        [When(@"I navigate to RightFind Home Page")]
+        [Given(@"I navigate to RightFind Home Page")]
         public void WhenINavigateToRightFindHomePage()
         {
             AbtPages.RightFindHomePage.Go(WebEnvironment.ProductionEnvironment);
@@ -99,13 +114,13 @@ namespace abtTest.Steps
            // AbtPages.AgiAbtLibrarySearch.Go();
         }
 
-        [When(@"I Click on the RightFind Link Named Document Delivery via Copyright Clearance Center | RightFind")]
+        [Given(@"I Click on the RightFind Link Named Document Delivery via Copyright Clearance Center | RightFind")]
         public void WhenIClickOnTheRightFindLink()
         {
             RightFindWinHandle = AbtPages.AgiAbtResearch.GoToRightFind();
         }
 
-        [When(@"I wait for the RightFind Home Page to load")]
+        [Given(@"I wait for the RightFind Home Page to load")]
         public void WhenIWaitForTheRightFindHomePageToLoad()
         {
             AbtPages.RightFindHomePage.WaitForHomePageToLoad(RightFindWinHandle);
@@ -123,8 +138,6 @@ namespace abtTest.Steps
         public void WhenINavigateToWebExHomePage()
         {
             AbtPages.WebExPage.Go(WebEnvironment.ProductionEnvironment);
-
-
         }
 
         [When(@"I Click Log In")]
@@ -136,7 +149,7 @@ namespace abtTest.Steps
         [Given(@"I have Open IE")]
         public void GivenIHaveOpenIE()
         {
-            SeleniumDriver.init(Browser.IECleanSession);
+            SeleniumDriver.init(Browser.Chrome);
 
         }
 
@@ -180,18 +193,13 @@ namespace abtTest.Steps
             
         }
 
-
-
-       
-       
-
-        [When(@"I Click on Abt Talent, Learning and Support \(ATLAS\)")]
+        [Given(@"I Click on Abt Talent, Learning and Support \(ATLAS\)")]
         public void WhenIClickOnAbtTalentLearningAndSupportATLAS()
         {
           AtlasWinHandle= AbtPages.AgiTopNavigation.ToolsDropdown.OpenSuccessFactors();
         }
 
-        [When(@"I wait for the SuccessFactor Home Page to load")]
+        [Given(@"I wait for the SuccessFactor Home Page to load")]
         public void WhenIWaitForTheSuccessFactorHomePageToLoad()
         {
             AbtPages.SuccessFactorHomePage.WaitForHomePageToLoad(AtlasWinHandle);
@@ -204,16 +212,16 @@ namespace abtTest.Steps
             Console.WriteLine(AbtPages.SuccessFactorHomePage.GetResponseTime());
         }
 
-        [When(@"I Click on AbtTravel Online Booking")]
+        [Given(@"I Click on AbtTravel Online Booking")]
         public void WhenIClickOnAbtTravelOnlineBooking()
         {
-           AbtTravelHandle= AbtPages.AgiTopNavigation.ToolsDropdown.OpenAbtTravel();
+           AbtPages.AgiHomePage.WaitForAbtTravelToLoad();
         }
 
-        [When(@"I wait for the AbtTravel Online Booking Home Page to load")]
+        [Given(@"I wait for the AbtTravel Online Booking Home Page to load")]
         public void WhenIWaitForTheAbtTravelOnlineBookingHomePageToLoad()
         {
-            AbtPages.ConcurHomePage.WaitForHomePageToLoad(AbtTravelHandle);
+            AbtPages.ConcurHomePage.WaitForHomePageToLoad();
         }
 
         [Then(@"I Should be able to calculate what the AbtTravel Home Page response time is")]

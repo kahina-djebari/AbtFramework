@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
+using System.Threading;
 
 namespace AbtFramework
 {
@@ -13,6 +14,13 @@ namespace AbtFramework
     {
         [FindsBy(How = How.LinkText, Using = "Home")]
         private IWebElement HomeLink;
+
+        [FindsBy(How = How.CssSelector, Using = "p:nth-child(1) > a:nth-child(1) > img:nth-child(1)")]
+        private IWebElement AbtXChangeImg;
+
+        [FindsBy(How = How.LinkText, Using = "AbtTravel Online Booking Tool")]
+        private IWebElement AbtTravelLink;
+
         private QuickLinksModel _quicklinks;
 
         [FindsBy(How=How.ClassName,Using = "o365cs-me-tileview-container")]
@@ -112,6 +120,13 @@ namespace AbtFramework
           
         }
 
+        public void goToAbtXchange()
+        {
+            wait.Until(e => AbtXChangeImg.Displayed);
+            AbtXChangeImg.Click();
+
+        }
+
         public string InsightAuthor { get { return _insightAuthor.Text; } }
 
         public string InsightTitle { get { return _insightTitle.Text; } }
@@ -120,18 +135,30 @@ namespace AbtFramework
 
         public void Go()
         {
-            
-            
-                StartTimer();
-                SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
-              
-                           
-         
+            StartTimer();
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
+        }
+
+        // use this method to avoid the mega menu shared point issues.
+        public void GoToToolsNResources()
+        {
+            StartTimer();
+            //since its a clean session we go to agi to make o
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
+            Thread.Sleep(6000);
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/ToolsResources/Pages/ServiceCenters.aspx");
         }
 
         public void WaitForHomeToLoad()
         {
             wait.Until(e => HomeLink.Displayed);
+            StopTimer();
+        }
+
+        public void WaitForAbtTravelToLoad()
+        {
+            wait.Until(e => AbtTravelLink.Displayed);
+            AbtTravelLink.Click();
             StopTimer();
         }
 

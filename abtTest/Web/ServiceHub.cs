@@ -222,7 +222,7 @@ namespace abtTest.Web
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
             AbtPages.ServiceNowHomepage.FacilityRequests();
-            AbtPages.ServiceNowHomepage.CreateNewFacilityRequest("David Acuna", "Office Furniture"
+            AbtPages.ServiceNowHomepage.CreateNewFacilityRequestAndReadyToWork("David Acuna", "Office Furniture"
                                                                  , "Furniture Requests", "Short Description"
                                                                  , "Assignment group");
 

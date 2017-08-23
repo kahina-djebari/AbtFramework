@@ -10,27 +10,27 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace abtTest.Features.ERP.BillsAndAdjustsments
+namespace abtTest.Features.Windows
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("BillAndAdjusts", Description="\tAccounts PayableBill Regression Scenarios", SourceFile="Features\\ERP\\BillsAndAdjustsments\\BillAndAdjusts.feature", SourceLine=0)]
-    public partial class BillAndAdjustsFeature
+    [TechTalk.SpecRun.FeatureAttribute("WinPrograms", Description="\tTest the network response time for windows apps ", SourceFile="Features\\Windows\\WinPrograms.feature", SourceLine=0)]
+    public partial class WinProgramsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "BillAndAdjusts.feature"
+#line 1 "WinPrograms.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BillAndAdjusts", "\tAccounts PayableBill Regression Scenarios", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WinPrograms", "\tTest the network response time for windows apps ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -61,28 +61,34 @@ namespace abtTest.Features.ERP.BillsAndAdjustsments
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Entering a Bill in the Base Currency", new string[] {
-                "BillsAndAdjustments"}, SourceLine=4)]
-        public virtual void EnteringABillInTheBaseCurrency()
+        [TechTalk.SpecRun.ScenarioAttribute("Microsoft Outlook Test", new string[] {
+                "Outlook"}, SourceLine=4)]
+        public virtual void MicrosoftOutlookTest()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Entering a Bill in the Base Currency", new string[] {
-                        "BillsAndAdjustments"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Microsoft Outlook Test", new string[] {
+                        "Outlook"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.Given("i Login to Jamis with a valid URL and User credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("i opened Outlook", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.Then("click on Finance, Click Account Payable Then under Enter Bills And Adjustments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 8
- testRunner.Then("Fill the international Vendor information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 9
- testRunner.Then("Add New Record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Outlook is logged with my Windows credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Skype For Business Test", new string[] {
+                "SkypeForBusiness"}, SourceLine=9)]
+        public virtual void SkypeForBusinessTest()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Skype For Business Test", new string[] {
+                        "SkypeForBusiness"});
 #line 10
- testRunner.And("fill the Document information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 11
- testRunner.Then("i click save the status its updated to Open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("i have logged to Windows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("a reference nbr is generated i release the bill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Skype for Business opened with my user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

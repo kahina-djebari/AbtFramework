@@ -113,31 +113,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AGI.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\ERP\BillsAndAdjustsments\BillAndAdjusts.feature.cs">
+    <Compile Include="Features\ServiceNow\Facilities.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BillAndAdjusts.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\ERP\ExpenseReports\ExpeseReports.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExpeseReports.feature</DependentUpon>
+      <DependentUpon>Facilities.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\ServiceNow\IRR1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IRR.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ServiceNow\ITSC.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITSC.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\SSO\SSO.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SSO.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Windows\WinPrograms.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinPrograms.feature</DependentUpon>
+    </Compile>
     <Compile Include="Steps\AGISteps.cs" />
-    <Compile Include="Steps\BillAndAdjustsSteps.cs" />
-    <Compile Include="Steps\ExpeseReportsSteps.cs" />
+    <Compile Include="Steps\FacilitiesSteps.cs" />
     <Compile Include="Steps\IRRSteps.cs" />
+    <Compile Include="Steps\ITSCSteps.cs" />
     <Compile Include="Steps\SSOSteps.cs" />
+    <Compile Include="Steps\WinPrograms.cs" />
     <Compile Include="Web\AGI.cs" />
     <Compile Include="Web\OWA.cs" />
     <Compile Include="Web\SSO.cs" />
@@ -162,21 +168,25 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AGI.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\ERP\BillsAndAdjustsments\BillAndAdjusts.feature">
+    <None Include="Features\ServiceNow\Facilities.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BillAndAdjusts.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\ERP\ExpenseReports\ExpeseReports.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ExpeseReports.feature.cs</LastGenOutput>
+      <LastGenOutput>Facilities.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ServiceNow\IRR.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>IRR1.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ServiceNow\ITSC.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ITSC.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\SSO\SSO.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SSO.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Windows\WinPrograms.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WinPrograms.feature.cs</LastGenOutput>
     </None>
     <None Include="MSBuild Scripts\CopyFiles.target" />
     <None Include="MSBuild Scripts\Office2013Runner.target">

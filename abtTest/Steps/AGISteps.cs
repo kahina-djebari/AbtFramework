@@ -31,7 +31,7 @@ namespace abtTest.Steps
         [Then(@"The Oracle Home Page Should Load Succesfully")]
         public void ThenTheOracleHomePageShouldLoadSuccesfully()
         {
-           // Assert.True(AbtPages.OraclePage.isAt());
+            Assert.True(AbtPages.OraclePage.isAt());
         }
 
         [When(@"I Click on Staff Directory")]
@@ -97,22 +97,22 @@ namespace abtTest.Steps
             Assert.Equal(Today.ToString("MMMM", CultureInfo.InvariantCulture) + " " + Today.Year, AbtPages.AgiEvents.EventCalendarCurrentMonth);
         }
 
-        [When(@"I Hover over ""(.*)"" on the Mega Menu")]
-        public void WhenIHoverOverOnTheMegaMenu(string onItem)
-        {
-            switch (onItem)
-            {
-                case "Tools & Resources":
-                    AbtPages.AgiTopNavigation.HoverOverTools();
-                    break;
+        //[When(@"I Hover over ""(.*)"" on the Mega Menu")]
+        //public void WhenIHoverOverOnTheMegaMenu(string onItem)
+        //{
+        //    switch (onItem)
+        //    {
+        //        case "Tools & Resources":
+        //            AbtPages.AgiTopNavigation.HoverOverTools();
+        //            break;
 
-                case "Home":
-                    AbtPages.AgiTopNavigation.HoverOverHome();
-                    break;
-                default:
-                    break;
-            }
-        }
+        //        case "Home":
+        //            AbtPages.AgiTopNavigation.HoverOverHome();
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
 
         [When(@"I click on About Abt")]
         public void WhenIClickOnAboutAbt()

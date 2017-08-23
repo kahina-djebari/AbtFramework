@@ -9,7 +9,7 @@ namespace abtTest.Web
     
     public class ServiceNow
     {
-       // [Fact(DisplayName =("Should Open Incident on Service Now as Admin"))]
+        [Fact(DisplayName =("Should Open Incident on Service Now as Admin"))]
          public void Should_Open_Incident()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -39,7 +39,7 @@ namespace abtTest.Web
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             AbtPages.ServiceNowHomepage.ImpersonateUser("Steve Hunt");
             AbtPages.ServiceNowHomepage.FacilityRequests();
-            AbtPages.ServiceNowHomepage.CreateNewFacilityRequest("David Acuna","Office Furniture"
+            AbtPages.ServiceNowHomepage.CreateNewFacilityRequestAndReadyToWork("David Acuna","Office Furniture"
                                                                  ,"Furniture Requests","Short Description"
                                                                  ,"Assignment group");
 

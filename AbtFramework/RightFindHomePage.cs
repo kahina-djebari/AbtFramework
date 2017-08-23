@@ -7,7 +7,8 @@ namespace AbtFramework
 {
     public class RightFindHomePage : PageModel
     {
-        [FindsBy(How=How.Id,Using = "RightHeaderToolbar")]
+        // [FindsBy(How=How.Id,Using = "logosDiv")]
+        [FindsBy(How = How.Id, Using = "cccLogoImg")]
         private IWebElement RightHeaderToolbar;
         [FindsBy(How=How.CssSelector,Using = "#RightHeaderToolbar > div > div > div > ul > li:nth-child(1) > a > span > span > span > span.rtbText")]
         private IWebElement User;

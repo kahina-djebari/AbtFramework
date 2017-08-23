@@ -1,8 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using AbtFramework.Utils_Classes;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
-using AbtFramework.Utils_Classes;
+using System.Collections.Generic;
+using System.DirectoryServices;
+using System.Linq;
+using System.Threading;
 
 namespace AbtFramework
 {
@@ -66,14 +70,14 @@ namespace AbtFramework
             return false;
         }
 
-        public void WaitForHomePageToLoad(string abtTravelHandle)
+        public void WaitForHomePageToLoad()
         {
-            SeleniumDriver.Instance.SwitchTo().Window(abtTravelHandle);
+            //SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             wait.Until(e => warning.Displayed);
             warning.Click();
             wait.Until(e => Logo.Displayed);
             StopTimer();
-
         }
 
         public string GetResponseTime()

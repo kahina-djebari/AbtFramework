@@ -15,7 +15,7 @@ namespace abtTest.Web
     {
 
         
-      //  [Fact]
+        [Fact]
         public void Should_Click_Login_WebEx()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -24,7 +24,7 @@ namespace abtTest.Web
 
         }
 
-    //  [Fact(DisplayName ="Should Go to QuickLinks -> Oracle")]
+     [Fact(DisplayName ="Should Go to QuickLinks -> Oracle")]
         public void Should_Go_to_Quicklinks_Oracle()
         {
             SeleniumDriver.init(Browser.IENoNativeEvents);
@@ -34,7 +34,7 @@ namespace abtTest.Web
 
         }
 
-      //  [Fact(DisplayName ="Should Go to QuickLinks -> Staff Directory")]
+      [Fact(DisplayName ="Should Go to QuickLinks -> Staff Directory")]
         public void Should_GoTo_QuickLinks_Staff_Directory()
         {
             SeleniumDriver.init(Browser.IE);
@@ -44,7 +44,7 @@ namespace abtTest.Web
 
         }
 
-       // [Fact(DisplayName ="Should Go to QuickLinks -> Forms Library")]
+        [Fact(DisplayName ="Should Go to QuickLinks -> Forms Library")]
         public void Should_GoTo_QuickLinks_FormsLibrary()
         {
             SeleniumDriver.init();
@@ -54,7 +54,7 @@ namespace abtTest.Web
 
         }
 
-       // [Fact(DisplayName ="Should Go to QuickLinks -> Customize")]
+        [Fact(DisplayName ="Should Go to QuickLinks -> Customize")]
         public void Should_GoTo_QuickLinks_Customize()
         {
             SeleniumDriver.init();
@@ -64,9 +64,9 @@ namespace abtTest.Web
         }
 
 
-       //  [Fact (DisplayName ="Should Click on Abt Talent Learn and Support (AGI Website)")]
+         [Fact (DisplayName ="Should Click on Abt Talent Learn and Support (AGI Website)")]
         public void Should_click_Abt_Talent_LearnAndSupport()
-        {
+        { //successfactos <-
             SeleniumDriver.init(Browser.IE);
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsAndResources();
@@ -169,10 +169,6 @@ namespace abtTest.Web
       
 
         }
-
-
-      
-
 
 
         public void Dispose()
