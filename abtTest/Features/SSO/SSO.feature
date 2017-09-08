@@ -70,4 +70,3 @@ Scenario: Should get Oracle Response Time
 	And I have navigated to AGI-Tools&Resources
 	And I Click on Oracle
 	Then The Oracle Home Page Should Load Succesfully
-	
