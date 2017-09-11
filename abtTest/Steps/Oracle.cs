@@ -14,7 +14,7 @@ namespace abtTest.Steps
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.init(Browser.Chrome);
         }
         [Given(@"I have navigated to Oracle Dev")]
         public void GivenIHaveNavigatedToOracleDev()
@@ -48,6 +48,29 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.fillRequisitionInformation();
         }
+        [Then(@"Click Manage Approvals")]
+        public void ThenClickManageApprovals()
+        {
+            AbtPages.OraclePage.clickManageGraphButton();
+        }
+        [Then(@"assign ""(.*)"" before requisition and submit")]
+        public void ThenAssignBeforeRequisitionAndSubmit(string p0)
+        {
+            AbtPages.OraclePage.addBeforeApproverAndSubmit(p0);
+        }
+
+        [Then(@"Then assign ""(.*)"" after requisition and submit")]
+        public void ThenThenAssignAfterRequisitionAndSubmit(string p0)
+        {
+            AbtPages.OraclePage.addAfterApproverAndSubmit(p0);
+
+        }
+        [When(@"i hit submit the request is done")]
+        public void WhenIHitSubmitTheRequestIsDone()
+        {
+            AbtPages.OraclePage.submitApproval();
+        }
+
 
     }
 }

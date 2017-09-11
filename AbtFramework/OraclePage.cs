@@ -1,6 +1,7 @@
 ﻿using AbtFramework.Utils_Classes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,22 @@ namespace AbtFramework
         private IWebElement expenditureTypeOnSummary;
         [FindsBy(How = How.Id, Using = "TaskExpense")]
         private IWebElement taskExpense;
+        [FindsBy(How = How.Id, Using = "ExpenditureItemDate")]
+        private IWebElement expenditureItemDate;
+        [FindsBy(How = How.XPath, Using = "//*[@id='PageButtonsRN_uixr']/tbody/tr/td[12]/button")]
+        private IWebElement nextButtons;
+        [FindsBy(How = How.Id, Using = "ManageGraphButton")]
+        private IWebElement manageGraphButton;
+        [FindsBy(How = How.Id, Using = "NewApproverText")]
+        private IWebElement newApproverText;
+        [FindsBy(How = How.Id, Using = "SubmitButton_uixr")]
+        private IWebElement submitButton_uixr;
+        [FindsBy(How = How.Id, Using = "ApproverLocation")]
+        private IWebElement approverLocation;
+        [FindsBy(How = How.XPath, Using = "//*[@id='PageActionButtonsBar_uixr']/tbody/tr/td[10]/button")]
+        private IWebElement ApprovalNextButton;
+        [FindsBy(How = How.XPath, Using = "//*[@id='FNDDIALOGPAGE']/div/div[5]/div/table/tbody/tr[1]/td[2]/table/tbody/tr/td[2]/button")]
+        private IWebElement continueShoppingButton;
 
         public void GoToOracleDev()
         {
@@ -146,9 +163,47 @@ namespace AbtFramework
             taskExpense.Click();
             Thread.Sleep(5000);
             taskExpense.SendKeys("1100");
+            expenditureTypeOnSummary.Click();
             Thread.Sleep(2000);
             expenditureTypeOnSummary.SendKeys("Misc Professional Sv");
-            expenditureTypeOnSummary.Click();
+            expenditureItemDate.Click();
+            Thread.Sleep(2000);
+            //Console.WriteLine(DateTime.Today.ToString("dd-MMMM-yyyy"));
+            expenditureItemDate.SendKeys(string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
+            nextButtons.Click();
         }
+        public void clickManageGraphButton()
+        {
+            manageGraphButton.Click();
+        }
+        public void addBeforeApproverAndSubmit(string approver)
+        {
+            newApproverText.SendKeys(approver);
+            
+            SelectElement selector = new SelectElement(approverLocation);
+            selector.SelectByText("Before Requisition Approver Controller");
+
+            submitButton_uixr.Click();
+        }
+
+        public void addAfterApproverAndSubmit(string approver)
+        {
+            manageGraphButton.Click();
+
+            newApproverText.SendKeys(approver);
+
+            SelectElement selector = new SelectElement(approverLocation);
+            selector.SelectByText("After Requisition Approver Controller");
+
+            submitButton_uixr.Click();
+            ApprovalNextButton.Click();
+        }
+
+        public void submitApproval()
+        {
+            submitButton_uixr.Click();
+            continueShoppingButton.Click();
+        }
+
     }
 }

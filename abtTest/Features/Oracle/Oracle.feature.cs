@@ -63,11 +63,11 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Oracle Sign in", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("iProcurement Request", new string[] {
                 "oracle"}, SourceLine=6)]
-        public virtual void OracleSignIn()
+        public virtual void IProcurementRequest()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Oracle Sign in", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("iProcurement Request", new string[] {
                         "oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -85,6 +85,14 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("Checkout the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
  testRunner.And("Fill Requisition Information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.Then("Click Manage Approvals", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
+ testRunner.And("assign \"Berg, Gail E\" before requisition and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("Then assign \"Poodts, Mauricio\" after requisition and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.When("i hit submit the request is done", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
