@@ -113,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AGI.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\Oracle.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Oracle.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\ServiceNow\Facilities.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,6 +147,7 @@
     <Compile Include="Steps\FacilitiesSteps.cs" />
     <Compile Include="Steps\IRRSteps.cs" />
     <Compile Include="Steps\ITSCSteps.cs" />
+    <Compile Include="Steps\Oracle.cs" />
     <Compile Include="Steps\SSOSteps.cs" />
     <Compile Include="Steps\WinPrograms.cs" />
     <Compile Include="Web\AGI.cs" />
@@ -167,6 +173,10 @@
     <None Include="Features\AGI\AGI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AGI.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\Oracle.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Oracle.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ServiceNow\Facilities.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
