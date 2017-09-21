@@ -22,7 +22,7 @@ namespace AbtFramework
         private IWebElement passwordField;
         [FindsBy(How = How.Id, Using = "SubmitButton")]
         private IWebElement submitButtond;
-        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[4]/a")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[4]/a")]
         private IWebElement iProcurementRequest;
         [FindsBy(How = How.Id, Using = "ICXPOR_NONCATALOG")]
         private IWebElement nonCatalogRequest;
@@ -73,7 +73,7 @@ namespace AbtFramework
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://ows2.cam.abtassoc.com:8004/OA_HTML/RF.jsp?function_id=24317&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=zuyf3HSa5SE5TW4skJCoR.tQktlyFm-Wf-QTiw1Fiis&oas=VEWpQaO79GovcNYh3cWiFw..");
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://abterp.coresys.com/OA_HTML/RF.jsp?function_id=24317&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=L9STfOm2w4EZ6tM3VHYS0fxBFWITbHuV04R0eGLpc4BZMIc8BGgOgIirM7zywcspX.eQNlQaz5q.TkPOntW2RUVpAFgmSx5FUA3OygYZCrtEEQSZ6g3CSmpFEMEIyqi6eWfXUIsewhd5wgnkgKWk65oeR60ebhZC-2OGBqF011b3uiMOt6dVlZRFP5r2tf-y&oas=fNizNZlXjZWYl72DJSShsw..");
         }
 
         public bool isAt()
@@ -113,12 +113,12 @@ namespace AbtFramework
         }
         public void inputUserName()
         {
-            usernameField.SendKeys("FROMETAJ");
+            usernameField.SendKeys("OUMSALEMS");
         }
         public void inputPasswordField()
         {
             passwordField.Clear();
-            passwordField.SendKeys("321654jJ.");
+            passwordField.SendKeys("Manager01m2");
         }
         public void clickSubmitButton()
         {
