@@ -24,8 +24,32 @@ namespace AbtFramework
         private IWebElement submitButtond;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[4]/a")]
         private IWebElement iProcurementRequest;
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[5]/td[4]/a")]
+        private IWebElement abtTimeCard;
         [FindsBy(How = How.Id, Using = "ICXPOR_NONCATALOG")]
         private IWebElement nonCatalogRequest;
+        [FindsBy(How = How.Id, Using = "N55")]
+        private IWebElement timeEntry;
+        [FindsBy(How = How.Id, Using = "HXC_TIMECARD_DIRECT")]
+        private IWebElement createTimecards;
+        //    time ard creation variables
+        [FindsBy(How = How.Id, Using = "A241N1display")]
+        private IWebElement projectTimeCardInput;
+        [FindsBy(How = How.Id, Using = "A251N1display")]
+        private IWebElement tasktTimeCardInput;
+        [FindsBy(How = How.Id, Using = "A261N1display")]
+        private IWebElement typeTimeCardInput;
+        [FindsBy(How = How.Id, Using = "B22_1_0")]
+        private IWebElement timeInput1;
+        [FindsBy(How = How.Id, Using = "B22_1_1")]
+        private IWebElement timeInput2;
+        [FindsBy(How = How.Id, Using = "B22_1_2")]
+        private IWebElement timeInput3;
+        [FindsBy(How = How.Id, Using = "B22_1_3")]
+        private IWebElement timeInput4;
+        [FindsBy(How = How.Id, Using = "B22_1_4")]
+        private IWebElement timeInput5;
+        //
         [FindsBy(How = How.Id, Using = "ItemDescription")]
         private IWebElement itemDescription;
         [FindsBy(How = How.Id, Using = "Quantity")]
@@ -130,6 +154,16 @@ namespace AbtFramework
             iProcurementRequest.Click();
             Thread.Sleep(1000);
             nonCatalogRequest.Click();
+        }
+        public void clickTimeCard()
+        {
+            Thread.Sleep(2000);
+            abtTimeCard.Click();
+            timeEntry.Click();
+            Thread.Sleep(1000);
+            createTimecards.Click();
+            projectTimeCardInput.SendKeys("21553 \r");
+            projectTimeCardInput.Click();
         }
         public void fillNonCatalogRequestForm()
         {

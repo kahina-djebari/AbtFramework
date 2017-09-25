@@ -21,4 +21,5 @@ Scenario:Timecard Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And put my user and password
+	Then click Abt US Timecards
 	
