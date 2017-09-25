@@ -16,3 +16,9 @@ Scenario: iProcurement Request
 	And assign "Berg, Gail E" before requisition and submit
 	And Then assign "Poodts, Mauricio" after requisition and submit
 	When i hit submit the request is done
+
+Scenario:Timecard Request
+	Given I have Open IE Test
+	And I have navigated to Oracle Dev
+	And put my user and password
+	
