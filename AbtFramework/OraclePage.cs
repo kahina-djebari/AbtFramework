@@ -49,7 +49,17 @@ namespace AbtFramework
         private IWebElement timeInput4;
         [FindsBy(How = How.Id, Using = "B22_1_4")]
         private IWebElement timeInput5;
+        [FindsBy(How = How.Id, Using = "Hxcsavebutton")]
+        private IWebElement reviewThenSavebutton;
+        [FindsBy(How = How.Id, Using = "HxcTcReturnButton")]
+        private IWebElement returnToTimeEntryButtonTimeCard;
+        [FindsBy(How = How.Id, Using = "Hxcnextbutton")]
+        private IWebElement timecardBeginSubmit;
+        [FindsBy(How = How.Id, Using = "submit")]
+        private IWebElement timecardSubmit;
         //
+        [FindsBy(How = How.Id, Using = "Hxccuitcsaveforlater")]
+        private IWebElement completeSaveTimeCardProcess;
         [FindsBy(How = How.Id, Using = "ItemDescription")]
         private IWebElement itemDescription;
         [FindsBy(How = How.Id, Using = "Quantity")]
@@ -165,24 +175,33 @@ namespace AbtFramework
         }
         public void fillTimeCard()
         {
-
-            projectTimeCardInput.SendKeys("21553 \r\n");
-           
+            projectTimeCardInput.SendKeys("10000 \r");
             tasktTimeCardInput.Click();
-            tasktTimeCardInput.SendKeys("1100 \r\n");
+            Thread.Sleep(1000);
+            tasktTimeCardInput.SendKeys("1011 \r");
             typeTimeCardInput.Click();
-          
-        [FindsBy(How = How.Id, Using = "B22_1_0")]
-        private IWebElement timeInput1;
-        [FindsBy(How = How.Id, Using = "B22_1_1")]
-        private IWebElement timeInput2;
-        [FindsBy(How = How.Id, Using = "B22_1_2")]
-        private IWebElement timeInput3;
-        [FindsBy(How = How.Id, Using = "B22_1_3")]
-        private IWebElement timeInput4;
-        [FindsBy(How = How.Id, Using = "B22_1_4")]
-        private IWebElement timeInput5;
-    }
+            Thread.Sleep(1000);
+            typeTimeCardInput.SendKeys("Vacation");
+            timeInput1.Click();
+            Thread.Sleep(1000);
+            timeInput1.SendKeys("8");
+            timeInput2.SendKeys("8");
+            timeInput3.SendKeys("8");
+            timeInput4.SendKeys("8");
+            timeInput5.SendKeys("8");
+            Thread.Sleep(1000);
+            reviewThenSavebutton.Click();
+        }
+        public void completeTimeCardRequest()
+        {
+            completeSaveTimeCardProcess.Click();
+            Thread.Sleep(1000);
+            returnToTimeEntryButtonTimeCard.Click();
+            Thread.Sleep(1000);
+            timecardBeginSubmit.Click();
+            Thread.Sleep(1000);
+            timecardSubmit.Click();
+        }
          public void fillNonCatalogRequestForm()
         {
             Thread.Sleep(2000);
