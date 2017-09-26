@@ -14,7 +14,7 @@ namespace abtTest.Steps
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.init(Browser.IE);
         }
         [Given(@"I have navigated to Oracle Dev")]
         public void GivenIHaveNavigatedToOracleDev()
