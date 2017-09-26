@@ -53,6 +53,10 @@ namespace AbtFramework
         private IWebElement reviewThenSavebutton;
         [FindsBy(How = How.Id, Using = "HxcTcReturnButton")]
         private IWebElement returnToTimeEntryButtonTimeCard;
+        [FindsBy(How = How.Id, Using = "Hxcnextbutton")]
+        private IWebElement timecardBeginSubmit;
+        [FindsBy(How = How.Id, Using = "submit")]
+        private IWebElement timecardSubmit;
         //
         [FindsBy(How = How.Id, Using = "Hxccuitcsaveforlater")]
         private IWebElement completeSaveTimeCardProcess;
@@ -193,6 +197,10 @@ namespace AbtFramework
             completeSaveTimeCardProcess.Click();
             Thread.Sleep(1000);
             returnToTimeEntryButtonTimeCard.Click();
+            Thread.Sleep(1000);
+            timecardBeginSubmit.Click();
+            Thread.Sleep(1000);
+            timecardSubmit.Click();
         }
          public void fillNonCatalogRequestForm()
         {
