@@ -33,6 +33,12 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.clickIProcurementRequest();
         }
+        [Then(@"click Abt US Timecards")]
+        public void ThenClickAbtUSTimecards()
+        {
+            AbtPages.OraclePage.clickTimeCard();
+        }
+
         [Then(@"fill the request form")]
         public void ThenFillTheRequestForm()
         {
