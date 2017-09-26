@@ -17,9 +17,11 @@ Scenario: iProcurement Request
 	And Then assign "Poodts, Mauricio" after requisition and submit
 	When i hit submit the request is done
 
-Scenario:Timecard Request
+Scenario:Timecard vacations Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And put my user and password
 	Then click Abt US Timecards
+	And fill the TimeCard
+	Then close complete the timeCard request
 	
