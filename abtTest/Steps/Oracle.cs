@@ -38,6 +38,16 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.clickTimeCard();
         }
+        [Then(@"fill the TimeCard")]
+        public void ThenFillTheTimeCard()
+        {
+            AbtPages.OraclePage.fillTimeCard();
+        }
+        [Then(@"close complete the timeCard request")]
+        public void ThenCloseCompleteTheTimeCardRequest()
+        {
+            AbtPages.OraclePage.completeTimeCardRequest();
+        }
 
         [Then(@"fill the request form")]
         public void ThenFillTheRequestForm()
