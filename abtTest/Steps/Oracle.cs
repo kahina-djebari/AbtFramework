@@ -14,17 +14,17 @@ namespace abtTest.Steps
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.init(Browser.Chrome);
         }
         [Given(@"I have navigated to Oracle Dev")]
         public void GivenIHaveNavigatedToOracleDev()
         {
             AbtPages.OraclePage.GoToOracleDev();
         }
-        [Given(@"put my user and password")]
-        public void GivenPutMyUserAndPassword()
+        [Given(@"i login as ""(.*)""")]
+        public void GivenILoginAs(string user)
         {
-            AbtPages.OraclePage.inputUserName();
+            AbtPages.OraclePage.inputUserName(user);
             AbtPages.OraclePage.inputPasswordField();
             AbtPages.OraclePage.clickSubmitButton();
         }
@@ -64,6 +64,11 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.fillRequisitionInformation();
         }
+        [Then(@"Submit after approvers")]
+        public void ThenSubmitAfterApprovers()
+        {
+            AbtPages.OraclePage.SubmitAfterApprovers();
+        }
         [Then(@"Click Manage Approvals")]
         public void ThenClickManageApprovals()
         {
@@ -78,7 +83,7 @@ namespace abtTest.Steps
         [Then(@"Then assign ""(.*)"" after requisition and submit")]
         public void ThenThenAssignAfterRequisitionAndSubmit(string p0)
         {
-            AbtPages.OraclePage.addAfterApproverAndSubmit(p0);
+            AbtPages.OraclePage.addAfterApprover(p0);
 
         }
         [When(@"i hit submit the request is done")]

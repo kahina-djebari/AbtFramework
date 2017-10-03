@@ -22,9 +22,9 @@ namespace AbtFramework
         private IWebElement passwordField;
         [FindsBy(How = How.Id, Using = "SubmitButton")]
         private IWebElement submitButtond;
-        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[4]/a")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[4]/a")]
         private IWebElement iProcurementRequest;
-        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[5]/td[4]/a")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[4]/td[4]/a")]
         private IWebElement abtTimeCard;
         [FindsBy(How = How.Id, Using = "ICXPOR_NONCATALOG")]
         private IWebElement nonCatalogRequest;
@@ -107,7 +107,7 @@ namespace AbtFramework
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://abterp.coresys.com/OA_HTML/RF.jsp?function_id=24317&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=L9STfOm2w4EZ6tM3VHYS0fxBFWITbHuV04R0eGLpc4BZMIc8BGgOgIirM7zywcspX.eQNlQaz5q.TkPOntW2RUVpAFgmSx5FUA3OygYZCrtEEQSZ6g3CSmpFEMEIyqi6eWfXUIsewhd5wgnkgKWk65oeR60ebhZC-2OGBqF011b3uiMOt6dVlZRFP5r2tf-y&oas=fNizNZlXjZWYl72DJSShsw..");
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://ows2.cam.abtassoc.com:8004/OA_HTML/RF.jsp?function_id=24317&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=zuyf3HSa5SE5TW4skJCoR.tQktlyFm-Wf-QTiw1Fiis&oas=Jb1csHEd2rPR7y1fXeYcFA..");
         }
 
         public bool isAt()
@@ -137,6 +137,29 @@ namespace AbtFramework
                 return false;
             }
         }
+
+        private string LoginUser(string user)
+        {
+            var u = "user";
+            switch (user)
+            {
+                case "Sofiane Oumsalem":
+                  return  u = "oumsalems";
+                case "Gail Berg":
+                    return u = "BergG";
+                case "Alex Gutierrez":
+                    return u = "GutierrezA";
+                case "Mauricio Poodts":
+                    return u = "PoodtsM";
+                case "Jorge Elguera":
+                    return u = "ElgueraJ";
+                case "Noel Samuel":
+                    return u = "SamuelN";
+                case "Marlene Kruck":
+                    return u = "KruckM";
+            }
+            return u;
+        }
         private string GetCurrentUser()
         {
             return headerInfo.FindElement(By.TagName("div")).FindElements(By.TagName("table"))[0].FindElements(By.TagName("span"))[1].Text;
@@ -145,14 +168,18 @@ namespace AbtFramework
         {
            return  headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals("Oracle Applications Home Page"));
         }
-        public void inputUserName()
+        private IWebElement getHomeScreenRow(string option)
         {
-            usernameField.SendKeys("OUMSALEMS");
+            return headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals(option));
+        }
+        public void inputUserName(String user)
+        {
+            usernameField.SendKeys(LoginUser(user));
         }
         public void inputPasswordField()
         {
             passwordField.Clear();
-            passwordField.SendKeys("Manager01m2");
+            passwordField.SendKeys("321654jJ.");
         }
         public void clickSubmitButton()
         {
@@ -221,7 +248,6 @@ namespace AbtFramework
             addToCart.Click();
             Thread.Sleep(2000);
             checkout.Click();
-
         }
         public void clickCheckOut()
         {
@@ -257,7 +283,7 @@ namespace AbtFramework
             submitButton_uixr.Click();
         }
 
-        public void addAfterApproverAndSubmit(string approver)
+        public void addAfterApprover(string approver)
         {
             manageGraphButton.Click();
 
@@ -265,11 +291,13 @@ namespace AbtFramework
 
             SelectElement selector = new SelectElement(approverLocation);
             selector.SelectByText("After Requisition Approver Controller");
-
             submitButton_uixr.Click();
+            Thread.Sleep(1000);
+        }
+        public void SubmitAfterApprovers()
+        {
             ApprovalNextButton.Click();
         }
-
         public void submitApproval()
         {
             submitButton_uixr.Click();
