@@ -20,6 +20,7 @@ Scenario: iProcurement Request
 	Then Submit after approvers
 	When i hit submit the request is done
 
+
 Scenario:Timecard vacations Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -28,3 +29,8 @@ Scenario:Timecard vacations Request
 	And fill the TimeCard
 	Then close complete the timeCard request
 	
+Scenario:Approve Timecard
+	Given I have Open IE Test
+	And I have navigated to Oracle Dev
+	And i login as "Mauricio Poodts"
+	And go to the Home screen

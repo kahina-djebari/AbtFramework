@@ -11,7 +11,8 @@ namespace AbtFramework
 {
     public class OraclePage : PageModel
     {
-
+        [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
+        private IWebElement homeButton;
         [FindsBy(How=How.Id,Using ="PageLayoutRN")]
         private IWebElement headerInfo;
         [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
@@ -159,6 +160,10 @@ namespace AbtFramework
                     return u = "KruckM";
             }
             return u;
+        }
+        public void ClickHomeButton()
+        {
+           homeButton.Click();
         }
         private string GetCurrentUser()
         {
