@@ -20,6 +20,11 @@ Scenario: iProcurement Request
 	Then Submit after approvers
 	When i hit submit the request is done
 
+Scenario:requisition approval 
+	Given I have Open IE Test
+	And I have navigated to Oracle Dev
+	And i login as "Gail Berg"
+
 
 Scenario:Timecard vacations Request
 	Given I have Open IE Test
