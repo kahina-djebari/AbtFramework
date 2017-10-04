@@ -78,6 +78,17 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.clickManageGraphButton();
         }
+        [Then(@"i click on IProcurementInquiry")]
+        public void ThenIClickOnIProcurementInquiry()
+        {
+            AbtPages.OraclePage.ClickiProcurementInquiry();
+        }
+
+        [Then(@"take the timeCard To Completion")]
+        public void ThenTakeTheTimeCardToCompletion()
+        {
+            AbtPages.OraclePage.SelectAndApproveTimeCard();
+        }
         [Then(@"assign ""(.*)"" before requisition and submit")]
         public void ThenAssignBeforeRequisitionAndSubmit(string p0)
         {

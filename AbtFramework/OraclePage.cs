@@ -9,6 +9,7 @@ using System.Threading;
 
 namespace AbtFramework
 {
+
     public class OraclePage : PageModel
     {
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
@@ -27,6 +28,12 @@ namespace AbtFramework
         private IWebElement iProcurementRequest;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[4]/td[4]/a")]
         private IWebElement abtTimeCard;
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[4]/a")]
+        private IWebElement iProcurementInquiry;
+        [FindsBy(How = How.Id, Using = "N41:NtfSubject:0")]
+        private IWebElement timeCardToBeApproved;
+        [FindsBy(How = How.XPath, Using = "//*[@id='rowLayout']/td[2]/button")]
+        private IWebElement buttonApproveTimeCard;
         [FindsBy(How = How.Id, Using = "ICXPOR_NONCATALOG")]
         private IWebElement nonCatalogRequest;
         [FindsBy(How = How.Id, Using = "N55")]
@@ -165,6 +172,10 @@ namespace AbtFramework
         {
            homeButton.Click();
         }
+        public void ClickiProcurementInquiry()
+        {
+            iProcurementInquiry.Click();
+        }
         private string GetCurrentUser()
         {
             return headerInfo.FindElement(By.TagName("div")).FindElements(By.TagName("table"))[0].FindElements(By.TagName("span"))[1].Text;
@@ -234,6 +245,12 @@ namespace AbtFramework
             Thread.Sleep(1000);
             timecardSubmit.Click();
         }
+        public void SelectAndApproveTimeCard()
+        {
+            timeCardToBeApproved.Click();
+            Thread.Sleep(500);
+            buttonApproveTimeCard.Click();
+        }
          public void fillNonCatalogRequestForm()
         {
             Thread.Sleep(2000);
@@ -287,7 +304,6 @@ namespace AbtFramework
 
             submitButton_uixr.Click();
         }
-
         public void addAfterApprover(string approver)
         {
             manageGraphButton.Click();

@@ -34,3 +34,5 @@ Scenario:Approve Timecard
 	And I have navigated to Oracle Dev
 	And i login as "Mauricio Poodts"
 	And go to the Home screen
+	Then i click on IProcurementInquiry
+	And take the timeCard To Completion
