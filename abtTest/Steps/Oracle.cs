@@ -37,11 +37,17 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.clickIProcurementRequest();
         }
-        [Then(@"click Abt US Timecards")]
-        public void ThenClickAbtUSTimecards()
+        [Then(@"click the ""(.*)"" option")]
+        public void ThenClickTheOption(string p0)
+        {
+            AbtPages.OraclePage.ClickMainMenuTableOption(p0);
+        }
+        [Then(@"go to time entry")]
+        public void ThenGoToTimeEntry()
         {
             AbtPages.OraclePage.clickTimeCard();
         }
+
         [Then(@"fill the TimeCard")]
         public void ThenFillTheTimeCard()
         {
@@ -78,17 +84,12 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.clickManageGraphButton();
         }
-        [Then(@"i click on IProcurementInquiry")]
-        public void ThenIClickOnIProcurementInquiry()
+        [Then(@"complete the order")]
+        public void ThenCompleteTheOrder()
         {
-            AbtPages.OraclePage.ClickiProcurementInquiry();
+            AbtPages.OraclePage.SelectAndApproveOrder();
         }
 
-        [Then(@"take the timeCard To Completion")]
-        public void ThenTakeTheTimeCardToCompletion()
-        {
-            AbtPages.OraclePage.SelectAndApproveTimeCard();
-        }
         [Then(@"assign ""(.*)"" before requisition and submit")]
         public void ThenAssignBeforeRequisitionAndSubmit(string p0)
         {

@@ -24,6 +24,8 @@ namespace AbtFramework
         private IWebElement passwordField;
         [FindsBy(How = How.Id, Using = "SubmitButton")]
         private IWebElement submitButtond;
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody")]
+        private IWebElement homeMenuTable;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[4]/a")]
         private IWebElement iProcurementRequest;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[4]/td[4]/a")]
@@ -168,13 +170,41 @@ namespace AbtFramework
             }
             return u;
         }
+        private IWebElement getLinkFromMainMenuTable(string link)
+        {
+            IWebElement element = null;
+            // structure to the text -> table/tbody/tr[index]/td[4]/a
+            if (homeMenuTable != null) {
+                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
+               
+                try
+                {
+                    foreach (var row in rows)
+                    {
+                        element = row.FindElement(By.XPath("td[4]/a"));
+                        if (element.GetAttribute("textContent").Equals(link))
+                        {
+                            return element;
+                        }
+                    }
+                }
+                catch (NoSuchElementException)
+                {
+                    //couldnot find 
+                }
+           }
+
+            return element;
+        }
+        public void ClickMainMenuTableOption(string option)
+        {
+            Thread.Sleep(1000);
+            IWebElement test = getLinkFromMainMenuTable(option);
+            test.Click();        
+        }
         public void ClickHomeButton()
         {
            homeButton.Click();
-        }
-        public void ClickiProcurementInquiry()
-        {
-            iProcurementInquiry.Click();
         }
         private string GetCurrentUser()
         {
@@ -203,15 +233,11 @@ namespace AbtFramework
         }
         public void clickIProcurementRequest()
         {
-            Thread.Sleep(2000);
-            iProcurementRequest.Click();
             Thread.Sleep(1000);
             nonCatalogRequest.Click();
         }
         public void clickTimeCard()
         {
-            Thread.Sleep(2000);
-            abtTimeCard.Click();
             timeEntry.Click();
             Thread.Sleep(1000);
             createTimecards.Click();
@@ -245,7 +271,7 @@ namespace AbtFramework
             Thread.Sleep(1000);
             timecardSubmit.Click();
         }
-        public void SelectAndApproveTimeCard()
+        public void SelectAndApproveOrder()
         {
             timeCardToBeApproved.Click();
             Thread.Sleep(500);

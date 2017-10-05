@@ -8,6 +8,7 @@ Scenario: iProcurement Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And i login as "Sofiane Oumsalem"
+	Then click the "Abt US iProcurement Requester" option
 	Then click iProcurement request and then Non-Catalog Req
 	And fill the request form
 	Then Checkout the cart
@@ -20,17 +21,19 @@ Scenario: iProcurement Request
 	Then Submit after approvers
 	When i hit submit the request is done
 
-Scenario:requisition approval 
+Scenario:Requisition approval 
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And i login as "Gail Berg"
-
+	Then click the "Abt US iProcurement Inquiry" option
+	And complete the order
 
 Scenario:Timecard vacations Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And i login as "Sofiane Oumsalem"
-	Then click Abt US Timecards
+	Then click the "Abt US Timecards" option
+	And go to time entry
 	And fill the TimeCard
 	Then close complete the timeCard request
 	
@@ -39,5 +42,5 @@ Scenario:Approve Timecard
 	And I have navigated to Oracle Dev
 	And i login as "Mauricio Poodts"
 	And go to the Home screen
-	Then i click on IProcurementInquiry
-	And take the timeCard To Completion
+	Then click the "Abt US iProcurement Inquiry" option
+	And complete the order
