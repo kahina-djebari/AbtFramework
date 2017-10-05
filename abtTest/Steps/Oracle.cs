@@ -10,7 +10,11 @@ namespace abtTest.Steps
     public sealed class Oracle
     {
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
-
+        [Given(@"go to the Home screen")]
+        public void GivenGoToTheHomeScreen()
+        {
+            AbtPages.OraclePage.ClickHomeButton();
+        }
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
         {
@@ -21,10 +25,10 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.GoToOracleDev();
         }
-        [Given(@"put my user and password")]
-        public void GivenPutMyUserAndPassword()
+        [Given(@"i login as ""(.*)""")]
+        public void GivenILoginAs(string user)
         {
-            AbtPages.OraclePage.inputUserName();
+            AbtPages.OraclePage.inputUserName(user);
             AbtPages.OraclePage.inputPasswordField();
             AbtPages.OraclePage.clickSubmitButton();
         }
@@ -33,11 +37,17 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.clickIProcurementRequest();
         }
-        [Then(@"click Abt US Timecards")]
-        public void ThenClickAbtUSTimecards()
+        [Then(@"click the ""(.*)"" option")]
+        public void ThenClickTheOption(string p0)
+        {
+            AbtPages.OraclePage.ClickMainMenuTableOption(p0);
+        }
+        [Then(@"go to time entry")]
+        public void ThenGoToTimeEntry()
         {
             AbtPages.OraclePage.clickTimeCard();
         }
+
         [Then(@"fill the TimeCard")]
         public void ThenFillTheTimeCard()
         {
@@ -64,11 +74,22 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.fillRequisitionInformation();
         }
+        [Then(@"Submit after approvers")]
+        public void ThenSubmitAfterApprovers()
+        {
+            AbtPages.OraclePage.SubmitAfterApprovers();
+        }
         [Then(@"Click Manage Approvals")]
         public void ThenClickManageApprovals()
         {
             AbtPages.OraclePage.clickManageGraphButton();
         }
+        [Then(@"complete the order")]
+        public void ThenCompleteTheOrder()
+        {
+            AbtPages.OraclePage.SelectAndApproveOrder();
+        }
+
         [Then(@"assign ""(.*)"" before requisition and submit")]
         public void ThenAssignBeforeRequisitionAndSubmit(string p0)
         {
@@ -78,7 +99,7 @@ namespace abtTest.Steps
         [Then(@"Then assign ""(.*)"" after requisition and submit")]
         public void ThenThenAssignAfterRequisitionAndSubmit(string p0)
         {
-            AbtPages.OraclePage.addAfterApproverAndSubmit(p0);
+            AbtPages.OraclePage.addAfterApprover(p0);
 
         }
         [When(@"i hit submit the request is done")]
