@@ -9,6 +9,7 @@ namespace abtTest.Steps
     [Binding]
     public sealed class Oracle
     {
+        private static String gUser = "user";
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
         [Given(@"go to the Home screen")]
         public void GivenGoToTheHomeScreen()
@@ -28,8 +29,9 @@ namespace abtTest.Steps
         [Given(@"i login as ""(.*)""")]
         public void GivenILoginAs(string user)
         {
-            AbtPages.OraclePage.inputUserName(user);
-            AbtPages.OraclePage.inputPasswordField();
+            gUser = user;
+            AbtPages.OraclePage.inputUserName(gUser);
+            AbtPages.OraclePage.inputPasswordField(gUser);
             AbtPages.OraclePage.clickSubmitButton();
         }
         [Then(@"click iProcurement request and then Non-Catalog Req")]
@@ -41,6 +43,11 @@ namespace abtTest.Steps
         public void ThenClickTheOption(string p0)
         {
             AbtPages.OraclePage.ClickMainMenuTableOption(p0);
+        }
+        [Then(@"browse to ""(.*)""")]
+        public void ThenBrowseTo(string p0)
+        {
+            AbtPages.OraclePage.ClickUserOptions(p0);
         }
         [Then(@"go to time entry")]
         public void ThenGoToTimeEntry()
@@ -107,7 +114,6 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.submitApproval();
         }
-
 
     }
 }
