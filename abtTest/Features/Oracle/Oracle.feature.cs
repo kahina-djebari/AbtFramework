@@ -174,15 +174,15 @@ this.ScenarioSetup(scenarioInfo);
 #line 55
  testRunner.And("browse to \"Concurrent\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
-  testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 57
  testRunner.And("browse to \"Run\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
-  testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
  testRunner.And("browse to \"Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
-  testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
  testRunner.And("browse to \"Purchase Order Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

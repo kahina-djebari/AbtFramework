@@ -53,11 +53,11 @@ Scenario: Abt US Projects Inquiry Access
 	And browse to "Profile"
 	Then click the "Abt US Projects Inquiry" option
 	And browse to "Concurrent"
-		Then click the "Abt US Projects Inquiry" option
+	Then click the "Abt US Projects Inquiry" option
 	And browse to "Run"
-		Then click the "Abt US Projects Inquiry" option
+	Then click the "Abt US Projects Inquiry" option
 	And browse to "Set"
-		Then click the "Abt US Projects Inquiry" option
+	Then click the "Abt US Projects Inquiry" option
 	And browse to "Purchase Order Summary"
 
 Scenario: iProcurement Request

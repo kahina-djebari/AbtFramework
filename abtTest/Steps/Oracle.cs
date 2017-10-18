@@ -10,6 +10,12 @@ namespace abtTest.Steps
     public sealed class Oracle
     {
         private static String gUser = "user";
+        // kill all the selenium drivers after a successfull test.
+        [AfterScenario]
+        public void CleanUp()
+        {
+            SeleniumDriver.Quit();
+        }
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
         [Given(@"go to the Home screen")]
         public void GivenGoToTheHomeScreen()

@@ -10,6 +10,11 @@ using AbtFramework.AutoIT;
 
 namespace abtTest.Web
 {
+    //TODO: Switch to feature/steps with spectflow
+    /// <summary>
+    /// DEV these test cases work they only need to be put in the specflow format
+    /// Check the Features and Steps Folder.
+    /// </summary>
    
     public class AGI:IDisposable
     {
