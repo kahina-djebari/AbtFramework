@@ -12,6 +12,8 @@ namespace AbtFramework
 
     public class OraclePage : PageModel
     {
+        static String gUser = "user";
+
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton;
         [FindsBy(How=How.Id,Using ="PageLayoutRN")]
@@ -24,6 +26,10 @@ namespace AbtFramework
         private IWebElement passwordField;
         [FindsBy(How = How.Id, Using = "SubmitButton")]
         private IWebElement submitButtond;
+        ////                                 *[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]
+        //                                 //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[1]/table/tbody
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[1]/table/tbody")]
+        private IWebElement homeMenuTableValerie;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody")]
         private IWebElement homeMenuTable;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[4]/a")]
@@ -68,6 +74,12 @@ namespace AbtFramework
         [FindsBy(How = How.Id, Using = "submit")]
         private IWebElement timecardSubmit;
         //
+        //         Browse Abt US Employee Direct Access  
+        ////                                 *[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]
+        //                                   *[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody
+        [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody")]
+        private IWebElement userBrowsingOptions;
+        // 
         [FindsBy(How = How.Id, Using = "Hxccuitcsaveforlater")]
         private IWebElement completeSaveTimeCardProcess;
         [FindsBy(How = How.Id, Using = "ItemDescription")]
@@ -150,8 +162,10 @@ namespace AbtFramework
 
         private string LoginUser(string user)
         {
+            gUser = user;
             var u = "user";
-            switch (user)
+
+            switch (gUser)
             {
                 case "Sofiane Oumsalem":
                   return  u = "oumsalems";
@@ -167,15 +181,23 @@ namespace AbtFramework
                     return u = "SamuelN";
                 case "Marlene Kruck":
                     return u = "KruckM";
+                case "Valerie Hennessey":
+                    return u = "HennesseyV";
+                case "Allison Jung":
+                    return u = "Junga";
+                case "John Adamowicz":
+                    return u = "AdamowiczJ";
             }
+           
             return u;
         }
         private IWebElement getLinkFromMainMenuTable(string link)
         {
             IWebElement element = null;
+            Console.WriteLine(gUser);
             // structure to the text -> table/tbody/tr[index]/td[4]/a
-            if (homeMenuTable != null) {
-                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
+            if (gUser.Equals("Valerie Hennessey")) {
+                ICollection<IWebElement> rows = homeMenuTableValerie.FindElements(By.TagName("tr"));
                
                 try
                 {
@@ -193,6 +215,58 @@ namespace AbtFramework
                     //couldnot find 
                 }
            }
+            else {
+                    ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
+
+                    try
+                    {
+                        foreach (var row in rows)
+                        {
+                            element = row.FindElement(By.XPath("td[4]/a"));
+                            if (element.GetAttribute("textContent").Equals(link))
+                            {
+                                return element;
+                            }
+                        }
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        //couldnot find 
+                    }
+                }
+
+            return element;
+        }
+        private IWebElement getLinkFromUserOptions(string link)
+        {
+            IWebElement element = null;
+            Console.WriteLine(gUser);
+
+            
+                ICollection<IWebElement> rows = userBrowsingOptions.FindElements(By.TagName("tr"));
+            //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]
+            //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[4]/td[3]
+            //*[@id="N43"]
+
+            //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[2]/table/tbody
+            try
+            {
+                    foreach (var row in rows)
+                    {
+                    ////*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[12]/td[3]
+                    //element = row.FindElement(By.XPath("a"));
+                        if (row.GetAttribute("textContent").Equals(link))
+                        {
+                        element = row.FindElement(By.XPath("td[3]/a"));
+                            return element;
+                        }
+                    }
+                }
+                catch (NoSuchElementException)
+                {
+                    Console.WriteLine("could not find: " + link);
+                }
+            
 
             return element;
         }
@@ -201,6 +275,14 @@ namespace AbtFramework
             Thread.Sleep(1000);
             IWebElement test = getLinkFromMainMenuTable(option);
             test.Click();        
+        }
+        public void ClickUserOptions(string option)
+        {
+            Thread.Sleep(1000);
+            IWebElement test = getLinkFromUserOptions(option);
+            test.Click();
+            Thread.Sleep(1000);
+            SeleniumDriver.Instance.Navigate().Back();
         }
         public void ClickHomeButton()
         {
@@ -222,10 +304,18 @@ namespace AbtFramework
         {
             usernameField.SendKeys(LoginUser(user));
         }
-        public void inputPasswordField()
-        {
-            passwordField.Clear();
-            passwordField.SendKeys("321654jJ.");
+        public void inputPasswordField(string user)
+        {    // not all accounts can have the same password this 
+            if (user != "Valerie Hennessey")
+            {
+                passwordField.Clear();
+                passwordField.SendKeys("test123456");
+            } else
+            {
+                passwordField.Clear();
+                passwordField.SendKeys("jack123456");
+            }
+       
         }
         public void clickSubmitButton()
         {
