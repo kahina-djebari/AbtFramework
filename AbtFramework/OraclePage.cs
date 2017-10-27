@@ -12,6 +12,7 @@ namespace AbtFramework
 
     public class OraclePage : PageModel
     {
+        //WE ROCK
         static String gUser = "user";
 
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
