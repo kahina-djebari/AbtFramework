@@ -16,18 +16,25 @@ namespace AbtFramework
 
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton;
-        [FindsBy(How=How.Id,Using ="PageLayoutRN")]
+        [FindsBy(How = How.Id, Using = "PageLayoutRN")]
         private IWebElement headerInfo;
         [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
         private IWebElement OracleWelcome;
-        [FindsBy(How = How.Id, Using = "usernameField")]
+        //dev
+        // [FindsBy(How = How.Id, Using = "usernameField")]
+        // private IWebElement usernameField;
+        //replatform
+        [FindsBy(How = How.Id, Using = "unamebean")]
         private IWebElement usernameField;
-        [FindsBy(How = How.Id, Using = "passwordField")]
+        //dev
+        //  [FindsBy(How = How.Id, Using = "passwordField")]
+        //   private IWebElement passwordField;
+        //replatform
+        [FindsBy(How = How.Id, Using = "pwdbean")]
         private IWebElement passwordField;
         [FindsBy(How = How.Id, Using = "SubmitButton")]
         private IWebElement submitButtond;
-        ////                                 *[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]
-        //                                 //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[1]/table/tbody
+
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[1]/table/tbody")]
         private IWebElement homeMenuTableValerie;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody")]
@@ -73,13 +80,14 @@ namespace AbtFramework
         private IWebElement timecardBeginSubmit;
         [FindsBy(How = How.Id, Using = "submit")]
         private IWebElement timecardSubmit;
-        //
-        //         Browse Abt US Employee Direct Access  
-        ////                                 *[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]
-        //                                   *[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody
+        [FindsBy(How = How.Id, Using = "Hxcnextbutton1")]
+        private IWebElement continueTimeCardButton;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody")]
         private IWebElement userBrowsingOptions;
-        // 
+        //  dev
+        //  [FindsBy(How = How.Id, Using = "Hxccuitcsaveforlater")]
+        //  private IWebElement completeSaveTimeCardProcess;
+        //  replatform
         [FindsBy(How = How.Id, Using = "Hxccuitcsaveforlater")]
         private IWebElement completeSaveTimeCardProcess;
         [FindsBy(How = How.Id, Using = "ItemDescription")]
@@ -125,11 +133,61 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//*[@id='FNDDIALOGPAGE']/div/div[5]/div/table/tbody/tr[1]/td[2]/table/tbody/tr/td[2]/button")]
         private IWebElement continueShoppingButton;
 
+        //temp for testing, more dynamic
+        [FindsBy(How = How.Id, Using = "A151N1")]
+        private IWebElement lateEntriesReason1;
+        [FindsBy(How = How.Id, Using = "A152N1")]
+        private IWebElement lateEntriesReason2;
+        [FindsBy(How = How.Id, Using = "A153N1")]
+        private IWebElement lateEntriesReason3;
+        [FindsBy(How = How.Id, Using = "A154N1")]
+        private IWebElement lateEntriesReason4;
+        [FindsBy(How = How.Id, Using = "A155N1")]
+        private IWebElement lateEntriesReason5;
+
+        public void SelectLateEntryReason()
+        {   // find the element and select the options
+            findReasonSelector(lateEntriesReason1);
+            findReasonSelector(lateEntriesReason2);
+            findReasonSelector(lateEntriesReason3);
+            findReasonSelector(lateEntriesReason4);
+            findReasonSelector(lateEntriesReason5);
+            try
+            {
+                continueTimeCardButton.Click();
+            }
+            catch (NoSuchElementException) {
+            }
+            
+        }
+
+        private void findReasonSelector(IWebElement  element)
+        {
+
+
+
+            try
+            {
+                SelectElement selector = new SelectElement(element);
+                selector.SelectByText("L");
+            }
+            catch (NoSuchElementException)
+            {
+
+            }
+               
+            
+
+        }
+
         public void GoToOracleDev()
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://ows2.cam.abtassoc.com:8004/OA_HTML/RF.jsp?function_id=24317&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=zuyf3HSa5SE5TW4skJCoR.tQktlyFm-Wf-QTiw1Fiis&oas=Jb1csHEd2rPR7y1fXeYcFA..");
+            //dev env
+            // SeleniumDriver.Instance.Navigate().GoToUrl("http://ows2.cam.abtassoc.com:8004/OA_HTML/RF.jsp?function_id=24317&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=zuyf3HSa5SE5TW4skJCoR.tQktlyFm-Wf-QTiw1Fiis&oas=Jb1csHEd2rPR7y1fXeYcFA..");
+            //replatform link
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abterp2.coresys.com/OA_HTML/OA.jsp?OAFunc=OAHOMEPAGE");
         }
 
         public bool isAt()
@@ -185,8 +243,8 @@ namespace AbtFramework
                     return u = "HennesseyV";
                 case "Allison Jung":
                     return u = "Junga";
-                case "John Adamowicz":
-                    return u = "AdamowiczJ";
+                case "Daniel Gunther":
+                    return u = "GUNTHERD";
             }
            
             return u;
@@ -305,17 +363,9 @@ namespace AbtFramework
             usernameField.SendKeys(LoginUser(user));
         }
         public void inputPasswordField(string user)
-        {    // not all accounts can have the same password this 
-            if (user != "Valerie Hennessey")
-            {
+        {    
                 passwordField.Clear();
                 passwordField.SendKeys("test123456");
-            } else
-            {
-                passwordField.Clear();
-                passwordField.SendKeys("jack123456");
-            }
-       
         }
         public void clickSubmitButton()
         {
@@ -359,6 +409,10 @@ namespace AbtFramework
             Thread.Sleep(1000);
             timecardBeginSubmit.Click();
             Thread.Sleep(1000);
+            //completeSaveTimeCardProcess.Click();
+            //  timecardBeginSubmit.Click();
+          // Thread.Sleep(1000);
+
             timecardSubmit.Click();
         }
         public void SelectAndApproveOrder()
@@ -391,6 +445,7 @@ namespace AbtFramework
         {
             checkout_uixr.Click();
         }
+
         public void fillRequisitionInformation()
         {
             Thread.Sleep(1000);

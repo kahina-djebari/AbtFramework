@@ -7,7 +7,7 @@
 Scenario: Abt US Employee Direct Access
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Valerie Hennessey"
+	And i login as "Sofiane Oumsalem"
 	Then click the "Abt US Employee Direct Access" option
 	And browse to "Employee Self Service Actions Awaiting Your Attention"
 	Then click the "Abt US Employee Direct Access" option
@@ -91,12 +91,13 @@ Scenario:Timecard vacations Request
 	Then click the "Abt US Timecards" option
 	And go to time entry
 	And fill the TimeCard
+	Then select the reason
 	Then close complete the timeCard request
 	
 Scenario:Approve Timecard
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Mauricio Poodts"
+	And i login as "Daniel Gunther"
 	And go to the Home screen
 	Then click the "Abt US iProcurement Inquiry" option
 	And complete the order

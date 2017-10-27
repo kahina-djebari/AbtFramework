@@ -20,7 +20,7 @@ namespace abtTest.Steps
         [Given(@"go to the Home screen")]
         public void GivenGoToTheHomeScreen()
         {
-            AbtPages.OraclePage.ClickHomeButton();
+           // AbtPages.OraclePage.ClickHomeButton();
         }
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
@@ -66,6 +66,12 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.fillTimeCard();
         }
+        [Then(@"select the reason")]
+        public void ThenSelectTheReason()
+        {
+            AbtPages.OraclePage.SelectLateEntryReason();
+        }
+
         [Then(@"close complete the timeCard request")]
         public void ThenCloseCompleteTheTimeCardRequest()
         {

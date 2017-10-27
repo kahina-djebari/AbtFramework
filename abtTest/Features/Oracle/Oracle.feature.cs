@@ -76,7 +76,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("i login as \"Valerie Hennessey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("i login as \"Sofiane Oumsalem\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
  testRunner.Then("click the \"Abt US Employee Direct Access\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
@@ -268,28 +268,30 @@ this.ScenarioSetup(scenarioInfo);
 #line 93
  testRunner.And("fill the TimeCard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
+ testRunner.Then("select the reason", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 95
  testRunner.Then("close complete the timeCard request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Approve Timecard", SourceLine=95)]
+        [TechTalk.SpecRun.ScenarioAttribute("Approve Timecard", SourceLine=96)]
         public virtual void ApproveTimecard()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Approve Timecard", ((string[])(null)));
-#line 96
-this.ScenarioSetup(scenarioInfo);
 #line 97
- testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 98
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 99
- testRunner.And("i login as \"Mauricio Poodts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
- testRunner.And("go to the Home screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("i login as \"Daniel Gunther\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
- testRunner.Then("click the \"Abt US iProcurement Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("go to the Home screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 102
+ testRunner.Then("click the \"Abt US iProcurement Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 103
  testRunner.And("complete the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
