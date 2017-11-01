@@ -17,28 +17,31 @@ namespace AbtFramework
 
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton;
+
         [FindsBy(How=How.Id,Using ="PageLayoutRN")]
         private IWebElement headerInfo;
+
         [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
         private IWebElement OracleWelcome;
-        //[FindsBy(How = How.Id, Using = "usernameField")]
-        //private IWebElement usernameField;
+      
         [FindsBy(How = How.XPath, Using = "//input[@title='*User Name']")]
         private IWebElement username;
-        //[FindsBy(How = How.Id, Using = "passwordField")]
-        //private IWebElement passwordField;
+       
         [FindsBy(How = How.XPath, Using = "//input[@title='*Password']")]
         private IWebElement password;
+
         [FindsBy(How = How.XPath, Using = "//button[@title='Login']")]
         private IWebElement loginButton;
-        ////                                 *[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]
-        //                                 //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[1]/table/tbody
+      
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody")]
         private IWebElement homeMenuTableValerie;
+
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody")]
         private IWebElement homeMenuTable;
+
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[4]/a")]
         private IWebElement iProcurementRequest;
+
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[4]/td[4]/a")]
         private IWebElement abtTimeCard;
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[4]/a")]
@@ -131,7 +134,7 @@ namespace AbtFramework
         private IWebElement approverLocation;
         [FindsBy(How = How.XPath, Using = "//*[@id='PageActionButtonsBar_uixr']/tbody/tr/td[10]/button")]
         private IWebElement ApprovalNextButton;
-        [FindsBy(How = How.XPath, Using = "//*[@id='FNDDIALOGPAGE']/div/div[5]/div/table/tbody/tr[1]/td[2]/table/tbody/tr/td[2]/button")]
+        [FindsBy(How = How.XPath, Using = "//button[text() = 'Continue Shopping']")]
         private IWebElement continueShoppingButton;
         
 
@@ -146,9 +149,9 @@ namespace AbtFramework
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-            //SeleniumDriver.Instance.Navigate().GoToUrl("http://ows2.cam.abtassoc.com:8004/OA_HTML/RF.jsp?function_id=24317&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=zuyf3HSa5SE5TW4skJCoR.tQktlyFm-Wf-QTiw1Fiis&oas=Jb1csHEd2rPR7y1fXeYcFA..");
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abterp2.coresys.com");
-            Thread.Sleep(3000);
+        
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
+
         }
 
 
