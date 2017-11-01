@@ -442,11 +442,11 @@ namespace AbtFramework
         }
 
 
-        /**
-	 * perform a click on the element
-	 * 
-	 * @param element
-	 */
+        ///<summary>
+        ///Perform a click on the element and with javascript if needed.
+        ///</summary>
+        ///<param name="element">element to click</param>
+        ///
         public static void ClickElement(IWebElement element)
         {
             //  GlobalUtils.customWait(1); // require or it will go to fast
@@ -472,6 +472,7 @@ namespace AbtFramework
 	 * @param value
 	 *            to set
 	 */
+        ///<summary
         public static void SetValue(IWebElement element, string value)
         {
             //GlobalUtils.customWait(1); // require or it will go to fast :(
