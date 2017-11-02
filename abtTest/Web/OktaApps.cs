@@ -3,6 +3,7 @@ using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 
@@ -277,9 +278,9 @@ namespace abtTest.Web
             string url = "https://abtassociates.okta.com/home/bookmark/0oa80vg271UBRAgM00x7/2557";
             SeleniumDriver.init(Browser.IENoNativeEvents);
             var timer1 = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
-            WebDriverWait wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
-            wait.Until(e=>SeleniumDriver.Instance.FindElement(By.LinkText("Home")).Displayed);
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+            WebDriverWait wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(10));
+            wait.Until(e=>SeleniumDriver.DriverInstance.FindElement(By.LinkText("Home")).Displayed);
             var timer2= DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             Console.WriteLine("Response Time for link " + url + ":" + (timer2 - timer1));
         }

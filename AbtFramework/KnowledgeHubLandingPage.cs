@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -23,7 +24,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/sites/PropProj/KnowledgeHub/SitePages/Home.aspx");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/sites/PropProj/KnowledgeHub/SitePages/Home.aspx");
         }
 
         public void AttemptToLogin()

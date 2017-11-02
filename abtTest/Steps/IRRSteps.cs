@@ -1,6 +1,7 @@
 ﻿using AbtFramework;
 using AbtFramework.Utils_Classes;
 using System;
+using AbtFramework.SeleniumUtils;
 using TechTalk.SpecFlow;
 using Xunit;
 
@@ -196,7 +197,7 @@ namespace abtTest.Steps
         [AfterScenario]
         public void CleanUp()
         {
-            //SeleniumDriver.Instance.Close();
+            //SeleniumDriver.DriverInstance.Close();
         }
 
 

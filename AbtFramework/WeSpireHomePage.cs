@@ -5,6 +5,7 @@ using AbtFramework.Utils_Classes;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -69,9 +70,9 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad(string AbtXchangeHandle)
         {
-            //SeleniumDriver.Instance.SwitchTo().Window(AbtXchangeHandle);
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-            SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
+            //SeleniumDriver.DriverInstance.SwitchTo().Window(AbtXchangeHandle);
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             try
             {
                 LoginBtn.Click();
@@ -81,7 +82,7 @@ namespace AbtFramework
             {
                 Console.WriteLine(ex.Message);
             }
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
             try
             {
                 LoginBtn.Click();
@@ -131,7 +132,7 @@ namespace AbtFramework
 
         public void GoWithNoOutputResult()
         {
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
         }
 
         private Post PostMatcher(string input, string pattern)
@@ -207,7 +208,7 @@ namespace AbtFramework
                     TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to WeSpire(Test Environment):" + url);
 
                 }
-                SeleniumDriver.Instance.Navigate().GoToUrl(url);
+                SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
                 wait.Until(e => Dashboard.Displayed);
                            
 

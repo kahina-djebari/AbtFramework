@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System.Threading;
 using AbtFramework.AutoIT;
+using AbtFramework.SeleniumUtils;
 
 namespace abtTest.Web
 {
@@ -178,7 +179,7 @@ namespace abtTest.Web
 
         public void Dispose()
         {
-            if(SeleniumDriver.Instance!=null)
+            if(SeleniumDriver.DriverInstance!=null)
             SeleniumDriver.Quit();
         }
     }

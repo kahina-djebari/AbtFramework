@@ -1,4 +1,5 @@
 ﻿using System;
+using AbtFramework.SeleniumUtils;
 using AbtFramework.Utils_Classes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -36,7 +37,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
                               
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
             StartTimer();
                               
            
@@ -98,7 +99,7 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad(string RightFindWinHandle)
         {
-           SeleniumDriver.Instance.SwitchTo().Window(RightFindWinHandle);
+           SeleniumDriver.DriverInstance.SwitchTo().Window(RightFindWinHandle);
             wait.Until(e => RightHeaderToolbar.Displayed);
             StopTimer();
         }

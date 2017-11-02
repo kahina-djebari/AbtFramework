@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -45,14 +46,14 @@ namespace AbtFramework
 
         public string OpenAbtXchange()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
           string AbtXchangeHandle= finder.Click(AbtXchange);
             StartTimer();
             return AbtXchangeHandle;
 
         }
 
-        public IWebElement ToolsAndResources { get { return SeleniumDriver.Instance.FindElement(By.LinkText("Tools & Resources")); } }
+        public IWebElement ToolsAndResources { get { return SeleniumDriver.DriverInstance.FindElement(By.LinkText("Tools & Resources")); } }
 
         public void goTo(Abtlinks Page)
         {
@@ -177,7 +178,7 @@ namespace AbtFramework
                     OpenMegaMenuLink("AbtXchange");
                     try
                     {
-                        SeleniumDriver.Instance.FindElement(By.LinkText("Log In")).Click();
+                        SeleniumDriver.DriverInstance.FindElement(By.LinkText("Log In")).Click();
                         StartTimer();
                         if (TestCaseGenerator.CurrentTestCase.StepExist("Click on Log In"))
                         {
@@ -214,7 +215,7 @@ namespace AbtFramework
                     try    //Sometimes you're not redirected to Abtknowledge directly
                     {      //and you need to click on a button that says continue to AbtKnowledge
                            //try clicking the button if is there, continue if is not.
-                        SeleniumDriver.Instance.FindElement(By.Id("submitbutton")).Click();
+                        SeleniumDriver.DriverInstance.FindElement(By.Id("submitbutton")).Click();
                     }
                     catch
                     {
@@ -248,7 +249,7 @@ namespace AbtFramework
                     try    //Sometimes you're not redirected to Abtknowledge directly
                     {      //and you need to click on a button that says continue to AbtKnowledge
                            //try clicking the button if is there, continue if is not.
-                        SeleniumDriver.Instance.FindElement(By.Id("submitbutton")).Click();
+                        SeleniumDriver.DriverInstance.FindElement(By.Id("submitbutton")).Click();
                     }
                     catch
                     {
@@ -268,7 +269,7 @@ namespace AbtFramework
         public string OpenAbtTravel()
         {
             
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
            string handle=finder.Click(AbtTravel);
             StartTimer();
             return handle;
@@ -276,7 +277,7 @@ namespace AbtFramework
 
         public string OpenSuccessFactors()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
           string WinHandle=finder.Click(Atlas);
            StartTimer();
             return WinHandle;
@@ -286,13 +287,13 @@ namespace AbtFramework
         private void OpenServiceCenterLink(string linkText)
         {
             var StartDebugTimer = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-            while (SeleniumDriver.Instance.Title.Equals("Home"))
+            while (SeleniumDriver.DriverInstance.Title.Equals("Home"))
             {
                 try
                 {
                     action.MoveToElement(ToolsAndResources).Perform();
                     Thread.Sleep(500);
-                    SeleniumDriver.Instance.FindElement(By.LinkText(linkText)).Click();
+                    SeleniumDriver.DriverInstance.FindElement(By.LinkText(linkText)).Click();
                     Thread.Sleep(1000);
                 }
 
@@ -312,13 +313,13 @@ namespace AbtFramework
         private void OpenMegaMenuLink(string linkText)
         {
             var tempTimer = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-            while (SeleniumDriver.Instance.WindowHandles.Count < 2)
+            while (SeleniumDriver.DriverInstance.WindowHandles.Count < 2)
             {
                 try
                 {
                     action.MoveToElement(ToolsAndResources).Perform();
                     Thread.Sleep(500);
-                    SeleniumDriver.Instance.FindElement(By.LinkText(linkText)).Click();
+                    SeleniumDriver.DriverInstance.FindElement(By.LinkText(linkText)).Click();
                     Thread.Sleep(1000);
                 }
 
@@ -364,8 +365,8 @@ namespace AbtFramework
             StartTimer();
             SeleniumDriver.Close();
 
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-            SeleniumDriver.Instance.Manage().Window.Maximize();
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.Manage().Window.Maximize();
         }
 
         public void GoTo_CreativeServices()

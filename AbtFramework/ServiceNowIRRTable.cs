@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -10,7 +11,7 @@ namespace AbtFramework
             try
             {
                 
-                IWebElement IRR = SeleniumDriver.Instance.FindElement(By.LinkText(IncidentReportId));
+                IWebElement IRR = SeleniumDriver.DriverInstance.FindElement(By.LinkText(IncidentReportId));
                 IRR.Click();
                 return true;   
               

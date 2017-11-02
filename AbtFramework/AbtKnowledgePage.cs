@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -60,7 +61,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("http://abtknowledge.corp.abtassoc.com/");
             ContinueToAbtKnowledge();
             
 

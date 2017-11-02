@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -141,7 +142,7 @@ namespace AbtFramework
         public IWebElement SelectFolderNavigator(string option)
         {
             string xpath = "//a[text() = '" + option + "']";
-            return SeleniumDriver.Instance.FindElement(By.XPath(xpath));
+            return SeleniumDriver.DriverInstance.FindElement(By.XPath(xpath));
         }
 
 
@@ -149,8 +150,7 @@ namespace AbtFramework
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-          
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
 
         }
 
@@ -158,7 +158,7 @@ namespace AbtFramework
         public bool isAt()
         {
             //Thread.Sleep(2000);
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
             try
             {
 
@@ -308,7 +308,7 @@ namespace AbtFramework
             IWebElement test = getLinkFromUserOptions(option);
             test.Click();
             Thread.Sleep(1000);
-            SeleniumDriver.Instance.Navigate().Back();
+            SeleniumDriver.DriverInstance.Navigate().Back();
         }
         public void ClickHomeButton()
         {

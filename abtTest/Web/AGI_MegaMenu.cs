@@ -4,6 +4,7 @@ using AbtFramework;
 using AbtFramework.Utils_Classes;
 using Microsoft.Win32;
 using AbtFramework.AutoIT;
+using AbtFramework.SeleniumUtils;
 
 namespace abtTest.Web
 {

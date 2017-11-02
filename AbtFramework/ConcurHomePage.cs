@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -32,7 +33,7 @@ namespace AbtFramework
                 if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615"))
                     TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
 
-                SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
+                SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassociates.okta.com/home/concur/0oa7nf05pdDTmrMJZ0x7/615");
             }
 
             catch(Exception ex)
@@ -72,8 +73,8 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad()
         {
-            //SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            //SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
             wait.Until(e => warning.Displayed);
             warning.Click();
             wait.Until(e => Logo.Displayed);

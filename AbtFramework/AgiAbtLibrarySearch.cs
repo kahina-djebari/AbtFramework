@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium.Support.UI;
 using System;
+using AbtFramework.SeleniumUtils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -12,12 +13,12 @@ namespace AbtFramework
 
         public void Go()
         {
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/Pages/Updates-to-the-Abt-Library-Search.aspx");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/Pages/Updates-to-the-Abt-Library-Search.aspx");
         }
 
         public string GoToRightFind()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
             string RightFindWinHandle = finder.Click(RightFindLink);
             StartTimer();
             return RightFindWinHandle;

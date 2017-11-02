@@ -3,6 +3,7 @@ using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
 using AbtFramework.Enums;
+using AbtFramework.SeleniumUtils;
 
 namespace abtTest.Web
 {

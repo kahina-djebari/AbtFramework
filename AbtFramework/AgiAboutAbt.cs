@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -337,7 +338,7 @@ namespace AbtFramework
 
         public void Go()
         {
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/aboutabt/Pages/Home.aspx");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/aboutabt/Pages/Home.aspx");
         }
 
         public void OpenElevatorSpeech()
@@ -375,7 +376,7 @@ namespace AbtFramework
             switch (file)
             {
                 case aboutAbtFiles.CompanyChart:
-                   // SeleniumDriver.Instance.SwitchTo().Frame("FilterIframe7");
+                   // SeleniumDriver.DriverInstance.SwitchTo().Frame("FilterIframe7");
                     OpenFileMenu();
                    return OpenPPtReadingMode();
                    
@@ -401,14 +402,14 @@ namespace AbtFramework
 
         private string OpenAbtAnualReview(string year)
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
-            string winHandle=finder.Click(SeleniumDriver.Instance.FindElement(By.LinkText("Abt Annual Review " + year)));
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
+            string winHandle=finder.Click(SeleniumDriver.DriverInstance.FindElement(By.LinkText("Abt Annual Review " + year)));
             return winHandle;
         }
 
         private string OpenPPtReadingMode()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
             string winHandle = finder.Click(_viewPresentation);
             return winHandle;
         }

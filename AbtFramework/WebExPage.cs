@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
+using AbtFramework.SeleniumUtils;
 using AbtFramework.Utils_Classes;
 
 namespace AbtFramework
@@ -18,7 +19,7 @@ namespace AbtFramework
 
         public void Login()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("header");
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("header");
           
             loginbtn.Click();
                       
@@ -46,7 +47,7 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
             StartTimer();
                             
                     

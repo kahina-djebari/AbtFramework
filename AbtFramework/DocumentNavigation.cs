@@ -8,6 +8,7 @@ using OpenQA.Selenium.Support.UI;
 using AutoItX3Lib;
 using System.Threading;
 using AbtFramework.AutoIT;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -179,16 +180,16 @@ namespace AbtFramework
             //DocumentCheckbox.Click();
           //  MoreOptions.Click();
              action.ContextClick(Doc).Perform();
-             finder = new PopupWindowFinder(SeleniumDriver.Instance);
+             finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
               popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
            //   OpenDocumentIn(doctype).Click();
           //  action.Click(OpenDocumentIn(doctype)).Perform();
-            //            SeleniumDriver.Instance.FindElements(By.TagName("li")).Single(e => e.Text.Equals("Open in " + doctype.ToString() + " Online")).Click();
+            //            SeleniumDriver.DriverInstance.FindElements(By.TagName("li")).Single(e => e.Text.Equals("Open in " + doctype.ToString() + " Online")).Click();
         
-            wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);
+            wait.Until(e => SeleniumDriver.DriverInstance.WindowHandles.Count >= 2);
             SeleniumDriver.Close();
-            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-            SeleniumDriver.Instance.Manage().Window.Maximize();
+            SeleniumDriver.DriverInstance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.DriverInstance.Manage().Window.Maximize();
             Console.WriteLine(doctype.ToString() + " Document opened Succesfully");
             Console.Write("</br>");       
         }

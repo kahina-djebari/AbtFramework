@@ -132,6 +132,8 @@
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SANSHomepage.cs" />
+    <Compile Include="SeleniumUtils\SeleniumDriver.cs" />
+    <Compile Include="SeleniumUtils\TestBase.cs" />
     <Compile Include="ServiceNowIRRForm.cs" />
     <Compile Include="ServiceNowIRRTable.cs" />
     <Compile Include="ServiceNowTaskBar.cs" />
@@ -141,7 +143,6 @@
     <Compile Include="DistListReqFormPage.cs" />
     <Compile Include="DocumentNavigation.cs" />
     <Compile Include="Enums\TypeOfRequest.cs" />
-    <Compile Include="SeleniumDriver.cs" />
     <Compile Include="Abtlinks.cs" />
     <Compile Include="EbscoHomePage.cs" />
     <Compile Include="ExcelOnlinePage.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="WordOnlinePage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +248,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

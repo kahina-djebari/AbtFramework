@@ -8,6 +8,7 @@ using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 using OpenQA.Selenium.Support.UI;
 
 namespace abtTest.Web

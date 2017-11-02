@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -15,15 +16,15 @@ namespace AbtFramework
         public void BookOrSearchUsTravel()
         {
             // action.MoveToElement()
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
             Console.WriteLine("Clicking on Book or Search US Travel");
             Console.WriteLine("</br>");
             
             popupWindowHandle = finder.Click(concurLink);
             StartTimer();
             SeleniumDriver.Close();
-            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
-            SeleniumDriver.Instance.Manage().Window.Maximize();
+            SeleniumDriver.DriverInstance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.DriverInstance.Manage().Window.Maximize();
             wait.Until(e => warning.Displayed);
             warning.Click();
             StopTimer();

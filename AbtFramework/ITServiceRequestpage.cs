@@ -1,4 +1,5 @@
 ﻿using System;
+using AbtFramework.SeleniumUtils;
 using AbtFramework.Utils_Classes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -18,7 +19,7 @@ namespace AbtFramework
 
         public void NewIncident(IncidentType incident)
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
             switch (incident)
             {
                 case IncidentType.Ask_A_Question:

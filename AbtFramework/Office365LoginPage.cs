@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -27,7 +28,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/");
         }
 
         public void Login(string userName)

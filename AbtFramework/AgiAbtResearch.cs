@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -33,7 +34,7 @@ namespace AbtFramework
         public string GoToRightFind()
         {
 
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
             string  RightFindWinHandle= finder.Click(RightFindLink);
             StartTimer();
             return RightFindWinHandle;
@@ -45,7 +46,7 @@ namespace AbtFramework
         public string GoToEbscoDS()
         {
              
-             finder = new PopupWindowFinder(SeleniumDriver.Instance);
+             finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
             string EbscoWinHandle= finder.Click(EbscoDS);
              StartTimer();
             return EbscoWinHandle;

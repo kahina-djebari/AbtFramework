@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -24,8 +25,8 @@ namespace AbtFramework
             get
             {
                 _abttraveldropdown = PageGenerator.GetPage<AbtTravelOnlineDropdown>();
-                _abttraveldropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _abttraveldropdown.action = new Actions(SeleniumDriver.Instance);
+                _abttraveldropdown.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(30));
+                _abttraveldropdown.action = new Actions(SeleniumDriver.DriverInstance);
                 return _abttraveldropdown;
             }
         }
@@ -35,8 +36,8 @@ namespace AbtFramework
             AbtPages.AgiTopNavigation.ToolsDropdown.AbtTravelLink();
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            SeleniumDriver.Instance.Close();
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.Close();
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
         }
 
         public bool isAt()
@@ -73,7 +74,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://daxii.abtassoc.com/openam/idpssoinit?metaAlias=/abt/AbtSaml2Idp&spEntityID=bcdsso.bcdtravel.com&binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&RelayState=https://bcdpingidgateway.bcdtravel.com/SP/TripSourcePortal/tripsourceportal.aspx&iPSP");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://daxii.abtassoc.com/openam/idpssoinit?metaAlias=/abt/AbtSaml2Idp&spEntityID=bcdsso.bcdtravel.com&binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&RelayState=https://bcdpingidgateway.bcdtravel.com/SP/TripSourcePortal/tripsourceportal.aspx&iPSP");
             
         }
 

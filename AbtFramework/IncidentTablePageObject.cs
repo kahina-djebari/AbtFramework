@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -29,9 +30,9 @@ namespace AbtFramework
 
         public void OpenIncident(string IncidentId)
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
-            SeleniumDriver.Instance.FindElement(By.LinkText(IncidentId)).Click();
+            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.DriverInstance.FindElement(By.LinkText(IncidentId)).Click();
         }
 
         public void OpenFirstRowItem()

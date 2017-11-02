@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -14,7 +15,7 @@ namespace AbtFramework
         public void Go()
         {
             
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://mail.office365.com");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("http://mail.office365.com");
         }
 
         public void Login(string userName)

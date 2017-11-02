@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Support.PageObjects;
+﻿using AbtFramework.SeleniumUtils;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace AbtFramework
 {
@@ -8,7 +9,7 @@ namespace AbtFramework
         public static T GetPage<T>() where T : PageModel, new()
         {
             T page = new T();
-            PageFactory.InitElements(SeleniumDriver.Instance, page);
+            PageFactory.InitElements(SeleniumDriver.DriverInstance, page);
             return page;
 
         }

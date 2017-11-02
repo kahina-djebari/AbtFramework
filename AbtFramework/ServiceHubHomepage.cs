@@ -4,6 +4,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -51,8 +52,8 @@ namespace AbtFramework
             get
             {
                 _servicehubtopnavigation= PageGenerator.GetPage<ServiceHubTopNavigation>();
-                _servicehubtopnavigation.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _servicehubtopnavigation.action = new Actions(SeleniumDriver.Instance);
+                _servicehubtopnavigation.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(30));
+                _servicehubtopnavigation.action = new Actions(SeleniumDriver.DriverInstance);
                 return _servicehubtopnavigation;
             }
         }

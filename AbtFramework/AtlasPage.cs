@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -15,8 +16,8 @@ namespace AbtFramework
             
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            SeleniumDriver.Instance.Close();
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.Close();
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
 
         }
 

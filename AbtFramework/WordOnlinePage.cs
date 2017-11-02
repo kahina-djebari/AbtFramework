@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -31,7 +32,7 @@ namespace AbtFramework
 
         public void Edit()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("WebApplicationFrame");
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("WebApplicationFrame");
             Thread.Sleep(5000);
             action.SendKeys(Keys.Enter).SendKeys(Keys.Up).SendKeys("Knowledge Hub Word Document Edit Test at: " + DateTime.Now).Perform();
             Console.WriteLine("Edited Word Document Sucesfully");

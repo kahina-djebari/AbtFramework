@@ -3,6 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -19,8 +20,8 @@ namespace AbtFramework
             get
             {
                 _leftNavigation = PageGenerator.GetPage<LeftNavigation>();
-                _leftNavigation.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(15));
-                _leftNavigation.action = new Actions(SeleniumDriver.Instance);
+                _leftNavigation.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(15));
+                _leftNavigation.action = new Actions(SeleniumDriver.DriverInstance);
                 return _leftNavigation;
             }
         }

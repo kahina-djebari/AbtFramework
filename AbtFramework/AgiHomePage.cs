@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -108,8 +109,8 @@ namespace AbtFramework
                 {
                     _quicklinks = PageGenerator.GetPage<QuickLinksModel>();
 
-                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
-                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.Instance);
+                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(10));
+                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.DriverInstance);
                     return _quicklinks;
                 }
             }
@@ -136,7 +137,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
         }
 
         // use this method to avoid the mega menu shared point issues.
@@ -144,9 +145,9 @@ namespace AbtFramework
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-            SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
             Thread.Sleep(6000);
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/ToolsResources/Pages/ServiceCenters.aspx");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/ToolsResources/Pages/ServiceCenters.aspx");
         }
 
         public void WaitForHomeToLoad()
@@ -197,10 +198,10 @@ namespace AbtFramework
 
                 }
                  
-            //    SeleniumDriver.Instance.Navigate().GoToUrl("https:/agiokta.abtassociates.com");
+            //    SeleniumDriver.DriverInstance.Navigate().GoToUrl("https:/agiokta.abtassociates.com");
               //  Console.WriteLine("Going to AGI Home Page...");
                // Console.WriteLine("</br>");
-              //  wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
+              //  wait.Until(e => SeleniumDriver.DriverInstance.Title.Equals("Home"));
 
                 
 
@@ -226,7 +227,7 @@ namespace AbtFramework
         {
             wait.Until((Func<IWebDriver, bool>)((e) =>
             {
-                if (SeleniumDriver.Instance.Title != title)
+                if (SeleniumDriver.DriverInstance.Title != title)
                 {
                     element.Click();
                 }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -41,8 +42,8 @@ namespace AbtFramework
 
         public ToolsDropdown ToolsDropdown { get {
                 _toolsDropdown = PageGenerator.GetPage<ToolsDropdown>();
-                _toolsDropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _toolsDropdown.action = new Actions(SeleniumDriver.Instance);
+                _toolsDropdown.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(30));
+                _toolsDropdown.action = new Actions(SeleniumDriver.DriverInstance);
                 return _toolsDropdown;
             } }
 
@@ -66,8 +67,8 @@ namespace AbtFramework
             get
             {
                 _homedropdown= PageGenerator.GetPage<HomeDropdown>();
-                _homedropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _homedropdown.action = new Actions(SeleniumDriver.Instance);
+                _homedropdown.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(30));
+                _homedropdown.action = new Actions(SeleniumDriver.DriverInstance);
                 return _homedropdown;
             }
         }
@@ -76,8 +77,8 @@ namespace AbtFramework
             get
             {
                 _newsdropdown = PageGenerator.GetPage<NewsDropdown>();
-                _newsdropdown.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
-                _newsdropdown.action = new Actions(SeleniumDriver.Instance);
+                _newsdropdown.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(30));
+                _newsdropdown.action = new Actions(SeleniumDriver.DriverInstance);
                 return _newsdropdown;
             }
         }
@@ -179,12 +180,12 @@ namespace AbtFramework
 
         private void OpenLink(string linkText)
         {
-            while (SeleniumDriver.Instance.Title.Equals("Home"))
+            while (SeleniumDriver.DriverInstance.Title.Equals("Home"))
             {
                 try
                 {
 
-                    SeleniumDriver.Instance.FindElement(By.LinkText(linkText)).Click();
+                    SeleniumDriver.DriverInstance.FindElement(By.LinkText(linkText)).Click();
                     Thread.Sleep(1000);
                 }
 
@@ -201,7 +202,7 @@ namespace AbtFramework
 
         public void AbtValues()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
             finder.Click(abtvalueLink);
         }
 

@@ -3,6 +3,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -25,7 +26,7 @@ namespace AbtFramework
         {
 
 
-            SeleniumDriver.Instance.SwitchTo().Frame("WebApplicationFrame");
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("WebApplicationFrame");
             wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("PptRibbon.Home.Slides-LargeMedium-0-0")));
             try
             {

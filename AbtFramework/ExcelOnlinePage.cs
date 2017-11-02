@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Threading;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -8,7 +9,7 @@ namespace AbtFramework
     {
         public void Edit()
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("WebApplicationFrame");
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("WebApplicationFrame");
             Thread.Sleep(3000);
             action.SendKeys(Keys.ArrowDown).SendKeys(Keys.ArrowLeft).SendKeys(Keys.ArrowLeft)
                                            .SendKeys(Keys.ArrowLeft)

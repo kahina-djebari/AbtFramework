@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -50,8 +51,8 @@ namespace AbtFramework
         public bool IsAt() {
 
 
-          //   wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Mail - "+SSOCrendentials.CurrentUser+" - Outlook"));
-           wait.Until(e => SeleniumDriver.Instance.Title.Equals("Mail - " +"Sofiane Oumsalem"+ " - Outlook"));
+          //   wait.Until(e=>SeleniumDriver.DriverInstance.Title.Equals("Mail - "+SSOCrendentials.CurrentUser+" - Outlook"));
+           wait.Until(e => SeleniumDriver.DriverInstance.Title.Equals("Mail - " +"Sofiane Oumsalem"+ " - Outlook"));
             StopTimer();
             PrintResponseTime("Outlook Web");
             return true;
@@ -73,10 +74,10 @@ namespace AbtFramework
             getRecipientElement().SendKeys(Keys.Enter);
             getSubjectInput().SendKeys(subjectText);
             getSubjectInput().SendKeys(Keys.Tab);
-            IWebElement body = SeleniumDriver.Instance.SwitchTo().ActiveElement();
+            IWebElement body = SeleniumDriver.DriverInstance.SwitchTo().ActiveElement();
             body.SendKeys(bodyText);
             body.SendKeys(Keys.Tab);
-            IWebElement sendBtn = SeleniumDriver.Instance.SwitchTo().ActiveElement();
+            IWebElement sendBtn = SeleniumDriver.DriverInstance.SwitchTo().ActiveElement();
             action.Click(sendBtn).Perform();
             // now check if it was sent
             action.Click(GetSentItemsFolder()).Perform();
@@ -100,7 +101,7 @@ namespace AbtFramework
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until((Func<IWebDriver, bool>)((e) =>
             {
-                if (SeleniumDriver.Instance.WindowHandles.Count < 2)
+                if (SeleniumDriver.DriverInstance.WindowHandles.Count < 2)
                 {
                     action.DoubleClick(randomMail).Perform();
 
@@ -120,7 +121,7 @@ namespace AbtFramework
             IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
             alert.Accept();
 
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
       
       
            
@@ -167,7 +168,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://outlook.com/abtassoc.com");
+            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://outlook.com/abtassoc.com");
         }
 
         private IWebElement getEmailBtn()

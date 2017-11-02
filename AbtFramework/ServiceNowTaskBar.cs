@@ -3,6 +3,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -29,8 +30,8 @@ namespace AbtFramework
 
         public void New()
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
             NewBtn.Click();
         }
 
@@ -58,8 +59,8 @@ namespace AbtFramework
 
         public void PullIRRWithState(string state)
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
             IRRFilterDropdwn.SelectOption("State").Click();
             IRRFilterSearch(state);
         }
@@ -74,16 +75,16 @@ namespace AbtFramework
 
         public void Update()
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
             
             UpdateBtn.Click();
         }
 
         public void PullIRRWithNumber(string incidentReportId)
         {
-            SeleniumDriver.Instance.SwitchTo().ParentFrame();
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
             IRRFilterDropdwn.SelectOption("Number").Click();
             IRRFilterSearch(incidentReportId);
         }

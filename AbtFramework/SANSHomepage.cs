@@ -1,5 +1,6 @@
 ﻿using AbtFramework.Utils_Classes;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -14,7 +15,7 @@ namespace AbtFramework
                 {
                     TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate To Url http://abt.securingthehuman.org");
                 }
-                 SeleniumDriver.Instance.Navigate().GoToUrl("http://abt.securingthehuman.org");
+                 SeleniumDriver.DriverInstance.Navigate().GoToUrl("http://abt.securingthehuman.org");
             }
 
             catch(Exception ex)

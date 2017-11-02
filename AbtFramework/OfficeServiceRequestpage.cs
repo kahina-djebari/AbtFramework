@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
+using AbtFramework.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -11,7 +12,7 @@ namespace AbtFramework
 
         public void NewOfficeRequest(string location, string category,string subcategory, string shortdescription, string comments)
         {
-            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
             OfficeRequest.Click();
            
             AbtPages.OfficeRequestFormPage.NewOfficeRequest(location, category,subcategory,shortdescription, comments);

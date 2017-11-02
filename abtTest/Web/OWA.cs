@@ -1,6 +1,7 @@
 ﻿using System;
 using Xunit;
 using AbtFramework;
+using AbtFramework.SeleniumUtils;
 
 namespace abtTest.Web
 {
