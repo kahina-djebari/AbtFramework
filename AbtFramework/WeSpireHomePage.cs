@@ -5,7 +5,7 @@ using AbtFramework.Utils_Classes;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
-using AbtFramework.SeleniumUtils;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {

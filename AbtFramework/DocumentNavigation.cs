@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 using AutoItX3Lib;
 using System.Threading;
 using AbtFramework.AutoIT;
-using AbtFramework.SeleniumUtils;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {

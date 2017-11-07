@@ -1,0 +1,6 @@
+﻿{
+
+  "pathToChromDriver": "../AbtFramework/Drivers/Chrome/",
+  "pathToInternetExplorerDriver": "../AbtFramework/Drivers/IE/"
+
+}

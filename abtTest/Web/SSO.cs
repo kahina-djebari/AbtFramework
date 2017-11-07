@@ -1,6 +1,6 @@
 ﻿using System;
 using AbtFramework;
-using AbtFramework.SeleniumUtils;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using Xunit;
 //using Xunit.Abstractions;
 
@@ -14,7 +14,7 @@ namespace abtTest.Web
        
         public SSO()
         {
-           // Driver.init();
+           // Driver.InitBrowser();
                    
         }              
        
@@ -48,10 +48,11 @@ namespace abtTest.Web
            Assert.True(AbtPages.AbtTravelPage.isAt());
         }
 
-      //  [Fact(DisplayName ="Should Access Oracle (SSO Check)")]
+      //  [Fact(DisplayName ="Should Access OracleSteps (SSO Check)")]
         public void Should_click_Oracle()
         {
-            SeleniumDriver.init();
+            ///TODO refactor process
+            // SeleniumDriver.InitBrowser();
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Oracle);
             Assert.True(AbtPages.OraclePage.isAt()); //need to check if logged in currently i dont have access

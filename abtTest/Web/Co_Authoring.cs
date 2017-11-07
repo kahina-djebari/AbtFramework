@@ -8,7 +8,7 @@ using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading;
-using AbtFramework.SeleniumUtils;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using OpenQA.Selenium.Support.UI;
 
 namespace abtTest.Web
@@ -19,7 +19,7 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Co-Authoring Should Edit Word Document Online")]
         public void Should_Edit_Document_Online()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -27,13 +27,13 @@ namespace abtTest.Web
             AbtPages.SharePointDocumentNavigation.Goto(MS2013Links.QA_AuthoringIssueReplication);
             AbtPages.SharePointDocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4, documentType.Word);
             AbtPages.WordOnlinePage.Edit();
-            SeleniumDriver.Quit();
+            SeleniumDriver.QuitDriverInstance();
 
         }
       //  [Fact(DisplayName = "Co-Authoring Should Edit PowerPoint Document Online")]
         public void Should_Edit_PowerPoint_Online()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.InitBrowser("chrome");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -48,7 +48,7 @@ namespace abtTest.Web
      //   [Fact(DisplayName = "Co-Authoring Should Edit Excel Document Online")]
         public void Should_Edit_Excel_Online()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.InitBrowser("chrome");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -63,7 +63,7 @@ namespace abtTest.Web
       // [Fact(DisplayName = "Co-Authoring Should open Word Document for reading On Word Desktop Client App")]
         public void Should_Open_WordDoc_For_Reading_On_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -78,7 +78,7 @@ namespace abtTest.Web
      //   [Fact(DisplayName = "Co-Authoring Should open Excel Document for reading On Excel Desktop Client App")]
         public void Should_Open_ExcelDoc_For_Reading_On_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -94,7 +94,7 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Co-Authoring Should open PowerPoint Document for reading On PowerPoint Desktop Client App")]
         public void Should_Open_PPTDoc_For_Reading_On_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -110,7 +110,7 @@ namespace abtTest.Web
      //   [Fact(DisplayName = "Co-Authoring Should open Word Document for editing from inside Word Desktop Client App")]
         public void Should_Open_WordDoc_For_Editing_From_Inside_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -127,7 +127,7 @@ namespace abtTest.Web
      //   [Fact(DisplayName = "Co-Authoring Should open Excel Document for editing from inside Excel Desktop Client App")]
         public void Should_Open_ExcelDoc_For_Editing_From_Inside_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -145,7 +145,7 @@ namespace abtTest.Web
      //   [Fact(DisplayName = "Co-Authoring Should open PowerPoint Document for editing from inside PowerPoint Desktop Client App")]
         public void Should_Open_PPTDoc_For_Editing_From_Inside_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -163,7 +163,7 @@ namespace abtTest.Web
          // [Fact(DisplayName = "Co-Authoring Should Edit Word Document On Desktop Client App")]
         public void Should_Edit_WordDoc_On_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -181,7 +181,7 @@ namespace abtTest.Web
      //   [Fact(DisplayName = "Co-Authoring Should Edit Excel Document On Desktop Client App")]
         public void Should_Edit_ExcelDoc_On_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -199,7 +199,7 @@ namespace abtTest.Web
        // [Fact(DisplayName = "Co-Authoring Should Edit PowerPoint Document On Desktop Client App")]
         public void Should_Edit_PowerPointDoc_On_ClientApp()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.Goto(homelinks.Projects);
             AbtPages.ProjectsPage.Goto(projectslinks.MS2013upgrade);
@@ -226,7 +226,8 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Edit Word Document on KM Workspace")]
         public void Should_Edit_Word_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteQALaptop);
+            //TODO refactor process
+            //SeleniumDriver.InitBrowser(Browser.RemoteQALaptop);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.QA_ReadinessChecklist_v4);
             AutoITDriver.init();
@@ -239,7 +240,8 @@ namespace abtTest.Web
      //   [Fact(DisplayName = "Edit PowerPoint Document on KM Workspace")]
         public void Should_Edit_PPT_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteQALaptop);
+            //TODO refactor process
+            //SeleniumDriver.InitBrowser(Browser.RemoteQALaptop);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.SampleAVMetrics);
             AutoITDriver.init();
@@ -255,7 +257,7 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Edit Excel Document on KM Workspace")]
         public void Should_Edit_Excel_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteQALaptop);
+            //SeleniumDriver.InitBrowser(Browser.RemoteQALaptop);
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.ITMetrics);
             AutoITDriver.init();
@@ -268,7 +270,7 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Open Word Document for Reading on KM Workspace")]
         public void Should_Open_Word_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.QA_ReadinessChecklist_v4);
             AutoITDriver.init();
@@ -279,7 +281,7 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Open PowerPoint Document for Reading on KM Workspace")]
         public void Should_Open_PPT_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.SampleAVMetrics);
             AutoITDriver.init();
@@ -293,7 +295,7 @@ namespace abtTest.Web
        // [Fact(DisplayName = "Open Excel Document for Reading on KM Workspace")]
         public void Should_Open_Excel_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocument(MS2013documents.ITMetrics);
             AutoITDriver.init();
@@ -304,7 +306,7 @@ namespace abtTest.Web
        // [Fact(DisplayName = "Edit Word Document Online on KM Workspace")]
         public void Should_Open_Word_Doc_Online_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocumentOnline(MS2013documents.QA_ReadinessChecklist_v4,documentType.Word);
             AbtPages.WordOnlinePage.Edit();
@@ -314,7 +316,7 @@ namespace abtTest.Web
     //  [Fact(DisplayName =  "Edit Excel Document Online on KM Workspace")]
         public void Should_Open_Excel_Doc_Online_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.RemoteDavidIE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocumentOnline(MS2013documents.ITMetrics, documentType.Excel);
             AbtPages.ExcelOnlinePage.Edit();
@@ -325,7 +327,7 @@ namespace abtTest.Web
        // [Fact(DisplayName = "Edit PPT Document Online on KM Workspace")]
         public void Should_Open_PPT_Doc_Online_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.OpenDocumentOnline(MS2013documents.SampleAVMetrics, documentType.PowerPoint);
             AbtPages.PowerPointOnlinePage.Edit();
@@ -335,7 +337,7 @@ namespace abtTest.Web
      //   [Fact(DisplayName ="Should Create New Document on KM Workspace")]
         public void Should_Create_New_Doc_KM_WorkSpace()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.KmWorkSpacePage.Go();
             AbtPages.SharePointDocumentNavigation.CreateDocument(documentType.Word);
         }
@@ -351,25 +353,26 @@ namespace abtTest.Web
         {
 
            
+            //TODO check is this is needed 
+           
 
+          //  Task.Run(()=> {
 
-            Task.Run(()=> {
+          //      SeleniumDriver.InitDriver1();
+          //      SeleniumDriver.driver1.Navigate().GoToUrl("https://abtassoc-test.webex.com");
+          //      SeleniumDriver.driver1.SwitchTo().Frame("header");
+          //      SeleniumDriver.driver1.FindElement(By.Id("wcc-lnk-loginLink")).Click();
+          //      new WebDriverWait(SeleniumDriver.driver1, TimeSpan.FromSeconds(10)).Until(e => SeleniumDriver.driver1.FindElement(By.Id("btn_join_room")).Displayed);
+          //      Console.WriteLine("webex response1:" + (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond - DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond));
 
-                SeleniumDriver.InitDriver1();
-                SeleniumDriver.driver1.Navigate().GoToUrl("https://abtassoc-test.webex.com");
-                SeleniumDriver.driver1.SwitchTo().Frame("header");
-                SeleniumDriver.driver1.FindElement(By.Id("wcc-lnk-loginLink")).Click();
-                new WebDriverWait(SeleniumDriver.driver1, TimeSpan.FromSeconds(10)).Until(e => SeleniumDriver.driver1.FindElement(By.Id("btn_join_room")).Displayed);
-                Console.WriteLine("webex response1:" + (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond - DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond));
+          //});
 
-          });
-
-            SeleniumDriver.InitDriver2();
-            SeleniumDriver.driver2.Navigate().GoToUrl("https://abtassoc-test.webex.com");
-            SeleniumDriver.driver2.SwitchTo().Frame("header");
-            SeleniumDriver.driver2.FindElement(By.Id("wcc-lnk-loginLink")).Click();
-            new WebDriverWait(SeleniumDriver.driver2, TimeSpan.FromSeconds(10)).Until(e => SeleniumDriver.driver2.FindElement(By.Id("btn_join_room")).Displayed);
-            Console.WriteLine("webex response1:" + (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond - DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond));
+          //  SeleniumDriver.InitDriver2();
+          //  SeleniumDriver.driver2.Navigate().GoToUrl("https://abtassoc-test.webex.com");
+          //  SeleniumDriver.driver2.SwitchTo().Frame("header");
+          //  SeleniumDriver.driver2.FindElement(By.Id("wcc-lnk-loginLink")).Click();
+          //  new WebDriverWait(SeleniumDriver.driver2, TimeSpan.FromSeconds(10)).Until(e => SeleniumDriver.driver2.FindElement(By.Id("btn_join_room")).Displayed);
+          //  Console.WriteLine("webex response1:" + (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond - DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond));
 
         }
 

@@ -1,5 +1,5 @@
 ﻿using System;
-using AbtFramework.SeleniumUtils;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using OpenQA.Selenium;
 
 namespace AbtFramework

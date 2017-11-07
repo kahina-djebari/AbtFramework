@@ -48,6 +48,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>Abt Dependencies\Interop.AutoItX3Lib.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Lync.Model, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lyncdev\C#\bin\Debug\Microsoft.Lync.Model.dll</HintPath>
@@ -57,7 +60,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
@@ -69,11 +76,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="WebDriver, Version=2.53.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.2.53.1\lib\net40\WebDriver.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver.Support, Version=2.53.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.Support.2.53.1\lib\net40\WebDriver.Support.dll</HintPath>
-      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -132,8 +137,7 @@
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SANSHomepage.cs" />
-    <Compile Include="SeleniumUtils\SeleniumDriver.cs" />
-    <Compile Include="SeleniumUtils\TestBase.cs" />
+    <Compile Include="Utils Classes\SeleniumUtils\SeleniumDriver.cs" />
     <Compile Include="ServiceNowIRRForm.cs" />
     <Compile Include="ServiceNowIRRTable.cs" />
     <Compile Include="ServiceNowTaskBar.cs" />
@@ -203,7 +207,6 @@
     <Compile Include="ToolsAndResourcesPage.cs" />
     <Compile Include="ToolsDropdown.cs" />
     <Compile Include="AgiTopNavigation.cs" />
-    <Compile Include="Utils Classes\Browser.cs" />
     <Compile Include="Utils Classes\DriverExtentions.cs" />
     <Compile Include="Utils Classes\TestCase.cs" />
     <Compile Include="Utils Classes\TestCaseGenerator.cs" />
@@ -221,8 +224,9 @@
     <Compile Include="WordOnlinePage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Utils Classes\Properties\App.config" />
     <None Include="packages.config" />
+    <None Include="Utils Classes\Properties\test_config.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Abt Dependencies\AutoItX3.dll" />
@@ -248,7 +252,10 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Drivers\Chrome\" />
+    <Folder Include="Drivers\IE\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
