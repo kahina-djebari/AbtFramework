@@ -31,7 +31,7 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//input[contains(@title,'Password')]")]
         private IWebElement password;
 
-        [FindsBy(How = How.XPath, Using = "//button[@title='Login']")]
+        [FindsBy(How = How.XPath, Using = "//button[contains(@title,'Login')]")]
         private IWebElement loginButton;
       
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody")]
@@ -144,6 +144,13 @@ namespace AbtFramework
             string xpath = "//a[text() = '" + option + "']";
             return SeleniumDriver.DriverInstance.FindElement(By.XPath(xpath));
         }
+
+        public IWebElement SetUserName()
+        {
+            string xpath = "//input[contains(@title,'User Name')]";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
 
 
         public void GoToOracleDev()
@@ -328,7 +335,6 @@ namespace AbtFramework
         }
         public void inputUserName(String user)
         {
-            //usernameField.SendKeys(LoginUser(user));
             username.SendKeys(LoginUser(user));
         }
         public void inputPasswordField(string user)
@@ -336,7 +342,7 @@ namespace AbtFramework
             //if (user != "Valerie Hennessey")
            // {
                 password.Clear();
-                //passwordField.Clear();
+                //passwordField.Clear()
                 password.SendKeys("test123456");    
                 //passwordField.SendKeys("test123456");
            // } else
@@ -351,7 +357,7 @@ namespace AbtFramework
         public void clickSubmitButton()
         {
             loginButton.Click();
- 
+
         }
         public void clickIProcurementRequest()
         {

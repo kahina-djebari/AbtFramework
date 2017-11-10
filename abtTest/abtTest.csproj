@@ -146,13 +146,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WinPrograms.feature</DependentUpon>
     </Compile>
-    <Compile Include="Steps\AGISteps.cs" />
-    <Compile Include="Steps\FacilitiesSteps.cs" />
-    <Compile Include="Steps\IRRSteps.cs" />
-    <Compile Include="Steps\ITSCSteps.cs" />
-    <Compile Include="Steps\OracleSteps.cs" />
-    <Compile Include="Steps\SSOSteps.cs" />
-    <Compile Include="Steps\WinProgramsSteps.cs" />
+    <Compile Include="Steps\AGI\AGISteps.cs" />
+    <Compile Include="Steps\ServiceNow\FacilitiesSteps.cs" />
+    <Compile Include="Steps\ServiceNow\IRRSteps.cs" />
+    <Compile Include="Steps\ServiceNow\ITSCSteps.cs" />
+    <Compile Include="Steps\Oracle\OracleSteps.cs" />
+    <Compile Include="Steps\SSO\SSOSteps.cs" />
+    <Compile Include="Steps\Windows\WinProgramsSteps.cs" />
     <Compile Include="Web\AGI.cs" />
     <Compile Include="Web\OWA.cs" />
     <Compile Include="Web\SSO.cs" />
@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\Common\" />
+    <Folder Include="Steps\Common\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

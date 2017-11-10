@@ -228,10 +228,10 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should get OracleSteps Response Time", SourceLine=67)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should get Oracle Response Time", SourceLine=67)]
         public virtual void ShouldGetOracleResponseTime()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get OracleSteps Response Time", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should get Oracle Response Time", ((string[])(null)));
 #line 68
 this.ScenarioSetup(scenarioInfo);
 #line 69
@@ -239,9 +239,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 70
  testRunner.And("I have navigated to AGI-Tools&Resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And("I Click on OracleSteps", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on Oracle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
- testRunner.Then("The OracleSteps Home Page Should Load Succesfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Oracle Home Page Should Load Succesfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

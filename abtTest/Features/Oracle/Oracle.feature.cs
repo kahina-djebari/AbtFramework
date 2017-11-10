@@ -17,8 +17,8 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("OracleSteps", Description="\t\tIn order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Functioa" +
-        "l Test", SourceFile="Features\\OracleSteps\\OracleSteps.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Oracle", Description="\t\tIn order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Functioa" +
+        "l Test", SourceFile="Features\\Oracle\\Oracle.feature", SourceLine=0)]
     public partial class OracleFeature
     {
         
@@ -31,7 +31,7 @@ namespace abtTest.Features.Oracle
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleSteps", "\t\tIn order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Functioa" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Oracle", "\t\tIn order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Functioa" +
                     "l Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -74,7 +74,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("I have navigated to OracleSteps Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.And("i login as \"Sofiane Oumsalem\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
@@ -114,7 +114,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 25
  testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 26
- testRunner.And("I have navigated to OracleSteps Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
  testRunner.And("i login as \"Valerie Hennessey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
@@ -198,7 +198,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 64
  testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 65
- testRunner.And("I have navigated to OracleSteps Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
  testRunner.And("i login as \"Sofiane Oumsalem\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
@@ -238,7 +238,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 81
  testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 82
- testRunner.And("I have navigated to OracleSteps Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
  testRunner.And("i login as \"Gail Berg\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
@@ -258,7 +258,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 88
  testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 89
- testRunner.And("I have navigated to OracleSteps Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
  testRunner.And("i login as \"Sofiane Oumsalem\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
@@ -282,7 +282,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 97
  testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 98
- testRunner.And("I have navigated to OracleSteps Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 99
  testRunner.And("i login as \"Daniel Gunther\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100

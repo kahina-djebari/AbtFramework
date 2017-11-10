@@ -63,11 +63,11 @@ namespace abtTest.Features.AGI
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Check OracleSteps on QuickLinks", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Check Oracle on QuickLinks", new string[] {
                 "AGI"}, SourceLine=6)]
         public virtual void CheckOracleOnQuickLinks()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check OracleSteps on QuickLinks", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Oracle on QuickLinks", new string[] {
                         "AGI"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -78,9 +78,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.When("I Hover over Quick Links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.And("I Click on OracleSteps", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on Oracle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.Then("The OracleSteps Home Page Should Load Succesfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Oracle Home Page Should Load Succesfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

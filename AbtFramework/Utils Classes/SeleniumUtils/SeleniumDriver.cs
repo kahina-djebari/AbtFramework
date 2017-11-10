@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
@@ -14,18 +15,27 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.Events;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
+using Sikuli4Net.sikuli_REST;
 
 namespace AbtFramework.Utils_Classes.SeleniumUtils
 {
     /// <summary>
     /// SeleniumDriver class that initiates driver upon browser and contains all helper methods used.
-    /// Class works as a singleton pattern, one instance of driver always.
+    /// Class works as a singleton, one instance of driver always.
     /// </summary>
     public class SeleniumDriver
     {
-        //constants
+        
+
+        //constants for browser
         private static readonly string IE = "IE";
         private static readonly string CHROME = "Chrome";
+        private static readonly string XPATH = "xpath";
+        private static readonly string ID = "id";
+        private static readonly string NAME = "name";
+        private static readonly string LINK = "link";
+
+        private static readonly int MAX = 3;
 
         //unique instance of driver
         public static IWebDriver DriverInstance;
@@ -33,8 +43,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         //to handle javascript actions
         private static IJavaScriptExecutor js;
 
-        //for customWaits 
-        public static WebDriverWait customWait;
+        //wait object 
         private static WebDriverWait wait;
 
         //variables for path to Drivers
@@ -65,32 +74,63 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         }
 
         /// <summary>
-        /// Init Chrome driver
+        /// Init Chrome driver with configuration
         /// </summary>
         private static void SetUpChrome()
         {
             LoadJSONConfig();
-            DriverInstance = new ChromeDriver(_pathToChrome);
-            js =  (IJavaScriptExecutor)DriverInstance;
+            ChromeOptions options = new ChromeOptions();
+            //set some options
+            options.AddArguments("--disable-popup-blocking"); //To disable automatic popup blocking 
+            options.AddArguments("--disable-extensions");
+            options.AddArguments("--ignore-certificate-errors");
+           
+            try
+            {
+                DriverInstance = new ChromeDriver(_pathToChrome, options);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("---> " + e.Message);
+            }
+
+            if (DriverInstance == null)
+                Assert.Fail("--> None of the webDrivers are supported for this browser");
+
+
+            js = (IJavaScriptExecutor)DriverInstance; //init js object
+            wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(60)); //init wait object
             DriverInstance.Manage().Window.Maximize();
             Console.WriteLine("-------->  Opening Chrome Driver");
         }
 
         /// <summary>
-        /// Init IE driver
+        /// Init IE driver with configuration
         /// </summary>
         private static void SetUpIE()
         {
             LoadJSONConfig();
             InternetExplorerOptions IEoptions = new InternetExplorerOptions();
+            //set options
             IEoptions.IgnoreZoomLevel = true;
             IEoptions.RequireWindowFocus = true;
-            IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+            IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true; 
             IEoptions.AddAdditionalCapability("acceptSslCerts", true);
-            DriverInstance = new InternetExplorerDriver(_pathToIE, IEoptions);
-            js = (IJavaScriptExecutor)DriverInstance;
 
-            DriverInstance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            try
+            {
+                DriverInstance = new InternetExplorerDriver(_pathToIE, IEoptions);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("---> " + e.Message);
+            }
+
+            if (DriverInstance == null)
+                Assert.Fail("--> None of the webDrivers are supported for this browser");
+
+            js = (IJavaScriptExecutor)DriverInstance; //init js object
+            wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(60)); //init wait object
             DriverInstance.Manage().Window.Maximize();
         }
 
@@ -104,7 +144,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         }
 
         /// <summary>
-        /// Goes to a URL
+        /// Goes to an URL
         /// </summary>
         /// <param name="url"></param>
         public static void GoTo(string url)
@@ -114,7 +154,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
 
         /// <summary>
-        /// Quits current driver instance 
+        /// Quits current driver instance from memory
         /// </summary>
         public static void QuitDriverInstance()
         {
@@ -131,7 +171,9 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         }
 
 
-
+        /// <summary>
+        /// Close current Tab in browser
+        /// </summary>
         public static void Close()
         {
             DriverInstance.Close();
@@ -150,11 +192,8 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             return null;
         }
 
-
-        //********************************************* PO ELEMENTS HELPER **********************************************************//
-
         /// <summary>
-        /// Loads path to drivers from test_config.json 
+        /// Loads variables with path to drivers from Properties/test_config.json 
         /// </summary>
         private static void LoadJSONConfig()
         {
@@ -180,8 +219,14 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             }
         }
 
+
+        // - - - - - - - - - -  Basic Actions Basic actions - - - - - - - - - - - - - //
+        // ===================================================================//
+
+
+
         ///<summary>
-        ///Perform a click on the element and with javascript if needed.
+        ///Perform a click on the element and with JavaScript if needed.
         ///</summary>
         ///<param name="element">element to click</param>
         ///
@@ -191,7 +236,8 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
             try
             {
-                element.Click();
+                js.ExecuteScript("arguments[0].click();", element);
+                // element.Click();//javaScript click is working better 
             }
             catch (StaleElementReferenceException e)
             {
@@ -202,6 +248,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
                 js.ExecuteScript("arguments[0].click();", element);
             }
         }
+
 
 
         ///<summary>
@@ -218,7 +265,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             {
                 element.Click();
             }
-            catch (Exception e)
+            catch (StaleElementReferenceException e)
             {
                 // Ignore ElementNotClickableException, not necessary for set a value
             }
@@ -227,13 +274,13 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
             if (!GetValue(element).ToLower().Equals(value.ToLower()))
             {
-                //GlobalUtils.customWait(1);
+                Thread.Sleep(1);
                 element.SendKeys(Keys.Home);
                 element.SendKeys(Keys.Home + Keys.Shift);
                 element.SendKeys(Keys.Delete);
 
 
-                // GlobalUtils.customWait(1);
+                Thread.Sleep(1);
                 js.ExecuteScript("arguments[0].value = '" + value + "';", element);
                 js.ExecuteScript("arguments[0].focus(); arguments[0].blur(); return true", element);
             }
@@ -241,7 +288,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
 
         ///<summary>
-        ///Clear the value, works for input and textarea
+        ///Clear the value, works for input and textArea
         ///</summary>
         ///<param name="element"></param>
         public static void ClearValue(IWebElement element)
@@ -301,7 +348,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// Return if the checkbox is checked
         /// </summary>
         /// <param name="element"></param>
-        public bool IsChecked(IWebElement element)
+        public static bool IsChecked(IWebElement element)
         {
 
             return (Boolean)js.ExecuteScript("return arguments[0].checked", element);
@@ -352,7 +399,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             try
             {
                 js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
-                // WaitVisibilityOf(element);
+                 WaitVisibilityOf(element);
             }
             catch (Exception e)
             {
@@ -361,17 +408,9 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         }
 
 
+        // - - - - - - - - - - Waits Helpers - - - - - - - - - - - - - //
+        // ===================================================================//
 
-        ///<summary>
-        ///Wait
-        /// </summary>
-        /// <param name="driver"></param>
-        /// <param name="time"></param>
-        public static WebDriverWait CustomWait(IWebDriver driver, int time)
-        {
-            customWait = new WebDriverWait(driver, TimeSpan.FromSeconds(time));
-            return customWait;
-        }
 
 
         ///<summary>
@@ -396,10 +435,10 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         }
 
         /// <summary>
-        /// Wait for 60 sec for the visibility of the element, alternative to wait for page load
+        /// Wait up to 60 sec for the visibility of the element, alternative to wait for page load
         /// </summary>
         /// <param name="element"></param>
-        public void WaitVisibilityOf(IWebElement element)
+        public static void WaitVisibilityOf(IWebElement element)
         {
             WaitVisibilityOf(element, 60);
         }
@@ -409,14 +448,14 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// </summary>
         /// <param name="element"></param>
         /// <param name="time"></param>
-        public void WaitVisibilityOf(IWebElement element, int time)
+        public static void WaitVisibilityOf(IWebElement element, int time)
         {
-            //   WebDriverWait waiting = new WebDriverWait(driver, time);
+              WebDriverWait waiting = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
 
             try
             {
 
-                //  waiting.Until(ExpectedConditions.ElementToBeClickable(element));
+               waiting.Until(ExpectedConditions.ElementToBeClickable(element));
             }
             catch (StaleElementReferenceException e)
             {
@@ -430,24 +469,24 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         }
 
 
-        public void WaitVisibilityOfAllElements(List<IWebElement> elements)
+        public static void WaitVisibilityOfAllElements(By locator)
         {
-            WaitVisibilityOfAllElements(elements, 60);
+            WaitVisibilityOfAllElements(locator, 60);
         }
 
         /// <summary>
-        /// Waits for visibility of all element in a list
+        /// Waits for visibility of all element in a list using its locator "By"
         /// </summary>
-        /// <param name="elements"></param>
+        /// <param name="locator"></param>
         /// <param name="time"></param>
-        public void WaitVisibilityOfAllElements(List<IWebElement> elements, int time)
+        public static void WaitVisibilityOfAllElements(By locator, int time)
         {
             WebDriverWait waiting = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
 
             try
             {
 
-                //  waiting.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(elements));
+                waiting.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
             }
             catch (StaleElementReferenceException e)
             {
@@ -463,20 +502,24 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// <summary>
         /// Waits until an elements if not visible
         /// </summary>
-        /// <param name="xpath"></param>
+        /// <param name="locator"></param>
         /// <param name="time"></param>
-        public void WaitInvisibilityOf(string xpath, int time)
+        public static void WaitInvisibilityOf(By locator, int time)
         {
             WebDriverWait waiting = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
-            waiting.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath(xpath)));
+            waiting.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
         }
+
+
+        // - - - - - - - - - - Windows / Frames - - - - - - - - - - - - //
+        // ===================================================================//
 
 
         /// <summary>
         /// Switch to a frame
         /// </summary>
         /// <param name="frameName"></param>
-        public void SwitchToFrame(string frameName)
+        public static void SwitchToFrame(string frameName)
         {
             Thread.Sleep(2);
             try
@@ -491,8 +534,196 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
         }
 
+        // - - - - - - - - - - Page Object Helper - - - - - - - - - - //
+        // ===================================================================//
+     
+            /// <summary>
+            /// Gets element located by xpath
+            /// </summary>
+            /// <param name="xpath"></param>
+            /// <returns>Element located by xpath</returns>
+        public static IWebElement GetElementByXpath(string xpath)
+        {
+            return GetElementByXpath(xpath, 10, true);
+        }
 
+      
+        /// <summary>
+        /// Gets element located by Name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns>Element located by Name</returns>
+        public static IWebElement GetElementByName(string name)
+        {
+            return GetElementByName(name, 10, true);
+        }
 
+        /// <summary>
+        /// Gets element located by ID
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns>Element located by ID</returns>
+        public static IWebElement GetElementByID(string ID)
+        {
+            return GetElementByID(ID, 10, true);
+        }
+
+        /// <summary>
+        /// Gets list of elements located by xpath
+        /// </summary>
+        /// <param name="xpath"></param>
+        /// <returns>List of Element located by Xpath</returns>
+        public static List<IWebElement> GetListElementByXpath(string xpath)
+        {
+            return GetListElementByXpath(xpath, 10, true);
+        }
+
+        /// <summary>
+        /// Gets list of elements located by name
+        /// </summary>
+        /// <param name="nae"></param>
+        /// <returns>List of Element located by Name</returns>
+        public static List<IWebElement> GetListElementByName(string name)
+        {
+            return GetListElementByName(name, 10, true);
+        }
+
+        /// <summary>
+        /// Gets list of elements located by linkText
+        /// </summary>
+        /// <param name="linkText"></param>
+        /// <returns>List of Element located by linkText</returns>
+        public static IWebElement GetElementByLinkText(string linkText)
+        {
+            return GetElementByLinkText(linkText, 10, true);
+        }
+
+       
+        public static IWebElement GetElementByXpath(string xpath, long time, bool printError)
+        {
+            return GetElement(xpath, time, printError, XPATH);
+        }
+
+       
+       
+        public static IWebElement GetElementByName(string name, long time, bool printError)
+        {
+            return GetElement(name, time, printError, NAME);
+        }
+
+      
+        public static IWebElement GetElementByID(string id, long time, bool printError)
+        {
+            return GetElement(id, time, printError, ID);
+        }
+
+        
+        public static IWebElement GetElementByLinkText(string link, long time, bool printError)
+        {
+            return GetElement(link, time, printError, LINK);
+        }
+
+      
+        public static List<IWebElement> GetListElementByXpath(string xpath, long time, bool printError)
+        {
+            return GetListOfElements(xpath, time, printError, XPATH);
+        }
+
+       
+        public static List<IWebElement> GetListElementByName(string name, long time, bool printError)
+        {
+            return GetListOfElements(name, time, printError, NAME);
+        }
+
+      
+   
+
+        private static List<IWebElement> GetListOfElements(string element, long time, bool printError, string by)
+        {
+            WebDriverWait wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
+            List<IWebElement> elements = null;
+            // TODO: Need to create a medium wait about --> 10 secs
+
+            for (int i = 0; i < MAX && (elements == null || elements.Count < 1); ++i)
+            {
+                try
+                {
+                    if (by.ToLower().Equals(NAME))
+                        elements = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Name(element))).ToList();
+                    else if (by.ToLower().Equals(XPATH))
+                        elements = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath(element))).ToList();
+
+                }
+                catch (Exception ex)
+                {
+                    // Nothing expected
+                }
+            }
+
+            if (elements != null && elements.Count > 0)
+                return elements;
+
+            else
+            {
+                if (printError)
+                {
+                    Console.WriteLine("---> Unable to find List of elements with " + by + ": " + element);
+                }
+                return null;
+            }
+        }
+
+        private static IWebElement GetElement(string element, long time, bool printError, string by)
+        {
+            WebDriverWait wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
+            List<IWebElement> elements = null;
+            // TODO: Need to create a medium wait about --> 10 secs
+
+            for (int i = 0; i < MAX && (elements == null || elements.Count < 1); ++i)
+            {
+                try
+                {
+                    if (by.ToLower().Equals(ID))
+                        elements = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id(element))).ToList();
+                    else if (by.ToLower().Equals(NAME))
+                        elements = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Name(element))).ToList();
+                    if (by.ToLower().Equals(XPATH))
+                        elements = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath(element))).ToList();
+                    else if (by.ToLower().Equals(LINK))
+                        try
+                        {
+                            elements = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.LinkText(element))).ToList();
+                        }
+                        catch (Exception e)
+                        {
+                            elements = wait
+                                    .Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.PartialLinkText(element))).ToList();
+                        }
+
+                }
+                catch (Exception ex)
+                {
+                  
+                    if (i == 1 && by.ToLower().Equals(XPATH))
+                    {
+                        element = "//*" + element.Substring(element.Split("\\[".ToCharArray()[0])[0].Length);
+                        // xpath = "//*["+ xpath.split("\\[")[1];
+                    }
+                }
+            }
+
+            if (elements != null && elements.Count > 0)
+                return elements.ElementAt(0);
+
+            else
+            {
+                if (printError)
+                {
+                    Console.WriteLine("---> Unable to find element with " + by + ": " + element);
+                }
+                return null;
+            }
+        }
 
     }
 

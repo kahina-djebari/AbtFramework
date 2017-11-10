@@ -17,7 +17,7 @@ namespace abtTest.Features.Windows
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("WinProgramsSteps", Description="\tTest the network response time for windows apps ", SourceFile="Features\\Windows\\WinProgramsSteps.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("WinPrograms", Description="\tTest the network response time for windows apps ", SourceFile="Features\\Windows\\WinPrograms.feature", SourceLine=0)]
     public partial class WinProgramsFeature
     {
         
@@ -30,7 +30,7 @@ namespace abtTest.Features.Windows
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WinProgramsSteps", "\tTest the network response time for windows apps ", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WinPrograms", "\tTest the network response time for windows apps ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
