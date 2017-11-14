@@ -48,10 +48,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>Abt Dependencies\Interop.AutoItX3Lib.dll</HintPath>
     </Reference>
-    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <HintPath>..\packages\SikuliIntegrator.1.1.0\lib\Ionic.Zip.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Lync.Model, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lyncdev\C#\bin\Debug\Microsoft.Lync.Model.dll</HintPath>
@@ -69,21 +65,10 @@
       <HintPath>..\packages\Sikuli4Net.1.0.6\lib\Sikuli4Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SikuliModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SikuliIntegrator.1.1.0\lib\SikuliModule.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SikuliSharp, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SikuliSharp.1.2.0\lib\net45\SikuliSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.Drawing">
-      <HintPath>..\packages\SikuliIntegrator.1.1.0\lib\System.Drawing.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -249,7 +234,6 @@
     <Content Include="Abt Dependencies\AutoItX3.dll" />
     <Content Include="Abt Dependencies\Interop.AutoItX3Lib.dll" />
     <Content Include="Abt Dependencies\Microsoft.Lync.Model.dll" />
-    <Content Include="JSikuliModule.jar" />
     <Content Include="TestPlans\AGIPRODResponseTime.txt" />
     <Content Include="TestPlans\ConcurProdResponseTime.txt" />
     <Content Include="TestPlans\ConcurTestResponseTime.txt" />
