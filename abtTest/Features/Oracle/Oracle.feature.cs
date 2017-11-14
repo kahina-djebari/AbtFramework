@@ -293,6 +293,3260 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Creation and approval of PO", SourceLine=103)]
+        public virtual void CreationAndApprovalOfPO()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creation and approval of PO", ((string[])(null)));
+#line 104
+this.ScenarioSetup(scenarioInfo);
+#line 105
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 106
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("i login as \"Marlene Kruck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.Then("click the \"Abt US PO Buyer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 109
+ testRunner.And("browse to Requisitions under Buyer Work Center", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.Then("select a requisition to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 111
+ testRunner.And("click Add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.Then("click Create", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Purchasing Request", SourceLine=113)]
+        public virtual void PurchasingRequest()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Purchasing Request", ((string[])(null)));
+#line 114
+this.ScenarioSetup(scenarioInfo);
+#line 115
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 116
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("i login as \"Marlene Kruck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.Then("click the \"Abt US PO Buyer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 119
+ testRunner.And("browse to Requisitions under Requisitions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt Employee Roster", SourceLine=120)]
+        public virtual void AbtEmployeeRoster()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt Employee Roster", ((string[])(null)));
+#line 121
+this.ScenarioSetup(scenarioInfo);
+#line 122
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 123
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.Then("click the \"Abt Employee Roster\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 126
+ testRunner.And("click \"Abt Employee Roster (new)\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And("click \"Abt Employee Roster Report\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt HR Desktop Integration", SourceLine=128)]
+        public virtual void AbtHRDesktopIntegration()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR Desktop Integration", ((string[])(null)));
+#line 129
+this.ScenarioSetup(scenarioInfo);
+#line 130
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 131
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.Then("click the \"Abt HR Desktop Integration\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 134
+ testRunner.And("click \"Create Document\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("click \"Define Layout\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("click \"Define Mapping\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("click \"Manage Document Links\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("click \"Setup Options\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("click \"Define Style Sheet\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt HR Operations Self Service", SourceLine=140)]
+        public virtual void AbtHROperationsSelfService()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR Operations Self Service", ((string[])(null)));
+#line 141
+this.ScenarioSetup(scenarioInfo);
+#line 142
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 143
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.Then("click the \"Abt HR Operations Self Service\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 146
+ testRunner.And("click \"Employee Overview\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.And("click \"Change of Hours\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And("click \"Change Timecard Approver and Supervisor\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.And("click \"Spot Bonus\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 150
+ testRunner.And("click \"Offboard Employee\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 151
+ testRunner.And("click \"Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt HR System Administrator", SourceLine=153)]
+        public virtual void AbtHRSystemAdministrator()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR System Administrator", ((string[])(null)));
+#line 154
+this.ScenarioSetup(scenarioInfo);
+#line 155
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 156
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 157
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 158
+ testRunner.Then("click the \"Abt HR System Administrator\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 159
+ testRunner.And("navigate to \"Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 160
+ testRunner.And("navigate to \"Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 161
+ testRunner.And("navigate to \"Segments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 162
+ testRunner.And("navigate to \"Aliases\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 163
+ testRunner.And("navigate to \"CrossValidation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 164
+ testRunner.And("navigate to \"Groups\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 165
+ testRunner.And("navigate to \"Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 166
+ testRunner.And("navigate to \"Accounts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+ testRunner.And("navigate to \"Segments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.And("click on Values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.And("navigate to \"Run\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 170
+ testRunner.And("navigate to \"Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt HR User", SourceLine=171)]
+        public virtual void AbtHRUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR User", ((string[])(null)));
+#line 172
+this.ScenarioSetup(scenarioInfo);
+#line 173
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 174
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 175
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 176
+ testRunner.Then("click the \"Abt HR User\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 177
+ testRunner.And("click \"Discoverer Viewer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 178
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 179
+ testRunner.And("navigate to \"Hire Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 180
+ testRunner.And("navigate to \"Enter Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 181
+ testRunner.And("navigate to \"Maintain Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 182
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 183
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 184
+ testRunner.And("navigate to \"Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 185
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 186
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 187
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 188
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 192
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 193
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 194
+ testRunner.And("click \"Salary Admin\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 195
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 198
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 199
+ testRunner.And("navigate to \"Applicant Quick Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 200
+ testRunner.And("navigate to \"Mass Update of Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 201
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 202
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 203
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 204
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 205
+ testRunner.And("navigate to \"Employee Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 206
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 207
+ testRunner.And("navigate to \"Salary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 208
+ testRunner.And("click on Entries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 209
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 210
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 211
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 213
+ testRunner.And("navigate to \"Employees by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 216
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 217
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 218
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 219
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt HRMS Benefits User", SourceLine=220)]
+        public virtual void AbtHRMSBenefitsUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HRMS Benefits User", ((string[])(null)));
+#line 221
+this.ScenarioSetup(scenarioInfo);
+#line 222
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 223
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 224
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 225
+ testRunner.Then("click the \"Abt HRMS Benefits User\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 226
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.And("navigate to \"Benefits Service Center\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 228
+ testRunner.And("navigate to \"Hire Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 229
+ testRunner.And("navigate to \"Enter Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 230
+ testRunner.And("navigate to \"Maintain Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 231
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 232
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 233
+ testRunner.And("navigate to \"Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 234
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 235
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 236
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 237
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 238
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 239
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 240
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 241
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 242
+ testRunner.And("click on People", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 243
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 244
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 245
+ testRunner.And("click \"Salary Admin\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 246
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 247
+ testRunner.And("navigate to \"Schools and College\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 248
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 249
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 250
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 251
+ testRunner.And("navigate to \"Applicant Quick Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 252
+ testRunner.And("navigate to \"Mass Update of Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 253
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 254
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 255
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 256
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 257
+ testRunner.And("navigate to \"Employee Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 258
+ testRunner.And("click on Absence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 259
+ testRunner.And("navigate to \"Salary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 260
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 261
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 262
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 263
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 264
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 265
+ testRunner.And("navigate to \"Employees by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 266
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 267
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 268
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 269
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 270
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 271
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 272
+ testRunner.And("navigate to \"Batch Element Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 273
+ testRunner.And("navigate to \"BEE Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt HRMS Superuser", SourceLine=274)]
+        public virtual void AbtHRMSSuperuser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HRMS Superuser", ((string[])(null)));
+#line 275
+this.ScenarioSetup(scenarioInfo);
+#line 276
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 277
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 278
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 279
+ testRunner.Then("click the \"Abt HRMS Superuser\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 280
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 281
+ testRunner.And("navigate to \"Salary Management\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 282
+ testRunner.And("navigate to \"Hiring Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 283
+ testRunner.And("navigate to \"Entering Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 284
+ testRunner.And("navigate to \"Person Benefits Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 285
+ testRunner.And("navigate to \"Mass Update of Applicant Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 286
+ testRunner.And("navigate to \"Mass Update of Employee Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 287
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 288
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 289
+ testRunner.And("navigate to \"Assignment Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 290
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 291
+ testRunner.And("navigate to \"Competence Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 292
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 293
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 294
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 295
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 296
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 297
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 298
+ testRunner.And("navigate to \"Person Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 299
+ testRunner.And("navigate to \"Person Type Usage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 300
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 301
+ testRunner.And("navigate to \"Qualifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 302
+ testRunner.And("navigate to \"Salary Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 303
+ testRunner.And("click \"Salary Admin\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 304
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 305
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 306
+ testRunner.And("navigate to \"Supplementary Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 307
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 308
+ testRunner.And("navigate to \"School/College Attendance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 309
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 310
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 311
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 312
+ testRunner.And("navigate to \"Mass Update of Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 313
+ testRunner.And("navigate to \"Request Recruitment Letter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 314
+ testRunner.And("navigate to \"Rating Scales\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 315
+ testRunner.And("navigate to \"Competencies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 316
+ testRunner.And("navigate to \"Competence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 317
+ testRunner.And("navigate to \"Competence Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 318
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 319
+ testRunner.And("navigate to \"Qualification Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 320
+ testRunner.And("navigate to \"Assessment Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 321
+ testRunner.And("navigate to \"Appraisal Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 322
+ testRunner.And("click \"Upload Third Party Skills\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 323
+ testRunner.And("click \"Objectives Library\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 324
+ testRunner.And("click \"Performance Management Plans\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 325
+ testRunner.And("navigate to \"Location\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 326
+ testRunner.And("navigate to \"Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 327
+ testRunner.And("click on Description Organization", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 328
+ testRunner.And("navigate to \"Organization Manager\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 329
+ testRunner.And("click on Description Job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 330
+ testRunner.And("navigate to \"Career Path Names\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 331
+ testRunner.And("navigate to \"Career Path\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 332
+ testRunner.And("navigate to \"Job Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 333
+ testRunner.And("click on Description Grade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 334
+ testRunner.And("navigate to \"Grade Rate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 335
+ testRunner.And("click on Description Payroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 336
+ testRunner.And("navigate to \"Element Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 337
+ testRunner.And("navigate to \"Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 338
+ testRunner.And("navigate to \"Salary Basis\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 339
+ testRunner.And("navigate to \"Salary Survey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 340
+ testRunner.And("navigate to \"Benefit Contributions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 341
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 342
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 343
+ testRunner.And("navigate to \"Employee Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 344
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 345
+ testRunner.And("navigate to \"Worker Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 346
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 347
+ testRunner.And("navigate to \"Salary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 348
+ testRunner.And("click on Entries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 349
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 350
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 351
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 352
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 353
+ testRunner.And("navigate to \"Employees by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 354
+ testRunner.And("navigate to \"Employees by Position\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 355
+ testRunner.And("navigate to \"Emps by Position Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 356
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 357
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 358
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 359
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 360
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 361
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 362
+ testRunner.And("click \"Workflow Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 363
+ testRunner.And("navigate to \"Batch Element Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 364
+ testRunner.And("navigate to \"BEE Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 365
+ testRunner.And("navigate to \"Application Utilities Lookups\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 366
+ testRunner.And("navigate to \"Define Cities\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 367
+ testRunner.And("navigate to \"User Profile Options\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt HRMS User", SourceLine=368)]
+        public virtual void AbtHRMSUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HRMS User", ((string[])(null)));
+#line 369
+this.ScenarioSetup(scenarioInfo);
+#line 370
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 371
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 372
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 373
+ testRunner.Then("click the \"Abt HRMS User\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 374
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 375
+ testRunner.And("navigate to \"Hire Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 376
+ testRunner.And("navigate to \"Enter Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 377
+ testRunner.And("navigate to \"Maintain Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 378
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 379
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 380
+ testRunner.And("navigate to \"Assignment Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 381
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 382
+ testRunner.And("navigate to \"Competence Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 383
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 384
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 385
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 386
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 387
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 388
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 389
+ testRunner.And("navigate to \"Person Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 390
+ testRunner.And("navigate to \"Person Type Usage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 391
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 392
+ testRunner.And("navigate to \"Qualifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 393
+ testRunner.And("navigate to \"Salary Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 394
+ testRunner.And("click \"Salary Admin\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 395
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 396
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 397
+ testRunner.And("navigate to \"Supplementary Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 398
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 399
+ testRunner.And("navigate to \"School/College Attendance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 400
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 401
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 402
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 403
+ testRunner.And("navigate to \"Applicant Quick Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 404
+ testRunner.And("navigate to \"Mass Update of Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 405
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 406
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 407
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 408
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 409
+ testRunner.And("navigate to \"Employee Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 410
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 411
+ testRunner.And("navigate to \"Salary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 412
+ testRunner.And("click on Entries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 413
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 414
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 415
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 416
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 417
+ testRunner.And("navigate to \"Employees by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 418
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 419
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 420
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 421
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 422
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 423
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 424
+ testRunner.And("navigate to \"Batch Element Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 425
+ testRunner.And("navigate to \"BEE Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Executive", SourceLine=426)]
+        public virtual void AbtUSHRExecutive()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Executive", ((string[])(null)));
+#line 427
+this.ScenarioSetup(scenarioInfo);
+#line 428
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 429
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 430
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 431
+ testRunner.Then("click the \"Abt US HR Executive\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 432
+ testRunner.And("click \"Discoverer Viewer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 433
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 434
+ testRunner.And("navigate to \"Salary Management\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 435
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 436
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 437
+ testRunner.And("navigate to \"Assignment Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 438
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 439
+ testRunner.And("navigate to \"Competence Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 440
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 441
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 442
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 443
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 444
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 445
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 446
+ testRunner.And("navigate to \"Person Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 447
+ testRunner.And("navigate to \"Person Type Usage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 448
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 449
+ testRunner.And("navigate to \"Qualifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 450
+ testRunner.And("click \"Salary\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 451
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 452
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 453
+ testRunner.And("navigate to \"Supplementary Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 454
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 455
+ testRunner.And("navigate to \"School/College Attendance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 456
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 457
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 458
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 459
+ testRunner.And("navigate to \"Request Recruitment Letter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 460
+ testRunner.And("navigate to \"Rating Scales\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 461
+ testRunner.And("navigate to \"Competencies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 462
+ testRunner.And("navigate to \"Competence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 463
+ testRunner.And("navigate to \"Competence Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 464
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 465
+ testRunner.And("navigate to \"Qualification Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 466
+ testRunner.And("navigate to \"Assessment Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 467
+ testRunner.And("navigate to \"Appraisal Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 468
+ testRunner.And("click \"Upload Third Party Skills\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 469
+ testRunner.And("click \"Objectives Library\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 470
+ testRunner.And("click \"Performance Management Plans\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 471
+ testRunner.And("navigate to \"Location\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 472
+ testRunner.And("navigate to \"Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 473
+ testRunner.And("click on Description Job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 474
+ testRunner.And("navigate to \"Career Path Names\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 475
+ testRunner.And("navigate to \"Career Path\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 476
+ testRunner.And("navigate to \"Job Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 477
+ testRunner.And("navigate to \"Grade Rate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 478
+ testRunner.And("navigate to \"Element Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 479
+ testRunner.And("navigate to \"Salary Basis\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 480
+ testRunner.And("navigate to \"Salary Survey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 481
+ testRunner.And("navigate to \"Benefit Contributions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 482
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 483
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 484
+ testRunner.And("navigate to \"Employee Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 485
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 486
+ testRunner.And("navigate to \"Worker Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 487
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 488
+ testRunner.And("click on Salary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 489
+ testRunner.And("click on Entries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 490
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 491
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 492
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 493
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 494
+ testRunner.And("navigate to \"Employees by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 495
+ testRunner.And("navigate to \"Employees by Position\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 496
+ testRunner.And("navigate to \"Emps by Position Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 497
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 498
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 499
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 500
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 501
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 502
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 503
+ testRunner.And("click \"Workflow Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Manager", SourceLine=504)]
+        public virtual void AbtUSHRManager()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Manager", ((string[])(null)));
+#line 505
+this.ScenarioSetup(scenarioInfo);
+#line 506
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 507
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 508
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 509
+ testRunner.Then("click the \"Abt US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 510
+ testRunner.And("click \"Discoverer Viewer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 511
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 512
+ testRunner.And("navigate to \"Salary Management\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 513
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 514
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 515
+ testRunner.And("navigate to \"Assignment Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 516
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 517
+ testRunner.And("navigate to \"Competence Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 518
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 519
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 520
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 521
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 522
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 523
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 524
+ testRunner.And("navigate to \"Person Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 525
+ testRunner.And("navigate to \"Person Type Usage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 526
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 527
+ testRunner.And("navigate to \"Qualifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 528
+ testRunner.And("click \"Salary\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 529
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 530
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 531
+ testRunner.And("navigate to \"Supplementary Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 532
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 533
+ testRunner.And("navigate to \"School/College Attendance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 534
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 535
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 536
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 537
+ testRunner.And("navigate to \"Request Recruitment Letter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 538
+ testRunner.And("navigate to \"Rating Scales\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 539
+ testRunner.And("navigate to \"Competencies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 540
+ testRunner.And("navigate to \"Competence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 541
+ testRunner.And("navigate to \"Competence Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 542
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 543
+ testRunner.And("navigate to \"Qualification Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 544
+ testRunner.And("navigate to \"Assessment Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 545
+ testRunner.And("navigate to \"Appraisal Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 546
+ testRunner.And("click \"Upload Third Party Skills\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 547
+ testRunner.And("click \"Objectives Library\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 548
+ testRunner.And("click \"Performance Management Plans\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 549
+ testRunner.And("navigate to \"Location\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 550
+ testRunner.And("navigate to \"Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 551
+ testRunner.And("click on Description Job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 552
+ testRunner.And("navigate to \"Career Path Names\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 553
+ testRunner.And("navigate to \"Career Path\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 554
+ testRunner.And("navigate to \"Job Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 555
+ testRunner.And("navigate to \"Grade Rate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 556
+ testRunner.And("navigate to \"Element Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 557
+ testRunner.And("navigate to \"Salary Basis\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 558
+ testRunner.And("navigate to \"Salary Survey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 559
+ testRunner.And("navigate to \"Benefit Contributions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 560
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 561
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 562
+ testRunner.And("navigate to \"Employee Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 563
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 564
+ testRunner.And("navigate to \"Worker Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 565
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 566
+ testRunner.And("click on Salary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 567
+ testRunner.And("click on Entries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 568
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 569
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 570
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 571
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 572
+ testRunner.And("navigate to \"Employees by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 573
+ testRunner.And("navigate to \"Employees by Position\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 574
+ testRunner.And("navigate to \"Emps by Position Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 575
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 576
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 577
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 578
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 579
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 580
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 581
+ testRunner.And("click \"Workflow Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: People", SourceLine=582)]
+        public virtual void USSuperHRMSManagerPeople()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: People", ((string[])(null)));
+#line 583
+this.ScenarioSetup(scenarioInfo);
+#line 584
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 585
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 586
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 587
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 588
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 589
+ testRunner.And("navigate to \"Salary Management\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 590
+ testRunner.And("navigate to \"Benefits Service Center\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 591
+ testRunner.And("navigate to \"Reimbursement Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 592
+ testRunner.And("navigate to \"Events and Bookings\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 593
+ testRunner.And("navigate to \"Delete Personal Records\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 594
+ testRunner.And("navigate to \"Manage Contracts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 595
+ testRunner.And("click \"Search Documents of Record\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 596
+ testRunner.And("navigate to \"Hire Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 597
+ testRunner.And("navigate to \"Enter Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 598
+ testRunner.And("navigate to \"Maintain Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 599
+ testRunner.And("navigate to \"Maintain Visa\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 600
+ testRunner.And("navigate to \"Enter Contingent Workers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 601
+ testRunner.And("navigate to \"Maintain Contingent Workers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 602
+ testRunner.And("navigate to \"View Participation Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 603
+ testRunner.And("navigate to \"Person Benefits Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 604
+ testRunner.And("navigate to \"Participation Overrides\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 605
+ testRunner.And("navigate to \"What-if Eligibility\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 606
+ testRunner.And("navigate to \"Person Benefits Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 607
+ testRunner.And("navigate to \"COBRA Beneficiaries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 608
+ testRunner.And("navigate to \"View Enrollment Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 609
+ testRunner.And("navigate to \"Flex Program\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 610
+ testRunner.And("navigate to \"Non-flex Program\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 611
+ testRunner.And("navigate to \"Savings Plan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 612
+ testRunner.And("navigate to \"Miscellaneous Plan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 613
+ testRunner.And("navigate to \"Enrollment Override\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 614
+ testRunner.And("navigate to \"Dependent/Beneficiary Designation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 615
+ testRunner.And("navigate to \"Person Primary Care Provider\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 616
+ testRunner.And("navigate to \"Court Orders\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 617
+ testRunner.And("navigate to \"Person Life Events\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 618
+ testRunner.And("navigate to \"Person Enrollment Action Items\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 619
+ testRunner.And("navigate to \"Person Enrollment Certifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 620
+ testRunner.And("navigate to \"Person Communications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 621
+ testRunner.And("navigate to \"Record Continuing Benefits Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 622
+ testRunner.And("navigate to \"Monthly Participant Premium\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 623
+ testRunner.And("navigate to \"Monthly Premiums\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 624
+ testRunner.And("navigate to \"Manual Payments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 625
+ testRunner.And("navigate to \"Mass Update of Applicant Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 626
+ testRunner.And("navigate to \"Mass Update of Employee Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 627
+ testRunner.And("click \"Enter and Maintain Student Employee\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 628
+ testRunner.And("click \"Comparison Report\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Fast Path", SourceLine=629)]
+        public virtual void USSuperHRMSManagerFastPath()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Fast Path", ((string[])(null)));
+#line 630
+this.ScenarioSetup(scenarioInfo);
+#line 631
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 632
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 633
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 634
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 635
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 636
+ testRunner.And("navigate to \"Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 637
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 638
+ testRunner.And("navigate to \"Adjust Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 639
+ testRunner.And("navigate to \"Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 640
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 641
+ testRunner.And("navigate to \"Assignment Budget\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 642
+ testRunner.And("navigate to \"Assignment Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 643
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 644
+ testRunner.And("navigate to \"Competencies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 645
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 646
+ testRunner.And("navigate to \"Contracts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 647
+ testRunner.And("navigate to \"Employee Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 648
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 649
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 650
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 651
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 652
+ testRunner.And("navigate to \"End Placement\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 653
+ testRunner.And("navigate to \"External/Manual Payments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 654
+ testRunner.And("navigate to \"Grade Step\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 655
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 656
+ testRunner.And("navigate to \"Person Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 657
+ testRunner.And("navigate to \"Person Type Usage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 658
+ testRunner.And("navigate to \"Communication Delivery Methods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 659
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 660
+ testRunner.And("click \"Picture\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 661
+ testRunner.And("navigate to \"Qualification Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 662
+ testRunner.And("navigate to \"QuickPay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 663
+ testRunner.And("navigate to \"Reverse Payroll Run\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 664
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 665
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 666
+ testRunner.And("navigate to \"Tax Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 667
+ testRunner.And("navigate to \"Tax Balance Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 668
+ testRunner.And("navigate to \"US Statement of Earnings\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 669
+ testRunner.And("navigate to \"US Tax Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 670
+ testRunner.And("navigate to \"US/CA Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 671
+ testRunner.And("navigate to \"Medical Assessments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 672
+ testRunner.And("navigate to \"Checklists\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 673
+ testRunner.And("navigate to \"Supplementary Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 674
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 675
+ testRunner.And("navigate to \"School/College Attendance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 676
+ testRunner.And("navigate to \"Work Incidents/OSHA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 677
+ testRunner.And("navigate to \"Assignment Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 678
+ testRunner.And("click \"Documents of Record\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 679
+ testRunner.And("click \"Absence Cases\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 680
+ testRunner.And("click \"Allocate Vehicle\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 681
+ testRunner.And("click \"Salary\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 682
+ testRunner.And("navigate to \"Costing\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 683
+ testRunner.And("navigate to \"Event\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 684
+ testRunner.And("navigate to \"Secondary Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 685
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Recruitment and Career Management", SourceLine=686)]
+        public virtual void USSuperHRMSManagerRecruitmentAndCareerManagement()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Recruitment and Career Management", ((string[])(null)));
+#line 687
+this.ScenarioSetup(scenarioInfo);
+#line 688
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 689
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 690
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 691
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 692
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 693
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 694
+ testRunner.And("navigate to \"Applicant Quick Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 695
+ testRunner.And("navigate to \"Mass Update of Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 696
+ testRunner.And("navigate to \"Request Recruitment Letter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 697
+ testRunner.And("navigate to \"Rating Scales\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 698
+ testRunner.And("navigate to \"Competencies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 699
+ testRunner.And("navigate to \"Competence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 700
+ testRunner.And("navigate to \"Competence Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 701
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 702
+ testRunner.And("navigate to \"Qualification Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 703
+ testRunner.And("navigate to \"Assessment Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 704
+ testRunner.And("navigate to \"Appraisal Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 705
+ testRunner.And("click \"Upload Third Party Skills\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 706
+ testRunner.And("click \"Objectives Library\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 707
+ testRunner.And("click \"Performance Management Plans\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Work Structures", SourceLine=708)]
+        public virtual void USSuperHRMSManagerWorkStructures()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Work Structures", ((string[])(null)));
+#line 709
+this.ScenarioSetup(scenarioInfo);
+#line 710
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 711
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 712
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 713
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 714
+ testRunner.And("navigate to \"Location\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 715
+ testRunner.And("click \"Generic Hierarchy\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 716
+ testRunner.And("navigate to \"Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 717
+ testRunner.And("navigate to \"Recruitment Letter Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 718
+ testRunner.And("navigate to \"Contract Letter Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 719
+ testRunner.And("navigate to \"Elections\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 720
+ testRunner.And("navigate to \"Collective Agreements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 721
+ testRunner.And("navigate to \"Collective Agreement Grades\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 722
+ testRunner.And("click on Description Organization", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 723
+ testRunner.And("navigate to \"Organization Manager\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 724
+ testRunner.And("navigate to \"Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 725
+ testRunner.And("navigate to \"Global Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 726
+ testRunner.And("click \"Hr Org Operating Unit Upload\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 727
+ testRunner.And("navigate to \"Diagrammer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 728
+ testRunner.And("click on Description Job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 729
+ testRunner.And("navigate to \"Career Path Names\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 730
+ testRunner.And("navigate to \"Career Path\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 731
+ testRunner.And("navigate to \"Workers Compensation Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 732
+ testRunner.And("navigate to \"Workers Compensation Codes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 733
+ testRunner.And("navigate to \"Job Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 734
+ testRunner.And("click on Description Position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 735
+ testRunner.And("navigate to \"Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 736
+ testRunner.And("navigate to \"Mass Move\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 737
+ testRunner.And("navigate to \"Diagrammer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 738
+ testRunner.And("navigate to \"Position Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 739
+ testRunner.And("navigate to \"Position Copy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 740
+ testRunner.And("navigate to \"Mass Position Update\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 741
+ testRunner.And("click on Description Grade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 742
+ testRunner.And("navigate to \"Grade Rate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 743
+ testRunner.And("navigate to \"Pay Scale\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 744
+ testRunner.And("navigate to \"Point Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 745
+ testRunner.And("navigate to \"Grade Steps and Points\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 746
+ testRunner.And("click \"Progression Approval\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 747
+ testRunner.And("navigate to \"Assignment Rate Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 748
+ testRunner.And("navigate to \"Budget Worksheet\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 749
+ testRunner.And("navigate to \"Budget Details\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 750
+ testRunner.And("click \"Budget Reallocation\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 751
+ testRunner.And("navigate to \"Budget Calendar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 752
+ testRunner.And("navigate to \"Budget Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 753
+ testRunner.And("navigate to \"Budget Characteristics\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 754
+ testRunner.And("click \"Budget Migration\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 755
+ testRunner.And("navigate to \"Define Entitlement Item\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 756
+ testRunner.And("navigate to \"Define Collective Agreements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 757
+ testRunner.And("navigate to \"Define Collective Agreement Grades\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 758
+ testRunner.And("navigate to \"Define Eligibility Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 759
+ testRunner.And("navigate to \"Define Derived Factors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 760
+ testRunner.And("click \"Shifts\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 761
+ testRunner.And("click \"Schedule Patterns\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 762
+ testRunner.And("click \"Schedules\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 763
+ testRunner.And("click \"Category\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 764
+ testRunner.And("click \"Shift Detail Type\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 765
+ testRunner.And("click \"Global Exception\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 766
+ testRunner.And("click \"Manage Eligibility Profiles\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 767
+ testRunner.And("click \"Enter and Maintain Events\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 768
+ testRunner.And("click \"Review Calendar Event Coverage\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 769
+ testRunner.And("click \"Review Applicable Events\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 770
+ testRunner.And("navigate to \"Eligibility Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 771
+ testRunner.And("click \"Setup/Maintain Checklists\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Payroll", SourceLine=772)]
+        public virtual void USSuperHRMSManagerPayroll()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Payroll", ((string[])(null)));
+#line 773
+this.ScenarioSetup(scenarioInfo);
+#line 774
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 775
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 776
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 777
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 778
+ testRunner.And("click on Description Payroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 779
+ testRunner.And("navigate to \"Consolidation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 780
+ testRunner.And("navigate to \"Payment Methods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 781
+ testRunner.And("navigate to \"GL Flexfield Map\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 782
+ testRunner.And("navigate to \"Update Payroll Run\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 783
+ testRunner.And("navigate to \"Assignment Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 784
+ testRunner.And("navigate to \"Element Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 785
+ testRunner.And("navigate to \"RetroPay Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 786
+ testRunner.And("navigate to \"GL Daily Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 787
+ testRunner.And("navigate to \"Conversion Rate Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 788
+ testRunner.And("navigate to \"Monetary Units\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 789
+ testRunner.And("navigate to \"Balance Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Total Compensation", SourceLine=790)]
+        public virtual void USSuperHRMSManagerTotalCompensation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Total Compensation", ((string[])(null)));
+#line 791
+this.ScenarioSetup(scenarioInfo);
+#line 792
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 793
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 794
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 795
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 796
+ testRunner.And("click \"Total Compensation Setup Wizard\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 797
+ testRunner.And("navigate to \"Deductions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 798
+ testRunner.And("navigate to \"Element Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 799
+ testRunner.And("navigate to \"Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 800
+ testRunner.And("navigate to \"Tax Withholding Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 801
+ testRunner.And("navigate to \"Salary Basis\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 802
+ testRunner.And("navigate to \"Compensation Survey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 803
+ testRunner.And("navigate to \"Benefit Contributions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 804
+ testRunner.And("navigate to \"Absence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 805
+ testRunner.And("navigate to \"Accrual Plans\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 806
+ testRunner.And("navigate to \"Balance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 807
+ testRunner.And("navigate to \"Classification\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 808
+ testRunner.And("click \"Vehicle Repository\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 809
+ testRunner.And("click \"Fast Formula Assistant\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 810
+ testRunner.And("navigate to \"Write Formula\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 811
+ testRunner.And("navigate to \"Formula Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 812
+ testRunner.And("navigate to \"Global Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 813
+ testRunner.And("navigate to \"Formula Functions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 814
+ testRunner.And("navigate to \"Message Configuration\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 815
+ testRunner.And("navigate to \"Authentication Activities\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 816
+ testRunner.And("navigate to \"Benefits Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 817
+ testRunner.And("navigate to \"Benefit Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 818
+ testRunner.And("navigate to \"Derived Factors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 819
+ testRunner.And("navigate to \"Postal/Zip\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 820
+ testRunner.And("navigate to \"Service Areas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 821
+ testRunner.And("navigate to \"Participant\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 822
+ testRunner.And("navigate to \"Dependent Coverage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 823
+ testRunner.And("click \"Maintain Eligibility Criteria Type\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 824
+ testRunner.And("navigate to \"Program/Plan Years\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 825
+ testRunner.And("navigate to \"Regulations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 826
+ testRunner.And("navigate to \"Reporting Groups\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 827
+ testRunner.And("navigate to \"Goods and Services\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 828
+ testRunner.And("navigate to \"Life Event Reasons\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 829
+ testRunner.And("navigate to \"Collapse Life Events\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 830
+ testRunner.And("navigate to \"Communication Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 831
+ testRunner.And("navigate to \"Enrollment Action Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 832
+ testRunner.And("navigate to \"View Program Structure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 833
+ testRunner.And("navigate to \"Plan Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 834
+ testRunner.And("navigate to \"Options\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 835
+ testRunner.And("navigate to \"Plans\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 836
+ testRunner.And("navigate to \"Plan Enrollment Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 837
+ testRunner.And("navigate to \"Plan Reimbursements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 838
+ testRunner.And("navigate to \"Plan Primary Care Providers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 839
+ testRunner.And("navigate to \"Programs\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 840
+ testRunner.And("navigate to \"Program Enrollment Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 841
+ testRunner.And("click \"Plan Design Copy\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 842
+ testRunner.And("navigate to \"Plan Third Party Identifier\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 843
+ testRunner.And("navigate to \"Variable Rate Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 844
+ testRunner.And("navigate to \"Standard Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 845
+ testRunner.And("navigate to \"Period-to-Date Limits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 846
+ testRunner.And("navigate to \"Coverage Calculations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 847
+ testRunner.And("navigate to \"Coverage Across Plan Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 848
+ testRunner.And("navigate to \"Actual Premiums\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 849
+ testRunner.And("navigate to \"Imputed Income\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 850
+ testRunner.And("navigate to \"Benefits Pools\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 851
+ testRunner.And("navigate to \"Flex Credits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 852
+ testRunner.And("navigate to \"Combinations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 853
+ testRunner.And("click \"Maintain Criteria Rate Definition\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 854
+ testRunner.And("click \"Maintain Rate Matrix\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 855
+ testRunner.And("navigate to \"Earnings Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 856
+ testRunner.And("navigate to \"Exemption Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 857
+ testRunner.And("navigate to \"Fee Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 858
+ testRunner.And("navigate to \"Limit Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: View", SourceLine=859)]
+        public virtual void USSuperHRMSManagerView()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: View", ((string[])(null)));
+#line 860
+this.ScenarioSetup(scenarioInfo);
+#line 861
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 862
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 863
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 864
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 865
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 866
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 867
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 868
+ testRunner.And("navigate to \"Employee Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 869
+ testRunner.And("navigate to \"Employee Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 870
+ testRunner.And("navigate to \"Tax Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 871
+ testRunner.And("navigate to \"Payroll Process Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 872
+ testRunner.And("navigate to \"Assignment Process Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 873
+ testRunner.And("navigate to \"System Messages\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 874
+ testRunner.And("click \"Retropay Status\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 875
+ testRunner.And("navigate to \"Worker Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 876
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 877
+ testRunner.And("navigate to \"Run Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 878
+ testRunner.And("click on SalaryB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 879
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 880
+ testRunner.And("navigate to \"Contribution History (Def Comp 457)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 881
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 882
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 883
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 884
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 885
+ testRunner.And("navigate to \"Workforce by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 886
+ testRunner.And("navigate to \"Workforce by Position\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 887
+ testRunner.And("navigate to \"Workforce by Position Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 888
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 889
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 890
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 891
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 892
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 893
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 894
+ testRunner.And("click \"Workflow Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 895
+ testRunner.And("navigate to \"Batch Process Parameters\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 896
+ testRunner.And("navigate to \"Monitor Batch Processes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 897
+ testRunner.And("navigate to \"Define a Quickpaint Report\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 898
+ testRunner.And("navigate to \"Run a Quickpaint Report\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 899
+ testRunner.And("navigate to \"Submit Custom Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 900
+ testRunner.And("navigate to \"Maintain Process Parameters\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 901
+ testRunner.And("navigate to \"Process Log\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 902
+ testRunner.And("navigate to \"Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 903
+ testRunner.And("navigate to \"Routing Lists\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 904
+ testRunner.And("click \"Configurable Business Rules\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 905
+ testRunner.And("navigate to \"Templates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 906
+ testRunner.And("navigate to \"Transaction Type Wizard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 907
+ testRunner.And("navigate to \"Global Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 908
+ testRunner.And("click \"Document Management\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 909
+ testRunner.And("navigate to \"Transaction Categories\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Mass Information Definitiions and Security", SourceLine=910)]
+        public virtual void USSuperHRMSManagerMassInformationDefinitiionsAndSecurity()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Mass Information Definitiions and Security", ((string[])(null)));
+#line 911
+this.ScenarioSetup(scenarioInfo);
+#line 912
+    testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 913
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 914
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 915
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 916
+ testRunner.And("navigate to \"Batch Element Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 917
+ testRunner.And("navigate to \"BEE Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 918
+ testRunner.And("click \"BEE Spreadsheet Interface\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 919
+ testRunner.And("click \"BBA Spreadsheet Interface\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 920
+ testRunner.And("navigate to \"Layout Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 921
+ testRunner.And("navigate to \"Criteria Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 922
+ testRunner.And("navigate to \"Extract Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 923
+ testRunner.And("navigate to \"Extract Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 924
+ testRunner.And("navigate to \"Change Event Log\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 925
+ testRunner.And("navigate to \"Person Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 926
+ testRunner.And("navigate to \"Lookup Tables\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 927
+ testRunner.And("navigate to \"Special Information Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 928
+ testRunner.And("navigate to \"Table Structure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 929
+ testRunner.And("navigate to \"Table Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 930
+ testRunner.And("navigate to \"US Cities\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 931
+ testRunner.And("navigate to \"Time Periods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 932
+ testRunner.And("navigate to \"User Profile Options\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 933
+ testRunner.And("navigate to \"User Types and Statuses\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 934
+ testRunner.And("navigate to \"Dynamic Triggers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 935
+ testRunner.And("navigate to \"Functional Areas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 936
+ testRunner.And("navigate to \"Define Event Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 937
+ testRunner.And("navigate to \"Table Event Updates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 938
+ testRunner.And("click \"Configuration Values\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 939
+ testRunner.And("click \"Person Name Formats\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 940
+ testRunner.And("click \"Dynamic Time Periods\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 941
+ testRunner.And("click \"Reports\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 942
+ testRunner.And("click \"Groups\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 943
+ testRunner.And("click \"Concurrent Request Monitoring/Viewing\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 944
+ testRunner.And("navigate to \"Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 945
+ testRunner.And("navigate to \"Global Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 946
+ testRunner.And("navigate to \"Information Types Security\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 947
+ testRunner.And("navigate to \"CustomForm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 948
+ testRunner.And("navigate to \"Report Sets\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 949
+ testRunner.And("navigate to \"Task Flow Nodes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 950
+ testRunner.And("navigate to \"Task Flow Definitions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 951
+ testRunner.And("navigate to \"People Management Configurator\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 952
+ testRunner.And("navigate to \"Contexts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 953
+ testRunner.And("navigate to \"Transaction Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 954
+ testRunner.And("navigate to \"Task Flow Unit\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 955
+ testRunner.And("navigate to \"Assign Security Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: People", SourceLine=956)]
+        public virtual void USHRMSManagerPeople()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: People", ((string[])(null)));
+#line 957
+ this.ScenarioSetup(scenarioInfo);
+#line 958
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 959
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 960
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 961
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 962
+ testRunner.And("navigate to \"Shared\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 963
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 964
+ testRunner.And("navigate to \"Salary Management\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 965
+ testRunner.And("navigate to \"Events and Bookings\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 966
+ testRunner.And("navigate to \"Delete Personal Records\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 967
+ testRunner.And("navigate to \"Manage Contracts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 968
+ testRunner.And("click \"Search Documents of Record\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 969
+ testRunner.And("navigate to \"Hiring Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 970
+ testRunner.And("navigate to \"Entering Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 971
+ testRunner.And("navigate to \"Maintaining Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 972
+ testRunner.And("navigate to \"Maintaining Visa\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 973
+ testRunner.And("navigate to \"Entering Contingent Workers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 974
+ testRunner.And("navigate to \"Maintaining Contingent Workers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 975
+ testRunner.And("navigate to \"Person Benefits Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 976
+ testRunner.And("navigate to \"Person Benefits Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 977
+ testRunner.And("navigate to \"COBRA Beneficiaries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 978
+ testRunner.And("navigate to \"Participation Overrides\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 979
+ testRunner.And("navigate to \"View Enrollment Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 980
+ testRunner.And("navigate to \"Non-flex Program\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 981
+ testRunner.And("navigate to \"Savings Plan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 982
+ testRunner.And("navigate to \"Miscellaneous Plan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 983
+ testRunner.And("navigate to \"Enrollment Override\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 984
+ testRunner.And("navigate to \"Dependent/Beneficiary Designation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 985
+ testRunner.And("navigate to \"Person Primary Care Provider\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 986
+ testRunner.And("navigate to \"Court Orders\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 987
+ testRunner.And("navigate to \"Person Communications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 988
+ testRunner.And("navigate to \"Person Life Events\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 989
+ testRunner.And("navigate to \"Record Continuing Benefits Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 990
+ testRunner.And("navigate to \"Monthly Participant Premium\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 991
+ testRunner.And("navigate to \"Monthly Premiums\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 992
+ testRunner.And("navigate to \"Manual Payments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 993
+ testRunner.And("navigate to \"Mass Update of Applicant Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 994
+ testRunner.And("navigate to \"Mass Update of Employee Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 995
+ testRunner.And("click \"Enter and Maintain Student Employee\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 996
+ testRunner.And("click \"Comparison Report\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Fast Path", SourceLine=997)]
+        public virtual void USHRMSManagerFastPath()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Fast Path", ((string[])(null)));
+#line 998
+this.ScenarioSetup(scenarioInfo);
+#line 999
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1000
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1001
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1002
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1003
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1004
+ testRunner.And("navigate to \"Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1005
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1006
+ testRunner.And("navigate to \"Adjust Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1007
+ testRunner.And("navigate to \"Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1008
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1009
+ testRunner.And("navigate to \"Assignment Budget\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1010
+ testRunner.And("navigate to \"Assignment Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1011
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1012
+ testRunner.And("navigate to \"Competence Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1013
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1014
+ testRunner.And("navigate to \"Contracts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1015
+ testRunner.And("navigate to \"Employee Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1016
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1017
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1018
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1019
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1020
+ testRunner.And("navigate to \"End Placement\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1021
+ testRunner.And("navigate to \"External/Manual Payments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1022
+ testRunner.And("navigate to \"Grade Step\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1023
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1024
+ testRunner.And("navigate to \"Person Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1025
+ testRunner.And("navigate to \"Person Type Usage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1026
+ testRunner.And("navigate to \"Communication Delivery Methods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1027
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1028
+ testRunner.And("click \"Picture\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1029
+ testRunner.And("navigate to \"Qualifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1030
+ testRunner.And("navigate to \"QuickPay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1031
+ testRunner.And("navigate to \"Reverse Payroll Run\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1032
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1033
+ testRunner.And("navigate to \"Salary Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1034
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1035
+ testRunner.And("navigate to \"Tax Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1036
+ testRunner.And("navigate to \"Statement of Earnings\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1037
+ testRunner.And("navigate to \"US Tax Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1038
+ testRunner.And("navigate to \"Adjust Tax Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1039
+ testRunner.And("navigate to \"US/CA Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1040
+ testRunner.And("navigate to \"Tax Balance Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1041
+ testRunner.And("navigate to \"Medical Assessments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1042
+ testRunner.And("navigate to \"Checklists\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1043
+ testRunner.And("navigate to \"Supplementary Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1044
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1045
+ testRunner.And("navigate to \"School/College Attendance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1046
+ testRunner.And("navigate to \"Assignment Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1047
+ testRunner.And("click \"Documents of Record\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1048
+ testRunner.And("click \"Allocate Vehicle\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1049
+ testRunner.And("click \"Salary\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1050
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1051
+ testRunner.And("navigate to \"Costing\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1052
+ testRunner.And("navigate to \"Event\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1053
+ testRunner.And("navigate to \"Secondary Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Recruitment and Career Management", SourceLine=1054)]
+        public virtual void USHRMSManagerRecruitmentAndCareerManagement()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Recruitment and Career Management", ((string[])(null)));
+#line 1055
+this.ScenarioSetup(scenarioInfo);
+#line 1056
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1057
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1058
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1059
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1060
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1061
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1062
+ testRunner.And("navigate to \"Applicant Quick Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1063
+ testRunner.And("navigate to \"Mass Update of Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1064
+ testRunner.And("navigate to \"Request Recruitment Letter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1065
+ testRunner.And("navigate to \"Rating Scales\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1066
+ testRunner.And("navigate to \"Competencies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1067
+ testRunner.And("navigate to \"Competence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1068
+ testRunner.And("navigate to \"Competence Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1069
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1070
+ testRunner.And("navigate to \"Qualification Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1071
+ testRunner.And("navigate to \"Assessment Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1072
+ testRunner.And("navigate to \"Appraisal Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1073
+ testRunner.And("click \"Upload Third Party Skills\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1074
+ testRunner.And("click \"Objectives Library\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1075
+ testRunner.And("click \"Performance Management Plans\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Work Structures", SourceLine=1076)]
+        public virtual void USHRMSManagerWorkStructures()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Work Structures", ((string[])(null)));
+#line 1077
+this.ScenarioSetup(scenarioInfo);
+#line 1078
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1079
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1080
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1081
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1082
+ testRunner.And("navigate to \"Location\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1083
+ testRunner.And("click \"Generic Hierarchy\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1084
+ testRunner.And("navigate to \"Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1085
+ testRunner.And("navigate to \"Recruitment Letter Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1086
+ testRunner.And("navigate to \"Contract Letter Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1087
+ testRunner.And("navigate to \"Elections\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1088
+ testRunner.And("navigate to \"Assignment Rate Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1089
+ testRunner.And("navigate to \"Collective Agreements and Grade Structures\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1090
+ testRunner.And("navigate to \"Collective Agreements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1091
+ testRunner.And("navigate to \"Define Entitlement Item\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1092
+ testRunner.And("navigate to \"Define Eligibility Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1093
+ testRunner.And("navigate to \"Define Collective Agreement\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1094
+ testRunner.And("navigate to \"Define Collective Agreement Grades\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1095
+ testRunner.And("navigate to \"Define Derived Factors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1096
+ testRunner.And("click on Description Organization", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1097
+ testRunner.And("navigate to \"Organization Manager\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1098
+ testRunner.And("navigate to \"Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1099
+ testRunner.And("navigate to \"Diagrammer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1100
+ testRunner.And("navigate to \"Global Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1101
+ testRunner.And("click \"Hr Org Operating Unit Upload\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1102
+ testRunner.And("click on Description Job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1103
+ testRunner.And("navigate to \"Career Path Names\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1104
+ testRunner.And("navigate to \"Career Path\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1105
+ testRunner.And("navigate to \"Workers Compensation Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1106
+ testRunner.And("navigate to \"Workers Compensation Codes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1107
+ testRunner.And("navigate to \"Job Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1108
+ testRunner.And("click on Description Position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1109
+ testRunner.And("navigate to \"Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1110
+ testRunner.And("navigate to \"Mass Move\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1111
+ testRunner.And("navigate to \"Diagrammer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1112
+ testRunner.And("navigate to \"Position Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1113
+ testRunner.And("navigate to \"Position Copy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1114
+ testRunner.And("navigate to \"Mass Position Update\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1115
+ testRunner.And("click on Description Grade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1116
+ testRunner.And("navigate to \"Grade Rate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1117
+ testRunner.And("navigate to \"Pay Scale\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1118
+ testRunner.And("navigate to \"Point Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1119
+ testRunner.And("navigate to \"Grade Steps and Points\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1120
+ testRunner.And("click \"Progression Approval\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1121
+ testRunner.And("navigate to \"Budget Worksheet\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1122
+ testRunner.And("navigate to \"Budget Details\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1123
+ testRunner.And("click \"Budget Reallocation\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1124
+ testRunner.And("navigate to \"Budget Calendar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1125
+ testRunner.And("navigate to \"Budget Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1126
+ testRunner.And("navigate to \"Budget Characteristics\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1127
+ testRunner.And("click \"Budget Migration\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1128
+ testRunner.And("click \"Shifts\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1129
+ testRunner.And("click \"Schedule Patterns\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1130
+ testRunner.And("click \"Schedules\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1131
+ testRunner.And("click \"Category\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1132
+ testRunner.And("click \"Shift Detail Type\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1133
+ testRunner.And("click \"Global Exception\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1134
+ testRunner.And("click \"Manage Eligibility Profiles\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1135
+ testRunner.And("click \"Enter and Maintain Events\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1136
+ testRunner.And("click \"Review Calendar Event Coverage\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1137
+ testRunner.And("click \"Review Applicable Events\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1138
+ testRunner.And("navigate to \"Eligibility Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1139
+ testRunner.And("click \"Setup/Maintain Checklists\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Payroll", SourceLine=1140)]
+        public virtual void USHRMSManagerPayroll()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Payroll", ((string[])(null)));
+#line 1141
+this.ScenarioSetup(scenarioInfo);
+#line 1142
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1143
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1144
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1145
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1146
+ testRunner.And("click on Description Payroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1147
+ testRunner.And("navigate to \"Consolidation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1148
+ testRunner.And("navigate to \"Payment Methods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1149
+ testRunner.And("navigate to \"GL Flexfield Map\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1150
+ testRunner.And("navigate to \"Update Payroll Run\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1151
+ testRunner.And("navigate to \"Assignment Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1152
+ testRunner.And("navigate to \"Element Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1153
+ testRunner.And("navigate to \"RetroPay Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1154
+ testRunner.And("navigate to \"GL Daily Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1155
+ testRunner.And("navigate to \"Conversion Rate Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1156
+ testRunner.And("navigate to \"Monetary Units\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1157
+ testRunner.And("navigate to \"Balance Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Total Compensation", SourceLine=1158)]
+        public virtual void USHRMSManagerTotalCompensation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Total Compensation", ((string[])(null)));
+#line 1159
+this.ScenarioSetup(scenarioInfo);
+#line 1160
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1161
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1162
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1163
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1164
+ testRunner.And("click \"Total Compensation Setup Wizard\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1165
+ testRunner.And("navigate to \"Element Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1166
+ testRunner.And("navigate to \"Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1167
+ testRunner.And("navigate to \"Earnings\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1168
+ testRunner.And("navigate to \"Tax Withholding Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1169
+ testRunner.And("navigate to \"Salary Basis\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1170
+ testRunner.And("navigate to \"Compensation Survey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1171
+ testRunner.And("navigate to \"Deductions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1172
+ testRunner.And("navigate to \"Benefit Contributions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1173
+ testRunner.And("navigate to \"Absence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1174
+ testRunner.And("navigate to \"Accrual Plans\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1175
+ testRunner.And("navigate to \"Balance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1176
+ testRunner.And("navigate to \"Classification\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1177
+ testRunner.And("click \"Vehicle Repository\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1178
+ testRunner.And("click \"Fast Formula Assistant\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1179
+ testRunner.And("navigate to \"Write Formula\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1180
+ testRunner.And("navigate to \"Formula Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1181
+ testRunner.And("navigate to \"Global Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1182
+ testRunner.And("navigate to \"Formula Functions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1183
+ testRunner.And("navigate to \"Benefits Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1184
+ testRunner.And("navigate to \"Benefit Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1185
+ testRunner.And("navigate to \"Derived Factors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1186
+ testRunner.And("navigate to \"Postal/Zip\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1187
+ testRunner.And("navigate to \"Service Areas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1188
+ testRunner.And("navigate to \"Participant\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1189
+ testRunner.And("navigate to \"Dependent Coverage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1190
+ testRunner.And("click \"Maintain Eligibility Criteria\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1191
+ testRunner.And("navigate to \"Program/Plan Years\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1192
+ testRunner.And("navigate to \"Regulations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1193
+ testRunner.And("navigate to \"Reporting Groups\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1194
+ testRunner.And("navigate to \"Goods and Services\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1195
+ testRunner.And("navigate to \"Communication Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1196
+ testRunner.And("navigate to \"Life Event Reasons\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1197
+ testRunner.And("navigate to \"View Program Structure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1198
+ testRunner.And("navigate to \"Plan Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1199
+ testRunner.And("navigate to \"Options\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1200
+ testRunner.And("navigate to \"Plans\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1201
+ testRunner.And("navigate to \"Plan Enrollment Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1202
+ testRunner.And("navigate to \"Plan Primary Care Providers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1203
+ testRunner.And("navigate to \"Programs\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1204
+ testRunner.And("navigate to \"Program Enrollment Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1205
+ testRunner.And("click \"Plan Design Copy\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1206
+ testRunner.And("navigate to \"Plan Third Party Identifier\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1207
+ testRunner.And("navigate to \"Variable Rate Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1208
+ testRunner.And("navigate to \"Standard Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1209
+ testRunner.And("navigate to \"Period-to-date Limits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1210
+ testRunner.And("navigate to \"Coverage Calculations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1211
+ testRunner.And("navigate to \"Coverage Across Plan Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1212
+ testRunner.And("navigate to \"Actual Premiums\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1213
+ testRunner.And("navigate to \"Imputed Income\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1214
+ testRunner.And("click \"Maintain Criteria Rate Definition\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1215
+ testRunner.And("click \"Maintain Rate Matrix\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1216
+ testRunner.And("navigate to \"Earnings Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1217
+ testRunner.And("navigate to \"Exemption Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1218
+ testRunner.And("navigate to \"Fee Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1219
+ testRunner.And("navigate to \"Limit Rules\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: View", SourceLine=1220)]
+        public virtual void USHRMSManagerView()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: View", ((string[])(null)));
+#line 1221
+this.ScenarioSetup(scenarioInfo);
+#line 1222
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1223
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1224
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1225
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1226
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1227
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1228
+ testRunner.And("navigate to \"Employee Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1229
+ testRunner.And("navigate to \"Employee Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1230
+ testRunner.And("navigate to \"Tax Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1231
+ testRunner.And("navigate to \"Payroll Process Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1232
+ testRunner.And("navigate to \"Assignment Process Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1233
+ testRunner.And("navigate to \"System Messages\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1234
+ testRunner.And("click \"Retropay Status\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1235
+ testRunner.And("navigate to \"Worker Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1236
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1237
+ testRunner.And("navigate to \"Run Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1238
+ testRunner.And("click on SalaryB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1239
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1240
+ testRunner.And("navigate to \"Contribution History (Def Comp 457)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1241
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1242
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1243
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1244
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1245
+ testRunner.And("navigate to \"Workforce by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1246
+ testRunner.And("navigate to \"Workforce by Position\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1247
+ testRunner.And("navigate to \"Workforce by Position Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1248
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1249
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1250
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1251
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1252
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1253
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1254
+ testRunner.And("click \"Workflow Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1255
+ testRunner.And("navigate to \"Batch Process Parameters\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1256
+ testRunner.And("navigate to \"Monitor Batch Processes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1257
+ testRunner.And("navigate to \"Define a Quickpaint Report\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1258
+ testRunner.And("navigate to \"Run a Quickpaint Report\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1259
+ testRunner.And("navigate to \"Submit Custom Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1260
+ testRunner.And("navigate to \"Process Log\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1261
+ testRunner.And("navigate to \"Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1262
+ testRunner.And("navigate to \"Routing Lists\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1263
+ testRunner.And("click \"Configurable Business Rules\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1264
+ testRunner.And("navigate to \"Templates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1265
+ testRunner.And("navigate to \"Transaction Type Wizard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1266
+ testRunner.And("navigate to \"Global Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1267
+ testRunner.And("click \"Document Management\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1268
+ testRunner.And("navigate to \"Transaction Categories\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Mass Information Definitions and Security", SourceLine=1269)]
+        public virtual void USHRMSManagerMassInformationDefinitionsAndSecurity()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Mass Information Definitions and Security", ((string[])(null)));
+#line 1270
+this.ScenarioSetup(scenarioInfo);
+#line 1271
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1272
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1273
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1274
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1275
+ testRunner.And("navigate to \"Batch Element Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1276
+ testRunner.And("navigate to \"BEE Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1277
+ testRunner.And("click \"BEE Spreadsheet Interface\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1278
+ testRunner.And("click \"BBA Spreadsheet Interface\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1279
+ testRunner.And("navigate to \"Layout Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1280
+ testRunner.And("navigate to \"Criteria Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1281
+ testRunner.And("navigate to \"Extract Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1282
+ testRunner.And("navigate to \"Extract Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1283
+ testRunner.And("navigate to \"Change Event Log\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1284
+ testRunner.And("navigate to \"Person Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1285
+ testRunner.And("navigate to \"Application Utilities Lookups\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1286
+ testRunner.And("navigate to \"Special Information Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1287
+ testRunner.And("navigate to \"Define Cities\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1288
+ testRunner.And("navigate to \"Table Structure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1289
+ testRunner.And("navigate to \"Table Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1290
+ testRunner.And("navigate to \"Time Periods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1291
+ testRunner.And("navigate to \"User Profile Options\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1292
+ testRunner.And("navigate to \"User Types and Statuses\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1293
+ testRunner.And("navigate to \"Dynamic Triggers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1294
+ testRunner.And("navigate to \"Functional Areas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1295
+ testRunner.And("navigate to \"Define Event Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1296
+ testRunner.And("click \"Configuration Values\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1297
+ testRunner.And("click \"Person Name Formats\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1298
+ testRunner.And("click \"Dynamic Time Periods\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1299
+ testRunner.And("click \"Reports\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1300
+ testRunner.And("click \"Groups\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1301
+ testRunner.And("click \"Concurrent Request Monitoring/Viewing\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1302
+ testRunner.And("navigate to \"Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1303
+ testRunner.And("navigate to \"Assign Security Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1304
+ testRunner.And("navigate to \"CustomForm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1305
+ testRunner.And("navigate to \"Information Types Security\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1306
+ testRunner.And("navigate to \"Report Sets\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1307
+ testRunner.And("navigate to \"Task Flow Nodes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1308
+ testRunner.And("navigate to \"Task Flow Definitions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1309
+ testRunner.And("navigate to \"Forms Configurator\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1310
+ testRunner.And("navigate to \"Contexts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1311
+ testRunner.And("navigate to \"Transaction Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1312
+ testRunner.And("navigate to \"Task Flow Units\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1313
+ testRunner.And("navigate to \"Global Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: People", SourceLine=1314)]
+        public virtual void USHRManagerPeople()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: People", ((string[])(null)));
+#line 1315
+this.ScenarioSetup(scenarioInfo);
+#line 1316
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1317
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1318
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1319
+ testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1320
+ testRunner.And("navigate to \"Enter and Maintain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1321
+ testRunner.And("navigate to \"Salary Management\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1322
+ testRunner.And("navigate to \"Events and Bookings\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1323
+ testRunner.And("navigate to \"Delete Personal Records\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1324
+ testRunner.And("navigate to \"Manage Contracts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1325
+ testRunner.And("click \"Search Documents of Record\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1326
+ testRunner.And("navigate to \"Hiring Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1327
+ testRunner.And("navigate to \"Entering Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1328
+ testRunner.And("navigate to \"Maintaining Employees\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1329
+ testRunner.And("navigate to \"Maintaining Visa\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1330
+ testRunner.And("navigate to \"Entering Contingent Workers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1331
+ testRunner.And("navigate to \"Maintaining Contingent Workers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1332
+ testRunner.And("navigate to \"Person Benefits Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1333
+ testRunner.And("navigate to \"Person Benefits Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1334
+ testRunner.And("navigate to \"COBRA Beneficiaries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1335
+ testRunner.And("navigate to \"Participation Overrides\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1336
+ testRunner.And("navigate to \"View Enrollment Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1337
+ testRunner.And("navigate to \"Non-flex Program\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1338
+ testRunner.And("navigate to \"Savings Plan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1339
+ testRunner.And("navigate to \"Miscellaneous Plan\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1340
+ testRunner.And("navigate to \"Enrollment Override\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1341
+ testRunner.And("navigate to \"Dependent/Beneficiary Designation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1342
+ testRunner.And("navigate to \"Person Primary Care Provider\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1343
+ testRunner.And("navigate to \"Court Orders\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1344
+ testRunner.And("navigate to \"Person Communications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1345
+ testRunner.And("navigate to \"Person Life Events\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1346
+ testRunner.And("navigate to \"Record Continuing Benefits Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1347
+ testRunner.And("navigate to \"Monthly Participant Premium\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1348
+ testRunner.And("navigate to \"Monthly Premiums\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1349
+ testRunner.And("navigate to \"Manual Payments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1350
+ testRunner.And("navigate to \"Mass Update of Applicant Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1351
+ testRunner.And("navigate to \"Mass Update of Employee Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: Fast Path Recruitment and Career Management", SourceLine=1352)]
+        public virtual void USHRManagerFastPathRecruitmentAndCareerManagement()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: Fast Path Recruitment and Career Management", ((string[])(null)));
+#line 1353
+this.ScenarioSetup(scenarioInfo);
+#line 1354
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1355
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1356
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1357
+ testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1358
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1359
+ testRunner.And("navigate to \"Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1360
+ testRunner.And("navigate to \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1361
+ testRunner.And("navigate to \"Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1362
+ testRunner.And("navigate to \"Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1363
+ testRunner.And("navigate to \"Assignment Budget\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1364
+ testRunner.And("navigate to \"Assignment Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1365
+ testRunner.And("navigate to \"Basic Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1366
+ testRunner.And("navigate to \"Competence Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1367
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1368
+ testRunner.And("navigate to \"Contracts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1369
+ testRunner.And("navigate to \"End Application\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1370
+ testRunner.And("navigate to \"End Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1371
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1372
+ testRunner.And("navigate to \"End Placement\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1373
+ testRunner.And("navigate to \"Grade Step\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1374
+ testRunner.And("navigate to \"Pay Method\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1375
+ testRunner.And("navigate to \"Person Extra Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1376
+ testRunner.And("navigate to \"Person Type Usage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1377
+ testRunner.And("navigate to \"Communication Delivery Methods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1378
+ testRunner.And("navigate to \"Phones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1379
+ testRunner.And("click \"Picture\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1380
+ testRunner.And("navigate to \"Qualifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1381
+ testRunner.And("navigate to \"Salary History\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1382
+ testRunner.And("navigate to \"Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1383
+ testRunner.And("navigate to \"US/CA Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1384
+ testRunner.And("navigate to \"Medical Assessments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1385
+ testRunner.And("navigate to \"Checklists\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1386
+ testRunner.And("navigate to \"Supplementary Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1387
+ testRunner.And("navigate to \"Previous Employment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1388
+ testRunner.And("navigate to \"School/College Attendance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1389
+ testRunner.And("navigate to \"Assignment Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1390
+ testRunner.And("click \"Documents of Record\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1391
+ testRunner.And("click \"Salary\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1392
+ testRunner.And("navigate to \"Contact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1393
+ testRunner.And("navigate to \"Employee Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1394
+ testRunner.And("navigate to \"Event\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1395
+ testRunner.And("navigate to \"Secondary Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1396
+ testRunner.And("navigate to \"Requisition and Vacancy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1397
+ testRunner.And("navigate to \"Recruitment Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1398
+ testRunner.And("navigate to \"Applicant Quick Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1399
+ testRunner.And("navigate to \"Mass Update of Applicants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1400
+ testRunner.And("navigate to \"Request Recruitment Letter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1401
+ testRunner.And("navigate to \"Rating Scales\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1402
+ testRunner.And("navigate to \"Competencies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1403
+ testRunner.And("navigate to \"Competence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1404
+ testRunner.And("navigate to \"Competence Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1405
+ testRunner.And("navigate to \"Schools & Colleges\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1406
+ testRunner.And("navigate to \"Qualification Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1407
+ testRunner.And("navigate to \"Assessment Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1408
+ testRunner.And("navigate to \"Appraisal Template\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1409
+ testRunner.And("click \"Upload Third Party Skills\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1410
+ testRunner.And("click \"Objectives Library\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1411
+ testRunner.And("click \"Performance Management Plans\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: Work Structures", SourceLine=1412)]
+        public virtual void USHRManagerWorkStructures()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: Work Structures", ((string[])(null)));
+#line 1413
+this.ScenarioSetup(scenarioInfo);
+#line 1414
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1415
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1416
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1417
+ testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1418
+ testRunner.And("navigate to \"Location\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1419
+ testRunner.And("click \"Generic Hierarchy\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1420
+ testRunner.And("navigate to \"Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1421
+ testRunner.And("navigate to \"Recruitment Letter Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1422
+ testRunner.And("navigate to \"Contract Letter Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1423
+ testRunner.And("navigate to \"Elections\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1424
+ testRunner.And("navigate to \"Collective Agreements and Grade Structures\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1425
+ testRunner.And("navigate to \"Collective Agreements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1426
+ testRunner.And("navigate to \"Define Entitlement Item\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1427
+ testRunner.And("navigate to \"Define Collective Agreement\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1428
+ testRunner.And("navigate to \"Define Collective Agreement Grades\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1429
+ testRunner.And("navigate to \"Define Eligibility Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1430
+ testRunner.And("navigate to \"Define Derived Factors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1431
+ testRunner.And("click on Description Organization", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1432
+ testRunner.And("navigate to \"Organization Manager\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1433
+ testRunner.And("navigate to \"Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1434
+ testRunner.And("navigate to \"Diagrammer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1435
+ testRunner.And("navigate to \"Global Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1436
+  testRunner.And("navigate to \"Global Security\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1437
+ testRunner.And("click on Description Job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1438
+ testRunner.And("navigate to \"Career Path Names\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1439
+ testRunner.And("navigate to \"Career Path\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1440
+ testRunner.And("navigate to \"Job Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1441
+ testRunner.And("click on Description Position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1442
+ testRunner.And("navigate to \"Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1443
+ testRunner.And("navigate to \"Mass Move\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1444
+ testRunner.And("navigate to \"Diagrammer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1445
+ testRunner.And("navigate to \"Position Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1446
+ testRunner.And("navigate to \"Position Copy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1447
+ testRunner.And("navigate to \"Mass Position Update\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1448
+ testRunner.And("click on Description Grade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1449
+ testRunner.And("navigate to \"Grade Rate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1450
+ testRunner.And("navigate to \"Pay Scale\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1451
+ testRunner.And("navigate to \"Point Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1452
+ testRunner.And("navigate to \"Grade Steps and Points\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1453
+ testRunner.And("click \"Progression Approval\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1454
+ testRunner.And("navigate to \"Assignment Rate Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1455
+ testRunner.And("navigate to \"Budget Worksheet\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1456
+ testRunner.And("navigate to \"Budget Details\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1457
+ testRunner.And("click \"Budget Reallocation\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1458
+ testRunner.And("navigate to \"Budget Calendar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1459
+ testRunner.And("navigate to \"Budget Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1460
+ testRunner.And("navigate to \"Budget Characteristics\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1461
+ testRunner.And("click \"Budget Migration\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1462
+ testRunner.And("click \"Shifts\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1463
+ testRunner.And("click \"Schedule Patterns\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1464
+ testRunner.And("click \"Schedules\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1465
+ testRunner.And("click \"Category\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1466
+ testRunner.And("click \"Shift Detail Type\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1467
+ testRunner.And("click \"Global Exception\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1468
+ testRunner.And("click \"Manage Eligibility Profiles\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1469
+ testRunner.And("click \"Enter and Maintain Events\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1470
+ testRunner.And("click \"Review Calendar Event Coverage\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1471
+ testRunner.And("click \"Review Applicable Events\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1472
+ testRunner.And("navigate to \"Eligibility Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1473
+ testRunner.And("click \"Setup/Maintain Checklists\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: Payroll and total compensation", SourceLine=1474)]
+        public virtual void USHRManagerPayrollAndTotalCompensation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: Payroll and total compensation", ((string[])(null)));
+#line 1475
+this.ScenarioSetup(scenarioInfo);
+#line 1476
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1477
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1478
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1479
+ testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1480
+ testRunner.And("click on Description Payroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1481
+ testRunner.And("navigate to \"Payment Methods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1482
+ testRunner.And("navigate to \"Assignment Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1483
+ testRunner.And("navigate to \"Element Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1484
+ testRunner.And("navigate to \"GL Daily Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1485
+ testRunner.And("navigate to \"Conversion Rate Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1486
+ testRunner.And("navigate to \"Monetary Units\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1487
+ testRunner.And("click \"Total Compensation Setup Wizard\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1488
+ testRunner.And("navigate to \"Element Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1489
+ testRunner.And("navigate to \"Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1490
+ testRunner.And("navigate to \"Salary Basis\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1491
+ testRunner.And("navigate to \"Compensation Survey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1492
+ testRunner.And("navigate to \"Benefit Contributions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1493
+ testRunner.And("navigate to \"Absence Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1494
+ testRunner.And("navigate to \"Accrual Plans\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1495
+ testRunner.And("navigate to \"Write Formula\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1496
+ testRunner.And("navigate to \"Global Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1497
+ testRunner.And("navigate to \"Balance\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1498
+ testRunner.And("navigate to \"Benefits Group\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1499
+ testRunner.And("navigate to \"Benefit Balances\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1500
+ testRunner.And("navigate to \"Derived Factors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1501
+ testRunner.And("navigate to \"Postal/Zip\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1502
+ testRunner.And("navigate to \"Service Areas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1503
+ testRunner.And("navigate to \"Participant\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1504
+ testRunner.And("navigate to \"Dependent Coverage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1505
+ testRunner.And("click \"Maintain Eligibility Criteria\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1506
+ testRunner.And("navigate to \"Program/Plan Years\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1507
+ testRunner.And("navigate to \"Regulations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1508
+ testRunner.And("navigate to \"Reporting Groups\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1509
+ testRunner.And("navigate to \"Goods and Services\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1510
+ testRunner.And("navigate to \"Communication Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1511
+ testRunner.And("navigate to \"Life Event Reasons\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1512
+ testRunner.And("navigate to \"View Program Structure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1513
+ testRunner.And("navigate to \"Plan Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1514
+ testRunner.And("navigate to \"Options\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1515
+ testRunner.And("navigate to \"Plans\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1516
+ testRunner.And("navigate to \"Plan Enrollment Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1517
+ testRunner.And("navigate to \"Plan Primary Care Providers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1518
+ testRunner.And("navigate to \"Programs\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1519
+ testRunner.And("navigate to \"Program Enrollment Requirements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1520
+ testRunner.And("click \"Plan Design Copy\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1521
+ testRunner.And("navigate to \"Plan Third Party Identifier\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1522
+ testRunner.And("navigate to \"Variable Rate Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1523
+ testRunner.And("navigate to \"Standard Rates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1524
+ testRunner.And("navigate to \"Period-to-date Limits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1525
+ testRunner.And("navigate to \"Coverage Calculations\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1526
+ testRunner.And("navigate to \"Coverage Across Plan Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1527
+ testRunner.And("navigate to \"Actual Premiums\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1528
+ testRunner.And("navigate to \"Imputed Income\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1529
+ testRunner.And("click \"Maintain Criteria Rate Definition\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1530
+ testRunner.And("click \"Maintain Rate Matrix\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: View to Security", SourceLine=1531)]
+        public virtual void USHRManagerViewToSecurity()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: View to Security", ((string[])(null)));
+#line 1532
+this.ScenarioSetup(scenarioInfo);
+#line 1533
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1534
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1535
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1536
+ testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1537
+ testRunner.And("navigate to \"Vacancies\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1538
+ testRunner.And("navigate to \"Grade Comparatio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1539
+ testRunner.And("navigate to \"Employee Accruals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1540
+ testRunner.And("navigate to \"Employee Benefits\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1541
+ testRunner.And("navigate to \"Worker Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1542
+ testRunner.And("navigate to \"Absence\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1543
+ testRunner.And("click on Salary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1544
+ testRunner.And("navigate to \"Entries\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1545
+ testRunner.And("navigate to \"People Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1546
+ testRunner.And("navigate to \"Assignment Folder\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1547
+ testRunner.And("navigate to \"People by Assignment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1548
+ testRunner.And("navigate to \"Assignments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1549
+ testRunner.And("navigate to \"Workforce by Organization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1550
+ testRunner.And("navigate to \"Workforce by Position\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1551
+ testRunner.And("navigate to \"Workforce by Position Hierarchy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1552
+ testRunner.And("navigate to \"Employees by Element\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1553
+ testRunner.And("navigate to \"Employees by Absence Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1554
+ testRunner.And("navigate to \"People by Special Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1555
+ testRunner.And("navigate to \"Submit Processes and Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1556
+ testRunner.And("navigate to \"View Requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1557
+ testRunner.And("navigate to \"View Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1558
+ testRunner.And("click \"Workflow Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1559
+ testRunner.And("navigate to \"Batch Process Parameters\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1560
+ testRunner.And("navigate to \"Monitor Batch Processes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1561
+ testRunner.And("navigate to \"Submit Custom Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1562
+ testRunner.And("navigate to \"Process Log\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1563
+ testRunner.And("navigate to \"Define a Quickpaint Report\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1564
+ testRunner.And("navigate to \"Run a Quickpaint Report\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1565
+ testRunner.And("navigate to \"Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1566
+ testRunner.And("navigate to \"Routing Lists\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1567
+ testRunner.And("click \"Configurable Business Rules\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1568
+ testRunner.And("navigate to \"Templates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1569
+ testRunner.And("navigate to \"Transaction Type Wizard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1570
+ testRunner.And("navigate to \"Global Roles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1571
+ testRunner.And("click \"Document Management\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1572
+ testRunner.And("navigate to \"Transaction Categories\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1573
+ testRunner.And("navigate to \"Batch Element Entry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1574
+ testRunner.And("navigate to \"BEE Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1575
+ testRunner.And("navigate to \"Extract Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1576
+ testRunner.And("navigate to \"Layout Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1577
+ testRunner.And("navigate to \"Criteria Definition\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1578
+ testRunner.And("navigate to \"Extract Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1579
+ testRunner.And("navigate to \"Change Event Log\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1580
+ testRunner.And("navigate to \"Person Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1581
+ testRunner.And("navigate to \"Application Utilities Lookups\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1582
+ testRunner.And("navigate to \"Special Information Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1583
+ testRunner.And("navigate to \"Table Structure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1584
+ testRunner.And("navigate to \"Table Values\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1585
+ testRunner.And("navigate to \"Time Periods\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1586
+ testRunner.And("navigate to \"User Profile Options\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1587
+ testRunner.And("navigate to \"Formula Functions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1588
+ testRunner.And("navigate to \"User Types and Statuses\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1589
+ testRunner.And("navigate to \"Dynamic Triggers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1590
+ testRunner.And("navigate to \"Functional Areas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1591
+ testRunner.And("navigate to \"Third Party Payroll Balance Types\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1592
+ testRunner.And("navigate to \"Third Party Payroll Org Run Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1593
+ testRunner.And("navigate to \"Third Party Payroll Emp Run Results\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1594
+ testRunner.And("click \"Person Name Formats\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1595
+ testRunner.And("navigate to \"Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1596
+ testRunner.And("navigate to \"Assign Security Profiles\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1597
+ testRunner.And("navigate to \"CustomForm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1598
+ testRunner.And("navigate to \"Information Types Security\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1599
+ testRunner.And("navigate to \"Report Sets\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1600
+ testRunner.And("navigate to \"Task Flow Nodes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1601
+ testRunner.And("navigate to \"Task Flow Definitions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1602
+ testRunner.And("navigate to \"Forms Configurator\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1603
+ testRunner.And("navigate to \"Contexts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1604
+ testRunner.And("navigate to \"Transaction Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1605
+ testRunner.And("navigate to \"Global Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("HR: Manage Employee Action Forms", SourceLine=1606)]
+        public virtual void HRManageEmployeeActionForms()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("HR: Manage Employee Action Forms", ((string[])(null)));
+#line 1607
+this.ScenarioSetup(scenarioInfo);
+#line 1608
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1609
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1610
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1611
+ testRunner.Then("click the \"HR: Manage Employee Action Forms\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1612
+ testRunner.And("click \"Employee Overview\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1613
+ testRunner.And("click \"Employee Hours Change\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1614
+ testRunner.And("click \"Change Timecard Approver and Supervisor\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1615
+ testRunner.And("click \"Offboard Employee\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1616
+ testRunner.And("click \"Notifications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1617
+ testRunner.And("click \"Discoverer Viewer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Workflow User Web Applications", SourceLine=1618)]
+        public virtual void WorkflowUserWebApplications()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Workflow User Web Applications", ((string[])(null)));
+#line 1619
+this.ScenarioSetup(scenarioInfo);
+#line 1620
+ testRunner.Given("I have Open IE Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 1621
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1622
+ testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1623
+ testRunner.Then("click the \"Workflow User Web Applications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1624
+ testRunner.And("click \"Worklist\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1625
+ testRunner.And("click \"Find Processes\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
