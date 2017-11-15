@@ -11,9 +11,9 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
     /// Object class that holds all patterns for Oracle Forms
     /// </summary>
 
-    class OracleFormsPatternObject
+     public class OracleFormsPatternObject
     {
         public IPattern GetTestPattern => Patterns.FromFile("C:/Users/bernhardtj/Pictures/calculatorBtn8.PNG");
-
+      
     }
 }
