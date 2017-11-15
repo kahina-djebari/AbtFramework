@@ -38,6 +38,7 @@ namespace abtTest.Steps
         
 
             gUser = user;
+            AbtPages.OraclePage.TestSikuli();
             AbtPages.OraclePage.inputUserName(gUser);
             AbtPages.OraclePage.inputPasswordField(gUser);
             AbtPages.OraclePage.clickSubmitButton();
