@@ -2,12 +2,13 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using Sikuli4Net.sikuli_REST;
-using Sikuli4Net.sikuli_UTIL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AbtFramework.Sikuli;
+using AbtFramework.Sikuli.SikuliPatternObjects.OracleForms;
+using SikuliSharp;
 
 namespace AbtFramework
 {
@@ -18,7 +19,7 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton; //
 
-        [FindsBy(How=How.Id,Using ="PageLayoutRN")] 
+        [FindsBy(How = How.Id, Using = "PageLayoutRN")]
         private IWebElement headerInfo; //
 
         [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
@@ -31,14 +32,14 @@ namespace AbtFramework
         private IWebElement password;
 
         [FindsBy(How = How.XPath, Using = "//button[@title='Login']")]
-        private IWebElement loginButton;     
+        private IWebElement loginButton;
 
         [FindsBy(How = How.XPath, Using = "//h2[text()='Navigator']/ancestor::tr[2]/following-sibling::tr[2]/descendant::div[1]/child::div[2]/descendant::tr[1]/child::td[1]")]
         private IWebElement homeMenuTable;
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Subject']/parent::th/parent::tr/following-sibling::tr[1]/child::td[1]/child::a")]
         private IWebElement timeCardToBeApproved;
-    
+
         [FindsBy(How = How.XPath, Using = "//a[@title='Orders']/ancestor::table[2]/following-sibling::div/child::div[3]/child::div[1]/child::div[2]/descendant::button[@title='Approve']")]
         private IWebElement buttonApproveTimeCard;
 
@@ -81,7 +82,7 @@ namespace AbtFramework
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[10]/descendant::input")]
         private IWebElement timeInput7;
-        
+
         [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Time Entry')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Review, then Save']")]
         private IWebElement reviewThenSavebutton;
 
@@ -93,12 +94,12 @@ namespace AbtFramework
 
         [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Review:')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Submit']")]
         private IWebElement timecardSubmit;
-          
+
         //         Browse Abt US Employee Direct Access  
 
         [FindsBy(How = How.XPath, Using = "//h2[text()='Navigator']/ancestor::tr[2]/following-sibling::tr[2]/descendant::div[1]/child::div[2]/descendant::tr[1]/child::td[2]")]
         private IWebElement userBrowsingOptions;
-        
+
         [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Review')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Save'][text()='Complete Save Process']")]
         private IWebElement completeSaveTimeCardProcess;
 
@@ -128,7 +129,7 @@ namespace AbtFramework
 
         [FindsBy(How = How.XPath, Using = "//button[@title='Proceeds to the Shopping Cart page.'][contains(text(),'View Cart and Checkout')]")]
         private IWebElement viewCartAndCheckout;
-      
+
         [FindsBy(How = How.XPath, Using = "//a[text()='Return to Shopping']/parent::td/following-sibling::td[1]/descendant::button[text()='Checkout']")]
         private IWebElement checkout_uixr;
 
@@ -223,7 +224,7 @@ namespace AbtFramework
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-          
+
             SeleniumDriver.Instance.Navigate().GoToUrl("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
         }
 
@@ -260,7 +261,7 @@ namespace AbtFramework
             switch (gUser)
             {
                 case "Sofiane Oumsalem":
-                  return  u = "oumsalems";
+                    return u = "oumsalems";
                 case "Gail Berg":
                     return u = "BergG";
                 case "Alex Gutierrez":
@@ -284,7 +285,7 @@ namespace AbtFramework
                 case "Lisa Butterfield":
                     return u = "HRTEST01";
             }
-           
+
             return u;
         }
         private IWebElement getLinkFromMainMenuTable(string link)
@@ -292,8 +293,9 @@ namespace AbtFramework
             IWebElement element = null;
             Console.WriteLine(gUser);
             // structure to the text -> table/tbody/tr[index]/td[4]/a
-            if (gUser.Equals("Valerie Hennessey")) {
-                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));               
+            if (gUser.Equals("Valerie Hennessey"))
+            {
+                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
                 try
                 {
                     foreach (var row in rows)
@@ -309,26 +311,27 @@ namespace AbtFramework
                 {
                     //couldnot find 
                 }
-           }
-            else {
-                    ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
+            }
+            else
+            {
+                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
 
-                    try
+                try
+                {
+                    foreach (var row in rows)
                     {
-                        foreach (var row in rows)
+                        element = row.FindElement(By.XPath("td[4]/a"));
+                        if (element.GetAttribute("textContent").Equals(link))
                         {
-                            element = row.FindElement(By.XPath("td[4]/a"));
-                            if (element.GetAttribute("textContent").Equals(link))
-                            {
-                                return element;
-                            }
+                            return element;
                         }
                     }
-                    catch (NoSuchElementException)
-                    {
-                        //couldnot find 
-                    }
                 }
+                catch (NoSuchElementException)
+                {
+                    //couldnot find 
+                }
+            }
 
             return element;
         }
@@ -337,32 +340,32 @@ namespace AbtFramework
         {
             IWebElement element = null;
             Console.WriteLine(gUser);
-            
-                ICollection<IWebElement> rows = userBrowsingOptions.FindElements(By.TagName("tr"));
-            
+
+            ICollection<IWebElement> rows = userBrowsingOptions.FindElements(By.TagName("tr"));
+
             try
             {
-                    foreach (var row in rows)
-                    {                   
-                        if (row.GetAttribute("textContent").Equals(link))
-                        {
+                foreach (var row in rows)
+                {
+                    if (row.GetAttribute("textContent").Equals(link))
+                    {
                         element = row.FindElement(By.XPath("td[3]/a"));
-                            return element;
-                        }
+                        return element;
                     }
                 }
-                catch (NoSuchElementException)
-                {
-                    Console.WriteLine("could not find: " + link);
-                }
-            
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("could not find: " + link);
+            }
+
 
             return element;
         }
         public void ClickMainMenuTableOption(string option)
         {
             Thread.Sleep(1000);
-            SelectFolderNavigator(option).Click();                  
+            SelectFolderNavigator(option).Click();
         }
 
         public void ClickRightSideMenuTableOptions(string option)
@@ -380,19 +383,19 @@ namespace AbtFramework
             IWebElement test = getLinkFromUserOptions(option);
             test.Click();
             Thread.Sleep(1000);
-            SeleniumDriver.Instance.Navigate().Back();    
+            SeleniumDriver.Instance.Navigate().Back();
         }
 
         public void ClickUserOptions1(string option)
         {
             Thread.Sleep(1000);
             IWebElement test = getLinkFromUserOptions(option);
-            test.Click();        
+            test.Click();
         }
 
         public void ClickHomeButton()
         {
-           homeButton.Click();
+            homeButton.Click();
         }
         private string GetCurrentUser()
         {
@@ -400,7 +403,7 @@ namespace AbtFramework
         }
         private IWebElement getHeader()
         {
-           return  headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals("Oracle Applications Home Page"));
+            return headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals("Oracle Applications Home Page"));
         }
         private IWebElement getHomeScreenRow(string option)
         {
@@ -417,11 +420,11 @@ namespace AbtFramework
             //screen.Click(p);
 
             username.SendKeys(LoginUser(user));
-       }
+        }
         public void inputPasswordField(string user)
-        {              
-                password.Clear();          
-                password.SendKeys("test123456");    
+        {
+            password.Clear();
+            password.SendKeys("test123456");
         }
         public void clickSubmitButton()
         {
@@ -475,7 +478,7 @@ namespace AbtFramework
             Thread.Sleep(500);
             buttonApproveTimeCard.Click();
         }
-         public void fillNonCatalogRequestForm()
+        public void fillNonCatalogRequestForm()
         {
             Thread.Sleep(2000);
             itemDescription.SendKeys("Test Description");
@@ -522,7 +525,7 @@ namespace AbtFramework
         public void addBeforeApproverAndSubmit(string approver)
         {
             newApproverText.SendKeys(approver);
-            
+
             SelectElement selector = new SelectElement(approverLocation);
             selector.SelectByText("Before Requisition Approver Controller");
 
@@ -562,7 +565,7 @@ namespace AbtFramework
         public void selectRequisitionToBeAdded()
         {
             Thread.Sleep(2000);
-            requisitionToBeAdded.Click();  
+            requisitionToBeAdded.Click();
         }
 
         public void addRequisition()
@@ -582,7 +585,7 @@ namespace AbtFramework
 
         public void clickEntries()
         {
-            entries.Click();        
+            entries.Click();
         }
 
         public void clickSalary()
@@ -628,6 +631,13 @@ namespace AbtFramework
         public void clickDescriptionPosition()
         {
             descriptionPosition.Click();
+        }
+
+
+        public void TestSikuli()
+        {
+            OracleFormsPatternObject patterns = new OracleFormsPatternObject();
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetTestPattern);
         }
 
     }

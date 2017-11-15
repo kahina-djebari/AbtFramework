@@ -61,9 +61,8 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sikuli4Net, Version=1.0.5319.36348, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sikuli4Net.1.0.6\lib\Sikuli4Net.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SikuliSharp, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SikuliSharp.1.2.0\lib\net45\SikuliSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -144,6 +143,8 @@
     <Compile Include="ServiceNowIRRTable.cs" />
     <Compile Include="ServiceNowTaskBar.cs" />
     <Compile Include="SharePointTopNavigation.cs" />
+    <Compile Include="Sikuli\SikuliHelper.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\OracleFormsPatternObject.cs" />
     <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
     <Compile Include="DistListReqFormPage.cs" />
@@ -253,6 +254,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sikuli\SikuliPatternImges\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
