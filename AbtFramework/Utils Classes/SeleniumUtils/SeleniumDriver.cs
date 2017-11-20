@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Drawing;
+using System.Drawing.Imaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,7 +16,7 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.Events;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
-using Sikuli4Net.sikuli_REST;
+
 
 namespace AbtFramework.Utils_Classes.SeleniumUtils
 {
@@ -26,7 +27,6 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
     public class SeleniumDriver
     {
         
-
         //constants for browser
         private static readonly string IE = "IE";
         private static readonly string CHROME = "Chrome";

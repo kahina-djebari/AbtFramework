@@ -19,21 +19,21 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton;
 
-        [FindsBy(How=How.Id,Using ="PageLayoutRN")]
+        [FindsBy(How = How.Id, Using = "PageLayoutRN")]
         private IWebElement headerInfo;
 
         [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
         private IWebElement OracleWelcome;
-      
+
         [FindsBy(How = How.XPath, Using = "//input[contains(@title,'User Name')]")]
         private IWebElement username;
-       
+
         [FindsBy(How = How.XPath, Using = "//input[contains(@title,'Password')]")]
         private IWebElement password;
 
         [FindsBy(How = How.XPath, Using = "//button[contains(@title,'Login')]")]
         private IWebElement loginButton;
-      
+
         [FindsBy(How = How.XPath, Using = "//*[@id='region1']/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[1]/table/tbody")]
         private IWebElement homeMenuTableValerie;
 
@@ -137,7 +137,7 @@ namespace AbtFramework
         private IWebElement ApprovalNextButton;
         [FindsBy(How = How.XPath, Using = "//button[text() = 'Continue Shopping']")]
         private IWebElement continueShoppingButton;
-        
+
 
         public IWebElement SelectFolderNavigator(string option)
         {
@@ -198,7 +198,7 @@ namespace AbtFramework
             switch (gUser)
             {
                 case "Sofiane Oumsalem":
-                  return  u = "oumsalems";
+                    return u = "oumsalems";
                 case "Gail Berg":
                     return u = "BergG";
                 case "Alex Gutierrez":
@@ -220,7 +220,7 @@ namespace AbtFramework
                 case "Daniel Gunther":
                     return u = "GuntherD";
             }
-           
+
             return u;
         }
         private IWebElement getLinkFromMainMenuTable(string link)
@@ -228,9 +228,10 @@ namespace AbtFramework
             IWebElement element = null;
             Console.WriteLine(gUser);
             // structure to the text -> table/tbody/tr[index]/td[4]/a
-            if (gUser.Equals("Valerie Hennessey")) {
+            if (gUser.Equals("Valerie Hennessey"))
+            {
                 ICollection<IWebElement> rows = homeMenuTableValerie.FindElements(By.TagName("tr"));
-               
+
                 try
                 {
                     foreach (var row in rows)
@@ -246,26 +247,27 @@ namespace AbtFramework
                 {
                     //couldnot find 
                 }
-           }
-            else {
-                    ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
+            }
+            else
+            {
+                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
 
-                    try
+                try
+                {
+                    foreach (var row in rows)
                     {
-                        foreach (var row in rows)
+                        element = row.FindElement(By.XPath("td[4]/a"));
+                        if (element.GetAttribute("textContent").Equals(link))
                         {
-                            element = row.FindElement(By.XPath("td[4]/a"));
-                            if (element.GetAttribute("textContent").Equals(link))
-                            {
-                                return element;
-                            }
+                            return element;
                         }
                     }
-                    catch (NoSuchElementException)
-                    {
-                        //couldnot find 
-                    }
                 }
+                catch (NoSuchElementException)
+                {
+                    //couldnot find 
+                }
+            }
 
             return element;
         }
@@ -274,8 +276,8 @@ namespace AbtFramework
             IWebElement element = null;
             Console.WriteLine(gUser);
 
-            
-                ICollection<IWebElement> rows = userBrowsingOptions.FindElements(By.TagName("tr"));
+
+            ICollection<IWebElement> rows = userBrowsingOptions.FindElements(By.TagName("tr"));
             //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]
             //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[4]/td[3]
             //*[@id="N43"]
@@ -283,22 +285,22 @@ namespace AbtFramework
             //*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[2]/table/tbody/tr/td[2]/table/tbody
             try
             {
-                    foreach (var row in rows)
-                    {
+                foreach (var row in rows)
+                {
                     ////*[@id="region1"]/tbody/tr[4]/td/table/tbody/tr/td/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[12]/td[3]
                     //element = row.FindElement(By.XPath("a"));
-                        if (row.GetAttribute("textContent").Equals(link))
-                        {
+                    if (row.GetAttribute("textContent").Equals(link))
+                    {
                         element = row.FindElement(By.XPath("td[3]/a"));
-                            return element;
-                        }
+                        return element;
                     }
                 }
-                catch (NoSuchElementException)
-                {
-                    Console.WriteLine("could not find: " + link);
-                }
-            
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("could not find: " + link);
+            }
+
 
             return element;
         }
@@ -307,7 +309,7 @@ namespace AbtFramework
             Thread.Sleep(1000);
             //IWebElement test = getLinkFromMainMenuTable(option);
             SelectFolderNavigator(option).Click();
-           // test.Click();        
+            // test.Click();        
         }
         public void ClickUserOptions(string option)
         {
@@ -319,7 +321,7 @@ namespace AbtFramework
         }
         public void ClickHomeButton()
         {
-           homeButton.Click();
+            homeButton.Click();
         }
         private string GetCurrentUser()
         {
@@ -327,7 +329,7 @@ namespace AbtFramework
         }
         private IWebElement getHeader()
         {
-           return  headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals("Oracle Applications Home Page"));
+            return headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals("Oracle Applications Home Page"));
         }
         private IWebElement getHomeScreenRow(string option)
         {
@@ -335,24 +337,32 @@ namespace AbtFramework
         }
         public void inputUserName(String user)
         {
+            //APILauncher laun = new APILauncher(true);
+            //Screen screen = new Screen();
+            //Pattern patt = new Pattern("C:/Users/bernhardtj/Pictures/calculatorBtn.PNG");
+
+            //screen.Wait(patt);
+            //screen.Click(patt);
+
+
             username.SendKeys(LoginUser(user));
         }
         public void inputPasswordField(string user)
         {    // not all accounts can have the same password this 
-            //if (user != "Valerie Hennessey")
-           // {
-                password.Clear();
-                //passwordField.Clear()
-                password.SendKeys("test123456");    
-                //passwordField.SendKeys("test123456");
-           // } else
-           // {
-                //password.Clear();
-               // //passwordField.Clear();
-               // password.SendKeys("jack123456");   
-               // //passwordField.SendKeys("jack123456");
-           // }
-       
+             //if (user != "Valerie Hennessey")
+             // {
+            password.Clear();
+            //passwordField.Clear()
+            password.SendKeys("test123456");
+            //passwordField.SendKeys("test123456");
+            // } else
+            // {
+            //password.Clear();
+            // //passwordField.Clear();
+            // password.SendKeys("jack123456");   
+            // //passwordField.SendKeys("jack123456");
+            // }
+
         }
         public void clickSubmitButton()
         {
@@ -407,7 +417,7 @@ namespace AbtFramework
             Thread.Sleep(500);
             buttonApproveTimeCard.Click();
         }
-         public void fillNonCatalogRequestForm()
+        public void fillNonCatalogRequestForm()
         {
             Thread.Sleep(2000);
             itemDescription.SendKeys("Test Description");
@@ -454,7 +464,7 @@ namespace AbtFramework
         public void addBeforeApproverAndSubmit(string approver)
         {
             newApproverText.SendKeys(approver);
-            
+
             SelectElement selector = new SelectElement(approverLocation);
             selector.SelectByText("Before Requisition Approver Controller");
 

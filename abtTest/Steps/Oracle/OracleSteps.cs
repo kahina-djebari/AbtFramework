@@ -1,6 +1,7 @@
 ﻿using System;
 using AbtFramework;
 using AbtFramework.Utils_Classes.SeleniumUtils;
+
 using TechTalk.SpecFlow;
 
 namespace abtTest.Steps.Oracle
@@ -26,7 +27,7 @@ namespace abtTest.Steps.Oracle
         {
             SeleniumDriver.InitBrowser("Chrome");
         }
-        [Given(@"I have navigated to OracleSteps Dev")]
+        [Given(@"I have navigated to Oracle Dev")]
         public void GivenIHaveNavigatedToOracleDev()
         {
             AbtPages.OraclePage.GoToOracleDev();
@@ -34,6 +35,7 @@ namespace abtTest.Steps.Oracle
         [Given(@"i login as ""(.*)""")]
         public void GivenILoginAs(string user)
         {
+            
             gUser = user;
             AbtPages.OraclePage.inputUserName(gUser);
             AbtPages.OraclePage.inputPasswordField(gUser);
