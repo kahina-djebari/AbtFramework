@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,10 @@ namespace AbtFramework
     public class OraclePage : PageModel
     {
         static String gUser = "user";
+
+        private int counter = 11;
+
+        private int counter1 = 21;
 
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton; //
@@ -214,6 +219,36 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//span[text()='Work Structures : Position']/parent::td/parent::tr/following-sibling::tr[1]/child::td[3]/a[text()='Description']")]
         private IWebElement descriptionPosition;
 
+        // 	Voluntary Disclosure of Veterans Status
+        [FindsBy(How = How.XPath, Using = "//button[@title='Add']")]
+        private IWebElement addBtn;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Choose Your Veteran Status')]/parent::td/following-sibling::td[2]/child::span/child::a")]
+        private IWebElement searchVeteranStatusBtn;
+
+        [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Go')]")]
+        private IWebElement goBtn;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='0']")]
+        private IWebElement selectBtn1;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='1']")]
+        private IWebElement selectBtn2;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='2']")]
+        private IWebElement selectBtn3;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[1]/child::td[2]/child::a/img")]
+        private IWebElement quickSelectBtn1;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[2]/child::td[2]/child::a/img")]
+        private IWebElement quickSelectBtn2;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[3]/child::td[2]/child::a/img")]
+        private IWebElement quickSelectBtn3;
+
+
+
         public IWebElement SelectFolderNavigator(string option)
         {
             string xpath = "//a[text() = '" + option + "']";
@@ -411,13 +446,7 @@ namespace AbtFramework
         }
         public void inputUserName(String user)
         {
-            //APILauncher laun = new APILauncher(true);
-            //laun.Start();
-            //Screen screen = new Screen();
-            //Pattern p = new Pattern("C:/Users/DjebariK/Pictures/approveBtn.PNG");
 
-            //screen.Wait(p);
-            //screen.Click(p);
 
             username.SendKeys(LoginUser(user));
         }
@@ -634,10 +663,93 @@ namespace AbtFramework
         }
 
 
-        public void TestSikuli()
-        {
-            OracleFormsPatternObject patterns = new OracleFormsPatternObject();
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetTestPattern);
+        public void FillOracleFroms()
+        {     
+
+        OracleFormsPatternObject patterns = new OracleFormsPatternObject();
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetRunOracleBtn);
+        
+            if(SikuliHelper.GetInstance().IsPatternExisting(patterns.GetRunOracleBtn))
+                SikuliHelper.GetInstance().ClickPattern(patterns.GetRunOracleBtn);
+
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetDescriptionInput1, "test");
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetNum);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetType);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectGoods);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetCategory);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn2);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectFunding);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn3);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectIncrease);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn2);
+
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetDescriptionInput2, "test");
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetUOM);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn4);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectEach);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+       
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetQuantity, "100");
+          
+            while (counter > 0)
+            {
+                SikuliHelper.GetInstance().ClickPattern(patterns.GetRightArrow);
+                counter--;              
+            }
+
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetPrice, "50");
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetNeedBy);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectDate);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn2);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOrganization);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectOrganization);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+
+
+            while (counter1 > 0)
+            {
+                SikuliHelper.GetInstance().ClickPattern(patterns.GetRightArrow);
+                counter1--;
+            }
+
+         
+
         }
 
     }

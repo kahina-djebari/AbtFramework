@@ -45,6 +45,7 @@ namespace AbtFramework.Sikuli
         /// <param name="pattern"></param>
         public void ClickPattern(IPattern pattern)
         {
+            this.WaitForPattern(pattern);
             session.Click(pattern);
         }
 
@@ -56,12 +57,38 @@ namespace AbtFramework.Sikuli
         public void SetInputValue(IPattern pattern, string text)
 
         {
-            session.Click(pattern);
+            this.ClickPattern(pattern);
             session.Type(text);
+
 
         }
 
+        /// <summary>
+        /// Return true if pattern exists in current view.
+        /// </summary>
+        /// <param name="pattern"></param>
+        public bool IsPatternExisting(IPattern pattern)
+        {
+            this.WaitForPattern(pattern);
+            return session.Exists(pattern);
 
+        }
+
+        /// <summary>
+        /// Waits for pattern to be visible up to 15 secs, if not, nothing will happen
+        /// </summary>
+        /// <param name="pattern"></param>
+        public void WaitForPattern(IPattern pattern)
+        {
+            try
+            {
+                session.Wait(pattern, 15);
+            }
+            catch (SikuliFindFailedException)
+            {
+                //nothing, just continue
+            }
+        }
 
     }
 }
