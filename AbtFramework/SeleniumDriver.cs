@@ -220,10 +220,15 @@ namespace AbtFramework
                     Instance.Manage().Window.Maximize();
                     break;
                 case Browser.Chrome:
-                    Instance = new ChromeDriver(@"C:\Selenium\ChromeDriver");
 
+                    ChromeOptions o = new ChromeOptions();
+                    o.AddArguments("disable-extensions");
+                    o.AddArguments("--start-maximized");
+                
+                    Instance = new ChromeDriver(@"C:\Selenium\ChromeDriver", o);
                     Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(0));
-                    Instance.Manage().Window.Maximize();
+                   
+
                     break;
                 case Browser.IE246:
                     Instance = new InternetExplorerDriver(@"C:\Selenium\IEDriver\2.46\32bits");

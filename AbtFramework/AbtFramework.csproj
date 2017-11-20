@@ -63,6 +63,7 @@
     </Reference>
     <Reference Include="SikuliSharp, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SikuliSharp.1.2.0\lib\net45\SikuliSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

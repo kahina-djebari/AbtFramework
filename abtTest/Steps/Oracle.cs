@@ -32,13 +32,11 @@ namespace abtTest.Steps
         {
             AbtPages.OraclePage.GoToOracleDev();
         }
+
         [Given(@"i login as ""(.*)""")]
         public void GivenILoginAs(string user)
         {
-        
-
-            gUser = user;
-            AbtPages.OraclePage.TestSikuli();
+            gUser = user;          
             AbtPages.OraclePage.inputUserName(gUser);
             AbtPages.OraclePage.inputPasswordField(gUser);
             AbtPages.OraclePage.clickSubmitButton();
@@ -134,7 +132,7 @@ namespace abtTest.Steps
         [Then(@"browse to Requisitions under Requisitions")]
         public void ThenBrowseToRequisitionsUnderRequisitions()
         {
-            AbtPages.OraclePage.openRequisitionsRequisitions();
+            AbtPages.OraclePage.openRequisitionsRequisitions();       
         }
 
 
@@ -237,7 +235,11 @@ namespace abtTest.Steps
 
 
 
-
+        [Then(@"I fill the Oracle Forms")]
+        public void ThenIFillTheOracleForms()
+        {
+            AbtPages.OraclePage.FillOracleFroms();
+        }
 
 
     }
