@@ -19,8 +19,6 @@ namespace AbtFramework
 
         private int counter = 11;
 
-        private int counter1 = 21;
-
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton; //
 
@@ -230,22 +228,34 @@ namespace AbtFramework
         private IWebElement goBtn;
 
         [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='0']")]
-        private IWebElement selectBtn1;
+        private IWebElement selectStatus1;
 
         [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='1']")]
-        private IWebElement selectBtn2;
+        private IWebElement selectStatus2;
 
         [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='2']")]
-        private IWebElement selectBtn3;
+        private IWebElement selectStatus3;
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[1]/child::td[2]/child::a/img")]
-        private IWebElement quickSelectBtn1;
+        private IWebElement quickSelect1;
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[2]/child::td[2]/child::a/img")]
-        private IWebElement quickSelectBtn2;
+        private IWebElement quickSelect2;
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[3]/child::td[2]/child::a/img")]
-        private IWebElement quickSelectBtn3;
+        private IWebElement quickSelect3;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Search and Select: Choose Your Veteran Status']/ancestor::div[1]/following-sibling::div[1]//button[text()='Select']")]
+        private IWebElement selectBtn;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Enter Your Name')]/parent::td/following-sibling::td[2]/input")]
+        private IWebElement enterYourName;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Enter Your Name')]/parent::td/parent::tr/following-sibling::tr/child::td[3]/child::input")]
+        private IWebElement date;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Voluntary Disclosure of Veterans Status']/ancestor::div[1]/following-sibling::div[1]//button[@title='Apply']")]
+        private IWebElement applyBtn;
 
 
 
@@ -728,7 +738,7 @@ namespace AbtFramework
 
             SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectDate);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn2);
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn3);
 
             SikuliHelper.GetInstance().ClickPattern(patterns.GetOrganization);
 
@@ -738,17 +748,61 @@ namespace AbtFramework
 
             SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
 
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetLocation);
+
             SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
 
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetFindLocation, "bethesda");
 
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
 
-            while (counter1 > 0)
-            {
-                SikuliHelper.GetInstance().ClickPattern(patterns.GetRightArrow);
-                counter1--;
-            }
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
 
-         
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetDistributions);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetProjectBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetFindLocation, "21553");
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetFindLocation, "1100");
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetFind2, "misc");
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetProjectType);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetDate);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectDate);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn3);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetSaveIcon);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetCloseWindow);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetApproveBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn4);
 
         }
 
