@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using AbtFramework;
 using AbtFramework.SSO_Classes;
-using AbtFramework;
-using Xunit;
 using TechTalk.SpecFlow;
+using Xunit;
 
-namespace abtTest.Steps
+namespace abtTest.Steps.Windows
 {
     [Binding]
     public sealed class WinPrograms

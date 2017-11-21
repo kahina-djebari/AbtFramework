@@ -1,10 +1,10 @@
-﻿using AbtFramework;
+﻿using System;
+using AbtFramework;
 using AbtFramework.Utils_Classes;
-using System;
 using TechTalk.SpecFlow;
 using Xunit;
 
-namespace abtTest.Steps
+namespace abtTest.Steps.SSO
 {
     [Binding]
     public class SSOSteps
