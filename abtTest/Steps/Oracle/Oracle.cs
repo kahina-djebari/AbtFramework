@@ -1,10 +1,9 @@
-﻿using AbtFramework;
+﻿using System;
+using AbtFramework;
 using AbtFramework.Utils_Classes;
-using System;
 using TechTalk.SpecFlow;
-using Xunit;
 
-namespace abtTest.Steps
+namespace abtTest.Steps.Oracle
 {
     [Binding]
     public sealed class Oracle
@@ -27,6 +26,13 @@ namespace abtTest.Steps
         {
             SeleniumDriver.init(Browser.Chrome);
         }
+
+        [Given(@"I have Open IE Chrome")]
+        public void GivenIHaveOpenChromeTest()
+        {
+            SeleniumDriver.init(Browser.Chrome);
+        }
+
         [Given(@"I have navigated to Oracle Dev")]
         public void GivenIHaveNavigatedToOracleDev()
         {

@@ -1,10 +1,9 @@
 ﻿using System;
 using AbtFramework;
-using AbtFramework.Utils_Classes;
 using TechTalk.SpecFlow;
 using Xunit;
 
-namespace abtTest.Steps
+namespace abtTest.Steps.ServiceNow
 { 
     [Binding]
     public class ITSCSteps

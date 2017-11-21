@@ -1,12 +1,12 @@
-﻿using AbtFramework;
-using AbtFramework.Enums;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Threading;
+using AbtFramework;
+using AbtFramework.Enums;
 using TechTalk.SpecFlow;
 using Xunit;
 
-namespace abtTest.Steps
+namespace abtTest.Steps.AGI
 {
     [Binding]
     public class AGISteps
