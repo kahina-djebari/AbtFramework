@@ -1919,7 +1919,7 @@ Scenario: Abt US HRMS Manager: People
 	And navigate to "Entering Contingent Workers"
 	And navigate to "Maintaining Contingent Workers"	
 	And navigate to "Person Benefits Balances"
-	And navigate to "Person Benefits Assignment"
+	And navigate to "Person Benefits Assignments"
 	And navigate to "COBRA Beneficiaries"	 
 	And navigate to "Participation Overrides"	   
 	And navigate to "View Enrollment Results"
@@ -2028,7 +2028,7 @@ Scenario: Abt US HRMS Manager: Work Structures
 	And navigate to "Hierarchy"
 	And navigate to "Diagrammer"
 	And navigate to "Global Hierarchy"
-	 And navigate to "Global Security"
+	And click "Hr Org Operating Unit Upload" option
 	And click on Description Job 
 	And navigate to "Career Path Names" 
 	And navigate to "Career Path"
@@ -2094,7 +2094,7 @@ Scenario: Abt US HRMS Manager: Payroll and Total Compensation
 	And navigate to "Benefit Contributions"
 	And navigate to "Absence Types"
 	And navigate to "Accrual Plans"
-	And navigate to "Write Formulas"
+	And navigate to "Write Formula"
 	And navigate to "Global Values"
 	And navigate to "Balance"
 	And navigate to "Benefits Group"

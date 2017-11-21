@@ -60,10 +60,34 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetSelectDate => Patterns.FromFile(PATH + "SelectDate.PNG");
 
+        public IPattern GetOkBtn3 => Patterns.FromFile(PATH + "OkBtn3.PNG");
+
         public IPattern GetOrganization => Patterns.FromFile(PATH + "Organization.PNG");
 
         public IPattern GetSelectOrganization => Patterns.FromFile(PATH + "SelectOrganization.PNG");
 
-        public IPattern GetDistributions => Patterns.FromFile(PATH + "Distributions .PNG");
+        public IPattern GetFindLocation => Patterns.FromFile(PATH + "Find.PNG");
+
+        public IPattern GetFindBtn => Patterns.FromFile(PATH + "FindBtn.PNG");
+
+        public IPattern GetLocation => Patterns.FromFile(PATH + "Location.PNG");
+
+        public IPattern GetDistributions => Patterns.FromFile(PATH + "DistributionsBtn.PNG");
+
+        public IPattern GetProjectBtn => Patterns.FromFile(PATH + "ProjectBtn.PNG");
+
+        public IPattern GetFind2 => Patterns.FromFile(PATH + "Find2.PNG");
+
+        public IPattern GetProjectType => Patterns.FromFile(PATH + "ProjectType.PNG");
+
+        public IPattern GetDate => Patterns.FromFile(PATH + "Date.PNG");   
+
+        public IPattern GetSaveIcon => Patterns.FromFile(PATH + "SaveIcon.PNG");
+
+        public IPattern GetCloseWindow => Patterns.FromFile(PATH + "CloseWindow.PNG");
+
+        public IPattern GetApproveBtn => Patterns.FromFile(PATH + "ApproveBtn.PNG");
+
+        public IPattern GetOkBtn4 => Patterns.FromFile(PATH + "OkBtn4.PNG");
     }
 }
