@@ -147,6 +147,8 @@
       <DependentUpon>WinPrograms.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\AGI\AGISteps.cs" />
+    <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Steps\Oracle\OracleCommonSteps.cs" />
     <Compile Include="Steps\ServiceNow\FacilitiesSteps.cs" />
     <Compile Include="Steps\ServiceNow\IRRSteps.cs" />
     <Compile Include="Steps\ServiceNow\ITSCSteps.cs" />
@@ -218,10 +220,7 @@
       <Name>AbtFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Features\Common\" />
-    <Folder Include="Steps\Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

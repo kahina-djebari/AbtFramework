@@ -8,39 +8,8 @@ namespace abtTest.Steps.Oracle
     [Binding]
     public sealed class OracleSteps
     {
-        private static String gUser = "user";
-        // kill all the selenium drivers after a successfull test.
-        [AfterScenario]
-        public void CleanUp()
-        {
-            SeleniumDriver.QuitDriverInstance();
-        }
-        // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
-        //[Given(@"go to the Home screen")]
-        //public void GivenGoToTheHomeScreen()
-        //{
-            //AbtPages.OraclePage.ClickHomeButton();
-        //}
-        [Given(@"I have Open IE Test")]
-        public void GivenIHaveOpenIETest()
-        {
-            SeleniumDriver.InitBrowser("Chrome");
-        }
-        [Given(@"I have navigated to Oracle Dev")]
-        public void GivenIHaveNavigatedToOracleDev()
-        {
-            AbtPages.OraclePage.GoToOracleDev();
-        }
+       
 
-        [Given(@"i login as ""(.*)""")]
-        public void GivenILoginAs(string user)
-        {
-         
-            gUser = user;
-            AbtPages.OraclePage.inputUserName(gUser);
-            AbtPages.OraclePage.inputPasswordField(gUser);
-            AbtPages.OraclePage.clickSubmitButton();
-        }
         [Then(@"click iProcurement request and then Non-Catalog Req")]
         public void ThenClickIProcurementRequestAndThenNon_CatalogReq()
         {
