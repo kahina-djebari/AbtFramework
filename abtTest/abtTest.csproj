@@ -119,10 +119,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AGI.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleDiscovererReportwithOneSheet-HRISActor.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\Oracle.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Oracle.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VoluntaryDisclosureofVeteransStatus.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\ServiceNow\Facilities.feature.cs">
       <AutoGen>True</AutoGen>
@@ -179,9 +194,21 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AGI.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleDiscovererReportwithOneSheet-HRISActor.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Oracle\Oracle.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Oracle.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>VoluntaryDisclosureofVeteransStatus.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ServiceNow\Facilities.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

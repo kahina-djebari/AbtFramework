@@ -257,6 +257,51 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//h1[text()='Voluntary Disclosure of Veterans Status']/ancestor::div[1]/following-sibling::div[1]//button[@title='Apply']")]
         private IWebElement applyBtn;
 
+        // Abt US HR Manager
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[2]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon1;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[3]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon2;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[4]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon3;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[5]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon4;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[6]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon5;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[7]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon6;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[8]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon7;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[9]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon8;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[10]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon9;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[11]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon10;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[12]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon11;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[13]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon12;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[14]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon13;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[15]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon14;
+
+        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[16]/child::td[2]/child::div/child::a/img")]
+        private IWebElement expandIcon15;
 
 
         public IWebElement SelectFolderNavigator(string option)
@@ -670,6 +715,19 @@ namespace AbtFramework
             descriptionPosition.Click();
         }
 
+        public void chooseVeteranStatus()
+        {
+            addBtn.Click();
+            searchVeteranStatusBtn.Click();
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            goBtn.Click();
+            selectStatus3.Click();
+            selectStatus2.Click();
+            selectStatus1.Click();
+            selectBtn.Click();
+            applyBtn.Click();
+        }
+
 
         public void FillOracleFroms()
         {     
@@ -801,6 +859,24 @@ namespace AbtFramework
             SikuliHelper.GetInstance().ClickPattern(patterns.GetApproveBtn);
 
             SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn4);
+
+        }
+
+        public void FillTheGradeRateOracleForms()
+        {
+
+            GradeRatePatternObject  patterns = new GradeRatePatternObject();
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetRunBtn);
+
+            if (SikuliHelper.GetInstance().IsPatternExisting(patterns.GetRunBtn))
+                SikuliHelper.GetInstance().ClickPattern(patterns.GetRunBtn);
+
+            SikuliHelper.GetInstance().ClickPattern(patterns.GetNoBtn);
+
+            // missing steps for ctrl+F11 and F11
+
+            SikuliHelper.GetInstance().SetInputValue(patterns.GetGradeName, "%Can%");
 
         }
 
