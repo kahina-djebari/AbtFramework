@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using AbtFramework.Sikuli;
 using AbtFramework.Sikuli.SikuliPatternObjects.OracleForms;
+using Microsoft.Lync.Model.Conversation.Sharing;
 using SikuliSharp;
 
 namespace AbtFramework
@@ -302,6 +303,11 @@ namespace AbtFramework
 
         [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[16]/child::td[2]/child::div/child::a/img")]
         private IWebElement expandIcon15;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Detail Active Employee')]/preceding-sibling::a//img")]
+        private IWebElement detailActiveEmployeeOptn;
+
+
 
 
         public IWebElement SelectFolderNavigator(string option)
@@ -715,6 +721,7 @@ namespace AbtFramework
             descriptionPosition.Click();
         }
 
+
         public void chooseVeteranStatus()
         {
             addBtn.Click();
@@ -726,6 +733,14 @@ namespace AbtFramework
             selectStatus1.Click();
             selectBtn.Click();
             applyBtn.Click();
+        }
+
+        public void DoDiscovererWorkbookMultipleSheets()
+        {
+            Thread.Sleep(2000);
+            detailActiveEmployeeOptn.Click();
+            ClickMainMenuTableOption("Modified Detail Active Emp Listing");
+
         }
 
 

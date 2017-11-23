@@ -138,6 +138,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VoluntaryDisclosureofVeteransStatus.feature</DependentUpon>
+      </Compile>
+    <Compile Include="Features\Oracle\OracleDiscReportMultipleSheets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleDiscReportMultipleSheets.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\ServiceNow\Facilities.feature.cs">
       <AutoGen>True</AutoGen>
@@ -202,6 +207,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Oracle.feature.cs</LastGenOutput>
     </None>
+
     <None Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs</LastGenOutput>
@@ -209,6 +215,11 @@
     <None Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VoluntaryDisclosureofVeteransStatus.feature.cs</LastGenOutput>
+  </None>
+    <None Include="Features\Oracle\OracleDiscReportMultipleSheets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleDiscReportMultipleSheets.feature.cs</LastGenOutput>
+
     </None>
     <None Include="Features\ServiceNow\Facilities.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
