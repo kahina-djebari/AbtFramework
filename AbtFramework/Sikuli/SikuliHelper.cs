@@ -88,7 +88,8 @@ namespace AbtFramework.Sikuli
             {
                 //nothing, just continue
             }
-        }
+        }     
+
 
     }
 }

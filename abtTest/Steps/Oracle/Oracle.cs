@@ -239,13 +239,24 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.clickDescriptionPosition();
         }
 
-
-
         [Then(@"I fill the Oracle Forms")]
         public void ThenIFillTheOracleForms()
         {
             AbtPages.OraclePage.FillOracleFroms();
         }
+
+        [Then(@"I fill the Grade Rate Oracle Forms")]
+        public void ThenIFillTheGradeRateOracleForms()
+        {
+            AbtPages.OraclePage.FillTheGradeRateOracleForms();
+        }
+
+        [Then(@"I choose veteran status")]
+        public void ThenIChooseVeteranStatus()
+        {
+            AbtPages.OraclePage.chooseVeteranStatus();
+        }
+
 
 
     }

@@ -3,8 +3,7 @@
 		Our ERP
 		I Want To Perform a Functioal Test
 
-@oracle
-
+@Oracle
 Scenario: Abt US Employee Direct Access
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
