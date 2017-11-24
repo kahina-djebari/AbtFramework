@@ -21,6 +21,7 @@ Scenario: Abt US Employee Direct Access
 	Then click the "Abt US Employee Direct Access" option
 	And browse to "Voluntary Disclosure of Veterans Status"
 
+	@Oracle
 Scenario: Abt US Projects Inquiry Access
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -60,6 +61,7 @@ Scenario: Abt US Projects Inquiry Access
 	Then click the "Abt US Projects Inquiry" option
 	And browse to "Purchase Order Summary"
 
+	@Oracle
 Scenario: iProcurement Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -77,6 +79,7 @@ Scenario: iProcurement Request
 	Then Submit after approvers
 	When i hit submit the request is done
 
+	@Oracle
 Scenario:Requisition approval 
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -84,6 +87,7 @@ Scenario:Requisition approval
 	Then click the "Abt US iProcurement Inquiry" option
 	And complete the order
 
+	@Oracle
 Scenario:Timecard vacations Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -93,6 +97,7 @@ Scenario:Timecard vacations Request
 	And fill the TimeCard
 	Then close complete the timeCard request
 	
+	@Oracle
 Scenario:Approve Timecard
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -100,6 +105,7 @@ Scenario:Approve Timecard
 	Then click the "Abt US iProcurement Inquiry" option
 	And complete the order
 
+	@Oracle
 Scenario:Creation and approval of PO
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -110,6 +116,7 @@ Scenario:Creation and approval of PO
 	And click Add
 	Then click Create
 
+	@Oracle
 Scenario: Purchasing Request
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -118,12 +125,14 @@ Scenario: Purchasing Request
 	And browse to Requisitions under Requisitions
 	Then I fill the Oracle Forms
 
+	@Oracle
 Scenario: Abt Employee Roster
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And i login as "Lisa Butterfield"
 	Then click the "Abt Employee Roster" option
-	 
+	
+	@Oracle
 Scenario: Abt HR Desktop Integration
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -136,6 +145,7 @@ Scenario: Abt HR Desktop Integration
 	And click "Setup Options" option
 	And click "Define Style Sheet" option
 	
+	@Oracle
 Scenario: Abt HR Operations Self Service
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -148,7 +158,7 @@ Scenario: Abt HR Operations Self Service
 	And click "Offboard Employee" option
 	And click "Notifications" option	
 	
-
+	@Oracle
 Scenario: Abt HR System Administrator
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -167,6 +177,7 @@ Scenario: Abt HR System Administrator
 	And navigate to "Run"
 	And navigate to "Set"	
 	
+	@Oracle
 Scenario: Abt HR User
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -216,6 +227,7 @@ Scenario: Abt HR User
 	And navigate to "View Requests"
 	And navigate to "View Reports"	
 	
+	@Oracle
 Scenario: Abt HRMS Benefits User
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -270,6 +282,7 @@ Scenario: Abt HRMS Benefits User
 	And navigate to "Batch Element Entry"
 	And navigate to "BEE Summary"
 
+	@Oracle
 Scenario: Abt HRMS Superuser
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -364,6 +377,7 @@ Scenario: Abt HRMS Superuser
 	And navigate to "Define Cities"   
 	And navigate to "User Profile Options"
 
+	@Oracle
 Scenario: Abt HRMS User
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -422,6 +436,7 @@ Scenario: Abt HRMS User
 	And navigate to "Batch Element Entry"
 	And navigate to "BEE Summary"
 	
+	@Oracle
 Scenario: Abt US HR Executive
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -500,6 +515,7 @@ Scenario: Abt US HR Executive
 	And navigate to "View Reports"
 	And click "Workflow Notifications" option
 	
+	@Oracle
 Scenario: Abt US HR Manager
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -578,6 +594,7 @@ Scenario: Abt US HR Manager
 	And navigate to "View Reports"
 	And click "Workflow Notifications" option  
 	
+	@Oracle
 Scenario: US Super HRMS Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -625,6 +642,7 @@ Scenario: US Super HRMS Manager: People
 	And click "Enter and Maintain Student Employee" option
 	And click "Comparison Report" option
 
+	@Oracle
 Scenario: US Super HRMS Manager: Fast Path
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -682,6 +700,7 @@ Scenario: US Super HRMS Manager: Fast Path
 	And navigate to "Secondary Status"   
 	And navigate to "Contact" 
 
+	@Oracle
 Scenario: US Super HRMS Manager: Recruitment and Career Management
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -704,6 +723,7 @@ Scenario: US Super HRMS Manager: Recruitment and Career Management
 	And click "Objectives Library" option   
 	And click "Performance Management Plans" option
 
+	@Oracle
 Scenario: US Super HRMS Manager: Work Structures
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -768,6 +788,7 @@ Scenario: US Super HRMS Manager: Work Structures
 	And navigate to "Eligibility Profiles"
 	And click "Setup/Maintain Checklists" option
 
+	@Oracle
 Scenario: US Super HRMS Manager: Payroll
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -786,6 +807,7 @@ Scenario: US Super HRMS Manager: Payroll
 	And navigate to "Monetary Units"
 	And navigate to "Balance Set"
 
+	@Oracle
 Scenario: US Super HRMS Manager: Total Compensation
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -855,6 +877,7 @@ Scenario: US Super HRMS Manager: Total Compensation
 	And navigate to "Fee Rules" 
 	And navigate to "Limit Rules" 
 
+	@Oracle
 Scenario: US Super HRMS Manager: View
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -906,6 +929,7 @@ Scenario: US Super HRMS Manager: View
 	And click "Document Management" option
 	And navigate to "Transaction Categories"
 
+	@Oracle
 Scenario: US Super HRMS Manager: Mass Information Definitiions and Security
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -952,6 +976,7 @@ Scenario: US Super HRMS Manager: Mass Information Definitiions and Security
 	And navigate to "Task Flow Unit"
 	And navigate to "Assign Security Profiles"	
 
+	@Oracle
 	Scenario: US HRMS Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -993,6 +1018,7 @@ Scenario: US Super HRMS Manager: Mass Information Definitiions and Security
 	And click "Enter and Maintain Student Employee" option
 	And click "Comparison Report" option
 
+	@Oracle
 Scenario: US HRMS Manager: Fast Path
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1072,6 +1098,7 @@ Scenario: US HRMS Manager: Recruitment and Career Management
 	And click "Objectives Library" option   
 	And click "Performance Management Plans" option
 
+	@Oracle
 Scenario: US HRMS Manager: Work Structures
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1136,6 +1163,7 @@ Scenario: US HRMS Manager: Work Structures
 	And navigate to "Eligibility Profiles"
 	And click "Setup/Maintain Checklists" option
 
+	@Oracle
 Scenario: US HRMS Manager: Payroll
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1154,6 +1182,7 @@ Scenario: US HRMS Manager: Payroll
 	And navigate to "Monetary Units"
 	And navigate to "Balance Set"
 
+	@Oracle
 Scenario: US HRMS Manager: Total Compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1216,6 +1245,7 @@ Scenario: US HRMS Manager: Total Compensation
 	And navigate to "Fee Rules" 
 	And navigate to "Limit Rules"
 	
+	@Oracle
 Scenario: US HRMS Manager: View
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1265,6 +1295,7 @@ Scenario: US HRMS Manager: View
 	And click "Document Management" option
 	And navigate to "Transaction Categories"
 
+	@Oracle
 Scenario: US HRMS Manager: Mass Information Definitions and Security
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1310,6 +1341,7 @@ Scenario: US HRMS Manager: Mass Information Definitions and Security
 	And navigate to "Task Flow Units"
 	And navigate to "Global Profile"
 
+	@Oracle
 Scenario: US HR Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1348,6 +1380,7 @@ Scenario: US HR Manager: People
 	And navigate to "Mass Update of Applicant Assignments"   
 	And navigate to "Mass Update of Employee Assignments"
 
+	@Oracle
 Scenario: US HR Manager: Fast Path Recruitment and Career Management
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1408,6 +1441,7 @@ Scenario: US HR Manager: Fast Path Recruitment and Career Management
 	And click "Objectives Library" option   
 	And click "Performance Management Plans" option
 
+	@Oracle
 Scenario: US HR Manager: Work Structures 
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1470,6 +1504,7 @@ Scenario: US HR Manager: Work Structures
 	And navigate to "Eligibility Profiles"
 	And click "Setup/Maintain Checklists" option
 
+	@Oracle
 Scenario: US HR Manager: Payroll and total compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1527,6 +1562,7 @@ Scenario: US HR Manager: Payroll and total compensation
 	And click "Maintain Criteria Rate Definition" option
 	And click "Maintain Rate Matrix" option	
 
+	@Oracle
 Scenario: US HR Manager: View to Security  
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1602,6 +1638,7 @@ Scenario: US HR Manager: View to Security
 	And navigate to "Transaction Status"
 	And navigate to "Global Profile"
 
+	@Oracle
 Scenario: Abt US HR Technical Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1640,6 +1677,7 @@ Scenario: Abt US HR Technical Manager: People
 	And navigate to "Mass Update of Applicant Assignments"   
 	And navigate to "Mass Update of Employee Assignments"
 
+	@Oracle
 Scenario: Abt US HR Technical Manager: Fast Path
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1683,7 +1721,8 @@ Scenario: Abt US HR Technical Manager: Fast Path
 	And navigate to "Employee Review"
 	And navigate to "Event"
 	And navigate to "Secondary Status"
-	
+
+@Oracle	
 Scenario: Abt US HR Technical Manager: Recruitment and Career Management
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1706,6 +1745,7 @@ Scenario: Abt US HR Technical Manager: Recruitment and Career Management
 	And click "Objectives Library" option   
 	And click "Performance Management Plans" option 
 
+	@Oracle
 Scenario: Abt US HR Technical Manager: Work Structures
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1768,6 +1808,7 @@ Scenario: Abt US HR Technical Manager: Work Structures
 	And navigate to "Eligibility Profiles"
 	And click "Setup/Maintain Checklists" option
 
+	@Oracle
 Scenario: Abt US HR Technical Manager: Payroll and Total Compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1825,6 +1866,7 @@ Scenario: Abt US HR Technical Manager: Payroll and Total Compensation
 	And click "Maintain Criteria Rate Definition" option
 	And click "Maintain Rate Matrix" option	
 
+	@Oracle
 Scenario: Abt US HR Technical Manager: View to Security  
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1900,6 +1942,7 @@ Scenario: Abt US HR Technical Manager: View to Security
 	And navigate to "Transaction Status"
 	And navigate to "Global Profile"
 
+	@Oracle
 Scenario: Abt US HRMS Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1938,6 +1981,7 @@ Scenario: Abt US HRMS Manager: People
 	And navigate to "Mass Update of Applicant Assignments"   
 	And navigate to "Mass Update of Employee Assignments"
 
+	@Oracle
 Scenario: Abt US HRMS Manager: Fast Path
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -1982,6 +2026,7 @@ Scenario: Abt US HRMS Manager: Fast Path
 	And navigate to "Event"
 	And navigate to "Secondary Status"
 	
+	@Oracle
 Scenario: Abt US HRMS Manager: Recruitment and Career Management
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -2004,6 +2049,7 @@ Scenario: Abt US HRMS Manager: Recruitment and Career Management
 	And click "Objectives Library" option   
 	And click "Performance Management Plans" option 
 
+	@Oracle
 Scenario: Abt US HRMS Manager: Work Structures
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -2066,6 +2112,7 @@ Scenario: Abt US HRMS Manager: Work Structures
 	And navigate to "Eligibility Profiles"
 	And click "Setup/Maintain Checklists" option
 
+	@Oracle
 Scenario: Abt US HRMS Manager: Payroll and Total Compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -2130,6 +2177,7 @@ Scenario: Abt US HRMS Manager: Payroll and Total Compensation
 	And click "Maintain Criteria Rate Definition" option
 	And click "Maintain Rate Matrix" option	
 
+	@Oracle
 Scenario: Abt US HRMS Manager: View to Security  
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -2217,7 +2265,8 @@ Scenario: Abt US HRMS Manager: View to Security
 	And navigate to "Transaction Status"
 	And navigate to "Task Flow Units"
 	And navigate to "Global Profile"
-		
+	
+	@Oracle
 Scenario: HR: Manage Employee Action Forms
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
@@ -2230,6 +2279,7 @@ Scenario: HR: Manage Employee Action Forms
 	And click "Notifications" option
 	And click "Discoverer Viewer" option 
 
+	@Oracle
 Scenario: Workflow User Web Applications
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev

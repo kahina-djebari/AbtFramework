@@ -6,8 +6,10 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Threading;
 using AbtFramework.Sikuli;
+using AbtFramework.Sikuli.SikuliPatternObjects;
 using AbtFramework.Sikuli.SikuliPatternObjects.OracleForms;
 using Microsoft.Lync.Model.Conversation.Sharing;
 using SikuliSharp;
@@ -17,7 +19,10 @@ namespace AbtFramework
     public class OraclePage : PageModel
     {
         static String gUser = "user";
-
+        private OracleFormsPatternObject patterns;
+        private CommonPaternObjects commonPatterns;
+        private GradeRatePatternObject gradePatterns;
+        private SikuliHelper sikuliHelper;
         private int counter = 11;
 
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
@@ -743,155 +748,178 @@ namespace AbtFramework
 
         }
 
+        /// <summary>
+        /// Accepts Java alerts to run Oracle application
+        /// </summary>
+        private void AcceptJavaAlert()
+        {
+            patterns = new OracleFormsPatternObject();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
 
-        public void FillOracleFroms()
-        {     
-
-        OracleFormsPatternObject patterns = new OracleFormsPatternObject();
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetRunOracleBtn);
-        
-            if(SikuliHelper.GetInstance().IsPatternExisting(patterns.GetRunOracleBtn))
-                SikuliHelper.GetInstance().ClickPattern(patterns.GetRunOracleBtn);
-
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetDescriptionInput1, "test");
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetNum);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetType);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectGoods);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetCategory);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn2);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectFunding);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn3);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectIncrease);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn2);
-
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetDescriptionInput2, "test");
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetUOM);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn4);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectEach);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
-       
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetQuantity, "100");
-          
-            while (counter > 0)
+            //there is another alert, verify if present or not
+            if (commonPatterns.GetAcceptCheckBoxSecurityWarning != null)
             {
-                SikuliHelper.GetInstance().ClickPattern(patterns.GetRightArrow);
-                counter--;              
+                sikuliHelper.ClickPattern(commonPatterns.GetAcceptCheckBoxSecurityWarning);
+                sikuliHelper.ClickPattern(commonPatterns.GetRunOracleSecurityWarning);
             }
 
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetPrice, "50");
+            //sometimes it shows twice
+            if (commonPatterns.GetRunOracleBtn != null)
+                sikuliHelper.ClickPattern(commonPatterns.GetRunOracleBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetNeedBy);
+            if (commonPatterns.GetRunOracleBtn != null)
+                sikuliHelper.ClickPattern(commonPatterns.GetRunOracleBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectDate);
+        }
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn3);
+        public void FillOracleFroms()
+        {
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOrganization);
+            patterns = new OracleFormsPatternObject();
+            commonPatterns = new CommonPaternObjects();
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+            AcceptJavaAlert();
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectOrganization);
+            sikuliHelper.SetInputValue(patterns.GetDescriptionInput1, "test");
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+            sikuliHelper.ClickPattern(patterns.GetNum);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetLocation);
+            sikuliHelper.ClickPattern(patterns.GetType);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
 
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetFindLocation, "bethesda");
+            sikuliHelper.ClickPattern(patterns.GetSelectGoods);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+            sikuliHelper.ClickPattern(patterns.GetCategory);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetDistributions);
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetProjectBtn);
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn2);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(patterns.GetSelectFunding);
 
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetFindLocation, "21553");
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn3);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+            sikuliHelper.ClickPattern(patterns.GetSelectIncrease);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
 
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetFindLocation, "1100");
+            sikuliHelper.ClickPattern(patterns.GetOkBtn2);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
+            sikuliHelper.SetInputValue(patterns.GetDescriptionInput2, "test");
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+            sikuliHelper.ClickPattern(patterns.GetUOM);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn4);
 
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetFind2, "misc");
+            sikuliHelper.ClickPattern(patterns.GetSelectEach);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetFindBtn);
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetProjectType);
+            sikuliHelper.SetInputValue(patterns.GetQuantity, "100");
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn);
+            while (counter > 0)
+            {
+                sikuliHelper.ClickPattern(patterns.GetRightArrow);
+                counter--;
+            }
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetDate);
+            sikuliHelper.SetInputValue(patterns.GetPrice, "50");
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(patterns.GetNeedBy);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSelectDate);
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn3);
+            sikuliHelper.ClickPattern(patterns.GetSelectDate);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetSaveIcon);
+            sikuliHelper.ClickPattern(patterns.GetOkBtn3);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetCloseWindow);
+            sikuliHelper.ClickPattern(patterns.GetOrganization);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetApproveBtn);
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetOkBtn4);
+            sikuliHelper.ClickPattern(patterns.GetSelectOrganization);
+
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetLocation);
+
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
+
+            sikuliHelper.SetInputValue(patterns.GetFindLocation, "bethesda");
+
+            sikuliHelper.ClickPattern(patterns.GetFindBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetDistributions);
+
+            sikuliHelper.ClickPattern(patterns.GetProjectBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
+
+            sikuliHelper.SetInputValue(patterns.GetFindLocation, "21553");
+
+            sikuliHelper.ClickPattern(patterns.GetFindBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
+
+            sikuliHelper.SetInputValue(patterns.GetFindLocation, "1100");
+
+            sikuliHelper.ClickPattern(patterns.GetFindBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
+
+            sikuliHelper.SetInputValue(patterns.GetFind2, "misc");
+
+            sikuliHelper.ClickPattern(patterns.GetFindBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetProjectType);
+
+            sikuliHelper.ClickPattern(patterns.GetOkBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetDate);
+
+            sikuliHelper.ClickPattern(patterns.GetSelectBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetSelectDate);
+
+            sikuliHelper.ClickPattern(patterns.GetOkBtn3);
+
+            sikuliHelper.ClickPattern(patterns.GetSaveIcon);
+
+            sikuliHelper.ClickPattern(patterns.GetCloseWindow);
+
+            sikuliHelper.ClickPattern(patterns.GetApproveBtn);
+
+            sikuliHelper.ClickPattern(patterns.GetOkBtn4);
 
         }
 
         public void FillTheGradeRateOracleForms()
         {
 
-            GradeRatePatternObject  patterns = new GradeRatePatternObject();
+            gradePatterns = new GradeRatePatternObject();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
 
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetRunBtn);
+            AcceptJavaAlert();
 
-            if (SikuliHelper.GetInstance().IsPatternExisting(patterns.GetRunBtn))
-                SikuliHelper.GetInstance().ClickPattern(patterns.GetRunBtn);
-
-            SikuliHelper.GetInstance().ClickPattern(patterns.GetNoBtn);
+            sikuliHelper.ClickPattern(gradePatterns.GetNoBtn);
 
             // missing steps for ctrl+F11 and F11
 
-            SikuliHelper.GetInstance().SetInputValue(patterns.GetGradeName, "%Can%");
+            sikuliHelper.SetInputValue(gradePatterns.GetGradeName, "%Can%");
 
         }
 

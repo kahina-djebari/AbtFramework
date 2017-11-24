@@ -15,79 +15,85 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
     {    
         private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/OracleFromsImges/";
+        private SikuliHelper sikuliHelper;
 
-        public IPattern GetDescriptionInput1 => Patterns.FromFile(PATH +"descriptionInput1.PNG");
+        public OracleFormsPatternObject()
+        {
+            sikuliHelper = SikuliHelper.GetInstance();
 
-        public IPattern GetRunOracleBtn => Patterns.FromFile(PATH + "RunBtn.PNG");
+        }
 
-        public IPattern GetNum => Patterns.FromFile(PATH + "Num.PNG");
+        public IPattern GetDescriptionInput1 => sikuliHelper.GetPattern(PATH +"descriptionInput1.PNG");
 
-        public IPattern GetType => Patterns.FromFile(PATH + "Type.PNG");
+       
+        public IPattern GetNum => sikuliHelper.GetPattern(PATH + "Num.PNG");
 
-        public IPattern GetSelectBtn => Patterns.FromFile(PATH + "SelectBtn.PNG");
+        public IPattern GetType => sikuliHelper.GetPattern(PATH + "Type.PNG");
 
-        public IPattern GetSelectGoods => Patterns.FromFile(PATH + "SelectGoods.PNG");
+        public IPattern GetSelectBtn => sikuliHelper.GetPattern(PATH + "SelectBtn.PNG");
 
-        public IPattern GetOkBtn => Patterns.FromFile(PATH + "OkBtn.PNG");
+        public IPattern GetSelectGoods => sikuliHelper.GetPattern(PATH + "SelectGoods.PNG");
 
-        public IPattern GetCategory => Patterns.FromFile(PATH + "Category.PNG");
+        public IPattern GetOkBtn => sikuliHelper.GetPattern(PATH + "OkBtn.PNG");
 
-        public IPattern GetSelectBtn2 => Patterns.FromFile(PATH + "SelectBtn2.PNG");
+        public IPattern GetCategory => sikuliHelper.GetPattern(PATH + "Category.PNG");
 
-        public IPattern GetSelectFunding => Patterns.FromFile(PATH + "SelectFunding.PNG");
+        public IPattern GetSelectBtn2 => sikuliHelper.GetPattern(PATH + "SelectBtn2.PNG");
 
-        public IPattern GetSelectBtn3 => Patterns.FromFile(PATH + "SelectBtn3.PNG");
+        public IPattern GetSelectFunding => sikuliHelper.GetPattern(PATH + "SelectFunding.PNG");
 
-        public IPattern GetSelectIncrease => Patterns.FromFile(PATH + "SelectIncrease.PNG");
+        public IPattern GetSelectBtn3 => sikuliHelper.GetPattern(PATH + "SelectBtn3.PNG");
 
-        public IPattern GetOkBtn2 => Patterns.FromFile(PATH + "OkBtn2.PNG");
+        public IPattern GetSelectIncrease => sikuliHelper.GetPattern(PATH + "SelectIncrease.PNG");
 
-        public IPattern GetDescriptionInput2 => Patterns.FromFile(PATH + "DescriptionInput2.PNG");
+        public IPattern GetOkBtn2 => sikuliHelper.GetPattern(PATH + "OkBtn2.PNG");
 
-        public IPattern GetUOM => Patterns.FromFile(PATH + "UOM.PNG");
+        public IPattern GetDescriptionInput2 => sikuliHelper.GetPattern(PATH + "DescriptionInput2.PNG");
 
-        public IPattern GetSelectBtn4 => Patterns.FromFile(PATH + "SelectBtn4.PNG");
+        public IPattern GetUOM => sikuliHelper.GetPattern(PATH + "UOM.PNG");
 
-        public IPattern GetSelectEach => Patterns.FromFile(PATH + "SelectEach.PNG");
+        public IPattern GetSelectBtn4 => sikuliHelper.GetPattern(PATH + "SelectBtn4.PNG");
 
-        public IPattern GetQuantity => Patterns.FromFile(PATH + "Quantity.PNG");
+        public IPattern GetSelectEach => sikuliHelper.GetPattern(PATH + "SelectEach.PNG");
 
-        public IPattern GetRightArrow => Patterns.FromFile(PATH + "RightArrow.PNG");
+        public IPattern GetQuantity => sikuliHelper.GetPattern(PATH + "Quantity.PNG");
 
-        public IPattern GetPrice => Patterns.FromFile(PATH + "Price.PNG");
+        public IPattern GetRightArrow => sikuliHelper.GetPattern(PATH + "RightArrow.PNG");
 
-        public IPattern GetNeedBy => Patterns.FromFile(PATH + "NeedBy.PNG");
+        public IPattern GetPrice => sikuliHelper.GetPattern(PATH + "Price.PNG");
 
-        public IPattern GetSelectDate => Patterns.FromFile(PATH + "SelectDate.PNG");
+        public IPattern GetNeedBy => sikuliHelper.GetPattern(PATH + "NeedBy.PNG");
 
-        public IPattern GetOkBtn3 => Patterns.FromFile(PATH + "OkBtn3.PNG");
+        public IPattern GetSelectDate => sikuliHelper.GetPattern(PATH + "SelectDate.PNG");
 
-        public IPattern GetOrganization => Patterns.FromFile(PATH + "Organization.PNG");
+        public IPattern GetOkBtn3 => sikuliHelper.GetPattern(PATH + "OkBtn3.PNG");
 
-        public IPattern GetSelectOrganization => Patterns.FromFile(PATH + "SelectOrganization.PNG");
+        public IPattern GetOrganization => sikuliHelper.GetPattern(PATH + "Organization.PNG");
 
-        public IPattern GetFindLocation => Patterns.FromFile(PATH + "Find.PNG");
+        public IPattern GetSelectOrganization => sikuliHelper.GetPattern(PATH + "SelectOrganization.PNG");
 
-        public IPattern GetFindBtn => Patterns.FromFile(PATH + "FindBtn.PNG");
+        public IPattern GetFindLocation => sikuliHelper.GetPattern(PATH + "Find.PNG");
 
-        public IPattern GetLocation => Patterns.FromFile(PATH + "Location.PNG");
+        public IPattern GetFindBtn => sikuliHelper.GetPattern(PATH + "FindBtn.PNG");
 
-        public IPattern GetDistributions => Patterns.FromFile(PATH + "DistributionsBtn.PNG");
+        public IPattern GetLocation => sikuliHelper.GetPattern(PATH + "Location.PNG");
 
-        public IPattern GetProjectBtn => Patterns.FromFile(PATH + "ProjectBtn.PNG");
+        public IPattern GetDistributions => sikuliHelper.GetPattern(PATH + "DistributionsBtn.PNG");
 
-        public IPattern GetFind2 => Patterns.FromFile(PATH + "Find2.PNG");
+        public IPattern GetProjectBtn => sikuliHelper.GetPattern(PATH + "ProjectBtn.PNG");
 
-        public IPattern GetProjectType => Patterns.FromFile(PATH + "ProjectType.PNG");
+        public IPattern GetFind2 => sikuliHelper.GetPattern(PATH + "Find2.PNG");
 
-        public IPattern GetDate => Patterns.FromFile(PATH + "Date.PNG");   
+        public IPattern GetProjectType => sikuliHelper.GetPattern(PATH + "ProjectType.PNG");
 
-        public IPattern GetSaveIcon => Patterns.FromFile(PATH + "SaveIcon.PNG");
+        public IPattern GetDate => sikuliHelper.GetPattern(PATH + "Date.PNG");   
 
-        public IPattern GetCloseWindow => Patterns.FromFile(PATH + "CloseWindow.PNG");
+        public IPattern GetSaveIcon => sikuliHelper.GetPattern(PATH + "SaveIcon.PNG");
 
-        public IPattern GetApproveBtn => Patterns.FromFile(PATH + "ApproveBtn.PNG");
+        public IPattern GetCloseWindow => sikuliHelper.GetPattern(PATH + "CloseWindow.PNG");
 
-        public IPattern GetOkBtn4 => Patterns.FromFile(PATH + "OkBtn4.PNG");
+        public IPattern GetApproveBtn => sikuliHelper.GetPattern(PATH + "ApproveBtn.PNG");
+
+        public IPattern GetOkBtn4 => sikuliHelper.GetPattern(PATH + "OkBtn4.PNG");
     }
 }
