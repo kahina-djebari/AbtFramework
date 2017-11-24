@@ -246,6 +246,12 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.DoDiscovererWorkbookMultipleSheets();
         }
 
+        [Then(@"I do discoverer books for one sheet")]
+        public void ThenDoDiscovererWorkbboksForOneSheet()
+        {
+            AbtPages.OraclePage.DoDiscovererWorkbookOneSheet();
+        }
+
 
         [Then(@"I fill the Oracle Forms")]
         public void ThenIFillTheOracleForms()

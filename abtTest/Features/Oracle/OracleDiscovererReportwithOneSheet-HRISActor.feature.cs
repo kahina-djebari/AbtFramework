@@ -81,6 +81,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("click the \"Abt US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.And("click the \"Discoverer Viewer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.Then("I do discoverer books for one sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -263,56 +263,14 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//h1[text()='Voluntary Disclosure of Veterans Status']/ancestor::div[1]/following-sibling::div[1]//button[@title='Apply']")]
         private IWebElement applyBtn;
 
-        // Abt US HR Manager
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[2]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon1;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[3]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon2;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[4]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon3;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[5]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon4;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[6]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon5;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[7]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon6;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[8]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon7;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[9]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon8;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[10]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon9;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[11]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon10;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[12]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon11;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[13]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon12;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[14]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon13;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[15]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon14;
-
-        [FindsBy(How = How.XPath, Using = "//th[text()='Name']/parent::tr/following-sibling::tr[16]/child::td[2]/child::div/child::a/img")]
-        private IWebElement expandIcon15;
-
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Detail Active Employee')]/preceding-sibling::a//img")]
         private IWebElement detailActiveEmployeeOptn;
 
+        [FindsBy(How = How.XPath, Using = "//img[@alt = 'Select to expand']")]
+        private IList<IWebElement> selectToExpandIcons;
 
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'javascript:discoOpen')]")]
+        private IList<IWebElement> expandedOptionToClick;
 
 
         public IWebElement SelectFolderNavigator(string option)
@@ -748,6 +706,29 @@ namespace AbtFramework
 
         }
 
+        public void DoDiscovererWorkbookOneSheet()
+        {
+            int count = 0;
+            Thread.Sleep(1000);
+            //to expand all menus first
+            while (selectToExpandIcons.Count != 0)
+            {
+                selectToExpandIcons[0].Click();
+                Thread.Sleep(1000);
+                selectToExpandIcons = SeleniumDriver.Instance.FindElements(By.XPath("//img[@alt = 'Select to expand']"));
+             
+            }
+
+            //to click on the expanded links
+            while (count < expandedOptionToClick.Count )
+            {
+                expandedOptionToClick[count].Click();
+                Thread.Sleep(1000);
+                count++;
+            }
+
+        }
+
         /// <summary>
         /// Accepts Java alerts to run Oracle application
         /// </summary>
@@ -922,6 +903,8 @@ namespace AbtFramework
             sikuliHelper.SetInputValue(gradePatterns.GetGradeName, "%Can%");
 
         }
+
+
 
     }
 }
