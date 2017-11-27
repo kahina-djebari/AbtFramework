@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace AbtFramework.Sikuli
     /// </summary>
     public class SikuliHelper
     {
-        private static SikuliHelper instance = null;
+        private static SikuliHelper instance ;
         private static ISikuliSession session;
 
         private SikuliHelper()
@@ -45,7 +46,6 @@ namespace AbtFramework.Sikuli
         /// <param name="pattern"></param>
         public void ClickPattern(IPattern pattern)
         {
-            this.WaitForPattern(pattern);
             session.Click(pattern);
         }
 
@@ -69,7 +69,6 @@ namespace AbtFramework.Sikuli
         /// <param name="pattern"></param>
         public bool IsPatternExisting(IPattern pattern)
         {
-            this.WaitForPattern(pattern);
             return session.Exists(pattern);
 
         }
@@ -88,7 +87,71 @@ namespace AbtFramework.Sikuli
             {
                 //nothing, just continue
             }
-        }     
+        }
+
+        /// <summary>
+        /// Returns an IPattern object base on path to file, if not present, 
+        /// null is returned.
+        /// </summary>
+        /// <param name="pathToFile"></param>
+        public IPattern GetPattern(string pathToFile)
+        {
+            try
+            {
+                IPattern pattern = Patterns.FromFile(pathToFile);
+                session.Wait(pattern, 15);
+                return pattern;
+            }
+            catch (SikuliFindFailedException)
+            {
+                Console.WriteLine("Pattern not visible");
+                return null;
+            }
+            catch (FileLoadException)
+            {
+                Console.WriteLine("Img File not found in the route specify");
+                return null;
+            }
+            catch (SikuliException e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+
+            
+
+            }
+
+        /// <summary>
+        /// Returns PAtter or null if not present, can especify a time to wait
+        /// </summary>
+        /// <param name="pathToFile"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public IPattern GetPattern(string pathToFile, int time)
+        {
+            try
+            {
+                IPattern pattern = Patterns.FromFile(pathToFile);
+                session.Wait(pattern, time);
+                return pattern;
+            }
+            catch (SikuliFindFailedException)
+            {
+                Console.WriteLine("Pattern not visible");
+                return null;
+            }
+            catch (FileLoadException)
+            {
+                Console.WriteLine("Img File not found in the route specify");
+                return null;
+            }
+            catch (SikuliException e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+        }
 
 
     }

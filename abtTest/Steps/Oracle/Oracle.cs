@@ -24,10 +24,10 @@ namespace abtTest.Steps.Oracle
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.init(Browser.IE);
         }
 
-        [Given(@"I have Open IE Chrome")]
+        [Given(@"I have Open Chrome")]
         public void GivenIHaveOpenChromeTest()
         {
             SeleniumDriver.init(Browser.Chrome);
@@ -238,6 +238,20 @@ namespace abtTest.Steps.Oracle
         {
             AbtPages.OraclePage.clickDescriptionPosition();
         }
+
+
+        [Then(@"I do discoverer books for multiple sheets")]
+        public void ThenDoDiscovererWorkbboksForMultipleSheets()
+        {
+            AbtPages.OraclePage.DoDiscovererWorkbookMultipleSheets();
+        }
+
+        [Then(@"I do discoverer books for one sheet")]
+        public void ThenDoDiscovererWorkbboksForOneSheet()
+        {
+            AbtPages.OraclePage.DoDiscovererWorkbookOneSheet();
+        }
+
 
         [Then(@"I fill the Oracle Forms")]
         public void ThenIFillTheOracleForms()
