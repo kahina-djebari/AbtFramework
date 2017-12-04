@@ -23,6 +23,6 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
         public IPattern GetRunOracleSecurityWarning => sikuliHelper.GetPattern(PATH + "SecurityWarningRunBtn.PNG",5);
 
         public IPattern GetAcceptCheckBoxSecurityWarning => sikuliHelper.GetPattern(PATH + "SecurityWarningCheckBoxIAccept.PNG",5);
-
+   
     }
 }

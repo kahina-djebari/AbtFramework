@@ -227,10 +227,16 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//button[@title='Add']")]
         private IWebElement addBtn;
 
+        [FindsBy(How = How.XPath, Using = "//button[@title='Update']")]
+        private IWebElement updateBtn;
+
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Choose Your Veteran Status')]/parent::td/following-sibling::td[2]/child::span/child::a")]
         private IWebElement searchVeteranStatusBtn;
 
-        [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Go')]")]
+        [FindsBy(How = How.XPath, Using = "//input[@title='Search Term']")]
+        private IWebElement searchVeteranStatusInputBox;
+
+        [FindsBy(How = How.XPath, Using = "//button[text()='Go']")]
         private IWebElement goBtn;
 
         [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='0']")]
@@ -257,11 +263,27 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Enter Your Name')]/parent::td/following-sibling::td[2]/input")]
         private IWebElement enterYourName;
 
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Enter Your Name')]/parent::td/parent::tr/following-sibling::tr/child::td[3]/child::input")]
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Enter Your Name')]/parent::td/parent::tr/following-sibling::tr/child::td[3]//child::input")]
         private IWebElement date;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Voluntary Disclosure of Veterans Status']/ancestor::div[1]/following-sibling::div[1]//button[@title='Apply']")]
         private IWebElement applyBtn;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Extra Information']/ancestor::div[1]/following-sibling::div//descendant::button[text()='Save For Later']")]
+        private IWebElement saveForLater;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Extra Information']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
+        private IWebElement nextBtn;
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Add']")]
+        private IWebElement addAttachments;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
+        private IWebElement submitBtn;
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Home']")]
+        private IWebElement homeBtn;
+
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Detail Active Employee')]/preceding-sibling::a//img")]
         private IWebElement detailActiveEmployeeOptn;
@@ -684,18 +706,36 @@ namespace AbtFramework
             descriptionPosition.Click();
         }
 
+        public const string MyAccountPageTitle = "My Account";
+
+        public static bool IsAt()
+        {
+            return SeleniumDriver.Instance.Title == "Search";
+        }
+
 
         public void chooseVeteranStatus()
         {
-            addBtn.Click();
+            updateBtn.Click();
             searchVeteranStatusBtn.Click();
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            Thread.Sleep(1000);
+            // Store all the opened window into the 'list' 
+            List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
+            SeleniumDriver.Instance.SwitchTo().Window(lstWindow[1]);
+            SeleniumDriver.Instance.SwitchTo().Frame(0);     
+            searchVeteranStatusInputBox.Clear();
             goBtn.Click();
-            selectStatus3.Click();
-            selectStatus2.Click();
-            selectStatus1.Click();
-            selectBtn.Click();
+            Thread.Sleep(1000);
+            quickSelect2.Click();
+            List<string> lstWindow1 = SeleniumDriver.Instance.WindowHandles.ToList();
+            SeleniumDriver.Instance.SwitchTo().Window(lstWindow1[0]);
+            date.Clear();
+            date.SendKeys(string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
             applyBtn.Click();
+            nextBtn.Click();
+            submitBtn.Click();
+            homeBtn.Click();
+
         }
 
         public void DoDiscovererWorkbookMultipleSheets()
@@ -716,11 +756,11 @@ namespace AbtFramework
                 selectToExpandIcons[0].Click();
                 Thread.Sleep(1000);
                 selectToExpandIcons = SeleniumDriver.Instance.FindElements(By.XPath("//img[@alt = 'Select to expand']"));
-             
+
             }
 
             //to click on the expanded links
-            while (count < expandedOptionToClick.Count )
+            while (count < expandedOptionToClick.Count)
             {
                 expandedOptionToClick[count].Click();
                 Thread.Sleep(1000);
@@ -898,13 +938,50 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(gradePatterns.GetNoBtn);
 
-            // missing steps for ctrl+F11 and F11
+            sikuliHelper.ClickPattern(gradePatterns.GetView);
 
-            sikuliHelper.SetInputValue(gradePatterns.GetGradeName, "%Can%");
+            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
 
+            sikuliHelper.ClickPattern(gradePatterns.GetEnter);
+
+            sikuliHelper.SetInputValue(gradePatterns.GetNameField, "%");
+
+            sikuliHelper.ClickPattern(gradePatterns.GetView);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetRun);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetGradeNameField);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetView);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetEnter);
+
+            sikuliHelper.SetInputValue(gradePatterns.GetGradeNameInputField, "%Can%");
+
+            sikuliHelper.ClickPattern(gradePatterns.GetView);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetRun);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetView);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetEnter);
+
+            sikuliHelper.SetInputValue(gradePatterns.GetGradeNameInputField, "%Mex%");
+
+            sikuliHelper.ClickPattern(gradePatterns.GetView);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+
+            sikuliHelper.ClickPattern(gradePatterns.GetRun);
         }
-
-
 
     }
 }

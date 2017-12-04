@@ -20,7 +20,25 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetNoBtn => sikuliHelper.GetPattern(PATH + "NoBtn.PNG");
 
-        public IPattern GetGradeName => sikuliHelper.GetPattern(PATH + "GradeName.PNG");
+        public IPattern GetView => sikuliHelper.GetPattern(PATH + "View.PNG");
+
+        public IPattern GetQueryByExample => sikuliHelper.GetPattern(PATH + "QueryByExample.PNG");
+
+        public IPattern GetEnter => sikuliHelper.GetPattern(PATH + "Enter.PNG");
+
+        public IPattern GetNameField => sikuliHelper.GetPattern(PATH + "NameField.PNG");
+
+        public IPattern GetRun => sikuliHelper.GetPattern(PATH + "Run.PNG");
+
+        public IPattern GetGradeNameField => sikuliHelper.GetPattern(PATH + "GradeNameField.PNG");
+
+        public IPattern GetGradeNameInputField => sikuliHelper.GetPattern(PATH + "GradeNameInputField.PNG");
+
+
+
+
+
+
 
 
     }

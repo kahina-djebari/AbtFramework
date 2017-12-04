@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -138,7 +139,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VoluntaryDisclosureofVeteransStatus.feature</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="Features\Oracle\OracleDiscReportMultipleSheets.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,7 +208,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Oracle.feature.cs</LastGenOutput>
     </None>
-
     <None Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs</LastGenOutput>
@@ -215,11 +215,10 @@
     <None Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VoluntaryDisclosureofVeteransStatus.feature.cs</LastGenOutput>
-  </None>
+    </None>
     <None Include="Features\Oracle\OracleDiscReportMultipleSheets.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OracleDiscReportMultipleSheets.feature.cs</LastGenOutput>
-
     </None>
     <None Include="Features\ServiceNow\Facilities.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -271,7 +271,5 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.chooseVeteranStatus();
         }
 
-
-
     }
 }
