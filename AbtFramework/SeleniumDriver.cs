@@ -43,6 +43,7 @@ namespace AbtFramework
 
         public static void init(Browser browser)
         {
+
             switch (browser)
             {
                 case Browser.IECleanSessionIgnoreProtectedMode:

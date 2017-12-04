@@ -1,4 +1,4 @@
-﻿Feature: Oracle Discoverer Report With One Sheet - HRIS Actor
+﻿Feature: OracleDiscovererReportWithOneSheet-HRISActor
 	    In order to Ensure the Estability of
 		Our ERP
 		I Want To Perform a Functioal Test

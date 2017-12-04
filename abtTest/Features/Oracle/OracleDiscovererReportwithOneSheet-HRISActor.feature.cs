@@ -17,7 +17,7 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Oracle Discoverer Report With One Sheet - HRIS Actor", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+    [TechTalk.SpecRun.FeatureAttribute("OracleDiscovererReportWithOneSheet-HRISActor", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
         "ioal Test", SourceFile="Features\\Oracle\\OracleDiscovererReportwithOneSheet-HRISActor.feature", SourceLine=0)]
     public partial class OracleDiscovererReportWithOneSheet_HRISActorFeature
     {
@@ -31,7 +31,7 @@ namespace abtTest.Features.Oracle
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Oracle Discoverer Report With One Sheet - HRIS Actor", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleDiscovererReportWithOneSheet-HRISActor", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
                     "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }

@@ -6,8 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Windows.Input;
 using SikuliSharp;
-
+using OpenQA.Selenium;
+using System.Threading;
 
 namespace AbtFramework.Sikuli
 {   /// <summary>
@@ -15,8 +17,8 @@ namespace AbtFramework.Sikuli
     /// </summary>
     public class SikuliHelper
     {
-        private static SikuliHelper instance ;
-        private static ISikuliSession session;
+        private static SikuliHelper instance;
+        private static ISikuliSession session;     
 
         private SikuliHelper()
         {
@@ -58,8 +60,7 @@ namespace AbtFramework.Sikuli
 
         {
             this.ClickPattern(pattern);
-            session.Type(text);
-
+            session.Type(text);      
 
         }
 
@@ -118,9 +119,9 @@ namespace AbtFramework.Sikuli
                 return null;
             }
 
-            
 
-            }
+
+        }
 
         /// <summary>
         /// Returns PAtter or null if not present, can especify a time to wait
@@ -151,8 +152,7 @@ namespace AbtFramework.Sikuli
                 Console.WriteLine(e);
                 return null;
             }
-        }
-
+        }    
 
     }
 }

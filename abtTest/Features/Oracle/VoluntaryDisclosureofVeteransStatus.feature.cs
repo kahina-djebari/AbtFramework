@@ -17,8 +17,8 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Voluntary Disclosure of Veterans Status", Description="\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-        "f two numbers", SourceFile="Features\\Oracle\\VoluntaryDisclosureofVeteransStatus.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("VoluntaryDisclosureOfVeteransStatus", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+        "ioal Test", SourceFile="Features\\Oracle\\VoluntaryDisclosureofVeteransStatus.feature", SourceLine=0)]
     public partial class VoluntaryDisclosureOfVeteransStatusFeature
     {
         
@@ -31,8 +31,8 @@ namespace abtTest.Features.Oracle
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Voluntary Disclosure of Veterans Status", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "VoluntaryDisclosureOfVeteransStatus", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+                    "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,6 +83,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("click the \"Voluntary Disclosure of Veterans Status\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.Then("I choose veteran status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.And("click the \"Voluntary Disclosure of Veterans Status\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
