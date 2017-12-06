@@ -22,8 +22,11 @@ namespace AbtFramework
         private OracleFormsPatternObject patterns;
         private CommonPaternObjects commonPatterns;
         private GradeRatePatternObject gradePatterns;
+        private AbtHRMSManagerObject HRMSManagerPatterns;
+        private ConfDefaultProcessRunsObjects ConfDefaultProcessRunsPatterns;
         private SikuliHelper sikuliHelper;
         private int counter = 11;
+        private int counter1 = 8;
 
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton; //
@@ -294,6 +297,84 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'javascript:discoOpen')]")]
         private IList<IWebElement> expandedOptionToClick;
 
+        //Change timecard approver
+        [FindsBy(How = How.XPath, Using = "//input[@title='Search Criteria']")]
+        private IWebElement nameInputField;
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Go']")]
+        private IWebElement goButton;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Select']")]
+        private IWebElement selectName;
+
+        [FindsBy(How = How.XPath, Using = "//img[@title='Action']")]
+        private IWebElement actionIcon;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Effective Date']/parent::td/following-sibling::td[2]//descendant::input")]
+        private IWebElement effectiveDate;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Effective Date Options']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Continue']")]
+        private IWebElement continueButton;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Manager']")]
+        private IWebElement supervisorName;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Timecard Approver']/parent::td/following-sibling::td[2]//input")]
+        private IWebElement timecardApprover;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Change Manager']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
+        private IWebElement nextButton;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Change Reason']/parent::td/following-sibling::td[2]//select")]
+        private IWebElement changeReason;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Assignment']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
+        private IWebElement nextButton1;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
+        private IWebElement submitButton;
+
+        //Change employee hours
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Effective Date Options']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Continue']")]
+        private IWebElement continueBtn;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Work Hours']")]
+        private IWebElement workHoursInputField;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Assignment Category']/parent::td/following-sibling::td[2]//select")]
+        private IWebElement assignmentCategory;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Work Schedule']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
+        private IWebElement nextButton2;
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Propose Pay Change']")]
+        private IWebElement proposePayChange;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Reason For Pay Change']/parent::td/following-sibling::td[2]//select")]
+        private IWebElement reasonForPayChange;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Actual Pay Amount']")]
+        private IWebElement actualPayAmount;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Pay Details']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Apply']")]
+        private IWebElement applyButton;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Select A Pay Action']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
+        private IWebElement nextButton3;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
+        private IWebElement submitButton1;
+
+        //Approve changes of hours and timecard approver
+        [FindsBy(How = How.XPath, Using = "//select[@title='Provides a series of worklist views available']")]
+        private IWebElement openNotifications;
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Launches some defined function']")]
+        private IWebElement goNotifications;
+
+        [FindsBy(How = How.XPath, Using = "//a[text()='Subject']/parent::th/parent::tr/following-sibling::tr[1]/child::td[4]/a")]
+        private IWebElement subjectLink;
+
 
         public IWebElement SelectFolderNavigator(string option)
         {
@@ -364,6 +445,8 @@ namespace AbtFramework
                     return u = "GuntherD";
                 case "Lisa Butterfield":
                     return u = "HRTEST01";
+                case "Phyllis Wallace":
+                    return u = "WallaceP";
             }
 
             return u;
@@ -722,7 +805,7 @@ namespace AbtFramework
             // Store all the opened window into the 'list' 
             List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[1]);
-            SeleniumDriver.Instance.SwitchTo().Frame(0);     
+            SeleniumDriver.Instance.SwitchTo().Frame(0);
             searchVeteranStatusInputBox.Clear();
             goBtn.Click();
             Thread.Sleep(1000);
@@ -983,5 +1066,141 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(gradePatterns.GetRun);
         }
 
+        public void UpdateInformationOnOracleForm()
+        {
+            HRMSManagerPatterns = new AbtHRMSManagerObject();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetNoBtn);
+
+            sikuliHelper.SetInputValue(HRMSManagerPatterns.GetFullName, "oumsalem");
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetFindBtn);
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOfficeDetails);
+
+            sikuliHelper.SetInputValue(HRMSManagerPatterns.GetOfficeInputField, "test");
+
+            sikuliHelper.PressEnter();
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCorrectionBtn);
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetSaveIcon);
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCloseOracleForm);
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOkBtn);
+
+        }
+
+        public void GoToOracleForm()
+        {
+            HRMSManagerPatterns = new AbtHRMSManagerObject();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetNoBtn);
+
+            sikuliHelper.SetInputValue(HRMSManagerPatterns.GetFullName, "oumsalem");
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetFindBtn);
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCloseOracleForm);
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOkBtn);
+
+            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCloseWindow);
+        }
+
+        public void ChangeTimecardApprover()
+        {
+            nameInputField.SendKeys("laidoson");
+            goButton.Click();
+            selectName.Click();
+            actionIcon.Click();
+            effectiveDate.SendKeys("09-Dec-2017");
+            continueButton.Click();
+            supervisorName.Clear();
+            supervisorName.SendKeys("poodts"); 
+            supervisorName.SendKeys(Keys.Tab);
+            nextButton.Click();
+            timecardApprover.Clear();
+            timecardApprover.SendKeys("poodts");
+            timecardApprover.SendKeys(Keys.Tab);
+            Thread.Sleep(1000);
+            SelectElement select = new SelectElement(changeReason);
+            select.SelectByText("Supervisor & Timecard Approver Change");
+            nextButton1.Click();
+            submitButton.Click();
+            homeBtn.Click();
+        }
+
+        public void ChangeEmployeeHours()
+        {
+            nameInputField.SendKeys("laidoson");
+            goButton.Click();
+            selectName.Click();
+            actionIcon.Click();
+            effectiveDate.SendKeys("09-Dec-2017");
+            continueBtn.Click();
+            workHoursInputField.Clear();
+            workHoursInputField.SendKeys("32");
+            Thread.Sleep(1000);
+            SelectElement select = new SelectElement(assignmentCategory);
+            select.SelectByText("Parttime-Standard");
+            nextButton2.Click();
+            proposePayChange.Click();
+            Thread.Sleep(1000);
+            SelectElement selectReason = new SelectElement(reasonForPayChange);
+            selectReason.SelectByText("Status Change");
+            actualPayAmount.SendKeys("50000");
+            applyButton.Click();
+            applyButton.Click();
+            nextButton3.Click();
+            submitButton1.Click();
+        }
+
+        public void ApproveChanges()
+        {
+            SelectElement select = new SelectElement(openNotifications);
+            select.DeselectByText("All Notifications");
+            goNotifications.Click();
+            subjectLink.Click();
+        }
+
+        public void ConfirmDefaultProcess()
+        {
+            ConfDefaultProcessRunsPatterns = new ConfDefaultProcessRunsObjects();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetNoBtn);
+
+            sikuliHelper.SetInputValue(ConfDefaultProcessRunsPatterns.GetFullName, "oumsalem");
+
+            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetFindBtn);
+
+            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetName);
+
+            while (counter1 > 0)
+            {
+                sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetDownArrow);
+                counter1--;
+            }
+
+            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetNewHire); 
+
+            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetDesktopActivities); 
+
+            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetEnrollmentResults);
+
+        }
     }
 }

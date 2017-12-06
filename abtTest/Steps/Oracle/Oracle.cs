@@ -24,7 +24,7 @@ namespace abtTest.Steps.Oracle
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
         {
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.init(Browser.Chrome);
         }
 
         [Given(@"I have Open Chrome")]
@@ -270,6 +270,48 @@ namespace abtTest.Steps.Oracle
         {
             AbtPages.OraclePage.chooseVeteranStatus();
         }
+
+        [Then(@"I update information on the oracle form")]
+        public void ThenIUpdateInformationOnTheOracleForm()
+        {
+            AbtPages.OraclePage.UpdateInformationOnOracleForm();
+        }
+
+        [Then(@"I go to the oracle form")]
+        public void ThenIGoToTheOracleForm()
+        {
+            AbtPages.OraclePage.GoToOracleForm();
+        }
+
+        [Then(@"change timecard approver")]
+        public void ThenChangeTimecardApprover()
+        {
+            AbtPages.OraclePage.ChangeTimecardApprover();
+        }
+
+        [Then(@"I change the employee hours")]
+        public void ThenIChangeTheEmployeeHours()
+        {
+            AbtPages.OraclePage.ChangeEmployeeHours();
+        }
+
+        [Then(@"I approve the changes")]
+        public void ThenIApproveTheChanges()
+        {
+            AbtPages.OraclePage.ApproveChanges();
+        }
+
+        [Then(@"I confirm default process runs")]
+        public void ThenIConfirmDefaultProcessRuns()
+        {
+            AbtPages.OraclePage.ConfirmDefaultProcess();
+        }
+
+
+
+
+
+
 
     }
 }

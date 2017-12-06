@@ -120,6 +120,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AGI.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +154,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature.cs">
       <AutoGen>True</AutoGen>
@@ -200,6 +225,22 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AGI.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Oracle\ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OracleDiscovererReportwithOneSheet-HRISActor.feature.cs</LastGenOutput>
@@ -211,6 +252,10 @@
     <None Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

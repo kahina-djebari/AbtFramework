@@ -152,7 +152,12 @@ namespace AbtFramework.Sikuli
                 Console.WriteLine(e);
                 return null;
             }
-        }    
+        } 
+        
+        public void PressEnter()
+        {
+            session.Type("\\n");
+        }   
 
     }
 }
