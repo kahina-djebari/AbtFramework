@@ -325,8 +325,8 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Change Manager']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
         private IWebElement nextButton;
 
-        [FindsBy(How = How.XPath, Using = "//span[text()='Change Reason']/parent::td/following-sibling::td[2]//select")]
-        private IWebElement changeReason;
+        [FindsBy(How = How.XPath, Using = "////span[contains(text(),'Reason')]/parent::td/following-sibling::td//select")]
+        private IWebElement changeReasonSelect;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Assignment']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
         private IWebElement nextButton1;
@@ -376,7 +376,31 @@ namespace AbtFramework
         private IWebElement subjectLink;
 
         //HRSS Transactions: Enter Voluntary Offboarding – Actor: HRBP
-      
+        [FindsBy(How = How.Name, Using = "Comments")]
+        private IWebElement commentsTextArea;
+
+        [FindsBy(How = How.Id, Using = "HrNext_uixr")]
+        private IWebElement nextBtnAfterReason ;
+
+
+        [FindsBy(How = How.Name, Using = "FileName")]
+        private IWebElement titleAttachmentInput;
+
+        [FindsBy(How = How.Name, Using = "AkDescription")]
+        private IWebElement descrptionAttachmentTextArea;
+
+        [FindsBy(How = How.Name, Using = "//span[text()= 'Text']//preceding-sibling::input")]
+        private IWebElement defineAttachmentTextRadioBtn;
+
+        [FindsBy(How = How.Name, Using = "//button[@title='Add']")]
+        private IWebElement applyAttachmentBtn;
+
+        [FindsBy(How = How.Name, Using = "//textarea[@title='Attachment Text']")]
+        private IWebElement descriptionTextAreaAttachment;
+
+        [FindsBy(How = How.Id, Using = "HrSubmit")]
+        private IWebElement submitConfirmationforOffboardingBtn;
+
 
         public IWebElement SelectFolderNavigator(string option)
         {
@@ -1132,7 +1156,7 @@ namespace AbtFramework
             timecardApprover.SendKeys("poodts");
             timecardApprover.SendKeys(Keys.Tab);
             Thread.Sleep(1000);
-            SelectElement select = new SelectElement(changeReason);
+            SelectElement select = new SelectElement(changeReasonSelect);
             select.SelectByText("Supervisor & Timecard Approver Change");
             nextButton1.Click();
             submitButton.Click();
@@ -1165,6 +1189,21 @@ namespace AbtFramework
         /// </summary>
         public void OffboardEmployee()
         {
+            SelectEmployeeInPeopleHierarchy();
+
+            SelectElement select = new SelectElement(changeReasonSelect);
+            select.SelectByText("Employee Transfer");
+
+            commentsTextArea.SendKeys("For Testing");
+            nextBtnAfterReason.Click();
+            addAttachments.Click();
+            titleAttachmentInput.SendKeys("Test");
+            descrptionAttachmentTextArea.SendKeys("For Testing");
+            defineAttachmentTextRadioBtn.Click();
+            descriptionTextAreaAttachment.SendKeys("For Testing");
+            applyAttachmentBtn.Click();
+            submitConfirmationforOffboardingBtn.Click();
+
 
         }
 

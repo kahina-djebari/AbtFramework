@@ -9,3 +9,4 @@ Scenario: HRSS Transactions -Enter Involuntary Offboarding - Actor HRBP
 	And i login as "Lisa Butterfield"
 	Then click the "Abt HR Operations Self Service" option
 	Then click the "Offboard Employee" option 
+	Then I enter involuntary offboarding

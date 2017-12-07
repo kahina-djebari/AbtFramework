@@ -81,6 +81,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("click the \"Abt HR Operations Self Service\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
  testRunner.Then("click the \"Offboard Employee\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.Then("I enter involuntary offboarding", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

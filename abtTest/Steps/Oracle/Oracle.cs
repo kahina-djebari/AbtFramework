@@ -302,6 +302,11 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ConfirmDefaultProcess();
         }
 
+        [Then(@"I enter involuntary offboarding")]
+        public void ThenEnterInvoluntaryOffboarding()
+        {
+            AbtPages.OraclePage.OffboardEmployee();
+        }
 
 
 
