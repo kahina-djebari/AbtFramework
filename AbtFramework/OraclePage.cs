@@ -323,16 +323,16 @@ namespace AbtFramework
         private IWebElement timecardApprover;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Change Manager']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextButton;
+        private IWebElement nextBtnValidateChangeManager;
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Change Reason']/parent::td/following-sibling::td[2]//select")]
         private IWebElement changeReason;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Assignment']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextButton1;
+        private IWebElement nextBtnValidateAssignment;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
-        private IWebElement submitButton;
+        private IWebElement submitChangeTimecardApproverSupervisor;
 
         //Change employee hours
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Effective Date Options']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Continue']")]
@@ -345,7 +345,7 @@ namespace AbtFramework
         private IWebElement assignmentCategory;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Work Schedule']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextButton2;
+        private IWebElement nextBtnValidateWorkSchedule;
 
         [FindsBy(How = How.XPath, Using = "//button[@title='Propose Pay Change']")]
         private IWebElement proposePayChange;
@@ -360,10 +360,10 @@ namespace AbtFramework
         private IWebElement applyButton;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Select A Pay Action']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextButton3;
+        private IWebElement nextBtnValidatePayChangeProposal;
 
         [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
-        private IWebElement submitButton1;
+        private IWebElement submitChangeHours;
 
         //Approve changes of hours and timecard approver
         [FindsBy(How = How.XPath, Using = "//select[@title='Provides a series of worklist views available']")]
@@ -1128,15 +1128,15 @@ namespace AbtFramework
             supervisorName.Clear();
             supervisorName.SendKeys("poodts"); 
             supervisorName.SendKeys(Keys.Tab);
-            nextButton.Click();
+            nextBtnValidateChangeManager.Click();
             timecardApprover.Clear();
             timecardApprover.SendKeys("poodts");
             timecardApprover.SendKeys(Keys.Tab);
             Thread.Sleep(1000);
             SelectElement select = new SelectElement(changeReason);
             select.SelectByText("Supervisor & Timecard Approver Change");
-            nextButton1.Click();
-            submitButton.Click();
+            nextBtnValidateAssignment.Click();
+            submitChangeTimecardApproverSupervisor.Click();
             homeBtn.Click();
         }
 
@@ -1153,16 +1153,16 @@ namespace AbtFramework
             Thread.Sleep(1000);
             SelectElement select = new SelectElement(assignmentCategory);
             select.SelectByText("Parttime-Standard");
-            nextButton2.Click();
+            nextBtnValidateWorkSchedule.Click();
             proposePayChange.Click();
             Thread.Sleep(1000);
             SelectElement selectReason = new SelectElement(reasonForPayChange);
             selectReason.SelectByText("Status Change");
             actualPayAmount.SendKeys("50000");
-            applyButton.Click();
-            applyButton.Click();
-            nextButton3.Click();
-            submitButton1.Click();
+            applyButton.Click();         
+            applyButton.Click();           
+            nextBtnValidatePayChangeProposal.Click();
+            submitChangeHours.Click();
         }
 
         public void ApproveChanges()
