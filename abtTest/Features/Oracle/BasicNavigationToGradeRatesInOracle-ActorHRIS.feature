@@ -1,4 +1,4 @@
-﻿Feature: Basic Navigation To Grade Rates In Oracle - Actor HRIS
+﻿Feature: BasicNavigationToGradeRatesInOracle-ActorHRIS
 	    In order to Ensure the Estability of
 		Our ERP
 		I Want To Perform a Functioal Test

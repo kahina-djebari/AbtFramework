@@ -17,21 +17,22 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("BasicNavigationToGradeRatesInOracle-ActorHRIS", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
-        "ioal Test", SourceFile="Features\\Oracle\\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature", SourceLine=0)]
-    public partial class BasicNavigationToGradeRatesInOracle_ActorHRISFeature
+    [TechTalk.SpecRun.FeatureAttribute("ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+        "ioal Test", SourceFile="Features\\Oracle\\ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.fea" +
+        "ture", SourceLine=0)]
+    public partial class ConfirmingDefaultProcessRunsWhenHireDate30IsOlderThanSysDateFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "BasicNavigationToGradeRatesInOracle-ActorHRIS.feature"
+#line 1 "ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BasicNavigationToGradeRatesInOracle-ActorHRIS", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
                     "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -63,11 +64,11 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Basic Navigation To Grade Rates In Oracle - Actor HRIS", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Confirming Default Process Runs When Hire Date +30 Is Older Than Sys Date", new string[] {
                 "Oracle"}, SourceLine=6)]
-        public virtual void BasicNavigationToGradeRatesInOracle_ActorHRIS()
+        public virtual void ConfirmingDefaultProcessRunsWhenHireDate30IsOlderThanSysDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Navigation To Grade Rates In Oracle - Actor HRIS", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirming Default Process Runs When Hire Date +30 Is Older Than Sys Date", new string[] {
                         "Oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -78,11 +79,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("click the \"Abt HRMS Superuser\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt HRMS Benefits User\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("click the \"Grade Rate\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("click the \"Benefits Service Center\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("I fill the Grade Rate Oracle Forms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I confirm default process runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

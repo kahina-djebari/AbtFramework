@@ -17,21 +17,21 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("BasicNavigationToGradeRatesInOracle-ActorHRIS", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
-        "ioal Test", SourceFile="Features\\Oracle\\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature", SourceLine=0)]
-    public partial class BasicNavigationToGradeRatesInOracle_ActorHRISFeature
+    [TechTalk.SpecRun.FeatureAttribute("OracleHRNavigation-AbtHRMSManager-ActorHRIS", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+        "ioal Test", SourceFile="Features\\Oracle\\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature", SourceLine=0)]
+    public partial class OracleHRNavigation_AbtHRMSManager_ActorHRISFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "BasicNavigationToGradeRatesInOracle-ActorHRIS.feature"
+#line 1 "OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BasicNavigationToGradeRatesInOracle-ActorHRIS", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleHRNavigation-AbtHRMSManager-ActorHRIS", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
                     "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -63,11 +63,11 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Basic Navigation To Grade Rates In Oracle - Actor HRIS", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Oracle HR Navigation - Abt HRMS Manager - Actor HRIS", new string[] {
                 "Oracle"}, SourceLine=6)]
-        public virtual void BasicNavigationToGradeRatesInOracle_ActorHRIS()
+        public virtual void OracleHRNavigation_AbtHRMSManager_ActorHRIS()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Navigation To Grade Rates In Oracle - Actor HRIS", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Oracle HR Navigation - Abt HRMS Manager - Actor HRIS", new string[] {
                         "Oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -78,11 +78,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("click the \"Abt HRMS Superuser\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("click the \"Grade Rate\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("click the \"Enter and Maintain\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("I fill the Grade Rate Oracle Forms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I update information on the oracle form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

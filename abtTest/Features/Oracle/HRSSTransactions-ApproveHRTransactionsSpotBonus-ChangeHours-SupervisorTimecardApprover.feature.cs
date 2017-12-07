@@ -17,21 +17,24 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("BasicNavigationToGradeRatesInOracle-ActorHRIS", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
-        "ioal Test", SourceFile="Features\\Oracle\\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature", SourceLine=0)]
-    public partial class BasicNavigationToGradeRatesInOracle_ActorHRISFeature
+    [TechTalk.SpecRun.FeatureAttribute("HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApp" +
+        "rover", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+        "ioal Test", SourceFile="Features\\Oracle\\HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-Super" +
+        "visorTimecardApprover.feature", SourceLine=0)]
+    public partial class HRSSTransactions_ApproveHRTransactionsSpotBonus_ChangeHours_SupervisorTimecardApproverFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "BasicNavigationToGradeRatesInOracle-ActorHRIS.feature"
+#line 1 "HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BasicNavigationToGradeRatesInOracle-ActorHRIS", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApp" +
+                    "rover", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
                     "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -63,11 +66,13 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Basic Navigation To Grade Rates In Oracle - Actor HRIS", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("HRSS Transactions - Approve HR Transactions Spot Bonus - Change Hours - Superviso" +
+            "r Timecard Approver", new string[] {
                 "Oracle"}, SourceLine=6)]
-        public virtual void BasicNavigationToGradeRatesInOracle_ActorHRIS()
+        public virtual void HRSSTransactions_ApproveHRTransactionsSpotBonus_ChangeHours_SupervisorTimecardApprover()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Navigation To Grade Rates In Oracle - Actor HRIS", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("HRSS Transactions - Approve HR Transactions Spot Bonus - Change Hours - Superviso" +
+                    "r Timecard Approver", new string[] {
                         "Oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -78,11 +83,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("click the \"Abt HRMS Superuser\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Workflow User Web Applications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("click the \"Grade Rate\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("click the \"Worklist\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("I fill the Grade Rate Oracle Forms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I approve the changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
