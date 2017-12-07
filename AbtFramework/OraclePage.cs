@@ -375,6 +375,8 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//a[text()='Subject']/parent::th/parent::tr/following-sibling::tr[1]/child::td[4]/a")]
         private IWebElement subjectLink;
 
+        //HRSS Transactions: Enter Voluntary Offboarding – Actor: HRBP
+      
 
         public IWebElement SelectFolderNavigator(string option)
         {
@@ -852,6 +854,7 @@ namespace AbtFramework
 
         }
 
+
         /// <summary>
         /// Accepts Java alerts to run Oracle application
         /// </summary>
@@ -1119,12 +1122,8 @@ namespace AbtFramework
 
         public void ChangeTimecardApprover()
         {
-            nameInputField.SendKeys("laidoson");
-            goButton.Click();
-            selectName.Click();
-            actionIcon.Click();
-            effectiveDate.SendKeys("09-Dec-2017");
-            continueButton.Click();
+            SelectEmployeeInPeopleHierarchy();
+
             supervisorName.Clear();
             supervisorName.SendKeys("poodts"); 
             supervisorName.SendKeys(Keys.Tab);
@@ -1142,12 +1141,8 @@ namespace AbtFramework
 
         public void ChangeEmployeeHours()
         {
-            nameInputField.SendKeys("laidoson");
-            goButton.Click();
-            selectName.Click();
-            actionIcon.Click();
-            effectiveDate.SendKeys("09-Dec-2017");
-            continueBtn.Click();
+            SelectEmployeeInPeopleHierarchy();
+
             workHoursInputField.Clear();
             workHoursInputField.SendKeys("32");
             Thread.Sleep(1000);
@@ -1163,6 +1158,29 @@ namespace AbtFramework
             applyButton.Click();
             nextButton3.Click();
             submitButton1.Click();
+        }
+
+        /// <summary>
+        /// Performs a offboarding (termination) to an employee
+        /// </summary>
+        public void OffboardEmployee()
+        {
+
+        }
+
+
+        /// <summary>
+        /// Selects an employee in People Hierarchy to then perform an especific
+        /// action against that employee.
+        /// </summary>
+        public void SelectEmployeeInPeopleHierarchy()
+        {
+            nameInputField.SendKeys("laidoson");
+            goButton.Click();
+            selectName.Click();
+            actionIcon.Click();
+            effectiveDate.SendKeys("09-Dec-2017");
+            continueBtn.Click();
         }
 
         public void ApproveChanges()
@@ -1202,5 +1220,9 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetEnrollmentResults);
 
         }
+
+
+
+
     }
 }
