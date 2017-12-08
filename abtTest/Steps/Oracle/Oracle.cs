@@ -305,11 +305,15 @@ namespace abtTest.Steps.Oracle
         [Then(@"I enter involuntary offboarding")]
         public void ThenEnterInvoluntaryOffboarding()
         {
-            AbtPages.OraclePage.OffboardEmployee();
+            AbtPages.OraclePage.DoOffboardEmployee();
         }
 
 
-
+        [Then(@"I enter Spot Bonus")]
+        public void ThenEnterSpotBonus()
+        {
+            AbtPages.OraclePage.DoSpotBonus();
+        }
 
 
 

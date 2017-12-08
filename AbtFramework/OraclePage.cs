@@ -13,6 +13,7 @@ using AbtFramework.Sikuli.SikuliPatternObjects;
 using AbtFramework.Sikuli.SikuliPatternObjects.OracleForms;
 using Microsoft.Lync.Model.Conversation.Sharing;
 using SikuliSharp;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AbtFramework
 {
@@ -389,17 +390,54 @@ namespace AbtFramework
         [FindsBy(How = How.Name, Using = "AkDescription")]
         private IWebElement descrptionAttachmentTextArea;
 
-        [FindsBy(How = How.Name, Using = "//span[text()= 'Text']//preceding-sibling::input")]
+        [FindsBy(How = How.XPath, Using = "//span[text()= 'Text']//preceding-sibling::input")]
         private IWebElement defineAttachmentTextRadioBtn;
 
-        [FindsBy(How = How.Name, Using = "//button[@title='Add']")]
+        [FindsBy(How = How.Id, Using = "Okay_uixr")]
         private IWebElement applyAttachmentBtn;
 
-        [FindsBy(How = How.Name, Using = "//textarea[@title='Attachment Text']")]
+        [FindsBy(How = How.XPath, Using = "//textarea[@title='Attachment Text']")]
         private IWebElement descriptionTextAreaAttachment;
 
         [FindsBy(How = How.Id, Using = "HrSubmit")]
-        private IWebElement submitConfirmationforOffboardingBtn;
+        private IWebElement submitInReviewConfirmationBtn; //works for any subit under review screen
+
+        //HRSS Transactions: Enter Spot Bonus – Actor: HRSC
+        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Type']/parent::td/following-sibling::td//input")]
+        private IWebElement paymentTypeInput;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Date']/parent::td/following-sibling::td//input")]
+        private IWebElement paymentDateInput;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Amount']/parent::td/following-sibling::td//input")]
+        private IWebElement paymentAmountInput;
+
+        [FindsBy(How = How.XPath, Using = "//img[@title='Search for Bonus Awarded By']")]
+        private IWebElement paymentBonusAwardedByIcon;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Comments']/parent::td/following-sibling::td//input")]
+        private IWebElement paymentCommentsInput;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Search Term']")]
+        private IWebElement bonusAwardedBySearchInput;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Select']")]
+        private IWebElement bonusAwardedSelecRadioBtn;
+
+        [FindsBy(How = How.Id, Using = "HrNext")]
+        private IWebElement applyOrNextBonusBtn; //this works for apply and next in Bonus Spot section
+
+        //this will be simplified with the refactor, but at this point need to call 
+        //index to get a single button, this is because same button is twice. too lazy to get
+        //unique path :)
+        [FindsBy(How = How.XPath, Using = "//button[text() = 'Select']")]
+        private IList<IWebElement> selectBtnsList; 
+
+
+
+
+
+
 
 
         public IWebElement SelectFolderNavigator(string option)
@@ -1148,6 +1186,8 @@ namespace AbtFramework
         {
             SelectEmployeeInPeopleHierarchy();
 
+            effectiveDate.SendKeys("09-Dec-2017");
+            continueBtn.Click();
             supervisorName.Clear();
             supervisorName.SendKeys("poodts"); 
             supervisorName.SendKeys(Keys.Tab);
@@ -1167,6 +1207,8 @@ namespace AbtFramework
         {
             SelectEmployeeInPeopleHierarchy();
 
+            effectiveDate.SendKeys("09-Dec-2017");
+            continueBtn.Click();
             workHoursInputField.Clear();
             workHoursInputField.SendKeys("32");
             Thread.Sleep(1000);
@@ -1187,7 +1229,7 @@ namespace AbtFramework
         /// <summary>
         /// Performs a offboarding (termination) to an employee
         /// </summary>
-        public void OffboardEmployee()
+        public void DoOffboardEmployee()
         {
             SelectEmployeeInPeopleHierarchy();
 
@@ -1196,30 +1238,86 @@ namespace AbtFramework
 
             commentsTextArea.SendKeys("For Testing");
             nextBtnAfterReason.Click();
+
+            AddAttachmentsAdditionalInfo();
+
+            submitInReviewConfirmationBtn.Click();
+
+
+        }
+        /// <summary>
+        /// Performs Spot Bonus action against an employee.
+        /// </summary>
+        public void DoSpotBonus()
+        {
+            SelectEmployeeInPeopleHierarchy();
+
+            addBtn.Click();
+            if (!paymentTypeInput.GetAttribute("value").Equals("SP"))
+                Assert.Fail("Error: SP value not present in Payment Input");
+
+            string nextSaturday = GetNextWeekDay(DateTime.Today.AddDays(1), DayOfWeek.Saturday);
+            paymentDateInput.SendKeys(nextSaturday);
+            paymentAmountInput.SendKeys("100");
+            paymentBonusAwardedByIcon.Click();
+
+            Thread.Sleep(1000);
+            // Store all the opened window into the 'list' 
+            List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
+            SeleniumDriver.Instance.SwitchTo().Window(lstWindow[1]);
+            SeleniumDriver.Instance.SwitchTo().Frame(0);
+            bonusAwardedBySearchInput.SendKeys("oumsalem, sofiane");
+            goBtn.Click();
+            bonusAwardedSelecRadioBtn.Click();
+            selectBtnsList[0].Click();
+
+            SeleniumDriver.Instance.SwitchTo().Window(lstWindow[0]);
+            paymentCommentsInput.SendKeys("For testing");
+            applyOrNextBonusBtn.Click();
+            applyOrNextBonusBtn.Click();
+
+            AddAttachmentsAdditionalInfo();
+            submitInReviewConfirmationBtn.Click();
+        }
+
+
+        /// <summary>
+        /// Adds attachment and fills Attachment Summary with Text option
+        /// as define attachment
+        /// </summary>
+        private void AddAttachmentsAdditionalInfo()
+        {
             addAttachments.Click();
             titleAttachmentInput.SendKeys("Test");
             descrptionAttachmentTextArea.SendKeys("For Testing");
             defineAttachmentTextRadioBtn.Click();
             descriptionTextAreaAttachment.SendKeys("For Testing");
             applyAttachmentBtn.Click();
-            submitConfirmationforOffboardingBtn.Click();
-
-
         }
-
 
         /// <summary>
         /// Selects an employee in People Hierarchy to then perform an especific
         /// action against that employee.
         /// </summary>
-        public void SelectEmployeeInPeopleHierarchy()
+        private void SelectEmployeeInPeopleHierarchy()
         {
             nameInputField.SendKeys("laidoson");
             goButton.Click();
             selectName.Click();
             actionIcon.Click();
-            effectiveDate.SendKeys("09-Dec-2017");
-            continueBtn.Click();
+           
+        }
+
+        /// <summary>
+        /// Utils: Gets an specific day of the week based on today's date
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="day"></param>
+        /// <returns>date wanted</returns>
+        private string GetNextWeekDay(DateTime startDate, DayOfWeek day)
+        {
+            int daysToAdd = ((int)day - (int)startDate.DayOfWeek + 7) % 7;
+            return startDate.AddDays(daysToAdd).Date.ToString("d");
         }
 
         public void ApproveChanges()
