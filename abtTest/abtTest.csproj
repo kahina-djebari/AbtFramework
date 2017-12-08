@@ -135,10 +135,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactionsEnterSpotBonus.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactionsEnterSpotBonus.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactionsEnterInvoluntaryOffboarding.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactionsEnterInvoluntaryOffboarding.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature.cs">
       <AutoGen>True</AutoGen>
@@ -237,9 +247,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Oracle\HRSSTransactionsEnterSpotBonus.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactionsEnterSpotBonus.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\HRSSTransactionsEnterInvoluntaryOffboarding.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactionsEnterInvoluntaryOffboarding.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

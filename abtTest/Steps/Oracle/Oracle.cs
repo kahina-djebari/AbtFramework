@@ -15,12 +15,7 @@ namespace abtTest.Steps.Oracle
         {
             SeleniumDriver.Quit();
         }
-        // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
-        //[Given(@"go to the Home screen")]
-        //public void GivenGoToTheHomeScreen()
-        //{
-            //AbtPages.OraclePage.ClickHomeButton();
-        //}
+        
         [Given(@"I have Open IE Test")]
         public void GivenIHaveOpenIETest()
         {
@@ -307,9 +302,18 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ConfirmDefaultProcess();
         }
 
+        [Then(@"I enter involuntary offboarding")]
+        public void ThenEnterInvoluntaryOffboarding()
+        {
+            AbtPages.OraclePage.DoOffboardEmployee();
+        }
 
 
-
+        [Then(@"I enter Spot Bonus")]
+        public void ThenEnterSpotBonus()
+        {
+            AbtPages.OraclePage.DoSpotBonus();
+        }
 
 
 
