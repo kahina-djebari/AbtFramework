@@ -14,4 +14,3 @@ Scenario: HRSS Transactions - Enter Change of Timecard ApproverSupervisor and Ch
 	Then click the "Abt HR Operations Self Service" option
 	And click the "Change of Hours" option
 	Then I change the employee hours
-
