@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 namespace abtTest.Steps.Oracle
 {
     [Binding]
-    public sealed class Oracle
+    public sealed class OracleSteps
     {
         private static String gUser = "user";
         // kill all the selenium drivers after a successfull test.

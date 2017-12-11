@@ -209,7 +209,7 @@
     <Compile Include="Steps\ServiceNow\FacilitiesSteps.cs" />
     <Compile Include="Steps\ServiceNow\IRRSteps.cs" />
     <Compile Include="Steps\ServiceNow\ITSCSteps.cs" />
-    <Compile Include="Steps\Oracle\Oracle.cs" />
+    <Compile Include="Steps\Oracle\OracleSteps.cs" />
     <Compile Include="Steps\SSO\SSOSteps.cs" />
     <Compile Include="Steps\Windows\WinPrograms.cs" />
     <Compile Include="Web\AGI.cs" />
