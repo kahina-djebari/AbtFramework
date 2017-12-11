@@ -37,6 +37,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\Debug\</OutputPath>
     <RegisterForComInterop>false</RegisterForComInterop>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -148,6 +149,10 @@
     <Compile Include="ServiceNowTaskBar.cs" />
     <Compile Include="SharePointTopNavigation.cs" />
     <Compile Include="Sikuli\SikuliHelper.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\CommonPaternObjects.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\AbtHRMSManagerObject.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfDefaultProcessRunsObjects.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\GradeRatePatternObject.cs" />
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\OracleFormsPatternObject.cs" />
     <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
@@ -262,8 +267,11 @@
   <ItemGroup>
     <Folder Include="Drivers\Chrome\" />
     <Folder Include="Drivers\IE\" />
+    <Folder Include="Sikuli\SikuliPatternImges\AbtHRMSManagerImges\" />
+    <Folder Include="Sikuli\SikuliPatternImges\CommonPatternImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunsImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\GradeRateImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\OracleFromsImges\" />
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

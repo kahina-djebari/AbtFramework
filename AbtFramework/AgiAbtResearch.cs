@@ -34,7 +34,7 @@ namespace AbtFramework
         public string GoToRightFind()
         {
 
-            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
             string  RightFindWinHandle= finder.Click(RightFindLink);
             StartTimer();
             return RightFindWinHandle;
@@ -46,7 +46,7 @@ namespace AbtFramework
         public string GoToEbscoDS()
         {
              
-             finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
+             finder = new PopupWindowFinder(SeleniumDriver.Instance);
             string EbscoWinHandle= finder.Click(EbscoDS);
              StartTimer();
             return EbscoWinHandle;

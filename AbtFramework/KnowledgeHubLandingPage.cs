@@ -24,7 +24,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/sites/PropProj/KnowledgeHub/SitePages/Home.aspx");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/sites/PropProj/KnowledgeHub/SitePages/Home.aspx");
         }
 
         public void AttemptToLogin()

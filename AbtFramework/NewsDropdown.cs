@@ -6,13 +6,13 @@ namespace AbtFramework
 {
     public class NewsDropdown : PageModel
     {
-        public IWebElement Announcements { get { return SeleniumDriver.DriverInstance.FindElement(By.LinkText("Announcements")); } }
+        public IWebElement Announcements { get { return SeleniumDriver.Instance.FindElement(By.LinkText("Announcements")); } }
 
-        public IWebElement NewsLink { get { return SeleniumDriver.DriverInstance.FindElement(By.LinkText("News")); } }
+        public IWebElement NewsLink { get { return SeleniumDriver.Instance.FindElement(By.LinkText("News")); } }
 
-        public IWebElement EventsLink { get { return SeleniumDriver.DriverInstance.FindElement(By.LinkText("Events")); } }
+        public IWebElement EventsLink { get { return SeleniumDriver.Instance.FindElement(By.LinkText("Events")); } }
 
-        public IWebElement NewsArchiveLink { get { return SeleniumDriver.DriverInstance.FindElement(By.LinkText("News Archive")); } }
+        public IWebElement NewsArchiveLink { get { return SeleniumDriver.Instance.FindElement(By.LinkText("News Archive")); } }
 
         private void GoTo(Abtlinks announcements)
         {
@@ -20,7 +20,7 @@ namespace AbtFramework
             {
 
                 case Abtlinks.NewsArchive:
-                    while (SeleniumDriver.DriverInstance.Title.Equals("Home"))
+                    while (SeleniumDriver.Instance.Title.Equals("Home"))
                     {
                         try
                         {
@@ -43,7 +43,7 @@ namespace AbtFramework
                     break;
 
                 case Abtlinks.Events:
-                    while (SeleniumDriver.DriverInstance.Title.Equals("Home"))
+                    while (SeleniumDriver.Instance.Title.Equals("Home"))
                     {
                         try
                         {
@@ -66,7 +66,7 @@ namespace AbtFramework
                     break;
                 case Abtlinks.Announcements:
 
-                    while (SeleniumDriver.DriverInstance.Title.Equals("Home"))
+                    while (SeleniumDriver.Instance.Title.Equals("Home"))
                     {
                         try
                         {

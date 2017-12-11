@@ -187,7 +187,7 @@ namespace abtTest.Web
 
         public void Dispose()
         {
-            if(SeleniumDriver.DriverInstance!=null)
+            if(SeleniumDriver.Instance!=null)
             SeleniumDriver.QuitDriverInstance();
         }
     }

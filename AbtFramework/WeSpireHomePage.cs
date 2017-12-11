@@ -71,8 +71,8 @@ namespace AbtFramework
         public void WaitForHomePageToLoad(string AbtXchangeHandle)
         {
             //SeleniumDriver.DriverInstance.SwitchTo().Window(AbtXchangeHandle);
-            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
-            SeleniumDriver.DriverInstance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             try
             {
                 LoginBtn.Click();
@@ -82,7 +82,7 @@ namespace AbtFramework
             {
                 Console.WriteLine(ex.Message);
             }
-            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             try
             {
                 LoginBtn.Click();
@@ -132,7 +132,7 @@ namespace AbtFramework
 
         public void GoWithNoOutputResult()
         {
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtxchange.staging.wespire.com/");
         }
 
         private Post PostMatcher(string input, string pattern)
@@ -208,7 +208,7 @@ namespace AbtFramework
                     TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to WeSpire(Test Environment):" + url);
 
                 }
-                SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
                 wait.Until(e => Dashboard.Displayed);
                            
 

@@ -16,8 +16,8 @@ namespace AbtFramework
             
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.Until(DriverExtentions.WaitforWindowsTobe2);
-            SeleniumDriver.DriverInstance.Close();
-            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
+            SeleniumDriver.Instance.Close();
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
 
         }
 

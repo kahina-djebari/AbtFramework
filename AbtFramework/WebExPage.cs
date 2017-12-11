@@ -19,7 +19,7 @@ namespace AbtFramework
 
         public void Login()
         {
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("header");
+            SeleniumDriver.Instance.SwitchTo().Frame("header");
           
             loginbtn.Click();
                       
@@ -47,7 +47,7 @@ namespace AbtFramework
 
         private void GoToUrl(string url)
         {
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
             StartTimer();
                             
                     

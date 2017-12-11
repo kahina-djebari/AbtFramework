@@ -8,7 +8,9 @@ namespace abtTest.Steps.Oracle
     [Binding]
     public sealed class OracleSteps
     {
-       
+
+        private static String gUser = "user";
+    
 
         [Then(@"click iProcurement request and then Non-Catalog Req")]
         public void ThenClickIProcurementRequestAndThenNon_CatalogReq()
@@ -203,11 +205,86 @@ namespace abtTest.Steps.Oracle
         }
 
 
+        [Then(@"I do discoverer books for multiple sheets")]
+        public void ThenDoDiscovererWorkbboksForMultipleSheets()
+        {
+            AbtPages.OraclePage.DoDiscovererWorkbookMultipleSheets();
+        }
+
+        [Then(@"I do discoverer books for one sheet")]
+        public void ThenDoDiscovererWorkbboksForOneSheet()
+        {
+            AbtPages.OraclePage.DoDiscovererWorkbookOneSheet();
+        }
+
+
 
         [Then(@"I fill the Oracle Forms")]
         public void ThenIFillTheOracleForms()
         {
             AbtPages.OraclePage.FillOracleFroms();
+        }
+
+
+        [Then(@"I fill the Grade Rate Oracle Forms")]
+        public void ThenIFillTheGradeRateOracleForms()
+        {
+            AbtPages.OraclePage.FillTheGradeRateOracleForms();
+        }
+
+        [Then(@"I choose veteran status")]
+        public void ThenIChooseVeteranStatus()
+        {
+            AbtPages.OraclePage.chooseVeteranStatus();
+        }
+
+        [Then(@"I update information on the oracle form")]
+        public void ThenIUpdateInformationOnTheOracleForm()
+        {
+            AbtPages.OraclePage.UpdateInformationOnOracleForm();
+        }
+
+        [Then(@"I go to the oracle form")]
+        public void ThenIGoToTheOracleForm()
+        {
+            AbtPages.OraclePage.GoToOracleForm();
+        }
+
+        [Then(@"change timecard approver")]
+        public void ThenChangeTimecardApprover()
+        {
+            AbtPages.OraclePage.ChangeTimecardApprover();
+        }
+
+        [Then(@"I change the employee hours")]
+        public void ThenIChangeTheEmployeeHours()
+        {
+            AbtPages.OraclePage.ChangeEmployeeHours();
+        }
+
+        [Then(@"I approve the changes")]
+        public void ThenIApproveTheChanges()
+        {
+            AbtPages.OraclePage.ApproveChanges();
+        }
+
+        [Then(@"I confirm default process runs")]
+        public void ThenIConfirmDefaultProcessRuns()
+        {
+            AbtPages.OraclePage.ConfirmDefaultProcess();
+        }
+
+        [Then(@"I enter involuntary offboarding")]
+        public void ThenEnterInvoluntaryOffboarding()
+        {
+            AbtPages.OraclePage.DoOffboardEmployee();
+        }
+
+
+        [Then(@"I enter Spot Bonus")]
+        public void ThenEnterSpotBonus()
+        {
+            AbtPages.OraclePage.DoSpotBonus();
         }
 
 

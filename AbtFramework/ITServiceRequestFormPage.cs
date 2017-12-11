@@ -49,8 +49,8 @@ namespace AbtFramework
             wait.Until(e => MoreInfoTxtBox.Displayed);
             MoreInfoTxtBox.SendKeys(moreInformation);
             submitBtn.Click();
-            wait.Until(e=>SeleniumDriver.DriverInstance.Title.Equals("Abt Service Hub"));
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Abt Service Hub"));
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
             action.MoveToElement(dropzone).Perform();
            // wait.Until(e => OpenMyIncidentsLink.Displayed);
             //  action.SendKeys(Keys.ArrowUp).SendKeys(Keys.ArrowUp).SendKeys(Keys.ArrowUp).Perform();

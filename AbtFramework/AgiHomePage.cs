@@ -109,8 +109,8 @@ namespace AbtFramework
                 {
                     _quicklinks = PageGenerator.GetPage<QuickLinksModel>();
 
-                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(10));
-                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.DriverInstance);
+                    _quicklinks.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
+                _quicklinks.action = new OpenQA.Selenium.Interactions.Actions(SeleniumDriver.Instance);
                     return _quicklinks;
                 }
             }
@@ -137,7 +137,7 @@ namespace AbtFramework
         public void Go()
         {
             StartTimer();
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
         }
 
         // use this method to avoid the mega menu shared point issues.
@@ -145,9 +145,9 @@ namespace AbtFramework
         {
             StartTimer();
             //since its a clean session we go to agi to make o
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
+            SeleniumDriver.Instance.Navigate().GoToUrl("http://agiokta.abtassociates.com");
             Thread.Sleep(6000);
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/ToolsResources/Pages/ServiceCenters.aspx");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/ToolsResources/Pages/ServiceCenters.aspx");
         }
 
         public void WaitForHomeToLoad()
@@ -227,7 +227,7 @@ namespace AbtFramework
         {
             wait.Until((Func<IWebDriver, bool>)((e) =>
             {
-                if (SeleniumDriver.DriverInstance.Title != title)
+                if (SeleniumDriver.Instance.Title != title)
                 {
                     element.Click();
                 }

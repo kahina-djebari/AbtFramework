@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -61,6 +62,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SikuliSharp, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SikuliSharp.1.2.0\lib\net45\SikuliSharp.dll</HintPath>
     </Reference>
     <Reference Include="SpecRun.SpecFlowPlugin, Version=1.6.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.6.3\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
@@ -116,10 +120,65 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AGI.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactionsEnterSpotBonus.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactionsEnterSpotBonus.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\HRSSTransactionsEnterInvoluntaryOffboarding.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSSTransactionsEnterInvoluntaryOffboarding.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleDiscovererReportwithOneSheet-HRISActor.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\Oracle.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Oracle.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VoluntaryDisclosureofVeteransStatus.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\OracleDiscReportMultipleSheets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleDiscReportMultipleSheets.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\ServiceNow\Facilities.feature.cs">
       <AutoGen>True</AutoGen>
@@ -178,9 +237,53 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AGI.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Oracle\ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactions-ApproveHRTransactionsSpotBonus-ChangeHours-SupervisorTimecardApprover.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactions-EnterChangeOfTimecardApproverSupervisorAndChangeOfHours -ActorHRSC.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\HRSSTransactionsEnterSpotBonus.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactionsEnterSpotBonus.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\HRSSTransactionsEnterInvoluntaryOffboarding.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HRSSTransactionsEnterInvoluntaryOffboarding.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleDiscovererReportwithOneSheet-HRISActor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleDiscovererReportwithOneSheet-HRISActor.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Oracle\Oracle.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Oracle.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\VoluntaryDisclosureofVeteransStatus.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>VoluntaryDisclosureofVeteransStatus.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleDiscReportMultipleSheets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleDiscReportMultipleSheets.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ServiceNow\Facilities.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

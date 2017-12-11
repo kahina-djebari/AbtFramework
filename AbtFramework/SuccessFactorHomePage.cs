@@ -46,7 +46,7 @@ namespace AbtFramework
         public void WaitForHomePageToLoad(string winHandle)
         {
 
-            SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
 
             wait.Until(e =>CopyRight);
             StopTimer();
@@ -67,7 +67,7 @@ namespace AbtFramework
                 if (TestCaseGenerator.CurrentTestCase.StepExist("Navigate to Url " + url))
                     TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
 
-                SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
 
                
 
@@ -121,7 +121,7 @@ namespace AbtFramework
 
             try
             {
-                wait.Until(e => SeleniumDriver.DriverInstance.Title.Equals("SuccessFactors: Home"));
+                wait.Until(e => SeleniumDriver.Instance.Title.Equals("SuccessFactors: Home"));
               
                 if (dropdowns.Single(a => a.Text.Equals("Home")).Displayed)
                 {

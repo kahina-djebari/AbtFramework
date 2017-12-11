@@ -38,7 +38,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         private static readonly int MAX = 3;
 
         //unique instance of driver
-        public static IWebDriver DriverInstance;
+        public static IWebDriver Instance;
 
         //to handle javascript actions
         private static IJavaScriptExecutor js;
@@ -87,20 +87,20 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
            
             try
             {
-                DriverInstance = new ChromeDriver(_pathToChrome, options);
+                Instance = new ChromeDriver(_pathToChrome, options);
             }
             catch (Exception e)
             {
                 Assert.Fail("---> " + e.Message);
             }
 
-            if (DriverInstance == null)
+            if (Instance == null)
                 Assert.Fail("--> None of the webDrivers are supported for this browser");
 
 
-            js = (IJavaScriptExecutor)DriverInstance; //init js object
-            wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(60)); //init wait object
-            DriverInstance.Manage().Window.Maximize();
+            js = (IJavaScriptExecutor)Instance; //init js object
+            wait = new WebDriverWait(Instance, TimeSpan.FromSeconds(60)); //init wait object
+            Instance.Manage().Window.Maximize();
             Console.WriteLine("-------->  Opening Chrome Driver");
         }
 
@@ -119,25 +119,25 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
             try
             {
-                DriverInstance = new InternetExplorerDriver(_pathToIE, IEoptions);
+                Instance = new InternetExplorerDriver(_pathToIE, IEoptions);
             }
             catch (Exception e)
             {
                 Assert.Fail("---> " + e.Message);
             }
 
-            if (DriverInstance == null)
+            if (Instance == null)
                 Assert.Fail("--> None of the webDrivers are supported for this browser");
 
-            js = (IJavaScriptExecutor)DriverInstance; //init js object
-            wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(60)); //init wait object
-            DriverInstance.Manage().Window.Maximize();
+            js = (IJavaScriptExecutor)Instance; //init js object
+            wait = new WebDriverWait(Instance, TimeSpan.FromSeconds(60)); //init wait object
+            Instance.Manage().Window.Maximize();
         }
 
 
         public static string GetAlertText()
         {
-            WebDriverWait wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(5));
+            WebDriverWait wait = new WebDriverWait(Instance, TimeSpan.FromSeconds(5));
             var alert = wait.Until(ExpectedConditions.AlertIsPresent());
 
             return alert.Text;
@@ -149,7 +149,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// <param name="url"></param>
         public static void GoTo(string url)
         {
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
         }
 
 
@@ -158,8 +158,8 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// </summary>
         public static void QuitDriverInstance()
         {
-            DriverInstance.Quit();
-            DriverInstance = null;
+            Instance.Quit();
+            Instance = null;
 
         }
 
@@ -167,7 +167,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         {
 
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd-hhmm-ss");
-            DriverInstance.TakeScreenshot().SaveAsFile("failedTest-" + timestamp + ".png", ImageFormat.Png);
+            Instance.TakeScreenshot().SaveAsFile("failedTest-" + timestamp + ".png", ImageFormat.Png);
         }
 
 
@@ -176,7 +176,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// </summary>
         public static void Close()
         {
-            DriverInstance.Close();
+            Instance.Close();
         }
 
         internal static string GetcurrentWindowHandler(ReadOnlyCollection<string> windowsHandler)
@@ -184,7 +184,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             foreach (var window in windowsHandler)
             {
                 Console.WriteLine(window);
-                if (window != DriverInstance.CurrentWindowHandle)
+                if (window != Instance.CurrentWindowHandle)
                 {
                     return window;
                 }
@@ -450,7 +450,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// <param name="time"></param>
         public static void WaitVisibilityOf(IWebElement element, int time)
         {
-              WebDriverWait waiting = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
+              WebDriverWait waiting = new WebDriverWait(Instance, TimeSpan.FromSeconds(time));
 
             try
             {
@@ -481,7 +481,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// <param name="time"></param>
         public static void WaitVisibilityOfAllElements(By locator, int time)
         {
-            WebDriverWait waiting = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
+            WebDriverWait waiting = new WebDriverWait(Instance, TimeSpan.FromSeconds(time));
 
             try
             {
@@ -506,7 +506,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// <param name="time"></param>
         public static void WaitInvisibilityOf(By locator, int time)
         {
-            WebDriverWait waiting = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
+            WebDriverWait waiting = new WebDriverWait(Instance, TimeSpan.FromSeconds(time));
             waiting.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
         }
 
@@ -524,12 +524,12 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             Thread.Sleep(2);
             try
             {
-                DriverInstance.SwitchTo().Frame(frameName);
+                Instance.SwitchTo().Frame(frameName);
 
             }
             catch (Exception e2)
             {
-                DriverInstance.SwitchTo().Frame(DriverInstance.FindElement(By.Id(frameName)));
+                Instance.SwitchTo().Frame(Instance.FindElement(By.Id(frameName)));
             }
 
         }
@@ -640,7 +640,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
         private static List<IWebElement> GetListOfElements(string element, long time, bool printError, string by)
         {
-            WebDriverWait wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
+            WebDriverWait wait = new WebDriverWait(Instance, TimeSpan.FromSeconds(time));
             List<IWebElement> elements = null;
             // TODO: Need to create a medium wait about --> 10 secs
 
@@ -675,7 +675,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
         private static IWebElement GetElement(string element, long time, bool printError, string by)
         {
-            WebDriverWait wait = new WebDriverWait(DriverInstance, TimeSpan.FromSeconds(time));
+            WebDriverWait wait = new WebDriverWait(Instance, TimeSpan.FromSeconds(time));
             List<IWebElement> elements = null;
             // TODO: Need to create a medium wait about --> 10 secs
 
