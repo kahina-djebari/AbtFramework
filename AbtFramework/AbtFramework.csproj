@@ -269,6 +269,19 @@
     <Folder Include="Sikuli\SikuliPatternImges\OracleFromsImges\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>taskkill /f /fi "pid gt 0" /im IEDriverServer.exe
+taskkill /f /fi "pid gt 0" /im iexplore.exe
+taskkill /F /IM vstest.executionengine.x86.exe /FI "MEMUSAGE gt 1"
+taskkill /F /IM vstest.discoveryengine.x86.exe /FI "MEMUSAGE gt 1"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>taskkill /f /fi "pid gt 0" /im IEDriverServer.exe
+taskkill /f /fi "pid gt 0" /im iexplore.exe
+taskkill /F /IM vstest.executionengine.x86.exe /FI "MEMUSAGE gt 1"
+taskkill /F /IM vstest.discoveryengine.x86.exe /FI "MEMUSAGE gt 1"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

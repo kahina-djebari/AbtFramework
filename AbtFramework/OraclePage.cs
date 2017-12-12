@@ -1084,7 +1084,7 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            sikuliHelper.ClickPattern(gradePatterns.GetNoBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
 
             sikuliHelper.ClickPattern(gradePatterns.GetView);
 
@@ -1131,6 +1131,23 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(gradePatterns.GetRun);
         }
 
+        /// <summary>
+        /// Oracle Form: Click No button (no need to change the date), type in Employee Name, and Click Find button
+        /// </summary>
+        /// <param name="employeeName"></param>
+        /// 
+        public void FindEmployeeName(string employeeName)
+        {
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
+
+            sikuliHelper.SetInputValue(commonPatterns.GetFullName, employeeName);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetFindBtn);
+        }
+
         public void UpdateInformationOnOracleForm()
         {
             HRMSManagerPatterns = new AbtHRMSManagerObject();
@@ -1139,11 +1156,7 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetNoBtn);
-
-            sikuliHelper.SetInputValue(HRMSManagerPatterns.GetFullName, "oumsalem");
-
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetFindBtn);
+            FindEmployeeName("oumsalem");
 
             sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOfficeDetails);
 
@@ -1155,9 +1168,9 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(HRMSManagerPatterns.GetSaveIcon);
 
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCloseOracleForm);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
 
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
 
         }
 
@@ -1169,24 +1182,20 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetNoBtn);
+            FindEmployeeName("oumsalem");
 
-            sikuliHelper.SetInputValue(HRMSManagerPatterns.GetFullName, "oumsalem");
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
 
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetFindBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
 
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCloseOracleForm);
-
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOkBtn);
-
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCloseWindow);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseWindow);
         }
 
         public void ChangeTimecardApprover()
         {
             SelectEmployeeInPeopleHierarchy();
-
-            effectiveDate.SendKeys("09-Dec-2017");
+            string nextSaturday = GetNextWeekDay(DateTime.Today.AddDays(1), DayOfWeek.Saturday);
+            effectiveDate.SendKeys(nextSaturday);
             continueBtn.Click();
             supervisorName.Clear();
             supervisorName.SendKeys("poodts"); 
@@ -1206,8 +1215,8 @@ namespace AbtFramework
         public void ChangeEmployeeHours()
         {
             SelectEmployeeInPeopleHierarchy();
-
-            effectiveDate.SendKeys("09-Dec-2017");
+            string nextSaturday = GetNextWeekDay(DateTime.Today.AddDays(1), DayOfWeek.Saturday);
+            effectiveDate.SendKeys(nextSaturday);
             continueBtn.Click();
             workHoursInputField.Clear();
             workHoursInputField.SendKeys("32");
@@ -1336,11 +1345,7 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetNoBtn);
-
-            sikuliHelper.SetInputValue(ConfDefaultProcessRunsPatterns.GetFullName, "oumsalem");
-
-            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetFindBtn);
+            FindEmployeeName("oumsalem");
 
             sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetName);
 
@@ -1352,7 +1357,7 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetNewHire); 
 
-            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetDesktopActivities); 
+            sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities); 
 
             sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetEnrollmentResults);
 

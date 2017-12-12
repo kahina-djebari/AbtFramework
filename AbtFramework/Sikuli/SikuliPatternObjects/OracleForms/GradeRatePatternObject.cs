@@ -18,8 +18,6 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/GradeRateImgs/";
 
-        public IPattern GetNoBtn => sikuliHelper.GetPattern(PATH + "NoBtn.PNG");
-
         public IPattern GetView => sikuliHelper.GetPattern(PATH + "View.PNG");
 
         public IPattern GetQueryByExample => sikuliHelper.GetPattern(PATH + "QueryByExample.PNG");
