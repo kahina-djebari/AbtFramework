@@ -140,6 +140,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HRSSTransactionsEnterSpotBonus.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -250,6 +255,10 @@
     <None Include="Features\Oracle\HRSSTransactionsEnterSpotBonus.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HRSSTransactionsEnterSpotBonus.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

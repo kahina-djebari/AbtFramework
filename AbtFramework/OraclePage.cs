@@ -25,6 +25,7 @@ namespace AbtFramework
         private GradeRatePatternObject gradePatterns;
         private AbtHRMSManagerObject HRMSManagerPatterns;
         private ConfDefaultProcessRunsObjects ConfDefaultProcessRunsPatterns;
+        private LifeEventPatternObjects LifeEventPatterns;
         private SikuliHelper sikuliHelper;
         private int counter = 11;
         private int counter1 = 8;
@@ -431,12 +432,17 @@ namespace AbtFramework
         //index to get a single button, this is because same button is twice. too lazy to get
         //unique path :)
         [FindsBy(How = How.XPath, Using = "//button[text() = 'Select']")]
-        private IList<IWebElement> selectBtnsList; 
+        private IList<IWebElement> selectBtnsList;
 
+        //OracleBSS: Adding life event and enrolling in benefits
+        [FindsBy(How = How.XPath, Using = "//input[@title='Search Value: First Name']")]
+        private IList<IWebElement> firstNameInputField;
 
+        [FindsBy(How = How.XPath, Using = "//input[@title='Search Value: Last Name']")]
+        private IList<IWebElement> lastNameInputField;
 
-
-
+        [FindsBy(How = How.XPath, Using = "//button[text()='Go']")]
+        private IList<IWebElement> goButtonFindAddedLE;  //LE = Life Event
 
 
 
@@ -1363,8 +1369,55 @@ namespace AbtFramework
 
         }
 
+        //To add a Life Event (LE) and enroll in benefits
+        public void LifeEventEnrollBenefits()
+        {
+            LifeEventPatterns = new LifeEventPatternObjects();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            AcceptJavaAlert();
+
+            FindEmployeeName("oumsalem");
+
+            sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetViewPersonLifeEvents);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetPotentialLifeEventsTab);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetDownArrow);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetLastEventRecorded);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetNewIcon);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetAbtAdminLE);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateLEReason);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectLEDate);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateLEDate);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetUnprocessedField);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectLEDate);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateLEDate);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
 
 
+        }
 
     }
 }

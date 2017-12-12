@@ -315,6 +315,12 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.DoSpotBonus();
         }
 
+        [Then(@"I add life event and enroll in benefits")]
+        public void ThenIAddLifeEventAndEnrollInBenefits()
+        {
+            AbtPages.OraclePage.LifeEventEnrollBenefits();
+        }
+
 
 
     }
