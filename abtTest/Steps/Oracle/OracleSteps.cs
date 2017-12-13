@@ -137,11 +137,7 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ClickUserOptions1(p0);
         }
 
-        [Then(@"click on People")]
-        public void ThenClickOnPeople()
-        {
-            AbtPages.OraclePage.clickPeople();
-        }
+
 
         [Then(@"click on Entries")]
         public void ThenClickOnEntries()

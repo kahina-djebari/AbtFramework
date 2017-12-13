@@ -8,7 +8,7 @@
 Scenario: Abt US Employee Direct Access
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Sofiane Oumsalem"
+	And i login as "oumsalems"
 	Then click the "Abt US Employee Direct Access" option
 	And browse to "Employee Self Service Actions Awaiting Your Attention"
 	Then click the "Abt US Employee Direct Access" option
@@ -26,7 +26,7 @@ Scenario: Abt US Employee Direct Access
 Scenario: Abt US Projects Inquiry Access
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Valerie Hennessey"
+	And i login as "PCTEST01"
 	Then click the "Abt US Projects Inquiry" option
 	And browse to "Notifications"
 	Then click the "Abt US Projects Inquiry" option
@@ -66,7 +66,7 @@ Scenario: Abt US Projects Inquiry Access
 Scenario: iProcurement Request
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Sofiane Oumsalem"
+	And i login as "oumsalems"
 	Then click the "Abt US iProcurement Requester" option
 	Then click iProcurement request and then Non-Catalog Req
 	And fill the request form
@@ -84,15 +84,15 @@ Scenario: iProcurement Request
 Scenario:Requisition approval 
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Gail Berg"
+	And i login as "BergG"
 	Then click the "Abt US iProcurement Inquiry" option
 	And complete the order
 
 	@Oracle
 Scenario:Timecard vacations Request
-	Given I have Open IE Test
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
-	And i login as "Sofiane Oumsalem"
+	And i login as "oumsalems"
 	Then click the "Abt US Timecards" option
 	And go to time entry
 	And fill the TimeCard
@@ -102,7 +102,7 @@ Scenario:Timecard vacations Request
 Scenario:Approve Timecard
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Daniel Gunther" 
+	And i login as "GuntherD" 
 	Then click the "Abt US iProcurement Inquiry" option
 	And complete the order
 
@@ -111,7 +111,7 @@ Scenario:Approve Timecard
 Scenario:Creation and approval of PO
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Marlene Kruck"
+	And i login as "KruckM"
 	Then click the "Abt US PO Buyer" option
 	And browse to Requisitions under Buyer Work Center
 	Then select a requisition to add
@@ -123,7 +123,7 @@ Scenario:Creation and approval of PO
 Scenario: Purchasing Request
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Marlene Kruck"
+	And i login as "KruckM"
 	Then click the "Abt US PO Buyer" option
 	And browse to Requisitions under Requisitions
 	Then I fill the Oracle Forms
@@ -133,14 +133,14 @@ Scenario: Purchasing Request
 Scenario: Abt Employee Roster
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt Employee Roster" option
 
 	@Oracle
 Scenario: Abt HR Desktop Integration
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HR Desktop Integration" option
 	And click "Create Document" option
 	And click "Define Layout" option
@@ -154,7 +154,7 @@ Scenario: Abt HR Desktop Integration
 Scenario: Abt HR Operations Self Service
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HR Operations Self Service" option
 	And click "Employee Overview" option
 	And click "Change of Hours" option
@@ -168,7 +168,7 @@ Scenario: Abt HR Operations Self Service
 Scenario: Abt HR System Administrator
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HR System Administrator" option
 	And navigate to "Set"
 	And navigate to "Values"
@@ -188,7 +188,7 @@ Scenario: Abt HR System Administrator
 Scenario: Abt HR User
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HR User" option
 	And click "Discoverer Viewer" option
 	And navigate to "Enter and Maintain"
@@ -239,7 +239,7 @@ Scenario: Abt HR User
 Scenario: Abt HRMS Benefits User
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HRMS Benefits User" option
 	And navigate to "Enter and Maintain"
 	And navigate to "Benefits Service Center"
@@ -257,7 +257,7 @@ Scenario: Abt HRMS Benefits User
 	And navigate to "End Employment"
 	And navigate to "Entries"
 	And navigate to "Pay Method"	
-	And click on People
+	Then click the "People" option
 	And navigate to "Phones"
 	And navigate to "Previous Employment"
 	And click "Salary Admin" option
@@ -294,7 +294,7 @@ Scenario: Abt HRMS Benefits User
 Scenario: Abt HRMS Superuser
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HRMS Superuser" option
 	And navigate to "Enter and Maintain"
 	And navigate to "Salary Management"
@@ -390,7 +390,7 @@ Scenario: Abt HRMS Superuser
 Scenario: Abt HRMS User
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HRMS User" option
 	And navigate to "Enter and Maintain"
 	And navigate to "Hire Applicants"
@@ -449,7 +449,7 @@ Scenario: Abt HRMS User
 Scenario: Abt US HR Executive
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Executive" option
 	And click "Discoverer Viewer" option
 	And navigate to "Enter and Maintain"
@@ -529,7 +529,7 @@ Scenario: Abt US HR Executive
 Scenario: Abt US HR Manager
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Manager" option
 	And click "Discoverer Viewer" option
 	And navigate to "Enter and Maintain"
@@ -609,7 +609,7 @@ Scenario: Abt US HR Manager
 Scenario: US Super HRMS Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option	
 	And navigate to "Enter and Maintain"
 	And navigate to "Salary Management"
@@ -657,7 +657,7 @@ Scenario: US Super HRMS Manager: People
 Scenario: US Super HRMS Manager: Fast Path
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option
 	And navigate to "Absence"
 	And navigate to "Accruals"
@@ -716,7 +716,7 @@ Scenario: US Super HRMS Manager: Fast Path
 Scenario: US Super HRMS Manager: Recruitment and Career Management
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option
 	And navigate to "Requisition and Vacancy"
 	And navigate to "Recruitment Activity"   
@@ -740,7 +740,7 @@ Scenario: US Super HRMS Manager: Recruitment and Career Management
 Scenario: US Super HRMS Manager: Work Structures
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option
 	And navigate to "Location"
 	And click "Generic Hierarchy" option
@@ -806,7 +806,7 @@ Scenario: US Super HRMS Manager: Work Structures
 Scenario: US Super HRMS Manager: Payroll
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option
 	And click on Description Payroll
 	And navigate to "Consolidation"  	 
@@ -826,7 +826,7 @@ Scenario: US Super HRMS Manager: Payroll
 Scenario: US Super HRMS Manager: Total Compensation
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option
 	And click "Total Compensation Setup Wizard" option  
 	And navigate to "Deductions"
@@ -897,7 +897,7 @@ Scenario: US Super HRMS Manager: Total Compensation
 Scenario: US Super HRMS Manager: View
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option
 	And navigate to "Vacancies"
 	And navigate to "Grade Comparatio"
@@ -950,7 +950,7 @@ Scenario: US Super HRMS Manager: View
 Scenario: US Super HRMS Manager: Mass Information Definitiions and Security
     Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option
 	And navigate to "Batch Element Entry"
 	And navigate to "BEE Summary"
@@ -998,7 +998,7 @@ Scenario: US Super HRMS Manager: Mass Information Definitiions and Security
 	Scenario: US HRMS Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	
 	And navigate to "Shared"
 	And navigate to "Enter and Maintain"
@@ -1041,7 +1041,7 @@ Scenario: US Super HRMS Manager: Mass Information Definitiions and Security
 Scenario: US HRMS Manager: Fast Path
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	
 	And navigate to "Absence"
 	And navigate to "Accruals"
@@ -1099,7 +1099,7 @@ Scenario: US HRMS Manager: Fast Path
 Scenario: US HRMS Manager: Recruitment and Career Management
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	 
 	And navigate to "Requisition and Vacancy"
 	And navigate to "Recruitment Activity"   
@@ -1123,7 +1123,7 @@ Scenario: US HRMS Manager: Recruitment and Career Management
 Scenario: US HRMS Manager: Work Structures
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	
 	And navigate to "Location"
 	And click "Generic Hierarchy" option
@@ -1188,7 +1188,7 @@ Scenario: US HRMS Manager: Work Structures
 Scenario: US HRMS Manager: Payroll
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	
 	And click on Description Payroll
 	And navigate to "Consolidation"  	 
@@ -1208,7 +1208,7 @@ Scenario: US HRMS Manager: Payroll
 Scenario: US HRMS Manager: Total Compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	
 	And click "Total Compensation Setup Wizard" option  
 	And navigate to "Element Description"
@@ -1272,7 +1272,7 @@ Scenario: US HRMS Manager: Total Compensation
 Scenario: US HRMS Manager: View
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	 
 	And navigate to "Vacancies"
 	And navigate to "Grade Comparatio"
@@ -1323,7 +1323,7 @@ Scenario: US HRMS Manager: View
 Scenario: US HRMS Manager: Mass Information Definitions and Security
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HRMS Manager" option	
 	And navigate to "Batch Element Entry"
 	And navigate to "BEE Summary"
@@ -1370,7 +1370,7 @@ Scenario: US HRMS Manager: Mass Information Definitions and Security
 Scenario: US HR Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HR Manager" option
 	And navigate to "Enter and Maintain"
 	And navigate to "Salary Management"
@@ -1410,7 +1410,7 @@ Scenario: US HR Manager: People
 Scenario: US HR Manager: Fast Path Recruitment and Career Management
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HR Manager" option
 	And navigate to "Absence"
 	And navigate to "Accruals"
@@ -1472,7 +1472,7 @@ Scenario: US HR Manager: Fast Path Recruitment and Career Management
 Scenario: US HR Manager: Work Structures 
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HR Manager" option
 	And navigate to "Location"
 	And click "Generic Hierarchy" option
@@ -1536,7 +1536,7 @@ Scenario: US HR Manager: Work Structures
 Scenario: US HR Manager: Payroll and total compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HR Manager" option
 	And click on Description Payroll	 
 	And navigate to "Payment Methods"
@@ -1595,7 +1595,7 @@ Scenario: US HR Manager: Payroll and total compensation
 Scenario: US HR Manager: View to Security  
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "US HR Manager" option
 	And navigate to "Vacancies"
 	And navigate to "Grade Comparatio"
@@ -1672,7 +1672,7 @@ Scenario: US HR Manager: View to Security
 Scenario: Abt US HR Technical Manager: People
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Technical Manager" option
 	And navigate to "Enter and Maintain"
 	And navigate to "Salary Management"
@@ -1712,7 +1712,7 @@ Scenario: Abt US HR Technical Manager: People
 Scenario: Abt US HR Technical Manager: Fast Path
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Technical Manager" option
 	And navigate to "Absence"
 	And navigate to "Accruals"
@@ -1758,7 +1758,7 @@ Scenario: Abt US HR Technical Manager: Fast Path
 Scenario: Abt US HR Technical Manager: Recruitment and Career Management
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Technical Manager" option
     And navigate to "Requisition and Vacancy"
 	And navigate to "Recruitment Activity"   
@@ -1782,7 +1782,7 @@ Scenario: Abt US HR Technical Manager: Recruitment and Career Management
 Scenario: Abt US HR Technical Manager: Work Structures
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Technical Manager" option
 	And navigate to "Location"
 	And click "Generic Hierarchy" option
@@ -1846,7 +1846,7 @@ Scenario: Abt US HR Technical Manager: Work Structures
 Scenario: Abt US HR Technical Manager: Payroll and Total Compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Technical Manager" option
 	And click on Description Payroll	 
 	And navigate to "Payment Methods"
@@ -1905,7 +1905,7 @@ Scenario: Abt US HR Technical Manager: Payroll and Total Compensation
 Scenario: Abt US HR Technical Manager: View to Security  
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HR Technical Manager" option
 	And navigate to "Vacancies"
 	And navigate to "Grade Comparatio"
@@ -1980,9 +1980,9 @@ Scenario: Abt US HR Technical Manager: View to Security
 
 	@Oracle
 Scenario: Abt US HRMS Manager: People
-	Given I have Open IE Test
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HRMS Manager" option
 	And navigate to "Enter and Maintain"
 	And navigate to "Salary Management"
@@ -2022,7 +2022,7 @@ Scenario: Abt US HRMS Manager: People
 Scenario: Abt US HRMS Manager: Fast Path
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HRMS Manager" option
 	And navigate to "Absence"
 	And navigate to "Accruals"
@@ -2068,7 +2068,7 @@ Scenario: Abt US HRMS Manager: Fast Path
 Scenario: Abt US HRMS Manager: Recruitment and Career Management
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HRMS Manager" option
     And navigate to "Requisition and Vacancy"
 	And navigate to "Recruitment Activity"   
@@ -2091,7 +2091,7 @@ Scenario: Abt US HRMS Manager: Recruitment and Career Management
 Scenario: Abt US HRMS Manager: Work Structures
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HRMS Manager" option
 	And navigate to "Location"
 	And click "Generic Hierarchy" option
@@ -2155,7 +2155,7 @@ Scenario: Abt US HRMS Manager: Work Structures
 Scenario: Abt US HRMS Manager: Payroll and Total Compensation
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HRMS Manager" option
 	And click on Description Payroll	
 	And navigate to "Consolidation" 
@@ -2221,7 +2221,7 @@ Scenario: Abt US HRMS Manager: Payroll and Total Compensation
 Scenario: Abt US HRMS Manager: View to Security  
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt US HRMS Manager" option
 	And navigate to "Vacancies"
 	And navigate to "Grade Comparatio"
@@ -2311,7 +2311,7 @@ Scenario: Abt US HRMS Manager: View to Security
 Scenario: HR: Manage Employee Action Forms
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "HR: Manage Employee Action Forms" option
 	And click "Employee Overview" option
 	And click "Employee Hours Change" option
@@ -2325,7 +2325,7 @@ Scenario: HR: Manage Employee Action Forms
 Scenario: Workflow User Web Applications
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Workflow User Web Applications" option
 	And click "Worklist" option
 	And click "Find Processes" option

@@ -28,9 +28,8 @@ namespace abtTest.Steps.Oracle
         public void GivenILoginAs(string user)
         {
             gUser = user;
-            AbtPages.OraclePage.inputUserName(gUser);
-            AbtPages.OraclePage.inputPasswordField(gUser);
-            AbtPages.OraclePage.clickSubmitButton();
+            AbtPages.OraclePage.Login(gUser);
+          
         }
     }
 }

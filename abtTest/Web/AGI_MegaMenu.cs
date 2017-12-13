@@ -195,7 +195,7 @@ namespace abtTest.Web
             SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_Oracle();
-            Assert.True(AbtPages.OraclePage.isAt());
+            Assert.True(SeleniumDriver.isAt());
             SeleniumDriver.QuitDriverInstance();
 
         }

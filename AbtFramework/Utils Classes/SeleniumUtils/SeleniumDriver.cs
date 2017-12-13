@@ -16,7 +16,7 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.Events;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
-
+using AbtFramework.PageObjects.Oracle;
 
 namespace AbtFramework.Utils_Classes.SeleniumUtils
 {
@@ -37,7 +37,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
         private static readonly int MAX = 3;
 
-        //unique instance of driver
+        //unique instance of driver, 
         public static IWebDriver Instance;
 
         //to handle javascript actions
@@ -150,6 +150,38 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         public static void GoTo(string url)
         {
             SeleniumDriver.Instance.Navigate().GoToUrl(url);
+        }
+
+        public static void NavigateBack()
+        {
+            WaitForDOMready();
+            SeleniumDriver.Instance.Navigate().Back();
+        }
+
+
+        public static bool isAt()
+        {
+            //Thread.Sleep(2000);
+            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            try
+            {
+                AbtFramework.AutoIT.AutoITDriver.init();
+                AbtFramework.AutoIT.AutoITDriver.AceptCertificate();
+            }
+            catch (NoAlertPresentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            if (wait.Until(e => CommonPO.OracleWelcome.Displayed))
+            {
+             
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -276,7 +308,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             {
                 Thread.Sleep(1);
                 element.SendKeys(Keys.Home);
-                element.SendKeys(Keys.Home + Keys.Shift);
+                element.SendKeys(Keys.Shift + Keys.End);
                 element.SendKeys(Keys.Delete);
 
 

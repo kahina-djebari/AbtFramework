@@ -6,7 +6,7 @@
 Scenario: HRSS Transactions -Enter Spot Bonus - Actor HRSC
 	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HR Operations Self Service" option
 	Then click the "Spot Bonus" option 
 	Then I enter Spot Bonus
