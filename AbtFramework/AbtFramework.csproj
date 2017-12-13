@@ -150,6 +150,7 @@
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\AbtHRMSManagerObject.cs" />
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfDefaultProcessRunsObjects.cs" />
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\GradeRatePatternObject.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\LifeEventPatternObjects.cs" />
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\OracleFormsPatternObject.cs" />
     <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
@@ -266,6 +267,7 @@
     <Folder Include="Sikuli\SikuliPatternImges\CommonPatternImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunsImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\GradeRateImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\LifeEventImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\OracleFromsImges\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

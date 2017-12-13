@@ -38,5 +38,7 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetDesktopActivities => sikuliHelper.GetPattern(PATH + "DesktopActivities.PNG", 5);
 
+        public IPattern GetSaveIcon => sikuliHelper.GetPattern(PATH + "SaveIcon.PNG", 5);
+
     }
 }

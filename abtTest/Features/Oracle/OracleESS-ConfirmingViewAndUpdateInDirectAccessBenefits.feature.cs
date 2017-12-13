@@ -17,21 +17,21 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("OracleHRNavigation-AbtUsHRMSManager-ActorHRIS", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
-        "ioal Test", SourceFile="Features\\Oracle\\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature", SourceLine=0)]
-    public partial class OracleHRNavigation_AbtUsHRMSManager_ActorHRISFeature
+    [TechTalk.SpecRun.FeatureAttribute("OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+        "ioal Test", SourceFile="Features\\Oracle\\OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature", SourceLine=0)]
+    public partial class OracleESS_ConfirmingViewAndUpdateInDirectAccessBenefitsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature"
+#line 1 "OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleHRNavigation-AbtUsHRMSManager-ActorHRIS", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
                     "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -63,11 +63,11 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Oracle HR Navigation - Abt US HRMS Manager - Actor HRIS", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("OracleESS - Confirming View And Update In Direct Access Benefits", new string[] {
                 "Oracle"}, SourceLine=6)]
-        public virtual void OracleHRNavigation_AbtUSHRMSManager_ActorHRIS()
+        public virtual void OracleESS_ConfirmingViewAndUpdateInDirectAccessBenefits()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Oracle HR Navigation - Abt US HRMS Manager - Actor HRIS", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("OracleESS - Confirming View And Update In Direct Access Benefits", new string[] {
                         "Oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -76,13 +76,13 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("i login as \"Sofiane Oumsalem\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt US Employee Direct Access\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("click the \"Enter and Maintain\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("click the \"Personal Information\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("I update information on the oracle form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I confirm and update personal information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
