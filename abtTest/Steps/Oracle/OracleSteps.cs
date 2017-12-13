@@ -327,6 +327,13 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.UpdatePersonalInformation();
         }
 
+        [Then(@"I confirm view and add beneficiaries")]
+        public void ThenIConfirmViewAndAddBeneficiaries()
+        {
+            AbtPages.OraclePage.AddBeneficiaries();
+        }
+
+
 
 
 
