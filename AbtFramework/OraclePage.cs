@@ -436,16 +436,56 @@ namespace AbtFramework
 
         //OracleBSS: Adding life event and enrolling in benefits
         [FindsBy(How = How.XPath, Using = "//input[@title='Search Value: First Name']")]
-        private IList<IWebElement> firstNameInputField;
+        private IWebElement firstNameInputField;
 
         [FindsBy(How = How.XPath, Using = "//input[@title='Search Value: Last Name']")]
-        private IList<IWebElement> lastNameInputField;
+        private IWebElement lastNameInputField;
 
         [FindsBy(How = How.XPath, Using = "//button[text()='Go']")]
-        private IList<IWebElement> goButtonFindAddedLE;  //LE = Life Event
+        private IWebElement goButtonFindAddedLE;  //LE = Life Event
 
 
+        //OracleESS: Update personal information
+        [FindsBy(How = How.XPath, Using = "//h2[text()='Basic Details']/parent::div//descendant::button[@title='Update']")]
+        private IWebElement updateBasicDetails;
 
+        [FindsBy(How = How.XPath, Using = "//h2[text()='Phone Numbers']/parent::div//descendant::button[@title='Update']")]
+        private IWebElement updatePhoneNumbers;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Select Emergency Contact:']/following-sibling::button[@title='Update the Contact Details']")]
+        private IWebElement updateEmergencyContacts;
+
+        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Basic Details')]/parent::div/descendant::button[@title='Next']")]
+        private IWebElement next; //works for next button under Choose Option and Update Informarion
+
+        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Phone Numbers')]/parent::div/descendant::button[@title='Next']")]
+        private IWebElement nextPhoneNum;
+
+        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Emergency Contact')]/parent::div/descendant::button[@title='Next']")]
+        private IWebElement nextEmergencyContact;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Middle Name']/parent::td//following-sibling::td/input[@title='Middle Name']")]
+        private IWebElement middleNameInputField; // Works for Basic Details and Emergency Contacts
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Effective Date')]/parent::td/following-sibling::td//descendant::input[@title='Effective Date']")]
+        private IWebElement effectiveDateBasicDetails;
+
+        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Personal Information')]/parent::div/descendant::button[@title='Cancel']")]
+        private IWebElement cancelInfoChanges; // Works for Basic Details, Phone Numbers, and Emergency Contacts
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Yes']")]
+        private IWebElement YesBtn; //to confirm that we want to cancel the changes that we have made
+
+        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Personal Information')]/parent::div/descendant::button[@title='Submit']")]
+        private IWebElement submitInfoChange;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Number']/parent::th/parent::tr/following-sibling::tr[1]//child::td/input[@title='Text input for Phone number']")]
+        private IWebElement phoneNumInputField;
+
+        
+        
+        
+               
         public IWebElement SelectFolderNavigator(string option)
         {
             string xpath = "//a[text() = '" + option + "']";
@@ -517,6 +557,10 @@ namespace AbtFramework
                     return u = "HRTEST01";
                 case "Phyllis Wallace":
                     return u = "WallaceP";
+                case "Frank Divita":
+                    return u = "DivitaF";
+                case "Nataia Jackson":
+                    return u = "JacksonN";
             }
 
             return u;
@@ -650,7 +694,14 @@ namespace AbtFramework
         public void inputPasswordField(string user)
         {
             password.Clear();
-            password.SendKeys("test123456");
+            if (user == "Nataia Jackson")
+            {
+                password.SendKeys("test123456789");
+            }
+            else
+            {
+                password.SendKeys("test123456");
+            }          
         }
         public void clickSubmitButton()
         {
@@ -1415,8 +1466,33 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateLEDate);
 
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
 
-
+        public void UpdatePersonalInformation()
+        {
+            // Update Middle Name in Basic Details section
+            updateBasicDetails.Click();
+            next.Click();
+            middleNameInputField.SendKeys("Liam");
+            effectiveDateBasicDetails.Clear();
+            effectiveDateBasicDetails.SendKeys(string.Format("{0:dd-MMM-yyyy}", DateTime.Today.AddDays(1)));
+            next.Click();
+            cancelInfoChanges.Click();
+            YesBtn.Click();
+            Thread.Sleep(1000);
+            //Update phone number in Phone Numbers section
+            updatePhoneNumbers.Click();
+            phoneNumInputField.Clear();
+            phoneNumInputField.SendKeys("585-831-2417");
+            nextPhoneNum.Click();
+            cancelInfoChanges.Click();
+            YesBtn.Click();
+            //Update Middle Name of the Emergency Contact
+            updateEmergencyContacts.Click();
+            middleNameInputField.SendKeys("Ania");
+            nextEmergencyContact.Click();
+            cancelInfoChanges.Click();
+            YesBtn.Click();
         }
 
     }

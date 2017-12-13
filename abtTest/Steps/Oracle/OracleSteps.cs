@@ -321,6 +321,13 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.LifeEventEnrollBenefits();
         }
 
+        [Then(@"I confirm and update personal information")]
+        public void ThenIConfirmAndUpdatePersonalInformation()
+        {
+            AbtPages.OraclePage.UpdatePersonalInformation();
+        }
+
+
 
 
     }

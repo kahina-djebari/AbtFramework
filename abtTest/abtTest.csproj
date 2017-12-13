@@ -145,6 +145,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +264,10 @@
     <None Include="Features\Oracle\OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
