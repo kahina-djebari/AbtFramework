@@ -482,10 +482,53 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//span[text()='Number']/parent::th/parent::tr/following-sibling::tr[1]//child::td/input[@title='Text input for Phone number']")]
         private IWebElement phoneNumInputField;
 
-        
-        
-        
-               
+        //OracleESS: Confirm view and add beneficiaries
+        [FindsBy(How = How.XPath, Using = "//span[text()='Please show me the benefits as of']/parent::td//following-sibling::td/select")]
+        private IWebElement selectElectionsDate;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Please show me the benefits as of']/parent::td//following-sibling::td/select")]
+        private IWebElement goToElections;
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Update Beneficiaries']")]
+        private IWebElement updateBeneficiariesBtn;
+
+        [FindsBy(How = How.XPath, Using = "//button[@title='Add Another Person']")]
+        private IWebElement addAnotherPersonBtn;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Relationship')]/parent::td/following-sibling::td/select")]
+        private IWebElement selectRelationship;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='First Name']")]
+        private IWebElement beneficiaryFirstName;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Last Name']")]
+        private IWebElement beneficiaryLastName;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'If you check the box above')]/ancestor::tr[1]/preceding-sibling::tr/descendant::input")]
+        private IWebElement sharedResidenceCheckBox; //check this box instead of typing the address
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Gender']/parent::td/following-sibling::td/select")]
+        private IWebElement selectGender;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Date of Birth']")]
+        private IWebElement DOBInputField;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Add Dependents and Beneficiaries']/parent::div//descendant::button[@title='Apply']")]
+        private IWebElement applyNewBeneficiary;        
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Dependents and Beneficiaries']/parent::div//descendant::button[@title='Next']")]
+        private IWebElement nextToUpdateBeneficiaries;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Update Beneficiaries']/parent::div//descendant::button[@title='Next to Confirmation Statement']")]
+        private IWebElement nextToConfirmation;
+
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Confirmation Statement']/parent::div//descendant::button[@title='Back to Overview']")]
+        private IWebElement finishBtn;
+
+
+
+
+
         public IWebElement SelectFolderNavigator(string option)
         {
             string xpath = "//a[text() = '" + option + "']";
@@ -1493,6 +1536,33 @@ namespace AbtFramework
             nextEmergencyContact.Click();
             cancelInfoChanges.Click();
             YesBtn.Click();
+        }
+
+        public void AddBeneficiaries()
+        {
+            //to confirm that we can change the time period to see past elections
+            Thread.Sleep(1000);
+            SelectElement selectDate = new SelectElement(selectElectionsDate);
+            selectDate.SelectByIndex(2);
+            goToElections.Click();
+            selectDate.SelectByIndex(0);
+            goToElections.Click();
+            //to add beneficiaries 
+            updateBeneficiariesBtn.Click();
+            addAnotherPersonBtn.Click();
+            Thread.Sleep(1000);
+            SelectElement slctRelationship = new SelectElement(selectRelationship);
+            slctRelationship.SelectByText("Child");
+            beneficiaryFirstName.SendKeys("Liam");
+            beneficiaryLastName.SendKeys("Oumsalem");
+            sharedResidenceCheckBox.Click();
+            SelectElement slctGender = new SelectElement(selectGender);
+            slctGender.SelectByText("Male");
+            DOBInputField.SendKeys("30-Nov-2017");
+            applyNewBeneficiary.Click();
+            nextToUpdateBeneficiaries.Click();
+            nextToConfirmation.Click();
+            finishBtn.Click();
         }
 
     }
