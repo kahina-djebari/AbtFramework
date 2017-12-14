@@ -18,8 +18,6 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/LifeEventImgs/";
 
-        public IPattern GetViewPersonLifeEvents => sikuliHelper.GetPattern(PATH + "ViewPersonLifeEvents.PNG", 5);
-
         public IPattern GetPotentialLifeEventsTab => sikuliHelper.GetPattern(PATH + "PotentialLifeEventsTab.PNG", 5);
 
         public IPattern GetDownArrow => sikuliHelper.GetPattern(PATH + "DownArrow.PNG", 5);

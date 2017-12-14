@@ -26,9 +26,11 @@ namespace AbtFramework
         private AbtHRMSManagerObject HRMSManagerPatterns;
         private ConfDefaultProcessRunsObjects ConfDefaultProcessRunsPatterns;
         private LifeEventPatternObjects LifeEventPatterns;
+        private ConfProcessObjects ConfProcessPatterns;
+        private  SubmitReportObjects submitReportPatterns;
         private SikuliHelper sikuliHelper;
         private int counter = 11;
-        private int counter1 = 8;
+        private int counter1 = 9;
 
         [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
         private IWebElement homeButton; //
@@ -1256,7 +1258,7 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            FindEmployeeName("oumsalem");
+            FindEmployeeName("oumsalem, sofiane");
 
             sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOfficeDetails);
 
@@ -1266,14 +1268,19 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(HRMSManagerPatterns.GetCorrectionBtn);
 
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetSaveIcon);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
 
             sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
 
-            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtnCloseOracleForm);
 
         }
 
+        /// <summary>
+        /// Update the Office Details and confirm that there is no link 
+        /// for Discoverer Viewer in the list of responsibilities.      
+        /// </summary>
+        /// 
         public void GoToOracleForm()
         {
             HRMSManagerPatterns = new AbtHRMSManagerObject();
@@ -1282,11 +1289,11 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            FindEmployeeName("oumsalem");
+            FindEmployeeName("oumsalem, sofiane");
 
             sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
 
-            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtnCloseOracleForm);
 
             sikuliHelper.ClickPattern(commonPatterns.GetCloseWindow);
         }
@@ -1337,7 +1344,7 @@ namespace AbtFramework
 
         /// <summary>
         /// Performs a offboarding (termination) to an employee
-        /// </summary>
+        /// </summary>       
         public void DoOffboardEmployee()
         {
             SelectEmployeeInPeopleHierarchy();
@@ -1351,9 +1358,8 @@ namespace AbtFramework
             AddAttachmentsAdditionalInfo();
 
             submitInReviewConfirmationBtn.Click();
-
-
         }
+
         /// <summary>
         /// Performs Spot Bonus action against an employee.
         /// </summary>
@@ -1445,13 +1451,13 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            FindEmployeeName("oumsalem");
+            FindEmployeeName("oumsalem, sofiane");
 
-            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetName);
+            sikuliHelper.ClickPattern(commonPatterns.GetName);
 
             while (counter1 > 0)
             {
-                sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetDownArrow);
+                sikuliHelper.ClickPattern(commonPatterns.GetDownArrow);
                 counter1--;
             }
 
@@ -1472,11 +1478,11 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            FindEmployeeName("oumsalem");
+            FindEmployeeName("oumsalem, sofiane");
 
             sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
 
-            sikuliHelper.ClickPattern(LifeEventPatterns.GetViewPersonLifeEvents);
+            sikuliHelper.ClickPattern(commonPatterns.GetViewPersonLifeEvents);
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetPotentialLifeEventsTab);
 
@@ -1563,6 +1569,77 @@ namespace AbtFramework
             nextToUpdateBeneficiaries.Click();
             nextToConfirmation.Click();
             finishBtn.Click();
+        }
+
+        /// <summary>
+        /// Confirm that terminate process was run successfully
+        /// </summary>
+         
+        public void ConfirmTerminateProcessSuccess()
+        {
+            ConfProcessPatterns = new ConfProcessObjects();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            AcceptJavaAlert();
+
+            FindEmployeeName("oumsalem, sofiane");
+
+            sikuliHelper.ClickPattern(commonPatterns.GetName);
+
+            while (counter1 > 0)
+            {
+                sikuliHelper.ClickPattern(commonPatterns.GetDownArrow);
+                counter1--;
+            }
+
+            sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetViewPersonLifeEvents);
+
+        }
+
+        /// <summary>
+        /// Submit an 'Abt HSA Bi Weekly Employer Funding – STEP ONE Report' and make sure that 
+        /// the log of requests was uploaded correctly and opens in IE. 
+        /// </summary>
+        public void submitReport()
+        {
+            submitReportPatterns = new SubmitReportObjects();
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetOkBtnRequestType);
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetSelectReportType);
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetSelectReportType);
+
+            while (counter1 > 0)
+            {
+                sikuliHelper.ClickPattern(submitReportPatterns.GetScrollDownArrow);
+                counter1--;
+            }
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetReportTypeToChoose);
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetOkBtnValidateReportType);
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetSubmitReportBtn);
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetOkToRequestSubmission);
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetNoToSubmitAnotherRequest);
+
+            ClickMainMenuTableOption("Abt HRMS Benefits User");
+
+            ClickMainMenuTableOption("View Requests");
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetFindRequestsBtn);
+
+            sikuliHelper.ClickPattern(submitReportPatterns.GetViewLogBtn);
         }
 
     }
