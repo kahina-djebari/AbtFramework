@@ -22,6 +22,37 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
-       
+        public IWebElement GetQuickSelect2()
+        {
+            string xpath = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[2]/child::td[2]/child::a/img";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetDateInput()
+        {
+            string xpath = "//span[contains(text(),'Enter Your Name')]/parent::td/parent::tr/following-sibling::tr/child::td[3]//child::input";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetApplyBtn()
+        {
+            string xpath = "//h1[text()='Voluntary Disclosure of Veterans Status']/ancestor::div[1]/following-sibling::div[1]//button[@title='Apply']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetNextBtn()
+        {
+            string xpath = "//h1[text()='Extra Information']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetSubmitBtn()
+        {
+            string xpath = "//h1[text()='Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+
+
     }
 }

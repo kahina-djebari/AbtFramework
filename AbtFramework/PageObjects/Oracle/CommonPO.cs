@@ -129,5 +129,32 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
+        public IWebElement GetGoHomeBtn()
+        {
+            string xpath = "//button[@title='Home']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetNameSearchInputField()
+        {
+            string xpath = "//input[@title='Search Criteria']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetSelectNameInputCheckBox()
+        {
+            string xpath = "//input[@title='Select']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+
+        public IWebElement GetDoActionIcon()
+        {
+            string xpath = "//img[@title='Action']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+
+
     }
 }

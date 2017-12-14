@@ -139,12 +139,15 @@
     <Compile Include="MailOffice365Page.cs" />
     <Compile Include="MyIRRSubmition.cs" />
     <Compile Include="NewsDropdown.cs" />
+    <Compile Include="PageObjects\Oracle\AbtHROperationsSelfServicePO.cs" />
     <Compile Include="PageObjects\Oracle\BuyerWorkRequisitionPO.cs" />
     <Compile Include="PageObjects\Oracle\CommonPO.cs" />
     <Compile Include="PageObjects\Oracle\HRFormsVeteranStatusPO.cs" />
     <Compile Include="PageObjects\Oracle\iProcurementPO.cs" />
     <Compile Include="PageObjects\Oracle\LoginPagePO.cs" />
+    <Compile Include="PageObjects\Oracle\OracleDiscovererViewerPO.cs" />
     <Compile Include="PageObjects\Oracle\TimeCardPO.cs" />
+    <Compile Include="PageObjects\Oracle\WorkflowUserWebAppPO.cs" />
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SANSHomepage.cs" />
