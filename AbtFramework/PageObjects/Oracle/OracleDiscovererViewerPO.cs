@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.PageObjects.Oracle
 {
-    public class OracleDiscovererViewerPO
+    public class AbtHRUserPO
     {
         public IWebElement GetDetailActiveEmployeeOptn()
         {

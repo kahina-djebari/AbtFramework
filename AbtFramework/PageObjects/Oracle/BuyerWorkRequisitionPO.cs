@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.PageObjects.Oracle
 {
-     public class BuyerWorkRequisitionPO
+     public class AbtUSPOBuyerPO
     {
         public IWebElement GetRequisitionsBuyerWorkCenter()
         {

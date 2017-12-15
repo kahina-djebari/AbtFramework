@@ -283,6 +283,12 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.DoSpotBonus();
         }
 
+        [Then(@"I click on all links at the right side menu")]
+        public void THenClickAllLinks()
+        {
+            AbtPages.OraclePage.ClickAllLinksInNavigator();
+        }
+
 
     }
 }

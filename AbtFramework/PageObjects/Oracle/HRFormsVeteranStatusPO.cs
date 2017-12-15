@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.PageObjects.Oracle
 {
-    public class HRFormsVeteranStatusPO
+    public class AbtUSEmployeeDirectAccessPO
     {
         public IWebElement GetSearchVeteranStatusBtn()
         {

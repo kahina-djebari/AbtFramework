@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.PageObjects.Oracle
 {
-    public class iProcurementPO
+    public class iProcurementRequesterPO
     {
         public IWebElement GetItemDescription()
         {

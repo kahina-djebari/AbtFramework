@@ -109,7 +109,7 @@ Scenario:Approve Timecard
 
 	@Oracle
 Scenario:Creation and approval of PO
-    Given I have Open IE Test
+    Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "KruckM"
 	Then click the "Abt US PO Buyer" option
@@ -131,14 +131,14 @@ Scenario: Purchasing Request
 
 	@Oracle
 Scenario: Abt Employee Roster
-	Given I have Open IE Test
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
 	Then click the "Abt Employee Roster" option
 
 	@Oracle
 Scenario: Abt HR Desktop Integration
-	Given I have Open IE Test
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
 	Then click the "Abt HR Desktop Integration" option
@@ -166,22 +166,11 @@ Scenario: Abt HR Operations Self Service
 
 	@Oracle
 Scenario: Abt HR System Administrator
-	Given I have Open IE Test
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
 	Then click the "Abt HR System Administrator" option
-	And navigate to "Set"
-	And navigate to "Values"
-	And navigate to "Segments"
-	And navigate to "Aliases"
-	And navigate to "CrossValidation"
-	And navigate to "Groups"
-	And navigate to "Values"
-	And navigate to "Accounts"
-	And navigate to "Segments"
-	And click on Values
-	And navigate to "Run"
-	And navigate to "Set"	
+	Then I click on all links at the right side menu	
 	
 
 	@Oracle

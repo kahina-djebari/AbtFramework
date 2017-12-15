@@ -30,10 +30,10 @@ namespace AbtFramework
         private LoginPagePO loginPagePO;
         private CommonPO commonPO = new CommonPO();
         private TimeCardPO timeCardPO = new TimeCardPO();
-        private iProcurementPO iprocurementPO = new iProcurementPO();
-        private BuyerWorkRequisitionPO buyerRequisitionPO = new BuyerWorkRequisitionPO();
-        private HRFormsVeteranStatusPO veteranStatusPO = new HRFormsVeteranStatusPO();
-        private OracleDiscovererViewerPO discovererPO = new OracleDiscovererViewerPO();
+        private iProcurementRequesterPO iprocurementRequesterPO = new iProcurementRequesterPO();
+        private AbtUSPOBuyerPO buyerRequisitionPO = new AbtUSPOBuyerPO();
+        private AbtUSEmployeeDirectAccessPO veteranStatusPO = new AbtUSEmployeeDirectAccessPO();
+        private AbtHRUserPO abtHRUserPO = new AbtHRUserPO();
         private AbtHROperationsSelfServicePO operationsSelfPO = new AbtHROperationsSelfServicePO();
         private WorkflowUserWebAppPO workFlowPO = new WorkflowUserWebAppPO();
 
@@ -41,39 +41,7 @@ namespace AbtFramework
         private int counter = 11;
         private int counter1 = 8;
 
-    
-
-        //HRSS Transactions: Enter Spot Bonus – Actor: HRSC
-        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Type']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentTypeInput;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Date']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentDateInput;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Amount']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentAmountInput;
-
-        [FindsBy(How = How.XPath, Using = "//img[@title='Search for Bonus Awarded By']")]
-        private IWebElement paymentBonusAwardedByIcon;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Comments']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentCommentsInput;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Search Term']")]
-        private IWebElement bonusAwardedBySearchInput;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Select']")]
-        private IWebElement bonusAwardedSelecRadioBtn;
-
-        [FindsBy(How = How.Id, Using = "HrNext")]
-        private IWebElement applyOrNextBonusBtn; //this works for apply and next in Bonus Spot section
-
-        //this will be simplified with the refactor, but at this point need to call 
-        //index to get a single button, this is because same button is twice. too lazy to get
-        //unique path :)
-        [FindsBy(How = How.XPath, Using = "//button[text() = 'Select']")]
-        private IList<IWebElement> selectBtnsList;
-
+   
 
         /// <summary>
         /// Goes to Oracle Link
@@ -100,7 +68,25 @@ namespace AbtFramework
 
         }
 
+        /// <summary>
+        /// Clicks all links in Navigator home page
+        /// </summary>
+        public void ClickAllLinksInNavigator()
+        {
+            List<IWebElement> linksList = commonPO.GetAllLinksToClickInNavigator();
+            foreach(var link in linksList)
+            {
+                SeleniumDriver.ClickElement(link);
+       
+                if (link.GetAttribute("src").Contains("sswa"))
+                {
+                    SeleniumDriver.NavigateBack();
+                    SeleniumDriver.WaitForDOMready();
+                }   
+                
+            }
 
+        }
 
         private IWebElement getLinkFromMainMenuTable(string link)
         {
@@ -207,18 +193,19 @@ namespace AbtFramework
 
         public void ClickUserOptions(string option)
         {
-            Thread.Sleep(1000);
+     
             IWebElement test = getLinkFromUserOptions(option);
-            test.Click();
-            Thread.Sleep(1000);
-            SeleniumDriver.Instance.Navigate().Back();
+            SeleniumDriver.ClickElement(test);
+            SeleniumDriver.NavigateBack();
+          
         }
 
         public void ClickUserOptions1(string option)
         {
-            Thread.Sleep(1000);
+    
             IWebElement test = getLinkFromUserOptions(option);
-            test.Click();
+            SeleniumDriver.ClickElement(test);
+         
         }
 
 
@@ -275,80 +262,80 @@ namespace AbtFramework
         }
         public void fillNonCatalogRequestForm()
         {
-            SeleniumDriver.SetValue(iprocurementPO.GetItemDescription(), "Test Description");
-            SeleniumDriver.SetValue(iprocurementPO.GetQuantity(), "160");
-            SeleniumDriver.SetValue(iprocurementPO.GetUnitOfMeasure(), "Hour");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetItemDescription(), "Test Description");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetQuantity(), "160");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetUnitOfMeasure(), "Hour");
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetUnitPrice());
-            SeleniumDriver.SetValue(iprocurementPO.GetUnitPrice(), "20");
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetUnitPrice());
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetUnitPrice(), "20");
 
-            SeleniumDriver.SetValue(iprocurementPO.GetSupplierName(), "Think Forward Consulting");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetSupplierName(), "Think Forward Consulting");
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetContactName());
-            SeleniumDriver.SetValue(iprocurementPO.GetContactName(), "Test Contant Name");
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetContactName());
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetContactName(), "Test Contant Name");
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetPhone());
-            SeleniumDriver.SetValue(iprocurementPO.GetContactName(), "8099880000");
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetPhone());
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetContactName(), "8099880000");
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetAddToCart());
-            SeleniumDriver.ClickElement(iprocurementPO.GetViewCartAndCheckout());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetAddToCart());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetViewCartAndCheckout());
 
         }
         public void clickCheckOut()
         {
-            SeleniumDriver.ClickElement(iprocurementPO.GetCheckout_uixr());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetCheckout_uixr());
        
         }
 
         public void fillRequisitionInformation()
         {
-            SeleniumDriver.SetValue(iprocurementPO.GetProject(), "21553");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetProject(), "21553");
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetTask());
-            SeleniumDriver.SetValue(iprocurementPO.GetTask(), "1100");
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetTask());
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetTask(), "1100");
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetExpenditureType());
-            SeleniumDriver.SetValue(iprocurementPO.GetExpenditureType(), "Misc Professional Sv");
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetExpenditureType());
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureType(), "Misc Professional Sv");
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetExpenditureItemDate());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetExpenditureItemDate());
             //Console.WriteLine(DateTime.Today.ToString("dd-MMMM-yyyy"));
-            SeleniumDriver.SetValue(iprocurementPO.GetExpenditureItemDate(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureItemDate(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
 
-            SeleniumDriver.ClickElement(iprocurementPO.GetNextButtons());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetNextButtons());
     
         }
         public void clickManageGraphButton()
         {
-            SeleniumDriver.ClickElement(iprocurementPO.GetManageApprovals());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetManageApprovals());
        
         }
         public void addBeforeApproverAndSubmit(string approver)
         {
-            SeleniumDriver.SetValue(iprocurementPO.GetNewApproverText(), approver);
-            SeleniumDriver.SelectDropDownByText(iprocurementPO.GetNewApproverText(), "Before Requisition Approver Controller");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetNewApproverText(), approver);
+            SeleniumDriver.SelectDropDownByText(iprocurementRequesterPO.GetNewApproverText(), "Before Requisition Approver Controller");
            
             SeleniumDriver.ClickElement(commonPO.GetSubmitButton_uixr());
          
         }
         public void addAfterApprover(string approver)
         {
-            SeleniumDriver.ClickElement(iprocurementPO.GetManageApprovals());
-            SeleniumDriver.SetValue(iprocurementPO.GetNewApproverText(), approver);
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetManageApprovals());
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetNewApproverText(), approver);
 
-            SeleniumDriver.SelectDropDownByText(iprocurementPO.GetNewApproverText(), "After Requisition Approver Controller");
+            SeleniumDriver.SelectDropDownByText(iprocurementRequesterPO.GetNewApproverText(), "After Requisition Approver Controller");
            
             SeleniumDriver.ClickElement(commonPO.GetSubmitButton_uixr());
       
         }
         public void SubmitAfterApprovers()
         {
-            SeleniumDriver.ClickElement(iprocurementPO.GetApprovalNextButton());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetApprovalNextButton());
         }
 
         public void submitApproval()
         {
             SeleniumDriver.ClickElement(commonPO.GetSubmitButton_uixr());
-            SeleniumDriver.ClickElement(iprocurementPO.GetContinueShoppingButton());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetContinueShoppingButton());
         }
 
         public void openRequisitionsBuyerWorkCenter()
@@ -456,6 +443,7 @@ namespace AbtFramework
             SeleniumDriver.ClickElement(commonPO.GetUpdateBtn());
 
             SeleniumDriver.ClickElement(veteranStatusPO.GetSearchVeteranStatusBtn());
+            Thread.Sleep(2000);
             // Store all the opened window into the 'list' 
             List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[1]);
@@ -478,7 +466,7 @@ namespace AbtFramework
 
         public void DoDiscovererWorkbookMultipleSheets()
         {
-            SeleniumDriver.ClickElement(discovererPO.GetDetailActiveEmployeeOptn());
+            SeleniumDriver.ClickElement(abtHRUserPO.GetDetailActiveEmployeeOptn());
             ClickMainMenuTableOption("Modified Detail Active Emp Listing");
 
         }
@@ -486,16 +474,16 @@ namespace AbtFramework
         public void DoDiscovererWorkbookOneSheet()
         {
             int count = 0;
-            List<IWebElement> list = discovererPO.GetSelectToExpandIcons();
+            List<IWebElement> list = abtHRUserPO.GetSelectToExpandIcons();
             //to expand all menus first
             while (list != null && list.Count != 0)
             {
                 SeleniumDriver.ClickElement(list[0]);
-                list = discovererPO.GetSelectToExpandIcons();
+                list = abtHRUserPO.GetSelectToExpandIcons();
 
             }
 
-            List<IWebElement> expList = discovererPO.GetExpandedOptionToClick();
+            List<IWebElement> expList = abtHRUserPO.GetExpandedOptionToClick();
             //to click on the expanded links
             while (count < expList.Count)
             {
@@ -832,14 +820,13 @@ namespace AbtFramework
             SelectEmployeeInPeopleHierarchy();
 
             SeleniumDriver.SelectDropDownByText(operationsSelfPO.GetChangeReasonSelect(), "Employee Transfer");
-         
-    
-            commentsTextArea.SendKeys("For Testing");
-            nextBtnAfterReason.Click();
+            SeleniumDriver.SetValue(operationsSelfPO.GetCommentsTextArea(), "For Testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetNextBtnAfterReason());
 
             AddAttachmentsAdditionalInfo();
 
-            submitInReviewConfirmationBtn.Click();
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSubmitInReviewConfirmationBtn());
+      
 
 
         }
@@ -852,32 +839,33 @@ namespace AbtFramework
 
             SeleniumDriver.ClickElement(commonPO.GetAddBtn());
        
-            if (!paymentTypeInput.GetAttribute("value").Equals("SP"))
+            if (!operationsSelfPO.GetPaymentTypeInput().GetAttribute("value").Equals("SP"))
                 Assert.Fail("Error: SP value not present in Payment Input");
 
             string nextSaturday = GetNextWeekDay(DateTime.Today.AddDays(1), DayOfWeek.Saturday);
-            paymentDateInput.SendKeys(nextSaturday);
-            paymentAmountInput.SendKeys("100");
-            paymentBonusAwardedByIcon.Click();
+            SeleniumDriver.SetValue(operationsSelfPO.GetPaymentDateInput(), nextSaturday);
+            SeleniumDriver.SetValue(operationsSelfPO.GetPaymentAmountInput(), "100");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetPaymentBonusAwardedByIcon());
 
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             // Store all the opened window into the 'list' 
             List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[1]);
             SeleniumDriver.Instance.SwitchTo().Frame(0);
-            bonusAwardedBySearchInput.SendKeys("oumsalem, sofiane");
 
+            SeleniumDriver.SetValue(operationsSelfPO.GetBonusAwardedBySearchInput(), "oumsalem, sofiane");
             SeleniumDriver.ClickElement(commonPO.GetGoBtn());
-            bonusAwardedSelecRadioBtn.Click();
-            selectBtnsList[0].Click();
+            SeleniumDriver.ClickElement(operationsSelfPO.GetBonusAwardedSelecRadioBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSelectBtnsList());
+
 
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[0]);
-            paymentCommentsInput.SendKeys("For testing");
-            applyOrNextBonusBtn.Click();
-            applyOrNextBonusBtn.Click();
-
+            SeleniumDriver.SetValue(operationsSelfPO.GetPaymentCommentsInput(), "For testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyOrNextBonusBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyOrNextBonusBtn());
+     
             AddAttachmentsAdditionalInfo();
-            submitInReviewConfirmationBtn.Click();
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSubmitInReviewConfirmationBtn());
         }
 
 
@@ -888,11 +876,12 @@ namespace AbtFramework
         private void AddAttachmentsAdditionalInfo()
         {
             SeleniumDriver.ClickElement(commonPO.GetAddBtn());
-            titleAttachmentInput.SendKeys("Test");
-            descrptionAttachmentTextArea.SendKeys("For Testing");
-            defineAttachmentTextRadioBtn.Click();
-            descriptionTextAreaAttachment.SendKeys("For Testing");
-            applyAttachmentBtn.Click();
+            SeleniumDriver.SetValue(operationsSelfPO.GetTitleAttachmentInput(), "Testing");
+            SeleniumDriver.SetValue(operationsSelfPO.GetDescrptionAttachmentTextArea(), "For Testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetDefineAttachmentTextRadioBtn());
+            SeleniumDriver.SetValue(operationsSelfPO.GetDescriptionTextAreaAttachment(), "Testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyAttachmentBtn());
+
         }
 
         /// <summary>

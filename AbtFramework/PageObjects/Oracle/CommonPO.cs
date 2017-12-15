@@ -154,6 +154,12 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
+        public List<IWebElement> GetAllLinksToClickInNavigator()
+        {
+            string xpath = "//img[contains(@src,'func.gif')]";
+            return SeleniumDriver.GetListElementByXpath(xpath);
+        }
+
 
 
     }

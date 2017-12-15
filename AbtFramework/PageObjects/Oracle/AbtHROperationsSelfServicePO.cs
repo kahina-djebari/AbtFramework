@@ -160,5 +160,63 @@ namespace AbtFramework.PageObjects.Oracle
             string id = "HrSubmit";
             return SeleniumDriver.GetElementByID(id);//works for any subit under review screen
         }
+
+        public IWebElement GetPaymentTypeInput()
+        {
+            string xpath = "//span[text()='Payment Type']/parent::td/following-sibling::td//input";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetPaymentDateInput()
+        {
+            string xpath = "//span[text()='Payment Date']/parent::td/following-sibling::td//input";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetPaymentAmountInput()
+        {
+            string xpath = "//span[text()='Payment Amount']/parent::td/following-sibling::td//input";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetPaymentBonusAwardedByIcon()
+        {
+            string xpath = "//img[@title='Search for Bonus Awarded By']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+
+        public IWebElement GetPaymentCommentsInput()
+        {
+            string xpath = "//span[text()='Comments']/parent::td/following-sibling::td//input";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetBonusAwardedBySearchInput()
+        {
+            string xpath = "//input[@title='Search Term']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetBonusAwardedSelecRadioBtn()
+        {
+            string xpath = "//input[@title='Select']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        //this works for apply and next in Bonus Spot section
+        public IWebElement GetApplyOrNextBonusBtn()
+        {
+            string id = "HrNext";
+            return SeleniumDriver.GetElementByID(id);
+        }
+
+        public IWebElement GetSelectBtnsList()
+        {
+            string xpath = "//button[text() = 'Select']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
+
+
     }
 }
