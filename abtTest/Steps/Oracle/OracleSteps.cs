@@ -333,7 +333,17 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.AddBeneficiaries();
         }
 
+        [Then(@"I confirm termed employee benefit process success")]
+        public void ThenIConfirmTermedEmployeeBenefitProcessSuccess()
+        {
+            AbtPages.OraclePage.ConfirmTerminateProcessSuccess();
+        }
 
+        [Then(@"I submit a report")]
+        public void ThenISubmitAReport()
+        {
+            AbtPages.OraclePage.submitReport();
+        }
 
 
 

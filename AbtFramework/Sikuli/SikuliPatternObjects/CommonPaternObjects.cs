@@ -32,13 +32,19 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetCloseOracleForm => sikuliHelper.GetPattern(PATH + "CloseOracleForm.PNG", 5);
 
-        public IPattern GetOkBtn => sikuliHelper.GetPattern(PATH + "OkBtn.PNG", 5);
+        public IPattern GetOkBtnCloseOracleForm => sikuliHelper.GetPattern(PATH + "OkBtnCloseOracleForm.PNG", 5);
 
         public IPattern GetCloseWindow => sikuliHelper.GetPattern(PATH + "CloseWindow.PNG", 5);
 
         public IPattern GetDesktopActivities => sikuliHelper.GetPattern(PATH + "DesktopActivities.PNG", 5);
 
         public IPattern GetSaveIcon => sikuliHelper.GetPattern(PATH + "SaveIcon.PNG", 5);
+
+        public IPattern GetName => sikuliHelper.GetPattern(PATH + "Name.PNG", 5);
+
+        public IPattern GetDownArrow => sikuliHelper.GetPattern(PATH + "DownArrow.PNG", 5);
+
+        public IPattern GetViewPersonLifeEvents => sikuliHelper.GetPattern(PATH + "ViewPersonLifeEvents.PNG", 5);
 
     }
 }

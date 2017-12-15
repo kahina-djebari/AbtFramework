@@ -155,6 +155,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\OracleHiring-RunHSAFundingProcessInOracleAndDiscoverer.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleHiring-RunHSAFundingProcessInOracleAndDiscoverer.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +184,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Oracle\OracleTermination-ConfirmingTermedEmployeeBenefitProcessSuccess.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleTermination-ConfirmingTermedEmployeeBenefitProcessSuccess.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Oracle\Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature.cs">
       <AutoGen>True</AutoGen>
@@ -278,6 +288,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OracleESS-ConfirmingViewAndUpdateInDirectAccessBenefits.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Oracle\OracleHiring-RunHSAFundingProcessInOracleAndDiscoverer.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleHiring-RunHSAFundingProcessInOracleAndDiscoverer.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Oracle\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature.cs</LastGenOutput>
@@ -297,6 +311,10 @@
     <None Include="Features\Oracle\BasicNavigationToGradeRatesInOracle-ActorHRIS.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BasicNavigationToGradeRatesInOracle-ActorHRIS.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleTermination-ConfirmingTermedEmployeeBenefitProcessSuccess.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleTermination-ConfirmingTermedEmployeeBenefitProcessSuccess.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\Oracle_HR_Navigation-Abt_HR_User-Actor_HRSC_HRBP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
