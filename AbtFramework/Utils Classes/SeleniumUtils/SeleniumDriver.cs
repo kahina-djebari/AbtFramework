@@ -251,6 +251,21 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             }
         }
 
+        /// <summary>
+        /// Return current driver browser name 
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCurrentBrowserName()
+        {
+            ICapabilities cap = ((RemoteWebDriver)Instance).Capabilities;
+            return cap.BrowserName.ToLower();
+
+        }
+
+        public static List<string> GetCurrentBrowserWindows()
+        {
+            return SeleniumDriver.Instance.WindowHandles.ToList();
+        }
 
         // - - - - - - - - - -  Basic Actions Basic actions - - - - - - - - - - - - - //
         // ===================================================================//

@@ -25,7 +25,7 @@ namespace abtTest.Steps.Oracle
         [Then(@"browse to ""(.*)""")]
         public void ThenBrowseTo(string p0)
         {
-            AbtPages.OraclePage.ClickUserOptions(p0);
+            AbtPages.OraclePage.ClickRightSideMenuTableOptions(p0);
         }
         [Then(@"go to time entry")]
         public void ThenGoToTimeEntry()
@@ -113,17 +113,12 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.selectRequisitionToBeAdded();
         }
 
-        [Then(@"click Add")]
-        public void ThenClickAdd()
+        [Then(@"click Add and Create")]
+        public void ThenClickAddAndCreate()
         {
-            AbtPages.OraclePage.addRequisition();
+            AbtPages.OraclePage.addCreateRequisition();
         }
 
-        [Then(@"click Create")]
-        public void ThenClickCreate()
-        {
-            AbtPages.OraclePage.clickCreate();
-        }
 
         [Then(@"click ""(.*)"" option")]
         public void ThenClickOption(string p0)
@@ -131,75 +126,7 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ClickRightSideMenuTableOptions(p0);
         }
 
-        [Then(@"navigate to ""(.*)""")]
-        public void ThenNavigateTo(string p0)
-        {
-            AbtPages.OraclePage.ClickUserOptions1(p0);
-        }
-
-
-
-        [Then(@"click on Entries")]
-        public void ThenClickOnEntries()
-        {
-            AbtPages.OraclePage.clickEntries();
-        }
-
-        [Then(@"click on Salary")]
-        public void ThenClickOnSalary()
-        {
-            AbtPages.OraclePage.clickSalary();
-        }
-
-        [Then(@"click on SalaryB")]
-        public void ThenClickOnSalaryB()
-        {
-            AbtPages.OraclePage.clickSalaryB();
-        }
-
-
-        [Then(@"click on Values")]
-        public void ThenClickOnValues()
-        {
-            AbtPages.OraclePage.clickValues();
-        }
-
-        [Then(@"click on Absence")]
-        public void ThenClickOnAbsence()
-        {
-            AbtPages.OraclePage.clickAbsence();
-        }
-
-        [Then(@"click on Description Payroll")]
-        public void ThenClickOnDescriptionPayroll()
-        {
-            AbtPages.OraclePage.clickDescriptionPayroll();
-        }
-
-        [Then(@"click on Description Grade")]
-        public void ThenClickOnDescriptionGrade()
-        {
-            AbtPages.OraclePage.clickDescriptionGrade();
-        }
-
-        [Then(@"click on Description Job")]
-        public void ThenClickOnDescriptionJob()
-        {
-            AbtPages.OraclePage.clickDescriptionJob();
-        }
-
-        [Then(@"click on Description Organization")]
-        public void ThenClickOnDescriptionOrganization()
-        {
-            AbtPages.OraclePage.clickDescriptionOrganization();
-        }
-
-        [Then(@"click on Description Position")]
-        public void ThenClickOnDescriptionPosition()
-        {
-            AbtPages.OraclePage.clickDescriptionPosition();
-        }
-
+ 
 
         [Then(@"I do discoverer books for multiple sheets")]
         public void ThenDoDiscovererWorkbboksForMultipleSheets()

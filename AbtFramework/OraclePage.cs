@@ -50,6 +50,7 @@ namespace AbtFramework
         {
             StartTimer();
             SeleniumDriver.GoTo("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
+            SeleniumDriver.WaitForDOMready();
 
         }
 
@@ -65,6 +66,7 @@ namespace AbtFramework
             SeleniumDriver.SetValue(loginPagePO.GetUserNameInput(), user);
             SeleniumDriver.SetValue(loginPagePO.GetPasswordInput(), "test123456");
             SeleniumDriver.ClickElement(loginPagePO.GetLoginBtn());
+            SeleniumDriver.WaitForDOMready();
 
         }
 
@@ -74,97 +76,36 @@ namespace AbtFramework
         public void ClickAllLinksInNavigator()
         {
             List<IWebElement> linksList = commonPO.GetAllLinksToClickInNavigator();
-            foreach(var link in linksList)
+
+            for (int i = 0; i < linksList.Count; i++)
             {
-                SeleniumDriver.ClickElement(link);
+                string att = linksList[i].GetAttribute("src");
+                SeleniumDriver.ClickElement(linksList[i]);
        
-                if (link.GetAttribute("src").Contains("sswa"))
+                if (att.Contains("sswa"))
                 {
                     SeleniumDriver.NavigateBack();
                     SeleniumDriver.WaitForDOMready();
-                }   
-                
+                    linksList = commonPO.GetAllLinksToClickInNavigator();
+
+                }
+                else if (SeleniumDriver.GetCurrentBrowserName().Contains("explorer"))
+                {
+                    Thread.Sleep(10000);
+                }
+                else
+                {
+                    Thread.Sleep(3000);
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[1]);
+                    SeleniumDriver.Close();
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[0]);
+                }
+
             }
 
         }
 
-        private IWebElement getLinkFromMainMenuTable(string link)
-        {
-            IWebElement element = null;
-            Console.WriteLine(gUser);
-            // structure to the text -> table/tbody/tr[index]/td[4]/a
-            if (gUser.Equals("Valerie Hennessey"))
-            {
-
-                ICollection<IWebElement> rows = commonPO.GetHomeMenuTable().FindElements(By.TagName("tr"));
-
-                try
-                {
-                    foreach (var row in rows)
-                    {
-                        element = row.FindElement(By.XPath("td[4]/a"));
-                        if (element.GetAttribute("textContent").Equals(link))
-                        {
-                            return element;
-                        }
-                    }
-                }
-                catch (NoSuchElementException)
-                {
-                    //couldnot find 
-                }
-            }
-            else
-            {
-                ICollection<IWebElement> rows = commonPO.GetHomeMenuTable().FindElements(By.TagName("tr"));
-
-                try
-                {
-                    foreach (var row in rows)
-                    {
-                        element = row.FindElement(By.XPath("td[4]/a"));
-                        if (element.GetAttribute("textContent").Equals(link))
-                        {
-                            return element;
-                        }
-                    }
-                }
-                catch (NoSuchElementException)
-                {
-                    //couldnot find 
-                }
-            }
-
-            return element;
-        }
-
-        private IWebElement getLinkFromUserOptions(string link)
-        {
-            IWebElement element = null;
-            Console.WriteLine(gUser);
-
-            ICollection<IWebElement> rows = commonPO.GetUserBrowsingOptions().FindElements(By.TagName("tr"));
-
-            try
-            {
-                foreach (var row in rows)
-                {
-
-                    if (row.GetAttribute("textContent").Equals(link))
-                    {
-                        element = row.FindElement(By.XPath("td[3]/a"));
-                        return element;
-                    }
-                }
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("could not find: " + link);
-            }
-
-
-            return element;
-        }
+     
 
         /// <summary>
         /// Clicks on the Home Page folder list specify by the option.
@@ -174,7 +115,8 @@ namespace AbtFramework
         public void ClickMainMenuTableOption(string option)
         {
             SeleniumDriver.ClickElement(commonPO.GetSelectHomePageLinkFolder(option));
-        
+            SeleniumDriver.WaitForDOMready();
+
 
         }
 
@@ -185,28 +127,14 @@ namespace AbtFramework
         public void ClickRightSideMenuTableOptions(string option)
         {
             SeleniumDriver.ClickElement(commonPO.GetSelectHomePageLinkFolder(option));
+            SeleniumDriver.WaitForDOMready();
             SeleniumDriver.NavigateBack();
+            SeleniumDriver.WaitForDOMready();
 
         }
 
 
 
-        public void ClickUserOptions(string option)
-        {
-     
-            IWebElement test = getLinkFromUserOptions(option);
-            SeleniumDriver.ClickElement(test);
-            SeleniumDriver.NavigateBack();
-          
-        }
-
-        public void ClickUserOptions1(string option)
-        {
-    
-            IWebElement test = getLinkFromUserOptions(option);
-            SeleniumDriver.ClickElement(test);
-         
-        }
 
 
         public void clickIProcurementRequest()
@@ -357,79 +285,13 @@ namespace AbtFramework
       
         }
 
-        public void addRequisition()
+        public void addCreateRequisition()
         {
             SeleniumDriver.ClickElement(buyerRequisitionPO.GetAddRequisitionButton());
-      
-        }
-
-        public void clickCreate()
-        {
             SeleniumDriver.ClickElement(buyerRequisitionPO.GetCreateButton());
- 
-        }
-
-     
-    
-        public void clickEntries()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetEntriesNavigationLink());
-  
-        }
-
-        public void clickSalary()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetSalaryNavigationLink());
 
         }
 
-        public void clickSalaryB()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetSalaryBNavigationLink());
-   
-        }
-
-        public void clickValues()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetValuesNavigationLink());
-         
-        }
-
-        public void clickAbsence()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetAbsenceNavigationLink());
-         
-        }
-
-        public void clickDescriptionPayroll()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetDescriptionPayrollNavigationLink());
-   
-        }
-
-        public void clickDescriptionGrade()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetDescriptionGradeNavigationLink());
-   
-        }
-
-        public void clickDescriptionJob()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetDescriptionJobNavigationLink());
- 
-        }
-
-        public void clickDescriptionOrganization()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetDescriptionOrganizationNavigationLink());
-       
-        }
-
-        public void clickDescriptionPosition()
-        {
-            SeleniumDriver.ClickElement(commonPO.GetDescriptionPositionNavigationLink());
-   
-        }
 
 
         public static bool IsAt()
