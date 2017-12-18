@@ -40,9 +40,7 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetAbtOAB => sikuliHelper.GetPattern(PATH + "AbtOABSelfServiceMasterEnrollment.PNG", 5);
 
-        public IPattern GetCloseWindows => sikuliHelper.GetPattern(PATH + "CloseWindows.PNG", 5);
-
-        public IPattern GetCommitBtn => sikuliHelper.GetPattern(PATH + "CommitBtn.PNG", 5);
+        public IPattern GetCommitAndProceedBtn => sikuliHelper.GetPattern(PATH + "CommitAndProceedBtn.PNG", 5);
 
         public IPattern GetEnrollmentOpportunities => sikuliHelper.GetPattern(PATH + "EnrollmentOpportunities.PNG", 5);
 
@@ -54,6 +52,13 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetSwitchResponsabilityIcon => sikuliHelper.GetPattern(PATH + "SwitchResponsabilityIcon.PNG", 5);
 
+        public IPattern GetEndDateInputField => sikuliHelper.GetPattern(PATH + "EndDateInputField.PNG", 5);
+
+        public IPattern GetBenefitsOption => sikuliHelper.GetPattern(PATH + "BenefitsOption.PNG", 5);
+
+        public IPattern GetReturnToPeopleLink => sikuliHelper.GetPattern(PATH + "ReturnToPeopleLink.PNG", 5);
+
+        public IPattern GetOkNotificationsNote => sikuliHelper.GetPattern(PATH + "OkNotificationsNote.PNG", 5);
 
     }
 }

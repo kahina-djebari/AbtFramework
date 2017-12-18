@@ -41,6 +41,7 @@ namespace AbtFramework.Sikuli
 
             return instance;
         }
+
         /// <summary>
         /// Clicks on a pattern. Default time is to 
         /// wait for ever.
@@ -50,6 +51,7 @@ namespace AbtFramework.Sikuli
         {
             session.Click(pattern);
         }
+
 
         /// <summary>
         /// Set value on the input text box specified
@@ -119,8 +121,6 @@ namespace AbtFramework.Sikuli
                 return null;
             }
 
-
-
         }
 
         /// <summary>
@@ -157,7 +157,16 @@ namespace AbtFramework.Sikuli
         public void PressEnter()
         {
             session.Type("\\n");
-        }   
+        }
+
+        /// <summary>
+        /// Double click
+        /// </summary>
+        /// <param name="pattern"></param>
+        public void DoubleClicklickPattern(IPattern pattern)
+        {
+            session.DoubleClick(pattern);
+        }
 
     }
 }

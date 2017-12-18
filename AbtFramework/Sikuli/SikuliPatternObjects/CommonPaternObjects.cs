@@ -46,5 +46,7 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetViewPersonLifeEvents => sikuliHelper.GetPattern(PATH + "ViewPersonLifeEvents.PNG", 5);
 
+        public IPattern GetCloseOracleWindow => sikuliHelper.GetPattern(PATH + "CloseOracleWindow.PNG", 5);
+
     }
 }

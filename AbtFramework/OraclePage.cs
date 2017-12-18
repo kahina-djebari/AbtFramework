@@ -446,6 +446,9 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//button[text()='Go']")]
         private IWebElement goButtonFindAddedLE;  //LE = Life Event
 
+        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Session Date')]/parent::div/descendant::button[@title='Next']")]
+        private IWebElement nextChangeSessionDate;
+
 
         //OracleESS: Update personal information
         [FindsBy(How = How.XPath, Using = "//h2[text()='Basic Details']/parent::div//descendant::button[@title='Update']")]
@@ -1438,7 +1441,7 @@ namespace AbtFramework
         public void ApproveChanges()
         {
             SelectElement select = new SelectElement(openNotifications);
-            select.DeselectByText("All Notifications");
+            select.SelectByText("All Notifications");
             goNotifications.Click();
             subjectLink.Click();
         }
@@ -1478,6 +1481,8 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetOkNotificationsNote);
+
             FindEmployeeName("oumsalem, sofiane");
 
             sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
@@ -1515,6 +1520,53 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateLEDate);
 
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetProcessLifeEvent);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetCommitAndProceedBtn);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetViewPersonLifeEvents);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetLatestLE);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetEnrollmentOpportunities);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetEndDateInputField);
+
+            //It has to be the current date. Could not find a way to insert today's date automatically
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "12-DEC-2017");
+
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSwitchResponsabilityIcon);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetAbtOAB);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateAbtOAB);
+
+            sikuliHelper.DoubleClicklickPattern(LifeEventPatterns.GetBenefitsOption);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetReturnToPeopleLink);
+
+            nameInputField.SendKeys("oumsalem");
+
+            goButton.Click();
+            actionIcon.Click();
+            nextChangeSessionDate.Click();
         }
 
         public void UpdatePersonalInformation()
