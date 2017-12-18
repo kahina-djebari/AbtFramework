@@ -449,13 +449,13 @@ namespace AbtFramework
 
         //OracleESS: Update personal information
         [FindsBy(How = How.XPath, Using = "//h2[text()='Basic Details']/parent::div//descendant::button[@title='Update']")]
-        private IWebElement updateBasicDetails;
+        private IWebElement updateBasicDetailsBtn;
 
         [FindsBy(How = How.XPath, Using = "//h2[text()='Phone Numbers']/parent::div//descendant::button[@title='Update']")]
         private IWebElement updatePhoneNumbers;
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Select Emergency Contact:']/following-sibling::button[@title='Update the Contact Details']")]
-        private IWebElement updateEmergencyContacts;
+        private IWebElement updateEmergencyContactsBtn;
 
         [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Basic Details')]/parent::div/descendant::button[@title='Next']")]
         private IWebElement next; //works for next button under Choose Option and Update Informarion
@@ -479,7 +479,7 @@ namespace AbtFramework
         private IWebElement YesBtn; //to confirm that we want to cancel the changes that we have made
 
         [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Personal Information')]/parent::div/descendant::button[@title='Submit']")]
-        private IWebElement submitInfoChange;
+        private IWebElement submitInfoChangeBtn;
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Number']/parent::th/parent::tr/following-sibling::tr[1]//child::td/input[@title='Text input for Phone number']")]
         private IWebElement phoneNumInputField;
@@ -488,7 +488,7 @@ namespace AbtFramework
         [FindsBy(How = How.XPath, Using = "//span[text()='Please show me the benefits as of']/parent::td//following-sibling::td/select")]
         private IWebElement selectElectionsDate;
 
-        [FindsBy(How = How.XPath, Using = "//span[text()='Please show me the benefits as of']/parent::td//following-sibling::td/select")]
+        [FindsBy(How = How.XPath, Using = "//span[text()='Please show me the benefits as of']/parent::td/ancestor::td/following-sibling::td/button[text()='Go']")]
         private IWebElement goToElections;
 
         [FindsBy(How = How.XPath, Using = "//button[@title='Update Beneficiaries']")]
@@ -1520,7 +1520,7 @@ namespace AbtFramework
         public void UpdatePersonalInformation()
         {
             // Update Middle Name in Basic Details section
-            updateBasicDetails.Click();
+            updateBasicDetailsBtn.Click();
             next.Click();
             middleNameInputField.SendKeys("Liam");
             effectiveDateBasicDetails.Clear();
@@ -1537,7 +1537,7 @@ namespace AbtFramework
             cancelInfoChanges.Click();
             YesBtn.Click();
             //Update Middle Name of the Emergency Contact
-            updateEmergencyContacts.Click();
+            updateEmergencyContactsBtn.Click();
             middleNameInputField.SendKeys("Ania");
             nextEmergencyContact.Click();
             cancelInfoChanges.Click();
