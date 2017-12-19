@@ -501,7 +501,10 @@ namespace AbtFramework
         private IWebElement addAnotherPersonBtn;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Relationship')]/parent::td/following-sibling::td/select")]
-        private IWebElement selectRelationship;
+        private IWebElement selectRelationship; 
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Relationship Start Date']")]
+        private IWebElement relationshipStartDateInputField;
 
         [FindsBy(How = How.XPath, Using = "//input[@title='First Name']")]
         private IWebElement beneficiaryFirstName;
@@ -1567,6 +1570,12 @@ namespace AbtFramework
             goButton.Click();
             actionIcon.Click();
             nextChangeSessionDate.Click();
+            addAnotherPersonBtn.Click();
+            SelectElement slctRelationship = new SelectElement(selectRelationship);
+            slctRelationship.SelectByText("Child");
+            relationshipStartDateInputField.SendKeys("30-Dec-2017");
+            beneficiaryFirstName.SendKeys("Liam");
+            beneficiaryLastName.SendKeys("Oumsalem"); 
         }
 
         public void UpdatePersonalInformation()
@@ -1692,6 +1701,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(submitReportPatterns.GetFindRequestsBtn);
 
             sikuliHelper.ClickPattern(submitReportPatterns.GetViewLogBtn);
+
         }
 
     }
