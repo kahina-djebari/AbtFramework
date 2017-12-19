@@ -1,8 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Windows.Input;
 using SikuliSharp;
-
-
+using OpenQA.Selenium;
+using System.Threading;
 
 namespace AbtFramework.Sikuli
 {   /// <summary>
@@ -10,10 +17,8 @@ namespace AbtFramework.Sikuli
     /// </summary>
     public class SikuliHelper
     {
-
         private static SikuliHelper instance;
-        private static ISikuliSession session;     
-
+        private static ISikuliSession session;
 
         private SikuliHelper()
         {
@@ -36,6 +41,7 @@ namespace AbtFramework.Sikuli
 
             return instance;
         }
+
         /// <summary>
         /// Clicks on a pattern. Default time is to 
         /// wait for ever.
@@ -43,9 +49,9 @@ namespace AbtFramework.Sikuli
         /// <param name="pattern"></param>
         public void ClickPattern(IPattern pattern)
         {
-
             session.Click(pattern);
         }
+
 
         /// <summary>
         /// Set value on the input text box specified
@@ -55,7 +61,7 @@ namespace AbtFramework.Sikuli
         public void SetInputValue(IPattern pattern, string text)
 
         {
-            ClickPattern(pattern);
+            this.ClickPattern(pattern);
             session.Type(text);
 
         }
@@ -67,6 +73,7 @@ namespace AbtFramework.Sikuli
         public bool IsPatternExisting(IPattern pattern)
         {
             return session.Exists(pattern);
+
         }
 
         /// <summary>
@@ -114,8 +121,6 @@ namespace AbtFramework.Sikuli
                 return null;
             }
 
-
-
         }
 
         /// <summary>
@@ -147,13 +152,21 @@ namespace AbtFramework.Sikuli
                 Console.WriteLine(e);
                 return null;
             }
-        } 
-        
+        }
+
         public void PressEnter()
         {
             session.Type("\\n");
-        }   
+        }
 
+        /// <summary>
+        /// Double click
+        /// </summary>
+        /// <param name="pattern"></param>
+        public void DoubleClicklickPattern(IPattern pattern)
+        {
+            session.DoubleClick(pattern);
+        }
 
     }
 }

@@ -17,9 +17,9 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("OracleHRNavigation-AbtHRMSManager-ActorHRIS", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+    [TechTalk.SpecRun.FeatureAttribute("OracleHRNavigation-AbtUsHRMSManager-ActorHRIS", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
         "ioal Test", SourceFile="Features\\Oracle\\OracleHRNavigation-AbtHRMSManager-ActorHRIS.feature", SourceLine=0)]
-    public partial class OracleHRNavigation_AbtHRMSManager_ActorHRISFeature
+    public partial class OracleHRNavigation_AbtUsHRMSManager_ActorHRISFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace abtTest.Features.Oracle
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleHRNavigation-AbtHRMSManager-ActorHRIS", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleHRNavigation-AbtUsHRMSManager-ActorHRIS", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
                     "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -63,11 +63,11 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Oracle HR Navigation - Abt HRMS Manager - Actor HRIS", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Oracle HR Navigation - Abt US HRMS Manager - Actor HRIS", new string[] {
                 "Oracle"}, SourceLine=6)]
-        public virtual void OracleHRNavigation_AbtHRMSManager_ActorHRIS()
+        public virtual void OracleHRNavigation_AbtUSHRMSManager_ActorHRIS()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Oracle HR Navigation - Abt HRMS Manager - Actor HRIS", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Oracle HR Navigation - Abt US HRMS Manager - Actor HRIS", new string[] {
                         "Oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -76,9 +76,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("i login as \"Lisa Butterfield\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.And("click the \"Enter and Maintain\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13

@@ -10,7 +10,7 @@ namespace abtTest.Steps.Oracle
     {
 
         private static String gUser = "user";
-    
+
 
         [Then(@"click iProcurement request and then Non-Catalog Req")]
         public void ThenClickIProcurementRequestAndThenNon_CatalogReq()
@@ -103,7 +103,7 @@ namespace abtTest.Steps.Oracle
         [Then(@"browse to Requisitions under Requisitions")]
         public void ThenBrowseToRequisitionsUnderRequisitions()
         {
-            AbtPages.OraclePage.openRequisitionsRequisitions();       
+            AbtPages.OraclePage.openRequisitionsRequisitions();
         }
 
 
@@ -126,7 +126,7 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ClickRightSideMenuTableOptions(p0);
         }
 
- 
+
 
         [Then(@"I do discoverer books for multiple sheets")]
         public void ThenDoDiscovererWorkbboksForMultipleSheets()
@@ -216,6 +216,36 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ClickAllLinksInNavigator();
         }
 
+        [Then(@"I confirm and update personal information")]
+        public void ThenIConfirmAndUpdatePersonalInformation()
+        {
+            AbtPages.OraclePage.UpdatePersonalInformation();
+        }
+
+
+        [Then(@"I add life event and enroll in benefits")]
+        public void ThenIAddLifeEventAndEnrollInBenefits()
+        {
+            AbtPages.OraclePage.LifeEventEnrollBenefits();
+        }
+
+        [Then(@"I confirm view and add beneficiaries")]
+        public void ThenIConfirmViewAndAddBeneficiaries()
+        {
+            AbtPages.OraclePage.AddBeneficiaries();
+        }
+
+        [Then(@"I confirm termed employee benefit process success")]
+         public void ThenIConfirmTermedEmployeeBenefitProcessSuccess()
+        {
+             AbtPages.OraclePage.ConfirmTerminateProcessSuccess();
+         }
+  
+         [Then(@"I submit a report")]
+         public void ThenISubmitAReport()
+         {
+             AbtPages.OraclePage.submitReport();
+         }
 
     }
 }

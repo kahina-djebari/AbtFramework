@@ -160,7 +160,17 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetListElementByXpath(xpath);
         }
 
+        public IWebElement GetNextChangeSessionDate()
+        {
+            string xpath = "//h1[text()='Change Session Date')]/parent::div/descendant::button[@title='Next']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
 
+        public IWebElement GetRelationshipStartDateInputField()
+        {
+            string xpath = "//input[@title='Relationship Start Date']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
 
     }
 }
