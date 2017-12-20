@@ -28,39 +28,7 @@ Scenario: Abt US Projects Inquiry Access
 	And I have navigated to Oracle Dev
 	And i login as "PCTEST01"
 	Then click the "Abt US Projects Inquiry" option
-	And browse to "Notifications"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Abt PO Details"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Project"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "All"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Project Status Inquiry"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "View Project Information"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "View Contract Information"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Agreements"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Control Billing by Top Task"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Revenue Review"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Invoice Review"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Funding Inquiry"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Profile"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Concurrent"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Run"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Set"
-	Then click the "Abt US Projects Inquiry" option
-	And browse to "Purchase Order Summary"
+	Then I click on all links at the right side menu
 
 	@Oracle
 Scenario: iProcurement Request
@@ -216,296 +184,44 @@ Scenario: Abt US HR Manager
 	
 
 	@Oracle
-Scenario: US Super HRMS Manager: People
+Scenario: US Super HRMS Manager
 	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
 	Then click the "US Super HRMS Manager" option	
-	Then I click on all links at the right side menu	
-
+	Then I click on all links at the right side menu			 	
+		
 	@Oracle
-Scenario: US Super HRMS Manager: Fast Path
-    Given I have Open Chrome Test
+	Scenario: US HRMS Manager
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
-	Then click the "US Super HRMS Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US Super HRMS Manager: Recruitment and Career Management
-    Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US Super HRMS Manager" option
-	Then I click on all links at the right side menu	
-
+	Then click the "US HRMS Manager" option	
+	Then I click on all links at the right side menu				
 
 	@Oracle
-Scenario: US Super HRMS Manager: Work Structures
-    Given I have Open Chrome Test
+Scenario: US HR Manager
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
-	Then click the "US Super HRMS Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US Super HRMS Manager: Payroll
-    Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US Super HRMS Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US Super HRMS Manager: Total Compensation
-    Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US Super HRMS Manager" option
-	Then I click on all links at the right side menu	 
-
-
-	@Oracle
-Scenario: US Super HRMS Manager: View
-    Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US Super HRMS Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US Super HRMS Manager: Mass Information Definitiions and Security
-    Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US Super HRMS Manager" option
+	Then click the "US HR Manager" option
 	Then I click on all links at the right side menu		
 
-
 	@Oracle
-	Scenario: US HRMS Manager: People
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HRMS Manager: Fast Path
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	
-	Then I click on all links at the right side menu	
-	 
-	 @Oracle
-Scenario: US HRMS Manager: Recruitment and Career Management
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	 
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HRMS Manager: Work Structures
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	
-	Then I click on all links at the right side menu	
-
-	@Oracle
-Scenario: US HRMS Manager: Payroll
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HRMS Manager: Total Compensation
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	
-	Then I click on all links at the right side menu	
-	
-
-	@Oracle
-Scenario: US HRMS Manager: View
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	 
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HRMS Manager: Mass Information Definitions and Security
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HRMS Manager" option	
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HR Manager: People
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HR Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HR Manager: Fast Path Recruitment and Career Management
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HR Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HR Manager: Work Structures 
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HR Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HR Manager: Payroll and total compensation
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HR Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: US HR Manager: View to Security  
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "US HR Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HR Technical Manager: People
+Scenario: Abt US HR Technical Manager
 	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
 	Then click the "Abt US HR Technical Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HR Technical Manager: Fast Path
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HR Technical Manager" option
-	Then I click on all links at the right side menu	
-
-
-@Oracle	
-Scenario: Abt US HR Technical Manager: Recruitment and Career Management
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HR Technical Manager" option
-    Then I click on all links at the right side menu	
-
+	Then I click on all links at the right side menu		
 
 	@Oracle
-Scenario: Abt US HR Technical Manager: Work Structures
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HR Technical Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HR Technical Manager: Payroll and Total Compensation
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HR Technical Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HR Technical Manager: View to Security  
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HR Technical Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HRMS Manager: People
+Scenario: Abt US HRMS Manager
 	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
 	Then click the "Abt US HRMS Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HRMS Manager: Fast Path
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HRMS Manager" option
-	Then I click on all links at the right side menu	
-	
-
-	@Oracle
-Scenario: Abt US HRMS Manager: Recruitment and Career Management
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HRMS Manager" option
-    Then I click on all links at the right side menu	
-
-	@Oracle
-Scenario: Abt US HRMS Manager: Work Structures
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HRMS Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HRMS Manager: Payroll and Total Compensation
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HRMS Manager" option
-	Then I click on all links at the right side menu	
-
-
-	@Oracle
-Scenario: Abt US HRMS Manager: View to Security  
-	Given I have Open Chrome Test
-	And I have navigated to Oracle Dev
-	And i login as "HRTEST01"
-	Then click the "Abt US HRMS Manager" option
-	Then I click on all links at the right side menu	
+	Then I click on all links at the right side menu					
 	
 	@Oracle
 Scenario: HR: Manage Employee Action Forms

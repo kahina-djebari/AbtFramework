@@ -122,460 +122,484 @@ this.ScenarioSetup(scenarioInfo);
 #line 30
  testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 31
- testRunner.And("browse to \"Notifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 33
- testRunner.And("browse to \"Abt PO Details\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 35
- testRunner.And("browse to \"Project\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 37
- testRunner.And("browse to \"All\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 39
- testRunner.And("browse to \"Project Status Inquiry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 41
- testRunner.And("browse to \"View Project Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
- testRunner.And("browse to \"View Contract Information\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 45
- testRunner.And("browse to \"Agreements\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 47
- testRunner.And("browse to \"Control Billing by Top Task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 49
- testRunner.And("browse to \"Revenue Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 51
- testRunner.And("browse to \"Invoice Review\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 53
- testRunner.And("browse to \"Funding Inquiry\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 55
- testRunner.And("browse to \"Profile\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
- testRunner.And("browse to \"Concurrent\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 59
- testRunner.And("browse to \"Run\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 61
- testRunner.And("browse to \"Set\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
- testRunner.Then("click the \"Abt US Projects Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 63
- testRunner.And("browse to \"Purchase Order Summary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("iProcurement Request", new string[] {
-                "Oracle"}, SourceLine=65)]
+                "Oracle"}, SourceLine=33)]
         public virtual void IProcurementRequest()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("iProcurement Request", new string[] {
                         "Oracle"});
-#line 66
+#line 34
 this.ScenarioSetup(scenarioInfo);
-#line 67
+#line 35
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 68
+#line 36
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 37
  testRunner.And("i login as \"oumsalems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 38
  testRunner.Then("click the \"Abt US iProcurement Requester\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 71
+#line 39
  testRunner.Then("click iProcurement request and then Non-Catalog Req", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 72
+#line 40
  testRunner.And("fill the request form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 41
  testRunner.Then("Checkout the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 74
+#line 42
  testRunner.And("Fill Requisition Information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 43
  testRunner.Then("Click Manage Approvals", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 76
+#line 44
  testRunner.And("assign \"Berg, Gail E\" before requisition and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 45
  testRunner.And("Then assign \"Poodts, Mauricio\" after requisition and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 46
  testRunner.And("Then assign \"Elguera, Jorge L\" after requisition and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 47
  testRunner.And("Then assign \"Samuel, Noel N\" after requisition and submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 48
  testRunner.Then("Submit after approvers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 81
+#line 49
  testRunner.When("i hit submit the request is done", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Requisition approval", new string[] {
-                "Oracle"}, SourceLine=83)]
+                "Oracle"}, SourceLine=51)]
         public virtual void RequisitionApproval()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Requisition approval", new string[] {
                         "Oracle"});
-#line 84
+#line 52
 this.ScenarioSetup(scenarioInfo);
-#line 85
+#line 53
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 86
+#line 54
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 55
  testRunner.And("i login as \"BergG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 56
  testRunner.Then("click the \"Abt US iProcurement Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 57
  testRunner.And("complete the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Timecard vacations Request", new string[] {
-                "Oracle"}, SourceLine=91)]
+                "Oracle"}, SourceLine=59)]
         public virtual void TimecardVacationsRequest()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Timecard vacations Request", new string[] {
                         "Oracle"});
-#line 92
+#line 60
 this.ScenarioSetup(scenarioInfo);
-#line 93
+#line 61
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 94
+#line 62
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 63
  testRunner.And("i login as \"oumsalems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 64
  testRunner.Then("click the \"Abt US Timecards\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 97
+#line 65
  testRunner.And("go to time entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 66
  testRunner.And("fill the TimeCard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 67
  testRunner.Then("close complete the timeCard request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Approve Timecard", new string[] {
-                "Oracle"}, SourceLine=101)]
+                "Oracle"}, SourceLine=69)]
         public virtual void ApproveTimecard()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Approve Timecard", new string[] {
                         "Oracle"});
-#line 102
+#line 70
 this.ScenarioSetup(scenarioInfo);
-#line 103
+#line 71
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 104
+#line 72
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 73
  testRunner.And("i login as \"GuntherD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 74
  testRunner.Then("click the \"Abt US iProcurement Inquiry\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 107
+#line 75
  testRunner.And("complete the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Creation and approval of PO", new string[] {
-                "Oracle"}, SourceLine=110)]
+                "Oracle"}, SourceLine=78)]
         public virtual void CreationAndApprovalOfPO()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creation and approval of PO", new string[] {
                         "Oracle"});
-#line 111
+#line 79
 this.ScenarioSetup(scenarioInfo);
-#line 112
+#line 80
     testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 113
+#line 81
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
+#line 82
  testRunner.And("i login as \"KruckM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 83
  testRunner.Then("click the \"Abt US PO Buyer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 116
+#line 84
  testRunner.And("browse to Requisitions under Buyer Work Center", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line 85
  testRunner.Then("select a requisition to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 118
+#line 86
  testRunner.And("click Add and Create", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Purchasing Request", new string[] {
-                "Oracle"}, SourceLine=122)]
+                "Oracle"}, SourceLine=90)]
         public virtual void PurchasingRequest()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Purchasing Request", new string[] {
                         "Oracle"});
-#line 123
+#line 91
 this.ScenarioSetup(scenarioInfo);
-#line 124
+#line 92
     testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 125
+#line 93
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
+#line 94
  testRunner.And("i login as \"KruckM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 95
  testRunner.Then("click the \"Abt US PO Buyer\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 128
+#line 96
  testRunner.And("browse to Requisitions under Requisitions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
+#line 97
  testRunner.Then("I fill the Oracle Forms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt Employee Roster", new string[] {
-                "Oracle"}, SourceLine=132)]
+                "Oracle"}, SourceLine=100)]
         public virtual void AbtEmployeeRoster()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt Employee Roster", new string[] {
                         "Oracle"});
-#line 133
+#line 101
 this.ScenarioSetup(scenarioInfo);
-#line 134
+#line 102
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 135
+#line 103
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
+#line 104
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 105
  testRunner.Then("click the \"Abt Employee Roster\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt HR Desktop Integration", new string[] {
-                "Oracle"}, SourceLine=139)]
+                "Oracle"}, SourceLine=107)]
         public virtual void AbtHRDesktopIntegration()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR Desktop Integration", new string[] {
                         "Oracle"});
-#line 140
+#line 108
 this.ScenarioSetup(scenarioInfo);
-#line 141
+#line 109
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 142
+#line 110
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 111
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 112
  testRunner.Then("click the \"Abt HR Desktop Integration\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 145
+#line 113
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt HR Operations Self Service", new string[] {
-                "Oracle"}, SourceLine=148)]
+                "Oracle"}, SourceLine=116)]
         public virtual void AbtHROperationsSelfService()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR Operations Self Service", new string[] {
                         "Oracle"});
-#line 149
+#line 117
 this.ScenarioSetup(scenarioInfo);
-#line 150
+#line 118
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 151
+#line 119
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 152
+#line 120
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 153
+#line 121
  testRunner.Then("click the \"Abt HR Operations Self Service\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 154
+#line 122
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt HR System Administrator", new string[] {
-                "Oracle"}, SourceLine=157)]
+                "Oracle"}, SourceLine=125)]
         public virtual void AbtHRSystemAdministrator()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR System Administrator", new string[] {
                         "Oracle"});
-#line 158
+#line 126
 this.ScenarioSetup(scenarioInfo);
-#line 159
+#line 127
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 160
+#line 128
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 161
+#line 129
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
+#line 130
  testRunner.Then("click the \"Abt HR System Administrator\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 163
+#line 131
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt HR User", new string[] {
-                "Oracle"}, SourceLine=166)]
+                "Oracle"}, SourceLine=134)]
         public virtual void AbtHRUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HR User", new string[] {
                         "Oracle"});
-#line 167
+#line 135
 this.ScenarioSetup(scenarioInfo);
-#line 168
+#line 136
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 169
+#line 137
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 170
+#line 138
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
+#line 139
  testRunner.Then("click the \"Abt HR User\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 172
+#line 140
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt HRMS Benefits User", new string[] {
-                "Oracle"}, SourceLine=175)]
+                "Oracle"}, SourceLine=143)]
         public virtual void AbtHRMSBenefitsUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HRMS Benefits User", new string[] {
                         "Oracle"});
-#line 176
+#line 144
 this.ScenarioSetup(scenarioInfo);
-#line 177
+#line 145
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 178
+#line 146
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
+#line 147
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 180
+#line 148
  testRunner.Then("click the \"Abt HRMS Benefits User\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 181
+#line 149
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt HRMS Superuser", new string[] {
-                "Oracle"}, SourceLine=183)]
+                "Oracle"}, SourceLine=151)]
         public virtual void AbtHRMSSuperuser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HRMS Superuser", new string[] {
                         "Oracle"});
-#line 184
+#line 152
 this.ScenarioSetup(scenarioInfo);
-#line 185
+#line 153
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 186
+#line 154
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 187
+#line 155
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line 156
  testRunner.Then("click the \"Abt HRMS Superuser\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 189
+#line 157
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt HRMS User", new string[] {
-                "Oracle"}, SourceLine=192)]
+                "Oracle"}, SourceLine=160)]
         public virtual void AbtHRMSUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt HRMS User", new string[] {
                         "Oracle"});
-#line 193
+#line 161
 this.ScenarioSetup(scenarioInfo);
-#line 194
+#line 162
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 195
+#line 163
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 196
+#line 164
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 197
+#line 165
  testRunner.Then("click the \"Abt HRMS User\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 198
+#line 166
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Executive", new string[] {
-                "Oracle"}, SourceLine=200)]
+                "Oracle"}, SourceLine=168)]
         public virtual void AbtUSHRExecutive()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Executive", new string[] {
                         "Oracle"});
-#line 201
+#line 169
 this.ScenarioSetup(scenarioInfo);
-#line 202
+#line 170
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 203
+#line 171
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 204
+#line 172
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 205
+#line 173
  testRunner.Then("click the \"Abt US HR Executive\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 206
+#line 174
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Manager", new string[] {
-                "Oracle"}, SourceLine=209)]
+                "Oracle"}, SourceLine=177)]
         public virtual void AbtUSHRManager()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Manager", new string[] {
                         "Oracle"});
-#line 210
+#line 178
 this.ScenarioSetup(scenarioInfo);
-#line 211
+#line 179
  testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 212
+#line 180
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 213
+#line 181
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 214
+#line 182
  testRunner.Then("click the \"Abt US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 215
+#line 183
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: People", new string[] {
-                "Oracle"}, SourceLine=218)]
-        public virtual void USSuperHRMSManagerPeople()
+        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager", new string[] {
+                "Oracle"}, SourceLine=186)]
+        public virtual void USSuperHRMSManager()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: People", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager", new string[] {
+                        "Oracle"});
+#line 187
+this.ScenarioSetup(scenarioInfo);
+#line 188
+ testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 189
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
+ testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 192
+ testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager", new string[] {
+                "Oracle"}, SourceLine=194)]
+        public virtual void USHRMSManager()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager", new string[] {
+                        "Oracle"});
+#line 195
+ this.ScenarioSetup(scenarioInfo);
+#line 196
+ testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 197
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 198
+ testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 199
+ testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 200
+ testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager", new string[] {
+                "Oracle"}, SourceLine=202)]
+        public virtual void USHRManager()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager", new string[] {
+                        "Oracle"});
+#line 203
+this.ScenarioSetup(scenarioInfo);
+#line 204
+ testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 205
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 206
+ testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 207
+ testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 208
+ testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Technical Manager", new string[] {
+                "Oracle"}, SourceLine=210)]
+        public virtual void AbtUSHRTechnicalManager()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Technical Manager", new string[] {
+                        "Oracle"});
+#line 211
+this.ScenarioSetup(scenarioInfo);
+#line 212
+ testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 213
+ testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
+ testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.Then("click the \"Abt US HR Technical Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 216
+ testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Abt US HRMS Manager", new string[] {
+                "Oracle"}, SourceLine=218)]
+        public virtual void AbtUSHRMSManager()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HRMS Manager", new string[] {
                         "Oracle"});
 #line 219
 this.ScenarioSetup(scenarioInfo);
@@ -586,756 +610,52 @@ this.ScenarioSetup(scenarioInfo);
 #line 222
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 223
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 224
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Fast Path", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("HR: Manage Employee Action Forms", new string[] {
                 "Oracle"}, SourceLine=226)]
-        public virtual void USSuperHRMSManagerFastPath()
+        public virtual void HRManageEmployeeActionForms()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Fast Path", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("HR: Manage Employee Action Forms", new string[] {
                         "Oracle"});
 #line 227
 this.ScenarioSetup(scenarioInfo);
 #line 228
-    testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 229
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 230
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 231
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"HR: Manage Employee Action Forms\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 232
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Recruitment and Career Management", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Workflow User Web Applications", new string[] {
                 "Oracle"}, SourceLine=235)]
-        public virtual void USSuperHRMSManagerRecruitmentAndCareerManagement()
+        public virtual void WorkflowUserWebApplications()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Recruitment and Career Management", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Workflow User Web Applications", new string[] {
                         "Oracle"});
 #line 236
 this.ScenarioSetup(scenarioInfo);
 #line 237
-    testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 238
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 239
  testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 240
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 241
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Work Structures", new string[] {
-                "Oracle"}, SourceLine=244)]
-        public virtual void USSuperHRMSManagerWorkStructures()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Work Structures", new string[] {
-                        "Oracle"});
-#line 245
-this.ScenarioSetup(scenarioInfo);
-#line 246
-    testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 247
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 248
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 249
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 250
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Payroll", new string[] {
-                "Oracle"}, SourceLine=253)]
-        public virtual void USSuperHRMSManagerPayroll()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Payroll", new string[] {
-                        "Oracle"});
-#line 254
-this.ScenarioSetup(scenarioInfo);
-#line 255
-    testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 256
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 257
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 258
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 259
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Total Compensation", new string[] {
-                "Oracle"}, SourceLine=262)]
-        public virtual void USSuperHRMSManagerTotalCompensation()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Total Compensation", new string[] {
-                        "Oracle"});
-#line 263
-this.ScenarioSetup(scenarioInfo);
-#line 264
-    testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 265
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 266
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 267
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 268
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: View", new string[] {
-                "Oracle"}, SourceLine=271)]
-        public virtual void USSuperHRMSManagerView()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: View", new string[] {
-                        "Oracle"});
-#line 272
-this.ScenarioSetup(scenarioInfo);
-#line 273
-    testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 274
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 275
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 276
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 277
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US Super HRMS Manager: Mass Information Definitiions and Security", new string[] {
-                "Oracle"}, SourceLine=280)]
-        public virtual void USSuperHRMSManagerMassInformationDefinitiionsAndSecurity()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US Super HRMS Manager: Mass Information Definitiions and Security", new string[] {
-                        "Oracle"});
-#line 281
-this.ScenarioSetup(scenarioInfo);
-#line 282
-    testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 283
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 284
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
- testRunner.Then("click the \"US Super HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 286
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: People", new string[] {
-                "Oracle"}, SourceLine=289)]
-        public virtual void USHRMSManagerPeople()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: People", new string[] {
-                        "Oracle"});
-#line 290
- this.ScenarioSetup(scenarioInfo);
-#line 291
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 292
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 293
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 294
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 295
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Fast Path", new string[] {
-                "Oracle"}, SourceLine=298)]
-        public virtual void USHRMSManagerFastPath()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Fast Path", new string[] {
-                        "Oracle"});
-#line 299
-this.ScenarioSetup(scenarioInfo);
-#line 300
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 301
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 302
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 303
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 304
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Recruitment and Career Management", new string[] {
-                "Oracle"}, SourceLine=306)]
-        public virtual void USHRMSManagerRecruitmentAndCareerManagement()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Recruitment and Career Management", new string[] {
-                        "Oracle"});
-#line 307
-this.ScenarioSetup(scenarioInfo);
-#line 308
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 309
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 310
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 311
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 312
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Work Structures", new string[] {
-                "Oracle"}, SourceLine=315)]
-        public virtual void USHRMSManagerWorkStructures()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Work Structures", new string[] {
-                        "Oracle"});
-#line 316
-this.ScenarioSetup(scenarioInfo);
-#line 317
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 318
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 319
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 320
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 321
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Payroll", new string[] {
-                "Oracle"}, SourceLine=323)]
-        public virtual void USHRMSManagerPayroll()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Payroll", new string[] {
-                        "Oracle"});
-#line 324
-this.ScenarioSetup(scenarioInfo);
-#line 325
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 326
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 327
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 328
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 329
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Total Compensation", new string[] {
-                "Oracle"}, SourceLine=332)]
-        public virtual void USHRMSManagerTotalCompensation()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Total Compensation", new string[] {
-                        "Oracle"});
-#line 333
-this.ScenarioSetup(scenarioInfo);
-#line 334
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 335
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 336
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 337
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 338
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: View", new string[] {
-                "Oracle"}, SourceLine=341)]
-        public virtual void USHRMSManagerView()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: View", new string[] {
-                        "Oracle"});
-#line 342
-this.ScenarioSetup(scenarioInfo);
-#line 343
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 344
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 345
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 346
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 347
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HRMS Manager: Mass Information Definitions and Security", new string[] {
-                "Oracle"}, SourceLine=350)]
-        public virtual void USHRMSManagerMassInformationDefinitionsAndSecurity()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HRMS Manager: Mass Information Definitions and Security", new string[] {
-                        "Oracle"});
-#line 351
-this.ScenarioSetup(scenarioInfo);
-#line 352
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 353
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 354
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 355
- testRunner.Then("click the \"US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 356
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: People", new string[] {
-                "Oracle"}, SourceLine=359)]
-        public virtual void USHRManagerPeople()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: People", new string[] {
-                        "Oracle"});
-#line 360
-this.ScenarioSetup(scenarioInfo);
-#line 361
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 362
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 363
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 364
- testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 365
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: Fast Path Recruitment and Career Management", new string[] {
-                "Oracle"}, SourceLine=368)]
-        public virtual void USHRManagerFastPathRecruitmentAndCareerManagement()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: Fast Path Recruitment and Career Management", new string[] {
-                        "Oracle"});
-#line 369
-this.ScenarioSetup(scenarioInfo);
-#line 370
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 371
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 372
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 373
- testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 374
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: Work Structures", new string[] {
-                "Oracle"}, SourceLine=377)]
-        public virtual void USHRManagerWorkStructures()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: Work Structures", new string[] {
-                        "Oracle"});
-#line 378
-this.ScenarioSetup(scenarioInfo);
-#line 379
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 380
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 381
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 382
- testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 383
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: Payroll and total compensation", new string[] {
-                "Oracle"}, SourceLine=386)]
-        public virtual void USHRManagerPayrollAndTotalCompensation()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: Payroll and total compensation", new string[] {
-                        "Oracle"});
-#line 387
-this.ScenarioSetup(scenarioInfo);
-#line 388
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 389
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 390
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 391
- testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 392
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("US HR Manager: View to Security", new string[] {
-                "Oracle"}, SourceLine=395)]
-        public virtual void USHRManagerViewToSecurity()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("US HR Manager: View to Security", new string[] {
-                        "Oracle"});
-#line 396
-this.ScenarioSetup(scenarioInfo);
-#line 397
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 398
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 399
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 400
- testRunner.Then("click the \"US HR Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 401
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Technical Manager: People", new string[] {
-                "Oracle"}, SourceLine=404)]
-        public virtual void AbtUSHRTechnicalManagerPeople()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Technical Manager: People", new string[] {
-                        "Oracle"});
-#line 405
-this.ScenarioSetup(scenarioInfo);
-#line 406
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 407
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 408
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 409
- testRunner.Then("click the \"Abt US HR Technical Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 410
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Technical Manager: Fast Path", new string[] {
-                "Oracle"}, SourceLine=413)]
-        public virtual void AbtUSHRTechnicalManagerFastPath()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Technical Manager: Fast Path", new string[] {
-                        "Oracle"});
-#line 414
-this.ScenarioSetup(scenarioInfo);
-#line 415
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 416
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 417
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 418
- testRunner.Then("click the \"Abt US HR Technical Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 419
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Technical Manager: Recruitment and Career Management", new string[] {
-                "Oracle"}, SourceLine=422)]
-        public virtual void AbtUSHRTechnicalManagerRecruitmentAndCareerManagement()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Technical Manager: Recruitment and Career Management", new string[] {
-                        "Oracle"});
-#line 423
-this.ScenarioSetup(scenarioInfo);
-#line 424
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 425
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 426
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 427
- testRunner.Then("click the \"Abt US HR Technical Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 428
-    testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Technical Manager: Work Structures", new string[] {
-                "Oracle"}, SourceLine=431)]
-        public virtual void AbtUSHRTechnicalManagerWorkStructures()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Technical Manager: Work Structures", new string[] {
-                        "Oracle"});
-#line 432
-this.ScenarioSetup(scenarioInfo);
-#line 433
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 434
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 435
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 436
- testRunner.Then("click the \"Abt US HR Technical Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 437
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Technical Manager: Payroll and Total Compensation", new string[] {
-                "Oracle"}, SourceLine=440)]
-        public virtual void AbtUSHRTechnicalManagerPayrollAndTotalCompensation()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Technical Manager: Payroll and Total Compensation", new string[] {
-                        "Oracle"});
-#line 441
-this.ScenarioSetup(scenarioInfo);
-#line 442
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 443
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 444
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 445
- testRunner.Then("click the \"Abt US HR Technical Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 446
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HR Technical Manager: View to Security", new string[] {
-                "Oracle"}, SourceLine=449)]
-        public virtual void AbtUSHRTechnicalManagerViewToSecurity()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HR Technical Manager: View to Security", new string[] {
-                        "Oracle"});
-#line 450
-this.ScenarioSetup(scenarioInfo);
-#line 451
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 452
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 453
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 454
- testRunner.Then("click the \"Abt US HR Technical Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 455
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HRMS Manager: People", new string[] {
-                "Oracle"}, SourceLine=458)]
-        public virtual void AbtUSHRMSManagerPeople()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HRMS Manager: People", new string[] {
-                        "Oracle"});
-#line 459
-this.ScenarioSetup(scenarioInfo);
-#line 460
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 461
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 462
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 463
- testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 464
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HRMS Manager: Fast Path", new string[] {
-                "Oracle"}, SourceLine=467)]
-        public virtual void AbtUSHRMSManagerFastPath()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HRMS Manager: Fast Path", new string[] {
-                        "Oracle"});
-#line 468
-this.ScenarioSetup(scenarioInfo);
-#line 469
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 470
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 471
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 472
- testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 473
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HRMS Manager: Recruitment and Career Management", new string[] {
-                "Oracle"}, SourceLine=476)]
-        public virtual void AbtUSHRMSManagerRecruitmentAndCareerManagement()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HRMS Manager: Recruitment and Career Management", new string[] {
-                        "Oracle"});
-#line 477
-this.ScenarioSetup(scenarioInfo);
-#line 478
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 479
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 480
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 481
- testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 482
-    testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HRMS Manager: Work Structures", new string[] {
-                "Oracle"}, SourceLine=484)]
-        public virtual void AbtUSHRMSManagerWorkStructures()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HRMS Manager: Work Structures", new string[] {
-                        "Oracle"});
-#line 485
-this.ScenarioSetup(scenarioInfo);
-#line 486
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 487
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 488
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 489
- testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 490
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HRMS Manager: Payroll and Total Compensation", new string[] {
-                "Oracle"}, SourceLine=493)]
-        public virtual void AbtUSHRMSManagerPayrollAndTotalCompensation()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HRMS Manager: Payroll and Total Compensation", new string[] {
-                        "Oracle"});
-#line 494
-this.ScenarioSetup(scenarioInfo);
-#line 495
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 496
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 497
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 498
- testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 499
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Abt US HRMS Manager: View to Security", new string[] {
-                "Oracle"}, SourceLine=502)]
-        public virtual void AbtUSHRMSManagerViewToSecurity()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abt US HRMS Manager: View to Security", new string[] {
-                        "Oracle"});
-#line 503
-this.ScenarioSetup(scenarioInfo);
-#line 504
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 505
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 506
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 507
- testRunner.Then("click the \"Abt US HRMS Manager\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 508
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("HR: Manage Employee Action Forms", new string[] {
-                "Oracle"}, SourceLine=510)]
-        public virtual void HRManageEmployeeActionForms()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("HR: Manage Employee Action Forms", new string[] {
-                        "Oracle"});
-#line 511
-this.ScenarioSetup(scenarioInfo);
-#line 512
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 513
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 514
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 515
- testRunner.Then("click the \"HR: Manage Employee Action Forms\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 516
- testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Workflow User Web Applications", new string[] {
-                "Oracle"}, SourceLine=519)]
-        public virtual void WorkflowUserWebApplications()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Workflow User Web Applications", new string[] {
-                        "Oracle"});
-#line 520
-this.ScenarioSetup(scenarioInfo);
-#line 521
- testRunner.Given("I have Open Chrome Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 522
- testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 523
- testRunner.And("i login as \"HRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 524
  testRunner.Then("click the \"Workflow User Web Applications\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 525
+#line 241
  testRunner.Then("I click on all links at the right side menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

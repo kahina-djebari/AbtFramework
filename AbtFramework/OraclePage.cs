@@ -192,6 +192,7 @@ namespace AbtFramework
         }
         public void fillNonCatalogRequestForm()
         {
+            SeleniumDriver.WaitForDOMready();
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetItemDescription(), "Test Description");
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetQuantity(), "160");
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetUnitOfMeasure(), "Hour");
@@ -205,7 +206,7 @@ namespace AbtFramework
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetContactName(), "Test Contant Name");
 
             SeleniumDriver.ClickElement(iprocurementRequesterPO.GetPhone());
-            SeleniumDriver.SetValue(iprocurementRequesterPO.GetContactName(), "8099880000");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetPhone(), "8099880000");
 
             SeleniumDriver.ClickElement(iprocurementRequesterPO.GetAddToCart());
             SeleniumDriver.ClickElement(iprocurementRequesterPO.GetViewCartAndCheckout());
@@ -213,7 +214,7 @@ namespace AbtFramework
         }
         public void clickCheckOut()
         {
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetCheckout_uixr());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetCheckout());
 
         }
 
