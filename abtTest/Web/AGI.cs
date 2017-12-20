@@ -36,7 +36,7 @@ namespace abtTest.Web
             SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
           //  AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.OracleSteps);
-            Assert.True(AbtPages.OraclePage.isAt());
+            Assert.True(SeleniumDriver.isAt());
 
         }
 
@@ -187,7 +187,7 @@ namespace abtTest.Web
 
         public void Dispose()
         {
-            if(SeleniumDriver.DriverInstance!=null)
+            if(SeleniumDriver.Instance!=null)
             SeleniumDriver.QuitDriverInstance();
         }
     }

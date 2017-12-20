@@ -276,7 +276,7 @@ namespace AbtFramework
 
             wait.Timeout = TimeSpan.FromSeconds(5);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-            SeleniumDriver.DriverInstance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
+            SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             wait.Until(e =>
             {
 
@@ -296,7 +296,7 @@ namespace AbtFramework
         
                
             });
-            SeleniumDriver.DriverInstance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
            
         }
 
@@ -335,14 +335,14 @@ namespace AbtFramework
 
         public void OpenHRIssues()
         {
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
 
             HR_Issues_Open.Click();
 
         }
         public void OpenKnowledgeBase()
         {
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             NewArticle.Click();
 
 
@@ -350,8 +350,8 @@ namespace AbtFramework
 
         public void CreateNewHRTicket(string EmpName, string IssueCategory, string Subject, string Description, string ContactMethod)
         {
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             NewTicket.Click();
             EmployeeName.SendKeys(EmpName);
             HR_IssueCategoryDropdown.SelectOption(IssueCategory).Click();
@@ -458,8 +458,8 @@ namespace AbtFramework
 
         public bool isFacilitiesIncidentNumberCreated(String tickeIWantToFind)
         {
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             string FacilitiesIncidentID = FacilitiesIncidentNumber.GetAttribute("value");
             return FacilitiesIncidentID.Equals(tickeIWantToFind);
         }
@@ -492,8 +492,8 @@ namespace AbtFramework
 
         public void CloseCompleteFacilitiesIncident()
         {
-           SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+           SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             FacilityWorkClosenotes.SendKeys("Close Complete");
             Thread.Sleep(1000);
             closeComplete.Click();
@@ -507,13 +507,13 @@ namespace AbtFramework
 
         public void ClickFacilitiesStartWork()
         {
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             StartWork.Click();
         }
         public void ClickFacilitiesCreatedByMe()
         {
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
             //SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             FacilitiesCreatedByMeButton.Click();
@@ -527,14 +527,14 @@ namespace AbtFramework
             //SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             FacilitiesAssignedToMeButton.Click();
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
 
         public void CreateNewKBArticle(string shortdescription)
         {
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             KB_ShortDescription.SendKeys(shortdescription);
             action.SendKeys(Keys.Tab).Perform();
             action.SendKeys(Keys.Tab).Perform();
@@ -543,7 +543,7 @@ namespace AbtFramework
 
         public bool isRoleCorrect(string user)
         {
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             FillRoles();
             string[] RoleForUser;
             var rolesContainer = GetRoleList();
@@ -581,8 +581,8 @@ namespace AbtFramework
         public bool IncidentExist(IncidentType incidentType,Urgency urgency, string shortDescription, string MoreInformation)
         {
                       
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
             AbtPages.TablePageObject.FirstRowItem.Click();
        
 
@@ -657,7 +657,7 @@ namespace AbtFramework
 
         public void FacilityRequests()
         {
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
             facilityRequests.Click();
         }
 
@@ -678,8 +678,8 @@ namespace AbtFramework
             // IncidentSection.Click();
             Thread.Sleep(1000);
             IncidentResolved.Click();
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
 
         public bool IsAtResolved()
@@ -691,8 +691,8 @@ namespace AbtFramework
            // SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             CreateNewIncidentButton.Click();
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
 
         public void ButtonCreateNewFacilityRequest()
@@ -700,13 +700,13 @@ namespace AbtFramework
            // SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
             Thread.Sleep(1000);
             CreateNewFacilititiesButton.Click();
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
         }
 
         public void AllRequestFacilityRequest()
         {
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
            // SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
             Thread.Sleep(1000);
             AllRequestButton.Click();
@@ -739,7 +739,7 @@ namespace AbtFramework
 
         private void GotoUrl(string url)
         {
-                SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
                 StartTimer();
         }
 
@@ -788,8 +788,8 @@ namespace AbtFramework
             switch (link)
             {
                 case ServicenowLinks.ServiceHub:
-                    SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_nav");
-                    SeleniumDriver.DriverInstance.FindElement(By.LinkText("Home")).Click();
+                    SeleniumDriver.Instance.SwitchTo().Frame("gsft_nav");
+                    SeleniumDriver.Instance.FindElement(By.LinkText("Home")).Click();
                     break;
                 default:break;
             }
@@ -809,8 +809,8 @@ namespace AbtFramework
 
         public void CloseOfficeRequest(string shortdescription,string worknotes,string assignedto)
         {
-            SeleniumDriver.DriverInstance.SwitchTo().ParentFrame();
-            SeleniumDriver.DriverInstance.SwitchTo().Frame("gsft_main");
+            SeleniumDriver.Instance.SwitchTo().ParentFrame();
+            SeleniumDriver.Instance.SwitchTo().Frame("gsft_main");
 
                 AbtPages.TablePageObject.FirstRowItem.Click();
                 ReadyForWork.Click();

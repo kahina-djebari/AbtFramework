@@ -51,7 +51,7 @@ namespace AbtFramework
                 {
                     TestCaseGenerator.CurrentTestCase.MarkStepAsDone("Navigate to Url " + url);
                 }
-                SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+                SeleniumDriver.Instance.Navigate().GoToUrl(url);
                
                 Console.WriteLine("After navigate to url:" + DateTime.Now);
                // TakeScreenshot();
@@ -80,14 +80,14 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad(string EbscoWinHandle)
         {
-            SeleniumDriver.DriverInstance.SwitchTo().Window(EbscoWinHandle);
+            SeleniumDriver.Instance.SwitchTo().Window(EbscoWinHandle);
             wait.Until(e => HomeSearchBar.Displayed);
             StopTimer();
         }
 
         private void TakeScreenshot()
         {
-            Screenshot ss = ((ITakesScreenshot)SeleniumDriver.DriverInstance).GetScreenshot();
+            Screenshot ss = ((ITakesScreenshot)SeleniumDriver.Instance).GetScreenshot();
 
             //Use it as you want now
             string screenshot = ss.AsBase64EncodedString;

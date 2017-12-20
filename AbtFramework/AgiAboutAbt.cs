@@ -338,7 +338,7 @@ namespace AbtFramework
 
         public void Go()
         {
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/aboutabt/Pages/Home.aspx");
+            SeleniumDriver.Instance.Navigate().GoToUrl("https://abtassoc.sharepoint.com/aboutabt/Pages/Home.aspx");
         }
 
         public void OpenElevatorSpeech()
@@ -402,14 +402,14 @@ namespace AbtFramework
 
         private string OpenAbtAnualReview(string year)
         {
-            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
-            string winHandle=finder.Click(SeleniumDriver.DriverInstance.FindElement(By.LinkText("Abt Annual Review " + year)));
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            string winHandle=finder.Click(SeleniumDriver.Instance.FindElement(By.LinkText("Abt Annual Review " + year)));
             return winHandle;
         }
 
         private string OpenPPtReadingMode()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
             string winHandle = finder.Click(_viewPresentation);
             return winHandle;
         }

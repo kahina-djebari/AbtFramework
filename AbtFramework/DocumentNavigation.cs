@@ -180,16 +180,16 @@ namespace AbtFramework
             //DocumentCheckbox.Click();
           //  MoreOptions.Click();
              action.ContextClick(Doc).Perform();
-             finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
+             finder = new PopupWindowFinder(SeleniumDriver.Instance);
               popupWindowHandle = finder.Click(OpenDocumentIn(doctype));
            //   OpenDocumentIn(doctype).Click();
           //  action.Click(OpenDocumentIn(doctype)).Perform();
             //            SeleniumDriver.DriverInstance.FindElements(By.TagName("li")).Single(e => e.Text.Equals("Open in " + doctype.ToString() + " Online")).Click();
         
-            wait.Until(e => SeleniumDriver.DriverInstance.WindowHandles.Count >= 2);
+            wait.Until(e => SeleniumDriver.Instance.WindowHandles.Count >= 2);
             SeleniumDriver.Close();
-            SeleniumDriver.DriverInstance.SwitchTo().Window(popupWindowHandle);
-            SeleniumDriver.DriverInstance.Manage().Window.Maximize();
+            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.Instance.Manage().Window.Maximize();
             Console.WriteLine(doctype.ToString() + " Document opened Succesfully");
             Console.Write("</br>");       
         }

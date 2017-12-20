@@ -37,6 +37,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\Debug\</OutputPath>
     <RegisterForComInterop>false</RegisterForComInterop>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -138,7 +139,15 @@
     <Compile Include="MailOffice365Page.cs" />
     <Compile Include="MyIRRSubmition.cs" />
     <Compile Include="NewsDropdown.cs" />
+    <Compile Include="PageObjects\Oracle\AbtHROperationsSelfServicePO.cs" />
+    <Compile Include="PageObjects\Oracle\BuyerWorkRequisitionPO.cs" />
+    <Compile Include="PageObjects\Oracle\CommonPO.cs" />
+    <Compile Include="PageObjects\Oracle\AbtUSEmployeeDirectAccessPO.cs" />
+    <Compile Include="PageObjects\Oracle\iProcurementPO.cs" />
     <Compile Include="PageObjects\Oracle\LoginPagePO.cs" />
+    <Compile Include="PageObjects\Oracle\OracleDiscovererViewerPO.cs" />
+    <Compile Include="PageObjects\Oracle\TimeCardPO.cs" />
+    <Compile Include="PageObjects\Oracle\WorkflowUserWebAppPO.cs" />
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SANSHomepage.cs" />
@@ -148,7 +157,14 @@
     <Compile Include="ServiceNowTaskBar.cs" />
     <Compile Include="SharePointTopNavigation.cs" />
     <Compile Include="Sikuli\SikuliHelper.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\CommonPaternObjects.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\AbtHRMSManagerObject.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfDefaultProcessRunsObjects.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfProcessObjects.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\GradeRatePatternObject.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\LifeEventPatternObjects.cs" />
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\OracleFormsPatternObject.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\SubmitReportObjects.cs" />
     <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
     <Compile Include="DistListReqFormPage.cs" />
@@ -262,10 +278,29 @@
   <ItemGroup>
     <Folder Include="Drivers\Chrome\" />
     <Folder Include="Drivers\IE\" />
+    <Folder Include="Sikuli\SikuliPatternImges\AbtHRMSManagerImges\" />
+    <Folder Include="Sikuli\SikuliPatternImges\CommonPatternImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunsImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\ConfProcessImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\GradeRateImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\LifeEventImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\OracleFromsImges\" />
-
+    <Folder Include="Sikuli\SikuliPatternImges\SubmitReportImgs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>taskkill /f /fi "pid gt 0" /im IEDriverServer.exe
+taskkill /f /fi "pid gt 0" /im iexplore.exe
+taskkill /F /IM vstest.executionengine.x86.exe /FI "MEMUSAGE gt 1"
+taskkill /F /IM vstest.discoveryengine.x86.exe /FI "MEMUSAGE gt 1"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>taskkill /f /fi "pid gt 0" /im IEDriverServer.exe
+taskkill /f /fi "pid gt 0" /im iexplore.exe
+taskkill /F /IM vstest.executionengine.x86.exe /FI "MEMUSAGE gt 1"
+taskkill /F /IM vstest.discoveryengine.x86.exe /FI "MEMUSAGE gt 1"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

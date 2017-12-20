@@ -37,7 +37,7 @@ namespace AbtFramework
         private void GoToUrl(string url)
         {
                               
-            SeleniumDriver.DriverInstance.Navigate().GoToUrl(url);
+            SeleniumDriver.Instance.Navigate().GoToUrl(url);
             StartTimer();
                               
            
@@ -99,7 +99,7 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad(string RightFindWinHandle)
         {
-           SeleniumDriver.DriverInstance.SwitchTo().Window(RightFindWinHandle);
+           SeleniumDriver.Instance.SwitchTo().Window(RightFindWinHandle);
             wait.Until(e => RightHeaderToolbar.Displayed);
             StopTimer();
         }

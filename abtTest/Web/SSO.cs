@@ -55,7 +55,7 @@ namespace abtTest.Web
             // SeleniumDriver.InitBrowser();
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Oracle);
-            Assert.True(AbtPages.OraclePage.isAt()); //need to check if logged in currently i dont have access
+            Assert.True(SeleniumDriver.isAt()); //need to check if logged in currently i dont have access
 
         }
 

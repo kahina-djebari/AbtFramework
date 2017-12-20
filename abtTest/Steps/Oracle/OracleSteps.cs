@@ -8,39 +8,10 @@ namespace abtTest.Steps.Oracle
     [Binding]
     public sealed class OracleSteps
     {
-        private static String gUser = "user";
-        // kill all the selenium drivers after a successfull test.
-        [AfterScenario]
-        public void CleanUp()
-        {
-            SeleniumDriver.QuitDriverInstance();
-        }
-        // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
-        //[Given(@"go to the Home screen")]
-        //public void GivenGoToTheHomeScreen()
-        //{
-            //AbtPages.OraclePage.ClickHomeButton();
-        //}
-        [Given(@"I have Open IE Test")]
-        public void GivenIHaveOpenIETest()
-        {
-            SeleniumDriver.InitBrowser("Chrome");
-        }
-        [Given(@"I have navigated to Oracle Dev")]
-        public void GivenIHaveNavigatedToOracleDev()
-        {
-            AbtPages.OraclePage.GoToOracleDev();
-        }
 
-        [Given(@"i login as ""(.*)""")]
-        public void GivenILoginAs(string user)
-        {
-         
-            gUser = user;
-            AbtPages.OraclePage.inputUserName(gUser);
-            AbtPages.OraclePage.inputPasswordField(gUser);
-            AbtPages.OraclePage.clickSubmitButton();
-        }
+        private static String gUser = "user";
+
+
         [Then(@"click iProcurement request and then Non-Catalog Req")]
         public void ThenClickIProcurementRequestAndThenNon_CatalogReq()
         {
@@ -54,7 +25,7 @@ namespace abtTest.Steps.Oracle
         [Then(@"browse to ""(.*)""")]
         public void ThenBrowseTo(string p0)
         {
-            AbtPages.OraclePage.ClickUserOptions(p0);
+            AbtPages.OraclePage.ClickRightSideMenuTableOptions(p0);
         }
         [Then(@"go to time entry")]
         public void ThenGoToTimeEntry()
@@ -132,7 +103,7 @@ namespace abtTest.Steps.Oracle
         [Then(@"browse to Requisitions under Requisitions")]
         public void ThenBrowseToRequisitionsUnderRequisitions()
         {
-            AbtPages.OraclePage.openRequisitionsRequisitions();       
+            AbtPages.OraclePage.openRequisitionsRequisitions();
         }
 
 
@@ -142,17 +113,12 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.selectRequisitionToBeAdded();
         }
 
-        [Then(@"click Add")]
-        public void ThenClickAdd()
+        [Then(@"click Add and Create")]
+        public void ThenClickAddAndCreate()
         {
-            AbtPages.OraclePage.addRequisition();
+            AbtPages.OraclePage.addCreateRequisition();
         }
 
-        [Then(@"click Create")]
-        public void ThenClickCreate()
-        {
-            AbtPages.OraclePage.clickCreate();
-        }
 
         [Then(@"click ""(.*)"" option")]
         public void ThenClickOption(string p0)
@@ -160,77 +126,18 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ClickRightSideMenuTableOptions(p0);
         }
 
-        [Then(@"navigate to ""(.*)""")]
-        public void ThenNavigateTo(string p0)
+
+
+        [Then(@"I do discoverer books for multiple sheets")]
+        public void ThenDoDiscovererWorkbboksForMultipleSheets()
         {
-            AbtPages.OraclePage.ClickUserOptions1(p0);
+            AbtPages.OraclePage.DoDiscovererWorkbookMultipleSheets();
         }
 
-        [Then(@"click on People")]
-        public void ThenClickOnPeople()
+        [Then(@"I do discoverer books for one sheet")]
+        public void ThenDoDiscovererWorkbboksForOneSheet()
         {
-            AbtPages.OraclePage.clickPeople();
-        }
-
-        [Then(@"click on Entries")]
-        public void ThenClickOnEntries()
-        {
-            AbtPages.OraclePage.clickEntries();
-        }
-
-        [Then(@"click on Salary")]
-        public void ThenClickOnSalary()
-        {
-            AbtPages.OraclePage.clickSalary();
-        }
-
-        [Then(@"click on SalaryB")]
-        public void ThenClickOnSalaryB()
-        {
-            AbtPages.OraclePage.clickSalaryB();
-        }
-
-
-        [Then(@"click on Values")]
-        public void ThenClickOnValues()
-        {
-            AbtPages.OraclePage.clickValues();
-        }
-
-        [Then(@"click on Absence")]
-        public void ThenClickOnAbsence()
-        {
-            AbtPages.OraclePage.clickAbsence();
-        }
-
-        [Then(@"click on Description Payroll")]
-        public void ThenClickOnDescriptionPayroll()
-        {
-            AbtPages.OraclePage.clickDescriptionPayroll();
-        }
-
-        [Then(@"click on Description Grade")]
-        public void ThenClickOnDescriptionGrade()
-        {
-            AbtPages.OraclePage.clickDescriptionGrade();
-        }
-
-        [Then(@"click on Description Job")]
-        public void ThenClickOnDescriptionJob()
-        {
-            AbtPages.OraclePage.clickDescriptionJob();
-        }
-
-        [Then(@"click on Description Organization")]
-        public void ThenClickOnDescriptionOrganization()
-        {
-            AbtPages.OraclePage.clickDescriptionOrganization();
-        }
-
-        [Then(@"click on Description Position")]
-        public void ThenClickOnDescriptionPosition()
-        {
-            AbtPages.OraclePage.clickDescriptionPosition();
+            AbtPages.OraclePage.DoDiscovererWorkbookOneSheet();
         }
 
 
@@ -241,6 +148,104 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.FillOracleFroms();
         }
 
+
+        [Then(@"I fill the Grade Rate Oracle Forms")]
+        public void ThenIFillTheGradeRateOracleForms()
+        {
+            AbtPages.OraclePage.FillTheGradeRateOracleForms();
+        }
+
+        [Then(@"I choose veteran status")]
+        public void ThenIChooseVeteranStatus()
+        {
+            AbtPages.OraclePage.chooseVeteranStatus();
+        }
+
+        [Then(@"I update information on the oracle form")]
+        public void ThenIUpdateInformationOnTheOracleForm()
+        {
+            AbtPages.OraclePage.UpdateInformationOnOracleForm();
+        }
+
+        [Then(@"I go to the oracle form")]
+        public void ThenIGoToTheOracleForm()
+        {
+            AbtPages.OraclePage.GoToOracleForm();
+        }
+
+        [Then(@"change timecard approver")]
+        public void ThenChangeTimecardApprover()
+        {
+            AbtPages.OraclePage.ChangeTimecardApprover();
+        }
+
+        [Then(@"I change the employee hours")]
+        public void ThenIChangeTheEmployeeHours()
+        {
+            AbtPages.OraclePage.ChangeEmployeeHours();
+        }
+
+        [Then(@"I approve the changes")]
+        public void ThenIApproveTheChanges()
+        {
+            AbtPages.OraclePage.ApproveChanges();
+        }
+
+        [Then(@"I confirm default process runs")]
+        public void ThenIConfirmDefaultProcessRuns()
+        {
+            AbtPages.OraclePage.ConfirmDefaultProcess();
+        }
+
+        [Then(@"I enter involuntary offboarding")]
+        public void ThenEnterInvoluntaryOffboarding()
+        {
+            AbtPages.OraclePage.DoOffboardEmployee();
+        }
+
+
+        [Then(@"I enter Spot Bonus")]
+        public void ThenEnterSpotBonus()
+        {
+            AbtPages.OraclePage.DoSpotBonus();
+        }
+
+        [Then(@"I click on all links at the right side menu")]
+        public void THenClickAllLinks()
+        {
+            AbtPages.OraclePage.ClickAllLinksInNavigator();
+        }
+
+        [Then(@"I confirm and update personal information")]
+        public void ThenIConfirmAndUpdatePersonalInformation()
+        {
+            AbtPages.OraclePage.UpdatePersonalInformation();
+        }
+
+
+        [Then(@"I add life event and enroll in benefits")]
+        public void ThenIAddLifeEventAndEnrollInBenefits()
+        {
+            AbtPages.OraclePage.LifeEventEnrollBenefits();
+        }
+
+        [Then(@"I confirm view and add beneficiaries")]
+        public void ThenIConfirmViewAndAddBeneficiaries()
+        {
+            AbtPages.OraclePage.AddBeneficiaries();
+        }
+
+        [Then(@"I confirm termed employee benefit process success")]
+         public void ThenIConfirmTermedEmployeeBenefitProcessSuccess()
+        {
+             AbtPages.OraclePage.ConfirmTerminateProcessSuccess();
+         }
+  
+         [Then(@"I submit a report")]
+         public void ThenISubmitAReport()
+         {
+             AbtPages.OraclePage.submitReport();
+         }
 
     }
 }

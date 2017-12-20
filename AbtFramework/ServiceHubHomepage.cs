@@ -52,8 +52,8 @@ namespace AbtFramework
             get
             {
                 _servicehubtopnavigation= PageGenerator.GetPage<ServiceHubTopNavigation>();
-                _servicehubtopnavigation.wait = new WebDriverWait(SeleniumDriver.DriverInstance, TimeSpan.FromSeconds(30));
-                _servicehubtopnavigation.action = new Actions(SeleniumDriver.DriverInstance);
+                _servicehubtopnavigation.wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(30));
+                _servicehubtopnavigation.action = new Actions(SeleniumDriver.Instance);
                 return _servicehubtopnavigation;
             }
         }

@@ -46,7 +46,7 @@ namespace AbtFramework
 
             wait.Until((Func<IWebDriver, bool>)((e) =>
             {
-                if (func((IWebDriver)SeleniumDriver.DriverInstance))
+                if (func((IWebDriver)SeleniumDriver.Instance))
                 {
                     action.MoveToElement(quicklinksBar).Perform();
                     if (element.Displayed && element.Enabled)
@@ -67,9 +67,9 @@ namespace AbtFramework
 
         public void OpenCustomizeLink()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
             string WinHandle= finder.Click(customizeLink);
-            SeleniumDriver.DriverInstance.SwitchTo().Window(WinHandle);
+            SeleniumDriver.Instance.SwitchTo().Window(WinHandle);
             
         }
 
@@ -80,7 +80,7 @@ namespace AbtFramework
 
         public string OpenOracle()
         {
-            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
+            finder = new PopupWindowFinder(SeleniumDriver.Instance);
             string WinHandle= finder.Click(oracleLink);
             StartTimer();
 

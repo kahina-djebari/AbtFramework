@@ -11,7 +11,7 @@ namespace AbtFramework
             try
             {
                 
-                IWebElement IRR = SeleniumDriver.DriverInstance.FindElement(By.LinkText(IncidentReportId));
+                IWebElement IRR = SeleniumDriver.Instance.FindElement(By.LinkText(IncidentReportId));
                 IRR.Click();
                 return true;   
               
