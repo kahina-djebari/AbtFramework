@@ -304,7 +304,8 @@ namespace AbtFramework
 
             SeleniumDriver.ClearValue(employeeDirectAccessPO.GetSearchVeteranStatusInputBox());
             SeleniumDriver.ClickElement(commonPO.GetGoBtn());
-            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetQuickSelect2());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSelectRadioBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSelectStatusBtn());
 
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[0]);
             SeleniumDriver.ClearValue(employeeDirectAccessPO.GetDateInput());
@@ -590,6 +591,8 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+
             FindEmployeeName("oumsalem, sofiane");
 
 
@@ -622,6 +625,8 @@ namespace AbtFramework
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             FindEmployeeName("oumsalem, sofiane");
 
@@ -829,7 +834,7 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
-            FindEmployeeName("oumsalem, sofiane");
+            FindEmployeeName("Pardikar, Parimal");
 
             sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
 
@@ -888,7 +893,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(LifeEventPatterns.GetEndDateInputField);
 
             //It has to be the current date. Could not find a way to insert today's date automatically
-            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "12-DEC-2017");
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "21-DEC-2017");
 
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
 
@@ -908,7 +913,7 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetReturnToPeopleLink);
 
-            SeleniumDriver.SetValue(commonPO.GetNameSearchInputField(), "oumsalem");
+            SeleniumDriver.SetValue(commonPO.GetNameSearchInputField(), "pardikar");
 
             SeleniumDriver.ClickElement(commonPO.GetGoBtn());
             SeleniumDriver.ClickElement(commonPO.GetDoActionIcon());
@@ -917,7 +922,7 @@ namespace AbtFramework
             SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectRelationship(), "Child");
             SeleniumDriver.SetValue(commonPO.GetRelationshipStartDateInputField(), "30-Dec-2017");
             SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryFirstName(), "Liam");
-            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryLastName(), "Oumsalem");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryLastName(), "pardikar");
         }
 
         public void UpdatePersonalInformation()
@@ -927,7 +932,7 @@ namespace AbtFramework
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextChooseBtn());
             SeleniumDriver.SetValue(employeeDirectAccessPO.GetMiddleNameInputField(), "Liam");
             SeleniumDriver.ClearValue(employeeDirectAccessPO.GetEffectiveDateBasicDetails());
-            SeleniumDriver.SetValue(employeeDirectAccessPO.GetMiddleNameInputField(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today.AddDays(1)));
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetEffectiveDateBasicDetails(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today.AddDays(1)));
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextChooseBtn());
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetCancelInfoChanges());
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetYesBtn());

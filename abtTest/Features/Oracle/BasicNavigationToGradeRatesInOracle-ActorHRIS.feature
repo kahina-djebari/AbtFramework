@@ -5,7 +5,7 @@
 
 @Oracle
 Scenario: Basic Navigation To Grade Rates In Oracle - Actor HRIS
-	Given I have Open Chrome Test
+	Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And i login as "HRTEST01"
 	Then click the "Abt HRMS Superuser" option

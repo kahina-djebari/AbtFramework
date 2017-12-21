@@ -63,11 +63,11 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Oracle ESS - Confirming View In Direct Access Benefits", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("OracleESS - Confirming View In Direct Access Benefits", new string[] {
                 "Oracle"}, SourceLine=6)]
         public virtual void OracleESS_ConfirmingViewInDirectAccessBenefits()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Oracle ESS - Confirming View In Direct Access Benefits", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("OracleESS - Confirming View In Direct Access Benefits", new string[] {
                         "Oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);

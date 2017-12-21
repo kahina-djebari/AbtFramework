@@ -4,7 +4,7 @@
 		I Want To Perform a Functioal Test
 
 @Oracle
-Scenario: Oracle ESS - Confirming View In Direct Access Benefits
+Scenario: OracleESS - Confirming View In Direct Access Benefits
 	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "oumsalems"
