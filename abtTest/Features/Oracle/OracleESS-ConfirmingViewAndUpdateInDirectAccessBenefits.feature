@@ -7,7 +7,7 @@
 Scenario: OracleESS - Confirming View And Update In Direct Access Benefits
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Sofiane Oumsalem"
+	And i login as "oumsalems"
 	Then click the "Abt US Employee Direct Access" option
 	And click the "Personal Information" option
 	Then I confirm and update personal information 

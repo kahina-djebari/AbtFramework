@@ -24,8 +24,8 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetQuickSelect2()
         {
-            string xpath = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[2]/child::td[2]/child::a/img";
-            return SeleniumDriver.GetElementByXpath(xpath);
+            string xpath = "//input[@title = 'Select']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[1];
         }
 
         public IWebElement GetDateInput()
@@ -36,8 +36,8 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetApplyBtn()
         {
-            string xpath = "//h1[text()='Voluntary Disclosure of Veterans Status']/ancestor::div[1]/following-sibling::div[1]//button[@title='Apply']";
-            return SeleniumDriver.GetElementByXpath(xpath);
+            string xpath = "//button[@title='Apply']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
         }
 
         public IWebElement GetNextBtn()
