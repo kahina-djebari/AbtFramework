@@ -54,8 +54,13 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetAddToCart()
         {
-            string xpath = "//h1[text()='Non-Catalog Request']/parent::div//descendant::button[text()='Add to Cart']";           
+
+            string xpath = "//h1[text()='Non-Catalog Request']/parent::div//descendant::button[text()='Add to Cart']";
             return SeleniumDriver.GetElementByXpath(xpath);
+
+            //string xpath = "//button[text()='Add to Cart']";
+            //return SeleniumDriver.GetListElementByXpath(xpath)[0];
+
         }
 
         public IWebElement GetViewCartAndCheckout()
@@ -66,8 +71,13 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetCheckout()
         {
+
             string xpath = "//h1[text()='Shopping Cart']/parent::div//descendant::button[text()='Checkout']";
             return SeleniumDriver.GetElementByXpath(xpath);
+
+            //string xpath = "//button[text()='Checkout']";
+            //return SeleniumDriver.GetListElementByXpath(xpath)[0];
+
         }
 
 
@@ -98,8 +108,8 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetNextButtons()
         {
-            string xpath = "//h1[text()='Checkout: Requisition Information']/ancestor::div[2]/following-sibling::div/child::table/descendant::button[@title='Next']";
-            return SeleniumDriver.GetElementByXpath(xpath);
+            string xpath = "//button[@title='Next']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
         }
 
         public IWebElement GetManageApprovals()

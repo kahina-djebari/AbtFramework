@@ -306,16 +306,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         ///<param name="value"></param>
         public static void SetValue(IWebElement element, string value)
         {
-            Thread.Sleep(1); // require or it will go to fast :(
-
-            try
-            {
-                element.Click();
-            }
-            catch (StaleElementReferenceException e)
-            {
-                // Ignore ElementNotClickableException, not necessary for set a value
-            }
+            ClickElement(element);
 
             element.SendKeys(value);
 
@@ -748,14 +739,10 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
                         }
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                   
-                    if (i == 1 && by.ToLower().Equals(XPATH))
-                    {
-                        element = "//*" + element.Substring(element.Split("\\[".ToCharArray()[0])[0].Length);
-                        // xpath = "//*["+ xpath.split("\\[")[1];
-                    }
+                 
                 }
             }
 
