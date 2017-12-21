@@ -54,7 +54,7 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetAddToCart()
         {
-            string xpath = "//span[text()='Phone']/ancestor::table[2]/parent::div/parent::div/following-sibling::div/child::table/descendant::button[text()='Add to Cart']";
+            string xpath = "//h1[text()='Non-Catalog Request']/parent::div//descendant::button[text()='Add to Cart']";           
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
@@ -64,9 +64,9 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
-        public IWebElement GetCheckout_uixr()
+        public IWebElement GetCheckout()
         {
-            string xpath = "//a[text()='Return to Shopping']/parent::td/following-sibling::td[1]/descendant::button[text()='Checkout']";
+            string xpath = "//h1[text()='Shopping Cart']/parent::div//descendant::button[text()='Checkout']";
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
