@@ -5,9 +5,9 @@
 
 @Oracle
 Scenario: Basic Navigation To Grade Rates In Oracle - Actor HRIS
-	Given I have Open IE Test
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HRMS Superuser" option
 	And click the "Grade Rate" option
 	Then I fill the Grade Rate Oracle Forms
