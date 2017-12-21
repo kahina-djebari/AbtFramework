@@ -167,7 +167,7 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetBeneficiaryLastName()
         {
-            string xpath = "//input[@title='Last  Name']";
+            string xpath = "//input[@title='Last Name']";
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 

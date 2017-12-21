@@ -42,7 +42,7 @@ namespace AbtFramework
 
         public const string MyAccountPageTitle = "My Account";
         private int counter = 11;
-        private int counter1 = 9;
+        private int counter1 = 15;
 
 
 
@@ -225,34 +225,23 @@ namespace AbtFramework
             Thread.Sleep(1000);
 
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetTask(), "1100");
+            Thread.Sleep(1000);
 
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureType(), "Misc Professional Sv");
+            Thread.Sleep(1000);
 
             //Console.WriteLine(DateTime.Today.ToString("dd-MMMM-yyyy"));
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureItemDate(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
+            Thread.Sleep(1000);
 
             SeleniumDriver.ClickElement(iprocurementRequesterPO.GetNextButtons());
 
         }
-        public void clickManageGraphButton()
-        {
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetManageApprovals());
 
-        }
-        public void addBeforeApproverAndSubmit(string approver)
-        {
-            SeleniumDriver.SetValue(iprocurementRequesterPO.GetNewApproverText(), approver);
-            SeleniumDriver.SelectDropDownByText(iprocurementRequesterPO.GetNewApproverText(), "Before Requisition Approver Controller");
-
-            SeleniumDriver.ClickElement(commonPO.GetSubmitButton_uixr());
-
-        }
         public void addAfterApprover(string approver)
         {
             SeleniumDriver.ClickElement(iprocurementRequesterPO.GetManageApprovals());
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetNewApproverText(), approver);
-
-            SeleniumDriver.SelectDropDownByText(iprocurementRequesterPO.GetNewApproverText(), "After Requisition Approver Controller");
 
             SeleniumDriver.ClickElement(commonPO.GetSubmitButton_uixr());
 
@@ -388,10 +377,9 @@ namespace AbtFramework
 
         public void FillOracleFroms()
         {
-
-
             patterns = new OracleFormsPatternObject();
             commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
 
@@ -527,6 +515,8 @@ namespace AbtFramework
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
 
@@ -808,6 +798,8 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+
             FindEmployeeName("oumsalem, sofiane");
 
             sikuliHelper.ClickPattern(commonPatterns.GetName);
@@ -835,7 +827,7 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            sikuliHelper.ClickPattern(LifeEventPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             FindEmployeeName("oumsalem, sofiane");
 
@@ -959,6 +951,7 @@ namespace AbtFramework
         public void AddBeneficiaries()
         {
             //to confirm that we can change the time period to see past elections
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToUpdateBeneficiaries());
             SeleniumDriver.SelectDropDown(employeeDirectAccessPO.GetSelectElectionsDate(), 2);
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetGoToElections());
             SeleniumDriver.SelectDropDown(employeeDirectAccessPO.GetSelectElectionsDate(), 0);
@@ -968,14 +961,14 @@ namespace AbtFramework
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetUpdateBeneficiariesBtn());
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetAddAnotherPersonBtn());
             SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectRelationship(), "Child");
-            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryFirstName(), "Liam");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryFirstName(), "Nina");
             SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryLastName(), "Oumsalem");
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSharedResidenceCheckBox());
-            SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectGender(), "Male");
-            SeleniumDriver.SetValue(employeeDirectAccessPO.GetDOBInputField(), "30-Nov-2017");
+            SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectGender(), "Female");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetDOBInputField(), "27-Nov-2017");
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetApplyNewBeneficiary());
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToUpdateBeneficiaries());
-            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToConfirmation());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToConfirmation()); 
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetFinishBtn());
            
         }
@@ -991,6 +984,8 @@ namespace AbtFramework
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             FindEmployeeName("oumsalem, sofiane");
 
@@ -1019,6 +1014,8 @@ namespace AbtFramework
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             sikuliHelper.ClickPattern(submitReportPatterns.GetOkBtnRequestType);
 

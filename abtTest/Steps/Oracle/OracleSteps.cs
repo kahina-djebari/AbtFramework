@@ -64,21 +64,15 @@ namespace abtTest.Steps.Oracle
         {
             AbtPages.OraclePage.SubmitAfterApprovers();
         }
-        [Then(@"Click Manage Approvals")]
-        public void ThenClickManageApprovals()
-        {
-            AbtPages.OraclePage.clickManageGraphButton();
-        }
+       // [Then(@"Click Manage Approvals")]
+       // public void ThenClickManageApprovals()
+        //{
+          //  AbtPages.OraclePage.clickManageGraphButton();
+       // }
         [Then(@"complete the order")]
         public void ThenCompleteTheOrder()
         {
             AbtPages.OraclePage.SelectAndApproveOrder();
-        }
-
-        [Then(@"assign ""(.*)"" before requisition and submit")]
-        public void ThenAssignBeforeRequisitionAndSubmit(string p0)
-        {
-            AbtPages.OraclePage.addBeforeApproverAndSubmit(p0);
         }
 
         [Then(@"Then assign ""(.*)"" after requisition and submit")]

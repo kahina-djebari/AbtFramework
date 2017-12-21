@@ -5,7 +5,7 @@
 
 @Oracle
 Scenario: Oracle ESS - Confirming View In Direct Access Benefits
-	Given I have Open IE Test
+	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
 	And i login as "oumsalems"
 	Then click the "Abt US Employee Direct Access" option
