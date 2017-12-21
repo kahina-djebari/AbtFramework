@@ -51,9 +51,11 @@ namespace AbtFramework
         /// </summary>
         public void GoToOracleDev()
         {
+    
             StartTimer();
             SeleniumDriver.GoTo("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
             SeleniumDriver.WaitForDOMready();
+       
 
         }
 
@@ -197,15 +199,13 @@ namespace AbtFramework
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetQuantity(), "160");
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetUnitOfMeasure(), "Hour");
 
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetUnitPrice());
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetUnitPrice(), "20");
 
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetSupplierName(), "Think Forward Consulting");
 
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetContactName());
+            Thread.Sleep(1000);
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetContactName(), "Test Contant Name");
 
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetPhone());
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetPhone(), "8099880000");
 
             SeleniumDriver.ClickElement(iprocurementRequesterPO.GetAddToCart());
@@ -217,18 +217,17 @@ namespace AbtFramework
             SeleniumDriver.ClickElement(iprocurementRequesterPO.GetCheckout());
 
         }
-
+        
         public void fillRequisitionInformation()
         {
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetProject(), "21553");
+            iprocurementRequesterPO.GetProject().SendKeys(Keys.Tab);
+            Thread.Sleep(1000);
 
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetTask());
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetTask(), "1100");
 
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetExpenditureType());
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureType(), "Misc Professional Sv");
 
-            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetExpenditureItemDate());
             //Console.WriteLine(DateTime.Today.ToString("dd-MMMM-yyyy"));
             SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureItemDate(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
 
