@@ -22,10 +22,16 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
-        public IWebElement GetQuickSelect2()
+        public IWebElement GetSelectRadioBtn()
         {
             string xpath = "//input[@title = 'Select']";
-            return SeleniumDriver.GetListElementByXpath(xpath)[1];
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
+
+        public IWebElement GetSelectStatusBtn()
+        {
+            string xpath = "//button[text() = 'Select']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
         }
 
         public IWebElement GetDateInput()
@@ -167,7 +173,7 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetBeneficiaryLastName()
         {
-            string xpath = "//input[@title='Last  Name']";
+            string xpath = "//input[@title='Last Name']";
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 

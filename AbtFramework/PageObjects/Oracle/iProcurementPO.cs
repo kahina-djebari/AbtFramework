@@ -124,15 +124,9 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
-        public IWebElement GetApproverLocation()
-        {
-            string xpath = "//span[contains(text(),'Add to Location')]/parent::td/following-sibling::td[2]/child::select";
-            return SeleniumDriver.GetElementByXpath(xpath);
-        }
-
         public IWebElement GetApprovalNextButton()
         {
-            string xpath = "//h1[text()='Checkout: Approvals and Notes']/ancestor::div[2]/following-sibling::div/child::table/descendant::button[@title='Next']";
+            string xpath = "//h1[text()='Checkout: Approvals and Notes']/parent::div//descendant::button[@title='Next']";
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 

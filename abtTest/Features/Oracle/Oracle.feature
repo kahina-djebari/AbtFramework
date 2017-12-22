@@ -40,9 +40,6 @@ Scenario: iProcurement Request
 	And fill the request form
 	Then Checkout the cart
 	And Fill Requisition Information
-	Then Click Manage Approvals
-	And assign "Berg, Gail E" before requisition and submit
-	And Then assign "Poodts, Mauricio" after requisition and submit
 	And Then assign "Elguera, Jorge L" after requisition and submit
 	And Then assign "Samuel, Noel N" after requisition and submit
 	Then Submit after approvers
@@ -52,7 +49,7 @@ Scenario: iProcurement Request
 Scenario:Requisition approval 
 	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
-	And i login as "BergG"
+	And i login as "ElgueraJ"
 	Then click the "Abt US iProcurement Inquiry" option
 	And complete the order
 
@@ -70,7 +67,7 @@ Scenario:Timecard vacations Request
 Scenario:Approve Timecard
 	Given I have Open Chrome Test
 	And I have navigated to Oracle Dev
-	And i login as "GuntherD" 
+	And i login as "ElgueraJ" 
 	Then click the "Abt US iProcurement Inquiry" option
 	And complete the order
 
@@ -89,7 +86,7 @@ Scenario:Creation and approval of PO
 
 	@Oracle
 Scenario: Purchasing Request
-    Given I have Open Chrome Test
+    Given I have Open IE Test
 	And I have navigated to Oracle Dev
 	And i login as "KruckM"
 	Then click the "Abt US PO Buyer" option

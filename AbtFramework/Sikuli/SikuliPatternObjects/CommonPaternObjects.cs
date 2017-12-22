@@ -48,5 +48,7 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetCloseOracleWindow => sikuliHelper.GetPattern(PATH + "CloseOracleWindow.PNG", 5);
 
+        public IPattern GetOkNotificationsNote => sikuliHelper.GetPattern(PATH + "OkNotificationsNote.PNG", 5);
+
     }
 }

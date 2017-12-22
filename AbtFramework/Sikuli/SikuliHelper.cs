@@ -73,7 +73,6 @@ namespace AbtFramework.Sikuli
         public bool IsPatternExisting(IPattern pattern)
         {
             return session.Exists(pattern);
-
         }
 
         /// <summary>
