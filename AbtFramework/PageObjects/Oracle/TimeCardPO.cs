@@ -67,8 +67,8 @@ namespace AbtFramework.PageObjects.Oracle
 
         public IWebElement GetReviewThenSavebutton()
         {
-            string xpath = "//h1[contains(text(),'Time Entry')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Review, then Save']";
-            return SeleniumDriver.GetElementByXpath(xpath);
+            string xpath = "//button[@title='Review, then Save']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
         }
 
         public IWebElement GetReturnToTimeEntryButtonTimeCard()
