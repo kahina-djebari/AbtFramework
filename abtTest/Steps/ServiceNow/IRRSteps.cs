@@ -1,6 +1,7 @@
 ﻿using System;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using TechTalk.SpecFlow;
 using Xunit;
 
@@ -17,7 +18,7 @@ namespace abtTest.Steps.ServiceNow
         [Given(@"I have Open Chrome")]
         public void GivenIHaveOpenChrome()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.InitBrowser("chrome");
         }
         
         [Given(@"I have navigated to ServiceNow Home Page")]
@@ -196,7 +197,7 @@ namespace abtTest.Steps.ServiceNow
         [AfterScenario]
         public void CleanUp()
         {
-            //SeleniumDriver.Instance.Close();
+            //SeleniumDriver.DriverInstance.Close();
         }
 
 

@@ -1,9 +1,9 @@
 ﻿using System;
-using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium;
 
-namespace AbtFramework
+namespace AbtFramework.Utils_Classes
 {
    public static class WebElementExtensions
     {

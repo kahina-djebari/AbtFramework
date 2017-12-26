@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {

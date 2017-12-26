@@ -7,7 +7,7 @@
 Scenario: HRSS Transactions - Approve HR Transactions Spot Bonus - Change Hours - Supervisor Timecard Approver
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Workflow User Web Applications" option
 	And click the "Worklist" option
 	Then I approve the changes

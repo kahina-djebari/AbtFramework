@@ -16,11 +16,11 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
         {
             sikuliHelper = SikuliHelper.GetInstance();
 
-        }      
+        }
 
-        public IPattern GetNewHire => sikuliHelper.GetPattern(PATH + "NewHire.PNG", 5);        
+        public IPattern GetNewHire => sikuliHelper.GetPattern(PATH + "NewHire.PNG", 5);
 
         public IPattern GetEnrollmentResults => sikuliHelper.GetPattern(PATH + "EnrollmentResults.PNG", 5);
-        
+
     }
 }

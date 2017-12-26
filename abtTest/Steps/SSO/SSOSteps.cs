@@ -1,6 +1,7 @@
 ﻿using System;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using TechTalk.SpecFlow;
 using Xunit;
 
@@ -69,7 +70,7 @@ namespace abtTest.Steps.SSO
             AbtPages.AgiTopNavigation.ToolsDropdown.OpenAbtResearchLibrary();
         }
 
-        [Given(@"I Click on Oracle")]
+        [Given(@"I Click on OracleSteps")]
         public void GivenIClickOnOracle()
         {
             AbtPages.AgiTopNavigation.ToolsDropdown.OracleLink();
@@ -145,7 +146,7 @@ namespace abtTest.Steps.SSO
         [Given(@"I have Open IE")]
         public void GivenIHaveOpenIE()
         {
-            SeleniumDriver.init(Browser.Chrome);
+            SeleniumDriver.InitBrowser("chrome");
 
         }
 

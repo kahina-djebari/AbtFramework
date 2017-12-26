@@ -5,6 +5,7 @@ using AbtFramework.Utils_Classes;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -69,7 +70,7 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad(string AbtXchangeHandle)
         {
-            //SeleniumDriver.Instance.SwitchTo().Window(AbtXchangeHandle);
+            //SeleniumDriver.DriverInstance.SwitchTo().Window(AbtXchangeHandle);
             SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             SeleniumDriver.Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             try

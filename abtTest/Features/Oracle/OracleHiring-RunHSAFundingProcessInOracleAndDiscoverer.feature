@@ -7,7 +7,7 @@
 Scenario: Oracle Hiring - Run HSA Funding Process In Oracle And Discoverer
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HRMS Benefits User" option
 	And click the "Submit Processes and Reports" option
 	Then I submit a report
