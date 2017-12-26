@@ -49,6 +49,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>Abt Dependencies\Interop.AutoItX3Lib.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Lync.Model, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lyncdev\C#\bin\Debug\Microsoft.Lync.Model.dll</HintPath>
@@ -67,6 +70,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
@@ -78,11 +82,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="WebDriver, Version=2.53.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.2.53.1\lib\net40\WebDriver.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver.Support, Version=2.53.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.Support.2.53.1\lib\net40\WebDriver.Support.dll</HintPath>
-      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -137,10 +139,19 @@
     <Compile Include="MailOffice365Page.cs" />
     <Compile Include="MyIRRSubmition.cs" />
     <Compile Include="NewsDropdown.cs" />
+    <Compile Include="PageObjects\Oracle\AbtHROperationsSelfServicePO.cs" />
+    <Compile Include="PageObjects\Oracle\BuyerWorkRequisitionPO.cs" />
+    <Compile Include="PageObjects\Oracle\CommonPO.cs" />
+    <Compile Include="PageObjects\Oracle\AbtUSEmployeeDirectAccessPO.cs" />
+    <Compile Include="PageObjects\Oracle\iProcurementPO.cs" />
     <Compile Include="PageObjects\Oracle\LoginPagePO.cs" />
+    <Compile Include="PageObjects\Oracle\OracleDiscovererViewerPO.cs" />
+    <Compile Include="PageObjects\Oracle\TimeCardPO.cs" />
+    <Compile Include="PageObjects\Oracle\WorkflowUserWebAppPO.cs" />
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SANSHomepage.cs" />
+    <Compile Include="Utils Classes\SeleniumUtils\SeleniumDriver.cs" />
     <Compile Include="ServiceNowIRRForm.cs" />
     <Compile Include="ServiceNowIRRTable.cs" />
     <Compile Include="ServiceNowTaskBar.cs" />
@@ -159,7 +170,6 @@
     <Compile Include="DistListReqFormPage.cs" />
     <Compile Include="DocumentNavigation.cs" />
     <Compile Include="Enums\TypeOfRequest.cs" />
-    <Compile Include="SeleniumDriver.cs" />
     <Compile Include="Abtlinks.cs" />
     <Compile Include="EbscoHomePage.cs" />
     <Compile Include="ExcelOnlinePage.cs" />
@@ -220,7 +230,6 @@
     <Compile Include="ToolsAndResourcesPage.cs" />
     <Compile Include="ToolsDropdown.cs" />
     <Compile Include="AgiTopNavigation.cs" />
-    <Compile Include="Utils Classes\Browser.cs" />
     <Compile Include="Utils Classes\DriverExtentions.cs" />
     <Compile Include="Utils Classes\TestCase.cs" />
     <Compile Include="Utils Classes\TestCaseGenerator.cs" />
@@ -238,7 +247,9 @@
     <Compile Include="WordOnlinePage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Utils Classes\Properties\App.config" />
     <None Include="packages.config" />
+    <None Include="Utils Classes\Properties\test_config.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Abt Dependencies\AutoItX3.dll" />
@@ -265,6 +276,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Drivers\Chrome\" />
+    <Folder Include="Drivers\IE\" />
     <Folder Include="Sikuli\SikuliPatternImges\AbtHRMSManagerImges\" />
     <Folder Include="Sikuli\SikuliPatternImges\CommonPatternImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunsImgs\" />

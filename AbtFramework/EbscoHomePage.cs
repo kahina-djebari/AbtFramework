@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Drawing.Imaging;
 using AbtFramework.Utils_Classes;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Drawing.Imaging;
 
 namespace AbtFramework
 {

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Support.PageObjects;
+﻿using AbtFramework.Utils_Classes.SeleniumUtils;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace AbtFramework
 {

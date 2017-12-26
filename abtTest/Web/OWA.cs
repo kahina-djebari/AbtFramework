@@ -1,6 +1,7 @@
 ﻿using System;
 using Xunit;
 using AbtFramework;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace abtTest.Web
 {
@@ -9,7 +10,7 @@ namespace abtTest.Web
     {
         public OWA()
         {
-            //Driver.init();
+            //Driver.InitBrowser();
            // Driver.RemoteInit();
         }
         public void Dispose()
@@ -20,7 +21,8 @@ namespace abtTest.Web
       //  [Fact(DisplayName ="Should Open a received email")]
         public void Should_Open_Received_Email()
         {
-            SeleniumDriver.RemoteInit();
+            //TODO refactor process
+           // SeleniumDriver.RemoteInit();
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.goTo(Abtlinks.Outlook);
             AbtPages.OutlookWebPage.OpenEmail();

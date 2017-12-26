@@ -13,7 +13,7 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
     public class OracleFormsPatternObject
 
-    {    
+    {
         private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/OracleFromsImges/";
         private SikuliHelper sikuliHelper;
 
@@ -23,9 +23,9 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         }
 
-        public IPattern GetDescriptionInput1 => sikuliHelper.GetPattern(PATH +"descriptionInput1.PNG");
+        public IPattern GetDescriptionInput1 => sikuliHelper.GetPattern(PATH + "descriptionInput1.PNG");
 
-       
+
         public IPattern GetNum => sikuliHelper.GetPattern(PATH + "Num.PNG");
 
         public IPattern GetType => sikuliHelper.GetPattern(PATH + "Type.PNG");
@@ -86,7 +86,7 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetProjectType => sikuliHelper.GetPattern(PATH + "ProjectType.PNG");
 
-        public IPattern GetDate => sikuliHelper.GetPattern(PATH + "Date.PNG");   
+        public IPattern GetDate => sikuliHelper.GetPattern(PATH + "Date.PNG");
 
         public IPattern GetSaveIcon => sikuliHelper.GetPattern(PATH + "SaveIcon.PNG");
 

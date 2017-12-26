@@ -5,6 +5,7 @@ using AbtFramework;
 using AbtFramework.Enums;
 using TechTalk.SpecFlow;
 using Xunit;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace abtTest.Steps.AGI
 {
@@ -22,16 +23,16 @@ namespace abtTest.Steps.AGI
             AbtPages.AgiHomePage.HoverOverQuickLinks();
         }
         
-        [When(@"I Click on Oracle")]
+        [When(@"I Click on OracleSteps")]
         public void WhenIClickOnOracle()
         {
            OracleWinHandle= AbtPages.AgiHomePage.QuickLinks.OpenOracle();
         }
         
-        [Then(@"The Oracle Home Page Should Load Succesfully")]
+        [Then(@"The OracleSteps Home Page Should Load Succesfully")]
         public void ThenTheOracleHomePageShouldLoadSuccesfully()
         {
-            Assert.True(AbtPages.OraclePage.isAt());
+            Assert.True(SeleniumDriver.isAt());
         }
 
         [When(@"I Click on Staff Directory")]

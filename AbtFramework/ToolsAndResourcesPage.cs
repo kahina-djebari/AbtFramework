@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -124,13 +125,13 @@ namespace AbtFramework
 
             goTo(Abtlinks.Outlook);
            /*
-            finder = new PopupWindowFinder(SeleniumDriver.Instance);
+            finder = new PopupWindowFinder(SeleniumDriver.DriverInstance);
 
           popupWindowHandle = finder.Click(OutlookWeb);
             StartTimer();
-            wait.Until(e=>SeleniumDriver.Instance.WindowHandles.Count() >= 2);
+            wait.Until(e=>SeleniumDriver.DriverInstance.WindowHandles.Count() >= 2);
             SeleniumDriver.Close();
-            SeleniumDriver.Instance.SwitchTo().Window(popupWindowHandle);
+            SeleniumDriver.DriverInstance.SwitchTo().Window(popupWindowHandle);
             */
 
         }
@@ -151,7 +152,7 @@ namespace AbtFramework
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Until(e => link.Displayed);
             popupWindowHandle = finder.Click(link);
-         //   var currentHandler = SeleniumDriver.Instance.CurrentWindowHandle;
+         //   var currentHandler = SeleniumDriver.DriverInstance.CurrentWindowHandle;
          //   Console.WriteLine("This is the first popwindowHandle:");
           //  Console.WriteLine(currentHandler);
             wait.Until(d => SeleniumDriver.Instance.WindowHandles.Count >= 2);

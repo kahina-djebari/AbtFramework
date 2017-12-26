@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
 using System.Threading;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -72,7 +73,7 @@ namespace AbtFramework
 
         public void WaitForHomePageToLoad()
         {
-            //SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
+            //SeleniumDriver.DriverInstance.SwitchTo().Window(SeleniumDriver.DriverInstance.WindowHandles.Last());
             SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             wait.Until(e => warning.Displayed);
             warning.Click();

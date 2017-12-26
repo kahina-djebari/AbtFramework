@@ -3,6 +3,7 @@ using Xunit;
 using AbtFramework;
 using AbtFramework.Utils_Classes;
 using System.Threading;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 
@@ -17,7 +18,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_WeSpireTestResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.WeSpireHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.WeSpireHomePage.isAt());
             SeleniumDriver.Close();
@@ -30,7 +31,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_WeSpireHomePageResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.GoToAbtExchange();
             Assert.True(AbtPages.WeSpireHomePage.isAt());
@@ -43,7 +44,8 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.RemoteInit();
+            //TODO dont know for that this is use
+          //  SeleniumDriver.RemoteInit();
             AbtPages.WeSpireHomePage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtPages.WeSpireHomePage.isAt());
             SeleniumDriver.Close();
@@ -56,7 +58,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Ebsco_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.EbscoHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.EbscoHomePage.isAt());
             //AbtPages.EbscoHomePage.GoToMyAccount();
@@ -69,7 +71,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteSofianesIE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.EbscoHomePage.Go(WebEnvironment.ProductionEnvironment);
             AbtPages.EbscoHomePage.GoToMyAccount();
             Assert.True(AbtPages.EbscoMyAccountPage.IsUserLoggedIn());
@@ -81,7 +83,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Ebsco_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_AbtResearchLibrary();
             AbtPages.AgiAbtResearch.GoToEbscoDS();
@@ -95,7 +97,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_SuccessFactors_test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.SuccessFactorHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.SuccessFactorHomePage.isAt());
             SeleniumDriver.Close();
@@ -107,7 +109,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteSofianesIE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.SuccessFactorHomePage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtPages.SuccessFactorHomePage.isAt());
             SeleniumDriver.Close();
@@ -117,9 +119,10 @@ namespace abtTest.Web
       //  [Fact(DisplayName = "Should Go to AbtKnowledge Production Home Page")]
         public void Should_Go_to_AbtKnowledge_Production_HomePage()
         {
+            //TODO refactor process
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.RemoteInitDavidsPc(Browser.IE);
+            //SeleniumDriver.RemoteInitDavidsPc("ie");
             AbtPages.AbtKnowledgePage.Go();
            Assert.True(AbtPages.AbtKnowledgePage.IsUserLoggedIn());
         }
@@ -130,7 +133,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AbtTravelPage.Go();
             Assert.True(AbtPages.AbtTravelPage.isUserLoggedIn());
         }
@@ -141,7 +144,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.ConcurHomePage.Go();
             Assert.True(AbtPages.ConcurHomePage.IsAt());
             SeleniumDriver.Close();
@@ -153,7 +156,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.HoverOverTools();
             AbtPages.AbtTravelPage.HoverOverAbtTravelOnline();
@@ -169,7 +172,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_RightFind_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.RightFindHomePage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.RightFindHomePage.IsAt());
 
@@ -180,20 +183,20 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.RemoteSofianesIE);
+            SeleniumDriver.InitBrowser("ie");
            AbtPages.RightFindHomePage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtPages.RightFindHomePage.IsUserLoggedIn());
         }
 
-      //  [Fact(DisplayName = "Should Go to Oracle Production Home Page")]
+      //  [Fact(DisplayName = "Should Go to OracleSteps Production Home Page")]
         public void Should_Go_to_Oracle_Production_HomePage()
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
-         //   AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.Oracle);
-            Assert.True(AbtPages.OraclePage.isAt());
+         //   AbtPages.AgiHomePage.QuickLinks.GoTo(quickLinks.OracleSteps);
+            Assert.True(SeleniumDriver.isAt());
 
         }
 
@@ -202,7 +205,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.ReputationalCapDBPage.Go();
             Assert.True(AbtPages.ReputationalCapDBPage.isUserLoggedIn());
         }
@@ -212,7 +215,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.RepCapPlannerPage.Go();
             Assert.True(AbtPages.RepCapPlannerPage.isUserLoggedIn());
         }
@@ -222,7 +225,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_ServiceNow_Test_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.ServiceNowHomepage.IsAt());
         }
@@ -232,7 +235,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_ServiceNow_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.ServiceNowHomepage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtPages.ServiceNowHomepage.IsAt());
         }
@@ -242,7 +245,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_WebEx_TestEnv_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.WebExPage.Go(WebEnvironment.TestEnvironment);
             Assert.True(AbtPages.WebExPage.isAt());
 
@@ -253,7 +256,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_Concur_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.WebExPage.Go(WebEnvironment.ProductionEnvironment);
             Assert.True(AbtPages.WebExPage.isAt());
         }
@@ -263,11 +266,11 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_SuccessFactors_Prod_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.GoToAtlas();
             Assert.True(AbtPages.SuccessFactorHomePage.isAt());
-            SeleniumDriver.CloseAll();
+            SeleniumDriver.QuitDriverInstance();
         }
 
        // [Fact(DisplayName ="AGI short okta link response time")]
@@ -275,7 +278,7 @@ namespace abtTest.Web
         {
            // string url = "http://agitest.corp.abtassoc.com/";
             string url = "https://abtassociates.okta.com/home/bookmark/0oa80vg271UBRAgM00x7/2557";
-            SeleniumDriver.init(Browser.IENoNativeEvents);
+            SeleniumDriver.InitBrowser("ie");
             var timer1 = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             SeleniumDriver.Instance.Navigate().GoToUrl(url);
             WebDriverWait wait = new WebDriverWait(SeleniumDriver.Instance, TimeSpan.FromSeconds(10));
@@ -289,7 +292,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_RightFindProd_Throug_AGI);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             AbtPages.AgiTopNavigation.ToolsDropdown.GoTo_AbtResearchLibrary();
             AbtPages.AgiAbtResearch.GoToRightFind();
@@ -301,7 +304,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_AGI_ResponseTime);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.AgiHomePage.Go();
             Assert.True(AbtPages.AgiHomePage.isAt());
         }
@@ -313,7 +316,7 @@ namespace abtTest.Web
         {
             TestCaseGenerator.SetTestCase(AbtTestCases.Get_SANS_Response_Time);
             TestCaseGenerator.SetTestCaseTemplate(AbtTemplates.DetailedReport);
-            SeleniumDriver.init(Browser.IE);
+            SeleniumDriver.InitBrowser("ie");
             AbtPages.SANSHomepage.Go();
             Assert.True(AbtPages.SANSHomepage.IsAt());
         }

@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -50,7 +51,7 @@ namespace AbtFramework
         public bool IsAt() {
 
 
-          //   wait.Until(e=>SeleniumDriver.Instance.Title.Equals("Mail - "+SSOCrendentials.CurrentUser+" - Outlook"));
+          //   wait.Until(e=>SeleniumDriver.DriverInstance.Title.Equals("Mail - "+SSOCrendentials.CurrentUser+" - Outlook"));
            wait.Until(e => SeleniumDriver.Instance.Title.Equals("Mail - " +"Sofiane Oumsalem"+ " - Outlook"));
             StopTimer();
             PrintResponseTime("Outlook Web");

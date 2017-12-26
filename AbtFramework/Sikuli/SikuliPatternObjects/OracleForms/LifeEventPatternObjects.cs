@@ -58,7 +58,5 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetReturnToPeopleLink => sikuliHelper.GetPattern(PATH + "ReturnToPeopleLink.PNG", 5);
 
-        public IPattern GetOkNotificationsNote => sikuliHelper.GetPattern(PATH + "OkNotificationsNote.PNG", 5);
-
     }
 }

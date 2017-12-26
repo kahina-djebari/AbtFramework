@@ -1,25 +1,24 @@
-﻿using AbtFramework.Utils_Classes;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Threading;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 using AbtFramework.Sikuli;
-using AbtFramework.Sikuli.SikuliPatternObjects;
 using AbtFramework.Sikuli.SikuliPatternObjects.OracleForms;
-using Microsoft.Lync.Model.Conversation.Sharing;
-using SikuliSharp;
+using AbtFramework.Sikuli.SikuliPatternObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AbtFramework.PageObjects.Oracle;
 
 namespace AbtFramework
 {
     public class OraclePage : PageModel
     {
         static String gUser = "user";
+
+        //sikuli objects
         private OracleFormsPatternObject patterns;
         private CommonPaternObjects commonPatterns;
         private GradeRatePatternObject gradePatterns;
@@ -27,976 +26,302 @@ namespace AbtFramework
         private ConfDefaultProcessRunsObjects ConfDefaultProcessRunsPatterns;
         private LifeEventPatternObjects LifeEventPatterns;
         private ConfProcessObjects ConfProcessPatterns;
-        private  SubmitReportObjects submitReportPatterns;
+        private SubmitReportObjects submitReportPatterns;
         private SikuliHelper sikuliHelper;
+
+        //page objects
+        private LoginPagePO loginPagePO;
+        private CommonPO commonPO = new CommonPO();
+        private TimeCardPO timeCardPO = new TimeCardPO();
+        private iProcurementRequesterPO iprocurementRequesterPO = new iProcurementRequesterPO();
+        private AbtUSPOBuyerPO buyerRequisitionPO = new AbtUSPOBuyerPO();
+        private AbtUSEmployeeDirectAccessPO employeeDirectAccessPO = new AbtUSEmployeeDirectAccessPO();
+        private AbtHRUserPO abtHRUserPO = new AbtHRUserPO();
+        private AbtHROperationsSelfServicePO operationsSelfPO = new AbtHROperationsSelfServicePO();
+        private WorkflowUserWebAppPO workFlowPO = new WorkflowUserWebAppPO();
+
+        public const string MyAccountPageTitle = "My Account";
         private int counter = 11;
-        private int counter1 = 9;
+        private int counter1 = 15;
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='WF_SS_NOTIF_PAGE']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/a")]
-        private IWebElement homeButton; //
 
-        [FindsBy(How = How.Id, Using = "PageLayoutRN")]
-        private IWebElement headerInfo; //
 
-        [FindsBy(How = How.CssSelector, Using = "#PageLayoutRN > div > div:nth-child(5) > div > div.x63 > table > tbody > tr > td > h1")]
-        private IWebElement OracleWelcome; //
-
-        [FindsBy(How = How.XPath, Using = "//input[contains(@title,'User Name')]")]
-        private IWebElement username;
-
-        [FindsBy(How = How.XPath, Using = "//input[contains(@title,'Password')]")]
-        private IWebElement password;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Login']")]
-        private IWebElement loginButton;
-
-        [FindsBy(How = How.XPath, Using = "//h2[text()='Navigator']/ancestor::tr[2]/following-sibling::tr[2]/descendant::div[1]/child::div[2]/descendant::tr[1]/child::td[1]")]
-        private IWebElement homeMenuTable;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Subject']/parent::th/parent::tr/following-sibling::tr[1]/child::td[1]/child::a")]
-        private IWebElement timeCardToBeApproved;
-
-        [FindsBy(How = How.XPath, Using = "//a[@title='Orders']/ancestor::table[2]/following-sibling::div/child::div[3]/child::div[1]/child::div[2]/descendant::button[@title='Approve']")]
-        private IWebElement buttonApproveTimeCard;
-
-        [FindsBy(How = How.XPath, Using = "//a[@title='Non-Catalog Request']")]
-        private IWebElement nonCatalogRequest;
-
-        [FindsBy(How = How.XPath, Using = "//a[text()='Time Entry']")]
-        private IWebElement timeEntry;
-
-        [FindsBy(How = How.XPath, Using = "//a[text()='Create Timecard']")]
-        private IWebElement createTimecards;
-
-        //    time ard creation variables
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Project')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[1]/descendant::input")]
-        private IWebElement projectTimeCardInput;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[2]/descendant::input")]
-        private IWebElement tasktTimeCardInput;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[3]/descendant::input")]
-        private IWebElement typeTimeCardInput;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[4]/descendant::input")]
-        private IWebElement timeInput1;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[5]/descendant::input")]
-        private IWebElement timeInput2;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[6]/descendant::input")]
-        private IWebElement timeInput3;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[7]/descendant::input")]
-        private IWebElement timeInput4;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[8]/descendant::input")]
-        private IWebElement timeInput5;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[9]/descendant::input")]
-        private IWebElement timeInput6;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Task')]/ancestor::tr[2]/following-sibling::tr[1]/child::td[10]/descendant::input")]
-        private IWebElement timeInput7;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Time Entry')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Review, then Save']")]
-        private IWebElement reviewThenSavebutton;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Confirmation:')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Return to Time Entry']")]
-        private IWebElement returnToTimeEntryButtonTimeCard;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Time Entry:')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Begin Submit Process']")]
-        private IWebElement timecardBeginSubmit;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Review:')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Submit']")]
-        private IWebElement timecardSubmit;
-
-        //         Browse Abt US Employee Direct Access  
-
-        [FindsBy(How = How.XPath, Using = "//h2[text()='Navigator']/ancestor::tr[2]/following-sibling::tr[2]/descendant::div[1]/child::div[2]/descendant::tr[1]/child::td[2]")]
-        private IWebElement userBrowsingOptions;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Review')]/ancestor::div[1]/following-sibling::div[1]/descendant::button[@title='Save'][text()='Complete Save Process']")]
-        private IWebElement completeSaveTimeCardProcess;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Item Description')]/parent::td/following-sibling::td[2]/child::textarea")]
-        private IWebElement itemDescription;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Quantity')]/parent::td/following-sibling::td[2]/child::input")]
-        private IWebElement quantity;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Unit of Measure')]/parent::td/following-sibling::td[2]/child::span/child::input")]
-        private IWebElement unitOfMeasure;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Unit Price')]/parent::td/following-sibling::td[2]/child::input")]
-        private IWebElement unitPrice;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Supplier Name')]/parent::td/following-sibling::td[2]/child::span/child::input")]
-        private IWebElement supplierName;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Contact Name')]/parent::td/following-sibling::td[2]/child::input")]
-        private IWebElement contactName;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Phone')]/parent::td/following-sibling::td[2]/child::input")]
-        private IWebElement phone;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Phone']/ancestor::table[2]/parent::div/parent::div/following-sibling::div/child::table/descendant::button[text()='Add to Cart']")]
-        private IWebElement addToCart;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Proceeds to the Shopping Cart page.'][contains(text(),'View Cart and Checkout')]")]
-        private IWebElement viewCartAndCheckout;
-
-        [FindsBy(How = How.XPath, Using = "//a[text()='Return to Shopping']/parent::td/following-sibling::td[1]/descendant::button[text()='Checkout']")]
-        private IWebElement checkout_uixr;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Project']/parent::td/following-sibling::td[2]/child::span/child::input")]
-        private IWebElement project;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Expenditure Type']/parent::td/following-sibling::td[2]/child::span/child::input")]
-        private IWebElement expenditureType;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Task']/parent::td/following-sibling::td[2]/child::span/child::input")]
-        private IWebElement task;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Expenditure Item Date']/parent::td/following-sibling::td[2]/child::input")]
-        private IWebElement expenditureItemDate;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Checkout: Requisition Information']/ancestor::div[2]/following-sibling::div/child::table/descendant::button[@title='Next']")]
-        private IWebElement nextButtons;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Manage Approvals']")]
-        private IWebElement manageApprovals;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Approver')]/parent::td/following-sibling::td[2]/child::span/child::input")]
-        private IWebElement newApproverText;
-
-        [FindsBy(How = How.Id, Using = "SubmitButton_uixr")]
-        private IWebElement submitButton_uixr; //
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Add to Location')]/parent::td/following-sibling::td[2]/child::select")]
-        private IWebElement approverLocation;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Checkout: Approvals and Notes']/ancestor::div[2]/following-sibling::div/child::table/descendant::button[@title='Next']")]
-        private IWebElement ApprovalNextButton;
-
-        [FindsBy(How = How.XPath, Using = "//button[text() = 'Continue Shopping']")]
-        private IWebElement continueShoppingButton;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Buyer Work Center']/parent::td/parent::tr/following-sibling::tr[1]//a[text()='Requisitions']")]
-        private IWebElement requisitionsBuyerWorkCenter;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Requisitions']/parent::td/parent::tr/following-sibling::tr[2]//a[text()='Requisitions']")]
-        private IWebElement requisitionsRequisitions;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Select'][@value='0']")]
-        private IWebElement requisitionToBeAdded;
-
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Select None')]/ancestor::tr[2]/preceding-sibling::tr[1]/descendant::button[@title='Add to Document Builder']")]
-        private IWebElement addRequisitionButton;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Create']")]
-        private IWebElement createButton;
-
-        [FindsBy(How = How.XPath, Using = "//a[text()='People']")]
-        private IWebElement people;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='View : Histories']/parent::td/parent::tr/following-sibling::tr[4]/child::td[3]/a[text()='Entries']")]
-        private IWebElement entries;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='View : Histories']/parent::td/parent::tr/following-sibling::tr[3]/child::td[3]/a[text()='Salary']")]
-        private IWebElement salary;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='View : Histories']/parent::td/parent::tr/following-sibling::tr[4]/child::td[3]/a[text()='Salary']")]
-        private IWebElement salaryB;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Flexfield : Descriptive']/parent::td/parent::tr/following-sibling::tr[2]/child::td[3]/a[text()='Values']")]
-        private IWebElement values;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='View : Histories']/parent::td/parent::tr/following-sibling::tr[2]/child::td[3]/a[text()='Absence']")]
-        private IWebElement absence;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Payroll']/parent::td/parent::tr/following-sibling::tr[1]/child::td[3]/a[text()='Description']")]
-        private IWebElement descriptionPayroll;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Work Structures : Grade']/parent::td/parent::tr/following-sibling::tr[1]/child::td[3]/a[text()='Description']")]
-        private IWebElement descriptionGrade;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Work Structures : Job']/parent::td/parent::tr/following-sibling::tr[1]/child::td[3]/a[text()='Description']")]
-        private IWebElement descriptionJob;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Work Structures : Organization']/parent::td/parent::tr/following-sibling::tr[1]/child::td[3]/a[text()='Description']")]
-        private IWebElement descriptionOrganization;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Work Structures : Position']/parent::td/parent::tr/following-sibling::tr[1]/child::td[3]/a[text()='Description']")]
-        private IWebElement descriptionPosition;
-
-        // 	Voluntary Disclosure of Veterans Status
-        [FindsBy(How = How.XPath, Using = "//button[@title='Add']")]
-        private IWebElement addBtn;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Update']")]
-        private IWebElement updateBtn;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Choose Your Veteran Status')]/parent::td/following-sibling::td[2]/child::span/child::a")]
-        private IWebElement searchVeteranStatusBtn;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Search Term']")]
-        private IWebElement searchVeteranStatusInputBox;
-
-        [FindsBy(How = How.XPath, Using = "//button[text()='Go']")]
-        private IWebElement goBtn;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='0']")]
-        private IWebElement selectStatus1;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='1']")]
-        private IWebElement selectStatus2;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Select'][value='2']")]
-        private IWebElement selectStatus3;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[1]/child::td[2]/child::a/img")]
-        private IWebElement quickSelect1;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[2]/child::td[2]/child::a/img")]
-        private IWebElement quickSelect2;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Quick Select']/parent::th/parent::tr/following-sibling::tr[3]/child::td[2]/child::a/img")]
-        private IWebElement quickSelect3;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Search and Select: Choose Your Veteran Status']/ancestor::div[1]/following-sibling::div[1]//button[text()='Select']")]
-        private IWebElement selectBtn;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Enter Your Name')]/parent::td/following-sibling::td[2]/input")]
-        private IWebElement enterYourName;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Enter Your Name')]/parent::td/parent::tr/following-sibling::tr/child::td[3]//child::input")]
-        private IWebElement date;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Voluntary Disclosure of Veterans Status']/ancestor::div[1]/following-sibling::div[1]//button[@title='Apply']")]
-        private IWebElement applyBtn;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Extra Information']/ancestor::div[1]/following-sibling::div//descendant::button[text()='Save For Later']")]
-        private IWebElement saveForLater;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Extra Information']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextBtn;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Add']")]
-        private IWebElement addAttachments;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
-        private IWebElement submitBtn;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Home']")]
-        private IWebElement homeBtn;
-
-
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Detail Active Employee')]/preceding-sibling::a//img")]
-        private IWebElement detailActiveEmployeeOptn;
-
-        [FindsBy(How = How.XPath, Using = "//img[@alt = 'Select to expand']")]
-        private IList<IWebElement> selectToExpandIcons;
-
-        [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'javascript:discoOpen')]")]
-        private IList<IWebElement> expandedOptionToClick;
-
-        //Change timecard approver
-        [FindsBy(How = How.XPath, Using = "//input[@title='Search Criteria']")]
-        private IWebElement nameInputField;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Go']")]
-        private IWebElement goButton;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Select']")]
-        private IWebElement selectName;
-
-        [FindsBy(How = How.XPath, Using = "//img[@title='Action']")]
-        private IWebElement actionIcon;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Effective Date']/parent::td/following-sibling::td[2]//descendant::input")]
-        private IWebElement effectiveDate;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Effective Date Options']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Continue']")]
-        private IWebElement continueButton;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Manager']")]
-        private IWebElement supervisorName;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Timecard Approver']/parent::td/following-sibling::td[2]//input")]
-        private IWebElement timecardApprover;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Change Manager']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextBtnValidateChangeManager;
-
-        [FindsBy(How = How.XPath, Using = "////span[contains(text(),'Reason')]/parent::td/following-sibling::td//select")]
-        private IWebElement changeReasonSelect;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Assignment']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextBtnValidateAssignment;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Timecard Approver and Supervisor: Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
-        private IWebElement submitChangeTimecardApproverSupervisor;
-
-        //Change employee hours
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Effective Date Options']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Continue']")]
-        private IWebElement continueBtn;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Work Hours']")]
-        private IWebElement workHoursInputField;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Assignment Category']/parent::td/following-sibling::td[2]//select")]
-        private IWebElement assignmentCategory;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Work Schedule']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextBtnValidateWorkSchedule;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Propose Pay Change']")]
-        private IWebElement proposePayChange;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Reason For Pay Change']/parent::td/following-sibling::td[2]//select")]
-        private IWebElement reasonForPayChange;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Actual Pay Amount']")]
-        private IWebElement actualPayAmount;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Pay Details']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Apply']")]
-        private IWebElement applyButton;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Select A Pay Action']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']")]
-        private IWebElement nextBtnValidatePayChangeProposal;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Hours: Review']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Submit']")]
-        private IWebElement submitChangeHours;
-
-        //Approve changes of hours and timecard approver
-        [FindsBy(How = How.XPath, Using = "//select[@title='Provides a series of worklist views available']")]
-        private IWebElement openNotifications;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Launches some defined function']")]
-        private IWebElement goNotifications;
-
-        [FindsBy(How = How.XPath, Using = "//a[text()='Subject']/parent::th/parent::tr/following-sibling::tr[1]/child::td[4]/a")]
-        private IWebElement subjectLink;
-
-        //HRSS Transactions: Enter Voluntary Offboarding – Actor: HRBP
-        [FindsBy(How = How.Name, Using = "Comments")]
-        private IWebElement commentsTextArea;
-
-        [FindsBy(How = How.Id, Using = "HrNext_uixr")]
-        private IWebElement nextBtnAfterReason ;
-
-
-        [FindsBy(How = How.Name, Using = "FileName")]
-        private IWebElement titleAttachmentInput;
-
-        [FindsBy(How = How.Name, Using = "AkDescription")]
-        private IWebElement descrptionAttachmentTextArea;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()= 'Text']//preceding-sibling::input")]
-        private IWebElement defineAttachmentTextRadioBtn;
-
-        [FindsBy(How = How.Id, Using = "Okay_uixr")]
-        private IWebElement applyAttachmentBtn;
-
-        [FindsBy(How = How.XPath, Using = "//textarea[@title='Attachment Text']")]
-        private IWebElement descriptionTextAreaAttachment;
-
-        [FindsBy(How = How.Id, Using = "HrSubmit")]
-        private IWebElement submitInReviewConfirmationBtn; //works for any subit under review screen
-
-        //HRSS Transactions: Enter Spot Bonus – Actor: HRSC
-        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Type']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentTypeInput;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Date']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentDateInput;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Payment Amount']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentAmountInput;
-
-        [FindsBy(How = How.XPath, Using = "//img[@title='Search for Bonus Awarded By']")]
-        private IWebElement paymentBonusAwardedByIcon;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Comments']/parent::td/following-sibling::td//input")]
-        private IWebElement paymentCommentsInput;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Search Term']")]
-        private IWebElement bonusAwardedBySearchInput;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Select']")]
-        private IWebElement bonusAwardedSelecRadioBtn;
-
-        [FindsBy(How = How.Id, Using = "HrNext")]
-        private IWebElement applyOrNextBonusBtn; //this works for apply and next in Bonus Spot section
-
-        //this will be simplified with the refactor, but at this point need to call 
-        //index to get a single button, this is because same button is twice. too lazy to get
-        //unique path :)
-        [FindsBy(How = How.XPath, Using = "//button[text() = 'Select']")]
-        private IList<IWebElement> selectBtnsList;
-
-        //OracleBSS: Adding life event and enrolling in benefits
-        [FindsBy(How = How.XPath, Using = "//input[@title='Search Value: First Name']")]
-        private IWebElement firstNameInputField;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Search Value: Last Name']")]
-        private IWebElement lastNameInputField;
-
-        [FindsBy(How = How.XPath, Using = "//button[text()='Go']")]
-        private IWebElement goButtonFindAddedLE;  //LE = Life Event
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Change Session Date')]/parent::div/descendant::button[@title='Next']")]
-        private IWebElement nextChangeSessionDate;
-
-
-        //OracleESS: Update personal information
-        [FindsBy(How = How.XPath, Using = "//h2[text()='Basic Details']/parent::div//descendant::button[@title='Update']")]
-        private IWebElement updateBasicDetailsBtn;
-
-        [FindsBy(How = How.XPath, Using = "//h2[text()='Phone Numbers']/parent::div//descendant::button[@title='Update']")]
-        private IWebElement updatePhoneNumbers;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Select Emergency Contact:']/following-sibling::button[@title='Update the Contact Details']")]
-        private IWebElement updateEmergencyContactsBtn;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Basic Details')]/parent::div/descendant::button[@title='Next']")]
-        private IWebElement next; //works for next button under Choose Option and Update Informarion
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Phone Numbers')]/parent::div/descendant::button[@title='Next']")]
-        private IWebElement nextPhoneNum;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Emergency Contact')]/parent::div/descendant::button[@title='Next']")]
-        private IWebElement nextEmergencyContact;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Middle Name']/parent::td//following-sibling::td/input[@title='Middle Name']")]
-        private IWebElement middleNameInputField; // Works for Basic Details and Emergency Contacts
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Effective Date')]/parent::td/following-sibling::td//descendant::input[@title='Effective Date']")]
-        private IWebElement effectiveDateBasicDetails;
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Personal Information')]/parent::div/descendant::button[@title='Cancel']")]
-        private IWebElement cancelInfoChanges; // Works for Basic Details, Phone Numbers, and Emergency Contacts
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Yes']")]
-        private IWebElement YesBtn; //to confirm that we want to cancel the changes that we have made
-
-        [FindsBy(How = How.XPath, Using = "//h1[contains(text(),'Personal Information')]/parent::div/descendant::button[@title='Submit']")]
-        private IWebElement submitInfoChangeBtn;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Number']/parent::th/parent::tr/following-sibling::tr[1]//child::td/input[@title='Text input for Phone number']")]
-        private IWebElement phoneNumInputField;
-
-        //OracleESS: Confirm view and add beneficiaries
-        [FindsBy(How = How.XPath, Using = "//span[text()='Please show me the benefits as of']/parent::td//following-sibling::td/select")]
-        private IWebElement selectElectionsDate;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Please show me the benefits as of']/parent::td/ancestor::td/following-sibling::td/button[text()='Go']")]
-        private IWebElement goToElections;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Update Beneficiaries']")]
-        private IWebElement updateBeneficiariesBtn;
-
-        [FindsBy(How = How.XPath, Using = "//button[@title='Add Another Person']")]
-        private IWebElement addAnotherPersonBtn;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Relationship')]/parent::td/following-sibling::td/select")]
-        private IWebElement selectRelationship; 
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Relationship Start Date']")]
-        private IWebElement relationshipStartDateInputField;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='First Name']")]
-        private IWebElement beneficiaryFirstName;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Last Name']")]
-        private IWebElement beneficiaryLastName;
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'If you check the box above')]/ancestor::tr[1]/preceding-sibling::tr/descendant::input")]
-        private IWebElement sharedResidenceCheckBox; //check this box instead of typing the address
-
-        [FindsBy(How = How.XPath, Using = "//span[text()='Gender']/parent::td/following-sibling::td/select")]
-        private IWebElement selectGender;
-
-        [FindsBy(How = How.XPath, Using = "//input[@title='Date of Birth']")]
-        private IWebElement DOBInputField;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Add Dependents and Beneficiaries']/parent::div//descendant::button[@title='Apply']")]
-        private IWebElement applyNewBeneficiary;        
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Dependents and Beneficiaries']/parent::div//descendant::button[@title='Next']")]
-        private IWebElement nextToUpdateBeneficiaries;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Update Beneficiaries']/parent::div//descendant::button[@title='Next to Confirmation Statement']")]
-        private IWebElement nextToConfirmation;
-
-        [FindsBy(How = How.XPath, Using = "//h1[text()='Confirmation Statement']/parent::div//descendant::button[@title='Back to Overview']")]
-        private IWebElement finishBtn;
-
-
-
-
-
-        public IWebElement SelectFolderNavigator(string option)
-        {
-            string xpath = "//a[text() = '" + option + "']";
-            return SeleniumDriver.Instance.FindElement(By.XPath(xpath));
-        }
-
+        /// <summary>
+        /// Goes to Oracle Link
+        /// </summary>
         public void GoToOracleDev()
         {
+    
             StartTimer();
-            //since its a clean session we go to agi to make o
-            SeleniumDriver.Instance.Navigate().GoToUrl("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
+            SeleniumDriver.GoTo("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
+            SeleniumDriver.WaitForDOMready();
+       
+
         }
 
-        public bool isAt()
-        {
-            //Thread.Sleep(2000);
-            SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
-            try
-            {
-                AbtFramework.AutoIT.AutoITDriver.init();
-                AbtFramework.AutoIT.AutoITDriver.AceptCertificate();
-            }
-            catch (NoAlertPresentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
 
-            if (wait.Until(e => OracleWelcome.Displayed))
-            {
-                StopTimer();
-                return true;
-            }
+        /// <summary>
+        /// Login in Oracle Page
+        /// </summary>
+        /// <param name="user"></param>
+        public void Login(string user)
+        {
+
+            loginPagePO = new LoginPagePO();
+            SeleniumDriver.SetValue(loginPagePO.GetUserNameInput(), user);
+            if (user.Contains("Jackson"))
+                SeleniumDriver.SetValue(loginPagePO.GetPasswordInput(), "test123456789");
             else
-            {
-                return false;
-            }
+                SeleniumDriver.SetValue(loginPagePO.GetPasswordInput(), "test123456");
+            SeleniumDriver.ClickElement(loginPagePO.GetLoginBtn());
+            SeleniumDriver.WaitForDOMready();
+
         }
 
-        private string LoginUser(string user)
+        /// <summary>
+        /// Clicks all links in Navigator home page
+        /// </summary>
+        public void ClickAllLinksInNavigator()
         {
-            gUser = user;
-            var u = "user";
+            List<IWebElement> linksList = commonPO.GetAllLinksToClickInNavigator();
 
-            switch (gUser)
+            for (int i = 0; i < linksList.Count; i++)
             {
-                case "Sofiane Oumsalem":
-                    return u = "oumsalems";
-                case "Gail Berg":
-                    return u = "BergG";
-                case "Alex Gutierrez":
-                    return u = "GutierrezA";
-                case "Mauricio Poodts":
-                    return u = "PoodtsM";
-                case "Jorge Elguera":
-                    return u = "ElgueraJ";
-                case "Noel Samuel":
-                    return u = "SamuelN";
-                case "Marlene Kruck":
-                    return u = "KruckM";
-                case "Valerie Hennessey":
-                    return u = "PCTEST01";
-                case "Allison Jung":
-                    return u = "Junga";
-                case "John Adamowicz":
-                    return u = "AdamowiczJ";
-                case "Daniel Gunther":
-                    return u = "GuntherD";
-                case "Lisa Butterfield":
-                    return u = "HRTEST01";
-                case "Phyllis Wallace":
-                    return u = "WallaceP";
-                case "Frank Divita":
-                    return u = "DivitaF";
-                case "Nataia Jackson":
-                    return u = "JacksonN";
+                string att = linksList[i].GetAttribute("src");
+                SeleniumDriver.ClickElement(linksList[i]);
+
+                if (att.Contains("sswa"))
+                {
+                    SeleniumDriver.NavigateBack();
+                    SeleniumDriver.WaitForDOMready();
+                    linksList = commonPO.GetAllLinksToClickInNavigator();
+
+                }
+                else if (SeleniumDriver.GetCurrentBrowserName().Contains("explorer"))
+                {
+                    Thread.Sleep(10000);
+                }
+                else
+                {
+                    Thread.Sleep(3000);
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[1]);
+                    SeleniumDriver.Close();
+                    SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[0]);
+                }
+
             }
 
-            return u;
-        }
-        private IWebElement getLinkFromMainMenuTable(string link)
-        {
-            IWebElement element = null;
-            Console.WriteLine(gUser);
-            // structure to the text -> table/tbody/tr[index]/td[4]/a
-            if (gUser.Equals("Valerie Hennessey"))
-            {
-                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
-                try
-                {
-                    foreach (var row in rows)
-                    {
-                        element = row.FindElement(By.XPath("td[4]/a"));
-                        if (element.GetAttribute("textContent").Equals(link))
-                        {
-                            return element;
-                        }
-                    }
-                }
-                catch (NoSuchElementException)
-                {
-                    //couldnot find 
-                }
-            }
-            else
-            {
-                ICollection<IWebElement> rows = homeMenuTable.FindElements(By.TagName("tr"));
-
-                try
-                {
-                    foreach (var row in rows)
-                    {
-                        element = row.FindElement(By.XPath("td[4]/a"));
-                        if (element.GetAttribute("textContent").Equals(link))
-                        {
-                            return element;
-                        }
-                    }
-                }
-                catch (NoSuchElementException)
-                {
-                    //couldnot find 
-                }
-            }
-
-            return element;
         }
 
-        private IWebElement getLinkFromUserOptions(string link)
-        {
-            IWebElement element = null;
-            Console.WriteLine(gUser);
-
-            ICollection<IWebElement> rows = userBrowsingOptions.FindElements(By.TagName("tr"));
-
-            try
-            {
-                foreach (var row in rows)
-                {
-                    if (row.GetAttribute("textContent").Equals(link))
-                    {
-                        element = row.FindElement(By.XPath("td[3]/a"));
-                        return element;
-                    }
-                }
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("could not find: " + link);
-            }
 
 
-            return element;
-        }
+        /// <summary>
+        /// Clicks on the Home Page folder list specify by the option.
+        /// can work on any "a" element of the DOM
+        /// </summary>
+        /// <param name="option"></param>
         public void ClickMainMenuTableOption(string option)
         {
-            Thread.Sleep(1000);
-            SelectFolderNavigator(option).Click();
+            SeleniumDriver.ClickElement(commonPO.GetSelectHomePageLinkFolder(option));
+            SeleniumDriver.WaitForDOMready();
+
+
         }
 
+        /// <summary>
+        /// Clicks and goes back
+        /// </summary>
+        /// <param name="option"></param>
         public void ClickRightSideMenuTableOptions(string option)
         {
-            Thread.Sleep(1000);
-            SelectFolderNavigator(option).Click();
-            Thread.Sleep(1000);
-            SeleniumDriver.Instance.Navigate().Back();
+            SeleniumDriver.ClickElement(commonPO.GetSelectHomePageLinkFolder(option));
+            SeleniumDriver.WaitForDOMready();
+            SeleniumDriver.NavigateBack();
+            SeleniumDriver.WaitForDOMready();
 
         }
 
-        public void ClickUserOptions(string option)
-        {
-            Thread.Sleep(1000);
-            IWebElement test = getLinkFromUserOptions(option);
-            test.Click();
-            Thread.Sleep(1000);
-            SeleniumDriver.Instance.Navigate().Back();
-        }
-
-        public void ClickUserOptions1(string option)
-        {
-            Thread.Sleep(1000);
-            IWebElement test = getLinkFromUserOptions(option);
-            test.Click();
-        }
-
-        public void ClickHomeButton()
-        {
-            homeButton.Click();
-        }
-        private string GetCurrentUser()
-        {
-            return headerInfo.FindElement(By.TagName("div")).FindElements(By.TagName("table"))[0].FindElements(By.TagName("span"))[1].Text;
-        }
-        private IWebElement getHeader()
-        {
-            return headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals("Oracle Applications Home Page"));
-        }
-        private IWebElement getHomeScreenRow(string option)
-        {
-            return headerInfo.FindElements(By.TagName("h1")).Single(e => e.Text.Equals(option));
-        }
-        public void inputUserName(String user)
-        {
-
-            username.SendKeys(LoginUser(user));
-        }
-        public void inputPasswordField(string user)
-        {
-            password.Clear();
-            if (user == "Nataia Jackson")
-            {
-                password.SendKeys("test123456789");
-            }
-            else
-            {
-                password.SendKeys("test123456");
-            }          
-        }
-        public void clickSubmitButton()
-        {
-            loginButton.Click();
-        }
         public void clickIProcurementRequest()
         {
-            Thread.Sleep(1000);
-            nonCatalogRequest.Click();
+            SeleniumDriver.ClickElement(timeCardPO.GetNonCatalogRequest());
+
         }
+
         public void clickTimeCard()
         {
-            timeEntry.Click();
-            Thread.Sleep(1000);
-            createTimecards.Click();
+            SeleniumDriver.ClickElement(timeCardPO.GetTimeEntry());
+            SeleniumDriver.ClickElement(timeCardPO.GetCreateTimeCards());
         }
+
         public void fillTimeCard()
         {
-            projectTimeCardInput.SendKeys("10000 \r");
-            tasktTimeCardInput.Click();
-            Thread.Sleep(1000);
-            tasktTimeCardInput.SendKeys("1011 \r");
-            typeTimeCardInput.Click();
-            Thread.Sleep(1000);
-            typeTimeCardInput.SendKeys("Vacation");
-            timeInput1.Click();
-            Thread.Sleep(1000);
-            timeInput1.SendKeys("0");
-            timeInput2.SendKeys("0");
-            timeInput3.SendKeys("8");
-            timeInput4.SendKeys("8");
-            timeInput5.SendKeys("8");
-            timeInput6.SendKeys("8");
-            timeInput7.SendKeys("8");
-            Thread.Sleep(1000);
-            reviewThenSavebutton.Click();
+            SeleniumDriver.SetValue(timeCardPO.GetProjectTimeCardInput(), "10000");
+            SeleniumDriver.ClickElement(timeCardPO.GetTasktTimeCardInput());
+            SeleniumDriver.SetValue(timeCardPO.GetTasktTimeCardInput(), "1011");
+            SeleniumDriver.ClickElement(timeCardPO.GetTypeTimeCardInput());
+            SeleniumDriver.SetValue(timeCardPO.GetTypeTimeCardInput(), "Vacation");
+
+            List<IWebElement> inputList = timeCardPO.GetTimeInputList();
+            for (int i = 0; i < inputList.Count; i++)
+            {
+                if (i < 2)
+                {
+                    SeleniumDriver.SetValue(inputList[i], "0");
+                }
+                else
+                {
+                    SeleniumDriver.SetValue(inputList[i], "8");
+                }
+
+            }
+
+            SeleniumDriver.ClickElement(timeCardPO.GetReviewThenSavebutton());
+
         }
         public void completeTimeCardRequest()
         {
-            completeSaveTimeCardProcess.Click();
-            Thread.Sleep(1000);
-            returnToTimeEntryButtonTimeCard.Click();
-            Thread.Sleep(1000);
-            timecardBeginSubmit.Click();
-            Thread.Sleep(1000);
-            timecardSubmit.Click();
+            SeleniumDriver.ClickElement(timeCardPO.GetCompleteSaveTimeCardProcess());
+            SeleniumDriver.ClickElement(timeCardPO.GetReturnToTimeEntryButtonTimeCard());
+            SeleniumDriver.ClickElement(timeCardPO.GetTimecardBeginSubmit());
+            SeleniumDriver.ClickElement(timeCardPO.GetTimecardSubmit());
+
         }
         public void SelectAndApproveOrder()
         {
-            timeCardToBeApproved.Click();
-            Thread.Sleep(500);
-            buttonApproveTimeCard.Click();
+            SeleniumDriver.ClickElement(timeCardPO.GetTimeCardToBeApproved());
+            SeleniumDriver.ClickElement(timeCardPO.GetButtonApproveTimeCard());
+
         }
         public void fillNonCatalogRequestForm()
         {
-            Thread.Sleep(2000);
-            itemDescription.SendKeys("Test Description");
-            quantity.SendKeys("160");
-            unitOfMeasure.SendKeys("Hour");
-            unitPrice.Click();
-            Thread.Sleep(5000);
-            unitPrice.SendKeys("20");
-            supplierName.SendKeys("Think Forward Consulting");
-            contactName.Click();
-            Thread.Sleep(5000);
-            contactName.SendKeys("Test Contant Name");
-            phone.Click();
-            phone.SendKeys("8099880000");
+            SeleniumDriver.WaitForDOMready();
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetItemDescription(), "Test Description");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetQuantity(), "160");
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetUnitOfMeasure(), "Hour");
+
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetUnitPrice(), "20");
+
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetSupplierName(), "Think Forward Consulting");
+
             Thread.Sleep(1000);
-            addToCart.Click();
-            Thread.Sleep(2000);
-            viewCartAndCheckout.Click();
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetContactName(), "Test Contant Name");
+
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetPhone(), "8099880000");
+
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetAddToCart());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetViewCartAndCheckout());
+
         }
         public void clickCheckOut()
         {
-            checkout_uixr.Click();
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetCheckout());
+
         }
+        
         public void fillRequisitionInformation()
         {
-            Thread.Sleep(3000);
-            project.SendKeys("21553");
-            task.Click();
-            Thread.Sleep(5000);
-            task.SendKeys("1100");
-            expenditureType.Click();
-            Thread.Sleep(2000);
-            expenditureType.SendKeys("Misc Professional Sv");
-            expenditureItemDate.Click();
-            Thread.Sleep(2000);
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetProject(), "21553");
+            iprocurementRequesterPO.GetProject().SendKeys(Keys.Tab);
+            Thread.Sleep(1000);
+
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetTask(), "1100");
+            Thread.Sleep(1000);
+
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureType(), "Misc Professional Sv");
+            Thread.Sleep(1000);
+
             //Console.WriteLine(DateTime.Today.ToString("dd-MMMM-yyyy"));
-            expenditureItemDate.SendKeys(string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
-            nextButtons.Click();
-        }
-        public void clickManageGraphButton()
-        {
-            manageApprovals.Click();
-        }
-        public void addBeforeApproverAndSubmit(string approver)
-        {
-            newApproverText.SendKeys(approver);
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetExpenditureItemDate(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
+            Thread.Sleep(1000);
 
-            SelectElement selector = new SelectElement(approverLocation);
-            selector.SelectByText("Before Requisition Approver Controller");
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetNextButtons());
 
-            submitButton_uixr.Click();
         }
+
         public void addAfterApprover(string approver)
         {
-            manageApprovals.Click();
-            newApproverText.SendKeys(approver);
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetManageApprovals());
+            SeleniumDriver.SetValue(iprocurementRequesterPO.GetNewApproverText(), approver);
 
-            SelectElement selector = new SelectElement(approverLocation);
-            selector.SelectByText("After Requisition Approver Controller");
-            submitButton_uixr.Click();
-            Thread.Sleep(1000);
+            SeleniumDriver.ClickElement(commonPO.GetSubmitButton_uixr());
+
         }
         public void SubmitAfterApprovers()
         {
-            ApprovalNextButton.Click();
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetApprovalNextButton());
         }
 
         public void submitApproval()
         {
-            submitButton_uixr.Click();
-            continueShoppingButton.Click();
+            SeleniumDriver.ClickElement(commonPO.GetSubmitButton_uixr());
+            SeleniumDriver.ClickElement(iprocurementRequesterPO.GetContinueShoppingButton());
         }
 
         public void openRequisitionsBuyerWorkCenter()
         {
-            requisitionsBuyerWorkCenter.Click();
+            SeleniumDriver.ClickElement(buyerRequisitionPO.GetRequisitionsBuyerWorkCenter());
+
         }
 
         public void openRequisitionsRequisitions()
         {
-            requisitionsRequisitions.Click();
+            SeleniumDriver.ClickElement(buyerRequisitionPO.GetRequisitionsRequisitions());
+
         }
 
         public void selectRequisitionToBeAdded()
         {
-            Thread.Sleep(2000);
-            requisitionToBeAdded.Click();
+
+            SeleniumDriver.ClickElement(buyerRequisitionPO.GetRequisitionToBeAdded());
+
         }
 
-        public void addRequisition()
+        public void addCreateRequisition()
         {
-            addRequisitionButton.Click();
+            SeleniumDriver.ClickElement(buyerRequisitionPO.GetAddRequisitionButton());
+            SeleniumDriver.ClickElement(buyerRequisitionPO.GetCreateButton());
+
         }
 
-        public void clickCreate()
-        {
-            createButton.Click();
-        }
 
-        public void clickPeople()
-        {
-            people.Click();
-        }
-
-        public void clickEntries()
-        {
-            entries.Click();
-        }
-
-        public void clickSalary()
-        {
-            salary.Click();
-        }
-
-        public void clickSalaryB()
-        {
-            salaryB.Click();
-        }
-
-        public void clickValues()
-        {
-            values.Click();
-        }
-
-        public void clickAbsence()
-        {
-            absence.Click();
-        }
-
-        public void clickDescriptionPayroll()
-        {
-            descriptionPayroll.Click();
-        }
-
-        public void clickDescriptionGrade()
-        {
-            descriptionGrade.Click();
-        }
-
-        public void clickDescriptionJob()
-        {
-            descriptionJob.Click();
-        }
-
-        public void clickDescriptionOrganization()
-        {
-            descriptionOrganization.Click();
-        }
-
-        public void clickDescriptionPosition()
-        {
-            descriptionPosition.Click();
-        }
-
-        public const string MyAccountPageTitle = "My Account";
 
         public static bool IsAt()
         {
-            return SeleniumDriver.Instance.Title == "Search";
+            return SeleniumDriver.Instance.Title.Equals("Search");
         }
 
 
         public void chooseVeteranStatus()
         {
-            updateBtn.Click();
-            searchVeteranStatusBtn.Click();
-            Thread.Sleep(1000);
+            SeleniumDriver.ClickElement(commonPO.GetUpdateBtn());
+
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSearchVeteranStatusBtn());
+            Thread.Sleep(2000);
             // Store all the opened window into the 'list' 
             List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[1]);
             SeleniumDriver.Instance.SwitchTo().Frame(0);
-            searchVeteranStatusInputBox.Clear();
-            goBtn.Click();
-            Thread.Sleep(1000);
-            quickSelect2.Click();
-            List<string> lstWindow1 = SeleniumDriver.Instance.WindowHandles.ToList();
-            SeleniumDriver.Instance.SwitchTo().Window(lstWindow1[0]);
-            date.Clear();
-            date.SendKeys(string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
-            applyBtn.Click();
-            nextBtn.Click();
-            submitBtn.Click();
-            homeBtn.Click();
+
+            SeleniumDriver.ClearValue(employeeDirectAccessPO.GetSearchVeteranStatusInputBox());
+            SeleniumDriver.ClickElement(commonPO.GetGoBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSelectRadioBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSelectStatusBtn());
+
+            SeleniumDriver.Instance.SwitchTo().Window(lstWindow[0]);
+            SeleniumDriver.ClearValue(employeeDirectAccessPO.GetDateInput());
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetDateInput(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today));
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetApplyBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSubmitBtn());
+            SeleniumDriver.ClickElement(commonPO.GetGoHomeBtn());
+          
+
 
         }
 
         public void DoDiscovererWorkbookMultipleSheets()
         {
-            Thread.Sleep(2000);
-            detailActiveEmployeeOptn.Click();
+            SeleniumDriver.ClickElement(abtHRUserPO.GetDetailActiveEmployeeOptn());
             ClickMainMenuTableOption("Modified Detail Active Emp Listing");
 
         }
@@ -1004,21 +329,20 @@ namespace AbtFramework
         public void DoDiscovererWorkbookOneSheet()
         {
             int count = 0;
-            Thread.Sleep(1000);
+            List<IWebElement> list = abtHRUserPO.GetSelectToExpandIcons();
             //to expand all menus first
-            while (selectToExpandIcons.Count != 0)
+            while (list != null && list.Count != 0)
             {
-                selectToExpandIcons[0].Click();
-                Thread.Sleep(1000);
-                selectToExpandIcons = SeleniumDriver.Instance.FindElements(By.XPath("//img[@alt = 'Select to expand']"));
+                SeleniumDriver.ClickElement(list[0]);
+                list = abtHRUserPO.GetSelectToExpandIcons();
 
             }
 
+            List<IWebElement> expList = abtHRUserPO.GetExpandedOptionToClick();
             //to click on the expanded links
-            while (count < expandedOptionToClick.Count)
+            while (count < expList.Count)
             {
-                expandedOptionToClick[count].Click();
-                Thread.Sleep(1000);
+                SeleniumDriver.ClickElement(expList[count]);
                 count++;
             }
 
@@ -1051,11 +375,12 @@ namespace AbtFramework
 
         }
 
+
         public void FillOracleFroms()
         {
-
             patterns = new OracleFormsPatternObject();
             commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
 
@@ -1192,6 +517,8 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+
             sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
 
             sikuliHelper.ClickPattern(gradePatterns.GetView);
@@ -1264,7 +591,10 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+
             FindEmployeeName("oumsalem, sofiane");
+
 
             sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOfficeDetails);
 
@@ -1279,8 +609,9 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
 
             sikuliHelper.ClickPattern(commonPatterns.GetOkBtnCloseOracleForm);
-
         }
+
+
 
         /// <summary>
         /// Update the Office Details and confirm that there is no link 
@@ -1295,6 +626,8 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+
             FindEmployeeName("oumsalem, sofiane");
 
             sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
@@ -1302,70 +635,80 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetOkBtnCloseOracleForm);
 
             sikuliHelper.ClickPattern(commonPatterns.GetCloseWindow);
+
         }
 
         public void ChangeTimecardApprover()
         {
             SelectEmployeeInPeopleHierarchy();
+
             string nextSaturday = GetNextWeekDay(DateTime.Today.AddDays(1), DayOfWeek.Saturday);
-            effectiveDate.SendKeys(nextSaturday);
-            continueBtn.Click();
-            supervisorName.Clear();
-            supervisorName.SendKeys("poodts"); 
-            supervisorName.SendKeys(Keys.Tab);
-            nextBtnValidateChangeManager.Click();
-            timecardApprover.Clear();
-            timecardApprover.SendKeys("poodts");
-            timecardApprover.SendKeys(Keys.Tab);
-            Thread.Sleep(1000);
-            SelectElement select = new SelectElement(changeReasonSelect);
-            select.SelectByText("Supervisor & Timecard Approver Change");
-            nextBtnValidateAssignment.Click();
-            submitChangeTimecardApproverSupervisor.Click();
-            homeBtn.Click();
+            SeleniumDriver.SetValue(operationsSelfPO.GetEffectiveDateInput(), nextSaturday);
+
+            SeleniumDriver.ClickElement(operationsSelfPO.GetContinueChangeHoursBtn());
+
+            SeleniumDriver.ClearValue(operationsSelfPO.GetSupervisorNameInput());
+            SeleniumDriver.SetValue(operationsSelfPO.GetSupervisorNameInput(), "poodts");
+            SeleniumDriver.SetValue(operationsSelfPO.GetSupervisorNameInput(), Keys.Tab);
+
+            SeleniumDriver.ClickElement(operationsSelfPO.GetNextBtnValidateChangeManagerBtn());
+
+            SeleniumDriver.ClearValue(operationsSelfPO.GetTimecardApproverInput());
+            SeleniumDriver.SetValue(operationsSelfPO.GetTimecardApproverInput(), "poodts");
+            SeleniumDriver.SetValue(operationsSelfPO.GetTimecardApproverInput(), Keys.Tab);
+
+            SeleniumDriver.SelectDropDownByText(operationsSelfPO.GetChangeReasonSelect(), "Supervisor & Timecard Approver Change");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetNextBtnValidateAssignmentBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSubmitChangeTimecardApproverSupervisorBtn());
+            SeleniumDriver.ClickElement(commonPO.GetGoHomeBtn());
+
         }
 
         public void ChangeEmployeeHours()
         {
             SelectEmployeeInPeopleHierarchy();
+
             string nextSaturday = GetNextWeekDay(DateTime.Today.AddDays(1), DayOfWeek.Saturday);
-            effectiveDate.SendKeys(nextSaturday);
-            continueBtn.Click();
-            workHoursInputField.Clear();
-            workHoursInputField.SendKeys("32");
-            Thread.Sleep(1000);
-            SelectElement select = new SelectElement(assignmentCategory);
-            select.SelectByText("Parttime-Standard");
-            nextBtnValidateWorkSchedule.Click();
-            proposePayChange.Click();
-            Thread.Sleep(1000);
-            SelectElement selectReason = new SelectElement(reasonForPayChange);
-            selectReason.SelectByText("Status Change");
-            actualPayAmount.SendKeys("50000");
-            applyButton.Click();         
-            applyButton.Click();           
-            nextBtnValidatePayChangeProposal.Click();
-            submitChangeHours.Click();
+            SeleniumDriver.SetValue(operationsSelfPO.GetEffectiveDateInput(), nextSaturday);
+            SeleniumDriver.ClickElement(operationsSelfPO.GetContinueChangeHoursBtn());
+
+            SeleniumDriver.ClearValue(operationsSelfPO.GetWorkHoursInputField());
+            SeleniumDriver.SetValue(operationsSelfPO.GetWorkHoursInputField(), "32");
+
+            SeleniumDriver.SelectDropDownByText(operationsSelfPO.GetAssignmentCategorySelect(), "Parttime-Standard");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetNextBtnValidateWorkSchedule());
+
+            SeleniumDriver.ClickElement(operationsSelfPO.GetProposePayChangeBtn());
+
+            SeleniumDriver.SelectDropDownByText(operationsSelfPO.GetReasonForPayChangeSelect(), "Status Change");
+
+            SeleniumDriver.SetValue(operationsSelfPO.GetActualPayAmountInput(), "50000");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyPayDetailsButton());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyPayDetailsButton());
+
+            SeleniumDriver.ClickElement(operationsSelfPO.GetNextBtnValidatePayChangeProposal());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSubmitChangeHoursBtn());
+
         }
 
         /// <summary>
         /// Performs a offboarding (termination) to an employee
-        /// </summary>       
+        /// </summary>
         public void DoOffboardEmployee()
         {
             SelectEmployeeInPeopleHierarchy();
 
-            SelectElement select = new SelectElement(changeReasonSelect);
-            select.SelectByText("Employee Transfer");
-
-            commentsTextArea.SendKeys("For Testing");
-            nextBtnAfterReason.Click();
+            SeleniumDriver.SelectDropDownByText(operationsSelfPO.GetChangeReasonSelect(), "Employee Transfer");
+            SeleniumDriver.SetValue(operationsSelfPO.GetCommentsTextArea(), "For Testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetNextBtnAfterReason());
 
             AddAttachmentsAdditionalInfo();
 
-            submitInReviewConfirmationBtn.Click();
-        }
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSubmitInReviewConfirmationBtn());
 
+
+
+        }
         /// <summary>
         /// Performs Spot Bonus action against an employee.
         /// </summary>
@@ -1373,32 +716,35 @@ namespace AbtFramework
         {
             SelectEmployeeInPeopleHierarchy();
 
-            addBtn.Click();
-            if (!paymentTypeInput.GetAttribute("value").Equals("SP"))
+            SeleniumDriver.ClickElement(commonPO.GetAddBtn());
+
+            if (!operationsSelfPO.GetPaymentTypeInput().GetAttribute("value").Equals("SP"))
                 Assert.Fail("Error: SP value not present in Payment Input");
 
             string nextSaturday = GetNextWeekDay(DateTime.Today.AddDays(1), DayOfWeek.Saturday);
-            paymentDateInput.SendKeys(nextSaturday);
-            paymentAmountInput.SendKeys("100");
-            paymentBonusAwardedByIcon.Click();
+            SeleniumDriver.SetValue(operationsSelfPO.GetPaymentDateInput(), nextSaturday);
+            SeleniumDriver.SetValue(operationsSelfPO.GetPaymentAmountInput(), "100");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetPaymentBonusAwardedByIcon());
 
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             // Store all the opened window into the 'list' 
             List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[1]);
             SeleniumDriver.Instance.SwitchTo().Frame(0);
-            bonusAwardedBySearchInput.SendKeys("oumsalem, sofiane");
-            goBtn.Click();
-            bonusAwardedSelecRadioBtn.Click();
-            selectBtnsList[0].Click();
+
+            SeleniumDriver.SetValue(operationsSelfPO.GetBonusAwardedBySearchInput(), "oumsalem, sofiane");
+            SeleniumDriver.ClickElement(commonPO.GetGoBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetBonusAwardedSelecRadioBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSelectBtnsList());
+
 
             SeleniumDriver.Instance.SwitchTo().Window(lstWindow[0]);
-            paymentCommentsInput.SendKeys("For testing");
-            applyOrNextBonusBtn.Click();
-            applyOrNextBonusBtn.Click();
+            SeleniumDriver.SetValue(operationsSelfPO.GetPaymentCommentsInput(), "For testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyOrNextBonusBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyOrNextBonusBtn());
 
             AddAttachmentsAdditionalInfo();
-            submitInReviewConfirmationBtn.Click();
+            SeleniumDriver.ClickElement(operationsSelfPO.GetSubmitInReviewConfirmationBtn());
         }
 
 
@@ -1408,12 +754,13 @@ namespace AbtFramework
         /// </summary>
         private void AddAttachmentsAdditionalInfo()
         {
-            addAttachments.Click();
-            titleAttachmentInput.SendKeys("Test");
-            descrptionAttachmentTextArea.SendKeys("For Testing");
-            defineAttachmentTextRadioBtn.Click();
-            descriptionTextAreaAttachment.SendKeys("For Testing");
-            applyAttachmentBtn.Click();
+            SeleniumDriver.ClickElement(commonPO.GetAddBtn());
+            SeleniumDriver.SetValue(operationsSelfPO.GetTitleAttachmentInput(), "Testing");
+            SeleniumDriver.SetValue(operationsSelfPO.GetDescrptionAttachmentTextArea(), "For Testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetDefineAttachmentTextRadioBtn());
+            SeleniumDriver.SetValue(operationsSelfPO.GetDescriptionTextAreaAttachment(), "Testing");
+            SeleniumDriver.ClickElement(operationsSelfPO.GetApplyAttachmentBtn());
+
         }
 
         /// <summary>
@@ -1422,11 +769,11 @@ namespace AbtFramework
         /// </summary>
         private void SelectEmployeeInPeopleHierarchy()
         {
-            nameInputField.SendKeys("laidoson");
-            goButton.Click();
-            selectName.Click();
-            actionIcon.Click();
-           
+            SeleniumDriver.SetValue(commonPO.GetNameSearchInputField(), "laidoson");
+            SeleniumDriver.ClickElement(commonPO.GetGoBtn());
+            SeleniumDriver.ClickElement(commonPO.GetSelectNameInputCheckBox());
+            SeleniumDriver.ClickElement(commonPO.GetDoActionIcon());
+
         }
 
         /// <summary>
@@ -1438,15 +785,14 @@ namespace AbtFramework
         private string GetNextWeekDay(DateTime startDate, DayOfWeek day)
         {
             int daysToAdd = ((int)day - (int)startDate.DayOfWeek + 7) % 7;
-            return startDate.AddDays(daysToAdd).Date.ToString("d");
+            return startDate.AddDays(daysToAdd).Date.ToString("dd-MMM-yyyy");
         }
 
         public void ApproveChanges()
         {
-            SelectElement select = new SelectElement(openNotifications);
-            select.SelectByText("All Notifications");
-            goNotifications.Click();
-            subjectLink.Click();
+            SeleniumDriver.SelectDropDownByText(workFlowPO.GetOpenNotificationsSelect(), "All Notifications");
+            SeleniumDriver.ClickElement(workFlowPO.GetGoNotificationsBtn());
+            SeleniumDriver.ClickElement(workFlowPO.GetSubjectLink());
         }
 
         public void ConfirmDefaultProcess()
@@ -1456,6 +802,8 @@ namespace AbtFramework
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             FindEmployeeName("oumsalem, sofiane");
 
@@ -1467,9 +815,9 @@ namespace AbtFramework
                 counter1--;
             }
 
-            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetNewHire); 
+            sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetNewHire);
 
-            sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities); 
+            sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
 
             sikuliHelper.ClickPattern(ConfDefaultProcessRunsPatterns.GetEnrollmentResults);
 
@@ -1484,9 +832,9 @@ namespace AbtFramework
 
             AcceptJavaAlert();
 
-            sikuliHelper.ClickPattern(LifeEventPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
-            FindEmployeeName("oumsalem, sofiane");
+            FindEmployeeName("Pardikar, Parimal");
 
             sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
 
@@ -1545,7 +893,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(LifeEventPatterns.GetEndDateInputField);
 
             //It has to be the current date. Could not find a way to insert today's date automatically
-            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "12-DEC-2017");
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "21-DEC-2017");
 
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
 
@@ -1565,77 +913,76 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetReturnToPeopleLink);
 
-            nameInputField.SendKeys("oumsalem");
+            SeleniumDriver.SetValue(commonPO.GetNameSearchInputField(), "pardikar");
 
-            goButton.Click();
-            actionIcon.Click();
-            nextChangeSessionDate.Click();
-            addAnotherPersonBtn.Click();
-            SelectElement slctRelationship = new SelectElement(selectRelationship);
-            slctRelationship.SelectByText("Child");
-            relationshipStartDateInputField.SendKeys("30-Dec-2017");
-            beneficiaryFirstName.SendKeys("Liam");
-            beneficiaryLastName.SendKeys("Oumsalem"); 
+            SeleniumDriver.ClickElement(commonPO.GetGoBtn());
+            SeleniumDriver.ClickElement(commonPO.GetDoActionIcon());
+            SeleniumDriver.ClickElement(commonPO.GetNextChangeSessionDate());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetAddAnotherPersonBtn());
+            SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectRelationship(), "Child");
+            SeleniumDriver.SetValue(commonPO.GetRelationshipStartDateInputField(), "30-Dec-2017");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryFirstName(), "Liam");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryLastName(), "pardikar");
+
         }
 
         public void UpdatePersonalInformation()
         {
             // Update Middle Name in Basic Details section
-            updateBasicDetailsBtn.Click();
-            next.Click();
-            middleNameInputField.SendKeys("Liam");
-            effectiveDateBasicDetails.Clear();
-            effectiveDateBasicDetails.SendKeys(string.Format("{0:dd-MMM-yyyy}", DateTime.Today.AddDays(1)));
-            next.Click();
-            cancelInfoChanges.Click();
-            YesBtn.Click();
-            Thread.Sleep(1000);
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetUpdateBasicDetails());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextChooseBtn());
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetMiddleNameInputField(), "Liam");
+            SeleniumDriver.ClearValue(employeeDirectAccessPO.GetEffectiveDateBasicDetails());
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetEffectiveDateBasicDetails(), string.Format("{0:dd-MMM-yyyy}", DateTime.Today.AddDays(1)));
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextChooseBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetCancelInfoChanges());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetYesBtn());
+
             //Update phone number in Phone Numbers section
-            updatePhoneNumbers.Click();
-            phoneNumInputField.Clear();
-            phoneNumInputField.SendKeys("585-831-2417");
-            nextPhoneNum.Click();
-            cancelInfoChanges.Click();
-            YesBtn.Click();
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetUpdatePhoneNumbers());
+            SeleniumDriver.ClearValue(employeeDirectAccessPO.GetPhoneNumInputField());
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetPhoneNumInputField(), "585-831-2417");
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextPhoneNumBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetCancelInfoChanges());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetYesBtn());
+
             //Update Middle Name of the Emergency Contact
-            updateEmergencyContactsBtn.Click();
-            middleNameInputField.SendKeys("Ania");
-            nextEmergencyContact.Click();
-            cancelInfoChanges.Click();
-            YesBtn.Click();
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetUpdateEmergencyContacts());
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetMiddleNameInputField(), "Ania");
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextEmergencyContact());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetCancelInfoChanges());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetYesBtn());
         }
 
         public void AddBeneficiaries()
         {
             //to confirm that we can change the time period to see past elections
-            Thread.Sleep(1000);
-            SelectElement selectDate = new SelectElement(selectElectionsDate);
-            selectDate.SelectByIndex(2);
-            goToElections.Click();
-            selectDate.SelectByIndex(0);
-            goToElections.Click();
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToUpdateBeneficiaries());
+            SeleniumDriver.SelectDropDown(employeeDirectAccessPO.GetSelectElectionsDate(), 2);
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetGoToElections());
+            SeleniumDriver.SelectDropDown(employeeDirectAccessPO.GetSelectElectionsDate(), 0);
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetGoToElections());
+
             //to add beneficiaries 
-            updateBeneficiariesBtn.Click();
-            addAnotherPersonBtn.Click();
-            Thread.Sleep(1000);
-            SelectElement slctRelationship = new SelectElement(selectRelationship);
-            slctRelationship.SelectByText("Child");
-            beneficiaryFirstName.SendKeys("Liam");
-            beneficiaryLastName.SendKeys("Oumsalem");
-            sharedResidenceCheckBox.Click();
-            SelectElement slctGender = new SelectElement(selectGender);
-            slctGender.SelectByText("Male");
-            DOBInputField.SendKeys("30-Nov-2017");
-            applyNewBeneficiary.Click();
-            nextToUpdateBeneficiaries.Click();
-            nextToConfirmation.Click();
-            finishBtn.Click();
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetUpdateBeneficiariesBtn());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetAddAnotherPersonBtn());
+            SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectRelationship(), "Child");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryFirstName(), "Nina");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryLastName(), "Oumsalem");
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSharedResidenceCheckBox());
+            SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectGender(), "Female");
+            SeleniumDriver.SetValue(employeeDirectAccessPO.GetDOBInputField(), "27-Nov-2017");
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetApplyNewBeneficiary());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToUpdateBeneficiaries());
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToConfirmation()); 
+            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetFinishBtn());
+           
         }
 
         /// <summary>
         /// Confirm that terminate process was run successfully
         /// </summary>
-         
+
         public void ConfirmTerminateProcessSuccess()
         {
             ConfProcessPatterns = new ConfProcessObjects();
@@ -1643,6 +990,8 @@ namespace AbtFramework
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             FindEmployeeName("oumsalem, sofiane");
 
@@ -1671,6 +1020,8 @@ namespace AbtFramework
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
             sikuliHelper.ClickPattern(submitReportPatterns.GetOkBtnRequestType);
 
@@ -1704,5 +1055,8 @@ namespace AbtFramework
 
         }
 
+
+
     }
+
 }

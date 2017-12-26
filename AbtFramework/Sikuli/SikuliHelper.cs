@@ -18,7 +18,7 @@ namespace AbtFramework.Sikuli
     public class SikuliHelper
     {
         private static SikuliHelper instance;
-        private static ISikuliSession session;     
+        private static ISikuliSession session;
 
         private SikuliHelper()
         {
@@ -62,7 +62,7 @@ namespace AbtFramework.Sikuli
 
         {
             this.ClickPattern(pattern);
-            session.Type(text);      
+            session.Type(text);
 
         }
 
@@ -73,7 +73,6 @@ namespace AbtFramework.Sikuli
         public bool IsPatternExisting(IPattern pattern)
         {
             return session.Exists(pattern);
-
         }
 
         /// <summary>
@@ -152,8 +151,8 @@ namespace AbtFramework.Sikuli
                 Console.WriteLine(e);
                 return null;
             }
-        } 
-        
+        }
+
         public void PressEnter()
         {
             session.Type("\\n");

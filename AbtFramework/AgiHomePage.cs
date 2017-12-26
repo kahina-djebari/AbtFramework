@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
 using System.Threading;
+using AbtFramework.Utils_Classes.SeleniumUtils;
 
 namespace AbtFramework
 {
@@ -197,10 +198,10 @@ namespace AbtFramework
 
                 }
                  
-            //    SeleniumDriver.Instance.Navigate().GoToUrl("https:/agiokta.abtassociates.com");
+            //    SeleniumDriver.DriverInstance.Navigate().GoToUrl("https:/agiokta.abtassociates.com");
               //  Console.WriteLine("Going to AGI Home Page...");
                // Console.WriteLine("</br>");
-              //  wait.Until(e => SeleniumDriver.Instance.Title.Equals("Home"));
+              //  wait.Until(e => SeleniumDriver.DriverInstance.Title.Equals("Home"));
 
                 
 

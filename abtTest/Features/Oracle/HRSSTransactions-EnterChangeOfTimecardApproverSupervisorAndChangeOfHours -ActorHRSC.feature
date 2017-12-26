@@ -7,7 +7,7 @@
 Scenario: HRSS Transactions - Enter Change of Timecard ApproverSupervisor and Change of Hours - Actor HRSC
 	Given I have Open IE Test
 	And I have navigated to Oracle Dev
-	And i login as "Lisa Butterfield"
+	And i login as "HRTEST01"
 	Then click the "Abt HR Operations Self Service" option
 	And click the "Change Timecard Approver and Supervisor" option
 	Then change timecard approver
