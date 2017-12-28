@@ -1,0 +1,11 @@
+[debug (12/27/17 11:50:42 AM)] Debug: setLogFile: C:\SikuliX\SikuliX-1.1.0-SetupLog.txt
+[debug (12/27/17 11:50:42 AM)] RunSetup: ... starting with no args given
+[debug (12/27/17 11:50:42 AM)] RunSetup: Setup: 1.1.0 2015-10-06_17:22 in folder:
+C:\SikuliX
+[debug (12/27/17 11:50:42 AM)] RunSetup: RunningSystem: Windows 6.1
+[debug (12/27/17 11:50:42 AM)] RunSetup: parent of jar/classes: C:\SikuliX
+[debug (12/27/17 11:50:42 AM)] RunSetup: RunningJava: Java 6 (x86) 1.6.0_65-b14
+[debug (12/27/17 11:50:42 AM)] init user preferences
+[debug (12/27/17 11:52:14 AM)] RunTimeSETUP: final cleanup
+[debug (12/27/17 11:52:15 AM)] FileManager: deleteFileOrFolder:
+C:\Users\BERNHA~1\AppData\Local\Temp\Sikulix_1160204128
