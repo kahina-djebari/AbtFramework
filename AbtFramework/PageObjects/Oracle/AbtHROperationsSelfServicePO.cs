@@ -217,6 +217,12 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetListElementByXpath(xpath)[0];
         }
 
+        public IWebElement GetReturnToPeopleInHierarchyLink()
+        {
+            string xpath = "//a[@title = 'Return to People in Hierarchy']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
 
     }
 }

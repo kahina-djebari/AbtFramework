@@ -153,16 +153,27 @@ namespace AbtFramework.Sikuli
             }
         }
 
+        /// <summary>
+        /// Press the Enter Key from the keyboard
+        /// </summary>
         public void PressEnter()
         {
             session.Type("\\n");
         }
 
         /// <summary>
+        /// Press the Down Arrow Key from the keyboard
+        /// </summary>
+        public void PressDownArrow()
+        {
+            session.Type("\\ue002");
+        }
+
+        /// <summary>
         /// Double click
         /// </summary>
         /// <param name="pattern"></param>
-        public void DoubleClicklickPattern(IPattern pattern)
+        public void DoubleClickPattern(IPattern pattern)
         {
             session.DoubleClick(pattern);
         }

@@ -521,49 +521,49 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetEnter);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
 
             sikuliHelper.SetInputValue(gradePatterns.GetNameField, "%");
 
-            sikuliHelper.ClickPattern(gradePatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetRun);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
 
             sikuliHelper.ClickPattern(gradePatterns.GetGradeNameField);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetEnter);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
 
             sikuliHelper.SetInputValue(gradePatterns.GetGradeNameInputField, "%Can%");
 
-            sikuliHelper.ClickPattern(gradePatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetRun);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetEnter);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
 
             sikuliHelper.SetInputValue(gradePatterns.GetGradeNameInputField, "%Mex%");
 
-            sikuliHelper.ClickPattern(gradePatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
 
-            sikuliHelper.ClickPattern(gradePatterns.GetRun);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
         }
 
         /// <summary>
@@ -834,7 +834,7 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
 
-            FindEmployeeName("Pardikar, Parimal");
+            FindEmployeeName("Poodts, Mauricio");
 
             sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
 
@@ -853,7 +853,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(LifeEventPatterns.GetAbtAdminLE);
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateLEReason);
-
+            Thread.Sleep(1000);
             sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectBtn);
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectLEDate);
@@ -872,15 +872,20 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
 
-            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
 
             sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
 
-            sikuliHelper.ClickPattern(LifeEventPatterns.GetProcessLifeEvent);
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetProcessLifeEvents);
+
+            if(LifeEventPatterns.GetYesToCloseActiveLE != null)
+            {
+                sikuliHelper.ClickPattern(LifeEventPatterns.GetYesToCloseActiveLE);
+            }
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetCommitAndProceedBtn);
 
-            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
 
             sikuliHelper.ClickPattern(commonPatterns.GetDesktopActivities);
 
@@ -888,42 +893,110 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetLatestLE);
 
-            sikuliHelper.ClickPattern(LifeEventPatterns.GetEnrollmentOpportunities);
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetEnrollmentOpportunitiesBtn);
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetEndDateInputField);
 
             //It has to be the current date. Could not find a way to insert today's date automatically
-            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "21-DEC-2017");
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "29-DEC-2017");
 
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
-
-            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
-
-            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
-
-            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindow);
-
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
+            Thread.Sleep(1000);
             sikuliHelper.ClickPattern(LifeEventPatterns.GetSwitchResponsabilityIcon);
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetAbtOAB);
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetOkBtnValidateAbtOAB);
+            Thread.Sleep(2000);
+            sikuliHelper.DoubleClickPattern(LifeEventPatterns.GetBenefitsOption);
 
-            sikuliHelper.DoubleClicklickPattern(LifeEventPatterns.GetBenefitsOption);
+            sikuliHelper.ClickPattern(commonPatterns.GetMaximizeWindow);
 
-            sikuliHelper.ClickPattern(LifeEventPatterns.GetReturnToPeopleLink);
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetReturnToPeopleInHierarchyLink);
 
-            SeleniumDriver.SetValue(commonPO.GetNameSearchInputField(), "pardikar");
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetEmployeeNameInputField, "Poodts");
 
-            SeleniumDriver.ClickElement(commonPO.GetGoBtn());
-            SeleniumDriver.ClickElement(commonPO.GetDoActionIcon());
-            SeleniumDriver.ClickElement(commonPO.GetNextChangeSessionDate());
-            SeleniumDriver.ClickElement(employeeDirectAccessPO.GetAddAnotherPersonBtn());
-            SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectRelationship(), "Child");
-            SeleniumDriver.SetValue(commonPO.GetRelationshipStartDateInputField(), "30-Dec-2017");
-            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryFirstName(), "Liam");
-            SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryLastName(), "pardikar");
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetGoBtn);
 
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetActionIcon);
+            
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetNextBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetAddAnotherPersonBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectRelationship); 
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectChild);
+
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetRelationshipStartDateInput, "11-Dec-2017");
+
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetFNameInputField, "Max");
+
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetLNameInputField, "Poodts");
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetSharedResidenceCheckBox);
+
+            while (counter > 0)
+            {
+                sikuliHelper.ClickPattern(LifeEventPatterns.GetScrollDown);
+                counter--;
+            }
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetGenderSelect);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetMale);
+
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetDOBInputField, "11-Dec-2017");
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetApplyBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetNextBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetUpdateBenefitsBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetNextBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetCoverCheckBox);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetNextBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetNextBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetNextBtn);
+
+            sikuliHelper.ClickPattern(LifeEventPatterns.GetFinishBtn);
+
+            //Store all the opened window into the 'list' 
+            //List<string> lstWindow = SeleniumDriver.Instance.WindowHandles.ToList();
+            //SeleniumDriver.Instance.SwitchTo().Window(lstWindow[0]);
+            //SeleniumDriver.ClickElement(operationsSelfPO.GetReturnToPeopleInHierarchyLink());       
+            //SeleniumDriver.SetValue(commonPO.GetNameSearchInputField(), "Stinson");
+            //SeleniumDriver.ClickElement(commonPO.GetGoBtn());
+            //SeleniumDriver.ClickElement(commonPO.GetDoActionIcon());
+            //SeleniumDriver.ClickElement(commonPO.GetNextChangeSessionDate());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetAddAnotherPersonBtn());
+            //SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectRelationship(), "Child");
+            //SeleniumDriver.SetValue(commonPO.GetRelationshipStartDateInputField(), "11-Dec-2017");
+            //SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryFirstName(), "Maxim");
+            //SeleniumDriver.SetValue(employeeDirectAccessPO.GetBeneficiaryLastName(), "Stinson");
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetSharedResidenceCheckBox());
+            //SeleniumDriver.SelectDropDownByText(employeeDirectAccessPO.GetSelectGender(), "Male");
+            //SeleniumDriver.SetValue(employeeDirectAccessPO.GetDOBInputField(), "11-Dec-2017");
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetApplyNewBeneficiary());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextToUpdateBeneficiaries());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetUpdateBenefitsBtn());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextBtnUpdateEnrollments());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetCoverCheckBox());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextBtnCoverDependants());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextBtnUpdateBeneficiaries());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetNextBtnCareProviders());
+            //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetFinishBtnConfirmation());
         }
 
         public void UpdatePersonalInformation()
@@ -1010,7 +1083,7 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// Submit an 'Abt HSA Bi Weekly Employer Funding – STEP ONE Report' and make sure that 
+        /// Submit a 'Abt HSA Bi Weekly Employer Funding – STEP ONE Report' and make sure that 
         /// the log of requests was uploaded correctly and opens in IE. 
         /// </summary>
         public void submitReport()
@@ -1055,7 +1128,32 @@ namespace AbtFramework
 
         }
 
+        public void ExtractResults()
+        {
+            commonPatterns = new CommonPaternObjects();
+            sikuliHelper = SikuliHelper.GetInstance();
 
+            AcceptJavaAlert();
+
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
+
+            //sikuliHelper.ClickPattern(commonPatterns.GetDownArrowKey);  //using the on-screen keyboard
+
+            //sikuliHelper.PressDownArrow();
+
+        }
 
     }
 

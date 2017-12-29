@@ -219,5 +219,47 @@ namespace AbtFramework.PageObjects.Oracle
             string xpath = "//h1[text()='Confirmation Statement']/parent::div//descendant::button[@title='Back to Overview']";
             return SeleniumDriver.GetElementByXpath(xpath);
         }
+
+        public IWebElement GetUpdateBenefitsBtn()
+        {
+            string xpath = "//button[@title='Update Benefits']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
+
+        public IWebElement GetNextBtnUpdateEnrollments()
+        {
+            string xpath = "//button[@title='Next to Cover Dependents']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
+
+        public IWebElement GetCoverCheckBox()
+        {
+            string xpath = "//input[@title='Cover']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[1];
+        }
+
+        public IWebElement GetNextBtnCoverDependants()
+        {
+            string xpath = "//button[@title='Next to Update Beneficiaries']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
+
+        public IWebElement GetNextBtnUpdateBeneficiaries()
+        {
+            string xpath = "//button[@title='Next to Update Primary Care Providers']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
+
+        public IWebElement GetNextBtnCareProviders()
+        {
+            string xpath = "//button[@title='Next to Confirmation Statement']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
+
+        public IWebElement GetFinishBtnConfirmation()
+        {
+            string xpath = "//button[@title='Back to Overview']";
+            return SeleniumDriver.GetListElementByXpath(xpath)[0];
+        }
     }
 }

@@ -46,9 +46,21 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetViewPersonLifeEvents => sikuliHelper.GetPattern(PATH + "ViewPersonLifeEvents.PNG", 5);
 
-        public IPattern GetCloseOracleWindow => sikuliHelper.GetPattern(PATH + "CloseOracleWindow.PNG", 5);
+        public IPattern GetCloseOracleWindows => sikuliHelper.GetPattern(PATH + "CloseOracleWindows.PNG", 5);
 
         public IPattern GetOkNotificationsNote => sikuliHelper.GetPattern(PATH + "OkNotificationsNote.PNG", 5);
+
+        public IPattern GetMaximizeWindow => sikuliHelper.GetPattern(PATH + "MaximizeWindow.PNG", 5);
+
+        public IPattern GetView => sikuliHelper.GetPattern(PATH + "View.PNG", 5);
+
+        public IPattern GetQueryByExample => sikuliHelper.GetPattern(PATH + "QueryByExample.PNG", 5);
+
+        public IPattern GetRun => sikuliHelper.GetPattern(PATH + "Run.PNG", 5);
+
+        public IPattern GetEnter => sikuliHelper.GetPattern(PATH + "Enter.PNG", 5);
+
+        public IPattern GetDownArrowKey => sikuliHelper.GetPattern(PATH + "DownArrowKey.PNG", 5);
 
     }
 }

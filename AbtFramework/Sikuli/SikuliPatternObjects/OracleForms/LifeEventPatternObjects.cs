@@ -42,13 +42,13 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetCommitAndProceedBtn => sikuliHelper.GetPattern(PATH + "CommitAndProceedBtn.PNG", 5);
 
-        public IPattern GetEnrollmentOpportunities => sikuliHelper.GetPattern(PATH + "EnrollmentOpportunities.PNG", 5);
+        public IPattern GetEnrollmentOpportunitiesBtn => sikuliHelper.GetPattern(PATH + "EnrollmentOpportunitiesBtn.PNG", 5);
 
         public IPattern GetLatestLE => sikuliHelper.GetPattern(PATH + "LatestLE.PNG", 5);
 
         public IPattern GetOkBtnValidateAbtOAB => sikuliHelper.GetPattern(PATH + "OkBtnValidateAbtOAB.PNG", 5);
 
-        public IPattern GetProcessLifeEvent => sikuliHelper.GetPattern(PATH + "ProcessLifeEvent.PNG", 5);
+        public IPattern GetProcessLifeEvents => sikuliHelper.GetPattern(PATH + "ProcessLifeEvents.PNG", 5);
 
         public IPattern GetSwitchResponsabilityIcon => sikuliHelper.GetPattern(PATH + "SwitchResponsabilityIcon.PNG", 5);
 
@@ -56,7 +56,46 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetBenefitsOption => sikuliHelper.GetPattern(PATH + "BenefitsOption.PNG", 5);
 
-        public IPattern GetReturnToPeopleLink => sikuliHelper.GetPattern(PATH + "ReturnToPeopleLink.PNG", 5);
+        public IPattern GetYesToCloseActiveLE => sikuliHelper.GetPattern(PATH + "YesToCloseActiveLE.PNG", 5);
 
+        public IPattern GetReturnToPeopleInHierarchyLink => sikuliHelper.GetPattern(PATH + "ReturnToPeopleInHierarchyLink.PNG", 5);
+
+        public IPattern GetEmployeeNameInputField => sikuliHelper.GetPattern(PATH + "EmployeeNameInputField.PNG", 5);
+
+        public IPattern GetGoBtn => sikuliHelper.GetPattern(PATH + "GoBtn.PNG", 5);
+
+        public IPattern GetActionIcon => sikuliHelper.GetPattern(PATH + "ActionIcon.PNG", 5);
+
+        public IPattern GetNextBtn => sikuliHelper.GetPattern(PATH + "NextBtn.PNG", 5);
+
+        public IPattern GetAddAnotherPersonBtn => sikuliHelper.GetPattern(PATH + "AddAnotherPersonBtn.PNG", 5);
+
+        public IPattern GetSelectRelationship => sikuliHelper.GetPattern(PATH + "SelectRelationship.PNG", 5);
+
+        public IPattern GetSelectChild => sikuliHelper.GetPattern(PATH + "SelectChild.PNG", 5);
+
+        public IPattern GetRelationshipStartDateInput => sikuliHelper.GetPattern(PATH + "RelationshipStartDateInput.PNG", 5);
+
+        public IPattern GetFNameInputField => sikuliHelper.GetPattern(PATH + "FNameInputField.PNG", 5);
+
+        public IPattern GetLNameInputField => sikuliHelper.GetPattern(PATH + "LNameInputField.PNG", 5);
+
+        public IPattern GetSharedResidenceCheckBox => sikuliHelper.GetPattern(PATH + "SharedResidenceCheckBox.PNG", 5);
+
+        public IPattern GetScrollDown => sikuliHelper.GetPattern(PATH + "ScrollDown.PNG", 5);
+
+        public IPattern GetGenderSelect => sikuliHelper.GetPattern(PATH + "GenderSelect.PNG", 5);
+
+        public IPattern GetMale => sikuliHelper.GetPattern(PATH + "Male.PNG", 5);
+
+        public IPattern GetDOBInputField => sikuliHelper.GetPattern(PATH + "DOBInputField.PNG", 5);
+
+        public IPattern GetApplyBtn => sikuliHelper.GetPattern(PATH + "ApplyBtn.PNG", 5);
+
+        public IPattern GetUpdateBenefitsBtn => sikuliHelper.GetPattern(PATH + "UpdateBenefitsBtn.PNG", 5);
+
+        public IPattern GetFinishBtn => sikuliHelper.GetPattern(PATH + "FinishBtn.PNG", 5);
+
+        public IPattern GetCoverCheckBox => sikuliHelper.GetPattern(PATH + "CoverCheckBox.PNG", 5);
     }
 }

@@ -282,6 +282,7 @@
     <Folder Include="Sikuli\SikuliPatternImges\CommonPatternImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunsImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\ConfProcessImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\ExtractResultsImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\GradeRateImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\LifeEventImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\OracleFromsImges\" />
