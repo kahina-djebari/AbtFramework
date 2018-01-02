@@ -26,7 +26,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
     /// </summary>
     public class SeleniumDriver
     {
-        
+
         //constants for browser
         private static readonly string IE = "IE";
         private static readonly string CHROME = "Chrome";
@@ -37,7 +37,8 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
         private static readonly int MAX = 3;
 
-        //unique instance of driver, 
+        //unique instance of driver, not private due to previous code using
+        //plain instance and not helpers methods.
         public static IWebDriver Instance;
 
         //to handle javascript actions
@@ -84,10 +85,11 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             options.AddArguments("--disable-popup-blocking"); //To disable automatic popup blocking 
             options.AddArguments("--disable-extensions");
             options.AddArguments("--ignore-certificate-errors");
-           
+
             try
             {
                 Instance = new ChromeDriver(_pathToChrome, options);
+                Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromDays(5));
             }
             catch (Exception e)
             {
@@ -113,13 +115,13 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             InternetExplorerOptions IEoptions = new InternetExplorerOptions();
             //set options
             IEoptions.IgnoreZoomLevel = true;
-            IEoptions.RequireWindowFocus = true;
-            IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true; 
+            IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
             IEoptions.AddAdditionalCapability("acceptSslCerts", true);
 
             try
             {
                 Instance = new InternetExplorerDriver(_pathToIE, IEoptions);
+               Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromDays(5));
             }
             catch (Exception e)
             {
@@ -144,24 +146,29 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         }
 
         /// <summary>
-        /// Goes to an URL
+        /// Goes to an URL adn wait for DOM to be loaded.
         /// </summary>
         /// <param name="url"></param>
         public static void GoTo(string url)
         {
             SeleniumDriver.Instance.Navigate().GoToUrl(url);
+            WaitForDOMready();
         }
 
+        /// <summary>
+        /// Goes Back one page and wait DOM to be loaded.
+        /// </summary>
         public static void NavigateBack()
         {
             WaitForDOMready();
             SeleniumDriver.Instance.Navigate().Back();
+            WaitForDOMready();
         }
 
 
         public static bool isAt()
         {
-            //Thread.Sleep(2000);
+
             SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.Instance.WindowHandles.Last());
             try
             {
@@ -175,7 +182,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
             if (wait.Until(e => CommonPO.OracleWelcome.Displayed))
             {
-             
+
                 return true;
             }
             else
@@ -262,6 +269,10 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
         }
 
+        /// <summary>
+        /// Returns list of current windows
+        /// </summary>
+        /// <returns></returns>
         public static List<string> GetCurrentBrowserWindows()
         {
             return SeleniumDriver.Instance.WindowHandles.ToList();
@@ -273,7 +284,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
 
         ///<summary>
-        ///Perform a click on the element and with JavaScript if needed.
+        ///Perform a click on the element with JavaScript.
         ///</summary>
         ///<param name="element">element to click</param>
         ///
@@ -281,12 +292,13 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         {
             Thread.Sleep(1);
 
+
             try
             {
                 js.ExecuteScript("arguments[0].click();", element);
                 // element.Click();//javaScript click is working better 
             }
-            catch (StaleElementReferenceException e)
+            catch (StaleElementReferenceException)
             {
                 // Ignore
             }
@@ -294,6 +306,9 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             {
                 js.ExecuteScript("arguments[0].click();", element);
             }
+
+
+
         }
 
 
@@ -437,7 +452,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             try
             {
                 js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
-                 WaitVisibilityOf(element);
+                WaitVisibilityOf(element);
             }
             catch (Exception e)
             {
@@ -488,12 +503,12 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
         /// <param name="time"></param>
         public static void WaitVisibilityOf(IWebElement element, int time)
         {
-              WebDriverWait waiting = new WebDriverWait(Instance, TimeSpan.FromSeconds(time));
+            WebDriverWait waiting = new WebDriverWait(Instance, TimeSpan.FromSeconds(time));
 
             try
             {
 
-               waiting.Until(ExpectedConditions.ElementToBeClickable(element));
+                waiting.Until(ExpectedConditions.ElementToBeClickable(element));
             }
             catch (StaleElementReferenceException e)
             {
@@ -574,18 +589,18 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
 
         // - - - - - - - - - - Page Object Helper - - - - - - - - - - //
         // ===================================================================//
-     
-            /// <summary>
-            /// Gets element located by xpath
-            /// </summary>
-            /// <param name="xpath"></param>
-            /// <returns>Element located by xpath</returns>
+
+        /// <summary>
+        /// Gets element located by xpath
+        /// </summary>
+        /// <param name="xpath"></param>
+        /// <returns>Element located by xpath</returns>
         public static IWebElement GetElementByXpath(string xpath)
         {
             return GetElementByXpath(xpath, 10, true);
         }
 
-      
+
         /// <summary>
         /// Gets element located by Name
         /// </summary>
@@ -636,45 +651,45 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             return GetElementByLinkText(linkText, 10, true);
         }
 
-       
+
         public static IWebElement GetElementByXpath(string xpath, long time, bool printError)
         {
             return GetElement(xpath, time, printError, XPATH);
         }
 
-       
-       
+
+
         public static IWebElement GetElementByName(string name, long time, bool printError)
         {
             return GetElement(name, time, printError, NAME);
         }
 
-      
+
         public static IWebElement GetElementByID(string id, long time, bool printError)
         {
             return GetElement(id, time, printError, ID);
         }
 
-        
+
         public static IWebElement GetElementByLinkText(string link, long time, bool printError)
         {
             return GetElement(link, time, printError, LINK);
         }
 
-      
+
         public static List<IWebElement> GetListElementByXpath(string xpath, long time, bool printError)
         {
             return GetListOfElements(xpath, time, printError, XPATH);
         }
 
-       
+
         public static List<IWebElement> GetListElementByName(string name, long time, bool printError)
         {
             return GetListOfElements(name, time, printError, NAME);
         }
 
-      
-   
+
+
 
         private static List<IWebElement> GetListOfElements(string element, long time, bool printError, string by)
         {
@@ -692,7 +707,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
                         elements = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath(element))).ToList();
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // Nothing expected
                 }
@@ -705,7 +720,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             {
                 if (printError)
                 {
-                    Console.WriteLine("---> Unable to find List of elements with " + by + ": " + element);
+                    Assert.Fail("---> Unable to find List of elements with " + by + ": " + element);
                 }
                 return null;
             }
@@ -741,8 +756,8 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
                 }
                 catch (Exception)
                 {
-                  
-                 
+
+
                 }
             }
 
@@ -753,7 +768,7 @@ namespace AbtFramework.Utils_Classes.SeleniumUtils
             {
                 if (printError)
                 {
-                    Console.WriteLine("---> Unable to find element with " + by + ": " + element);
+                    Assert.Fail("---> Unable to find element with " + by + ": " + element);
                 }
                 return null;
             }

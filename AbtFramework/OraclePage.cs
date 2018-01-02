@@ -54,7 +54,6 @@ namespace AbtFramework
     
             StartTimer();
             SeleniumDriver.GoTo("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
-            SeleniumDriver.WaitForDOMready();
        
 
         }
@@ -93,17 +92,16 @@ namespace AbtFramework
                 if (att.Contains("sswa"))
                 {
                     SeleniumDriver.NavigateBack();
-                    SeleniumDriver.WaitForDOMready();
                     linksList = commonPO.GetAllLinksToClickInNavigator();
 
                 }
                 else if (SeleniumDriver.GetCurrentBrowserName().Contains("explorer"))
                 {
-                    Thread.Sleep(10000);
+                    Thread.Sleep(10000); //to wait for oralce forms to pop up, no alternative way so far
                 }
                 else
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(3000); //to wait for page to be open, no alternative so far
                     SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[1]);
                     SeleniumDriver.Close();
                     SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[0]);
@@ -135,9 +133,7 @@ namespace AbtFramework
         public void ClickRightSideMenuTableOptions(string option)
         {
             SeleniumDriver.ClickElement(commonPO.GetSelectHomePageLinkFolder(option));
-            SeleniumDriver.WaitForDOMready();
             SeleniumDriver.NavigateBack();
-            SeleniumDriver.WaitForDOMready();
 
         }
 
@@ -382,6 +378,8 @@ namespace AbtFramework
             commonPatterns = new CommonPaternObjects();
             sikuliHelper = SikuliHelper.GetInstance();
 
+        
+
             AcceptJavaAlert();
 
             sikuliHelper.SetInputValue(patterns.GetDescriptionInput1, "test");
@@ -510,6 +508,7 @@ namespace AbtFramework
 
         public void FillTheGradeRateOracleForms()
         {
+            List<string> pepe = SeleniumDriver.GetCurrentBrowserWindows();
 
             gradePatterns = new GradeRatePatternObject();
             commonPatterns = new CommonPaternObjects();
