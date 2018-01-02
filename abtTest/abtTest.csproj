@@ -148,6 +148,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Oracle ESS-ConfirmingViewInDirectAccessBenefits.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\OracleBenefitsExtract-BenefitExtractRunsOnMonday.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleBenefitsExtract-BenefitExtractRunsOnMonday.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -284,6 +289,10 @@
     <None Include="Features\Oracle\Oracle ESS-ConfirmingViewInDirectAccessBenefits.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Oracle ESS-ConfirmingViewInDirectAccessBenefits.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleBenefitsExtract-BenefitExtractRunsOnMonday.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleBenefitsExtract-BenefitExtractRunsOnMonday.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\OracleBSS-OpeningLE-AddingDependentAndEnrollingInBenefits.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

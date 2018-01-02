@@ -241,5 +241,12 @@ namespace abtTest.Steps.Oracle
              AbtPages.OraclePage.submitReport();
          }
 
+        [Then(@"Extract Results from the Oracle Form")]
+        public void ThenExtractResultsFromTheOracleForm()
+        {
+            AbtPages.OraclePage.ExtractResults();
+        }
+
+
     }
 }
