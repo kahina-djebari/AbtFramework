@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 {
-    class AbtHRMSManagerObject
+    class AbtHRMSManagerPttnObj
     {
-        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/AbtHRMSManagerImges/";
+        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/AbtHRMSManagerPttnImgs/";
         private SikuliHelper sikuliHelper;
 
-        public AbtHRMSManagerObject()
+        public AbtHRMSManagerPttnObj()
         {
             sikuliHelper = SikuliHelper.GetInstance();
 

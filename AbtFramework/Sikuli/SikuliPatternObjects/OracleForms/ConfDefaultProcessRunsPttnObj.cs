@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 {
-    class ConfDefaultProcessRunsObjects
+    class ConfDefaultProcessRunsPttnObj
     {
-        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/ConfDefaultProcessRunsImgs/";
+        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/ConfDefaultProcessRunPttnImgs/";
         private SikuliHelper sikuliHelper;
 
-        public ConfDefaultProcessRunsObjects()
+        public ConfDefaultProcessRunsPttnObj()
         {
             sikuliHelper = SikuliHelper.GetInstance();
 
