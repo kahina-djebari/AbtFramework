@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 {
-    class LifeEventPatternObjects
+    class LifeEventPttnObj
     {
         private SikuliHelper sikuliHelper;
 
-        public LifeEventPatternObjects()
+        public LifeEventPttnObj()
         {
             sikuliHelper = SikuliHelper.GetInstance();
         }
 
-        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/LifeEventImgs/";
+        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/LifeEventPttnImgs/";
 
         public IPattern GetPotentialLifeEventsTab => sikuliHelper.GetPattern(PATH + "PotentialLifeEventsTab.PNG", 5);
 

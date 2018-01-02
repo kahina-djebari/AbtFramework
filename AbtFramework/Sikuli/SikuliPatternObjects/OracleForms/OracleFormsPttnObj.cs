@@ -11,13 +11,13 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
     /// Object class that holds all patterns for Oracle Forms
     /// </summary>
 
-    public class OracleFormsPatternObject
+    public class OracleFormsPttnObj
 
     {
-        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/OracleFromsImges/";
+        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/OracleFromsPttnImges/";
         private SikuliHelper sikuliHelper;
 
-        public OracleFormsPatternObject()
+        public OracleFormsPttnObj()
         {
             sikuliHelper = SikuliHelper.GetInstance();
 

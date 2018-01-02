@@ -7,12 +7,12 @@ using SikuliSharp;
 
 namespace AbtFramework.Sikuli.SikuliPatternObjects
 {
-    public class CommonPaternObjects
+    public class CommonPttnObj
     {
-        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/CommonPatternImgs/";
+        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/CommonPttnImgs/";
         private SikuliHelper sikuliHelper;
 
-        public CommonPaternObjects()
+        public CommonPttnObj()
         {
             sikuliHelper = SikuliHelper.GetInstance();
 

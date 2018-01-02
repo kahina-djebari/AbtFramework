@@ -139,6 +139,7 @@
     <Compile Include="MyIRRSubmition.cs" />
     <Compile Include="NewsDropdown.cs" />
     <Compile Include="PageObjects\Oracle\AbtHROperationsSelfServicePO.cs" />
+    <Compile Include="PageObjects\Oracle\AbtUSAPSuperUserPO.cs" />
     <Compile Include="PageObjects\Oracle\BuyerWorkRequisitionPO.cs" />
     <Compile Include="PageObjects\Oracle\CommonPO.cs" />
     <Compile Include="PageObjects\Oracle\AbtUSEmployeeDirectAccessPO.cs" />
@@ -150,20 +151,21 @@
     <Compile Include="RightFindHomePage.cs" />
     <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SANSHomepage.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\AbtUSAPSuperUserPttnObj.cs" />
     <Compile Include="Utils Classes\SeleniumUtils\SeleniumDriver.cs" />
     <Compile Include="ServiceNowIRRForm.cs" />
     <Compile Include="ServiceNowIRRTable.cs" />
     <Compile Include="ServiceNowTaskBar.cs" />
     <Compile Include="SharePointTopNavigation.cs" />
     <Compile Include="Sikuli\SikuliHelper.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\CommonPaternObjects.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\AbtHRMSManagerObject.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfDefaultProcessRunsObjects.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfProcessObjects.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\GradeRatePatternObject.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\LifeEventPatternObjects.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\OracleFormsPatternObject.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\SubmitReportObjects.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\CommonPttnObj.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\AbtHRMSManagerPttnObj.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfDefaultProcessRunsPttnObj.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\ConfProcessPttnObj.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\GradeRatePttnObj.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\LifeEventPttnObj.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\OracleFormsPttnObj.cs" />
+    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\SubmitReportPttnObj.cs" />
     <Compile Include="SubmittedOrderPage.cs" />
     <Compile Include="CustomizeLinksPage.cs" />
     <Compile Include="DistListReqFormPage.cs" />
@@ -277,15 +279,16 @@
   <ItemGroup>
     <Folder Include="Drivers\Chrome\" />
     <Folder Include="Drivers\IE\" />
-    <Folder Include="Sikuli\SikuliPatternImges\AbtHRMSManagerImges\" />
-    <Folder Include="Sikuli\SikuliPatternImges\CommonPatternImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunsImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\ConfProcessImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\ExtractResultsImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\GradeRateImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\LifeEventImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\OracleFromsImges\" />
-    <Folder Include="Sikuli\SikuliPatternImges\SubmitReportImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\AbtHRMSManagerPttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\AbtUSAPSuperUserPttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\CommonPttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunPttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\ConfProcessPttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\ExtractResultsPttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\GradeRatePttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\LifeEventPttnImgs\" />
+    <Folder Include="Sikuli\SikuliPatternImges\OracleFromsPttnImges\" />
+    <Folder Include="Sikuli\SikuliPatternImges\SubmitReportPttnImgs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

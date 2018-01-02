@@ -19,14 +19,14 @@ namespace AbtFramework
         static String gUser = "user";
 
         //sikuli objects
-        private OracleFormsPatternObject patterns;
-        private CommonPaternObjects commonPatterns;
-        private GradeRatePatternObject gradePatterns;
-        private AbtHRMSManagerObject HRMSManagerPatterns;
-        private ConfDefaultProcessRunsObjects ConfDefaultProcessRunsPatterns;
-        private LifeEventPatternObjects LifeEventPatterns;
-        private ConfProcessObjects ConfProcessPatterns;
-        private SubmitReportObjects submitReportPatterns;
+        private OracleFormsPttnObj patterns;
+        private CommonPttnObj commonPatterns;
+        private GradeRatePttnObj gradePatterns;
+        private AbtHRMSManagerPttnObj HRMSManagerPatterns;
+        private ConfDefaultProcessRunsPttnObj ConfDefaultProcessRunsPatterns;
+        private LifeEventPttnObj LifeEventPatterns;
+        private ConfProcessPttnObj ConfProcessPatterns;
+        private SubmitReportPttnObj submitReportPatterns;
         private SikuliHelper sikuliHelper;
 
         //page objects
@@ -350,8 +350,8 @@ namespace AbtFramework
         /// </summary>
         private void AcceptJavaAlert()
         {
-            patterns = new OracleFormsPatternObject();
-            commonPatterns = new CommonPaternObjects();
+            patterns = new OracleFormsPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             //there is another alert, verify if present or not
@@ -374,8 +374,8 @@ namespace AbtFramework
 
         public void FillOracleFroms()
         {
-            patterns = new OracleFormsPatternObject();
-            commonPatterns = new CommonPaternObjects();
+            patterns = new OracleFormsPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
         
@@ -508,10 +508,9 @@ namespace AbtFramework
 
         public void FillTheGradeRateOracleForms()
         {
-            List<string> pepe = SeleniumDriver.GetCurrentBrowserWindows();
-
-            gradePatterns = new GradeRatePatternObject();
-            commonPatterns = new CommonPaternObjects();
+           
+            gradePatterns = new GradeRatePttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -572,7 +571,7 @@ namespace AbtFramework
         /// 
         public void FindEmployeeName(string employeeName)
         {
-            commonPatterns = new CommonPaternObjects();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
@@ -584,8 +583,8 @@ namespace AbtFramework
 
         public void UpdateInformationOnOracleForm()
         {
-            HRMSManagerPatterns = new AbtHRMSManagerObject();
-            commonPatterns = new CommonPaternObjects();
+            HRMSManagerPatterns = new AbtHRMSManagerPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -619,8 +618,8 @@ namespace AbtFramework
         /// 
         public void GoToOracleForm()
         {
-            HRMSManagerPatterns = new AbtHRMSManagerObject();
-            commonPatterns = new CommonPaternObjects();
+            HRMSManagerPatterns = new AbtHRMSManagerPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -796,8 +795,8 @@ namespace AbtFramework
 
         public void ConfirmDefaultProcess()
         {
-            ConfDefaultProcessRunsPatterns = new ConfDefaultProcessRunsObjects();
-            commonPatterns = new CommonPaternObjects();
+            ConfDefaultProcessRunsPatterns = new ConfDefaultProcessRunsPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -825,8 +824,8 @@ namespace AbtFramework
         //To add a Life Event (LE) and enroll in benefits
         public void LifeEventEnrollBenefits()
         {
-            LifeEventPatterns = new LifeEventPatternObjects();
-            commonPatterns = new CommonPaternObjects();
+            LifeEventPatterns = new LifeEventPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -896,8 +895,7 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetEndDateInputField);
 
-            //It has to be the current date. Could not find a way to insert today's date automatically
-            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, "29-DEC-2017");
+            sikuliHelper.SetInputValue(LifeEventPatterns.GetEndDateInputField, DateTime.Today.ToString("dd-MMM-yyyy"));
 
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
             Thread.Sleep(1000);
@@ -1057,8 +1055,8 @@ namespace AbtFramework
 
         public void ConfirmTerminateProcessSuccess()
         {
-            ConfProcessPatterns = new ConfProcessObjects();
-            commonPatterns = new CommonPaternObjects();
+            ConfProcessPatterns = new ConfProcessPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -1087,8 +1085,8 @@ namespace AbtFramework
         /// </summary>
         public void submitReport()
         {
-            submitReportPatterns = new SubmitReportObjects();
-            commonPatterns = new CommonPaternObjects();
+            submitReportPatterns = new SubmitReportPttnObj();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -1129,7 +1127,7 @@ namespace AbtFramework
 
         public void ExtractResults()
         {
-            commonPatterns = new CommonPaternObjects();
+            commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();

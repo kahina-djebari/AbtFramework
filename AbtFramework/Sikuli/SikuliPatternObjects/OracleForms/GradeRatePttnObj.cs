@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 {
-    public class GradeRatePatternObject
+    public class GradeRatePttnObj
     {
         private SikuliHelper sikuliHelper;
 
-        public GradeRatePatternObject()
+        public GradeRatePttnObj()
         {
             sikuliHelper = SikuliHelper.GetInstance();
         }
 
-        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/GradeRateImgs/";
+        private readonly string PATH = "../AbtFramework/Sikuli/SikuliPatternImges/GradeRatePttnImgs/";
 
         public IPattern GetView => sikuliHelper.GetPattern(PATH + "View.PNG");
 
