@@ -28,6 +28,7 @@ namespace AbtFramework
         private ConfProcessPttnObj ConfProcessPatterns;
         private SubmitReportPttnObj submitReportPatterns;
         private SikuliHelper sikuliHelper;
+        private AbtUSAPSuperUserPttnObj APSuperUserPatterns;
 
         //page objects
         private LoginPagePO loginPagePO;
@@ -39,6 +40,7 @@ namespace AbtFramework
         private AbtHRUserPO abtHRUserPO = new AbtHRUserPO();
         private AbtHROperationsSelfServicePO operationsSelfPO = new AbtHROperationsSelfServicePO();
         private WorkflowUserWebAppPO workFlowPO = new WorkflowUserWebAppPO();
+        private AbtUSAPSuperUserPO APSuperUserPO = new AbtUSAPSuperUserPO();
 
         public const string MyAccountPageTitle = "My Account";
         private int counter = 11;
@@ -54,6 +56,7 @@ namespace AbtFramework
     
             StartTimer();
             SeleniumDriver.GoTo("https://abterp2.coresys.com/OA_HTML/AppsLocalLogin.jsp");
+            SeleniumDriver.WaitForDOMready();
        
 
         }
@@ -92,16 +95,17 @@ namespace AbtFramework
                 if (att.Contains("sswa"))
                 {
                     SeleniumDriver.NavigateBack();
+                    SeleniumDriver.WaitForDOMready();
                     linksList = commonPO.GetAllLinksToClickInNavigator();
 
                 }
                 else if (SeleniumDriver.GetCurrentBrowserName().Contains("explorer"))
                 {
-                    Thread.Sleep(10000); //to wait for oralce forms to pop up, no alternative way so far
+                    Thread.Sleep(10000);
                 }
                 else
                 {
-                    Thread.Sleep(3000); //to wait for page to be open, no alternative so far
+                    Thread.Sleep(3000);
                     SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[1]);
                     SeleniumDriver.Close();
                     SeleniumDriver.Instance.SwitchTo().Window(SeleniumDriver.GetCurrentBrowserWindows()[0]);
@@ -133,7 +137,9 @@ namespace AbtFramework
         public void ClickRightSideMenuTableOptions(string option)
         {
             SeleniumDriver.ClickElement(commonPO.GetSelectHomePageLinkFolder(option));
+            SeleniumDriver.WaitForDOMready();
             SeleniumDriver.NavigateBack();
+            SeleniumDriver.WaitForDOMready();
 
         }
 
@@ -378,8 +384,6 @@ namespace AbtFramework
             commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
 
-        
-
             AcceptJavaAlert();
 
             sikuliHelper.SetInputValue(patterns.GetDescriptionInput1, "test");
@@ -507,10 +511,10 @@ namespace AbtFramework
         }
 
         public void FillTheGradeRateOracleForms()
-        {
-           
+        {         
             gradePatterns = new GradeRatePttnObj();
             commonPatterns = new CommonPttnObj();
+
             sikuliHelper = SikuliHelper.GetInstance();
 
             AcceptJavaAlert();
@@ -1149,6 +1153,46 @@ namespace AbtFramework
             //sikuliHelper.ClickPattern(commonPatterns.GetDownArrowKey);  //using the on-screen keyboard
 
             //sikuliHelper.PressDownArrow();
+
+        }
+
+        /// <summary>
+        /// Create and validate a quick invoice using the oracle form
+        /// </summary>
+        public void CreateQuickInvoice()
+        {
+            sikuliHelper = SikuliHelper.GetInstance();
+            APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
+           
+            //We have to change the Batch Name and the Invoice Number every time we run the test
+            SeleniumDriver.ClickElement(APSuperUserPO.GetQuickInvoicesLink());
+            AcceptJavaAlert();
+            Thread.Sleep(7000);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetBatchInputField, "Quick Invoices Test 2");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetEnterBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetTypeField);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumInput, "07");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetInvoiceDateField);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectedDate);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkDate);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSupplierField);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetFindInputField, "test");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetFindBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceAmountInput, "3000");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetLineNumInput);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetLineNumInput, "01");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetLineTypeField);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetAmountInputField, "3000");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetCreateInvoicesBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtnProcessingInvoiceNote);
 
         }
 

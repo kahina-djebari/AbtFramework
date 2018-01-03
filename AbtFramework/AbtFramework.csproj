@@ -284,7 +284,6 @@
     <Folder Include="Sikuli\SikuliPatternImges\CommonPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\ConfProcessPttnImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\ExtractResultsPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\GradeRatePttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\LifeEventPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\OracleFromsPttnImges\" />
