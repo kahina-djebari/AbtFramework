@@ -247,6 +247,13 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.ExtractResults();
         }
 
+        [Then(@"I create and validate a quick invoice with the oracle form")]
+        public void ThenICreateAndValidateAQuickInvoiceWithTheOracleForm()
+        {
+            AbtPages.OraclePage.CreateQuickInvoice();
+        }
+
+
 
     }
 }

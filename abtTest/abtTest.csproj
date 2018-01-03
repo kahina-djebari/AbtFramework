@@ -123,6 +123,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AGI.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\AccountingPayableCreatingQuickInvoicesAndValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingPayableCreatingQuickInvoicesAndValidation.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -269,6 +274,10 @@
     <None Include="Features\AGI\AGI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AGI.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\AccountingPayableCreatingQuickInvoicesAndValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccountingPayableCreatingQuickInvoicesAndValidation.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\ConfirmingDefaultProcessRunsWhenHireDate+30IsOlderThanSysDate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
