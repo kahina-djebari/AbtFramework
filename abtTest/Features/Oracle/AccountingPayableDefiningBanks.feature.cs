@@ -17,21 +17,21 @@ namespace abtTest.Features.Oracle
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("OracleESS-ConfirmingViewInDirectAccessBenefits", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
-        "ioal Test", SourceFile="Features\\Oracle\\Oracle ESS-ConfirmingViewInDirectAccessBenefits.feature", SourceLine=0)]
-    public partial class OracleESS_ConfirmingViewInDirectAccessBenefitsFeature
+    [TechTalk.SpecRun.FeatureAttribute("AccountingPayableDefiningBanks", Description="\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+        "ioal Test", SourceFile="Features\\Oracle\\AccountingPayableDefiningBanks.feature", SourceLine=0)]
+    public partial class AccountingPayableDefiningBanksFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Oracle ESS-ConfirmingViewInDirectAccessBenefits.feature"
+#line 1 "AccountingPayableDefiningBanks.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OracleESS-ConfirmingViewInDirectAccessBenefits", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AccountingPayableDefiningBanks", "\t    In order to Ensure the Estability of\r\n\t\tOur ERP\r\n\t\tI Want To Perform a Funct" +
                     "ioal Test", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -63,11 +63,11 @@ namespace abtTest.Features.Oracle
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("OracleESS - Confirming View In Direct Access Benefits", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Accounting Payable: Defining Banks", new string[] {
                 "Oracle"}, SourceLine=6)]
-        public virtual void OracleESS_ConfirmingViewInDirectAccessBenefits()
+        public virtual void AccountingPayableDefiningBanks()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("OracleESS - Confirming View In Direct Access Benefits", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounting Payable: Defining Banks", new string[] {
                         "Oracle"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -76,13 +76,13 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("I have navigated to Oracle Dev", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("i login as \"oumsalems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("i login as \"PRTEST01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("click the \"Abt US Employee Direct Access\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("click the \"Abt US AP Superuser\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("click the \"Benefits\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("click the \"\tBank Accounts\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("I confirm view and add beneficiaries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I create a bank account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -18,8 +18,6 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         }
 
-        public IPattern GetOfficeDetails => sikuliHelper.GetPattern(PATH + "OfficeDetailsBtn.PNG", 5);
-
         public IPattern GetOfficeInputField => sikuliHelper.GetPattern(PATH + "OfficeInputField.PNG", 5);
 
         public IPattern GetCorrectionBtn => sikuliHelper.GetPattern(PATH + "CorrectionBtn.PNG", 5);

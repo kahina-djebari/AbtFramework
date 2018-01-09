@@ -24,8 +24,6 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetLastEventRecorded => sikuliHelper.GetPattern(PATH + "LastEventRecorded.PNG", 5);
 
-        public IPattern GetNewIcon => sikuliHelper.GetPattern(PATH + "NewIcon.PNG", 5);
-
         public IPattern GetSelectBtn => sikuliHelper.GetPattern(PATH + "SelectBtn.PNG", 5);
 
         public IPattern GetAbtAdminLE => sikuliHelper.GetPattern(PATH + "AbtAdminLE.PNG", 5);

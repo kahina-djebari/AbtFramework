@@ -52,5 +52,27 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
         public IPattern GetCreateInvoicesBtn => sikuliHelper.GetPattern(PATH + "CreateInvoicesBtn.PNG", 5);
 
         public IPattern GetOkBtnProcessingInvoiceNote => sikuliHelper.GetPattern(PATH + "OkBtnProcessingInvoiceNote.PNG", 5);
+
+        public IPattern GetPayeeNameInput => sikuliHelper.GetPattern(PATH + "PayeeNameInput.PNG", 5);
+
+        public IPattern GetPaymentOverviewBtn => sikuliHelper.GetPattern(PATH + "PaymentOverviewBtn.PNG", 5);
+
+        public IPattern GetNameInputField => sikuliHelper.GetPattern(PATH + "NameInputField.PNG", 5);
+
+        public IPattern GetPercentageInputField => sikuliHelper.GetPattern(PATH + "PercentageInputField.PNG", 5);
+
+        public IPattern GetAccountField => sikuliHelper.GetPattern(PATH + "AccountField.PNG", 5);
+
+        public IPattern GetSelectButton => sikuliHelper.GetPattern(PATH + "SelectButton.PNG", 5);
+
+        public IPattern GetScrollLeftArrow => sikuliHelper.GetPattern(PATH + "ScrollLeftArrow.PNG", 5);
+
+        public IPattern GetInvoiceNumToHold => sikuliHelper.GetPattern(PATH + "InvoiceNumToHold.PNG", 5);
+
+        public IPattern GetHoldsTab => sikuliHelper.GetPattern(PATH + "HoldsTab.PNG", 5);
+
+        public IPattern GetHoldReasonField => sikuliHelper.GetPattern(PATH + "HoldReasonField.PNG", 5);
+
+        public IPattern GetSelectHoldName => sikuliHelper.GetPattern(PATH + "SelectHoldName.PNG", 5);
     }
 }
