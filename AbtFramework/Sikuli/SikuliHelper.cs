@@ -178,5 +178,14 @@ namespace AbtFramework.Sikuli
             session.DoubleClick(pattern);
         }
 
+        /// <summary>
+        /// To type without specifying the pattern
+        /// </summary>
+        /// <param name="text"></param>
+        public void TypeInputValue(string text)
+        {
+            session.Type(text);
+        }
+
     }
 }

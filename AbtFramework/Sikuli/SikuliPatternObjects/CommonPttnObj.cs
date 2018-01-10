@@ -62,5 +62,21 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetDownArrowKey => sikuliHelper.GetPattern(PATH + "DownArrowKey.PNG", 5);
 
+        public IPattern GetFindIcon => sikuliHelper.GetPattern(PATH + "FindIcon.PNG", 5);
+
+        public IPattern GetOfficeDetailsBtn => sikuliHelper.GetPattern(PATH + "OfficeDetailsBtn.PNG", 5);
+
+        public IPattern GetOfficeFieldDisabled => sikuliHelper.GetPattern(PATH + "OfficeFieldDisabled.PNG", 5);
+
+        public IPattern GetRecord => sikuliHelper.GetPattern(PATH + "Record.PNG", 5);
+
+        public IPattern GetLastRecord => sikuliHelper.GetPattern(PATH + "LastRecord.PNG", 5);
+
+        public IPattern GetNewIcon => sikuliHelper.GetPattern(PATH + "NewIcon.PNG", 5);
+
+        public IPattern GetOkBtn => sikuliHelper.GetPattern(PATH + "OkBtn.PNG", 5);
+
+        public IPattern GetOkButton => sikuliHelper.GetPattern(PATH + "OkButton.PNG", 5);
+
     }
 }

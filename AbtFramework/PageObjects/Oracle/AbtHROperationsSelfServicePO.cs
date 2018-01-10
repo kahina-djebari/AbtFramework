@@ -223,6 +223,36 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
+        public IWebElement GetLastNameInput()
+        {
+            string xpath = "//input[@title='Last Name']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetViewSelectedBtn()
+        {
+            string xpath = "//button[@title='View Selected']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetAssignmentDetailsTab()
+        {
+            string xpath = "//a[@title='Assignment Details']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetCompensationActivityTab()
+        {
+            string xpath = "//a[@title='Compensation Activity']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetTerminationHistoryTab()
+        {
+            string xpath = "//a[@title='Termination History']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
 
     }
 }

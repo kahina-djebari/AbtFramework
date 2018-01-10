@@ -253,7 +253,59 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.CreateQuickInvoice();
         }
 
+        [Then(@"I create a bank account")]
+        public void ThenICreateABankAccount()
+        {
+            AbtPages.OraclePage.CreateBankAccount();
+        }
 
+        [Then(@"I view payments")]
+        public void ThenIViewPayments()
+        {
+            AbtPages.OraclePage.ViewPayments();
+        }
+
+        [Then(@"I define Distribution Set")]
+        public void ThenIDefineDistributionSet()
+        {
+            AbtPages.OraclePage.DefineDistributionSet();
+        }
+
+        [Then(@"I apply holds")]
+        public void ThenIApplyHolds()
+        {
+            AbtPages.OraclePage.ApplyHolds();
+        }
+
+        [Then(@"I view the employee information")]
+        public void ThenIViewTheEmployeeInformation()
+        {
+            AbtPages.OraclePage.ViewEmployeeInformation();
+        }
+
+        [Then(@"I go to Office Details on the oracle form")]
+        public void ThenIGoToOfficeDetailsOnTheOracleForm()
+        {
+            AbtPages.OraclePage.GoToOfficeDetails();
+        }
+
+        [Then(@"I create the foreign payroll code")]
+        public void ThenICreateTheForeignPayrollCode()
+        {
+            AbtPages.OraclePage.CreateTheForeignPayrollCode();
+        }
+
+        [Then(@"I create Grades")]
+        public void ThenICreateGrades()
+        {
+            AbtPages.OraclePage.CreateGrades();
+        }
+
+        [Then(@"I create grades in salary range table")]
+        public void ThenICreateGradesInSalaryRangeTable()
+        {
+            AbtPages.OraclePage.CreateGradesInSalaryRangeTable();
+        }
 
     }
 }

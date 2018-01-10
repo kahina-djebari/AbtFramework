@@ -45,7 +45,7 @@ namespace AbtFramework.PageObjects.Oracle
             string xpath = "//button[@title='Apply']";
             return SeleniumDriver.GetListElementByXpath(xpath)[0];
         }
-
+    
         public IWebElement GetNextBtn()
         {
             string xpath = "//h1[text()='Extra Information']/ancestor::div[1]/following-sibling::div//descendant::button[@title='Next']";

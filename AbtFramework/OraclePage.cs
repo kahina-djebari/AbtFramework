@@ -29,6 +29,7 @@ namespace AbtFramework
         private SubmitReportPttnObj submitReportPatterns;
         private SikuliHelper sikuliHelper;
         private AbtUSAPSuperUserPttnObj APSuperUserPatterns;
+        private NewCountryLocationPttnObj newCountryLocationPatterns;
 
         //page objects
         private LoginPagePO loginPagePO;
@@ -597,8 +598,7 @@ namespace AbtFramework
 
             FindEmployeeName("oumsalem, sofiane");
 
-
-            sikuliHelper.ClickPattern(HRMSManagerPatterns.GetOfficeDetails);
+            sikuliHelper.ClickPattern(commonPatterns.GetOfficeDetailsBtn);
 
             sikuliHelper.SetInputValue(HRMSManagerPatterns.GetOfficeInputField, "test");
 
@@ -618,8 +618,7 @@ namespace AbtFramework
         /// <summary>
         /// Update the Office Details and confirm that there is no link 
         /// for Discoverer Viewer in the list of responsibilities.      
-        /// </summary>
-        /// 
+        /// </summary>      
         public void GoToOracleForm()
         {
             HRMSManagerPatterns = new AbtHRMSManagerPttnObj();
@@ -640,6 +639,9 @@ namespace AbtFramework
 
         }
 
+        /// <summary>
+        /// HR: To change the employee supervisor and timecard approver
+        /// </summary>
         public void ChangeTimecardApprover()
         {
             SelectEmployeeInPeopleHierarchy();
@@ -666,6 +668,9 @@ namespace AbtFramework
 
         }
 
+        /// <summary>
+        /// HR: To change the employee hours
+        /// </summary>
         public void ChangeEmployeeHours()
         {
             SelectEmployeeInPeopleHierarchy();
@@ -790,6 +795,10 @@ namespace AbtFramework
             return startDate.AddDays(daysToAdd).Date.ToString("dd-MMM-yyyy");
         }
 
+        /// <summary>
+        /// HR
+        /// </summary>
+        /// Could not complete this test because the requests are automatically closed
         public void ApproveChanges()
         {
             SeleniumDriver.SelectDropDownByText(workFlowPO.GetOpenNotificationsSelect(), "All Notifications");
@@ -797,6 +806,9 @@ namespace AbtFramework
             SeleniumDriver.ClickElement(workFlowPO.GetSubjectLink());
         }
 
+        /// <summary>
+        /// HR
+        /// </summary>
         public void ConfirmDefaultProcess()
         {
             ConfDefaultProcessRunsPatterns = new ConfDefaultProcessRunsPttnObj();
@@ -825,7 +837,9 @@ namespace AbtFramework
 
         }
 
-        //To add a Life Event (LE) and enroll in benefits
+        /// <summary>
+        /// HR: To add a Life Event (LE) and enroll in benefits
+        /// </summary>
         public void LifeEventEnrollBenefits()
         {
             LifeEventPatterns = new LifeEventPttnObj();
@@ -848,7 +862,7 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetLastEventRecorded);
 
-            sikuliHelper.ClickPattern(LifeEventPatterns.GetNewIcon);
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
 
             sikuliHelper.ClickPattern(LifeEventPatterns.GetSelectBtn);
 
@@ -1000,6 +1014,9 @@ namespace AbtFramework
             //SeleniumDriver.ClickElement(employeeDirectAccessPO.GetFinishBtnConfirmation());
         }
 
+        /// <summary>
+        /// HR
+        /// </summary>
         public void UpdatePersonalInformation()
         {
             // Update Middle Name in Basic Details section
@@ -1028,6 +1045,9 @@ namespace AbtFramework
             SeleniumDriver.ClickElement(employeeDirectAccessPO.GetYesBtn());
         }
 
+        /// <summary>
+        /// HR
+        /// </summary>
         public void AddBeneficiaries()
         {
             //to confirm that we can change the time period to see past elections
@@ -1054,7 +1074,7 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// Confirm that terminate process was run successfully
+        /// HR: Confirm that terminate process was run successfully
         /// </summary>
 
         public void ConfirmTerminateProcessSuccess()
@@ -1084,7 +1104,7 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// Submit a 'Abt HSA Bi Weekly Employer Funding – STEP ONE Report' and make sure that 
+        /// HR: Submit a 'Abt HSA Bi Weekly Employer Funding – STEP ONE Report' and make sure that 
         /// the log of requests was uploaded correctly and opens in IE. 
         /// </summary>
         public void submitReport()
@@ -1129,6 +1149,9 @@ namespace AbtFramework
 
         }
 
+        /// <summary>
+        /// HR
+        /// </summary>
         public void ExtractResults()
         {
             commonPatterns = new CommonPttnObj();
@@ -1157,7 +1180,7 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// Create and validate a quick invoice using the oracle form
+        /// Accounts Payable: Create and validate a quick invoice using the oracle form
         /// </summary>
         public void CreateQuickInvoice()
         {
@@ -1193,9 +1216,294 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetCreateInvoicesBtn);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtnProcessingInvoiceNote);
+        }
+
+        /// <summary>
+        /// Accounts Payable
+        /// </summary>
+        public void CreateBankAccount()
+        {
+            SeleniumDriver.ClickElement(APSuperUserPO.GetCreateBankAccountLink());
+            SeleniumDriver.SetValue(APSuperUserPO.GetBankNameInput(), "Bank of America");
+            SeleniumDriver.ClickElement(APSuperUserPO.GetBranchNameInput());
+            SeleniumDriver.SetValue(APSuperUserPO.GetBranchNameInput(), "aaaaaaa");
+        }
+
+        /// <summary>
+        /// Accounts Payable
+        /// </summary>
+        public void ViewPayments()
+        {
+            commonPatterns = new CommonPttnObj();
+            APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            SeleniumDriver.ClickElement(APSuperUserPO.GetPaymentsLink());
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetFindIcon);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetPayeeNameInput);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetFindInputField, "test");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetFindBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetFindBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetPaymentOverviewBtn);
+        }
+
+        /// <summary>
+        /// Accounts Payable: Defining Distribution Set
+        /// </summary>
+        public void DefineDistributionSet()
+        {
+            sikuliHelper = SikuliHelper.GetInstance();
+            commonPatterns = new CommonPttnObj();
+            APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetNameInputField, "test");
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetPercentageInputField, "100");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetAccountField);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            //Thread.Sleep(500);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            //Thread.Sleep(500);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            //Thread.Sleep(500);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            //Thread.Sleep(500);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            //Thread.Sleep(500);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtnProcessingInvoiceNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
+        /// Accounts Payable: Apply Holds against an invoice previously created
+        /// </summary>
+        public void ApplyHolds()
+        {
+            sikuliHelper = SikuliHelper.GetInstance();
+            commonPatterns = new CommonPttnObj();
+            APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
+
+            SeleniumDriver.ClickElement(APSuperUserPO.GetInvoicesLink());
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
+
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetScrollLeftArrow);   //need to scroll left
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumToHold, "6");//change the invoice number everytime we run the test
+
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetHoldsTab);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectHoldName);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetHoldReasonField);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
+        /// HR: Perform Employee Views
+        /// </summary>
+        public void ViewEmployeeInformation()
+        {
+            SeleniumDriver.SetValue(operationsSelfPO.GetLastNameInput(), "Oumsalem");
+            SeleniumDriver.ClickElement(commonPO.GetGoBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetViewSelectedBtn());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetAssignmentDetailsTab());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetCompensationActivityTab());
+            SeleniumDriver.ClickElement(operationsSelfPO.GetTerminationHistoryTab());
 
         }
 
+        /// <summary>
+        /// HR: make sure that the Office Details Field is disabled for the HR Executive User and
+        /// display the Discoverer Viewer
+        /// </summary>
+        public void GoToOfficeDetails()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            FindEmployeeName("Pardikar, Parimal");
+            sikuliHelper.ClickPattern(commonPatterns.GetOfficeDetailsBtn);
+            //sikuliHelper.SetInputValue(commonPatterns.GetOfficeFieldDisabled, "test"); //we need to make sure that this field is disabled      
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtnCloseOracleForm);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseWindow);         
+        }
+
+        /// <summary>
+        /// HR: To add a new country to the the Foreign Payroll Codes list
+        /// </summary>
+        public void CreateTheForeignPayrollCode()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetTypeInputField, "%XX%ADP%");
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetScrollDownArrow);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetRecord);
+            sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCodeInputField, "9128"); //change the code by adding 1 everytime we run the test
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountryNameInput, "FP_Andorra"); //change the country everytime we run the test
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetFromDateInput, "01-JAN-1951");
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
+        /// HR: To create grades for the new country previously added to the Foreign Payroll Codes list 
+        /// </summary>
+        public void CreateGrades()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            SeleniumDriver.ClickElement(commonPO.GetDescriptionGradeNavigationLink());
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetRecord);
+            sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
+            Thread.Sleep(32000); //needs time to retrieve all the records 
+
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9083"); //add 1 everytime we run the test
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
+            sikuliHelper.PressEnter();
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
+            sikuliHelper.PressEnter();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("01-JAN-2018"); //it has to be the first day of the current month
+
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9084"); //add 1 everytime we run the test
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetGradeNum02);
+            sikuliHelper.PressEnter();
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
+            sikuliHelper.PressEnter();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("01-JAN-2018");//it has to be the first day of the current month
+
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9085"); //add 1 everytime we run the test
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetGradeNum03);
+            sikuliHelper.PressEnter();
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
+            sikuliHelper.PressEnter();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("01-JAN-2018");//it has to be the first day of the current month
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
+        /// To add the grades previously created to the salary range table
+        /// </summary>
+        public void CreateGradesInSalaryRangeTable()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetFirstGradeName);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetRecord);
+            sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
+            Thread.Sleep(15000); //needs time to retrieve all the records
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            sikuliHelper.TypeInputValue("01");
+            sikuliHelper.PressEnter();           
+            sikuliHelper.TypeInputValue("us");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("10000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("10000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("15000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+
+            sikuliHelper.TypeInputValue("02");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("us");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("20000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("20000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("25000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+
+            sikuliHelper.TypeInputValue("03");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("us");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("30000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("30000");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("35000");
+            sikuliHelper.PressEnter();
+            //Now we have to enter an effective date which is the first day day of the current month but the Date Field is not editable
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+
+        }
     }
 
 }
