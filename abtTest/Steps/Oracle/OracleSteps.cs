@@ -307,5 +307,19 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.CreateGradesInSalaryRangeTable();
         }
 
+        [Then(@"I Link the New Grades to the Job Table for all INTL Jobs")]
+        public void ThenILinkTheNewGradesToTheJobTableForAllINTLJobs()
+        {
+            AbtPages.OraclePage.LinkNewGradesToJobTable();
+        }
+
+        [Then(@"I Add the New Location to the Location Table")]
+        public void ThenIAddTheNewLocationToTheLocationTable()
+        {
+            AbtPages.OraclePage.AddLocationToTable();
+        }
+
+
+
     }
 }

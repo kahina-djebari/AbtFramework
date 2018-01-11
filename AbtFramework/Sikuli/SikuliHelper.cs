@@ -187,5 +187,11 @@ namespace AbtFramework.Sikuli
             session.Type(text);
         }
 
+        public void ensureExists(IPattern pattern, string message)
+        {
+            Assert.IsNotNull(pattern);
+            Console.WriteLine(message);
+        }
+
     }
 }

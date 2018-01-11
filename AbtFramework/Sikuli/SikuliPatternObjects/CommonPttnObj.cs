@@ -78,5 +78,9 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetOkButton => sikuliHelper.GetPattern(PATH + "OkButton.PNG", 5);
 
+        public IPattern GetFindInputField => sikuliHelper.GetPattern(PATH + "FindInputField.PNG", 5);
+
+        public IPattern GetFindButton => sikuliHelper.GetPattern(PATH + "FindButton.PNG", 5);
+
     }
 }

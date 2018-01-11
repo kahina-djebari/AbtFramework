@@ -1298,10 +1298,8 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetView);
             sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
             sikuliHelper.ClickPattern(commonPatterns.GetEnter);
-
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetScrollLeftArrow);   //need to scroll left
             sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumToHold, "6");//change the invoice number everytime we run the test
-
             sikuliHelper.ClickPattern(commonPatterns.GetView);
             sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
             sikuliHelper.ClickPattern(commonPatterns.GetRun);
@@ -1339,7 +1337,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
             FindEmployeeName("Pardikar, Parimal");
             sikuliHelper.ClickPattern(commonPatterns.GetOfficeDetailsBtn);
-            //sikuliHelper.SetInputValue(commonPatterns.GetOfficeFieldDisabled, "test"); //we need to make sure that this field is disabled      
+            sikuliHelper.ensureExists(commonPatterns.GetOfficeFieldDisabled,"The Office Field is not editable"); //we need to make sure that this field is disabled     
             sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
             sikuliHelper.ClickPattern(commonPatterns.GetOkBtnCloseOracleForm);
             sikuliHelper.ClickPattern(commonPatterns.GetCloseWindow);         
@@ -1369,7 +1367,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
             sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCodeInputField, "9128"); //change the code by adding 1 everytime we run the test
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountryNameInput, "FP_Andorra"); //change the country everytime we run the test
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountryNameInput, "FP_Andorra"); //change the country name everytime we run the test
             sikuliHelper.SetInputValue(newCountryLocationPatterns.GetFromDateInput, "01-JAN-1951");
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
         }
@@ -1397,44 +1395,44 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
             Thread.Sleep(32000); //needs time to retrieve all the records 
-
+            // Create the first grade
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9083"); //add 1 everytime we run the test
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9085"); //add 1 everytime we run the test
+            sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
             sikuliHelper.PressEnter();
             Thread.Sleep(1000);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
-            sikuliHelper.PressEnter();
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra"); //change the country name everytime we run the test
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
             sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("01-JAN-2018"); //it has to be the first day of the current month
-
+            // Create the second grade
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9084"); //add 1 everytime we run the test
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9086"); //add 1 everytime we run the test
+            sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetGradeNum02);
             sikuliHelper.PressEnter();
             Thread.Sleep(1000);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
-            sikuliHelper.PressEnter();
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra"); //change the country name everytime we run the test
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
             sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("01-JAN-2018");//it has to be the first day of the current month
-
+            // Create the third grade
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9085"); //add 1 everytime we run the test
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9087"); //add 1 everytime we run the test
+            sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetGradeNum03);
             sikuliHelper.PressEnter();
             Thread.Sleep(1000);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
-            sikuliHelper.PressEnter();
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra"); //change the country name everytime we run the test
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
             sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("01-JAN-2018");//it has to be the first day of the current month
@@ -1466,6 +1464,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
             Thread.Sleep(15000); //needs time to retrieve all the records
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            // Add the first grade
             sikuliHelper.TypeInputValue("01");
             sikuliHelper.PressEnter();           
             sikuliHelper.TypeInputValue("us");
@@ -1477,7 +1476,7 @@ namespace AbtFramework
             sikuliHelper.TypeInputValue("15000");
             sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-
+            // Add the second grade
             sikuliHelper.TypeInputValue("02");
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("us");
@@ -1489,7 +1488,7 @@ namespace AbtFramework
             sikuliHelper.TypeInputValue("25000");
             sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-
+            // Add the third grade
             sikuliHelper.TypeInputValue("03");
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("us");
@@ -1500,9 +1499,77 @@ namespace AbtFramework
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("35000");
             sikuliHelper.PressEnter();
-            //Now we have to enter an effective date which is the first day day of the current month but the Date Field is not editable
+            //Now we have to enter an effective date which is the first day of the current month but the Date Field is not editable
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
 
+        /// <summary>
+        /// Link the new grades previously created to the Job Table for all international jobs
+        /// </summary>
+        public void LinkNewGradesToJobTable()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            SeleniumDriver.ClickElement(commonPO.GetDescriptionJobNavigationLink());
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            //could not complete this test. need to be provided with the LCN Job titles  
+        }
+
+        /// <summary>
+        /// Add the new country (previously added to the Foreign Payroll Codes list) to the location table
+        /// </summary>
+        public void AddLocationToTable()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetNameInputField, "%");
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetRecord);
+            sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
+            Thread.Sleep(5000); //need to wait until it retrieves all the records
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetLocationNameInput, "Andorra"); //change the country name everytime we run the test
+            for (int i=0; i<4; i++)
+            {
+                sikuliHelper.PressEnter();
+            }
+            // Enter in the address. The address is always the same
+            sikuliHelper.TypeInputValue("55 Wheeler Street");                       
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCityInputField, "Cambridge");
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetZipCodeInput, "02138"); 
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetStateInputField, "MA");           
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountyInputField, "Middlesex");
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn); // The address is entered
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetDescriptiveFlexField);
+            // Type in the ADP code, it's always 06
+            sikuliHelper.TypeInputValue("06");
+            // Type in the ADP foreign payroll code previously created when adding a country to the the Foreign Payroll Codes list  
+            sikuliHelper.TypeInputValue("9127");
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetGovReportingLocationInput, "CAMBRIDGE, MA");
+            // Look for the tow letters code of the country
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryCodeInput);
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectButton);
+            Thread.Sleep(1000);
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra");  //change the country name everytime we run the test        
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton); //by clicking Find it gives the tow letters code of the country 
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountryShortNameInput, "Andorra"); //change the country name everytime we run the test            
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
         }
     }
 
