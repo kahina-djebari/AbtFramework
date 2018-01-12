@@ -59,5 +59,15 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
         public IPattern GetSelectButton => sikuliHelper.GetPattern(PATH + "SelectButton.PNG", 5);
 
         public IPattern GetZipCodeInput => sikuliHelper.GetPattern(PATH + "ZipCodeInput.PNG", 5);
+
+        public IPattern GetFurtherInformationInput => sikuliHelper.GetPattern(PATH + "FurtherInformationInput.PNG", 5);
+
+        public IPattern GetInputValuesBtn => sikuliHelper.GetPattern(PATH + "InputValuesBtn.PNG", 5);
+
+        public IPattern GetUnitsMoney => sikuliHelper.GetPattern(PATH + "UnitsMoney.PNG", 5);
+
+        public IPattern GetSequence1 => sikuliHelper.GetPattern(PATH + "Sequence1.PNG", 5);
+
+        public IPattern GetEffectiveDate => sikuliHelper.GetPattern(PATH + "EffectiveDate.PNG", 5);
     }
 }

@@ -198,6 +198,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleHiring-RunHSAFundingProcessInOracleAndDiscoverer.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\OracleHiringRunThreeConcurrentProgramsForInbound-HiringInTheInbound.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleHiringRunThreeConcurrentProgramsForInbound-HiringInTheInbound.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\OracleHRNavigation-AbtHRExecutiveUser.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -374,6 +379,10 @@
     <None Include="Features\Oracle\OracleHiring-RunHSAFundingProcessInOracleAndDiscoverer.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OracleHiring-RunHSAFundingProcessInOracleAndDiscoverer.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\OracleHiringRunThreeConcurrentProgramsForInbound-HiringInTheInbound.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OracleHiringRunThreeConcurrentProgramsForInbound-HiringInTheInbound.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\OracleHRNavigation-AbtHRExecutiveUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

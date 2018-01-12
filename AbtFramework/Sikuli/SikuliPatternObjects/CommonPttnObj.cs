@@ -82,5 +82,23 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetFindButton => sikuliHelper.GetPattern(PATH + "FindButton.PNG", 5);
 
+        public IPattern GetCalendarIcon => sikuliHelper.GetPattern(PATH + "CalendarIcon.PNG", 5);
+
+        public IPattern GetClearRecordIcon => sikuliHelper.GetPattern(PATH + "ClearRecordIcon.PNG", 5);
+
+        public IPattern GetSelectBtn => sikuliHelper.GetPattern(PATH + "SelectBtn.PNG", 5);
+
+        public IPattern GetSubmitBtn => sikuliHelper.GetPattern(PATH + "SubmitBtn.PNG", 5);
+
+        public IPattern GetViewLogBtn => sikuliHelper.GetPattern(PATH + "ViewLogBtn.PNG", 5);
+
+        public IPattern GetFindRequestsBtn => sikuliHelper.GetPattern(PATH + "FindRequestsBtn.PNG", 5);
+
+        public IPattern GetPhaseCompleted => sikuliHelper.GetPattern(PATH + "PhaseCompleted.PNG", 5);
+
+        public IPattern GetStatusNormal => sikuliHelper.GetPattern(PATH + "StatusNormal.PNG", 5);
+
+        public IPattern GetViewOutputBtn => sikuliHelper.GetPattern(PATH + "ViewOutputBtn.PNG", 5);
+
     }
 }

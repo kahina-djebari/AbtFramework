@@ -319,7 +319,28 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.AddLocationToTable();
         }
 
+        [Then(@"I Create the Elements for the Country with Currency")]
+        public void ThenICreateTheElementsForTheCountryWithCurrency()
+        {
+            AbtPages.OraclePage.CreateElementsWithCurrency();
+        }
 
+        [Then(@"I Create the Salary Basis for the Country with Currency")]
+        public void ThenICreateTheSalaryBasisForTheCountryWithCurrency()
+        {
+            AbtPages.OraclePage.CreateSalaryBasis();
+        }
 
+        [Then(@"I Link the Element Name to the Salary Basis")]
+        public void ThenILinkTheElementNameToTheSalaryBasis()
+        {
+            AbtPages.OraclePage.LinkElementNameToSalaryBasis();
+        }
+
+        [Then(@"I perform hiring in the inbound")]
+        public void ThenIPerformHiringInTheInbound()
+        {
+            AbtPages.OraclePage.HiringInInbound();
+        }
     }
 }
