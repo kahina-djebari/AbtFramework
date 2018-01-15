@@ -307,5 +307,40 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.CreateGradesInSalaryRangeTable();
         }
 
+        [Then(@"I Link the New Grades to the Job Table for all INTL Jobs")]
+        public void ThenILinkTheNewGradesToTheJobTableForAllINTLJobs()
+        {
+            AbtPages.OraclePage.LinkNewGradesToJobTable();
+        }
+
+        [Then(@"I Add the New Location to the Location Table")]
+        public void ThenIAddTheNewLocationToTheLocationTable()
+        {
+            AbtPages.OraclePage.AddLocationToTable();
+        }
+
+        [Then(@"I Create the Elements for the Country with Currency")]
+        public void ThenICreateTheElementsForTheCountryWithCurrency()
+        {
+            AbtPages.OraclePage.CreateElementsWithCurrency();
+        }
+
+        [Then(@"I Create the Salary Basis for the Country with Currency")]
+        public void ThenICreateTheSalaryBasisForTheCountryWithCurrency()
+        {
+            AbtPages.OraclePage.CreateSalaryBasis();
+        }
+
+        [Then(@"I Link the Element Name to the Salary Basis")]
+        public void ThenILinkTheElementNameToTheSalaryBasis()
+        {
+            AbtPages.OraclePage.LinkElementNameToSalaryBasis();
+        }
+
+        [Then(@"I perform hiring in the inbound")]
+        public void ThenIPerformHiringInTheInbound()
+        {
+            AbtPages.OraclePage.HiringInInbound();
+        }
     }
 }

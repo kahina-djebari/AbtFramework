@@ -30,16 +30,44 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetSequenceNumberInput => sikuliHelper.GetPattern(PATH + "SequenceNumberInput.PNG", 5);
 
-        public IPattern GetCountryName => sikuliHelper.GetPattern(PATH + "CountryName.PNG", 5);
-
         public IPattern GetSelectBtn => sikuliHelper.GetPattern(PATH + "SelectBtn.PNG", 5);
-
-        public IPattern GetSelectedCountryAndorra => sikuliHelper.GetPattern(PATH + "SelectedCountryAndorra.PNG", 5);
 
         public IPattern GetGradeNum02 => sikuliHelper.GetPattern(PATH + "GradeNum02.PNG", 5);
 
         public IPattern GetGradeNum03 => sikuliHelper.GetPattern(PATH + "GradeNum03.PNG", 5);
 
         public IPattern GetFirstGradeName => sikuliHelper.GetPattern(PATH + "FirstGradeName.PNG", 5);
+
+        public IPattern GetNameInputField => sikuliHelper.GetPattern(PATH + "NameInputField.PNG", 5);
+
+        public IPattern GetLocationNameInput => sikuliHelper.GetPattern(PATH + "LocationNameInput.PNG", 5);
+
+        public IPattern GetCityInputField => sikuliHelper.GetPattern(PATH + "CityInputField.PNG", 5);
+
+        public IPattern GetStateInputField => sikuliHelper.GetPattern(PATH + "StateInputField.PNG", 5);
+
+        public IPattern GetCountyInputField => sikuliHelper.GetPattern(PATH + "CountyInputField.PNG", 5);
+
+        public IPattern GetDescriptiveFlexField => sikuliHelper.GetPattern(PATH + "DescriptiveFlexField.PNG", 5);
+
+        public IPattern GetCountryCodeInput => sikuliHelper.GetPattern(PATH + "CountryCodeInput.PNG", 5);
+
+        public IPattern GetCountryShortNameInput => sikuliHelper.GetPattern(PATH + "CountryShortNameInput.PNG", 5);
+
+        public IPattern GetGovReportingLocationInput => sikuliHelper.GetPattern(PATH + "GovReportingLocationInput.PNG", 5);
+
+        public IPattern GetSelectButton => sikuliHelper.GetPattern(PATH + "SelectButton.PNG", 5);
+
+        public IPattern GetZipCodeInput => sikuliHelper.GetPattern(PATH + "ZipCodeInput.PNG", 5);
+
+        public IPattern GetFurtherInformationInput => sikuliHelper.GetPattern(PATH + "FurtherInformationInput.PNG", 5);
+
+        public IPattern GetInputValuesBtn => sikuliHelper.GetPattern(PATH + "InputValuesBtn.PNG", 5);
+
+        public IPattern GetUnitsMoney => sikuliHelper.GetPattern(PATH + "UnitsMoney.PNG", 5);
+
+        public IPattern GetSequence1 => sikuliHelper.GetPattern(PATH + "Sequence1.PNG", 5);
+
+        public IPattern GetEffectiveDate => sikuliHelper.GetPattern(PATH + "EffectiveDate.PNG", 5);
     }
 }

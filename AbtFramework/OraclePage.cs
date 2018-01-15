@@ -30,6 +30,7 @@ namespace AbtFramework
         private SikuliHelper sikuliHelper;
         private AbtUSAPSuperUserPttnObj APSuperUserPatterns;
         private NewCountryLocationPttnObj newCountryLocationPatterns;
+        private HiringInInbountPttnObj hiringInInbountPatterns;
 
         //page objects
         private LoginPagePO loginPagePO;
@@ -1119,9 +1120,9 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(submitReportPatterns.GetOkBtnRequestType);
 
-            sikuliHelper.ClickPattern(submitReportPatterns.GetSelectReportType);
+            sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
 
-            sikuliHelper.ClickPattern(submitReportPatterns.GetSelectReportType);
+            sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
 
             while (counter1 > 0)
             {
@@ -1133,19 +1134,22 @@ namespace AbtFramework
 
             sikuliHelper.ClickPattern(submitReportPatterns.GetOkBtnValidateReportType);
 
-            sikuliHelper.ClickPattern(submitReportPatterns.GetSubmitReportBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSubmitBtn);
 
             sikuliHelper.ClickPattern(submitReportPatterns.GetOkToRequestSubmission);
 
-            sikuliHelper.ClickPattern(submitReportPatterns.GetNoToSubmitAnotherRequest);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
 
             ClickMainMenuTableOption("Abt HRMS Benefits User");
 
             ClickMainMenuTableOption("View Requests");
 
-            sikuliHelper.ClickPattern(submitReportPatterns.GetFindRequestsBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetFindBtn);
 
-            sikuliHelper.ClickPattern(submitReportPatterns.GetViewLogBtn);
+           // sikuliHelper.ensureExists(commonPatterns.GetPhaseCompleted, "Phase column shows 'Completed'");
+           // sikuliHelper.ensureExists(commonPatterns.GetPhaseCompleted, "Status column shows 'Normal'");
+
+            sikuliHelper.ClickPattern(commonPatterns.GetViewLogBtn); //it opens a window in IE. We have to Confirm that the log shows all exception records have populated in the report
 
         }
 
@@ -1298,10 +1302,8 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetView);
             sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
             sikuliHelper.ClickPattern(commonPatterns.GetEnter);
-
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetScrollLeftArrow);   //need to scroll left
             sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumToHold, "6");//change the invoice number everytime we run the test
-
             sikuliHelper.ClickPattern(commonPatterns.GetView);
             sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
             sikuliHelper.ClickPattern(commonPatterns.GetRun);
@@ -1339,14 +1341,14 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
             FindEmployeeName("Pardikar, Parimal");
             sikuliHelper.ClickPattern(commonPatterns.GetOfficeDetailsBtn);
-            //sikuliHelper.SetInputValue(commonPatterns.GetOfficeFieldDisabled, "test"); //we need to make sure that this field is disabled      
+            //sikuliHelper.ensureExists(commonPatterns.GetOfficeFieldDisabled,"The Office Field is not editable"); //we need to make sure that this field is disabled     
             sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleForm);
             sikuliHelper.ClickPattern(commonPatterns.GetOkBtnCloseOracleForm);
             sikuliHelper.ClickPattern(commonPatterns.GetCloseWindow);         
         }
 
         /// <summary>
-        /// HR: To add a new country to the the Foreign Payroll Codes list
+        /// HR WorkStructures: 1-To add a new country to the the Foreign Payroll Codes list
         /// </summary>
         public void CreateTheForeignPayrollCode()
         {
@@ -1369,13 +1371,13 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
             sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCodeInputField, "9128"); //change the code by adding 1 everytime we run the test
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountryNameInput, "FP_Andorra"); //change the country everytime we run the test
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountryNameInput, "FP_Andorra"); //change the country name everytime we run the test
             sikuliHelper.SetInputValue(newCountryLocationPatterns.GetFromDateInput, "01-JAN-1951");
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
         }
 
         /// <summary>
-        /// HR: To create grades for the new country previously added to the Foreign Payroll Codes list 
+        /// HR WorkStructures: 2-To create grades for the new country previously added to the Foreign Payroll Codes list 
         /// </summary>
         public void CreateGrades()
         {
@@ -1397,44 +1399,44 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
             Thread.Sleep(32000); //needs time to retrieve all the records 
-
+            // Create the first grade
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9083"); //add 1 everytime we run the test
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9085"); //add 1 everytime we run the test
+            sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
             sikuliHelper.PressEnter();
             Thread.Sleep(1000);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
-            sikuliHelper.PressEnter();
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra"); //change the country name everytime we run the test
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
             sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("01-JAN-2018"); //it has to be the first day of the current month
-
+            // Create the second grade
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9084"); //add 1 everytime we run the test
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9086"); //add 1 everytime we run the test
+            sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetGradeNum02);
             sikuliHelper.PressEnter();
             Thread.Sleep(1000);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
-            sikuliHelper.PressEnter();
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra"); //change the country name everytime we run the test
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
             sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("01-JAN-2018");//it has to be the first day of the current month
-
+            // Create the third grade
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9085"); //add 1 everytime we run the test
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryName);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetSequenceNumberInput, "9087"); //add 1 everytime we run the test
+            sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetGradeNum03);
             sikuliHelper.PressEnter();
             Thread.Sleep(1000);
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectedCountryAndorra); //change the pattern for the selected country to run the test
-            sikuliHelper.PressEnter();
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra"); //change the country name everytime we run the test
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
             sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("01-JAN-2018");//it has to be the first day of the current month
@@ -1442,7 +1444,7 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// To add the grades previously created to the salary range table
+        /// HR WorkStructures: 3-To add the grades previously created to the salary range table
         /// </summary>
         public void CreateGradesInSalaryRangeTable()
         {
@@ -1466,6 +1468,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
             Thread.Sleep(15000); //needs time to retrieve all the records
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            // Add the first grade
             sikuliHelper.TypeInputValue("01");
             sikuliHelper.PressEnter();           
             sikuliHelper.TypeInputValue("us");
@@ -1477,7 +1480,7 @@ namespace AbtFramework
             sikuliHelper.TypeInputValue("15000");
             sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-
+            // Add the second grade
             sikuliHelper.TypeInputValue("02");
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("us");
@@ -1489,7 +1492,7 @@ namespace AbtFramework
             sikuliHelper.TypeInputValue("25000");
             sikuliHelper.PressEnter();
             sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
-
+            // Add the third grade
             sikuliHelper.TypeInputValue("03");
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("us");
@@ -1500,10 +1503,224 @@ namespace AbtFramework
             sikuliHelper.PressEnter();
             sikuliHelper.TypeInputValue("35000");
             sikuliHelper.PressEnter();
-            //Now we have to enter an effective date which is the first day day of the current month but the Date Field is not editable
+            //Now we have to enter an effective date which is the first day of the current month but the Date Field is not editable
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
 
+        /// <summary>
+        /// HR WorkStructures: 4-Link the new grades previously created to the Job Table for all international jobs
+        /// </summary>
+        public void LinkNewGradesToJobTable()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            SeleniumDriver.ClickElement(commonPO.GetDescriptionJobNavigationLink());
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            //could not complete this test. need to be provided with the LCN Job titles  
+        }
+
+        /// <summary>
+        /// HR WorkStructures: 5-Add the new country (previously added to the Foreign Payroll Codes list) to the location table
+        /// </summary>
+        public void AddLocationToTable()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetEnter);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetNameInputField, "%");
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
+            sikuliHelper.ClickPattern(commonPatterns.GetRun);
+            sikuliHelper.ClickPattern(commonPatterns.GetView);
+            sikuliHelper.ClickPattern(commonPatterns.GetRecord);
+            sikuliHelper.ClickPattern(commonPatterns.GetLastRecord);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetContinueToLastRecord);
+            Thread.Sleep(5000); //need to wait until it retrieves all the records
+            sikuliHelper.ClickPattern(commonPatterns.GetNewIcon);
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetLocationNameInput, "Andorra"); //change the country name everytime we run the test
+            for (int i=0; i<4; i++)
+            {
+                sikuliHelper.PressEnter();
+            }
+            // Enter in the address. The address is always the same
+            sikuliHelper.TypeInputValue("55 Wheeler Street");                       
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCityInputField, "Cambridge");
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetZipCodeInput, "02138"); 
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetStateInputField, "MA");           
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountyInputField, "Middlesex");
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn); // The address is entered
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetDescriptiveFlexField);
+            // Type in the ADP code, it's always 06
+            sikuliHelper.TypeInputValue("06");
+            // Type in the ADP foreign payroll code previously created when adding a country to the the Foreign Payroll Codes list  
+            sikuliHelper.TypeInputValue("9127");
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetGovReportingLocationInput, "CAMBRIDGE, MA");
+            // Look for the tow letters code of the country
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetCountryCodeInput);
+            Thread.Sleep(1000);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetSelectButton);
+            Thread.Sleep(1000);
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Andorra");  //change the country name everytime we run the test        
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton); //by clicking Find it gives the tow letters code of the country 
+            sikuliHelper.SetInputValue(newCountryLocationPatterns.GetCountryShortNameInput, "Andorra"); //change the country name everytime we run the test            
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
+        /// To enter and save Regular and Hourly Pay Rates
+        /// </summary>
+        public void EnterPayRate()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            sikuliHelper.TypeInputValue("Earnings");
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetFurtherInformationInput);
+            sikuliHelper.TypeInputValue("Regular");
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+            sikuliHelper.ClickPattern(newCountryLocationPatterns.GetInputValuesBtn);
+            sikuliHelper.TypeInputValue("Pay Value");
+            sikuliHelper.PressEnter();
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
+        /// HR WorkStructures: 6-To Create the Elements for the Country with Currency
+        /// </summary>
+        public void CreateElementsWithCurrency()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
+            // Enter the Regular pay rate
+            sikuliHelper.ClickPattern(commonPatterns.GetCalendarIcon);
+            sikuliHelper.TypeInputValue("01-JAN-1951");
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            //sikuliHelper.ensureExists(newCountryLocationPatterns.GetEffectiveDate, "Effective date is updated to reflect '01-JAN-1951'");
+            for (int i=0; i<3; i++)
+            {
+                sikuliHelper.TypeInputValue("ALG Pay Rate"); //ALG is the three letters of the country name (Algeria), need to change it everytime we run the test
+                sikuliHelper.PressEnter();
+            }
+            EnterPayRate();
+            //sikuliHelper.ensureExists(newCountryLocationPatterns.GetUnitsMoney,"Units column autopopulated with the correct entry 'Money'");
+            //sikuliHelper.ensureExists(newCountryLocationPatterns.GetSequence1,"Sequence column autopopulated with the correct entry '1'");
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
+            // Enter the Hourly pay rate
+            sikuliHelper.ClickPattern(commonPatterns.GetClearRecordIcon);
+            for (int i = 0; i < 3; i++)
+            {
+                sikuliHelper.TypeInputValue("ALG Pay Rate Hourly"); //ALG is the three letters of the country name (Algeria), need to change it everytime we run the test
+                sikuliHelper.PressEnter();
+            }
+            EnterPayRate();
+            //sikuliHelper.ensureExists(newCountryLocationPatterns.GetUnitsMoney,"Units column autopopulated with the correct entry 'Money'");
+            //sikuliHelper.ensureExists(newCountryLocationPatterns.GetSequence1,"Sequence column autopopulated with the correct entry '1'");
+        }
+
+        /// <summary>
+        /// HR WorkStructures: 7-Create the Salary Basis for the Country with Currency
+        /// </summary>
+        public void CreateSalaryBasis()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.TypeInputValue("Canada Hourly");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("Hourly Salary");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("2080");
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("CAN Pay Rate Hourly");
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+            //Could not complete this test, need more details
+        }
+
+        /// <summary>
+        /// HR WorkStructures: 8-Link the Element Name to the Salary Basis 
+        /// </summary>
+        public void LinkElementNameToSalaryBasis()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            newCountryLocationPatterns = new NewCountryLocationPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
+            sikuliHelper.TypeInputValue("CAN Pay Rate Hourly");
+            //Could not complete this test, need more details
+        }
+
+        /// <summary>
+        /// Oracle Hiring: Run Three Concurrent Programs For Inbound - Hiring In The Inbound
+        /// </summary>
+        public void HiringInInbound()
+        {
+            commonPatterns = new CommonPttnObj();
+            sikuliHelper = SikuliHelper.GetInstance();
+            hiringInInbountPatterns = new HiringInInbountPttnObj();
+            //To log the 'Step 1: Abt HR ATLAS SF Emp SQL Load Program' report
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
+            sikuliHelper.ClickPattern(hiringInInbountPatterns.GetSubmitNewRequestBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Step 1: Abt HR ATLAS SF Emp SQL Load Program");
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
+            sikuliHelper.TypeInputValue("/s01/prod/apps/apps_st/appl/xxabt/12.0.0/extras/report_SuccessFactors_Data_to_Oracle_DATE.csv");
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSubmitBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetFindBtn);
+            //sikuliHelper.ensureExists(commonPatterns.GetPhaseCompleted, "Phase column shows 'Completed'");
+            //sikuliHelper.ensureExists(commonPatterns.GetPhaseCompleted, "Status column shows 'Normal'");
+            sikuliHelper.ClickPattern(commonPatterns.GetViewLogBtn); //it opens a window in IE.We have to confirm that the log shows all records except for headers have uploaded successfully
+            // To log the 'Step 2: Abt HR ATLAS Emp Onboarding SQL Load Program' report
+            sikuliHelper.ClickPattern(commonPatterns.GetFindRequestsBtn);
+            sikuliHelper.ClickPattern(hiringInInbountPatterns.GetSubmitNewRequestBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Step 2: Abt HR ATLAS Emp Onboarding SQL Load Program");
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
+            sikuliHelper.TypeInputValue("/s01/prod/apps/apps_st/appl/xxabt/12.0.0/extras/Abt_NH_Onboarding_DATE.csv");
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSubmitBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
+            //To log the 'Step 3: Abt HR ATLAS Employee Validate and Load' report
+            sikuliHelper.ClickPattern(hiringInInbountPatterns.GetSubmitNewRequestBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
+            sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Step 3: Abt HR ATLAS Employee Onboard Validate and Load");
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
+            sikuliHelper.ClickPattern(commonPatterns.GetSubmitBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
+            sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetFindBtn);
+            //sikuliHelper.ensureExists(commonPatterns.GetPhaseCompleted, "Phase column shows 'Completed'");
+            //sikuliHelper.ensureExists(commonPatterns.GetPhaseCompleted,"Status column shows 'Normal'");
+            sikuliHelper.ClickPattern(commonPatterns.GetViewOutputBtn); //it opens a window in IE.We have to confirm that the output report shows all records except for headers have uploaded successfully.
+            sikuliHelper.ClickPattern(commonPatterns.GetViewLogBtn); //it opens a window in IE.We have to confirm that the log shows all records except for headers have uploaded successfully
         }
     }
-
 }
