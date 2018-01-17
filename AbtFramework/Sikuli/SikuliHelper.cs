@@ -10,6 +10,7 @@ using System.Windows.Input;
 using SikuliSharp;
 using OpenQA.Selenium;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace AbtFramework.Sikuli
 {   /// <summary>
@@ -191,6 +192,12 @@ namespace AbtFramework.Sikuli
         {
             Assert.IsNotNull(pattern);
             Console.WriteLine(message);
+        }
+
+        public Boolean PatternVisible(IPattern pattern)
+        {
+            session.Exists(pattern);
+            return true;      
         }
 
     }

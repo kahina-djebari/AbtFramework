@@ -143,6 +143,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountingPayableDefiningDistribtionSet.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Oracle\AccountingPayableEnteringInvoicesInInvoiceWorkbench.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingPayableEnteringInvoicesInInvoiceWorkbench.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Oracle\AccountingPayableViewingPayments.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -335,6 +340,10 @@
     <None Include="Features\Oracle\AccountingPayableDefiningDistribtionSet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AccountingPayableDefiningDistribtionSet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Oracle\AccountingPayableEnteringInvoicesInInvoiceWorkbench.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccountingPayableEnteringInvoicesInInvoiceWorkbench.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Oracle\AccountingPayableViewingPayments.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

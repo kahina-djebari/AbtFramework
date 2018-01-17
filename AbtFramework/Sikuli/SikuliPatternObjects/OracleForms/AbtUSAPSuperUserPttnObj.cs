@@ -31,10 +31,6 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetInvoiceDateField => sikuliHelper.GetPattern(PATH + "InvoiceDateField.PNG", 5);
 
-        public IPattern GetSelectedDate => sikuliHelper.GetPattern(PATH + "SelectedDate.PNG", 5);
-
-        public IPattern GetOkDate => sikuliHelper.GetPattern(PATH + "OkDate.PNG", 5);
-
         public IPattern GetSupplierField => sikuliHelper.GetPattern(PATH + "SupplierField.PNG", 5);
 
         public IPattern GetFindInputField => sikuliHelper.GetPattern(PATH + "FindInputField.PNG", 5);
@@ -74,5 +70,15 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
         public IPattern GetHoldReasonField => sikuliHelper.GetPattern(PATH + "HoldReasonField.PNG", 5);
 
         public IPattern GetSelectHoldName => sikuliHelper.GetPattern(PATH + "SelectHoldName.PNG", 5);
+
+        public IPattern GetFieldToClick => sikuliHelper.GetPattern(PATH + "FieldToClick.PNG", 5);
+
+        public IPattern GetTradingPartnerInput => sikuliHelper.GetPattern(PATH + "TradingPartnerInput.PNG", 5);
+
+        public IPattern GetInvoiceDateInput => sikuliHelper.GetPattern(PATH + "InvoiceDateInput.PNG", 5);
+
+        public IPattern GetInvoiceNumberInput => sikuliHelper.GetPattern(PATH + "InvoiceNumberInput.PNG", 5);
+
+        public IPattern GetInvoiceAmountInputField => sikuliHelper.GetPattern(PATH + "InvoiceAmountInputField.PNG", 5);
     }
 }
