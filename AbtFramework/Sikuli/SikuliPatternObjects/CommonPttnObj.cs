@@ -100,5 +100,7 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects
 
         public IPattern GetViewOutputBtn => sikuliHelper.GetPattern(PATH + "ViewOutputBtn.PNG", 5);
 
+        public IPattern GetSubmitNewRequestBtn => sikuliHelper.GetPattern(PATH + "SubmitNewRequestBtn.PNG", 5);
+
     }
 }

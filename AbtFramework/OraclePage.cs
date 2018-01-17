@@ -30,8 +30,7 @@ namespace AbtFramework
         private SikuliHelper sikuliHelper;
         private AbtUSAPSuperUserPttnObj APSuperUserPatterns;
         private NewCountryLocationPttnObj newCountryLocationPatterns;
-        private HiringInInbountPttnObj hiringInInbountPatterns;
-
+ 
         //page objects
         private LoginPagePO loginPagePO;
         private CommonPO commonPO = new CommonPO();
@@ -797,7 +796,7 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// HR
+        /// HR: Approve HR transactions
         /// </summary>
         /// Could not complete this test because the requests are automatically closed
         public void ApproveChanges()
@@ -1194,17 +1193,14 @@ namespace AbtFramework
             //We have to change the Batch Name and the Invoice Number every time we run the test
             SeleniumDriver.ClickElement(APSuperUserPO.GetQuickInvoicesLink());
             AcceptJavaAlert();
-            Thread.Sleep(7000);
-            sikuliHelper.SetInputValue(APSuperUserPatterns.GetBatchInputField, "Quick Invoices Test 2");
+            //Thread.Sleep(7000);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetBatchInputField, "Quick Invoices Test 5");
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetEnterBtn);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetTypeField);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
-            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumInput, "07");
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetInvoiceDateField);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectedDate);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkDate);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumInput, "11");
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceDateField, DateTime.Today.ToString("dd-MMM-yyyy"));
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSupplierField);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
             sikuliHelper.SetInputValue(APSuperUserPatterns.GetFindInputField, "test");
@@ -1234,7 +1230,7 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// Accounts Payable
+        /// Accounts Payable: Viewing Payments
         /// </summary>
         public void ViewPayments()
         {
@@ -1252,6 +1248,8 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetFindBtn);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetPaymentOverviewBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceDateInput, DateTime.Today.ToString("dd-MMM-yyyy"));
         }
 
         /// <summary>
@@ -1264,7 +1262,7 @@ namespace AbtFramework
             APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
 
             AcceptJavaAlert();
-            sikuliHelper.SetInputValue(APSuperUserPatterns.GetNameInputField, "test");
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetNameInputField, "test2"); //Change the name to run the test
             sikuliHelper.SetInputValue(APSuperUserPatterns.GetPercentageInputField, "100");
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetAccountField);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
@@ -1284,7 +1282,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
             //Thread.Sleep(500);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtnProcessingInvoiceNote);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
         }
 
@@ -1302,8 +1300,8 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetView);
             sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
             sikuliHelper.ClickPattern(commonPatterns.GetEnter);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetScrollLeftArrow);   //need to scroll left
-            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumToHold, "6");//change the invoice number everytime we run the test
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetFieldToClick); //click this field to make the Invoice Number input field visible without scrolling left
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumToHold, "10");//change the invoice number everytime we run the test
             sikuliHelper.ClickPattern(commonPatterns.GetView);
             sikuliHelper.ClickPattern(commonPatterns.GetQueryByExample);
             sikuliHelper.ClickPattern(commonPatterns.GetRun);
@@ -1311,6 +1309,29 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectHoldName);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetHoldReasonField);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
+        /// Accounting Payable: Enter new Invoices in Invoice Workbench
+        /// </summary>
+        public void EnterInvoiceInInvoiceWorkbench()
+        {
+            sikuliHelper = SikuliHelper.GetInstance();
+            commonPatterns = new CommonPttnObj();
+            APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
+
+            SeleniumDriver.ClickElement(APSuperUserPO.GetInvoicesLink());
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetTradingPartnerInput);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.TypeInputValue("test");
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.PressEnter();
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceNumberInput, "25"); //Change this number everytime we run the test
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceDateInput, DateTime.Today.ToString("dd-MMM-yyyy"));           
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceAmountInputField, "5000");
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
         }
 
@@ -1674,16 +1695,18 @@ namespace AbtFramework
 
         /// <summary>
         /// Oracle Hiring: Run Three Concurrent Programs For Inbound - Hiring In The Inbound
+        /// This test has the exact same steps with 'Oracle Hiring - Transfer from SF Inbound - Actor HRIS', 'Oracle Hiring - Rehire from SF Inbound - Actor HRIS'
+        /// and 'Oracle Hiring - New Hire from SF Inbound - Actor HRIS'
         /// </summary>
         public void HiringInInbound()
         {
             commonPatterns = new CommonPttnObj();
             sikuliHelper = SikuliHelper.GetInstance();
-            hiringInInbountPatterns = new HiringInInbountPttnObj();
+            
             //To log the 'Step 1: Abt HR ATLAS SF Emp SQL Load Program' report
             AcceptJavaAlert();
             sikuliHelper.ClickPattern(commonPatterns.GetOkNotificationsNote);
-            sikuliHelper.ClickPattern(hiringInInbountPatterns.GetSubmitNewRequestBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSubmitNewRequestBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
             sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Step 1: Abt HR ATLAS SF Emp SQL Load Program");
@@ -1698,7 +1721,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetViewLogBtn); //it opens a window in IE.We have to confirm that the log shows all records except for headers have uploaded successfully
             // To log the 'Step 2: Abt HR ATLAS Emp Onboarding SQL Load Program' report
             sikuliHelper.ClickPattern(commonPatterns.GetFindRequestsBtn);
-            sikuliHelper.ClickPattern(hiringInInbountPatterns.GetSubmitNewRequestBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSubmitNewRequestBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
             sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Step 2: Abt HR ATLAS Emp Onboarding SQL Load Program");
@@ -1708,7 +1731,7 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetSubmitBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetNoBtn);
             //To log the 'Step 3: Abt HR ATLAS Employee Validate and Load' report
-            sikuliHelper.ClickPattern(hiringInInbountPatterns.GetSubmitNewRequestBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetSubmitNewRequestBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetSelectBtn);
             sikuliHelper.SetInputValue(commonPatterns.GetFindInputField, "Step 3: Abt HR ATLAS Employee Onboard Validate and Load");

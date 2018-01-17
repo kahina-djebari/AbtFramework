@@ -152,7 +152,6 @@
     <Compile Include="Office365LoginPage.cs" />
     <Compile Include="SANSHomepage.cs" />
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\AbtUSAPSuperUserPttnObj.cs" />
-    <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\HiringInInbountPttnObj.cs" />
     <Compile Include="Sikuli\SikuliPatternObjects\OracleForms\NewCountryLocationPttnObj.cs" />
     <Compile Include="Utils Classes\SeleniumUtils\SeleniumDriver.cs" />
     <Compile Include="ServiceNowIRRForm.cs" />
@@ -287,7 +286,6 @@
     <Folder Include="Sikuli\SikuliPatternImges\ConfDefaultProcessRunPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\ConfProcessPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\GradeRatePttnImgs\" />
-    <Folder Include="Sikuli\SikuliPatternImges\HiringInInbountPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\LifeEventPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\NewCountryLocationPttnImgs\" />
     <Folder Include="Sikuli\SikuliPatternImges\OracleFromsPttnImges\" />

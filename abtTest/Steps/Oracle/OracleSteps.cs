@@ -342,5 +342,12 @@ namespace abtTest.Steps.Oracle
         {
             AbtPages.OraclePage.HiringInInbound();
         }
+
+        [Then(@"I Enter an Invoice in Invoice Workbench")]
+        public void ThenIEnterInvoicesInInvoiceWorkbench()
+        {
+            AbtPages.OraclePage.EnterInvoiceInInvoiceWorkbench();
+        }
+
     }
 }
