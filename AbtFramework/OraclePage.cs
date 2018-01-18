@@ -1262,25 +1262,17 @@ namespace AbtFramework
             APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
 
             AcceptJavaAlert();
-            sikuliHelper.SetInputValue(APSuperUserPatterns.GetNameInputField, "test2"); //Change the name to run the test
+            Thread.Sleep(5000);
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetNameInputField, "test5"); //Change the name to run the test
             sikuliHelper.SetInputValue(APSuperUserPatterns.GetPercentageInputField, "100");
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetAccountField);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
-            //Thread.Sleep(500);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
-            //Thread.Sleep(500);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
-            //Thread.Sleep(500);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
-            //Thread.Sleep(500);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
-            sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
-            //Thread.Sleep(500);
+            for (int i = 0; i < 5; i++)
+            {
+                sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+                sikuliHelper.ClickPattern(APSuperUserPatterns.GetOkBtn);
+                Thread.Sleep(500);
+            }           
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
             sikuliHelper.ClickPattern(commonPatterns.GetOkButton);
             sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
