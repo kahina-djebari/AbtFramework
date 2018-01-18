@@ -1249,7 +1249,6 @@ namespace AbtFramework
             sikuliHelper.ClickPattern(commonPatterns.GetFindBtn);
             sikuliHelper.ClickPattern(APSuperUserPatterns.GetPaymentOverviewBtn);
             sikuliHelper.ClickPattern(commonPatterns.GetCloseOracleWindows);
-            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceDateInput, DateTime.Today.ToString("dd-MMM-yyyy"));
         }
 
         /// <summary>
