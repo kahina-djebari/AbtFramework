@@ -349,5 +349,11 @@ namespace abtTest.Steps.Oracle
             AbtPages.OraclePage.EnterInvoiceInInvoiceWorkbench();
         }
 
+        [Then(@"I enter expense report")]
+        public void ThenIEnterExpenseReport()
+        {
+            AbtPages.OraclePage.EnterExpenseReport();
+        }
+
     }
 }

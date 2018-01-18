@@ -1336,6 +1336,46 @@ namespace AbtFramework
         }
 
         /// <summary>
+        /// Accounting Payable: Entering Expense Report - enter Oracle Payable expense reports for employees
+        /// </summary>
+        public void EnterExpenseReport()
+        {
+            sikuliHelper = SikuliHelper.GetInstance();
+            commonPatterns = new CommonPttnObj();
+            APSuperUserPatterns = new AbtUSAPSuperUserPttnObj();
+
+            AcceptJavaAlert();
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetNameInputField);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.TypeInputValue("pardikar");
+            sikuliHelper.ClickPattern(commonPatterns.GetFindButton);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue(DateTime.Today.ToString("dd-MMM-yyyy"));
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("598"); //Change this number everytime we run the test
+            sikuliHelper.PressEnter();
+            sikuliHelper.TypeInputValue("1000");
+            sikuliHelper.SetInputValue(APSuperUserPatterns.GetInvoiceDescriptionInput, "test");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetItemInput);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectBtn);
+            sikuliHelper.ClickPattern(commonPatterns.GetOkBtn);
+            sikuliHelper.TypeInputValue("1000");
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetGLAccountInput);
+            for(int i=0; i<6; i++)
+            {
+                sikuliHelper.ClickPattern(APSuperUserPatterns.GetSelectButton);
+                Thread.Sleep(500);
+                sikuliHelper.PressEnter();
+                Thread.Sleep(500);
+            }
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetCheckBox);
+            sikuliHelper.ClickPattern(APSuperUserPatterns.GetCheckBox);
+            sikuliHelper.ClickPattern(commonPatterns.GetSaveIcon);
+        }
+
+        /// <summary>
         /// HR: Perform Employee Views
         /// </summary>
         public void ViewEmployeeInformation()
