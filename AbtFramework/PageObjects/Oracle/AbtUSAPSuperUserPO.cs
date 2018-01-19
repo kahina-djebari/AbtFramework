@@ -22,6 +22,12 @@ namespace AbtFramework.PageObjects.Oracle
             return SeleniumDriver.GetElementByXpath(xpath);
         }
 
+        public IWebElement GetCountryNameInput()
+        {
+            string xpath = "//span[contains(text(),'Country')]/parent::td//following-sibling::td/span/input";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
         public IWebElement GetBankNameInput()
         {
             string xpath = "//span[contains(text(),'Bank Name')]/parent::td//following-sibling::td/span/input";
@@ -43,6 +49,30 @@ namespace AbtFramework.PageObjects.Oracle
         public IWebElement GetInvoicesLink()
         {
             string xpath = "//span[text()='Invoices : Entry']/parent::td/parent::tr/following-sibling::tr[2]//child::td/a[text()='Invoices']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetContinueBtn()
+        {
+            string xpath = "//button[@title='Continue']";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetSearchBranchIcon()
+        {
+            string xpath = "//span[contains(text(),'Branch Name')]/parent::td//following-sibling::td/span/a/img";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetBankAccountOwnerInput()
+        {
+            string xpath = "//span[contains(text(),'Bank Account Owner')]/parent::td/following-sibling::td//descendant::span/input";
+            return SeleniumDriver.GetElementByXpath(xpath);
+        }
+
+        public IWebElement GetPayablesCheckBox()
+        {
+            string xpath = "//span[text()='Payables']/preceding-sibling::input";
             return SeleniumDriver.GetElementByXpath(xpath);
         }
     }

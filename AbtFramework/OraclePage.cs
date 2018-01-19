@@ -1219,14 +1219,20 @@ namespace AbtFramework
         }
 
         /// <summary>
-        /// Accounts Payable
+        /// Accounts Payable: Defining Banks
         /// </summary>
         public void CreateBankAccount()
         {
             SeleniumDriver.ClickElement(APSuperUserPO.GetCreateBankAccountLink());
+            SeleniumDriver.SetValue(APSuperUserPO.GetCountryNameInput(), "United States");
+            SeleniumDriver.ClickElement(APSuperUserPO.GetBankNameInput());
             SeleniumDriver.SetValue(APSuperUserPO.GetBankNameInput(), "Bank of America");
             SeleniumDriver.ClickElement(APSuperUserPO.GetBranchNameInput());
-            SeleniumDriver.SetValue(APSuperUserPO.GetBranchNameInput(), "aaaaaaa");
+            SeleniumDriver.SetValue(APSuperUserPO.GetBranchNameInput(), "Tampa");
+            SeleniumDriver.ClickElement(APSuperUserPO.GetSearchBranchIcon());
+            SeleniumDriver.ClickElement(APSuperUserPO.GetContinueBtn());
+            SeleniumDriver.SetValue(APSuperUserPO.GetBankAccountOwnerInput(), "ABT_US_LE");
+            SeleniumDriver.ClickElement(APSuperUserPO.GetPayablesCheckBox());
         }
 
         /// <summary>
