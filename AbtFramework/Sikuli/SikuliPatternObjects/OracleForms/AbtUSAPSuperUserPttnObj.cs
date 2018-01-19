@@ -61,8 +61,6 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
 
         public IPattern GetSelectButton => sikuliHelper.GetPattern(PATH + "SelectButton.PNG", 5);
 
-        public IPattern GetScrollLeftArrow => sikuliHelper.GetPattern(PATH + "ScrollLeftArrow.PNG", 5);
-
         public IPattern GetInvoiceNumToHold => sikuliHelper.GetPattern(PATH + "InvoiceNumToHold.PNG", 5);
 
         public IPattern GetHoldsTab => sikuliHelper.GetPattern(PATH + "HoldsTab.PNG", 5);
@@ -80,5 +78,13 @@ namespace AbtFramework.Sikuli.SikuliPatternObjects.OracleForms
         public IPattern GetInvoiceNumberInput => sikuliHelper.GetPattern(PATH + "InvoiceNumberInput.PNG", 5);
 
         public IPattern GetInvoiceAmountInputField => sikuliHelper.GetPattern(PATH + "InvoiceAmountInputField.PNG", 5);
+
+        public IPattern GetInvoiceDescriptionInput => sikuliHelper.GetPattern(PATH + "InvoiceDescriptionInput.PNG", 5);
+
+        public IPattern GetItemInput => sikuliHelper.GetPattern(PATH + "ItemInput.PNG", 5);
+
+        public IPattern GetGLAccountInput => sikuliHelper.GetPattern(PATH + "GLAccountInput.PNG", 5);
+
+        public IPattern GetCheckBox => sikuliHelper.GetPattern(PATH + "CheckBox.PNG", 5);
     }
 }
